@@ -28,7 +28,10 @@
     font-size: 28px; margin: 0 0 4px; letter-spacing: -0.01em;
   }
   .subhead { color: var(--dim); font-size: 14px; margin: 0; }
-  .generated { color: var(--dim); font-size: 12px; margin-top: 10px; }
+  .legend { color: var(--dim); font-size: 12.5px; margin: 8px 0 0; }
+  .legend strong { color: var(--ink); }
+  .legend-confirmed { color: var(--pitch); font-weight: 700; }
+  .generated { color: var(--dim); font-size: 12px; margin-top: 6px; }
 
   .card {
     display: flex; gap: 14px; padding: 18px 4px;
@@ -68,9 +71,15 @@
     font-size: 13.5px; padding: 4px 0;
   }
   .player-name { font-weight: 500; }
+  .player-club { font-weight: 400; color: var(--dim); font-size: 12.5px; }
   .player-note { color: var(--dim); text-align: right; }
   .player-out { opacity: 0.55; }
   .player-out .player-name { text-decoration: line-through; text-decoration-color: var(--line); }
+  /* Confirmed matchday status (starting XI / injury feed), vs. a predictive
+     estimate — bold is the whole signal, deliberately not a color, so it
+     reads clearly even to a visitor who never sees the legend text. */
+  .player-confirmed .player-name { font-weight: 700; color: var(--pitch); }
+  .player-confirmed .player-note { color: var(--pitch); font-weight: 500; }
 
   .empty { padding: 60px 4px; text-align: center; }
   .empty-headline {
@@ -89,7 +98,10 @@
     <header>
       <h1>Pool Watch</h1>
       <p class="subhead">Today's best matches to watch, ranked by USMNT pool involvement</p>
-      <p class="generated" id="generated" data-utc="2026-09-20T00:53+00:00">Updated 2026-09-20T00:53+00:00 UTC</p>
+      <p class="legend">Last seen / <strong>match status</strong> —
+        <span class="legend-confirmed">bold green</span> means confirmed
+        for today; plain text is a predictive estimate.</p>
+      <p class="generated" id="generated" data-utc="2026-09-20T01:59+00:00">Updated 2026-09-20T01:59+00:00 UTC</p>
     </header>
     <main>
       <article class="card">
@@ -106,24 +118,24 @@
             
           </div>
           <div class="players">
-                <div class="player">
-                  <span class="player-name">Tim Ream</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">Tim Ream <span class="player-club">Charlotte</span></span>
                   <span class="player-note">confirmed starting (4-2-3-1)</span>
                 </div>
-                <div class="player">
-                  <span class="player-name">Sean Johnson</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">Sean Johnson <span class="player-club">DC United</span></span>
                   <span class="player-note">confirmed starting (4-3-3)</span>
                 </div>
-                <div class="player">
-                  <span class="player-name">Luca De La Torre</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">Luca De La Torre <span class="player-club">Charlotte</span></span>
                   <span class="player-note">confirmed on the bench</span>
                 </div>
-                <div class="player player-out">
-                  <span class="player-name">Eryk Williamson</span>
+                <div class="player player-out player-confirmed">
+                  <span class="player-name">Eryk Williamson <span class="player-club">Charlotte</span></span>
                   <span class="player-note">Out / not featuring</span>
                 </div>
-                <div class="player player-out">
-                  <span class="player-name">Caden Clark</span>
+                <div class="player player-out player-confirmed">
+                  <span class="player-name">Caden Clark <span class="player-club">DC United</span></span>
                   <span class="player-note">Out / not featuring</span>
                 </div></div>
         </div>
@@ -143,20 +155,20 @@
             
           </div>
           <div class="players">
-                <div class="player">
-                  <span class="player-name">M. Turner</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">M. Turner <span class="player-club">New England Revolution</span></span>
                   <span class="player-note">confirmed starting (4-3-3)</span>
                 </div>
-                <div class="player">
-                  <span class="player-name">P. Miller</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">P. Miller <span class="player-club">New England Revolution</span></span>
                   <span class="player-note">confirmed starting (4-3-3)</span>
                 </div>
-                <div class="player">
-                  <span class="player-name">Jackson Yueill</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">Jackson Yueill <span class="player-club">New England Revolution</span></span>
                   <span class="player-note">confirmed starting (4-3-3)</span>
                 </div>
-                <div class="player">
-                  <span class="player-name">Joshua Wynder</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">Joshua Wynder <span class="player-club">New England Revolution</span></span>
                   <span class="player-note">confirmed on the bench</span>
                 </div></div>
         </div>
@@ -176,20 +188,20 @@
             
           </div>
           <div class="players">
-                <div class="player">
-                  <span class="player-name">M. Arfsten</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">M. Arfsten <span class="player-club">Middlesbrough</span></span>
                   <span class="player-note">confirmed starting (3-4-2-1)</span>
                 </div>
-                <div class="player">
-                  <span class="player-name">Aidan Morris</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">Aidan Morris <span class="player-club">Middlesbrough</span></span>
                   <span class="player-note">confirmed starting (3-4-2-1)</span>
                 </div>
-                <div class="player">
-                  <span class="player-name">Sebastian Berhalter</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">Sebastian Berhalter <span class="player-club">Middlesbrough</span></span>
                   <span class="player-note">confirmed on the bench</span>
                 </div>
-                <div class="player">
-                  <span class="player-name">Kristoffer Lund</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">Kristoffer Lund <span class="player-club">Birmingham</span></span>
                   <span class="player-note">confirmed on the bench</span>
                 </div></div>
         </div>
@@ -209,12 +221,12 @@
             
           </div>
           <div class="players">
-                <div class="player">
-                  <span class="player-name">Joseph Scally</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">Joseph Scally <span class="player-club">Borussia Mönchengladbach</span></span>
                   <span class="player-note">confirmed starting (3-4-2-1)</span>
                 </div>
-                <div class="player">
-                  <span class="player-name">Lennard Maloney</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">Lennard Maloney <span class="player-club">FSV Mainz 05</span></span>
                   <span class="player-note">confirmed on the bench</span>
                 </div></div>
         </div>
@@ -234,16 +246,16 @@
             
           </div>
           <div class="players">
-                <div class="player">
-                  <span class="player-name">M. Robinson</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">M. Robinson <span class="player-club">FC Cincinnati</span></span>
                   <span class="player-note">confirmed starting (3-4-3)</span>
                 </div>
-                <div class="player">
-                  <span class="player-name">D. McGuire</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">D. McGuire <span class="player-club">Houston Dynamo</span></span>
                   <span class="player-note">confirmed on the bench</span>
                 </div>
-                <div class="player player-out">
-                  <span class="player-name">Matthew Miazga</span>
+                <div class="player player-out player-confirmed">
+                  <span class="player-name">Matthew Miazga <span class="player-club">FC Cincinnati</span></span>
                   <span class="player-note">Out / not featuring</span>
                 </div></div>
         </div>
@@ -263,8 +275,8 @@
             
           </div>
           <div class="players">
-                <div class="player">
-                  <span class="player-name">Giovanni Reyna</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">Giovanni Reyna <span class="player-club">Strasbourg</span></span>
                   <span class="player-note">confirmed starting (4-2-3-1)</span>
                 </div></div>
         </div>
@@ -284,8 +296,8 @@
             
           </div>
           <div class="players">
-                <div class="player">
-                  <span class="player-name">Mark McKenzie</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">Mark McKenzie <span class="player-club">Toulouse</span></span>
                   <span class="player-note">confirmed starting (4-4-2)</span>
                 </div></div>
         </div>
@@ -305,28 +317,28 @@
             
           </div>
           <div class="players">
-                <div class="player">
-                  <span class="player-name">D. Luna</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">D. Luna <span class="player-club">Real Salt Lake</span></span>
                   <span class="player-note">Missing Fixture: Knee Injury</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">B. White</span>
+                  <span class="player-name">B. White <span class="player-club">Vancouver Whitecaps</span></span>
                   <span class="player-note">last 2025-07-06 Gold Cup (bench)</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">DeAndre Yedlin</span>
+                  <span class="player-name">DeAndre Yedlin <span class="player-club">Real Salt Lake</span></span>
                   <span class="player-note">last 2023-07-12 Gold Cup (bench)</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">Tristan Blackmon</span>
+                  <span class="player-name">Tristan Blackmon <span class="player-club">Vancouver Whitecaps</span></span>
                   <span class="player-note">last 2025-09-09 Friendlies</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">Emmanuel Sabbi</span>
+                  <span class="player-name">Emmanuel Sabbi <span class="player-club">Vancouver Whitecaps</span></span>
                   <span class="player-note">last 2023-01-29 Friendlies (bench)</span>
                 </div>
                 <div class="player player-out">
-                  <span class="player-name">Emeka Eneli</span>
+                  <span class="player-name">Emeka Eneli <span class="player-club">Real Salt Lake</span></span>
                   <span class="player-note">Out / not featuring</span>
                 </div></div>
         </div>
@@ -347,31 +359,31 @@
           </div>
           <div class="players">
                 <div class="player">
-                  <span class="player-name">C. Roldán</span>
+                  <span class="player-name">C. Roldán <span class="player-club">Seattle Sounders</span></span>
                   <span class="player-note">last 2026-06-19 World Cup (bench)</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">Paxten Aaronson</span>
+                  <span class="player-name">Paxten Aaronson <span class="player-club">Colorado Rapids</span></span>
                   <span class="player-note">last 2025-07-02 Gold Cup (bench)</span>
                 </div>
-                <div class="player">
-                  <span class="player-name">Jesús Ferreira</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">Jesús Ferreira <span class="player-club">Seattle Sounders</span></span>
                   <span class="player-note">Missing Fixture: Injury</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">Jordan Morris</span>
+                  <span class="player-name">Jordan Morris <span class="player-club">Seattle Sounders</span></span>
                   <span class="player-note">last 2023-07-12 Gold Cup (bench)</span>
                 </div>
-                <div class="player">
-                  <span class="player-name">Z. Steffen</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">Z. Steffen <span class="player-club">Colorado Rapids</span></span>
                   <span class="player-note">Missing Fixture: Shoulder Injury</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">J. Atencio</span>
+                  <span class="player-name">J. Atencio <span class="player-club">Colorado Rapids</span></span>
                   <span class="player-note">last 2024-01-20 Friendlies</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">Paul Arriola</span>
+                  <span class="player-name">Paul Arriola <span class="player-club">Seattle Sounders</span></span>
                   <span class="player-note">last 2023-01-29 Friendlies</span>
                 </div></div>
         </div>
@@ -391,8 +403,8 @@
             
           </div>
           <div class="players">
-                <div class="player">
-                  <span class="player-name">J. McGlynn</span>
+                <div class="player player-confirmed">
+                  <span class="player-name">J. McGlynn <span class="player-club">Stoke City</span></span>
                   <span class="player-note">confirmed starting (3-4-3)</span>
                 </div></div>
         </div>
