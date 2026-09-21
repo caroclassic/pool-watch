@@ -81,6 +81,37 @@
   .player-confirmed .player-name { font-weight: 700; color: var(--pitch); }
   .player-confirmed .player-note { color: var(--pitch); font-weight: 500; }
 
+  .tag-live { background: var(--pitch); color: #06251c; }
+  .tag-final { background: var(--line); color: var(--dim); }
+  .card-finished { opacity: 0.5; }
+
+  /* Kickoff-slot headers group simultaneous matches. Only shown in the
+     kickoff sort; the relevance sort is a flat ranked list. The rank number
+     is the mirror image: meaningless in time order, the point in relevance
+     order. */
+  .slot {
+    display: flex; align-items: baseline; gap: 10px;
+    font-family: "Space Grotesk", sans-serif; font-weight: 700;
+    font-size: 15px; color: var(--floodlight);
+    margin: 22px 0 0; padding: 0 4px 6px;
+    border-bottom: 1px solid var(--line);
+  }
+  .slot:first-child { margin-top: 0; }
+  .slot-count { color: var(--dim); font-weight: 500; font-size: 12.5px; }
+  .slot + .card { padding-top: 14px; }
+  .by-time .card-rank { display: none; }
+  .by-rank .slot { display: none; }
+
+  .sort { display: inline-flex; margin-top: 12px;
+    border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .sort button {
+    font: inherit; font-size: 13px; font-weight: 500; cursor: pointer;
+    background: transparent; color: var(--dim); border: 0; padding: 6px 14px;
+  }
+  .sort button + button { border-left: 1px solid var(--line); }
+  .sort button[aria-pressed="true"] { background: var(--panel); color: var(--ink); }
+  .sort button:focus-visible { outline: 2px solid var(--floodlight); outline-offset: -2px; }
+
   .empty { padding: 60px 4px; text-align: center; }
   .empty-headline {
     font-family: "Space Grotesk", sans-serif; font-weight: 700;
@@ -97,242 +128,20 @@
   <div class="wrap">
     <header>
       <h1>Pool Watch</h1>
-      <p class="subhead">Today's best matches to watch, ranked by USMNT pool involvement</p>
+      <p class="subhead">Every match today with a USMNT pool player</p>
       <p class="legend">Last seen / <strong>match status</strong> —
         <span class="legend-confirmed">bold green</span> means confirmed
-        for today; plain text is a predictive estimate.</p>
-      <p class="generated" id="generated" data-utc="2026-09-20T16:13+00:00">Updated 2026-09-20T16:13+00:00 UTC</p>
+        for today; plain text is a predictive estimate. The number is
+        relevance against today's top match (100).</p>
+      
+      <p class="generated" id="generated" data-utc="2026-09-21T11:52+00:00">Updated 2026-09-21T11:52+00:00 UTC</p>
     </header>
-    <main>
-      <article class="card">
-        <div class="card-rank">01</div>
-        <div class="card-body">
-          <div class="card-top">
-            <h2 class="card-title">Leeds vs Crystal Palace</h2>
-            <div class="card-score" style="--pct:100">100</div>
-          </div>
-          <div class="card-meta">
-            <time class="kickoff" data-utc="2026-09-20T13:00:00+00:00">2026-09-20T13:00:00+00:00</time>
-            <span class="dim">Premier League</span>
-            <span class="dim">NBC/USA/Peacock — varies by match</span>
-            
-          </div>
-          <div class="players">
-                <div class="player player-confirmed">
-                  <span class="player-name">Chris Richards <span class="player-club" title="Crystal Palace">CRY</span></span>
-                  <span class="player-note">confirmed starting</span>
-                </div>
-                <div class="player player-confirmed">
-                  <span class="player-name">Brenden Aaronson <span class="player-club" title="Leeds">LEE</span></span>
-                  <span class="player-note">confirmed on the bench</span>
-                </div>
-                <div class="player player-out player-confirmed">
-                  <span class="player-name">Z. Gozo <span class="player-club" title="Crystal Palace">CRY</span></span>
-                  <span class="player-note">Out / not featuring</span>
-                </div></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-rank">02</div>
-        <div class="card-body">
-          <div class="card-top">
-            <h2 class="card-title">Twente vs PSV Eindhoven</h2>
-            <div class="card-score" style="--pct:82">82</div>
-          </div>
-          <div class="card-meta">
-            <time class="kickoff" data-utc="2026-09-20T12:30:00+00:00">2026-09-20T12:30:00+00:00</time>
-            <span class="dim">Eredivisie</span>
-            <span class="dim">ESPN+</span>
-            
-          </div>
-          <div class="players">
-                <div class="player player-confirmed">
-                  <span class="player-name">Ricardo Pepi <span class="player-club" title="PSV Eindhoven">PSV</span></span>
-                  <span class="player-note">confirmed starting</span>
-                </div>
-                <div class="player player-confirmed">
-                  <span class="player-name">Sergiño Dest <span class="player-club" title="PSV Eindhoven">PSV</span></span>
-                  <span class="player-note">confirmed starting</span>
-                </div></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-rank">03</div>
-        <div class="card-body">
-          <div class="card-top">
-            <h2 class="card-title">Juventus vs Atalanta</h2>
-            <div class="card-score" style="--pct:78">78</div>
-          </div>
-          <div class="card-meta">
-            <time class="kickoff" data-utc="2026-09-20T16:00:00+00:00">2026-09-20T16:00:00+00:00</time>
-            <span class="dim">Serie A</span>
-            <span class="dim">Paramount+ (some on CBS/CBSSN)</span>
-            
-          </div>
-          <div class="players">
-                <div class="player player-confirmed">
-                  <span class="player-name">Weston McKennie <span class="player-club" title="Juventus">JUV</span></span>
-                  <span class="player-note">confirmed starting</span>
-                </div></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-rank">04</div>
-        <div class="card-body">
-          <div class="card-top">
-            <h2 class="card-title">Villarreal vs Levante</h2>
-            <div class="card-score" style="--pct:72">72</div>
-          </div>
-          <div class="card-meta">
-            <time class="kickoff" data-utc="2026-09-20T16:30:00+00:00">2026-09-20T16:30:00+00:00</time>
-            <span class="dim">La Liga</span>
-            <span class="dim">ESPN+</span>
-            
-          </div>
-          <div class="players">
-                <div class="player player-confirmed">
-                  <span class="player-name">Alexander Freeman <span class="player-club" title="Villarreal">VIL</span></span>
-                  <span class="player-note">confirmed starting</span>
-                </div></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-rank">05</div>
-        <div class="card-body">
-          <div class="card-top">
-            <h2 class="card-title">Bournemouth vs Liverpool</h2>
-            <div class="card-score" style="--pct:70">70</div>
-          </div>
-          <div class="card-meta">
-            <time class="kickoff" data-utc="2026-09-20T13:00:00+00:00">2026-09-20T13:00:00+00:00</time>
-            <span class="dim">Premier League</span>
-            <span class="dim">NBC/USA/Peacock — varies by match</span>
-            
-          </div>
-          <div class="players">
-                <div class="player player-confirmed">
-                  <span class="player-name">T. Adams <span class="player-club" title="Bournemouth">BOU</span></span>
-                  <span class="player-note">confirmed starting</span>
-                </div></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-rank">06</div>
-        <div class="card-body">
-          <div class="card-top">
-            <h2 class="card-title">Fulham vs Manchester United</h2>
-            <div class="card-score" style="--pct:66">66</div>
-          </div>
-          <div class="card-meta">
-            <time class="kickoff" data-utc="2026-09-20T15:30:00+00:00">2026-09-20T15:30:00+00:00</time>
-            <span class="dim">Premier League</span>
-            <span class="dim">NBC/USA/Peacock — varies by match</span>
-            
-          </div>
-          <div class="players">
-                <div class="player player-confirmed">
-                  <span class="player-name">Antonee Robinson <span class="player-club" title="Fulham">FUL</span></span>
-                  <span class="player-note">confirmed starting</span>
-                </div></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-rank">07</div>
-        <div class="card-body">
-          <div class="card-top">
-            <h2 class="card-title">Marseille vs Paris Saint Germain</h2>
-            <div class="card-score" style="--pct:46">46</div>
-          </div>
-          <div class="card-meta">
-            <time class="kickoff" data-utc="2026-09-20T18:45:00+00:00">2026-09-20T18:45:00+00:00</time>
-            <span class="dim">Ligue 1</span>
-            <span class="dim">beIN / Fubo</span>
-            
-          </div>
-          <div class="players">
-                <div class="player">
-                  <span class="player-name">Timothy Weah <span class="player-club" title="Marseille">MAR</span></span>
-                  <span class="player-note">2026-07-07 World Cup (bench)</span>
-                </div></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-rank">08</div>
-        <div class="card-body">
-          <div class="card-top">
-            <h2 class="card-title">AC Milan vs Lecce</h2>
-            <div class="card-score" style="--pct:37">37</div>
-          </div>
-          <div class="card-meta">
-            <time class="kickoff" data-utc="2026-09-20T18:45:00+00:00">2026-09-20T18:45:00+00:00</time>
-            <span class="dim">Serie A</span>
-            <span class="dim">Paramount+ (some on CBS/CBSSN)</span>
-            
-          </div>
-          <div class="players">
-                <div class="player">
-                  <span class="player-name">Yunus Musah <span class="player-club" title="AC Milan">MIL</span></span>
-                  <span class="player-note">2025-03-22 Nations League (bench)</span>
-                </div>
-                <div class="player">
-                  <span class="player-name">Christian Pulišić <span class="player-club" title="AC Milan">MIL</span></span>
-                  <span class="player-note">2026-07-07 World Cup</span>
-                </div></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-rank">09</div>
-        <div class="card-body">
-          <div class="card-top">
-            <h2 class="card-title">Celtic vs Rangers</h2>
-            <div class="card-score" style="--pct:31">31</div>
-          </div>
-          <div class="card-meta">
-            <time class="kickoff" data-utc="2026-09-20T11:00:00+00:00">2026-09-20T11:00:00+00:00</time>
-            <span class="dim">Premiership</span>
-            <span class="dim">—</span>
-            
-          </div>
-          <div class="players">
-                <div class="player player-confirmed">
-                  <span class="player-name">A. Trusty <span class="player-club" title="Celtic">CEL</span></span>
-                  <span class="player-note">confirmed starting</span>
-                </div>
-                <div class="player player-confirmed">
-                  <span class="player-name">Cameron Carter-Vickers <span class="player-club" title="Celtic">CEL</span></span>
-                  <span class="player-note">confirmed starting</span>
-                </div></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-rank">10</div>
-        <div class="card-body">
-          <div class="card-top">
-            <h2 class="card-title">Bayer Leverkusen vs RB Leipzig</h2>
-            <div class="card-score" style="--pct:25">25</div>
-          </div>
-          <div class="card-meta">
-            <time class="kickoff" data-utc="2026-09-20T13:30:00+00:00">2026-09-20T13:30:00+00:00</time>
-            <span class="dim">Bundesliga</span>
-            <span class="dim">ESPN+</span>
-            
-          </div>
-          <div class="players">
-                <div class="player player-confirmed">
-                  <span class="player-name">Malik Tillman <span class="player-club" title="Bayer Leverkusen">BAY</span></span>
-                  <span class="player-note">confirmed on the bench</span>
-                </div></div>
-        </div>
-      </article></main>
+    <main id="list" class="by-time">
+      <div class="empty">
+        <p class="empty-headline">Nothing on today.</p>
+        <p class="empty-sub">No pool player features in a match today —
+           check back tomorrow, or during the next international window.</p>
+      </div></main>
   </div>
   <script>
     // Kickoff times and the "generated" timestamp ship as UTC in data-utc
@@ -347,6 +156,37 @@
         hour: 'numeric', minute: '2-digit'
       });
     });
+    document.querySelectorAll('.slot time').forEach(el => {
+      el.textContent = new Date(el.dataset.utc).toLocaleTimeString(undefined, {
+        hour: 'numeric', minute: '2-digit'
+      });
+    });
+
+    // Sort toggle. Everything needed is already in the DOM (data-rank on
+    // each card, slot headers in kickoff order), so this is a client-side
+    // reorder: no extra fetch, nothing for the poller to regenerate.
+    const list = document.getElementById('list');
+    const buttons = document.querySelectorAll('.sort button');
+    if (buttons.length) {
+      const original = Array.from(list.children);
+      const cards = original.filter(el => el.classList.contains('card'));
+      const apply = mode => {
+        const order = mode === 'rank'
+          ? cards.slice().sort((a, b) => a.dataset.rank - b.dataset.rank)
+          : original;
+        order.forEach(el => list.appendChild(el));
+        list.className = 'by-' + mode;
+        buttons.forEach(b => b.setAttribute('aria-pressed', b.dataset.sort === mode));
+      };
+      buttons.forEach(b => b.addEventListener('click', () => {
+        apply(b.dataset.sort);
+        try { localStorage.setItem('poolwatch-sort', b.dataset.sort); } catch (e) {}
+      }));
+      let saved = null;
+      try { saved = localStorage.getItem('poolwatch-sort'); } catch (e) {}
+      if (saved === 'rank') apply('rank');
+    }
+
     const gen = document.getElementById('generated');
     const gd = new Date(gen.dataset.utc);
     gen.textContent = 'Updated ' + gd.toLocaleString(undefined, {
