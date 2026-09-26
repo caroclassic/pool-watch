@@ -66,12 +66,17 @@
   .tag-disrupted { background: var(--alert); color: #1a0e0b; }
 
   .players { margin-top: 10px; display: flex; flex-direction: column; gap: 5px; }
+  .team-group {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--dim);
+    margin-top: 8px; padding-bottom: 2px;
+  }
+  .team-group:first-child { margin-top: 0; }
   .player {
     display: flex; justify-content: space-between; gap: 10px;
     font-size: 13.5px; padding: 4px 0;
   }
   .player-name { font-weight: 500; }
-  .player-club { font-weight: 400; color: var(--dim); font-size: 12.5px; }
   .player-note { color: var(--dim); text-align: right; }
   .player-out { opacity: 0.55; }
   .player-out .player-name { text-decoration: line-through; text-decoration-color: var(--line); }
@@ -137,7 +142,7 @@
         <button type="button" data-sort="time" aria-pressed="true">Kickoff</button>
         <button type="button" data-sort="rank" aria-pressed="false">Relevance</button>
       </div>
-      <p class="generated" id="generated" data-utc="2026-09-26T10:39+00:00">Updated 2026-09-26T10:39+00:00 UTC</p>
+      <p class="generated" id="generated" data-utc="2026-09-26T10:59+00:00">Updated 2026-09-26T10:59+00:00 UTC</p>
     </header>
     <main id="list" class="by-time">
       <h3 class="slot"><time data-utc="2026-09-26T15:30:00+00:00">2026-09-26T15:30:00+00:00</time></h3>
@@ -156,8 +161,9 @@
             
           </div>
           <div class="players">
+                <div class="team-group">Pogon Szczecin</div>
                 <div class="player">
-                  <span class="player-name">K. Perry-Acosta <span class="player-club" title="Pogon Szczecin">POG</span></span>
+                  <span class="player-name">K. Perry-Acosta</span>
                   <span class="player-note">2023-04-20 Friendlies</span>
                 </div></div>
         </div>
@@ -179,6 +185,7 @@
             
           </div>
           <div class="players">
+                <div class="team-group">USA</div>
                 <div class="player">
                   <span class="player-name">T. Ream</span>
                   <span class="player-note">senior pool (window not yet played)</span>
@@ -586,8 +593,9 @@
             
           </div>
           <div class="players">
+                <div class="team-group">Guadalajara Chivas</div>
                 <div class="player">
-                  <span class="player-name">B. Gutiérrez <span class="player-club" title="Guadalajara Chivas">GUA</span></span>
+                  <span class="player-name">B. Gutiérrez</span>
                   <span class="player-note">2025-03-20 Nations League (bench)</span>
                 </div></div>
         </div>
@@ -609,6 +617,7 @@
             
           </div>
           <div class="players">
+                <div class="team-group">Charlotte</div>
                 <div class="player">
                   <span class="player-name">T. Ream</span>
                   <span class="player-note">2026-07-07 World Cup</span>
@@ -621,8 +630,9 @@
                   <span class="player-name">E. Williamson</span>
                   <span class="player-note">2023-01-29 Friendlies</span>
                 </div>
+                <div class="team-group">Chicago Fire</div>
                 <div class="player">
-                  <span class="player-name">S. Rogers <span class="player-club" title="Chicago Fire">CHI</span></span>
+                  <span class="player-name">S. Rogers</span>
                   <span class="player-note">2023-01-29 Friendlies (bench)</span>
                 </div></div>
         </div>
@@ -642,13 +652,15 @@
             
           </div>
           <div class="players">
+                <div class="team-group">CF Montreal</div>
+                <div class="player">
+                  <span class="player-name">J. Neal</span>
+                  <span class="player-note">2023-07-12 Gold Cup (bench)</span>
+                </div>
+                <div class="team-group">FC Cincinnati</div>
                 <div class="player player-confirmed">
                   <span class="player-name">M. Robinson</span>
                   <span class="player-note">Missing Fixture: International duty</span>
-                </div>
-                <div class="player">
-                  <span class="player-name">J. Neal <span class="player-club" title="CF Montreal">MON</span></span>
-                  <span class="player-note">2023-07-12 Gold Cup (bench)</span>
                 </div>
                 <div class="player">
                   <span class="player-name">M. Miazga</span>
@@ -671,6 +683,7 @@
             
           </div>
           <div class="players">
+                <div class="team-group">New York City FC</div>
                 <div class="player player-confirmed">
                   <span class="player-name">M. Geary Freese</span>
                   <span class="player-note">Missing Fixture: International duty</span>
@@ -696,17 +709,14 @@
             
           </div>
           <div class="players">
+                <div class="team-group">New York Red Bulls</div>
                 <div class="player">
-                  <span class="player-name">E. Horvath <span class="player-club" title="New York Red Bulls">YOR</span></span>
+                  <span class="player-name">E. Horvath</span>
                   <span class="player-note">GK#6 · club starter</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">C. Cowell <span class="player-club" title="New York Red Bulls">YOR</span></span>
+                  <span class="player-name">C. Cowell</span>
                   <span class="player-note">2024-11-19 Nations League (bench)</span>
-                </div>
-                <div class="player player-confirmed">
-                  <span class="player-name">D. Downs</span>
-                  <span class="player-note">Missing Fixture: International duty</span>
                 </div>
                 <div class="player player-confirmed">
                   <span class="player-name">J. Hall</span>
@@ -714,6 +724,11 @@
                 </div>
                 <div class="player player-confirmed">
                   <span class="player-name">A. Mehmeti</span>
+                  <span class="player-note">Missing Fixture: International duty</span>
+                </div>
+                <div class="team-group">St. Louis City</div>
+                <div class="player player-confirmed">
+                  <span class="player-name">D. Downs</span>
                   <span class="player-note">Missing Fixture: International duty</span>
                 </div></div>
         </div>
@@ -733,8 +748,9 @@
             
           </div>
           <div class="players">
+                <div class="team-group">Philadelphia Union</div>
                 <div class="player">
-                  <span class="player-name">N. Harriel <span class="player-club" title="Philadelphia Union">PHI</span></span>
+                  <span class="player-name">N. Harriel</span>
                   <span class="player-note">2025-09-09 Friendlies (bench)</span>
                 </div>
                 <div class="player player-confirmed">
@@ -742,11 +758,11 @@
                   <span class="player-note">Missing Fixture: International duty</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">I. Denchev Vassilev <span class="player-club" title="Philadelphia Union">PHI</span></span>
+                  <span class="player-name">I. Denchev Vassilev</span>
                   <span class="player-note">2025-01-23 Friendlies</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">Q. Sullivan <span class="player-club" title="Philadelphia Union">PHI</span></span>
+                  <span class="player-name">Q. Sullivan</span>
                   <span class="player-note">2025-07-06 Gold Cup (bench)</span>
                 </div>
                 <div class="player player-confirmed">
@@ -772,33 +788,35 @@
             
           </div>
           <div class="players">
+                <div class="team-group">Seattle Sounders</div>
                 <div class="player">
-                  <span class="player-name">C. Roldan <span class="player-club" title="Seattle Sounders">SEA</span></span>
+                  <span class="player-name">C. Roldan</span>
                   <span class="player-note">2026-06-19 World Cup (bench)</span>
                 </div>
                 <div class="player player-confirmed">
-                  <span class="player-name">J. Ferreira Castro <span class="player-club" title="Seattle Sounders">SEA</span></span>
+                  <span class="player-name">J. Ferreira Castro</span>
                   <span class="player-note">Missing Fixture: Injury</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">J. Morris <span class="player-club" title="Seattle Sounders">SEA</span></span>
+                  <span class="player-name">J. Morris</span>
                   <span class="player-note">2023-07-12 Gold Cup (bench)</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">P. Arriola Hendricks <span class="player-club" title="Seattle Sounders">SEA</span></span>
+                  <span class="player-name">P. Arriola Hendricks</span>
                   <span class="player-note">2023-01-29 Friendlies</span>
                 </div>
+                <div class="player player-out">
+                  <span class="player-name">C. Clark</span>
+                  <span class="player-note">Out / not featuring</span>
+                </div>
+                <div class="team-group">Minnesota United FC</div>
                 <div class="player">
-                  <span class="player-name">J. Gressel <span class="player-club" title="Minnesota United FC">MIN</span></span>
+                  <span class="player-name">J. Gressel</span>
                   <span class="player-note">2023-07-12 Gold Cup (bench)</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">A. Jackson <span class="player-club" title="Minnesota United FC">MIN</span></span>
+                  <span class="player-name">A. Jackson</span>
                   <span class="player-note">2024-01-20 Friendlies (bench)</span>
-                </div>
-                <div class="player player-out">
-                  <span class="player-name">C. Clark <span class="player-club" title="Seattle Sounders">SEA</span></span>
-                  <span class="player-note">Out / not featuring</span>
                 </div></div>
         </div>
       </article>
@@ -817,16 +835,17 @@
             
           </div>
           <div class="players">
+                <div class="team-group">Toronto FC</div>
                 <div class="player">
-                  <span class="player-name">J. Sargent <span class="player-club" title="Toronto FC">TOR</span></span>
+                  <span class="player-name">J. Sargent</span>
                   <span class="player-note">2025-09-09 Friendlies (bench)</span>
                 </div>
                 <div class="player player-confirmed">
-                  <span class="player-name">W. Zimmerman <span class="player-club" title="Toronto FC">TOR</span></span>
+                  <span class="player-name">W. Zimmerman</span>
                   <span class="player-note">Missing Fixture: Yellow Cards</span>
                 </div>
                 <div class="player player-confirmed">
-                  <span class="player-name">D. Mihailović <span class="player-club" title="Toronto FC">TOR</span></span>
+                  <span class="player-name">D. Mihailović</span>
                   <span class="player-note">Missing Fixture: Muscle Injury</span>
                 </div></div>
         </div>
@@ -846,10 +865,20 @@
             
           </div>
           <div class="players">
+                <div class="team-group">FC Dallas</div>
                 <div class="player">
-                  <span class="player-name">S. Moore <span class="player-club" title="FC Dallas">DAL</span></span>
+                  <span class="player-name">S. Moore</span>
                   <span class="player-note">2025-01-23 Friendlies (bench)</span>
                 </div>
+                <div class="player">
+                  <span class="player-name">P. Pomykal</span>
+                  <span class="player-note">2023-04-20 Friendlies (bench)</span>
+                </div>
+                <div class="player player-confirmed">
+                  <span class="player-name">B. Kamungo</span>
+                  <span class="player-note">Missing Fixture: International duty</span>
+                </div>
+                <div class="team-group">Los Angeles FC</div>
                 <div class="player player-confirmed">
                   <span class="player-name">A. Long</span>
                   <span class="player-note">Missing Fixture: Red Card</span>
@@ -857,14 +886,6 @@
                 <div class="player player-confirmed">
                   <span class="player-name">T. Tillman</span>
                   <span class="player-note">Missing Fixture: Injury</span>
-                </div>
-                <div class="player">
-                  <span class="player-name">P. Pomykal <span class="player-club" title="FC Dallas">DAL</span></span>
-                  <span class="player-note">2023-04-20 Friendlies (bench)</span>
-                </div>
-                <div class="player player-confirmed">
-                  <span class="player-name">B. Kamungo <span class="player-club" title="FC Dallas">DAL</span></span>
-                  <span class="player-note">Missing Fixture: International duty</span>
                 </div>
                 <div class="player">
                   <span class="player-name">N. Burgess</span>
@@ -887,10 +908,12 @@
             
           </div>
           <div class="players">
+                <div class="team-group">Austin</div>
                 <div class="player">
                   <span class="player-name">B. Vázquez Toledo</span>
                   <span class="player-note">2024-11-19 Nations League (bench)</span>
                 </div>
+                <div class="team-group">San Diego</div>
                 <div class="player">
                   <span class="player-name">I. Murphy</span>
                   <span class="player-note">2024-01-20 Friendlies (bench)</span>
@@ -912,8 +935,9 @@
             
           </div>
           <div class="players">
+                <div class="team-group">Houston Dynamo</div>
                 <div class="player">
-                  <span class="player-name">D. McGuire <span class="player-club" title="Houston Dynamo">HOU</span></span>
+                  <span class="player-name">D. McGuire</span>
                   <span class="player-note">2024-01-20 Friendlies (bench)</span>
                 </div></div>
         </div>
@@ -935,33 +959,35 @@
             
           </div>
           <div class="players">
-                <div class="player">
-                  <span class="player-name">M. Turner <span class="player-club" title="New England Revolution">ENG</span></span>
-                  <span class="player-note">GK#1 · club starter</span>
-                </div>
+                <div class="team-group">Real Salt Lake</div>
                 <div class="player player-confirmed">
-                  <span class="player-name">D. Luna <span class="player-club" title="Real Salt Lake">SAL</span></span>
+                  <span class="player-name">D. Luna</span>
                   <span class="player-note">Missing Fixture: Knee Injury</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">D. Yedlin <span class="player-club" title="Real Salt Lake">SAL</span></span>
+                  <span class="player-name">D. Yedlin</span>
                   <span class="player-note">2023-07-12 Gold Cup (bench)</span>
+                </div>
+                <div class="player player-out">
+                  <span class="player-name">C. Somto Eneli</span>
+                  <span class="player-note">Out / not featuring</span>
+                </div>
+                <div class="team-group">New England Revolution</div>
+                <div class="player">
+                  <span class="player-name">M. Turner</span>
+                  <span class="player-note">GK#1 · club starter</span>
                 </div>
                 <div class="player player-confirmed">
                   <span class="player-name">P. Miller</span>
                   <span class="player-note">Missing Fixture: International duty</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">J. Yueill <span class="player-club" title="New England Revolution">ENG</span></span>
+                  <span class="player-name">J. Yueill</span>
                   <span class="player-note">2023-07-12 Gold Cup (bench)</span>
                 </div>
                 <div class="player">
-                  <span class="player-name">J. Wynder <span class="player-club" title="New England Revolution">ENG</span></span>
+                  <span class="player-name">J. Wynder</span>
                   <span class="player-note">2023-04-20 Friendlies (bench)</span>
-                </div>
-                <div class="player player-out">
-                  <span class="player-name">C. Somto Eneli <span class="player-club" title="Real Salt Lake">SAL</span></span>
-                  <span class="player-note">Out / not featuring</span>
                 </div></div>
         </div>
       </article>
@@ -982,10 +1008,7 @@
             
           </div>
           <div class="players">
-                <div class="player">
-                  <span class="player-name">S. Johnson <span class="player-club" title="DC United">UNI</span></span>
-                  <span class="player-note">GK#3 · club starter</span>
-                </div>
+                <div class="team-group">Vancouver Whitecaps</div>
                 <div class="player">
                   <span class="player-name">B. White</span>
                   <span class="player-note">2025-07-06 Gold Cup (bench)</span>
@@ -997,6 +1020,11 @@
                 <div class="player">
                   <span class="player-name">E. Sabbi</span>
                   <span class="player-note">2023-01-29 Friendlies (bench)</span>
+                </div>
+                <div class="team-group">DC United</div>
+                <div class="player">
+                  <span class="player-name">S. Johnson</span>
+                  <span class="player-note">GK#3 · club starter</span>
                 </div></div>
         </div>
       </article>
@@ -1015,10 +1043,7 @@
             
           </div>
           <div class="players">
-                <div class="player">
-                  <span class="player-name">P. Aaronson <span class="player-club" title="Colorado Rapids">COL</span></span>
-                  <span class="player-note">2025-07-02 Gold Cup (bench)</span>
-                </div>
+                <div class="team-group">Los Angeles Galaxy</div>
                 <div class="player">
                   <span class="player-name">A. Long</span>
                   <span class="player-note">2023-07-12 Gold Cup</span>
@@ -1027,17 +1052,22 @@
                   <span class="player-name">T. Tillman</span>
                   <span class="player-note">2025-11-19 Friendlies</span>
                 </div>
-                <div class="player player-confirmed">
-                  <span class="player-name">Z. Steffen <span class="player-club" title="Colorado Rapids">COL</span></span>
-                  <span class="player-note">Missing Fixture: Shoulder Injury</span>
-                </div>
-                <div class="player">
-                  <span class="player-name">J. Atencio <span class="player-club" title="Colorado Rapids">COL</span></span>
-                  <span class="player-note">2024-01-20 Friendlies</span>
-                </div>
                 <div class="player">
                   <span class="player-name">N. Burgess</span>
                   <span class="player-note">2024-01-20 Friendlies (bench)</span>
+                </div>
+                <div class="team-group">Colorado Rapids</div>
+                <div class="player">
+                  <span class="player-name">P. Aaronson</span>
+                  <span class="player-note">2025-07-02 Gold Cup (bench)</span>
+                </div>
+                <div class="player player-confirmed">
+                  <span class="player-name">Z. Steffen</span>
+                  <span class="player-note">Missing Fixture: Shoulder Injury</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">J. Atencio</span>
+                  <span class="player-note">2024-01-20 Friendlies</span>
                 </div></div>
         </div>
       </article>
@@ -1056,8 +1086,9 @@
             
           </div>
           <div class="players">
+                <div class="team-group">San Jose Earthquakes</div>
                 <div class="player player-confirmed">
-                  <span class="player-name">D. Jones <span class="player-club" title="San Jose Earthquakes">JOS</span></span>
+                  <span class="player-name">D. Jones</span>
                   <span class="player-note">Missing Fixture: Achilles Tendon Injury</span>
                 </div>
                 <div class="player">
