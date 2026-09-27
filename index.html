@@ -28,10 +28,8 @@
     font-size: 28px; margin: 0 0 4px; letter-spacing: -0.01em;
   }
   .subhead { color: var(--dim); font-size: 14px; margin: 0; }
-  .legend { color: var(--dim); font-size: 12.5px; margin: 8px 0 0; }
-  .legend strong { color: var(--ink); }
-  .legend-confirmed { color: var(--confirmed); font-weight: 700; }
   .generated { color: var(--dim); font-size: 12px; margin-top: 6px; }
+  .footnote { color: var(--dim); font-size: 13px; margin: 24px 4px 0; }
 
   .card {
     display: flex; gap: 14px; padding: 18px 4px;
@@ -40,8 +38,8 @@
   .card:first-child { padding-top: 4px; }
   .card-rank {
     font-family: 'Archivo Narrow', sans-serif; font-weight: 700;
-    font-size: 15px; color: var(--dim); flex-shrink: 0; width: 24px;
-    padding-top: 3px;
+    font-size: 38px; line-height: 1; color: var(--accent);
+    flex-shrink: 0; width: 50px;
   }
   .card-body { flex: 1; min-width: 0; }
   .card-top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
@@ -136,15 +134,11 @@
     <header>
       <h1>Pool Watch</h1>
       <p class="subhead">Every match today with a USMNT pool player</p>
-      <p class="legend">Last seen / <strong>match status</strong> —
-        <span class="legend-confirmed">bold green</span> means confirmed
-        for today; plain text is a predictive estimate. The number is
-        relevance against today's top match (100).</p>
       <div class="sort" role="group" aria-label="Sort matches">
         <button type="button" data-sort="time" aria-pressed="true">Kickoff</button>
         <button type="button" data-sort="rank" aria-pressed="false">Relevance</button>
       </div>
-      <p class="generated" id="generated" data-utc="2026-09-27T21:08+00:00">Updated 2026-09-27T21:08+00:00 UTC</p>
+      <p class="generated" id="generated" data-utc="2026-09-27T21:50+00:00">Updated 2026-09-27T21:50+00:00 UTC</p>
     </header>
     <main id="list" class="by-time">
       <h3 class="slot"><time data-utc="2026-09-27T20:00:00+00:00">2026-09-27T20:00:00+00:00</time></h3>
@@ -222,6 +216,7 @@
                 </div></div>
         </div>
       </article></main>
+    <p class="footnote">100 is today's best match — scores reset daily and aren't comparable across days.</p>
   </div>
   <script>
     // Kickoff times and the "generated" timestamp ship as UTC in data-utc
