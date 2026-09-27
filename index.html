@@ -7,30 +7,30 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0d1117; --panel: #151b23; --line: #232b36;
-    --ink: #e8ecf1; --dim: #8b98a8;
-    --floodlight: #f2b544; --pitch: #3fb28f; --alert: #e06c5a;
+    --bg: #EDEAE2; --panel: #1C1C1A; --line: #c9c4b6;
+    --ink: #1C1C1A; --dim: #6b6660;
+    --accent: #A13D2C; --confirmed: #2E4FA3; --alert: #A13D2C;
   }
   * { box-sizing: border-box; }
   html { scroll-padding-top: env(safe-area-inset-top, 0px); }
   body {
     margin: 0; background: var(--bg); color: var(--ink);
-    font-family: Manrope, -apple-system, sans-serif;
+    font-family: 'Source Serif 4', Georgia, serif;
     padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
   }
   .wrap { max-width: 640px; margin: 0 auto; padding: 28px 18px 60px; }
   header { margin-bottom: 22px; }
   h1 {
-    font-family: "Space Grotesk", sans-serif; font-weight: 700;
+    font-family: 'Archivo Narrow', sans-serif; font-weight: 700;
     font-size: 28px; margin: 0 0 4px; letter-spacing: -0.01em;
   }
   .subhead { color: var(--dim); font-size: 14px; margin: 0; }
   .legend { color: var(--dim); font-size: 12.5px; margin: 8px 0 0; }
   .legend strong { color: var(--ink); }
-  .legend-confirmed { color: var(--pitch); font-weight: 700; }
+  .legend-confirmed { color: var(--confirmed); font-weight: 700; }
   .generated { color: var(--dim); font-size: 12px; margin-top: 6px; }
 
   .card {
@@ -39,20 +39,20 @@
   }
   .card:first-child { padding-top: 4px; }
   .card-rank {
-    font-family: "Space Grotesk", sans-serif; font-weight: 700;
+    font-family: 'Archivo Narrow', sans-serif; font-weight: 700;
     font-size: 15px; color: var(--dim); flex-shrink: 0; width: 24px;
     padding-top: 3px;
   }
   .card-body { flex: 1; min-width: 0; }
   .card-top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
   .card-title {
-    font-family: "Space Grotesk", sans-serif; font-weight: 700;
+    font-family: 'Archivo Narrow', sans-serif; font-weight: 700;
     font-size: 18px; margin: 0; line-height: 1.25;
   }
   .card-score {
-    font-family: "Space Grotesk", sans-serif; font-weight: 700;
+    font-family: 'Archivo Narrow', sans-serif; font-weight: 700;
     font-size: 20px; font-variant-numeric: tabular-nums;
-    color: var(--floodlight); flex-shrink: 0;
+    color: var(--accent); flex-shrink: 0;
   }
   .card-meta {
     display: flex; flex-wrap: wrap; gap: 4px 10px;
@@ -63,7 +63,7 @@
     font-size: 12px; font-weight: 700; padding: 1px 7px;
     border-radius: 3px;
   }
-  .tag-disrupted { background: var(--alert); color: #1a0e0b; }
+  .tag-disrupted { background: var(--alert); color: var(--bg); }
 
   .players { margin-top: 10px; display: flex; flex-direction: column; gap: 5px; }
   .team-group {
@@ -85,11 +85,11 @@
   /* Confirmed matchday status (starting XI / injury feed), vs. a predictive
      estimate — bold is the whole signal, deliberately not a color, so it
      reads clearly even to a visitor who never sees the legend text. */
-  .player-confirmed .player-name { font-weight: 700; color: var(--pitch); }
-  .player-confirmed .player-note { color: var(--pitch); font-weight: 500; }
+  .player-confirmed .player-name { font-weight: 700; color: var(--confirmed); }
+  .player-confirmed .player-note { color: var(--confirmed); font-weight: 500; }
 
-  .tag-live { background: var(--pitch); color: #06251c; }
-  .tag-final { background: var(--line); color: var(--dim); }
+  .tag-live { background: var(--confirmed); color: var(--bg); }
+  .tag-final { background: var(--line); color: #4f4a44; }
   .card-finished { opacity: 0.5; }
 
   /* Kickoff-slot headers group simultaneous matches. Only shown in the
@@ -98,8 +98,8 @@
      order. */
   .slot {
     display: flex; align-items: baseline; gap: 10px;
-    font-family: "Space Grotesk", sans-serif; font-weight: 700;
-    font-size: 15px; color: var(--floodlight);
+    font-family: 'Archivo Narrow', sans-serif; font-weight: 700;
+    font-size: 15px; color: var(--accent);
     margin: 22px 0 0; padding: 0 4px 6px;
     border-bottom: 1px solid var(--line);
   }
@@ -116,12 +116,12 @@
     background: transparent; color: var(--dim); border: 0; padding: 6px 14px;
   }
   .sort button + button { border-left: 1px solid var(--line); }
-  .sort button[aria-pressed="true"] { background: var(--panel); color: var(--ink); }
-  .sort button:focus-visible { outline: 2px solid var(--floodlight); outline-offset: -2px; }
+  .sort button[aria-pressed="true"] { background: var(--panel); color: var(--bg); }
+  .sort button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 
   .empty { padding: 60px 4px; text-align: center; }
   .empty-headline {
-    font-family: "Space Grotesk", sans-serif; font-weight: 700;
+    font-family: 'Archivo Narrow', sans-serif; font-weight: 700;
     font-size: 22px; margin: 0 0 8px;
   }
   .empty-sub { color: var(--dim); font-size: 14px; margin: 0; }
@@ -144,7 +144,7 @@
         <button type="button" data-sort="time" aria-pressed="true">Kickoff</button>
         <button type="button" data-sort="rank" aria-pressed="false">Relevance</button>
       </div>
-      <p class="generated" id="generated" data-utc="2026-09-27T20:10+00:00">Updated 2026-09-27T20:10+00:00 UTC</p>
+      <p class="generated" id="generated" data-utc="2026-09-27T21:08+00:00">Updated 2026-09-27T21:08+00:00 UTC</p>
     </header>
     <main id="list" class="by-time">
       <h3 class="slot"><time data-utc="2026-09-27T20:00:00+00:00">2026-09-27T20:00:00+00:00</time></h3>
@@ -166,7 +166,7 @@
                 <div class="team-group">Racing Club</div>
                 <div class="player">
                   <span class="player-name">M. Miljevic</span>
-                  <span class="player-note">2025-01-23 Friendlies (bench)</span>
+                  <span class="player-note">predicted — 2025-01-23 Friendlies (bench)</span>
                 </div></div>
         </div>
       </article>
@@ -190,11 +190,11 @@
                 <div class="team-group">Columbus Crew</div>
                 <div class="player">
                   <span class="player-name">P. Schulte</span>
-                  <span class="player-note">GK#4 · club starter</span>
+                  <span class="player-note">predicted — GK#4 · club starter</span>
                 </div>
                 <div class="player">
                   <span class="player-name">S. Zawadzki</span>
-                  <span class="player-note">2024-01-20 Friendlies</span>
+                  <span class="player-note">predicted — 2024-01-20 Friendlies</span>
                 </div></div>
         </div>
       </article>
@@ -218,7 +218,7 @@
                 <div class="team-group">Club America</div>
                 <div class="player">
                   <span class="player-name">A. Zendejas Saavedra</span>
-                  <span class="player-note">2026-07-07 World Cup (bench)</span>
+                  <span class="player-note">predicted — 2026-07-07 World Cup (bench)</span>
                 </div></div>
         </div>
       </article></main>
