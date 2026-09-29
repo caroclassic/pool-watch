@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pool Watch — USMNT today</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pool Watch — USMNT pool matches</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +15,7 @@
     --accent: #A13D2C; --confirmed: #2E4FA3; --alert: #A13D2C;
   }
   * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
   html { scroll-padding-top: env(safe-area-inset-top, 0px); }
   body {
     margin: 0; background: var(--bg); color: var(--ink);
@@ -22,7 +23,7 @@
     padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
   }
   .wrap { max-width: 640px; margin: 0 auto; padding: 28px 18px 60px; }
-  header { margin-bottom: 22px; }
+  header { margin-bottom: 14px; }
   h1 {
     font-family: 'Archivo Narrow', sans-serif; font-weight: 700;
     font-size: 28px; margin: 0 0 4px; letter-spacing: -0.01em;
@@ -31,11 +32,73 @@
   .generated { color: var(--dim); font-size: 12px; margin-top: 6px; }
   .footnote { color: var(--dim); font-size: 13px; margin: 24px 4px 0; }
 
-  .card {
-    display: flex; gap: 14px; padding: 18px 4px;
-    border-bottom: 1px solid var(--line);
+  /* ---- day navigation ---- */
+  .daynav { display: flex; align-items: center; gap: 6px; margin: 16px 0 0; }
+  .nav-arrow {
+    font: inherit; font-size: 22px; line-height: 1; cursor: pointer;
+    background: transparent; color: var(--ink);
+    border: 1px solid var(--line); border-radius: 6px;
+    width: 34px; height: 54px; flex-shrink: 0; padding: 0;
   }
-  .card:first-child { padding-top: 4px; }
+  .nav-arrow:disabled { opacity: 0.3; cursor: default; }
+  .days {
+    display: flex; gap: 6px; flex: 1; min-width: 0; padding: 2px;
+    overflow-x: auto; scrollbar-width: none;
+  }
+  .days::-webkit-scrollbar { display: none; }
+  .day-pill {
+    font: inherit; cursor: pointer; flex: 0 0 auto; min-width: 58px;
+    display: flex; flex-direction: column; align-items: center; gap: 1px;
+    padding: 6px 8px; background: transparent; color: var(--dim);
+    border: 1px solid var(--line); border-radius: 6px;
+  }
+  .day-pill .dow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .day-pill .dnum {
+    font-family: 'Archivo Narrow', sans-serif; font-weight: 700;
+    font-size: 19px; line-height: 1.1; color: var(--ink);
+  }
+  .day-pill .dcount { font-size: 11px; font-variant-numeric: tabular-nums; }
+  .day-pill.quiet { opacity: 0.55; }
+  .day-pill[aria-selected="true"] {
+    background: var(--panel); border-color: var(--panel); color: var(--bg); opacity: 1;
+  }
+  .day-pill[aria-selected="true"] .dnum { color: var(--bg); }
+  .nav-arrow:focus-visible, .day-pill:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 1px;
+  }
+  .day-title {
+    font-family: 'Archivo Narrow', sans-serif; font-weight: 500;
+    font-size: 15px; color: var(--dim); margin: 20px 4px 10px;
+  }
+
+  /* ---- tools row (sort + expand all) ---- */
+  .tools { display: flex; align-items: center; gap: 14px; margin-top: 12px; flex-wrap: wrap; }
+  .sort { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .sort button {
+    font: inherit; font-size: 13px; font-weight: 500; cursor: pointer;
+    background: transparent; color: var(--dim); border: 0; padding: 6px 14px;
+  }
+  .sort button + button { border-left: 1px solid var(--line); }
+  .sort button[aria-pressed="true"] { background: var(--panel); color: var(--bg); }
+  .sort button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .link-btn {
+    font: inherit; font-size: 13px; color: var(--dim); background: none;
+    border: 0; padding: 6px 0; cursor: pointer; text-decoration: underline;
+  }
+
+  /* ---- match card: glanceable summary row, players on demand ---- */
+  .card { display: block; border-bottom: 1px solid var(--line); }
+  .card > summary {
+    display: flex; gap: 14px; padding: 18px 4px; cursor: pointer;
+    list-style: none; -webkit-tap-highlight-color: transparent;
+  }
+  .card > summary::-webkit-details-marker { display: none; }
+  .card > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .list > .card:first-child > summary { padding-top: 4px; }
+  .slot + .card > summary { padding-top: 14px; }
   .card-rank {
     font-family: 'Archivo Narrow', sans-serif; font-weight: 700;
     font-size: 38px; line-height: 1; color: var(--accent);
@@ -57,13 +120,37 @@
     font-size: 13px; color: var(--dim); margin-top: 4px;
   }
   .kickoff { font-variant-numeric: tabular-nums; color: var(--ink); }
-  .tag {
-    font-size: 12px; font-weight: 700; padding: 1px 7px;
-    border-radius: 3px;
-  }
+  .tag { font-size: 12px; font-weight: 700; padding: 1px 7px; border-radius: 3px; }
   .tag-disrupted { background: var(--alert); color: var(--bg); }
+  .tag-live { background: var(--confirmed); color: var(--bg); }
+  .tag-final { background: var(--line); color: #4f4a44; }
+  .card-finished { opacity: 0.5; }
 
-  .players { margin-top: 10px; display: flex; flex-direction: column; gap: 5px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
+  .chip {
+    font-size: 12.5px; padding: 2px 9px; max-width: 100%;
+    border: 1px solid var(--line); border-radius: 999px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  /* Confirmed matchday status vs a predictive estimate: same convention as
+     the expanded rows below — blue + bold, deliberately not the only cue
+     (the expanded row also carries the note text). */
+  .chip-confirmed { font-weight: 700; color: var(--confirmed); border-color: var(--confirmed); }
+  .chip-more { color: var(--dim); border-style: dashed; }
+
+  .chev { flex-shrink: 0; width: 16px; align-self: center; color: var(--dim); transition: transform 0.15s; }
+  .chev::before {
+    content: ""; display: block; width: 7px; height: 7px; margin: 0 auto;
+    border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+  }
+  .card[open] .chev { transform: rotate(180deg); }
+
+  .players {
+    display: flex; flex-direction: column; gap: 5px;
+    padding: 0 4px 16px 68px;
+  }
+  .by-time .players { padding-left: 4px; }
   .team-group {
     font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
     text-transform: uppercase; color: var(--dim);
@@ -80,15 +167,8 @@
   .player-more .player-note { text-align: left; }
   .player-out { opacity: 0.55; }
   .player-out .player-name { text-decoration: line-through; text-decoration-color: var(--line); }
-  /* Confirmed matchday status (starting XI / injury feed), vs. a predictive
-     estimate — bold is the whole signal, deliberately not a color, so it
-     reads clearly even to a visitor who never sees the legend text. */
   .player-confirmed .player-name { font-weight: 700; color: var(--confirmed); }
   .player-confirmed .player-note { color: var(--confirmed); font-weight: 500; }
-
-  .tag-live { background: var(--confirmed); color: var(--bg); }
-  .tag-final { background: var(--line); color: #4f4a44; }
-  .card-finished { opacity: 0.5; }
 
   /* Kickoff-slot headers group simultaneous matches. Only shown in the
      kickoff sort; the relevance sort is a flat ranked list. The rank number
@@ -103,21 +183,10 @@
   }
   .slot:first-child { margin-top: 0; }
   .slot-count { color: var(--dim); font-weight: 500; font-size: 12.5px; }
-  .slot + .card { padding-top: 14px; }
   .by-time .card-rank { display: none; }
   .by-rank .slot { display: none; }
 
-  .sort { display: inline-flex; margin-top: 12px;
-    border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
-  .sort button {
-    font: inherit; font-size: 13px; font-weight: 500; cursor: pointer;
-    background: transparent; color: var(--dim); border: 0; padding: 6px 14px;
-  }
-  .sort button + button { border-left: 1px solid var(--line); }
-  .sort button[aria-pressed="true"] { background: var(--panel); color: var(--bg); }
-  .sort button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-
-  .empty { padding: 60px 4px; text-align: center; }
+  .empty { padding: 50px 4px; text-align: center; }
   .empty-headline {
     font-family: 'Archivo Narrow', sans-serif; font-weight: 700;
     font-size: 22px; margin: 0 0 8px;
@@ -129,31 +198,80 @@
   }
 </style>
 </head>
-<body>
+<body data-today="2026-09-29">
   <div class="wrap">
     <header>
       <h1>Pool Watch</h1>
-      <p class="subhead">Every match today with a USMNT pool player</p>
-      
-      <p class="generated" id="generated" data-utc="2026-09-29T10:54+00:00">Updated 2026-09-29T10:54+00:00 UTC</p>
+      <p class="subhead">Every match with a USMNT pool player</p>
+      <nav class="daynav" aria-label="Choose a day">
+        <button type="button" class="nav-arrow" id="prev-day" aria-label="Previous day">‹</button>
+        <div class="days" role="tablist"><button type="button" class="day-pill" role="tab" data-date="2026-09-29" aria-selected="false"><span class="dow">Today</span><span class="dnum">29</span><span class="dcount">2</span></button><button type="button" class="day-pill" role="tab" data-date="2026-09-30" aria-selected="false"><span class="dow">Wed</span><span class="dnum">30</span><span class="dcount">2</span></button><button type="button" class="day-pill" role="tab" data-date="2026-10-01" aria-selected="false"><span class="dow">Thu</span><span class="dnum">1</span><span class="dcount">2</span></button><button type="button" class="day-pill" role="tab" data-date="2026-10-02" aria-selected="false"><span class="dow">Fri</span><span class="dnum">2</span><span class="dcount">1</span></button><button type="button" class="day-pill" role="tab" data-date="2026-10-03" aria-selected="false"><span class="dow">Sat</span><span class="dnum">3</span><span class="dcount">6</span></button></div>
+        <button type="button" class="nav-arrow" id="next-day" aria-label="Next day">›</button>
+      </nav>
+      <div class="tools"><div class="sort" role="group" aria-label="Sort matches">
+          <button type="button" data-sort="time" aria-pressed="true">Kickoff</button>
+          <button type="button" data-sort="rank" aria-pressed="false">Relevance</button>
+        </div><button type="button" class="link-btn" id="expand-all">Expand all</button></div>
+      <p class="generated" id="generated" data-utc="2026-09-29T17:59+00:00">Updated 2026-09-29T17:59+00:00 UTC</p>
     </header>
-    <main id="list" class="by-time">
+    <main id="list">
+    <section class="day" data-date="2026-09-29" hidden>
+      <h2 class="day-title">Tuesday, Sep 29 · 2 matches</h2>
+      <div class="list by-time">
+      <h3 class="slot"><time data-utc="2026-09-29T11:00:00+00:00">2026-09-29T11:00:00+00:00</time></h3>
+      <details class="card card-finished" data-rank="2">
+        <summary>
+          <div class="card-rank">02</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">Netherlands U17 vs United States U17</h2>
+              <div class="card-score" style="--pct:2">2</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-09-29T11:00:00+00:00">2026-09-29T11:00:00+00:00</time>
+              <span class="dim">Friendlies</span>
+              <span class="dim">—</span>
+              <span class="tag tag-final">Full time</span>
+            </div>
+            <div class="chips"><span class="chip">J. Hall</span><span class="chip">C. Sullivan</span><span class="chip">M. Albert</span></div>
+          </div>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
+                <div class="team-group">United States U17</div>
+                <div class="player">
+                  <span class="player-name">J. Hall</span>
+                  <span class="player-note">youth squad</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">C. Sullivan</span>
+                  <span class="player-note">youth squad</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">M. Albert</span>
+                  <span class="player-note">youth squad</span>
+                </div></div>
+      </details>
       <h3 class="slot"><time data-utc="2026-09-30T00:00:00+00:00">2026-09-30T00:00:00+00:00</time></h3>
-
-      <article class="card" data-rank="1">
-        <div class="card-rank">01</div>
-        <div class="card-body">
-          <div class="card-top">
-            <h2 class="card-title">USA vs Chile</h2>
-            <div class="card-score" style="--pct:100">100</div>
+      <details class="card" data-rank="1">
+        <summary>
+          <div class="card-rank">01</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">USA vs Chile</h2>
+              <div class="card-score" style="--pct:100">100</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-09-30T00:00:00+00:00">2026-09-30T00:00:00+00:00</time>
+              <span class="dim">Friendlies</span>
+              <span class="dim">—</span>
+              
+            </div>
+            <div class="chips"><span class="chip">M. Tillman</span><span class="chip">A. Freeman</span><span class="chip">T. Adams</span><span class="chip chip-more">+21</span></div>
           </div>
-          <div class="card-meta">
-            <time class="kickoff" data-utc="2026-09-30T00:00:00+00:00">2026-09-30T00:00:00+00:00</time>
-            <span class="dim">Friendlies</span>
-            <span class="dim">—</span>
-            
-          </div>
-          <div class="players">
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
                 <div class="team-group">USA</div>
                 <div class="player">
                   <span class="player-name">M. Tillman</span>
@@ -251,59 +369,556 @@
                   <span class="player-name">F. Westfield</span>
                   <span class="player-note">in current window</span>
                 </div></div>
-        </div>
-      </article></main>
-    <p class="footnote">100 is today's best match — scores reset daily and aren't comparable across days.</p>
+      </details></div>
+    </section>
+    <section class="day" data-date="2026-09-30" hidden>
+      <h2 class="day-title">Wednesday, Sep 30 · 2 matches</h2>
+      <div class="list by-time">
+      <h3 class="slot"><time data-utc="2026-09-30T23:30:00+00:00">2026-09-30T23:30:00+00:00</time><span class="slot-count">2 matches</span></h3>
+      <details class="card" data-rank="1">
+        <summary>
+          <div class="card-rank">01</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">New York Red Bulls vs St. Louis City</h2>
+              <div class="card-score" style="--pct:100">100</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-09-30T23:30:00+00:00">2026-09-30T23:30:00+00:00</time>
+              <span class="dim">Major League Soccer</span>
+              <span class="dim">MLS Season Pass (Apple)</span>
+              
+            </div>
+            <div class="chips"><span class="chip">E. Horvath</span><span class="chip">C. Cowell</span><span class="chip">J. Hall</span><span class="chip chip-more">+2</span></div>
+          </div>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
+                <div class="team-group">New York Red Bulls</div>
+                <div class="player">
+                  <span class="player-name">E. Horvath</span>
+                  <span class="player-note">predicted — GK#6 · club starter</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">C. Cowell</span>
+                  <span class="player-note">predicted — 2024-11-19 Nations League (bench)</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">J. Hall</span>
+                  <span class="player-note">predicted — 2026-09-26 Friendlies (bench)</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">A. Mehmeti</span>
+                  <span class="player-note">predicted — 2026-09-26 Friendlies (bench)</span>
+                </div>
+                <div class="team-group">St. Louis City</div>
+                <div class="player">
+                  <span class="player-name">D. Downs</span>
+                  <span class="player-note">predicted — 2026-09-26 Friendlies (bench)</span>
+                </div></div>
+      </details>
+      <details class="card" data-rank="2">
+        <summary>
+          <div class="card-rank">02</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">DC United vs SC Paderborn 07</h2>
+              <div class="card-score" style="--pct:54">54</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-09-30T23:30:00+00:00">2026-09-30T23:30:00+00:00</time>
+              <span class="dim">Friendlies Clubs</span>
+              <span class="dim">—</span>
+              
+            </div>
+            <div class="chips"><span class="chip">S. Johnson</span></div>
+          </div>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
+                <div class="team-group">DC United</div>
+                <div class="player">
+                  <span class="player-name">S. Johnson</span>
+                  <span class="player-note">predicted — GK#3 · club starter</span>
+                </div></div>
+      </details></div>
+    </section>
+    <section class="day" data-date="2026-10-01" hidden>
+      <h2 class="day-title">Thursday, Oct 1 · 2 matches</h2>
+      <div class="list by-time">
+      <h3 class="slot"><time data-utc="2026-10-01T16:00:00+00:00">2026-10-01T16:00:00+00:00</time></h3>
+      <details class="card" data-rank="2">
+        <summary>
+          <div class="card-rank">02</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">Brazil U20 vs United States U20</h2>
+              <div class="card-score" style="--pct:51">51</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-10-01T16:00:00+00:00">2026-10-01T16:00:00+00:00</time>
+              <span class="dim">Friendlies</span>
+              <span class="dim">—</span>
+              
+            </div>
+            <div class="chips"><span class="chip">D. Kochen</span><span class="chip">Z. Gozo</span><span class="chip">N. Tsakiris</span></div>
+          </div>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
+                <div class="team-group">United States U20</div>
+                <div class="player">
+                  <span class="player-name">D. Kochen</span>
+                  <span class="player-note">youth squad</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">Z. Gozo</span>
+                  <span class="player-note">youth squad</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">N. Tsakiris</span>
+                  <span class="player-note">youth squad</span>
+                </div></div>
+      </details>
+      <h3 class="slot"><time data-utc="2026-10-02T01:30:00+00:00">2026-10-02T01:30:00+00:00</time></h3>
+      <details class="card" data-rank="1">
+        <summary>
+          <div class="card-rank">01</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">Seattle Sounders vs Sporting Kansas City</h2>
+              <div class="card-score" style="--pct:100">100</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-10-02T01:30:00+00:00">2026-10-02T01:30:00+00:00</time>
+              <span class="dim">Major League Soccer</span>
+              <span class="dim">MLS Season Pass (Apple)</span>
+              
+            </div>
+            <div class="chips"><span class="chip">C. Roldan</span><span class="chip">J. Ferreira Castro</span><span class="chip">J. Morris</span><span class="chip chip-more">+1</span></div>
+          </div>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
+                <div class="team-group">Seattle Sounders</div>
+                <div class="player">
+                  <span class="player-name">C. Roldan</span>
+                  <span class="player-note">predicted — 2026-06-19 World Cup (bench)</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">J. Ferreira Castro</span>
+                  <span class="player-note">predicted — 2023-07-12 Gold Cup</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">J. Morris</span>
+                  <span class="player-note">predicted — 2023-07-12 Gold Cup (bench)</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">P. Arriola Hendricks</span>
+                  <span class="player-note">predicted — 2023-01-29 Friendlies</span>
+                </div>
+                <div class="player player-out">
+                  <span class="player-name">C. Clark</span>
+                  <span class="player-note">Out / not featuring</span>
+                </div></div>
+      </details></div>
+    </section>
+    <section class="day" data-date="2026-10-02" hidden>
+      <h2 class="day-title">Friday, Oct 2 · 1 match</h2>
+      <div class="list by-time">
+      <h3 class="slot"><time data-utc="2026-10-02T17:00:00+00:00">2026-10-02T17:00:00+00:00</time></h3>
+      <details class="card" data-rank="1">
+        <summary>
+          <div class="card-rank">01</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">Laval vs Rennes</h2>
+              <div class="card-score" style="--pct:100">100</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-10-02T17:00:00+00:00">2026-10-02T17:00:00+00:00</time>
+              <span class="dim">Friendlies Clubs</span>
+              <span class="dim">—</span>
+              
+            </div>
+            <div class="chips"><span class="chip">B. Reynolds Jr.</span></div>
+          </div>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
+                <div class="team-group">Rennes</div>
+                <div class="player">
+                  <span class="player-name">B. Reynolds Jr.</span>
+                  <span class="player-note">predicted — 2023-07-12 Gold Cup</span>
+                </div></div>
+      </details></div>
+    </section>
+    <section class="day" data-date="2026-10-03" hidden>
+      <h2 class="day-title">Saturday, Oct 3 · 6 matches</h2>
+      <div class="list by-time">
+      <h3 class="slot"><time data-utc="2026-10-03T11:00:00+00:00">2026-10-03T11:00:00+00:00</time></h3>
+      <details class="card" data-rank="5">
+        <summary>
+          <div class="card-rank">05</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">Waldhof Mannheim vs FSV Mainz 05</h2>
+              <div class="card-score" style="--pct:0">0</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-10-03T11:00:00+00:00">2026-10-03T11:00:00+00:00</time>
+              <span class="dim">Friendlies Clubs</span>
+              <span class="dim">—</span>
+              
+            </div>
+            <div class="chips"><span class="chip">L. Maloney</span></div>
+          </div>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
+                <div class="team-group">FSV Mainz 05</div>
+                <div class="player">
+                  <span class="player-name">L. Maloney</span>
+                  <span class="player-note">predicted — 2023-11-21 Nations League (bench)</span>
+                </div></div>
+      </details>
+      <h3 class="slot"><time data-utc="2026-10-03T12:00:00+00:00">2026-10-03T12:00:00+00:00</time></h3>
+      <details class="card" data-rank="3">
+        <summary>
+          <div class="card-rank">03</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">Holstein Kiel vs Viborg</h2>
+              <div class="card-score" style="--pct:4">4</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-10-03T12:00:00+00:00">2026-10-03T12:00:00+00:00</time>
+              <span class="dim">Friendlies Clubs</span>
+              <span class="dim">—</span>
+              
+            </div>
+            <div class="chips"><span class="chip">J. Tolkin</span></div>
+          </div>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
+                <div class="team-group">Holstein Kiel</div>
+                <div class="player">
+                  <span class="player-name">J. Tolkin</span>
+                  <span class="player-note">predicted — 2025-11-19 Friendlies</span>
+                </div></div>
+      </details>
+      <h3 class="slot"><time data-utc="2026-10-03T13:30:00+00:00">2026-10-03T13:30:00+00:00</time><span class="slot-count">2 matches</span></h3>
+      <details class="card" data-rank="2">
+        <summary>
+          <div class="card-rank">02</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">FC St. Pauli vs Borussia Mönchengladbach</h2>
+              <div class="card-score" style="--pct:8">8</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-10-03T13:30:00+00:00">2026-10-03T13:30:00+00:00</time>
+              <span class="dim">Friendlies Clubs</span>
+              <span class="dim">—</span>
+              
+            </div>
+            <div class="chips"><span class="chip">J. Scally</span></div>
+          </div>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
+                <div class="team-group">Borussia Mönchengladbach</div>
+                <div class="player">
+                  <span class="player-name">J. Scally</span>
+                  <span class="player-note">predicted — 2026-07-07 World Cup (bench)</span>
+                </div></div>
+      </details>
+      <details class="card" data-rank="4">
+        <summary>
+          <div class="card-rank">04</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">VfL Osnabrück vs Djurgardens IF</h2>
+              <div class="card-score" style="--pct:0">0</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-10-03T13:30:00+00:00">2026-10-03T13:30:00+00:00</time>
+              <span class="dim">Friendlies Clubs</span>
+              <span class="dim">—</span>
+              
+            </div>
+            <div class="chips"><span class="chip">J. Gómez Mendoza</span></div>
+          </div>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
+                <div class="team-group">VfL Osnabrück</div>
+                <div class="player">
+                  <span class="player-name">J. Gómez Mendoza</span>
+                  <span class="player-note">predicted — 2023-01-29 Friendlies (bench)</span>
+                </div></div>
+      </details>
+      <h3 class="slot"><time data-utc="2026-10-03T20:00:00+00:00">2026-10-03T20:00:00+00:00</time></h3>
+      <details class="card" data-rank="6">
+        <summary>
+          <div class="card-rank">06</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">Newells Old Boys vs Lanus</h2>
+              <div class="card-score" style="--pct:0">0</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-10-03T20:00:00+00:00">2026-10-03T20:00:00+00:00</time>
+              <span class="dim">Liga Profesional Argentina</span>
+              <span class="dim">—</span>
+              
+            </div>
+            <div class="chips"><span class="chip">A. Soñora</span></div>
+          </div>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
+                <div class="team-group">Newells Old Boys</div>
+                <div class="player">
+                  <span class="player-name">A. Soñora</span>
+                  <span class="player-note">predicted — 2023-07-02 Gold Cup (bench)</span>
+                </div></div>
+      </details>
+      <h3 class="slot"><time data-utc="2026-10-04T02:00:00+00:00">2026-10-04T02:00:00+00:00</time></h3>
+      <details class="card" data-rank="1">
+        <summary>
+          <div class="card-rank">01</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">USA vs Mexico</h2>
+              <div class="card-score" style="--pct:100">100</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-10-04T02:00:00+00:00">2026-10-04T02:00:00+00:00</time>
+              <span class="dim">Friendlies</span>
+              <span class="dim">—</span>
+              
+            </div>
+            <div class="chips"><span class="chip">M. Tillman</span><span class="chip">A. Freeman</span><span class="chip">T. Adams</span><span class="chip chip-more">+21</span></div>
+          </div>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
+                <div class="team-group">USA</div>
+                <div class="player">
+                  <span class="player-name">M. Tillman</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">A. Freeman</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">T. Adams</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">A. Robinson</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">M. Freese</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">S. Berhalter</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">M. Robinson</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">G. Reyna</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">S. Dest</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">Y. Musah</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">A. Trusty</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">D. Downs</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">J. Hall</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">A. Mehmeti</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">G. Campbell</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">D. Kochen</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">P. Miller</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">C. Sullivan</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">Z. Gozo</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">M. Albert</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">J. Ellis</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">N. Pierre</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">B. Sigel Raines</span>
+                  <span class="player-note">in current window</span>
+                </div>
+                <div class="player">
+                  <span class="player-name">F. Westfield</span>
+                  <span class="player-note">in current window</span>
+                </div></div>
+      </details></div>
+    </section>
+    </main>
+    <p class="footnote">100 is that day's best match — scores reset daily and aren't comparable across days.</p>
   </div>
   <script>
-    // Kickoff times and the "generated" timestamp ship as UTC in data-utc
-    // attributes; this converts each to the VIEWER's own local timezone at
-    // render time — the client-side half of the timezone design (server
-    // decides list membership on a fixed reference clock, the browser
-    // decides what the visitor actually reads).
-    document.querySelectorAll('time.kickoff').forEach(el => {
-      const d = new Date(el.dataset.utc);
-      el.textContent = d.toLocaleString(undefined, {
-        weekday: 'short', month: 'short', day: 'numeric',
-        hour: 'numeric', minute: '2-digit'
-      });
-    });
-    document.querySelectorAll('.slot time').forEach(el => {
-      el.textContent = new Date(el.dataset.utc).toLocaleTimeString(undefined, {
-        hour: 'numeric', minute: '2-digit'
-      });
-    });
-
-    // Sort toggle. Everything needed is already in the DOM (data-rank on
-    // each card, slot headers in kickoff order), so this is a client-side
-    // reorder: no extra fetch, nothing for the poller to regenerate.
-    const list = document.getElementById('list');
-    const buttons = document.querySelectorAll('.sort button');
-    if (buttons.length) {
-      const original = Array.from(list.children);
-      const cards = original.filter(el => el.classList.contains('card'));
-      const apply = mode => {
-        const order = mode === 'rank'
-          ? cards.slice().sort((a, b) => a.dataset.rank - b.dataset.rank)
-          : original;
-        order.forEach(el => list.appendChild(el));
-        list.className = 'by-' + mode;
-        buttons.forEach(b => b.setAttribute('aria-pressed', b.dataset.sort === mode));
-      };
-      buttons.forEach(b => b.addEventListener('click', () => {
-        apply(b.dataset.sort);
-        try { localStorage.setItem('poolwatch-sort', b.dataset.sort); } catch (e) {}
-      }));
-      let saved = null;
-      try { saved = localStorage.getItem('poolwatch-sort'); } catch (e) {}
-      if (saved === 'rank') apply('rank');
+(function () {
+  // ---- time display -------------------------------------------------
+  // Kickoff times ship as UTC in data-utc; convert to the VIEWER's local
+  // timezone at render time (the client-side half of the timezone design).
+  // The day nav and the day a match belongs to run on the fixed reference
+  // clock, so a viewer far from US/Eastern can see a match whose local date
+  // differs from its section's date. Only then do we prefix the weekday, so
+  // the common case stays a bare, scannable time.
+  const t = { hour: 'numeric', minute: '2-digit' };
+  document.querySelectorAll('time.kickoff, .slot time').forEach(el => {
+    const d = new Date(el.dataset.utc);
+    const sec = el.closest('section.day');
+    let txt = d.toLocaleTimeString(undefined, t);
+    if (sec && d.toLocaleDateString('en-CA') !== sec.dataset.date) {
+      txt = d.toLocaleDateString(undefined, { weekday: 'short' }) + ' ' + txt;
     }
+    el.textContent = txt;
+  });
 
-    const gen = document.getElementById('generated');
-    const gd = new Date(gen.dataset.utc);
-    gen.textContent = 'Updated ' + gd.toLocaleString(undefined, {
-      hour: 'numeric', minute: '2-digit', hour12: true
+  const gen = document.getElementById('generated');
+  const gd = new Date(gen.dataset.utc);
+  gen.textContent = 'Updated ' + gd.toLocaleString(undefined, {
+    hour: 'numeric', minute: '2-digit', hour12: true
+  });
+
+  // ---- sort toggle (applies to every day's list) ------------------------
+  // Everything needed is already in the DOM (data-rank on each card, slot
+  // headers in kickoff order), so this is a client-side reorder: no fetch,
+  // nothing for the poller to regenerate.
+  const lists = Array.from(document.querySelectorAll('.list')).map(el => ({
+    el,
+    original: Array.from(el.children),
+    cards: Array.from(el.children).filter(c => c.classList.contains('card')),
+  }));
+  const sortBtns = document.querySelectorAll('.sort button');
+  const applySort = mode => {
+    lists.forEach(l => {
+      const order = mode === 'rank'
+        ? l.cards.slice().sort((a, b) => a.dataset.rank - b.dataset.rank)
+        : l.original;
+      order.forEach(el => l.el.appendChild(el));
+      l.el.classList.toggle('by-rank', mode === 'rank');
+      l.el.classList.toggle('by-time', mode !== 'rank');
     });
-  </script>
+    sortBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.sort === mode));
+  };
+  sortBtns.forEach(b => b.addEventListener('click', () => {
+    applySort(b.dataset.sort);
+    try { localStorage.setItem('poolwatch-sort', b.dataset.sort); } catch (e) {}
+  }));
+  let saved = null;
+  try { saved = localStorage.getItem('poolwatch-sort'); } catch (e) {}
+  if (saved === 'rank') applySort('rank');
+
+  // ---- day navigation ---------------------------------------------------
+  const sections = Array.from(document.querySelectorAll('section.day'));
+  const pills = Array.from(document.querySelectorAll('.day-pill'));
+  const prev = document.getElementById('prev-day');
+  const next = document.getElementById('next-day');
+  const expandBtn = document.getElementById('expand-all');
+  const dates = sections.map(s => s.dataset.date);
+  let idx = 0;
+
+  const openCards = () => Array.from(
+    (sections[idx] || document).querySelectorAll('details.card'));
+  const syncExpandLabel = () => {
+    if (!expandBtn) return;
+    const cs = openCards();
+    expandBtn.hidden = cs.length === 0;
+    expandBtn.textContent = cs.length && cs.every(c => c.open)
+      ? 'Collapse all' : 'Expand all';
+  };
+
+  const show = i => {
+    idx = Math.max(0, Math.min(dates.length - 1, i));
+    sections.forEach((s, k) => { s.hidden = k !== idx; });
+    pills.forEach((p, k) => p.setAttribute('aria-selected', k === idx));
+    if (prev) prev.disabled = idx === 0;
+    if (next) next.disabled = idx === dates.length - 1;
+    if (pills[idx]) pills[idx].scrollIntoView({ block: 'nearest', inline: 'center' });
+    // replaceState, not location.hash: stepping through days shouldn't
+    // stack up browser-history entries, but the URL stays shareable.
+    try { history.replaceState(null, '', '#' + dates[idx]); } catch (e) {}
+    syncExpandLabel();
+  };
+
+  if (sections.length) {
+    pills.forEach((p, k) => p.addEventListener('click', () => show(k)));
+    if (prev) prev.addEventListener('click', () => show(idx - 1));
+    if (next) next.addEventListener('click', () => show(idx + 1));
+    document.addEventListener('keydown', e => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.key === 'ArrowLeft') show(idx - 1);
+      else if (e.key === 'ArrowRight') show(idx + 1);
+    });
+    const fromHash = dates.indexOf(location.hash.slice(1));
+    const fromToday = dates.indexOf(document.body.dataset.today);
+    show(fromHash >= 0 ? fromHash : Math.max(0, fromToday));
+  }
+
+  // ---- expand / collapse all (visible day) ------------------------------
+  if (expandBtn) {
+    expandBtn.addEventListener('click', () => {
+      const cs = openCards();
+      const open = !cs.every(c => c.open);
+      cs.forEach(c => { c.open = open; });
+      syncExpandLabel();
+    });
+  }
+  document.addEventListener('toggle', syncExpandLabel, true);
+})();
+</script>
 </body>
 </html>
