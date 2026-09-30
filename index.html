@@ -73,6 +73,7 @@
 
   /* ---- tools row (sort + expand all) ---- */
   .tools { display: flex; align-items: center; gap: 14px; margin-top: 12px; flex-wrap: wrap; }
+  .sort-hint { color: var(--dim); font-size: 12.5px; margin: 6px 0 0; }
   .sort { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
   .sort button {
     font: inherit; font-size: 13px; font-weight: 500; cursor: pointer;
@@ -205,10 +206,10 @@
         <div class="days" role="tablist"><button type="button" class="day-pill" role="tab" data-date="2026-09-30" aria-selected="false"><span class="dow">Today</span><span class="dnum">30</span><span class="dcount">2</span></button><button type="button" class="day-pill" role="tab" data-date="2026-10-01" aria-selected="false"><span class="dow">Thu</span><span class="dnum">1</span><span class="dcount">1</span></button><button type="button" class="day-pill" role="tab" data-date="2026-10-02" aria-selected="false"><span class="dow">Fri</span><span class="dnum">2</span><span class="dcount">1</span></button><button type="button" class="day-pill" role="tab" data-date="2026-10-03" aria-selected="false"><span class="dow">Sat</span><span class="dnum">3</span><span class="dcount">6</span></button><button type="button" class="day-pill" role="tab" data-date="2026-10-04" aria-selected="false"><span class="dow">Sun</span><span class="dnum">4</span><span class="dcount">2</span></button><button type="button" class="day-pill quiet" role="tab" data-date="2026-10-05" aria-selected="false"><span class="dow">Mon</span><span class="dnum">5</span><span class="dcount">–</span></button><button type="button" class="day-pill" role="tab" data-date="2026-10-06" aria-selected="false"><span class="dow">Tue</span><span class="dnum">6</span><span class="dcount">2</span></button></div>
       </nav>
       <div class="tools"><div class="sort" role="group" aria-label="Sort matches">
-          <button type="button" data-sort="time" aria-pressed="true">Kickoff</button>
-          <button type="button" data-sort="rank" aria-pressed="false">Relevance</button>
-        </div><button type="button" class="link-btn" id="expand-all">Expand all</button></div>
-      <p class="generated" id="generated" data-utc="2026-09-30T23:24+00:00">Updated 2026-09-30T23:24+00:00 UTC</p>
+          <button type="button" data-sort="time" aria-pressed="true" title="Earliest kickoff first">Kickoff</button>
+          <button type="button" data-sort="rank" aria-pressed="false" title="Matches where USMNT players are most likely to play first">Relevance</button>
+        </div><button type="button" class="link-btn" id="expand-all">Expand all</button></div><p class="sort-hint" id="sort-hint" aria-live="polite" data-time="Sorted by kickoff time, earliest first." data-rank="Sorted by USMNT relevance — matches where pool players are most likely to play come first.">Sorted by kickoff time, earliest first.</p>
+      <p class="generated" id="generated" data-utc="2026-09-30T23:34+00:00">Updated 2026-09-30T23:34+00:00 UTC</p>
     </header>
     <main id="list">
     <section class="day" data-date="2026-09-30" hidden>
@@ -838,6 +839,7 @@
     cards: Array.from(el.children).filter(c => c.classList.contains('card')),
   }));
   const sortBtns = document.querySelectorAll('.sort button');
+  const sortHint = document.getElementById('sort-hint');
   const applySort = mode => {
     lists.forEach(l => {
       const order = mode === 'rank'
@@ -848,6 +850,7 @@
       l.el.classList.toggle('by-time', mode !== 'rank');
     });
     sortBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.sort === mode));
+    if (sortHint) sortHint.textContent = sortHint.dataset[mode === 'rank' ? 'rank' : 'time'];
   };
   sortBtns.forEach(b => b.addEventListener('click', () => {
     applySort(b.dataset.sort);
