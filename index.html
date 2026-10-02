@@ -31,7 +31,7 @@
   .subhead { color: var(--dim); font-size: 14px; margin: 0; }
   .generated { color: var(--dim); font-size: 12px; margin-top: 6px; }
   .footnote { color: var(--dim); font-size: 13px; margin: 24px 4px 0; }
- 
+
   /* ---- day navigation ---- */
   .daynav { margin: 16px 0 0; }
   /* A week of tiles sharing one row — equal widths, no scrolling, no
@@ -70,7 +70,7 @@
     font-family: 'Archivo Narrow', sans-serif; font-weight: 500;
     font-size: 15px; color: var(--dim); margin: 20px 4px 10px;
   }
- 
+
   /* ---- tools row (sort + expand all) ---- */
   .tools { display: flex; align-items: center; gap: 14px; margin-top: 12px; flex-wrap: wrap; }
   .sort-hint { color: var(--dim); font-size: 12.5px; margin: 6px 0 0; }
@@ -86,7 +86,7 @@
     font: inherit; font-size: 13px; color: var(--dim); background: none;
     border: 0; padding: 6px 0; cursor: pointer; text-decoration: underline;
   }
- 
+
   /* ---- match card: glanceable summary row, players on demand ---- */
   .card { display: block; border-bottom: 1px solid var(--line); }
   .card > summary {
@@ -123,7 +123,7 @@
   .tag-live { background: var(--confirmed); color: var(--bg); }
   .tag-final { background: var(--line); color: #4f4a44; }
   .card-finished { opacity: 0.5; }
- 
+
   .chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
   .chip {
     font-size: 12.5px; padding: 2px 9px; max-width: 100%;
@@ -135,7 +135,7 @@
      (the expanded row also carries the note text). */
   .chip-confirmed { font-weight: 700; color: var(--confirmed); border-color: var(--confirmed); }
   .chip-more { color: var(--dim); border-style: dashed; }
- 
+
   .chev { flex-shrink: 0; width: 16px; align-self: center; color: var(--dim); transition: transform 0.15s; }
   .chev::before {
     content: ""; display: block; width: 7px; height: 7px; margin: 0 auto;
@@ -143,7 +143,7 @@
     transform: rotate(45deg);
   }
   .card[open] .chev { transform: rotate(180deg); }
- 
+
   .players {
     display: flex; flex-direction: column; gap: 5px;
     padding: 0 4px 16px 68px;
@@ -168,7 +168,7 @@
   .player-out .player-name { text-decoration: line-through; text-decoration-color: var(--line); }
   .player-confirmed .player-name { font-weight: 700; color: var(--confirmed); }
   .player-confirmed .player-note { color: var(--confirmed); font-weight: 500; }
- 
+
   /* Kickoff-slot headers group simultaneous matches. Only shown in the
      kickoff sort; the relevance sort is a flat ranked list. The rank number
      is the mirror image: meaningless in time order, the point in relevance
@@ -184,45 +184,124 @@
   .slot-count { color: var(--dim); font-weight: 500; font-size: 12.5px; }
   .by-time .card-rank { display: none; }
   .by-rank .slot { display: none; }
- 
+
   .empty { padding: 50px 4px; text-align: center; }
   .empty-headline {
     font-family: 'Archivo Narrow', sans-serif; font-weight: 700;
     font-size: 22px; margin: 0 0 8px;
   }
   .empty-sub { color: var(--dim); font-size: 14px; margin: 0; }
- 
+
   @media (min-width: 480px) {
     .card-title { font-size: 19px; }
   }
+
+  /* ---- site nav ---- */
+  .sitenav {
+    display: flex; gap: 16px; margin: 0 0 12px;
+    font-family: 'Archivo Narrow', sans-serif; font-weight: 500; font-size: 14px;
+  }
+  .sitenav a {
+    color: var(--dim); text-decoration: none; padding: 2px 0;
+    border-bottom: 2px solid transparent;
+  }
+  .sitenav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+  .sitenav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* ---- followed players: pinned group + day-tile star ---- */
+  .day-pill .dstar { color: var(--accent); }
+  .day-pill[aria-selected="true"] .dstar { color: var(--bg); }
+  .pinned { margin: 0 0 18px; border-bottom: 2px solid var(--panel); }
+  .pinned-title {
+    font-family: 'Archivo Narrow', sans-serif; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--accent); margin: 14px 4px 6px;
+  }
+  .pinned-list > .card:first-child > summary { padding-top: 10px; }
+  .card.pinned .card-title::before { content: "\2605\00a0"; color: var(--accent); }
 </style>
 </head>
 <body data-today="2026-10-02">
   <div class="wrap">
     <header>
+      <nav class="sitenav" aria-label="Site"><a href="./" aria-current="page">Pool Watch</a><a href="players.html">Players</a></nav>
       <h1>Pool Watch</h1>
       <p class="subhead">Every match with a USMNT pool player</p>
       <nav class="daynav" aria-label="Choose a day">
-        <div class="days" role="tablist"><button type="button" class="day-pill" role="tab" data-date="2026-10-02" aria-selected="false"><span class="dow">Today</span><span class="dnum">2</span><span class="dcount">1</span></button><button type="button" class="day-pill" role="tab" data-date="2026-10-03" aria-selected="false"><span class="dow">Sat</span><span class="dnum">3</span><span class="dcount">6</span></button><button type="button" class="day-pill" role="tab" data-date="2026-10-04" aria-selected="false"><span class="dow">Sun</span><span class="dnum">4</span><span class="dcount">2</span></button><button type="button" class="day-pill quiet" role="tab" data-date="2026-10-05" aria-selected="false"><span class="dow">Mon</span><span class="dnum">5</span><span class="dcount">–</span></button><button type="button" class="day-pill" role="tab" data-date="2026-10-06" aria-selected="false"><span class="dow">Tue</span><span class="dnum">6</span><span class="dcount">2</span></button><button type="button" class="day-pill quiet" role="tab" data-date="2026-10-07" aria-selected="false"><span class="dow">Wed</span><span class="dnum">7</span><span class="dcount">–</span></button><button type="button" class="day-pill quiet" role="tab" data-date="2026-10-08" aria-selected="false"><span class="dow">Thu</span><span class="dnum">8</span><span class="dcount">–</span></button></div>
+        <div class="days" role="tablist"><button type="button" class="day-pill" role="tab" data-date="2026-10-02" aria-selected="false"><span class="dow">Today</span><span class="dnum">2</span><span class="dcount"><span class="dstar" hidden>&#9733;</span> 3</span></button><button type="button" class="day-pill" role="tab" data-date="2026-10-03" aria-selected="false"><span class="dow">Sat</span><span class="dnum">3</span><span class="dcount"><span class="dstar" hidden>&#9733;</span> 8</span></button><button type="button" class="day-pill" role="tab" data-date="2026-10-04" aria-selected="false"><span class="dow">Sun</span><span class="dnum">4</span><span class="dcount"><span class="dstar" hidden>&#9733;</span> 2</span></button><button type="button" class="day-pill quiet" role="tab" data-date="2026-10-05" aria-selected="false"><span class="dow">Mon</span><span class="dnum">5</span><span class="dcount"><span class="dstar" hidden>&#9733;</span> –</span></button><button type="button" class="day-pill" role="tab" data-date="2026-10-06" aria-selected="false"><span class="dow">Tue</span><span class="dnum">6</span><span class="dcount"><span class="dstar" hidden>&#9733;</span> 2</span></button><button type="button" class="day-pill quiet" role="tab" data-date="2026-10-07" aria-selected="false"><span class="dow">Wed</span><span class="dnum">7</span><span class="dcount"><span class="dstar" hidden>&#9733;</span> –</span></button><button type="button" class="day-pill quiet" role="tab" data-date="2026-10-08" aria-selected="false"><span class="dow">Thu</span><span class="dnum">8</span><span class="dcount"><span class="dstar" hidden>&#9733;</span> –</span></button></div>
       </nav>
       <div class="tools"><div class="sort" role="group" aria-label="Sort matches">
           <button type="button" data-sort="time" aria-pressed="true" title="Earliest kickoff first">Kickoff</button>
           <button type="button" data-sort="rank" aria-pressed="false" title="Matches where USMNT players are most likely to play first">Relevance</button>
         </div><button type="button" class="link-btn" id="expand-all">Expand all</button></div><p class="sort-hint" id="sort-hint" aria-live="polite" data-time="Sorted by kickoff time, earliest first." data-rank="Sorted by USMNT relevance — matches where pool players are most likely to play come first.">Sorted by kickoff time, earliest first.</p>
-      <p class="generated" id="generated" data-utc="2026-10-02T04:11+00:00">Updated 2026-10-02T04:11+00:00 UTC</p>
+      <p class="generated" id="generated" data-utc="2026-10-02T11:25+00:00">Updated 2026-10-02T11:25+00:00 UTC</p>
     </header>
     <main id="list">
     <section class="day" data-date="2026-10-02" hidden>
-      <h2 class="day-title">Friday, Oct 2 · 1 match</h2>
+      <h2 class="day-title">Friday, Oct 2 · 3 matches</h2>
+      <div class="pinned" hidden>
+        <h3 class="pinned-title">&#9733; Your players</h3>
+        <div class="pinned-list by-time"></div>
+      </div>
       <div class="list by-time">
-      <h3 class="slot"><time data-utc="2026-10-02T17:00:00+00:00">2026-10-02T17:00:00+00:00</time></h3>
-      <details class="card" data-rank="1">
+      <h3 class="slot"><time data-utc="2026-10-02T10:30:00+00:00">2026-10-02T10:30:00+00:00</time></h3>
+      <details class="card" data-rank="1" data-ko="2026-10-02T10:30:00+00:00" data-status="live" data-pids="415">
         <summary>
           <div class="card-rank">01</div>
           <div class="card-body">
             <div class="card-top">
-              <h2 class="card-title">Laval vs Rennes</h2>
+              <h2 class="card-title">Juventus vs Cremonese</h2>
               <div class="card-score" style="--pct:100">100</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-10-02T10:30:00+00:00">2026-10-02T10:30:00+00:00</time>
+              <span class="dim">Friendlies Clubs</span>
+              <span class="dim">—</span>
+              <span class="tag tag-live">Live</span>
+            </div>
+            <div class="chips"><span class="chip">W. McKennie</span></div>
+          </div>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
+                <div class="team-group">Juventus</div>
+                <div class="player">
+                  <span class="player-name">Weston McKennie</span>
+                </div></div>
+      </details>
+      <h3 class="slot"><time data-utc="2026-10-02T11:00:00+00:00">2026-10-02T11:00:00+00:00</time></h3>
+      <details class="card" data-rank="3" data-ko="2026-10-02T11:00:00+00:00" data-status="scheduled" data-pids="203426">
+        <summary>
+          <div class="card-rank">03</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">VfL Bochum vs VfL Osnabrück</h2>
+              <div class="card-score" style="--pct:1">1</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-10-02T11:00:00+00:00">2026-10-02T11:00:00+00:00</time>
+              <span class="dim">Friendlies Clubs</span>
+              <span class="dim">—</span>
+              
+            </div>
+            <div class="chips"><span class="chip">J. Gómez</span></div>
+          </div>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
+                <div class="team-group">VfL Osnabrück</div>
+                <div class="player">
+                  <span class="player-name">Jonathan Gómez</span>
+                </div></div>
+      </details>
+      <h3 class="slot"><time data-utc="2026-10-02T17:00:00+00:00">2026-10-02T17:00:00+00:00</time></h3>
+      <details class="card" data-rank="2" data-ko="2026-10-02T17:00:00+00:00" data-status="scheduled" data-pids="51144">
+        <summary>
+          <div class="card-rank">02</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">Laval vs Rennes</h2>
+              <div class="card-score" style="--pct:7">7</div>
             </div>
             <div class="card-meta">
               <time class="kickoff" data-utc="2026-10-02T17:00:00+00:00">2026-10-02T17:00:00+00:00</time>
@@ -242,12 +321,41 @@
       </details></div>
     </section>
     <section class="day" data-date="2026-10-03" hidden>
-      <h2 class="day-title">Saturday, Oct 3 · 6 matches</h2>
+      <h2 class="day-title">Saturday, Oct 3 · 8 matches</h2>
+      <div class="pinned" hidden>
+        <h3 class="pinned-title">&#9733; Your players</h3>
+        <div class="pinned-list by-time"></div>
+      </div>
       <div class="list by-time">
-      <h3 class="slot"><time data-utc="2026-10-03T11:00:00+00:00">2026-10-03T11:00:00+00:00</time></h3>
-      <details class="card" data-rank="5">
+      <h3 class="slot"><time data-utc="2026-10-03T09:00:00+00:00">2026-10-03T09:00:00+00:00</time></h3>
+      <details class="card" data-rank="3" data-ko="2026-10-03T09:00:00+00:00" data-status="scheduled" data-pids="50735">
         <summary>
-          <div class="card-rank">05</div>
+          <div class="card-rank">03</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">Toulouse vs PAU</h2>
+              <div class="card-score" style="--pct:7">7</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-10-03T09:00:00+00:00">2026-10-03T09:00:00+00:00</time>
+              <span class="dim">Friendlies Clubs</span>
+              <span class="dim">—</span>
+              
+            </div>
+            <div class="chips"><span class="chip">M. McKenzie</span></div>
+          </div>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
+                <div class="team-group">Toulouse</div>
+                <div class="player">
+                  <span class="player-name">Mark McKenzie</span>
+                </div></div>
+      </details>
+      <h3 class="slot"><time data-utc="2026-10-03T11:00:00+00:00">2026-10-03T11:00:00+00:00</time></h3>
+      <details class="card" data-rank="7" data-ko="2026-10-03T11:00:00+00:00" data-status="scheduled" data-pids="24842">
+        <summary>
+          <div class="card-rank">07</div>
           <div class="card-body">
             <div class="card-top">
               <h2 class="card-title">Waldhof Mannheim vs FSV Mainz 05</h2>
@@ -269,10 +377,39 @@
                   <span class="player-name">Lennard Maloney</span>
                 </div></div>
       </details>
-      <h3 class="slot"><time data-utc="2026-10-03T12:00:00+00:00">2026-10-03T12:00:00+00:00</time></h3>
-      <details class="card" data-rank="3">
+      <h3 class="slot"><time data-utc="2026-10-03T11:30:00+00:00">2026-10-03T11:30:00+00:00</time></h3>
+      <details class="card" data-rank="2" data-ko="2026-10-03T11:30:00+00:00" data-status="scheduled" data-pids="126949">
         <summary>
-          <div class="card-rank">03</div>
+          <div class="card-rank">02</div>
+          <div class="card-body">
+            <div class="card-top">
+              <h2 class="card-title">Crystal Palace vs Bristol City</h2>
+              <div class="card-score" style="--pct:16">16</div>
+            </div>
+            <div class="card-meta">
+              <time class="kickoff" data-utc="2026-10-03T11:30:00+00:00">2026-10-03T11:30:00+00:00</time>
+              <span class="dim">Friendlies Clubs</span>
+              <span class="dim">—</span>
+              
+            </div>
+            <div class="chips"><span class="chip">C. Richards</span></div>
+          </div>
+          <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="players">
+                <div class="team-group">Crystal Palace</div>
+                <div class="player">
+                  <span class="player-name">Chris Richards</span>
+                </div>
+                <div class="player player-out">
+                  <span class="player-name">Zavier Gozo</span>
+                  <span class="player-note">Out / not featuring</span>
+                </div></div>
+      </details>
+      <h3 class="slot"><time data-utc="2026-10-03T12:00:00+00:00">2026-10-03T12:00:00+00:00</time></h3>
+      <details class="card" data-rank="5" data-ko="2026-10-03T12:00:00+00:00" data-status="scheduled" data-pids="119002">
+        <summary>
+          <div class="card-rank">05</div>
           <div class="card-body">
             <div class="card-top">
               <h2 class="card-title">Holstein Kiel vs Viborg</h2>
@@ -295,9 +432,9 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-03T13:30:00+00:00">2026-10-03T13:30:00+00:00</time><span class="slot-count">2 matches</span></h3>
-      <details class="card" data-rank="2">
+      <details class="card" data-rank="4" data-ko="2026-10-03T13:30:00+00:00" data-status="scheduled" data-pids="50852">
         <summary>
-          <div class="card-rank">02</div>
+          <div class="card-rank">04</div>
           <div class="card-body">
             <div class="card-top">
               <h2 class="card-title">FC St. Pauli vs Borussia Mönchengladbach</h2>
@@ -319,9 +456,9 @@
                   <span class="player-name">Joseph Scally</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="4">
+      <details class="card" data-rank="6" data-ko="2026-10-03T13:30:00+00:00" data-status="scheduled" data-pids="203426">
         <summary>
-          <div class="card-rank">04</div>
+          <div class="card-rank">06</div>
           <div class="card-body">
             <div class="card-top">
               <h2 class="card-title">VfL Osnabrück vs Djurgardens IF</h2>
@@ -344,9 +481,9 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-03T20:00:00+00:00">2026-10-03T20:00:00+00:00</time></h3>
-      <details class="card" data-rank="6">
+      <details class="card" data-rank="8" data-ko="2026-10-03T20:00:00+00:00" data-status="scheduled" data-pids="129885">
         <summary>
-          <div class="card-rank">06</div>
+          <div class="card-rank">08</div>
           <div class="card-body">
             <div class="card-top">
               <h2 class="card-title">Newells Old Boys vs Lanus</h2>
@@ -369,7 +506,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-04T02:00:00+00:00">2026-10-04T02:00:00+00:00</time></h3>
-      <details class="card" data-rank="1">
+      <details class="card" data-rank="1" data-ko="2026-10-04T02:00:00+00:00" data-status="scheduled" data-pids="126949 162037 50728 355994 1150 19549 201713 50879 161921 38735 162106 50737 266606 334362 418618 461645 102508 383647 413230 340369 462853 412227 362085 428007 461514 486522 266733">
         <summary>
           <div class="card-rank">01</div>
           <div class="card-body">
@@ -474,9 +611,13 @@
     </section>
     <section class="day" data-date="2026-10-04" hidden>
       <h2 class="day-title">Sunday, Oct 4 · 2 matches</h2>
+      <div class="pinned" hidden>
+        <h3 class="pinned-title">&#9733; Your players</h3>
+        <div class="pinned-list by-time"></div>
+      </div>
       <div class="list by-time">
       <h3 class="slot"><time data-utc="2026-10-05T00:30:00+00:00">2026-10-05T00:30:00+00:00</time></h3>
-      <details class="card" data-rank="2">
+      <details class="card" data-rank="2" data-ko="2026-10-05T00:30:00+00:00" data-status="scheduled" data-pids="6719">
         <summary>
           <div class="card-rank">02</div>
           <div class="card-body">
@@ -501,7 +642,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-05T01:00:00+00:00">2026-10-05T01:00:00+00:00</time></h3>
-      <details class="card" data-rank="1">
+      <details class="card" data-rank="1" data-ko="2026-10-05T01:00:00+00:00" data-status="scheduled" data-pids="35885 212233">
         <summary>
           <div class="card-rank">01</div>
           <div class="card-body">
@@ -541,9 +682,13 @@
     </section>
     <section class="day" data-date="2026-10-06" hidden>
       <h2 class="day-title">Tuesday, Oct 6 · 2 matches</h2>
+      <div class="pinned" hidden>
+        <h3 class="pinned-title">&#9733; Your players</h3>
+        <div class="pinned-list by-time"></div>
+      </div>
       <div class="list by-time">
       <h3 class="slot"><time data-utc="2026-10-07T00:00:00+00:00">2026-10-07T00:00:00+00:00</time></h3>
-      <details class="card" data-rank="1">
+      <details class="card" data-rank="1" data-ko="2026-10-07T00:00:00+00:00" data-status="scheduled" data-pids="126949 162037 50728 355994 1150 19549 201713 50879 161921 38735 162106 50737 266606 334362 418618 461645 102508 383647 413230 340369 462853 412227 362085 428007 461514 486522 266733">
         <summary>
           <div class="card-rank">01</div>
           <div class="card-body">
@@ -646,7 +791,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-07T00:30:00+00:00">2026-10-07T00:30:00+00:00</time></h3>
-      <details class="card" data-rank="2">
+      <details class="card" data-rank="2" data-ko="2026-10-07T00:30:00+00:00" data-status="scheduled" data-pids="266606 50969 51027 15783 102510">
         <summary>
           <div class="card-rank">02</div>
           <div class="card-body">
@@ -724,13 +869,13 @@
     }
     el.textContent = txt;
   });
- 
+
   const gen = document.getElementById('generated');
   const gd = new Date(gen.dataset.utc);
   gen.textContent = 'Updated ' + gd.toLocaleString(undefined, {
     hour: 'numeric', minute: '2-digit', hour12: true
   });
- 
+
   // ---- sort toggle (applies to every day's list) ------------------------
   // Everything needed is already in the DOM (data-rank on each card, slot
   // headers in kickoff order), so this is a client-side reorder: no fetch,
@@ -742,7 +887,9 @@
   }));
   const sortBtns = document.querySelectorAll('.sort button');
   const sortHint = document.getElementById('sort-hint');
+  let curMode = 'time';
   const applySort = mode => {
+    curMode = mode;
     lists.forEach(l => {
       const order = mode === 'rank'
         ? l.cards.slice().sort((a, b) => a.dataset.rank - b.dataset.rank)
@@ -756,19 +903,20 @@
   };
   sortBtns.forEach(b => b.addEventListener('click', () => {
     applySort(b.dataset.sort);
+    applyPins();
     try { localStorage.setItem('poolwatch-sort', b.dataset.sort); } catch (e) {}
   }));
   let saved = null;
   try { saved = localStorage.getItem('poolwatch-sort'); } catch (e) {}
   if (saved === 'rank') applySort('rank');
- 
+
   // ---- day navigation ---------------------------------------------------
   const sections = Array.from(document.querySelectorAll('section.day'));
   const pills = Array.from(document.querySelectorAll('.day-pill'));
   const expandBtn = document.getElementById('expand-all');
   const dates = sections.map(s => s.dataset.date);
   let idx = 0;
- 
+
   const openCards = () => Array.from(
     (sections[idx] || document).querySelectorAll('details.card'));
   const syncExpandLabel = () => {
@@ -778,7 +926,7 @@
     expandBtn.textContent = cs.length && cs.every(c => c.open)
       ? 'Collapse all' : 'Expand all';
   };
- 
+
   const show = i => {
     idx = Math.max(0, Math.min(dates.length - 1, i));
     sections.forEach((s, k) => { s.hidden = k !== idx; });
@@ -789,7 +937,7 @@
     try { history.replaceState(null, '', '#' + dates[idx]); } catch (e) {}
     syncExpandLabel();
   };
- 
+
   if (sections.length) {
     pills.forEach((p, k) => p.addEventListener('click', () => show(k)));
     document.addEventListener('keydown', e => {
@@ -801,7 +949,7 @@
     const fromToday = dates.indexOf(document.body.dataset.today);
     show(fromHash >= 0 ? fromHash : Math.max(0, fromToday));
   }
- 
+
   // ---- expand / collapse all (visible day) ------------------------------
   if (expandBtn) {
     expandBtn.addEventListener('click', () => {
@@ -812,6 +960,78 @@
     });
   }
   document.addEventListener('toggle', syncExpandLabel, true);
+
+  // ---- followed players: pin their matches ------------------------------
+  // Follows live in this browser only (localStorage), written by the Players
+  // page. Each card already carries what's needed, baked in at generation:
+  // data-pids (pool players still expected to feature; a confirmed "out" is
+  // already excluded) and data-status. Pinned cards MOVE into the day's
+  // "Your players" box rather than being copied, so nothing shows twice.
+  // Finished, postponed and abandoned matches don't pin; they stay in their
+  // normal slot with their own tag.
+  const FOLLOW_KEY = 'slate-follows';
+  const NOT_PINNED = ['finished', 'postponed', 'abandoned'];
+  let follows = new Set();
+  const loadFollows = () => {
+    follows = new Set();
+    try {
+      (JSON.parse(localStorage.getItem(FOLLOW_KEY) || '[]') || [])
+        .forEach(x => follows.add(String(x)));
+    } catch (e) {}
+  };
+
+  // A slot header whose matches were pinned away would be left orphaned or
+  // carry a wrong "N matches" count, so recount after every move.
+  const fixSlots = l => {
+    const kids = Array.from(l.el.children);
+    kids.forEach((k, i) => {
+      if (!k.classList.contains('slot')) return;
+      let n = 0;
+      for (let j = i + 1; j < kids.length && !kids[j].classList.contains('slot'); j++) {
+        if (kids[j].classList.contains('card')) n++;
+      }
+      k.hidden = n === 0;
+      const c = k.querySelector('.slot-count');
+      if (c) { c.textContent = n + ' matches'; c.hidden = n < 2; }
+    });
+  };
+
+  const applyPins = () => {
+    lists.forEach(l => {
+      const sec = l.el.closest('section.day');
+      const box = sec && sec.querySelector('.pinned');
+      if (!box) return;
+      const dest = box.querySelector('.pinned-list');
+      const hit = l.cards.filter(c =>
+        follows.size > 0 && NOT_PINNED.indexOf(c.dataset.status) < 0 &&
+        (c.dataset.pids || '').split(' ').some(p => follows.has(p)));
+      l.cards.forEach(c => c.classList.toggle('pinned', hit.indexOf(c) >= 0));
+      hit.sort(curMode === 'rank'
+        ? (a, b) => a.dataset.rank - b.dataset.rank
+        : (a, b) => a.dataset.ko.localeCompare(b.dataset.ko) || a.dataset.rank - b.dataset.rank);
+      hit.forEach(c => dest.appendChild(c));
+      dest.classList.toggle('by-rank', curMode === 'rank');
+      dest.classList.toggle('by-time', curMode !== 'rank');
+      box.hidden = hit.length === 0;
+      fixSlots(l);
+      const pill = pills.find(p => p.dataset.date === sec.dataset.date);
+      const star = pill && pill.querySelector('.dstar');
+      if (star) star.hidden = hit.length === 0;
+    });
+    syncExpandLabel();
+  };
+
+  // Un-pin first (applySort puts every card back in its list), then pin
+  // against the fresh follow set.
+  const refreshFollows = () => { loadFollows(); applySort(curMode); applyPins(); };
+  window.addEventListener('storage', e => {
+    if (e.key === FOLLOW_KEY || e.key === null) refreshFollows();
+  });
+  // Coming back from the Players page can restore this page from the
+  // back/forward cache, with the follow list as it was before.
+  window.addEventListener('pageshow', e => { if (e.persisted) refreshFollows(); });
+  loadFollows();
+  applyPins();
 })();
 </script>
 </body>

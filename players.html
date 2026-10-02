@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Players — USMNT pool</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EDEAE2; --panel: #1C1C1A; --line: #c9c4b6;
+    --ink: #1C1C1A; --dim: #6b6660;
+    --accent: #A13D2C; --confirmed: #2E4FA3; --alert: #A13D2C;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 28px 18px 60px; }
+  header { margin-bottom: 14px; }
+  h1 {
+    font-family: 'Archivo Narrow', sans-serif; font-weight: 700;
+    font-size: 28px; margin: 0 0 4px; letter-spacing: -0.01em;
+  }
+  .subhead { color: var(--dim); font-size: 14px; margin: 0; }
+  .about { color: var(--dim); font-size: 13px; line-height: 1.45; margin: 12px 0 0; }
+  .generated { color: var(--dim); font-size: 12px; margin-top: 6px; }
+  .footnote { color: var(--dim); font-size: 13px; margin: 24px 4px 0; }
+
+  .sitenav {
+    display: flex; gap: 16px; margin: 0 0 12px;
+    font-family: 'Archivo Narrow', sans-serif; font-weight: 500; font-size: 14px;
+  }
+  .sitenav a {
+    color: var(--dim); text-decoration: none; padding: 2px 0;
+    border-bottom: 2px solid transparent;
+  }
+  .sitenav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+  .sitenav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .tools { display: flex; align-items: center; gap: 12px; margin-top: 14px; flex-wrap: wrap; }
+  .search {
+    font: inherit; font-size: 15px; flex: 1 1 200px; min-width: 0;
+    padding: 8px 12px; color: var(--ink); background: transparent;
+    border: 1px solid var(--line); border-radius: 6px;
+  }
+  .search:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .sort { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .sort button {
+    font: inherit; font-size: 13px; font-weight: 500; cursor: pointer;
+    background: transparent; color: var(--dim); border: 0; padding: 8px 14px;
+  }
+  .sort button + button { border-left: 1px solid var(--line); }
+  .sort button[aria-pressed="true"] { background: var(--panel); color: var(--bg); }
+  .sort button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .count { color: var(--dim); font-size: 12.5px; margin: 10px 0 0; }
+  .notice { color: var(--dim); font-size: 12.5px; font-style: italic; margin: 6px 0 0; }
+
+  .players-list { list-style: none; margin: 8px 0 0; padding: 0; }
+  .player-tile {
+    display: grid; grid-template-columns: 52px minmax(0, 1fr) auto 40px;
+    gap: 12px; align-items: center; padding: 12px 4px;
+    border-bottom: 1px solid var(--line);
+  }
+  .avatar {
+    position: relative; width: 52px; height: 52px; border-radius: 50%;
+    overflow: hidden; background: var(--line);
+  }
+  .avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .initials {
+    position: absolute; inset: 0; display: flex; align-items: center;
+    justify-content: center; color: var(--dim);
+    font-family: 'Archivo Narrow', sans-serif; font-weight: 700; font-size: 17px;
+  }
+  .pt-name {
+    font-family: 'Archivo Narrow', sans-serif; font-weight: 700;
+    font-size: 18px; line-height: 1.2;
+  }
+  .pt-sub { font-size: 13px; color: var(--dim); margin-top: 1px; }
+  .pt-last { font-size: 13px; margin-top: 3px; }
+  .pt-score {
+    font-family: 'Archivo Narrow', sans-serif; font-weight: 700; font-size: 26px;
+    font-variant-numeric: tabular-nums; color: var(--accent);
+  }
+  .star {
+    font: inherit; font-size: 24px; line-height: 1; width: 40px; height: 40px;
+    background: none; border: 0; cursor: pointer; color: var(--dim);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .star[aria-pressed="true"] { color: var(--accent); }
+  .star:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: 6px; }
+  .empty { padding: 40px 4px; text-align: center; color: var(--dim); font-size: 14px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <nav class="sitenav" aria-label="Site"><a href="./">Pool Watch</a><a href="players.html" aria-current="page">Players</a></nav>
+      <h1>Players</h1>
+      <p class="subhead">The USMNT pool, ranked by relevance. Star a player to pin his matches on Pool Watch.</p>
+      <p class="about">Relevance estimates how much each player is in the USMNT picture, from his squad selections in the current World Cup cycle (about four years), with the previous cycle counting less as new matches are played. Major tournaments and qualifiers count most and friendlies least; starts count more than bench call-ups; and recent matches count more than older ones. Goalkeepers are ranked by the depth chart. Young players still developing toward the senior team are placed on the same scale using their club level and playing time.</p>
+      <div class="tools">
+        <input class="search" id="q" type="search" placeholder="Search players or clubs" autocomplete="off" aria-label="Search players or clubs">
+        <div class="sort" role="group" aria-label="Sort players">
+          <button type="button" data-sort="rel" aria-pressed="true">Relevance</button>
+          <button type="button" data-sort="az" aria-pressed="false">A–Z</button>
+        </div>
+      </div>
+      <p class="count" id="count" aria-live="polite">118 players</p>
+      <p class="notice" id="notice" hidden></p>
+      <p class="generated" id="generated" data-utc="2026-10-02T11:25+00:00">Updated 2026-10-02T11:25+00:00 UTC</p>
+    </header>
+    <main>
+      <ul class="players-list" id="players">
+      <li class="player-tile" data-pid="126949" data-tier="10.7010" data-name="richards chris" data-search="chris richards crystal palace">
+        <span class="avatar"><span class="initials">CR</span><img src="https://media.api-sports.io/football/players/126949.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Chris Richards</div>
+          <div class="pt-sub">DF · Crystal Palace</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">100</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Chris Richards">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="162037" data-tier="10.0930" data-name="tillman malik" data-search="malik tillman bayer leverkusen">
+        <span class="avatar"><span class="initials">MT</span><img src="https://media.api-sports.io/football/players/162037.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Malik Tillman</div>
+          <div class="pt-sub">MF · Bayer Leverkusen</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">94</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Malik Tillman">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="415" data-tier="9.0890" data-name="mckennie weston" data-search="weston mckennie juventus">
+        <span class="avatar"><span class="initials">WM</span><img src="https://media.api-sports.io/football/players/415.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Weston McKennie</div>
+          <div class="pt-sub">MF · Juventus</div>
+          <div class="pt-last">Jul 7, 2026 · World Cup · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">85</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Weston McKennie">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="50728" data-tier="8.9760" data-name="freese matt" data-search="matt freese new york city fc">
+        <span class="avatar"><span class="initials">MF</span><img src="https://media.api-sports.io/football/players/50728.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Matt Freese</div>
+          <div class="pt-sub">GK · New York City FC</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">84</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Matt Freese">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="355994" data-tier="8.8440" data-name="freeman alexander" data-search="alexander freeman villarreal">
+        <span class="avatar"><span class="initials">AF</span><img src="https://media.api-sports.io/football/players/355994.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Alexander Freeman</div>
+          <div class="pt-sub">DF · Villarreal</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">83</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Alexander Freeman">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="1150" data-tier="8.6650" data-name="adams tyler" data-search="tyler adams bournemouth">
+        <span class="avatar"><span class="initials">TA</span><img src="https://media.api-sports.io/football/players/1150.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Tyler Adams</div>
+          <div class="pt-sub">MF · Bournemouth</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">81</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Tyler Adams">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="19549" data-tier="8.1550" data-name="robinson antonee" data-search="antonee robinson fulham">
+        <span class="avatar"><span class="initials">AR</span><img src="https://media.api-sports.io/football/players/19549.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Antonee Robinson</div>
+          <div class="pt-sub">DF · Fulham</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">76</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Antonee Robinson">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="17" data-tier="7.8780" data-name="pulisic christian" data-search="christian pulisic ac milan">
+        <span class="avatar"><span class="initials">CP</span><img src="https://media.api-sports.io/football/players/17.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Christian Pulišić</div>
+          <div class="pt-sub">FW · AC Milan</div>
+          <div class="pt-last">Jul 7, 2026 · World Cup · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">74</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Christian Pulišić">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="50999" data-tier="7.5820" data-name="turner matt" data-search="matt turner new england revolution">
+        <span class="avatar"><span class="initials">MT</span><img src="https://media.api-sports.io/football/players/50999.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Matt Turner</div>
+          <div class="pt-sub">GK · New England Revolution</div>
+          <div class="pt-last">Jul 7, 2026 · World Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">71</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Matt Turner">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="138835" data-tier="7.3920" data-name="balogun folarin" data-search="folarin balogun monaco">
+        <span class="avatar"><span class="initials">FB</span><img src="https://media.api-sports.io/football/players/138835.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Folarin Balogun</div>
+          <div class="pt-sub">FW · Monaco</div>
+          <div class="pt-last">Jul 7, 2026 · World Cup · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">69</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Folarin Balogun">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="201713" data-tier="6.8120" data-name="berhalter sebastian" data-search="sebastian berhalter middlesbrough">
+        <span class="avatar"><span class="initials">SB</span><img src="https://media.api-sports.io/football/players/201713.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Sebastian Berhalter</div>
+          <div class="pt-sub">MF · Middlesbrough</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">64</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Sebastian Berhalter">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="50879" data-tier="6.0420" data-name="robinson miles" data-search="miles robinson fc cincinnati">
+        <span class="avatar"><span class="initials">MR</span><img src="https://media.api-sports.io/football/players/50879.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Miles Robinson</div>
+          <div class="pt-sub">DF · FC Cincinnati</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">56</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Miles Robinson">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="161921" data-tier="6.0060" data-name="reyna gio" data-search="gio reyna strasbourg">
+        <span class="avatar"><span class="initials">GR</span><img src="https://media.api-sports.io/football/players/161921.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Gio Reyna</div>
+          <div class="pt-sub">MF · Strasbourg</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">56</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Gio Reyna">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="38735" data-tier="5.9690" data-name="dest sergino" data-search="sergino dest psv eindhoven">
+        <span class="avatar"><span class="initials">SD</span><img src="https://media.api-sports.io/football/players/38735.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Sergiño Dest</div>
+          <div class="pt-sub">MF · PSV Eindhoven</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">56</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Sergiño Dest">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="50852" data-tier="5.8360" data-name="scally joseph" data-search="joseph scally borussia monchengladbach">
+        <span class="avatar"><span class="initials">JS</span><img src="https://media.api-sports.io/football/players/50852.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Joseph Scally</div>
+          <div class="pt-sub">DF · Borussia Mönchengladbach</div>
+          <div class="pt-last">Jul 7, 2026 · World Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">55</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Joseph Scally">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="73868" data-tier="5.7290" data-name="pepi ricardo" data-search="ricardo pepi psv eindhoven">
+        <span class="avatar"><span class="initials">RP</span><img src="https://media.api-sports.io/football/players/73868.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Ricardo Pepi</div>
+          <div class="pt-sub">FW · PSV Eindhoven</div>
+          <div class="pt-last">Jul 7, 2026 · World Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">54</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Ricardo Pepi">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="362400" data-tier="5.5290" data-name="arfsten max" data-search="max arfsten middlesbrough">
+        <span class="avatar"><span class="initials">MA</span><img src="https://media.api-sports.io/football/players/362400.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Max Arfsten</div>
+          <div class="pt-sub">FW · Middlesbrough</div>
+          <div class="pt-last">Jul 7, 2026 · World Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">52</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Max Arfsten">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="1138" data-tier="5.4690" data-name="weah tim" data-search="tim weah marseille">
+        <span class="avatar"><span class="initials">TW</span><img src="https://media.api-sports.io/football/players/1138.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Tim Weah</div>
+          <div class="pt-sub">MF · Marseille</div>
+          <div class="pt-last">Jul 7, 2026 · World Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">51</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Tim Weah">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="50739" data-tier="5.3910" data-name="aaronson brenden" data-search="brenden aaronson leeds">
+        <span class="avatar"><span class="initials">BA</span><img src="https://media.api-sports.io/football/players/50739.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Brenden Aaronson</div>
+          <div class="pt-sub">MF · Leeds</div>
+          <div class="pt-last">Jul 7, 2026 · World Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">50</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Brenden Aaronson">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="50735" data-tier="5.2540" data-name="mckenzie mark" data-search="mark mckenzie toulouse">
+        <span class="avatar"><span class="initials">MM</span><img src="https://media.api-sports.io/football/players/50735.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Mark McKenzie</div>
+          <div class="pt-sub">DF · Toulouse</div>
+          <div class="pt-last">Jul 7, 2026 · World Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">49</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Mark McKenzie">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="312896" data-tier="4.1560" data-name="luna diego" data-search="diego luna real salt lake">
+        <span class="avatar"><span class="initials">DL</span><img src="https://media.api-sports.io/football/players/312896.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Diego Luna</div>
+          <div class="pt-sub">FW · Real Salt Lake</div>
+          <div class="pt-last">Nov 19, 2025 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">39</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Diego Luna">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="162106" data-tier="4.0160" data-name="musah yunus" data-search="yunus musah ac milan">
+        <span class="avatar"><span class="initials">YM</span><img src="https://media.api-sports.io/football/players/162106.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Yunus Musah</div>
+          <div class="pt-sub">MF · AC Milan</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">38</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Yunus Musah">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="407652" data-tier="3.8250" data-name="agyemang patrick" data-search="patrick agyemang derby">
+        <span class="avatar"><span class="initials">PA</span><img src="https://media.api-sports.io/football/players/407652.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Patrick Agyemang</div>
+          <div class="pt-sub">FW · Derby</div>
+          <div class="pt-last">Mar 31, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">36</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Patrick Agyemang">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="19026" data-tier="3.7030" data-name="de la torre lucas" data-search="lucas de la torre charlotte">
+        <span class="avatar"><span class="initials">LT</span><img src="https://media.api-sports.io/football/players/19026.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Lucas de la Torre</div>
+          <div class="pt-sub">MF · Charlotte</div>
+          <div class="pt-last">Sep 9, 2025 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">35</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Lucas de la Torre">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="50737" data-tier="3.2080" data-name="trusty auston" data-search="auston trusty celtic">
+        <span class="avatar"><span class="initials">AT</span><img src="https://media.api-sports.io/football/players/50737.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Auston Trusty</div>
+          <div class="pt-sub">DF · Celtic</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">30</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Auston Trusty">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="427" data-tier="3.0930" data-name="wright haji" data-search="haji wright coventry">
+        <span class="avatar"><span class="initials">HW</span><img src="https://media.api-sports.io/football/players/427.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Haji Wright</div>
+          <div class="pt-sub">FW · Coventry</div>
+          <div class="pt-last">Jul 7, 2026 · World Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">29</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Haji Wright">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="35885" data-tier="2.8050" data-name="zendejas alejandro" data-search="alejandro zendejas club america">
+        <span class="avatar"><span class="initials">AZ</span><img src="https://media.api-sports.io/football/players/35885.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Alejandro Zendejas</div>
+          <div class="pt-sub">FW · Club America</div>
+          <div class="pt-last">Jul 7, 2026 · World Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">26</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Alejandro Zendejas">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="207768" data-tier="2.4490" data-name="mcglynn jack" data-search="jack mcglynn houston dynamo">
+        <span class="avatar"><span class="initials">JM</span><img src="https://media.api-sports.io/football/players/207768.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Jack McGlynn</div>
+          <div class="pt-sub">MF · Houston Dynamo</div>
+          <div class="pt-last">Sep 9, 2025 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">23</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Jack McGlynn">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="51114" data-tier="2.3830" data-name="roldan cristian" data-search="cristian roldan seattle sounders">
+        <span class="avatar"><span class="initials">CR</span><img src="https://media.api-sports.io/football/players/51114.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Cristian Roldan</div>
+          <div class="pt-sub">MF · Seattle Sounders</div>
+          <div class="pt-last">Jun 19, 2026 · World Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">22</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Cristian Roldan">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="80752" data-tier="2.3110" data-name="tessmann tanner" data-search="tanner tessmann lyon">
+        <span class="avatar"><span class="initials">TT</span><img src="https://media.api-sports.io/football/players/80752.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Tanner Tessmann</div>
+          <div class="pt-sub">MF · Lyon</div>
+          <div class="pt-last">Mar 31, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">22</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Tanner Tessmann">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="133185" data-tier="2.2940" data-name="cardoso johnny" data-search="johnny cardoso atletico madrid">
+        <span class="avatar"><span class="initials">JC</span><img src="https://media.api-sports.io/football/players/133185.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Johnny Cardoso</div>
+          <div class="pt-sub">MF · Atletico Madrid</div>
+          <div class="pt-last">Mar 28, 2026 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">21</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Johnny Cardoso">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="201714" data-tier="2.2480" data-name="morris aidan" data-search="aidan morris middlesbrough">
+        <span class="avatar"><span class="initials">AM</span><img src="https://media.api-sports.io/football/players/201714.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Aidan Morris</div>
+          <div class="pt-sub">MF · Middlesbrough</div>
+          <div class="pt-last">Mar 31, 2026 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">21</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Aidan Morris">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="119002" data-tier="2.2080" data-name="tolkin john" data-search="john tolkin holstein kiel">
+        <span class="avatar"><span class="initials">JT</span><img src="https://media.api-sports.io/football/players/119002.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">John Tolkin</div>
+          <div class="pt-sub">MF · Holstein Kiel</div>
+          <div class="pt-last">Nov 19, 2025 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">21</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow John Tolkin">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="51013" data-tier="1.7800" data-name="jones dejuan" data-search="dejuan jones san jose earthquakes">
+        <span class="avatar"><span class="initials">DJ</span><img src="https://media.api-sports.io/football/players/51013.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">DeJuan Jones</div>
+          <div class="pt-sub">DF · San Jose Earthquakes</div>
+          <div class="pt-last">Jan 23, 2025 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">17</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow DeJuan Jones">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="50863" data-tier="1.6020" data-name="sands james" data-search="james sands new york city fc">
+        <span class="avatar"><span class="initials">JS</span><img src="https://media.api-sports.io/football/players/50863.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">James Sands</div>
+          <div class="pt-sub">MF · New York City FC</div>
+          <div class="pt-last">Oct 15, 2025 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">15</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow James Sands">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="51266" data-tier="1.5670" data-name="busio gianluca" data-search="gianluca busio venezia">
+        <span class="avatar"><span class="initials">GB</span><img src="https://media.api-sports.io/football/players/51266.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Gianluca Busio</div>
+          <div class="pt-sub">MF · Venezia</div>
+          <div class="pt-last">Nov 19, 2024 · Nations League · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">15</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Gianluca Busio">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="51186" data-tier="1.4560" data-name="cowell cade" data-search="cade cowell new york red bulls">
+        <span class="avatar"><span class="initials">CC</span><img src="https://media.api-sports.io/football/players/51186.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Cade Cowell</div>
+          <div class="pt-sub">FW · New York Red Bulls</div>
+          <div class="pt-last">Nov 19, 2024 · Nations League · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">14</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Cade Cowell">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="51142" data-tier="1.4540" data-name="ferreira jesus" data-search="jesus ferreira seattle sounders">
+        <span class="avatar"><span class="initials">JF</span><img src="https://media.api-sports.io/football/players/51142.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Jesús Ferreira</div>
+          <div class="pt-sub">FW · Seattle Sounders</div>
+          <div class="pt-last">Jul 12, 2023 · Gold Cup · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">14</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Jesús Ferreira">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="19314" data-tier="1.4530" data-name="carter-vickers cameron" data-search="cameron carter-vickers celtic">
+        <span class="avatar"><span class="initials">CV</span><img src="https://media.api-sports.io/football/players/19314.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Cameron Carter-Vickers</div>
+          <div class="pt-sub">DF · Celtic</div>
+          <div class="pt-last">Oct 15, 2025 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">14</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Cameron Carter-Vickers">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="50969" data-tier="1.4330" data-name="white brian" data-search="brian white vancouver whitecaps">
+        <span class="avatar"><span class="initials">BW</span><img src="https://media.api-sports.io/football/players/50969.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Brian White</div>
+          <div class="pt-sub">FW · Vancouver Whitecaps</div>
+          <div class="pt-last">Jul 6, 2025 · Gold Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">13</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Brian White">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="50893" data-tier="1.3930" data-name="vazquez brandon" data-search="brandon vazquez austin">
+        <span class="avatar"><span class="initials">BV</span><img src="https://media.api-sports.io/football/players/50893.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Brandon Vázquez</div>
+          <div class="pt-sub">FW · Austin</div>
+          <div class="pt-last">Nov 19, 2024 · Nations League · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">13</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Brandon Vázquez">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="266606" data-tier="1.3460" data-name="brady chris" data-search="chris brady chicago fire">
+        <span class="avatar"><span class="initials">CB</span><img src="https://media.api-sports.io/football/players/266606.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Chris Brady</div>
+          <div class="pt-sub">GK · Chicago Fire</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">13</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Chris Brady">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="62" data-tier="1.3460" data-name="horvath ethan" data-search="ethan horvath new york red bulls">
+        <span class="avatar"><span class="initials">EH</span><img src="https://media.api-sports.io/football/players/62.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Ethan Horvath</div>
+          <div class="pt-sub">GK · New York Red Bulls</div>
+          <div class="pt-last">Oct 16, 2024 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">13</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Ethan Horvath">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="50848" data-tier="1.3460" data-name="johnson sean" data-search="sean johnson dc united">
+        <span class="avatar"><span class="initials">SJ</span><img src="https://media.api-sports.io/football/players/50848.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Sean Johnson</div>
+          <div class="pt-sub">GK · DC United</div>
+          <div class="pt-last">Jul 2, 2024 · Copa América · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">13</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Sean Johnson">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="102685" data-tier="1.3460" data-name="schulte patrick" data-search="patrick schulte columbus crew">
+        <span class="avatar"><span class="initials">PS</span><img src="https://media.api-sports.io/football/players/102685.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Patrick Schulte</div>
+          <div class="pt-sub">GK · Columbus Crew</div>
+          <div class="pt-last">Mar 31, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">13</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Patrick Schulte">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="51032" data-tier="1.3260" data-name="zimmerman walker" data-search="walker zimmerman toronto fc">
+        <span class="avatar"><span class="initials">WZ</span><img src="https://media.api-sports.io/football/players/51032.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Walker Zimmerman</div>
+          <div class="pt-sub">DF · Toronto FC</div>
+          <div class="pt-last">Jul 6, 2025 · Gold Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">12</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Walker Zimmerman">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="25332" data-tier="1.2370" data-name="sargent josh" data-search="josh sargent toronto fc">
+        <span class="avatar"><span class="initials">JS</span><img src="https://media.api-sports.io/football/players/25332.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Josh Sargent</div>
+          <div class="pt-sub">FW · Toronto FC</div>
+          <div class="pt-last">Sep 9, 2025 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">12</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Josh Sargent">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="162386" data-tier="1.2330" data-name="lund kristoffer" data-search="kristoffer lund birmingham">
+        <span class="avatar"><span class="initials">KL</span><img src="https://media.api-sports.io/football/players/162386.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Kristoffer Lund</div>
+          <div class="pt-sub">DF · Birmingham</div>
+          <div class="pt-last">Oct 16, 2024 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">12</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Kristoffer Lund">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="334362" data-tier="1.2190" data-name="downs damion" data-search="damion downs st. louis city">
+        <span class="avatar"><span class="initials">DD</span><img src="https://media.api-sports.io/football/players/334362.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Damion Downs</div>
+          <div class="pt-sub">FW · St. Louis City</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">11</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Damion Downs">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="208667" data-tier="1.1080" data-name="neal jalen" data-search="jalen neal cf montreal">
+        <span class="avatar"><span class="initials">JN</span><img src="https://media.api-sports.io/football/players/208667.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Jalen Neal</div>
+          <div class="pt-sub">DF · CF Montreal</div>
+          <div class="pt-last">Jul 12, 2023 · Gold Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">10</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Jalen Neal">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="50913" data-tier="1.0940" data-name="mihailovic djordje" data-search="djordje mihailovic toronto fc">
+        <span class="avatar"><span class="initials">DM</span><img src="https://media.api-sports.io/football/players/50913.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Djordje Mihailović</div>
+          <div class="pt-sub">MF · Toronto FC</div>
+          <div class="pt-last">Jul 12, 2023 · Gold Cup · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">10</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Djordje Mihailović">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="19607" data-tier="1.0380" data-name="miazga matt" data-search="matt miazga new york city fc">
+        <span class="avatar"><span class="initials">MM</span><img src="https://media.api-sports.io/football/players/19607.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Matt Miazga</div>
+          <div class="pt-sub">DF · New York City FC</div>
+          <div class="pt-last">Jul 12, 2023 · Gold Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">10</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Matt Miazga">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="363156" data-tier="1.0000" data-name="castaneda santiago" data-search="santiago castaneda sc paderborn 07">
+        <span class="avatar"><span class="initials">SC</span><img src="https://media.api-sports.io/football/players/363156.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Santiago Castañeda</div>
+          <div class="pt-sub">SC Paderborn 07</div>
+          <div class="pt-last">Prospect (U21)</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">9</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Santiago Castañeda">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="265882" data-tier="0.9750" data-name="sullivan quinn" data-search="quinn sullivan philadelphia union">
+        <span class="avatar"><span class="initials">QS</span><img src="https://media.api-sports.io/football/players/265882.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Quinn Sullivan</div>
+          <div class="pt-sub">MF · Philadelphia Union</div>
+          <div class="pt-last">Jul 6, 2025 · Gold Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">9</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Quinn Sullivan">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="51144" data-tier="0.9720" data-name="reynolds bryan" data-search="bryan reynolds rennes">
+        <span class="avatar"><span class="initials">BR</span><img src="https://media.api-sports.io/football/players/51144.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Bryan Reynolds</div>
+          <div class="pt-sub">DF · Rennes</div>
+          <div class="pt-last">Jul 12, 2023 · Gold Cup · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">9</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Bryan Reynolds">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="265884" data-tier="0.9160" data-name="aaronson paxten" data-search="paxten aaronson colorado rapids">
+        <span class="avatar"><span class="initials">PA</span><img src="https://media.api-sports.io/football/players/265884.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Paxten Aaronson</div>
+          <div class="pt-sub">MF · Colorado Rapids</div>
+          <div class="pt-last">Jul 2, 2025 · Gold Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">9</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Paxten Aaronson">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="50952" data-tier="0.8920" data-name="long aaron" data-search="aaron long los angeles fc">
+        <span class="avatar"><span class="initials">AL</span><img src="https://media.api-sports.io/football/players/50952.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Aaron Long</div>
+          <div class="pt-sub">DF · Los Angeles FC</div>
+          <div class="pt-last">Jul 12, 2023 · Gold Cup · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">8</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Aaron Long">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="50883" data-tier="0.7780" data-name="gressel julian" data-search="julian gressel minnesota united fc">
+        <span class="avatar"><span class="initials">JG</span><img src="https://media.api-sports.io/football/players/50883.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Julian Gressel</div>
+          <div class="pt-sub">MF · Minnesota United FC</div>
+          <div class="pt-last">Jul 12, 2023 · Gold Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">7</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Julian Gressel">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="102524" data-tier="0.7500" data-name="harriel nathan" data-search="nathan harriel philadelphia union">
+        <span class="avatar"><span class="initials">NH</span><img src="https://media.api-sports.io/football/players/102524.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Nathan Harriel</div>
+          <div class="pt-sub">DF · Philadelphia Union</div>
+          <div class="pt-last">Sep 9, 2025 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">7</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Nathan Harriel">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="18897" data-tier="0.7380" data-name="yedlin deandre" data-search="deandre yedlin real salt lake">
+        <span class="avatar"><span class="initials">DY</span><img src="https://media.api-sports.io/football/players/18897.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">DeAndre Yedlin</div>
+          <div class="pt-sub">DF · Real Salt Lake</div>
+          <div class="pt-last">Jul 12, 2023 · Gold Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">7</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow DeAndre Yedlin">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="418618" data-tier="0.7050" data-name="hall julian" data-search="julian hall new york red bulls">
+        <span class="avatar"><span class="initials">JH</span><img src="https://media.api-sports.io/football/players/418618.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Julian Hall</div>
+          <div class="pt-sub">FW · New York Red Bulls</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">7</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Julian Hall">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="64310" data-tier="0.6920" data-name="moore shaq" data-search="shaq moore fc dallas">
+        <span class="avatar"><span class="initials">SM</span><img src="https://media.api-sports.io/football/players/64310.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Shaq Moore</div>
+          <div class="pt-sub">DF · FC Dallas</div>
+          <div class="pt-last">Jan 23, 2025 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">6</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Shaq Moore">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="51118" data-tier="0.6780" data-name="morris jordan" data-search="jordan morris seattle sounders">
+        <span class="avatar"><span class="initials">JM</span><img src="https://media.api-sports.io/football/players/51118.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Jordan Morris</div>
+          <div class="pt-sub">FW · Seattle Sounders</div>
+          <div class="pt-last">Jul 12, 2023 · Gold Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">6</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Jordan Morris">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="461645" data-tier="0.6710" data-name="mehmeti adri" data-search="adri mehmeti new york red bulls">
+        <span class="avatar"><span class="initials">AM</span><img src="https://media.api-sports.io/football/players/461645.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Adri Mehmeti</div>
+          <div class="pt-sub">MF · New York Red Bulls</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">6</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Adri Mehmeti">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="129885" data-tier="0.6300" data-name="sonora alan" data-search="alan sonora newells old boys">
+        <span class="avatar"><span class="initials">AS</span><img src="https://media.api-sports.io/football/players/129885.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Alan Soñora</div>
+          <div class="pt-sub">MF · Newells Old Boys</div>
+          <div class="pt-last">Jul 2, 2023 · Gold Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">6</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Alan Soñora">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="102508" data-tier="0.6180" data-name="campbell george" data-search="george campbell west brom">
+        <span class="avatar"><span class="initials">GC</span><img src="https://media.api-sports.io/football/players/102508.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">George Campbell</div>
+          <div class="pt-sub">DF · West Brom</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">6</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow George Campbell">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="383647" data-tier="0.5390" data-name="kochen diego" data-search="diego kochen lyngby">
+        <span class="avatar"><span class="initials">DK</span><img src="https://media.api-sports.io/football/players/383647.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Diego Kochen</div>
+          <div class="pt-sub">GK · Lyngby</div>
+          <div class="pt-last">Sep 26, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">5</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Diego Kochen">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="25617" data-tier="0.5230" data-name="tillman timothy" data-search="timothy tillman los angeles fc">
+        <span class="avatar"><span class="initials">TT</span><img src="https://media.api-sports.io/football/players/25617.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Timothy Tillman</div>
+          <div class="pt-sub">FW · Los Angeles FC</div>
+          <div class="pt-last">Nov 19, 2025 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">5</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Timothy Tillman">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="413230" data-tier="0.5140" data-name="miller peyton" data-search="peyton miller new england revolution">
+        <span class="avatar"><span class="initials">PM</span><img src="https://media.api-sports.io/football/players/413230.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Peyton Miller</div>
+          <div class="pt-sub">DF · New England Revolution</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">5</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Peyton Miller">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="407425" data-tier="0.5100" data-name="habroune taha" data-search="taha habroune columbus crew">
+        <span class="avatar"><span class="initials">TH</span><img src="https://media.api-sports.io/football/players/407425.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Taha Habroune</div>
+          <div class="pt-sub">Columbus Crew</div>
+          <div class="pt-last">Prospect (U17/U20/U21)</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">5</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Taha Habroune">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="340369" data-tier="0.4940" data-name="raines brooklyn" data-search="brooklyn raines new england revolution">
+        <span class="avatar"><span class="initials">BR</span><img src="https://media.api-sports.io/football/players/340369.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Brooklyn Raines</div>
+          <div class="pt-sub">MF · New England Revolution</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">5</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Brooklyn Raines">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="462853" data-tier="0.4820" data-name="sullivan cavan" data-search="cavan sullivan philadelphia union">
+        <span class="avatar"><span class="initials">CS</span><img src="https://media.api-sports.io/football/players/462853.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Cavan Sullivan</div>
+          <div class="pt-sub">MF · Philadelphia Union</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">5</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Cavan Sullivan">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="412227" data-tier="0.4650" data-name="gozo zavier" data-search="zavier gozo crystal palace">
+        <span class="avatar"><span class="initials">ZG</span><img src="https://media.api-sports.io/football/players/412227.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Zavier Gozo</div>
+          <div class="pt-sub">FW · Crystal Palace</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">4</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Zavier Gozo">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="129706" data-tier="0.4590" data-name="fossey marlon" data-search="marlon fossey standard liege">
+        <span class="avatar"><span class="initials">MF</span><img src="https://media.api-sports.io/football/players/129706.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Marlon Fossey</div>
+          <div class="pt-sub">DF · Standard Liege</div>
+          <div class="pt-last">Mar 22, 2025 · Nations League · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">4</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Marlon Fossey">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="362085" data-tier="0.4290" data-name="westfield frankie" data-search="frankie westfield philadelphia union">
+        <span class="avatar"><span class="initials">FW</span><img src="https://media.api-sports.io/football/players/362085.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Frankie Westfield</div>
+          <div class="pt-sub">DF · Philadelphia Union</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">4</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Frankie Westfield">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="362139" data-tier="0.4270" data-name="norris nolan" data-search="nolan norris fc dallas">
+        <span class="avatar"><span class="initials">NN</span><img src="https://media.api-sports.io/football/players/362139.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Nolan Norris</div>
+          <div class="pt-sub">FC Dallas</div>
+          <div class="pt-last">Prospect (U20/U21/U23)</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">4</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Nolan Norris">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="428007" data-tier="0.4210" data-name="pierre neil" data-search="neil pierre philadelphia union">
+        <span class="avatar"><span class="initials">NP</span><img src="https://media.api-sports.io/football/players/428007.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Neil Pierre</div>
+          <div class="pt-sub">DF · Philadelphia Union</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">4</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Neil Pierre">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="64167" data-tier="0.4040" data-name="slonina gabriel" data-search="gabriel slonina chelsea">
+        <span class="avatar"><span class="initials">GS</span><img src="https://media.api-sports.io/football/players/64167.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Gabriel Słonina</div>
+          <div class="pt-sub">GK · Chelsea</div>
+          <div class="pt-last">Nov 21, 2023 · Nations League · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">4</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Gabriel Słonina">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="50828" data-tier="0.4040" data-name="steffen zack" data-search="zack steffen colorado rapids">
+        <span class="avatar"><span class="initials">ZS</span><img src="https://media.api-sports.io/football/players/50828.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Zack Steffen</div>
+          <div class="pt-sub">GK · Colorado Rapids</div>
+          <div class="pt-last">Mar 20, 2025 · Nations League · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">4</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Zack Steffen">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="362061" data-tier="0.3830" data-name="cremaschi benjamin" data-search="benjamin cremaschi parma">
+        <span class="avatar"><span class="initials">BC</span><img src="https://media.api-sports.io/football/players/362061.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Benjamin Cremaschi</div>
+          <div class="pt-sub">MF · Parma</div>
+          <div class="pt-last">Jan 23, 2025 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">4</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Benjamin Cremaschi">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="351591" data-tier="0.3800" data-name="tsakiris niko" data-search="niko tsakiris san jose earthquakes">
+        <span class="avatar"><span class="initials">NT</span><img src="https://media.api-sports.io/football/players/351591.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Niko Tsakiris</div>
+          <div class="pt-sub">MF · San Jose Earthquakes</div>
+          <div class="pt-last">Prospect (U20/U21)</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">4</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Niko Tsakiris">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="149557" data-tier="0.3780" data-name="paredes kevin" data-search="kevin paredes utrecht">
+        <span class="avatar"><span class="initials">KP</span><img src="https://media.api-sports.io/football/players/149557.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Kevin Paredes</div>
+          <div class="pt-sub">MF · Utrecht</div>
+          <div class="pt-last">Nov 21, 2023 · Nations League · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">4</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Kevin Paredes">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="51027" data-tier="0.3630" data-name="blackmon tristan" data-search="tristan blackmon vancouver whitecaps">
+        <span class="avatar"><span class="initials">TB</span><img src="https://media.api-sports.io/football/players/51027.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Tristan Blackmon</div>
+          <div class="pt-sub">DF · Vancouver Whitecaps</div>
+          <div class="pt-last">Sep 9, 2025 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">3</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Tristan Blackmon">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="212233" data-tier="0.3610" data-name="gutierrez brian" data-search="brian gutierrez guadalajara chivas">
+        <span class="avatar"><span class="initials">BG</span><img src="https://media.api-sports.io/football/players/212233.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Brian Gutiérrez</div>
+          <div class="pt-sub">MF · Guadalajara Chivas</div>
+          <div class="pt-last">Mar 20, 2025 · Nations League · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">3</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Brian Gutiérrez">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="461514" data-tier="0.3360" data-name="ellis justin" data-search="justin ellis orlando city sc">
+        <span class="avatar"><span class="initials">JE</span><img src="https://media.api-sports.io/football/players/461514.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Justin Ellis</div>
+          <div class="pt-sub">FW · Orlando City SC</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">3</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Justin Ellis">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="486522" data-tier="0.3320" data-name="albert mathis" data-search="mathis albert borussia dortmund">
+        <span class="avatar"><span class="initials">MA</span><img src="https://media.api-sports.io/football/players/486522.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Mathis Albert</div>
+          <div class="pt-sub">FW · Borussia Dortmund</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">3</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Mathis Albert">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="207781" data-tier="0.3140" data-name="clark caden" data-search="caden clark seattle sounders">
+        <span class="avatar"><span class="initials">CC</span><img src="https://media.api-sports.io/football/players/207781.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Caden Clark</div>
+          <div class="pt-sub">MF · Seattle Sounders</div>
+          <div class="pt-last">Jan 23, 2025 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">3</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Caden Clark">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="51310" data-tier="0.2960" data-name="acosta kellyn" data-search="kellyn acosta pogon szczecin">
+        <span class="avatar"><span class="initials">KA</span><img src="https://media.api-sports.io/football/players/51310.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Kellyn Acosta</div>
+          <div class="pt-sub">MF · Pogon Szczecin</div>
+          <div class="pt-last">Apr 20, 2023 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">3</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Kellyn Acosta">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="413169" data-tier="0.2920" data-name="eneli emeka" data-search="emeka eneli real salt lake">
+        <span class="avatar"><span class="initials">EE</span><img src="https://media.api-sports.io/football/players/413169.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Emeka Eneli</div>
+          <div class="pt-sub">MF · Real Salt Lake</div>
+          <div class="pt-last">Jan 23, 2025 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">3</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Emeka Eneli">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="265762" data-tier="0.2910" data-name="baker-whiting reed" data-search="reed baker-whiting nashville sc">
+        <span class="avatar"><span class="initials">RW</span><img src="https://media.api-sports.io/football/players/265762.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Reed Baker-Whiting</div>
+          <div class="pt-sub">MF · Nashville SC</div>
+          <div class="pt-last">Prospect (U20/U21)</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">3</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Reed Baker-Whiting">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="6719" data-tier="0.2810" data-name="miljevic matko" data-search="matko miljevic racing club">
+        <span class="avatar"><span class="initials">MM</span><img src="https://media.api-sports.io/football/players/6719.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Matko Miljevic</div>
+          <div class="pt-sub">MF · Racing Club</div>
+          <div class="pt-last">Jan 23, 2025 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">3</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Matko Miljevic">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="266733" data-tier="0.2600" data-name="schwake brian" data-search="brian schwake nashville sc">
+        <span class="avatar"><span class="initials">BS</span><img src="https://media.api-sports.io/football/players/266733.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Brian Schwake</div>
+          <div class="pt-sub">GK · Nashville SC</div>
+          <div class="pt-last">Sep 30, 2026 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">2</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Brian Schwake">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="153506" data-tier="0.2560" data-name="vassilev indiana" data-search="indiana vassilev philadelphia union">
+        <span class="avatar"><span class="initials">IV</span><img src="https://media.api-sports.io/football/players/153506.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Indiana Vassilev</div>
+          <div class="pt-sub">MF · Philadelphia Union</div>
+          <div class="pt-last">Jan 23, 2025 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">2</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Indiana Vassilev">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="265733" data-tier="0.2150" data-name="wiley caleb" data-search="caleb wiley preston">
+        <span class="avatar"><span class="initials">CW</span><img src="https://media.api-sports.io/football/players/265733.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Caleb Wiley</div>
+          <div class="pt-sub">DF · Preston</div>
+          <div class="pt-last">Sep 10, 2024 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">2</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Caleb Wiley">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="24842" data-tier="0.1990" data-name="maloney lennard" data-search="lennard maloney fsv mainz 05">
+        <span class="avatar"><span class="initials">LM</span><img src="https://media.api-sports.io/football/players/24842.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Lennard Maloney</div>
+          <div class="pt-sub">DF · FSV Mainz 05</div>
+          <div class="pt-last">Nov 21, 2023 · Nations League · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">2</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Lennard Maloney">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="203014" data-tier="0.1750" data-name="hoppe matthew" data-search="matthew hoppe sonderjyske">
+        <span class="avatar"><span class="initials">MH</span><img src="https://media.api-sports.io/football/players/203014.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Matthew Hoppe</div>
+          <div class="pt-sub">FW · Sonderjyske</div>
+          <div class="pt-last">Jan 29, 2023 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">2</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Matthew Hoppe">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="351571" data-tier="0.1670" data-name="celentano roman" data-search="roman celentano fc cincinnati">
+        <span class="avatar"><span class="initials">RC</span><img src="https://media.api-sports.io/football/players/351571.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Roman Celentano</div>
+          <div class="pt-sub">GK · FC Cincinnati</div>
+          <div class="pt-last">Nov 19, 2025 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">2</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Roman Celentano">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="389579" data-tier="0.1570" data-name="eyestone julian" data-search="julian eyestone rotherham">
+        <span class="avatar"><span class="initials">JE</span><img src="https://media.api-sports.io/football/players/389579.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Julian Eyestone</div>
+          <div class="pt-sub">Rotherham</div>
+          <div class="pt-last">Prospect (U20/U21)</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Julian Eyestone">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="51136" data-tier="0.1520" data-name="pomykal paxton" data-search="paxton pomykal fc dallas">
+        <span class="avatar"><span class="initials">PP</span><img src="https://media.api-sports.io/football/players/51136.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Paxton Pomykal</div>
+          <div class="pt-sub">MF · FC Dallas</div>
+          <div class="pt-last">Apr 20, 2023 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Paxton Pomykal">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="50772" data-tier="0.1500" data-name="arriola paul" data-search="paul arriola seattle sounders">
+        <span class="avatar"><span class="initials">PA</span><img src="https://media.api-sports.io/football/players/50772.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Paul Arriola</div>
+          <div class="pt-sub">FW · Seattle Sounders</div>
+          <div class="pt-last">Jan 29, 2023 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Paul Arriola">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="357230" data-tier="0.1490" data-name="zawadzki sean" data-search="sean zawadzki columbus crew">
+        <span class="avatar"><span class="initials">SZ</span><img src="https://media.api-sports.io/football/players/357230.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Sean Zawadzki</div>
+          <div class="pt-sub">DF · Columbus Crew</div>
+          <div class="pt-last">Jan 20, 2024 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Sean Zawadzki">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="51238" data-tier="0.1440" data-name="williamson eryk" data-search="eryk williamson charlotte">
+        <span class="avatar"><span class="initials">EW</span><img src="https://media.api-sports.io/football/players/51238.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Eryk Williamson</div>
+          <div class="pt-sub">MF · Charlotte</div>
+          <div class="pt-last">Jan 29, 2023 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Eryk Williamson">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="201715" data-tier="0.1350" data-name="callender drake" data-search="drake callender minnesota united fc">
+        <span class="avatar"><span class="initials">DC</span><img src="https://media.api-sports.io/football/players/201715.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Drake Callender</div>
+          <div class="pt-sub">GK · Minnesota United FC</div>
+          <div class="pt-last">Mar 25, 2024 · Nations League · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Drake Callender">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="203426" data-tier="0.1310" data-name="gomez jonathan" data-search="jonathan gomez vfl osnabruck">
+        <span class="avatar"><span class="initials">JG</span><img src="https://media.api-sports.io/football/players/203426.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Jonathan Gómez</div>
+          <div class="pt-sub">DF · VfL Osnabrück</div>
+          <div class="pt-last">Jan 29, 2023 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Jonathan Gómez">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="340571" data-tier="0.1310" data-name="pukstas rokas" data-search="rokas pukstas middlesbrough">
+        <span class="avatar"><span class="initials">RP</span><img src="https://media.api-sports.io/football/players/340571.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Rokas Pukštas</div>
+          <div class="pt-sub">Middlesbrough</div>
+          <div class="pt-last">Prospect (U20/U21)</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Rokas Pukštas">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="73863" data-tier="0.1200" data-name="atencio joshua" data-search="joshua atencio colorado rapids">
+        <span class="avatar"><span class="initials">JA</span><img src="https://media.api-sports.io/football/players/73863.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Joshua Atencio</div>
+          <div class="pt-sub">MF · Colorado Rapids</div>
+          <div class="pt-last">Jan 20, 2024 · Friendly · Started</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Joshua Atencio">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="365552" data-tier="0.1140" data-name="medina cruz" data-search="cruz medina tapatio">
+        <span class="avatar"><span class="initials">CM</span><img src="https://media.api-sports.io/football/players/365552.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Cruz Medina</div>
+          <div class="pt-sub">Tapatío</div>
+          <div class="pt-last">Prospect (U17/U20)</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Cruz Medina">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="25335" data-tier="0.1090" data-name="klinsmann jonathan" data-search="jonathan klinsmann cesena">
+        <span class="avatar"><span class="initials">JK</span><img src="https://media.api-sports.io/football/players/25335.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Jonathan Klinsmann</div>
+          <div class="pt-sub">GK · Cesena</div>
+          <div class="pt-last">Nov 19, 2025 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Jonathan Klinsmann">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="51185" data-tier="0.0950" data-name="yueill jackson" data-search="jackson yueill new england revolution">
+        <span class="avatar"><span class="initials">JY</span><img src="https://media.api-sports.io/football/players/51185.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Jackson Yueill</div>
+          <div class="pt-sub">MF · New England Revolution</div>
+          <div class="pt-last">Jul 12, 2023 · Gold Cup · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Jackson Yueill">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="329409" data-tier="0.0750" data-name="bajraktarevic esmir" data-search="esmir bajraktarevic jong psv u21">
+        <span class="avatar"><span class="initials">EB</span><img src="https://media.api-sports.io/football/players/329409.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Esmir Bajraktarević</div>
+          <div class="pt-sub">FW · Jong PSV U21</div>
+          <div class="pt-last">Jan 20, 2024 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Esmir Bajraktarević">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="407016" data-tier="0.0740" data-name="mcguire duncan" data-search="duncan mcguire houston dynamo">
+        <span class="avatar"><span class="initials">DM</span><img src="https://media.api-sports.io/football/players/407016.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Duncan McGuire</div>
+          <div class="pt-sub">FW · Houston Dynamo</div>
+          <div class="pt-last">Jan 20, 2024 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Duncan McGuire">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="15783" data-tier="0.0740" data-name="sabbi emmanuel" data-search="emmanuel sabbi vancouver whitecaps">
+        <span class="avatar"><span class="initials">ES</span><img src="https://media.api-sports.io/football/players/15783.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Emmanuel Sabbi</div>
+          <div class="pt-sub">MF · Vancouver Whitecaps</div>
+          <div class="pt-last">Jan 29, 2023 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Emmanuel Sabbi">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="102510" data-tier="0.0700" data-name="rogers samual" data-search="samual rogers chicago fire">
+        <span class="avatar"><span class="initials">SR</span><img src="https://media.api-sports.io/football/players/102510.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Samual Rogers</div>
+          <div class="pt-sub">DF · Chicago Fire</div>
+          <div class="pt-last">Jan 29, 2023 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Samual Rogers">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="413207" data-tier="0.0550" data-name="ramos ruben" data-search="ruben ramos sporting kansas city">
+        <span class="avatar"><span class="initials">RR</span><img src="https://media.api-sports.io/football/players/413207.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Ruben Ramos</div>
+          <div class="pt-sub">FW · Sporting Kansas City</div>
+          <div class="pt-last">Prospect (U20)</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Ruben Ramos">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="312998" data-tier="0.0520" data-name="jackson aziel" data-search="aziel jackson minnesota united fc">
+        <span class="avatar"><span class="initials">AJ</span><img src="https://media.api-sports.io/football/players/312998.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Aziel Jackson</div>
+          <div class="pt-sub">MF · Minnesota United FC</div>
+          <div class="pt-last">Jan 20, 2024 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Aziel Jackson">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="201788" data-tier="0.0220" data-name="burgess nkosi" data-search="nkosi burgess los angeles fc">
+        <span class="avatar"><span class="initials">NB</span><img src="https://media.api-sports.io/football/players/201788.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Nkosi Burgess</div>
+          <div class="pt-sub">DF · Los Angeles FC</div>
+          <div class="pt-last">Jan 20, 2024 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Nkosi Burgess">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="351572" data-tier="0.0220" data-name="murphy ian" data-search="ian murphy san diego">
+        <span class="avatar"><span class="initials">IM</span><img src="https://media.api-sports.io/football/players/351572.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Ian Murphy</div>
+          <div class="pt-sub">DF · San Diego</div>
+          <div class="pt-last">Jan 20, 2024 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Ian Murphy">&#9734;</button>
+      </li>
+      <li class="player-tile" data-pid="312164" data-tier="0.0180" data-name="wynder joshua" data-search="joshua wynder new england revolution">
+        <span class="avatar"><span class="initials">JW</span><img src="https://media.api-sports.io/football/players/312164.png" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.remove()"></span>
+        <div class="pt-body">
+          <div class="pt-name">Joshua Wynder</div>
+          <div class="pt-sub">DF · New England Revolution</div>
+          <div class="pt-last">Apr 20, 2023 · Friendly · Bench</div>
+        </div>
+        <div class="pt-score" title="Relevance, 100 = highest in the pool">1</div>
+        <button type="button" class="star" aria-pressed="false" aria-label="Follow Joshua Wynder">&#9734;</button>
+      </li>
+      </ul>
+      <p class="empty" id="empty" hidden>No players match that search.</p>
+    </main>
+    <p class="footnote">100 is the highest-rated player in the pool, so scores are relative. This is Slate's own model, not an official ranking. “Bench” means he was named to the matchday squad as a substitute.</p>
+  </div>
+  <script>
+(function () {
+  const FOLLOW_KEY = 'slate-follows';
+  const SORT_KEY = 'players-sort';
+  const list = document.getElementById('players');
+  const tiles = Array.from(list.children);
+  const q = document.getElementById('q');
+  const count = document.getElementById('count');
+  const empty = document.getElementById('empty');
+  const sortBtns = document.querySelectorAll('.sort button');
+
+  const gen = document.getElementById('generated');
+  const gd = new Date(gen.dataset.utc);
+  gen.textContent = 'Updated ' + gd.toLocaleString(undefined, {
+    month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true
+  });
+
+  // Same letter folding the generator uses, so "slonina" finds "Słonina".
+  const FOLD = { 'ł': 'l', 'ø': 'o', 'đ': 'd', 'ı': 'i', 'ß': 'ss', 'æ': 'ae', 'œ': 'oe' };
+  const fold = s => s.toLowerCase().replace(/[łøđıßæœ]/g, c => FOLD[c])
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+  // ---- following (this browser only) ----------------------------------
+  let storageOk = false;
+  try {
+    localStorage.setItem('_slate_t', '1'); localStorage.removeItem('_slate_t');
+    storageOk = true;
+  } catch (e) {}
+  let follows = new Set();
+  const load = () => {
+    follows = new Set();
+    try {
+      (JSON.parse(localStorage.getItem(FOLLOW_KEY) || '[]') || [])
+        .forEach(x => follows.add(String(x)));
+    } catch (e) {}
+  };
+  const save = () => {
+    try { localStorage.setItem(FOLLOW_KEY, JSON.stringify(Array.from(follows))); } catch (e) {}
+  };
+  const paint = () => tiles.forEach(t => {
+    const on = follows.has(t.dataset.pid);
+    const b = t.querySelector('.star');
+    b.setAttribute('aria-pressed', on);
+    b.textContent = on ? '\u2605' : '\u2606';
+    b.setAttribute('aria-label',
+      (on ? 'Unfollow ' : 'Follow ') + t.querySelector('.pt-name').textContent);
+  });
+  if (!storageOk) {
+    tiles.forEach(t => { t.querySelector('.star').hidden = true; });
+    const n = document.getElementById('notice');
+    n.textContent = 'Following needs browser storage, which is unavailable here.';
+    n.hidden = false;
+  }
+  list.addEventListener('click', e => {
+    const b = e.target.closest('.star');
+    if (!b) return;
+    const pid = b.closest('.player-tile').dataset.pid;
+    if (follows.has(pid)) follows.delete(pid); else follows.add(pid);
+    save(); paint();
+  });
+  window.addEventListener('storage', e => {
+    if (e.key === FOLLOW_KEY || e.key === null) { load(); paint(); }
+  });
+  window.addEventListener('pageshow', e => { if (e.persisted) { load(); paint(); } });
+
+  // ---- sort -------------------------------------------------------------
+  const byName = (a, b) => a.dataset.name.localeCompare(b.dataset.name);
+  const cmp = {
+    rel: (a, b) => (parseFloat(b.dataset.tier) - parseFloat(a.dataset.tier)) || byName(a, b),
+    az: byName,
+  };
+  const sortTiles = mode => {
+    tiles.slice().sort(cmp[mode]).forEach(t => list.appendChild(t));
+    sortBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.sort === mode));
+    try { localStorage.setItem(SORT_KEY, mode); } catch (e) {}
+  };
+  sortBtns.forEach(b => b.addEventListener('click', () => sortTiles(b.dataset.sort)));
+
+  // ---- search -----------------------------------------------------------
+  const apply = () => {
+    const words = fold(q.value.trim()).split(/\s+/).filter(Boolean);
+    let shown = 0;
+    tiles.forEach(t => {
+      const hit = words.every(w => t.dataset.search.includes(w));
+      t.hidden = !hit;
+      if (hit) shown++;
+    });
+    count.textContent = words.length
+      ? shown + ' of ' + tiles.length + ' players' : tiles.length + ' players';
+    empty.hidden = shown !== 0;
+  };
+  q.addEventListener('input', apply);
+
+  load(); paint(); apply();
+  let saved = null;
+  try { saved = localStorage.getItem(SORT_KEY); } catch (e) {}
+  if (saved === 'az') sortTiles('az');
+})();
+</script>
+</body>
+</html>
