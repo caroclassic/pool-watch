@@ -3,8 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Players — USMNT pool</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽</text></svg>">
+<title>Players — Stateside XI</title>
+<meta name="description" content="The USMNT player pool ranked by relevance, with each player&#x27;s last squad selection. Follow players to pin their matches.">
+<meta name="theme-color" content="#EDEAE2">
+<link rel="canonical" href="https://statesidexi.com/players.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjIwIiBmaWxsPSIjQTEzRDJDIi8+PHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjYuNDcgNzkuOTUpIHNjYWxlKDAuMDg3MzIgLTAuMDg3MzIpIiBmaWxsPSIjRURFQUUyIiBkPSJNMjY3IC0xMlEyMDQgLTEyIDE1MCAxMlE5NiAzNiA2MyA4NFEzMCAxMzEgMzAgMjAxUTMwIDIwNyAzMCAyMTNRMzEgMjE5IDMxIDIyM0gxNjRRMTY0IDIyMiAxNjQgMjE2UTE2MyAyMTEgMTYzIDIwN1ExNjMgMTU4IDE5MiAxMjhRMjIxIDk4IDI3MyA5OFEzMzEgOTggMzU0IDEyNFEzNzcgMTQ5IDM3NyAxNzlRMzc3IDIxNCAzNTkgMjM1UTM0MSAyNTYgMzEyIDI3MFEyODIgMjgzIDI0NiAyOTRRMjExIDMwNSAxNzUgMzE5UTEzOSAzMzMgMTEwIDM1NlE4MCAzNzggNjIgNDE0UTQ0IDQ1MCA0NCA1MDZRNDQgNTcxIDc2IDYxNFExMDggNjU2IDE2MCA2NzdRMjEzIDY5OCAyNzQgNjk4UTMzNCA2OTggMzg0IDY3N1E0MzUgNjU2IDQ2NiA2MTJRNDk2IDU2NyA0OTYgNDk2VjQ4NEgzNjVWNDkzUTM2NSA1MzcgMzQwIDU2MlEzMTYgNTg4IDI3MiA1ODhRMjI2IDU4OCAyMDEgNTY4UTE3NiA1NDcgMTc2IDUxNVExNzYgNDg1IDE5NCA0NjdRMjEyIDQ0OSAyNDIgNDM3UTI3MSA0MjUgMzA3IDQxNFEzNDMgNDA0IDM3OCAzOTBRNDE0IDM3NiA0NDQgMzU0UTQ3MyAzMzEgNDkxIDI5NlE1MDkgMjYwIDUwOSAyMDZRNTA5IDEyNyA0NzggODBRNDQ3IDMyIDM5MiAxMFEzMzggLTEyIDI2NyAtMTJaIi8+PC9zdmc+">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stateside XI">
+<meta property="og:title" content="Players — Stateside XI">
+<meta property="og:description" content="The USMNT player pool ranked by relevance, with each player&#x27;s last squad selection. Follow players to pin their matches.">
+<meta property="og:url" content="https://statesidexi.com/players.html">
+<meta property="og:image" content="https://statesidexi.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Stateside XI: Every match. Every USMNT player.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -96,14 +111,19 @@
   .star[aria-pressed="true"] { color: var(--accent); }
   .star:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: 6px; }
   .empty { padding: 40px 4px; text-align: center; color: var(--dim); font-size: 14px; }
+
+  .brand .xi { color: var(--accent); }
+  h1.brand { margin: 0 0 4px; }
+  .scope { color: var(--dim); font-size: 13px; margin: 4px 0 0; }
 </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <nav class="sitenav" aria-label="Site"><a href="./">Pool Watch</a><a href="players.html" aria-current="page">Players</a></nav>
-      <h1>Players</h1>
-      <p class="subhead">The USMNT pool, ranked by relevance. Star a player to pin his matches on Pool Watch.</p>
+      <nav class="sitenav" aria-label="Site"><a href="./">Matches</a><a href="players.html" aria-current="page">Players</a></nav>
+      <h1 class="brand">Stateside <span class="xi">XI</span></h1>
+      <p class="subhead">Follow the chase for the shirt. Track who's in the picture.</p>
+      <p class="scope">The USMNT player pool, ranked by relevance. Star a player to pin his matches to the top of Matches.</p>
       <p class="about">Relevance estimates how much each player is in the USMNT picture, from his squad selections in the current World Cup cycle (about four years), with the previous cycle counting less as new matches are played. Major tournaments and qualifiers count most and friendlies least; starts count more than bench call-ups; and recent matches count more than older ones. Goalkeepers are ranked by the depth chart. Young players still developing toward the senior team are placed on the same scale using their club level and playing time.</p>
       <div class="tools">
         <input class="search" id="q" type="search" placeholder="Search players or clubs" autocomplete="off" aria-label="Search players or clubs">
@@ -114,7 +134,7 @@
       </div>
       <p class="count" id="count" aria-live="polite">118 players</p>
       <p class="notice" id="notice" hidden></p>
-      <p class="generated" id="generated" data-utc="2026-10-03T02:12+00:00">Updated 2026-10-03T02:12+00:00 UTC</p>
+      <p class="generated" id="generated" data-utc="2026-10-03T10:15+00:00">Updated 2026-10-03T10:15+00:00 UTC</p>
     </header>
     <main>
       <ul class="players-list" id="players">
