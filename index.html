@@ -137,6 +137,13 @@
   .tag-disrupted { background: var(--alert); color: var(--bg); }
   .tag-live { background: var(--confirmed); color: var(--bg); }
   .tag-final { background: var(--line); color: #4f4a44; }
+  .tag-tier {
+    font-family: 'Archivo Narrow', sans-serif; letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .tag-tier .pips { letter-spacing: 0.12em; margin-left: 4px; }
+  .tag-tier-must { background: var(--accent); color: var(--bg); }
+  .tag-tier-worth { color: var(--accent); border: 1px solid var(--accent); }
   .card-finished { opacity: 0.5; }
 
   .chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
@@ -254,7 +261,7 @@
           <button type="button" data-sort="time" aria-pressed="true" title="Earliest kickoff first">Kickoff</button>
           <button type="button" data-sort="rank" aria-pressed="false" title="Matches where USMNT players are most likely to play first">Relevance</button>
         </div><button type="button" class="link-btn" id="expand-all">Expand all</button></div><p class="sort-hint" id="sort-hint" aria-live="polite" data-time="Sorted by kickoff time, earliest first." data-rank="Sorted by USMNT relevance — matches where pool players are most likely to play come first.">Sorted by kickoff time, earliest first.</p>
-      <p class="generated" id="generated" data-utc="2026-10-09T20:42+00:00">Updated 2026-10-09T20:42+00:00 UTC</p>
+      <p class="generated" id="generated" data-utc="2026-10-09T23:51+00:00">Updated 2026-10-09T23:51+00:00 UTC</p>
     </header>
     <main id="list">
     <section class="day" data-date="2026-10-09" hidden>
@@ -265,7 +272,7 @@
       </div>
       <div class="list by-time">
       <h3 class="slot"><time data-utc="2026-10-09T16:30:00+00:00">2026-10-09T16:30:00+00:00</time></h3>
-      <details class="card card-finished" data-rank="2" data-ko="2026-10-09T16:30:00+00:00" data-status="finished" data-pids="119002">
+      <details class="card card-finished" data-rank="2" data-ko="2026-10-09T16:30:00+00:00" data-status="finished" data-tier="" data-pids="119002">
         <summary>
           <div class="card-rank">02</div>
           <div class="card-body">
@@ -291,7 +298,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-09T18:00:00+00:00">2026-10-09T18:00:00+00:00</time></h3>
-      <details class="card card-finished" data-rank="1" data-ko="2026-10-09T18:00:00+00:00" data-status="finished" data-pids="38735">
+      <details class="card card-finished" data-rank="1" data-ko="2026-10-09T18:00:00+00:00" data-status="finished" data-tier="" data-pids="38735">
         <summary>
           <div class="card-rank">01</div>
           <div class="card-body">
@@ -321,7 +328,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-09T18:30:00+00:00">2026-10-09T18:30:00+00:00</time></h3>
-      <details class="card card-finished" data-rank="4" data-ko="2026-10-09T18:30:00+00:00" data-status="finished" data-pids="486522">
+      <details class="card card-finished" data-rank="4" data-ko="2026-10-09T18:30:00+00:00" data-status="finished" data-tier="" data-pids="486522">
         <summary>
           <div class="card-rank">04</div>
           <div class="card-body">
@@ -347,7 +354,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-09T18:45:00+00:00">2026-10-09T18:45:00+00:00</time></h3>
-      <details class="card card-finished" data-rank="3" data-ko="2026-10-09T18:45:00+00:00" data-status="finished" data-pids="80752">
+      <details class="card card-finished" data-rank="3" data-ko="2026-10-09T18:45:00+00:00" data-status="finished" data-tier="" data-pids="80752">
         <summary>
           <div class="card-rank">03</div>
           <div class="card-body">
@@ -381,7 +388,7 @@
       </div>
       <div class="list by-time">
       <h3 class="slot"><time data-utc="2026-10-10T11:00:00+00:00">2026-10-10T11:00:00+00:00</time></h3>
-      <details class="card" data-rank="30" data-ko="2026-10-10T11:00:00+00:00" data-status="scheduled" data-pids="203426">
+      <details class="card" data-rank="30" data-ko="2026-10-10T11:00:00+00:00" data-status="scheduled" data-tier="" data-pids="203426">
         <summary>
           <div class="card-rank">30</div>
           <div class="card-body">
@@ -406,7 +413,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-10T11:30:00+00:00">2026-10-10T11:30:00+00:00</time><span class="slot-count">2 matches</span></h3>
-      <details class="card" data-rank="12" data-ko="2026-10-10T11:30:00+00:00" data-status="scheduled" data-pids="50739">
+      <details class="card" data-rank="12" data-ko="2026-10-10T11:30:00+00:00" data-status="scheduled" data-tier="" data-pids="50739">
         <summary>
           <div class="card-rank">12</div>
           <div class="card-body">
@@ -430,7 +437,7 @@
                   <span class="player-name">Brenden Aaronson</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="21" data-ko="2026-10-10T11:30:00+00:00" data-status="scheduled" data-pids="102508 162386">
+      <details class="card" data-rank="21" data-ko="2026-10-10T11:30:00+00:00" data-status="scheduled" data-tier="" data-pids="102508 162386">
         <summary>
           <div class="card-rank">21</div>
           <div class="card-body">
@@ -459,7 +466,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-10T13:00:00+00:00">2026-10-10T13:00:00+00:00</time></h3>
-      <details class="card" data-rank="28" data-ko="2026-10-10T13:00:00+00:00" data-status="scheduled" data-pids="25335">
+      <details class="card" data-rank="28" data-ko="2026-10-10T13:00:00+00:00" data-status="scheduled" data-tier="" data-pids="25335">
         <summary>
           <div class="card-rank">28</div>
           <div class="card-body">
@@ -484,7 +491,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-10T13:30:00+00:00">2026-10-10T13:30:00+00:00</time><span class="slot-count">3 matches</span></h3>
-      <details class="card" data-rank="10" data-ko="2026-10-10T13:30:00+00:00" data-status="scheduled" data-pids="162037 24842">
+      <details class="card" data-rank="10" data-ko="2026-10-10T13:30:00+00:00" data-status="scheduled" data-tier="" data-pids="162037 24842">
         <summary>
           <div class="card-rank">10</div>
           <div class="card-body">
@@ -512,7 +519,7 @@
                   <span class="player-name">Malik Tillman</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="22" data-ko="2026-10-10T13:30:00+00:00" data-status="scheduled" data-pids="363156">
+      <details class="card" data-rank="22" data-ko="2026-10-10T13:30:00+00:00" data-status="scheduled" data-tier="" data-pids="363156">
         <summary>
           <div class="card-rank">22</div>
           <div class="card-body">
@@ -536,7 +543,7 @@
                   <span class="player-name">Santiago Castañeda</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="25" data-ko="2026-10-10T13:30:00+00:00" data-status="scheduled" data-pids="328617">
+      <details class="card" data-rank="25" data-ko="2026-10-10T13:30:00+00:00" data-status="scheduled" data-tier="" data-pids="328617">
         <summary>
           <div class="card-rank">25</div>
           <div class="card-body">
@@ -561,7 +568,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-10T14:00:00+00:00">2026-10-10T14:00:00+00:00</time><span class="slot-count">5 matches</span></h3>
-      <details class="card" data-rank="3" data-ko="2026-10-10T14:00:00+00:00" data-status="scheduled" data-pids="201713 362400 201714 340571">
+      <details class="card" data-rank="3" data-ko="2026-10-10T14:00:00+00:00" data-status="scheduled" data-tier="" data-pids="201713 362400 201714 340571">
         <summary>
           <div class="card-rank">03</div>
           <div class="card-body">
@@ -594,7 +601,7 @@
                   <span class="player-name">Rokas Pukštas</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="4" data-ko="2026-10-10T14:00:00+00:00" data-status="scheduled" data-pids="19549">
+      <details class="card" data-rank="4" data-ko="2026-10-10T14:00:00+00:00" data-status="scheduled" data-tier="" data-pids="19549">
         <summary>
           <div class="card-rank">04</div>
           <div class="card-body">
@@ -618,7 +625,7 @@
                   <span class="player-name">Antonee Robinson</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="6" data-ko="2026-10-10T14:00:00+00:00" data-status="scheduled" data-pids="1150 64167">
+      <details class="card" data-rank="6" data-ko="2026-10-10T14:00:00+00:00" data-status="scheduled" data-tier="" data-pids="1150 64167">
         <summary>
           <div class="card-rank">06</div>
           <div class="card-body">
@@ -646,7 +653,7 @@
                   <span class="player-name">Tyler Adams</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="23" data-ko="2026-10-10T14:00:00+00:00" data-status="scheduled" data-pids="207768 418851">
+      <details class="card" data-rank="23" data-ko="2026-10-10T14:00:00+00:00" data-status="scheduled" data-tier="" data-pids="207768 418851">
         <summary>
           <div class="card-rank">23</div>
           <div class="card-body">
@@ -673,7 +680,7 @@
                   <span class="player-name">Luca Bombino</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="31" data-ko="2026-10-10T14:00:00+00:00" data-status="scheduled" data-pids="265733">
+      <details class="card" data-rank="31" data-ko="2026-10-10T14:00:00+00:00" data-status="scheduled" data-tier="" data-pids="265733">
         <summary>
           <div class="card-rank">31</div>
           <div class="card-body">
@@ -698,7 +705,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-10T14:15:00+00:00">2026-10-10T14:15:00+00:00</time></h3>
-      <details class="card" data-rank="24" data-ko="2026-10-10T14:15:00+00:00" data-status="scheduled" data-pids="133185">
+      <details class="card" data-rank="24" data-ko="2026-10-10T14:15:00+00:00" data-status="scheduled" data-tier="" data-pids="133185">
         <summary>
           <div class="card-rank">24</div>
           <div class="card-body">
@@ -723,7 +730,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-10T16:00:00+00:00">2026-10-10T16:00:00+00:00</time></h3>
-      <details class="card" data-rank="29" data-ko="2026-10-10T16:00:00+00:00" data-status="scheduled" data-pids="362061">
+      <details class="card" data-rank="29" data-ko="2026-10-10T16:00:00+00:00" data-status="scheduled" data-tier="" data-pids="362061">
         <summary>
           <div class="card-rank">29</div>
           <div class="card-body">
@@ -748,7 +755,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-10T17:00:00+00:00">2026-10-10T17:00:00+00:00</time></h3>
-      <details class="card" data-rank="14" data-ko="2026-10-10T17:00:00+00:00" data-status="scheduled" data-pids="51032 25332 208667 50913">
+      <details class="card" data-rank="14" data-ko="2026-10-10T17:00:00+00:00" data-status="scheduled" data-tier="" data-pids="51032 25332 208667 50913">
         <summary>
           <div class="card-rank">14</div>
           <div class="card-body">
@@ -783,7 +790,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-10T18:30:00+00:00">2026-10-10T18:30:00+00:00</time></h3>
-      <details class="card" data-rank="1" data-ko="2026-10-10T18:30:00+00:00" data-status="scheduled" data-pids="50728 50863 266606 19607 102510">
+      <details class="card" data-rank="1" data-ko="2026-10-10T18:30:00+00:00" data-status="scheduled" data-tier="" data-pids="50728 50863 266606 19607 102510">
         <summary>
           <div class="card-rank">01</div>
           <div class="card-body">
@@ -821,7 +828,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-10T18:45:00+00:00">2026-10-10T18:45:00+00:00</time></h3>
-      <details class="card" data-rank="5" data-ko="2026-10-10T18:45:00+00:00" data-status="scheduled" data-pids="138835 50735">
+      <details class="card" data-rank="5" data-ko="2026-10-10T18:45:00+00:00" data-status="scheduled" data-tier="" data-pids="138835 50735">
         <summary>
           <div class="card-rank">05</div>
           <div class="card-body">
@@ -850,7 +857,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-10T19:00:00+00:00">2026-10-10T19:00:00+00:00</time></h3>
-      <details class="card" data-rank="9" data-ko="2026-10-10T19:00:00+00:00" data-status="scheduled" data-pids="355994">
+      <details class="card" data-rank="9" data-ko="2026-10-10T19:00:00+00:00" data-status="scheduled" data-tier="" data-pids="355994">
         <summary>
           <div class="card-rank">09</div>
           <div class="card-body">
@@ -875,7 +882,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-10T23:30:00+00:00">2026-10-10T23:30:00+00:00</time><span class="slot-count">7 matches</span></h3>
-      <details class="card" data-rank="2" data-ko="2026-10-10T23:30:00+00:00" data-status="scheduled" data-pids="50999 51114 340369 413230 51118 51142 50772 51185 312164">
+      <details class="card" data-rank="2" data-ko="2026-10-10T23:30:00+00:00" data-status="scheduled" data-tier="" data-pids="50999 51114 340369 413230 51118 51142 50772 51185 312164">
         <summary>
           <div class="card-rank">02</div>
           <div class="card-body">
@@ -928,7 +935,7 @@
                   <span class="player-note">Out / not featuring</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="7" data-ko="2026-10-10T23:30:00+00:00" data-status="scheduled" data-pids="50879 351571">
+      <details class="card" data-rank="7" data-ko="2026-10-10T23:30:00+00:00" data-status="scheduled" data-tier="" data-pids="50879 351571">
         <summary>
           <div class="card-rank">07</div>
           <div class="card-body">
@@ -955,7 +962,7 @@
                   <span class="player-name">Roman Celentano</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="8" data-ko="2026-10-10T23:30:00+00:00" data-status="scheduled" data-pids="312896 102524 462853 428007 18897 362085 265882 153506 412227 413169 542233">
+      <details class="card" data-rank="8" data-ko="2026-10-10T23:30:00+00:00" data-status="scheduled" data-tier="" data-pids="312896 102524 462853 428007 18897 362085 265882 153506 412227 413169 542233">
         <summary>
           <div class="card-rank">08</div>
           <div class="card-body">
@@ -1010,7 +1017,7 @@
                   <span class="player-name">Emeka Eneli</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="11" data-ko="2026-10-10T23:30:00+00:00" data-status="scheduled" data-pids="62 51186 418618 461645 351572">
+      <details class="card" data-rank="11" data-ko="2026-10-10T23:30:00+00:00" data-status="scheduled" data-tier="" data-pids="62 51186 418618 461645 351572">
         <summary>
           <div class="card-rank">11</div>
           <div class="card-body">
@@ -1047,7 +1054,7 @@
                   <span class="player-name">Ian Murphy</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="13" data-ko="2026-10-10T23:30:00+00:00" data-status="scheduled" data-pids="19026 64310 362139 51136 51238">
+      <details class="card" data-rank="13" data-ko="2026-10-10T23:30:00+00:00" data-status="scheduled" data-tier="" data-pids="19026 64310 362139 51136 51238">
         <summary>
           <div class="card-rank">13</div>
           <div class="card-body">
@@ -1084,7 +1091,7 @@
                   <span class="player-name">Paxton Pomykal</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="16" data-ko="2026-10-10T23:30:00+00:00" data-status="scheduled" data-pids="102685 461514 407425 357230">
+      <details class="card" data-rank="16" data-ko="2026-10-10T23:30:00+00:00" data-status="scheduled" data-tier="" data-pids="102685 461514 407425 357230">
         <summary>
           <div class="card-rank">16</div>
           <div class="card-body">
@@ -1118,7 +1125,7 @@
                   <span class="player-name">Sean Zawadzki</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="19" data-ko="2026-10-10T23:30:00+00:00" data-status="scheduled" data-pids="50848">
+      <details class="card" data-rank="19" data-ko="2026-10-10T23:30:00+00:00" data-status="scheduled" data-tier="" data-pids="50848">
         <summary>
           <div class="card-rank">19</div>
           <div class="card-body">
@@ -1143,7 +1150,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-11T00:30:00+00:00">2026-10-11T00:30:00+00:00</time><span class="slot-count">3 matches</span></h3>
-      <details class="card" data-rank="15" data-ko="2026-10-11T00:30:00+00:00" data-status="scheduled" data-pids="266733 50893 265762">
+      <details class="card" data-rank="15" data-ko="2026-10-11T00:30:00+00:00" data-status="scheduled" data-tier="" data-pids="266733 50893 265762">
         <summary>
           <div class="card-rank">15</div>
           <div class="card-body">
@@ -1174,7 +1181,7 @@
                   <span class="player-name">Reed Baker-Whiting</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="26" data-ko="2026-10-11T00:30:00+00:00" data-status="scheduled" data-pids="201715 407016 50883 312998">
+      <details class="card" data-rank="26" data-ko="2026-10-11T00:30:00+00:00" data-status="scheduled" data-tier="" data-pids="201715 407016 50883 312998">
         <summary>
           <div class="card-rank">26</div>
           <div class="card-body">
@@ -1208,7 +1215,7 @@
                   <span class="player-name">Duncan McGuire</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="32" data-ko="2026-10-11T00:30:00+00:00" data-status="scheduled" data-pids="461633">
+      <details class="card" data-rank="32" data-ko="2026-10-11T00:30:00+00:00" data-status="scheduled" data-tier="" data-pids="461633">
         <summary>
           <div class="card-rank">32</div>
           <div class="card-body">
@@ -1237,7 +1244,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-11T01:00:00+00:00">2026-10-11T01:00:00+00:00</time></h3>
-      <details class="card" data-rank="27" data-ko="2026-10-11T01:00:00+00:00" data-status="scheduled" data-pids="212233">
+      <details class="card" data-rank="27" data-ko="2026-10-11T01:00:00+00:00" data-status="scheduled" data-tier="" data-pids="212233">
         <summary>
           <div class="card-rank">27</div>
           <div class="card-body">
@@ -1262,7 +1269,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-11T01:30:00+00:00">2026-10-11T01:30:00+00:00</time></h3>
-      <details class="card" data-rank="18" data-ko="2026-10-11T01:30:00+00:00" data-status="scheduled" data-pids="265884 50828 351591 73863 362448">
+      <details class="card" data-rank="18" data-ko="2026-10-11T01:30:00+00:00" data-status="scheduled" data-tier="" data-pids="265884 50828 351591 73863 362448">
         <summary>
           <div class="card-rank">18</div>
           <div class="card-body">
@@ -1304,7 +1311,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-11T02:30:00+00:00">2026-10-11T02:30:00+00:00</time></h3>
-      <details class="card" data-rank="17" data-ko="2026-10-11T02:30:00+00:00" data-status="scheduled" data-pids="50969 50952 51027 25617 15783 461627 201788">
+      <details class="card" data-rank="17" data-ko="2026-10-11T02:30:00+00:00" data-status="scheduled" data-tier="" data-pids="50969 50952 51027 25617 15783 461627 201788">
         <summary>
           <div class="card-rank">17</div>
           <div class="card-body">
@@ -1348,7 +1355,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-11T03:10:00+00:00">2026-10-11T03:10:00+00:00</time></h3>
-      <details class="card" data-rank="20" data-ko="2026-10-11T03:10:00+00:00" data-status="scheduled" data-pids="35885">
+      <details class="card" data-rank="20" data-ko="2026-10-11T03:10:00+00:00" data-status="scheduled" data-tier="" data-pids="35885">
         <summary>
           <div class="card-rank">20</div>
           <div class="card-body">
@@ -1381,7 +1388,7 @@
       </div>
       <div class="list by-time">
       <h3 class="slot"><time data-utc="2026-10-11T10:15:00+00:00">2026-10-11T10:15:00+00:00</time></h3>
-      <details class="card" data-rank="14" data-ko="2026-10-11T10:15:00+00:00" data-status="scheduled" data-pids="149557">
+      <details class="card" data-rank="14" data-ko="2026-10-11T10:15:00+00:00" data-status="scheduled" data-tier="" data-pids="149557">
         <summary>
           <div class="card-rank">14</div>
           <div class="card-body">
@@ -1406,7 +1413,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-11T11:00:00+00:00">2026-10-11T11:00:00+00:00</time></h3>
-      <details class="card" data-rank="6" data-ko="2026-10-11T11:00:00+00:00" data-status="scheduled" data-pids="50737 19314">
+      <details class="card" data-rank="6" data-ko="2026-10-11T11:00:00+00:00" data-status="scheduled" data-tier="" data-pids="50737 19314">
         <summary>
           <div class="card-rank">06</div>
           <div class="card-body">
@@ -1434,7 +1441,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-11T11:30:00+00:00">2026-10-11T11:30:00+00:00</time></h3>
-      <details class="card" data-rank="10" data-ko="2026-10-11T11:30:00+00:00" data-status="scheduled" data-pids="129706">
+      <details class="card" data-rank="10" data-ko="2026-10-11T11:30:00+00:00" data-status="scheduled" data-tier="" data-pids="129706">
         <summary>
           <div class="card-rank">10</div>
           <div class="card-body">
@@ -1459,7 +1466,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-11T13:00:00+00:00">2026-10-11T13:00:00+00:00</time><span class="slot-count">2 matches</span></h3>
-      <details class="card" data-rank="1" data-ko="2026-10-11T13:00:00+00:00" data-status="scheduled" data-pids="126949">
+      <details class="card" data-rank="1" data-ko="2026-10-11T13:00:00+00:00" data-status="scheduled" data-tier="" data-pids="126949">
         <summary>
           <div class="card-rank">01</div>
           <div class="card-body">
@@ -1483,7 +1490,7 @@
                   <span class="player-name">Chris Richards</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="7" data-ko="2026-10-11T13:00:00+00:00" data-status="scheduled" data-pids="161921">
+      <details class="card" data-rank="7" data-ko="2026-10-11T13:00:00+00:00" data-status="scheduled" data-tier="" data-pids="161921">
         <summary>
           <div class="card-rank">07</div>
           <div class="card-body">
@@ -1508,7 +1515,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-11T13:30:00+00:00">2026-10-11T13:30:00+00:00</time></h3>
-      <details class="card" data-rank="5" data-ko="2026-10-11T13:30:00+00:00" data-status="scheduled" data-pids="50852">
+      <details class="card" data-rank="5" data-ko="2026-10-11T13:30:00+00:00" data-status="scheduled" data-tier="" data-pids="50852">
         <summary>
           <div class="card-rank">05</div>
           <div class="card-body">
@@ -1533,7 +1540,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-11T14:00:00+00:00">2026-10-11T14:00:00+00:00</time></h3>
-      <details class="card" data-rank="8" data-ko="2026-10-11T14:00:00+00:00" data-status="scheduled" data-pids="383647">
+      <details class="card" data-rank="8" data-ko="2026-10-11T14:00:00+00:00" data-status="scheduled" data-tier="" data-pids="383647">
         <summary>
           <div class="card-rank">08</div>
           <div class="card-body">
@@ -1558,7 +1565,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-11T15:15:00+00:00">2026-10-11T15:15:00+00:00</time></h3>
-      <details class="card" data-rank="11" data-ko="2026-10-11T15:15:00+00:00" data-status="scheduled" data-pids="51144">
+      <details class="card" data-rank="11" data-ko="2026-10-11T15:15:00+00:00" data-status="scheduled" data-tier="" data-pids="51144">
         <summary>
           <div class="card-rank">11</div>
           <div class="card-body">
@@ -1583,7 +1590,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-11T15:30:00+00:00">2026-10-11T15:30:00+00:00</time></h3>
-      <details class="card" data-rank="13" data-ko="2026-10-11T15:30:00+00:00" data-status="scheduled" data-pids="51310">
+      <details class="card" data-rank="13" data-ko="2026-10-11T15:30:00+00:00" data-status="scheduled" data-tier="" data-pids="51310">
         <summary>
           <div class="card-rank">13</div>
           <div class="card-body">
@@ -1608,7 +1615,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-11T16:00:00+00:00">2026-10-11T16:00:00+00:00</time></h3>
-      <details class="card" data-rank="3" data-ko="2026-10-11T16:00:00+00:00" data-status="scheduled" data-pids="162106 17">
+      <details class="card" data-rank="3" data-ko="2026-10-11T16:00:00+00:00" data-status="scheduled" data-tier="" data-pids="162106 17">
         <summary>
           <div class="card-rank">03</div>
           <div class="card-body">
@@ -1636,7 +1643,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-11T18:45:00+00:00">2026-10-11T18:45:00+00:00</time><span class="slot-count">2 matches</span></h3>
-      <details class="card" data-rank="2" data-ko="2026-10-11T18:45:00+00:00" data-status="scheduled" data-pids="415">
+      <details class="card" data-rank="2" data-ko="2026-10-11T18:45:00+00:00" data-status="scheduled" data-tier="" data-pids="415">
         <summary>
           <div class="card-rank">02</div>
           <div class="card-body">
@@ -1660,7 +1667,7 @@
                   <span class="player-name">Weston McKennie</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="4" data-ko="2026-10-11T18:45:00+00:00" data-status="scheduled" data-pids="1138">
+      <details class="card" data-rank="4" data-ko="2026-10-11T18:45:00+00:00" data-status="scheduled" data-tier="" data-pids="1138">
         <summary>
           <div class="card-rank">04</div>
           <div class="card-body">
@@ -1685,7 +1692,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-11T22:15:00+00:00">2026-10-11T22:15:00+00:00</time></h3>
-      <details class="card" data-rank="12" data-ko="2026-10-11T22:15:00+00:00" data-status="scheduled" data-pids="6719">
+      <details class="card" data-rank="12" data-ko="2026-10-11T22:15:00+00:00" data-status="scheduled" data-tier="" data-pids="6719">
         <summary>
           <div class="card-rank">12</div>
           <div class="card-body">
@@ -1710,7 +1717,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-11T23:00:00+00:00">2026-10-11T23:00:00+00:00</time></h3>
-      <details class="card" data-rank="9" data-ko="2026-10-11T23:00:00+00:00" data-status="scheduled" data-pids="50952 25617 461627 334362 201788">
+      <details class="card" data-rank="9" data-ko="2026-10-11T23:00:00+00:00" data-status="scheduled" data-tier="" data-pids="50952 25617 461627 334362 201788">
         <summary>
           <div class="card-rank">09</div>
           <div class="card-body">
@@ -1756,7 +1763,7 @@
       </div>
       <div class="list by-time">
       <h3 class="slot"><time data-utc="2026-10-12T16:30:00+00:00">2026-10-12T16:30:00+00:00</time></h3>
-      <details class="card" data-rank="1" data-ko="2026-10-12T16:30:00+00:00" data-status="scheduled" data-pids="51266">
+      <details class="card" data-rank="1" data-ko="2026-10-12T16:30:00+00:00" data-status="scheduled" data-tier="" data-pids="51266">
         <summary>
           <div class="card-rank">01</div>
           <div class="card-body">
@@ -1781,7 +1788,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-12T17:00:00+00:00">2026-10-12T17:00:00+00:00</time></h3>
-      <details class="card" data-rank="3" data-ko="2026-10-12T17:00:00+00:00" data-status="scheduled" data-pids="203014">
+      <details class="card" data-rank="3" data-ko="2026-10-12T17:00:00+00:00" data-status="scheduled" data-tier="" data-pids="203014">
         <summary>
           <div class="card-rank">03</div>
           <div class="card-body">
@@ -1806,7 +1813,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-12T19:00:00+00:00">2026-10-12T19:00:00+00:00</time></h3>
-      <details class="card" data-rank="2" data-ko="2026-10-12T19:00:00+00:00" data-status="scheduled" data-pids="427">
+      <details class="card" data-rank="2" data-ko="2026-10-12T19:00:00+00:00" data-status="scheduled" data-tier="" data-pids="427">
         <summary>
           <div class="card-rank">02</div>
           <div class="card-body">
@@ -1831,7 +1838,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-12T21:30:00+00:00">2026-10-12T21:30:00+00:00</time></h3>
-      <details class="card" data-rank="4" data-ko="2026-10-12T21:30:00+00:00" data-status="scheduled" data-pids="129885">
+      <details class="card" data-rank="4" data-ko="2026-10-12T21:30:00+00:00" data-status="scheduled" data-tier="" data-pids="129885">
         <summary>
           <div class="card-rank">04</div>
           <div class="card-body">
@@ -1864,7 +1871,7 @@
       </div>
       <div class="list by-time">
       <h3 class="slot"><time data-utc="2026-10-13T18:45:00+00:00">2026-10-13T18:45:00+00:00</time></h3>
-      <details class="card" data-rank="4" data-ko="2026-10-13T18:45:00+00:00" data-status="scheduled" data-pids="102508">
+      <details class="card" data-rank="4" data-ko="2026-10-13T18:45:00+00:00" data-status="scheduled" data-tier="" data-pids="102508">
         <summary>
           <div class="card-rank">04</div>
           <div class="card-body">
@@ -1889,7 +1896,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-13T19:00:00+00:00">2026-10-13T19:00:00+00:00</time><span class="slot-count">5 matches</span></h3>
-      <details class="card" data-rank="1" data-ko="2026-10-13T19:00:00+00:00" data-status="scheduled" data-pids="201713 362400 201714 207768 418851 340571">
+      <details class="card" data-rank="1" data-ko="2026-10-13T19:00:00+00:00" data-status="scheduled" data-tier="" data-pids="201713 362400 201714 207768 418851 340571">
         <summary>
           <div class="card-rank">01</div>
           <div class="card-body">
@@ -1929,7 +1936,7 @@
                   <span class="player-name">Rokas Pukštas</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="2" data-ko="2026-10-13T19:00:00+00:00" data-status="scheduled" data-pids="38735 73868">
+      <details class="card" data-rank="2" data-ko="2026-10-13T19:00:00+00:00" data-status="scheduled" data-tier="" data-pids="38735 73868">
         <summary>
           <div class="card-rank">02</div>
           <div class="card-body">
@@ -1956,7 +1963,7 @@
                   <span class="player-name">Ricardo Pepi</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="3" data-ko="2026-10-13T19:00:00+00:00" data-status="scheduled" data-pids="355994">
+      <details class="card" data-rank="3" data-ko="2026-10-13T19:00:00+00:00" data-status="scheduled" data-tier="" data-pids="355994">
         <summary>
           <div class="card-rank">03</div>
           <div class="card-body">
@@ -1980,7 +1987,7 @@
                   <span class="player-name">Alex Freeman</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="5" data-ko="2026-10-13T19:00:00+00:00" data-status="scheduled" data-pids="133185">
+      <details class="card" data-rank="5" data-ko="2026-10-13T19:00:00+00:00" data-status="scheduled" data-tier="" data-pids="133185">
         <summary>
           <div class="card-rank">05</div>
           <div class="card-body">
@@ -2004,7 +2011,7 @@
                   <span class="player-name">Johnny Cardoso</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="6" data-ko="2026-10-13T19:00:00+00:00" data-status="scheduled" data-pids="162386 265733">
+      <details class="card" data-rank="6" data-ko="2026-10-13T19:00:00+00:00" data-status="scheduled" data-tier="" data-pids="162386 265733">
         <summary>
           <div class="card-rank">06</div>
           <div class="card-body">
@@ -2041,7 +2048,7 @@
       </div>
       <div class="list by-time">
       <h3 class="slot"><time data-utc="2026-10-14T19:00:00+00:00">2026-10-14T19:00:00+00:00</time></h3>
-      <details class="card" data-rank="15" data-ko="2026-10-14T19:00:00+00:00" data-status="scheduled" data-pids="486522">
+      <details class="card" data-rank="15" data-ko="2026-10-14T19:00:00+00:00" data-status="scheduled" data-tier="" data-pids="486522">
         <summary>
           <div class="card-rank">15</div>
           <div class="card-body">
@@ -2066,7 +2073,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-14T23:30:00+00:00">2026-10-14T23:30:00+00:00</time><span class="slot-count">6 matches</span></h3>
-      <details class="card" data-rank="1" data-ko="2026-10-14T23:30:00+00:00" data-status="scheduled" data-pids="50999 50879 340369 413230 351571 51185 312164">
+      <details class="card" data-rank="1" data-ko="2026-10-14T23:30:00+00:00" data-status="scheduled" data-tier="" data-pids="50999 50879 340369 413230 351571 51185 312164">
         <summary>
           <div class="card-rank">01</div>
           <div class="card-body">
@@ -2109,7 +2116,7 @@
                   <span class="player-name">Joshua Wynder</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="2" data-ko="2026-10-14T23:30:00+00:00" data-status="scheduled" data-pids="50728 50863 19607">
+      <details class="card" data-rank="2" data-ko="2026-10-14T23:30:00+00:00" data-status="scheduled" data-tier="" data-pids="50728 50863 19607">
         <summary>
           <div class="card-rank">02</div>
           <div class="card-body">
@@ -2139,7 +2146,7 @@
                   <span class="player-name">Matt Miazga</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="3" data-ko="2026-10-14T23:30:00+00:00" data-status="scheduled" data-pids="50848 62 51186 418618 461645">
+      <details class="card" data-rank="3" data-ko="2026-10-14T23:30:00+00:00" data-status="scheduled" data-tier="" data-pids="50848 62 51186 418618 461645">
         <summary>
           <div class="card-rank">03</div>
           <div class="card-body">
@@ -2176,7 +2183,7 @@
                   <span class="player-name">Adri Mehmeti</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="5" data-ko="2026-10-14T23:30:00+00:00" data-status="scheduled" data-pids="19026 102685 407425 357230 51238">
+      <details class="card" data-rank="5" data-ko="2026-10-14T23:30:00+00:00" data-status="scheduled" data-tier="" data-pids="19026 102685 407425 357230 51238">
         <summary>
           <div class="card-rank">05</div>
           <div class="card-body">
@@ -2213,7 +2220,7 @@
                   <span class="player-name">Eryk Williamson</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="7" data-ko="2026-10-14T23:30:00+00:00" data-status="scheduled" data-pids="51032 25332 461514 50913">
+      <details class="card" data-rank="7" data-ko="2026-10-14T23:30:00+00:00" data-status="scheduled" data-tier="" data-pids="51032 25332 461514 50913">
         <summary>
           <div class="card-rank">07</div>
           <div class="card-body">
@@ -2247,7 +2254,7 @@
                   <span class="player-name">Justin Ellis</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="13" data-ko="2026-10-14T23:30:00+00:00" data-status="scheduled" data-pids="208667">
+      <details class="card" data-rank="13" data-ko="2026-10-14T23:30:00+00:00" data-status="scheduled" data-tier="" data-pids="208667">
         <summary>
           <div class="card-rank">13</div>
           <div class="card-body">
@@ -2272,7 +2279,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-15T00:30:00+00:00">2026-10-15T00:30:00+00:00</time><span class="slot-count">4 matches</span></h3>
-      <details class="card" data-rank="4" data-ko="2026-10-15T00:30:00+00:00" data-status="scheduled" data-pids="266606 102524 462853 428007 362085 265882 153506 102510 542233">
+      <details class="card" data-rank="4" data-ko="2026-10-15T00:30:00+00:00" data-status="scheduled" data-tier="" data-pids="266606 102524 462853 428007 362085 265882 153506 102510 542233">
         <summary>
           <div class="card-rank">04</div>
           <div class="card-body">
@@ -2321,7 +2328,7 @@
                   <span class="player-name">Malik Jakupovic</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="8" data-ko="2026-10-15T00:30:00+00:00" data-status="scheduled" data-pids="51114 64310 362139 51118 51142 51136 50772">
+      <details class="card" data-rank="8" data-ko="2026-10-15T00:30:00+00:00" data-status="scheduled" data-tier="" data-pids="51114 64310 362139 51118 51142 51136 50772">
         <summary>
           <div class="card-rank">08</div>
           <div class="card-body">
@@ -2368,7 +2375,7 @@
                   <span class="player-note">Out / not featuring</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="9" data-ko="2026-10-15T00:30:00+00:00" data-status="scheduled" data-pids="266733 265762 461633">
+      <details class="card" data-rank="9" data-ko="2026-10-15T00:30:00+00:00" data-status="scheduled" data-tier="" data-pids="266733 265762 461633">
         <summary>
           <div class="card-rank">09</div>
           <div class="card-body">
@@ -2403,7 +2410,7 @@
                   <span class="player-note">Out / not featuring</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="12" data-ko="2026-10-15T00:30:00+00:00" data-status="scheduled" data-pids="50969 51027 15783 334362">
+      <details class="card" data-rank="12" data-ko="2026-10-15T00:30:00+00:00" data-status="scheduled" data-tier="" data-pids="50969 51027 15783 334362">
         <summary>
           <div class="card-rank">12</div>
           <div class="card-body">
@@ -2438,7 +2445,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-15T01:30:00+00:00">2026-10-15T01:30:00+00:00</time><span class="slot-count">2 matches</span></h3>
-      <details class="card" data-rank="6" data-ko="2026-10-15T01:30:00+00:00" data-status="scheduled" data-pids="312896 18897 351591 412227 413169">
+      <details class="card" data-rank="6" data-ko="2026-10-15T01:30:00+00:00" data-status="scheduled" data-tier="" data-pids="312896 18897 351591 412227 413169">
         <summary>
           <div class="card-rank">06</div>
           <div class="card-body">
@@ -2479,7 +2486,7 @@
                   <span class="player-note">Out / not featuring</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="11" data-ko="2026-10-15T01:30:00+00:00" data-status="scheduled" data-pids="265884 50828 201715 73863 362448 50883 312998">
+      <details class="card" data-rank="11" data-ko="2026-10-15T01:30:00+00:00" data-status="scheduled" data-tier="" data-pids="265884 50828 201715 73863 362448 50883 312998">
         <summary>
           <div class="card-rank">11</div>
           <div class="card-body">
@@ -2523,7 +2530,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-15T02:30:00+00:00">2026-10-15T02:30:00+00:00</time><span class="slot-count">3 matches</span></h3>
-      <details class="card" data-rank="10" data-ko="2026-10-15T02:30:00+00:00" data-status="scheduled" data-pids="50893 50952 25617 461627 201788">
+      <details class="card" data-rank="10" data-ko="2026-10-15T02:30:00+00:00" data-status="scheduled" data-tier="" data-pids="50893 50952 25617 461627 201788">
         <summary>
           <div class="card-rank">10</div>
           <div class="card-body">
@@ -2560,7 +2567,7 @@
                   <span class="player-name">Brandon Vázquez</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="14" data-ko="2026-10-15T02:30:00+00:00" data-status="scheduled" data-pids="50952 25617 461627 201788">
+      <details class="card" data-rank="14" data-ko="2026-10-15T02:30:00+00:00" data-status="scheduled" data-tier="" data-pids="50952 25617 461627 201788">
         <summary>
           <div class="card-rank">14</div>
           <div class="card-body">
@@ -2593,7 +2600,7 @@
                   <span class="player-name">Nkosi Burgess</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="16" data-ko="2026-10-15T02:30:00+00:00" data-status="scheduled" data-pids="407016 351572">
+      <details class="card" data-rank="16" data-ko="2026-10-15T02:30:00+00:00" data-status="scheduled" data-tier="" data-pids="407016 351572">
         <summary>
           <div class="card-rank">16</div>
           <div class="card-body">
@@ -2630,7 +2637,7 @@
       </div>
       <div class="list by-time">
       <h3 class="slot"><time data-utc="2026-10-15T16:45:00+00:00">2026-10-15T16:45:00+00:00</time><span class="slot-count">4 matches</span></h3>
-      <details class="card" data-rank="1" data-ko="2026-10-15T16:45:00+00:00" data-status="scheduled" data-pids="126949 80752">
+      <details class="card" data-rank="1" data-ko="2026-10-15T16:45:00+00:00" data-status="scheduled" data-tier="" data-pids="126949 80752">
         <summary>
           <div class="card-rank">01</div>
           <div class="card-body">
@@ -2658,7 +2665,7 @@
                   <span class="player-name">Chris Richards</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="3" data-ko="2026-10-15T16:45:00+00:00" data-status="scheduled" data-pids="162106 17">
+      <details class="card" data-rank="3" data-ko="2026-10-15T16:45:00+00:00" data-status="scheduled" data-tier="" data-pids="162106 17">
         <summary>
           <div class="card-rank">03</div>
           <div class="card-body">
@@ -2685,7 +2692,7 @@
                   <span class="player-name">Christian Pulišić</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="7" data-ko="2026-10-15T16:45:00+00:00" data-status="scheduled" data-pids="138835">
+      <details class="card" data-rank="7" data-ko="2026-10-15T16:45:00+00:00" data-status="scheduled" data-tier="" data-pids="138835">
         <summary>
           <div class="card-rank">07</div>
           <div class="card-body">
@@ -2709,7 +2716,7 @@
                   <span class="player-name">Folarin Balogun</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="8" data-ko="2026-10-15T16:45:00+00:00" data-status="scheduled" data-pids="162037">
+      <details class="card" data-rank="8" data-ko="2026-10-15T16:45:00+00:00" data-status="scheduled" data-tier="" data-pids="162037">
         <summary>
           <div class="card-rank">08</div>
           <div class="card-body">
@@ -2734,7 +2741,7 @@
                 </div></div>
       </details>
       <h3 class="slot"><time data-utc="2026-10-15T19:00:00+00:00">2026-10-15T19:00:00+00:00</time><span class="slot-count">5 matches</span></h3>
-      <details class="card" data-rank="2" data-ko="2026-10-15T19:00:00+00:00" data-status="scheduled" data-pids="415">
+      <details class="card" data-rank="2" data-ko="2026-10-15T19:00:00+00:00" data-status="scheduled" data-tier="" data-pids="415">
         <summary>
           <div class="card-rank">02</div>
           <div class="card-body">
@@ -2758,7 +2765,7 @@
                   <span class="player-name">Weston McKennie</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="4" data-ko="2026-10-15T19:00:00+00:00" data-status="scheduled" data-pids="1150">
+      <details class="card" data-rank="4" data-ko="2026-10-15T19:00:00+00:00" data-status="scheduled" data-tier="" data-pids="1150">
         <summary>
           <div class="card-rank">04</div>
           <div class="card-body">
@@ -2782,7 +2789,7 @@
                   <span class="player-name">Tyler Adams</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="5" data-ko="2026-10-15T19:00:00+00:00" data-status="scheduled" data-pids="1138">
+      <details class="card" data-rank="5" data-ko="2026-10-15T19:00:00+00:00" data-status="scheduled" data-tier="" data-pids="1138">
         <summary>
           <div class="card-rank">05</div>
           <div class="card-body">
@@ -2806,7 +2813,7 @@
                   <span class="player-name">Tim Weah</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="6" data-ko="2026-10-15T19:00:00+00:00" data-status="scheduled" data-pids="50737 19314">
+      <details class="card" data-rank="6" data-ko="2026-10-15T19:00:00+00:00" data-status="scheduled" data-tier="" data-pids="50737 19314">
         <summary>
           <div class="card-rank">06</div>
           <div class="card-body">
@@ -2833,7 +2840,7 @@
                   <span class="player-name">Cameron Carter-Vickers</span>
                 </div></div>
       </details>
-      <details class="card" data-rank="9" data-ko="2026-10-15T19:00:00+00:00" data-status="scheduled" data-pids="51144">
+      <details class="card" data-rank="9" data-ko="2026-10-15T19:00:00+00:00" data-status="scheduled" data-tier="" data-pids="51144">
         <summary>
           <div class="card-rank">09</div>
           <div class="card-body">
