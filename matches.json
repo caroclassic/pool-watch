@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-10T13:36:40Z",
+ "updated_at": "2026-10-10T14:04:15Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-10",
@@ -83,7 +83,7 @@
    "fixture_kind": "club",
    "status": "scheduled",
    "tier": "worth_a_look",
-   "tier_at_kickoff": null,
+   "tier_at_kickoff": "worth_a_look",
    "players_basis": null,
    "broadcast": "Fandango/USA Network — varies by match",
    "pool_players": [
