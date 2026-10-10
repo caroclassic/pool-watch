@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-10T12:34:14Z",
+ "updated_at": "2026-10-10T13:36:40Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-10",
@@ -143,7 +143,7 @@
    "away": "Bournemouth",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "NBC/USA/Peacock — varies by match",
@@ -155,25 +155,6 @@
     {
      "playerId": "64167",
      "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1557423",
-   "kickoff_utc": "2026-10-10T14:00:00Z",
-   "competition": "Premier League",
-   "home": "Ipswich",
-   "away": "Fulham",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "NBC/USA/Peacock — varies by match",
-   "pool_players": [
-    {
-     "playerId": "19549",
-     "side": "away"
     }
    ]
   },
@@ -227,25 +208,6 @@
     },
     {
      "playerId": "362400",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1563184",
-   "kickoff_utc": "2026-10-10T14:00:00Z",
-   "competition": "Championship",
-   "home": "Preston",
-   "away": "Millwall",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "265733",
      "side": "home"
     }
    ]
