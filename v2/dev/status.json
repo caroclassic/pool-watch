@@ -73,6 +73,20 @@
    "lineups_confirmed": false,
    "tier": "must_watch",
    "participation": {}
+  },
+  "205": {
+   "status": "scheduled",
+   "status_updated_at": null,
+   "lineups_confirmed": false,
+   "tier": "worth_a_look",
+   "participation": {}
+  },
+  "206": {
+   "status": "scheduled",
+   "status_updated_at": null,
+   "lineups_confirmed": false,
+   "tier": "worth_a_look",
+   "participation": {}
   }
  }
 }

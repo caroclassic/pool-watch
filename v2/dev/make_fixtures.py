@@ -98,6 +98,8 @@ def build(now, kind):
         add(201, at(1, 1, 0), "Liga MX", "Tijuana", "Pachuca", "scheduled", None, players=pp([18]))
         add(202, at(1, 10, 0), "Premier League", "Bournemouth", "Brentford", "scheduled", "must_watch", players=pp([3, 14, 15]), bc="USA Network")
         add(203, at(1, 15, 0), "Bundesliga", "B. Mönchengladbach", "Bayer Leverkusen", "scheduled", "must_watch", players=pp([11, 15, 17]))
+        add(205, at(1, 12, 30), "Premier League", "Brighton", "Everton", "scheduled", "worth_a_look", players=pp([21]))
+        add(206, at(1, 11, 0), "Eredivisie", "PSV", "Feyenoord", "scheduled", "worth_a_look", players=pp([8, 10]))
         add(204, at(1, 15, 0), "Serie A", "AC Milan", "Juventus", "scheduled", "must_watch", players=pp([1, 2]), bc="Paramount+")
         # Sun: youth
         add(301, at(2, 12, 0), "U20 Friendly", "USA U20", "Mexico U20", fk="national_youth", players=pp([28, 29], "home"))

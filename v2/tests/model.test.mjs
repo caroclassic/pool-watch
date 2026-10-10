@@ -103,18 +103,30 @@ test("band order and one appearance per match", () => {
   assert.equal(new Set(all).size, all.length); assert.equal(all.length, 7);
 });
 
-test("no follows: nothing pinned, Must-watch band then kickoff order", () => {
-  const mf = feed([match(1, { ko: iso(1), tier: "worth_a_look" }), match(2, { ko: iso(2), tier: "must_watch" }), match(3, { ko: iso(3) })]);
+test("no follows: nothing pinned; Must-watch, then Worth a look, then Also today, each in kickoff order", () => {
+  const mf = feed([
+    match(1, { ko: iso(1), tier: "worth_a_look" }), match(2, { ko: iso(2), tier: "must_watch" }), match(3, { ko: iso(3) }),
+    match(4, { ko: iso(0.5), tier: "worth_a_look" }), match(5, { ko: iso(0.2) })]);
   const d = M.buildDay(ctx(view(mf, sfeed())));
   assert.equal(d.pinned.length, 0);
   assert.deepEqual(d.must.map((c) => c.id), ["2"]);
-  assert.deepEqual(d.rest.map((c) => c.id), ["1", "3"]);
+  assert.deepEqual(d.worth.map((c) => c.id), ["4", "1"]);
+  assert.deepEqual(d.rest.map((c) => c.id), ["5", "3"]);
+  assert.ok(d.worth.every((c) => c.tier === "worth_a_look"));
+});
+
+test("a followed Worth a look match is pinned, not repeated in its band", () => {
+  const mf = feed([match(1, { ko: iso(1), tier: "worth_a_look", pool: [pm(11)] }), match(2, { ko: iso(2), tier: "worth_a_look", pool: [pm(12)] })]);
+  const d = M.buildDay(ctx(view(mf, sfeed()), { follows: ["11"] }));
+  assert.deepEqual(d.pinned.map((c) => c.id), ["1"]);
+  assert.deepEqual(d.worth.map((c) => c.id), ["2"]);
 });
 
 test("tiers off: no badges, no Must-watch band, no empty copy", () => {
   const mf = feed([match(1, { tier: "must_watch" }), match(2, { tier: "worth_a_look" })], { tiers: false });
   const d = M.buildDay(ctx(view(mf, sfeed()), { tiers: false }));
   assert.equal(d.must.length, 0); assert.equal(d.noMustCopy, null);
+  assert.equal(d.worth.length, 0);
   assert.ok(d.rest.every((c) => c.tier === null && c.pips === 0));
 });
 

@@ -177,8 +177,9 @@ function renderMain() {
     nodes.push(section("Live now", d.live, { cls: "band-live" }));
     nodes.push(section("Must-watch", d.must, { cls: "band-must", termKey: "must_watch" }));
     if (d.noMustCopy) nodes.push(h("p", { class: "no-must" }, d.noMustCopy));
-    const hasAbove = d.pinned.length || d.live.length || d.must.length;
-    nodes.push(section(hasAbove ? "Everything else" : "", d.rest));
+    nodes.push(section("Worth a look", d.worth, { cls: "band-worth" }));
+    const hasAbove = d.pinned.length || d.live.length || d.must.length || d.worth.length;
+    nodes.push(section(hasAbove ? "Also today" : "", d.rest));
     nodes.push(section("Postponed or cancelled", d.disrupted, { cls: "band-disrupted" }));
     if (d.earlier.length) {
       nodes.push(h("details", { class: "earlier", open: S.earlierOpen, ontoggle: (e) => { S.earlierOpen = e.target.open; } },

@@ -298,6 +298,48 @@
    ]
   },
   {
+   "matchId": "205",
+   "kickoff_utc": "2026-10-10T16:30:00Z",
+   "competition": "Premier League",
+   "home": "Brighton",
+   "away": "Everton",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": null,
+   "pool_players": [
+    {
+     "playerId": "21",
+     "side": null
+    }
+   ]
+  },
+  {
+   "matchId": "206",
+   "kickoff_utc": "2026-10-10T15:00:00Z",
+   "competition": "Eredivisie",
+   "home": "PSV",
+   "away": "Feyenoord",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": null,
+   "pool_players": [
+    {
+     "playerId": "8",
+     "side": null
+    },
+    {
+     "playerId": "10",
+     "side": null
+    }
+   ]
+  },
+  {
    "matchId": "204",
    "kickoff_utc": "2026-10-10T19:00:00Z",
    "competition": "Serie A",

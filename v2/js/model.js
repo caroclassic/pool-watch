@@ -6,8 +6,10 @@
 //   §5   card hierarchy and status lifecycle
 //   §6   pinning, "Not playing today", "Moved from your pins"
 //   §7   day membership by ET date, empty days
-//   dec 12  band order: pinned → Live now → Must-watch → everything else in
-//           kickoff order → postponed/cancelled → Earlier (finished)
+//   dec 12  band order: pinned → Live now → Must-watch → Worth a look → Also today
+//           (each in kickoff order) → postponed/cancelled → Earlier (finished).
+//           Amended 2026-10-10: the spec left Worth a look inline with the rest;
+//           it now has its own band, and the unbadged remainder is "Also today".
 
 import { etDateKey, localTime, relativeMinutes, kickoffDisplay, addDays, daysBetween } from "./time.js";
 import { chipName } from "./players-model.js";
@@ -197,7 +199,7 @@ export function buildDay(ctx) {
   const dayViews = views.filter((v) => v.etDay === dayKey).sort(byKickoff);
   const card = (v) => cardView(v, ctx);
 
-  const live = [], must = [], rest = [], disrupted = [], earlier = [], pinned = [];
+  const live = [], must = [], worth = [], rest = [], disrupted = [], earlier = [], pinned = [];
   for (const v of dayViews) {
     const fresh = freshness(v, ctx.statusFeed, ctx.now, ctx.staleMinutes);
     if (isPinned(v, follows)) { pinned.push(card(v)); continue; }
@@ -205,7 +207,7 @@ export function buildDay(ctx) {
     if (DISRUPTED.has(v.status)) { disrupted.push(card(v)); continue; }
     if (v.status === "live" && !fresh.stale) { live.push(card(v)); continue; }
     const c = card(v);
-    (c.tier === "must_watch" ? must : rest).push(c);
+    (c.tier === "must_watch" ? must : c.tier === "worth_a_look" ? worth : rest).push(c);
   }
 
   // Followed players with no pinned match this day.
@@ -224,7 +226,7 @@ export function buildDay(ctx) {
 
   // Empty-Must-watch copy (spec §4): only when tiers are on, the day has matches,
   // nothing qualifies, and there is at least a Worth a look to point at.
-  const all = [...pinned, ...live, ...must, ...rest, ...earlier];
+  const all = [...pinned, ...live, ...must, ...worth, ...rest, ...earlier];
   const hasMust = all.some((c) => c.tier === "must_watch");
   const hasWorth = all.some((c) => c.tier === "worth_a_look");
   const noMustCopy = ctx.tiersEnabled && dayViews.length > 0 && !hasMust && hasWorth
@@ -239,7 +241,7 @@ export function buildDay(ctx) {
 
   return {
     dayKey, total: dayViews.length,
-    pinned, live, must, rest, disrupted, earlier, notPlaying, noMustCopy, stillLive,
+    pinned, live, must, worth, rest, disrupted, earlier, notPlaying, noMustCopy, stillLive,
   };
 }
 
