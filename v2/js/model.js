@@ -14,7 +14,7 @@ import { chipName } from "./players-model.js";
 
 export const LIVE_LEAD_MIN = 90;      // lineup window opens this long before kickoff
 export const LIVE_TAIL_HOURS = 4;     // a match can be in play this long after kickoff
-export const LINEUP_USUAL_MIN = 30;
+export const LINEUP_USUAL_MIN = 30;   // lineups usually post about 30 min before kickoff
 export const COLLAPSED_CHIPS = 3;
 export const POOL_ESTIMATE_MAX = 8;
 

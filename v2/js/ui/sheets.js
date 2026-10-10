@@ -89,12 +89,13 @@ export function followingSheet({ follows, players, nextFor, onUnfollow, onSave, 
     }
     for (const id of ids) {
       const p = players.get(id);
-      const nx = p ? nextFor(id) : null;
+      const nx = p ? nextFor(id) : null;   // undefined = not known (matches not loaded)
       list.append(h("li", { class: "follow-row" },
         h("div", null,
           h("b", null, p ? p.display_name : chipName(players, id)),
           h("p", { class: "dim small" },
             !p && players.size ? "No longer in the pool"
+              : nx === undefined ? ""
               : nx ? `${nx.live ? "Live now" : nx.kickoff.text} · ${nx.home} vs ${nx.away}`
               : "No match in the next 7 days")),
         h("button", { type: "button", class: "btn btn-quiet", "aria-label": `Unfollow ${p ? p.display_name : id}`,

@@ -7,7 +7,7 @@ import {
   mergeFeeds, tiersEnabled, buildDay, dayFacts, stripDays, inWindow,
   nextMatchDay, nextMatchFor, followedChanges,
 } from "./model.js";
-import { createStorage, createFollowsStore, createFlags, parseHash, buildHash, decodeShare } from "./storage.js";
+import { createStorage, createFollowsStore, createFlags, parseHash, buildHash, decodeShare, readLegacyFollows } from "./storage.js";
 import { indexPlayers } from "./players-model.js";
 import { etDateKey, dayHeader, dayHeading, weekdayLong, relativeMinutes, localTime, addDays } from "./time.js";
 import { INTRO } from "./copy.js";
@@ -32,6 +32,7 @@ const viewerTz = () => devTz || Intl.DateTimeFormat().resolvedOptions().timeZone
 const storage = createStorage();
 const follows = createFollowsStore(storage, nowDate);
 const flags = createFlags(storage);
+if (!follows.count() && !flags.get("legacy-follows")) { follows.merge(readLegacyFollows(storage)); flags.set("legacy-follows"); }
 
 const S = {
   data: null,            // { matches, status, players }

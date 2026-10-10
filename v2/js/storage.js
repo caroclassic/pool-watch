@@ -170,3 +170,13 @@ export function createFlags(storage) {
     set: (name) => storage.set(`sxi.flag.${name}`, "1"),
   };
 }
+
+// ── the previous site's follows ─────────────────────────────────────────────
+
+/** Ids from the old static pages (`slate-follows`: a JSON array of player ids), or []. */
+export function readLegacyFollows(storage) {
+  try {
+    const arr = JSON.parse(storage.get("slate-follows") || "[]");
+    return Array.isArray(arr) ? arr.filter((x) => x !== null && x !== undefined).map(String).filter((s) => /^[A-Za-z0-9_-]{1,40}$/.test(s)) : [];
+  } catch { return []; }
+}
