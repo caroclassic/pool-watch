@@ -10,7 +10,7 @@ import {
 import { createStorage, createFollowsStore, createFlags, parseHash, buildHash, decodeShare, readLegacyFollows } from "./storage.js";
 import { indexPlayers } from "./players-model.js";
 import { etDateKey, dayHeader, dayHeading, weekdayLong, relativeMinutes, localTime, addDays } from "./time.js";
-import { INTRO } from "./copy.js";
+import { INTRO, LINEUP_NOTE } from "./copy.js";
 import { term, syncPopover } from "./ui/popover.js";
 import { h, clear } from "./ui/dom.js";
 import { renderCard } from "./ui/card.js";
@@ -122,9 +122,9 @@ let lastSig = { main: "", strip: "", banners: "", head: "" };
 let termSeen = new Set();
 const cardUi = () => ({ expanded: S.expanded, onPlayer: openPlayer, onToggleExpand: toggleExpand, termSeen });
 
-function section(label, cards, { cls = "", sub = null, termKey = null } = {}) {
+function section(label, cards, { cls = "", sub = null, termKey = null, showTier = true } = {}) {
   if (!cards.length) return null;
-  const ui = cardUi();
+  const ui = { ...cardUi(), showTier };
   return h("section", { class: `band ${cls}`, "aria-label": label },
     label ? h("h3", { class: "band-title" }, termKey ? term(label, termKey) : label, sub ? h("span", { class: "band-sub" }, ` ${sub}`) : null) : null,
     cards.map((c) => renderCard(c, ui)));
@@ -165,19 +165,26 @@ function renderMain() {
       head.zoneNote ? h("span", { class: "zone-note" }, head.zoneNote) : null),
   ];
 
+  // Lineup timing is the same on every card, so say it once for the day.
+  const allCards = [...d.pinned, ...d.live, ...d.must, ...d.worth, ...d.rest];
+  if (allCards.some((x) => x.header.kind === "pre")) nodes.push(h("p", { class: "day-note" }, LINEUP_NOTE));
+
+  // One freshness stamp per Live band instead of one per card.
+  const liveSub = (cards) => { const s = cards.find((x) => x.header.sub); return s ? `· ${s.header.sub}` : null; };
+
   if (today && d.stillLive.length) {
     const byDay = d.stillLive.map((x) => x.card);
-    nodes.push(section(`Still live from ${weekdayLong(d.stillLive[0].day)}`, byDay, { cls: "band-live" }));
+    nodes.push(section(`Still live from ${weekdayLong(d.stillLive[0].day)}`, byDay, { cls: "band-live", sub: liveSub(byDay) }));
   }
 
   if (d.total === 0 && !d.stillLive.length) {
     nodes.push(emptyState(day, c));
   } else {
     nodes.push(section("Your players", d.pinned, { cls: "band-pinned" }));
-    nodes.push(section("Live now", d.live, { cls: "band-live" }));
-    nodes.push(section("Must-watch", d.must, { cls: "band-must", termKey: "must_watch" }));
+    nodes.push(section("Live now", d.live, { cls: "band-live", sub: liveSub(d.live) }));
+    nodes.push(section("Must-watch", d.must, { cls: "band-must", termKey: "must_watch", showTier: false }));
     if (d.noMustCopy) nodes.push(h("p", { class: "no-must" }, d.noMustCopy));
-    nodes.push(section("Worth a look", d.worth, { cls: "band-worth" }));
+    nodes.push(section("Worth a look", d.worth, { cls: "band-worth", termKey: "worth_a_look", showTier: false }));
     const hasAbove = d.pinned.length || d.live.length || d.must.length || d.worth.length;
     nodes.push(section(hasAbove ? "Also today" : "", d.rest));
     nodes.push(section("Postponed or cancelled", d.disrupted, { cls: "band-disrupted" }));

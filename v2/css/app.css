@@ -74,7 +74,7 @@ h1.brand a { text-decoration: none; }
 .tile .t-dow { font-size: 0.8125rem; text-transform: uppercase; letter-spacing: .06em; color: var(--dim); }
 .tile .t-num { font-size: 1.375rem; font-weight: 700; line-height: 1.1; }
 .tile .t-mon { font-size: 0.6875rem; color: var(--dim); min-height: 13px; text-transform: uppercase; }
-.tile .t-marks { display: flex; gap: 4px; align-items: center; min-height: 14px; font-size: 0.75rem; font-weight: 700; color: var(--accent); }
+.tile .t-marks { display: flex; gap: 4px; align-items: center; min-height: 14px; font-size: 0.75rem; font-weight: 700; color: var(--ink); }
 .tile.is-selected { background: var(--panel); border-color: var(--panel); color: var(--on-fill); }
 .tile.is-selected .t-dow, .tile.is-selected .t-mon, .tile.is-selected .t-marks { color: var(--on-fill); opacity: .85; }
 .tile.is-quiet { border-style: dashed; }
@@ -96,7 +96,7 @@ h1.brand a { text-decoration: none; }
 .band { margin-top: 16px; }
 .band-title { font: 700 0.875rem var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--dim); margin: 0 2px 8px; }
 .band-sub { font-weight: 500; text-transform: none; letter-spacing: 0; }
-.band-pinned .band-title { color: var(--accent); }
+.day-note { margin: 2px 2px 0; font-size: 0.875rem; color: var(--dim); }
 .no-must { color: var(--dim); font-size: 0.9375rem; font-style: italic; margin: 12px 2px 0; }
 .not-playing { margin: 18px 2px 0; font-size: 0.9375rem; color: var(--dim); }
 .not-playing b { color: var(--ink); }
@@ -110,19 +110,16 @@ h1.brand a { text-decoration: none; }
 
 /* card */
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px 12px; margin: 0 0 10px; box-shadow: var(--shadow); }
-.card.tier-must_watch { border-left: 5px solid var(--accent); }
-.card.tier-worth_a_look { border-left: 3px solid var(--accent); }
-.card.is-pinned { outline: 1px solid var(--accent); }
+.band-must .card { border-left: 5px solid var(--accent); }
+.card > .teams:first-child { margin-top: 0; }
 .card.is-dim .teams { color: var(--dim); }
 .card-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; min-height: 22px; font: 700 0.8125rem var(--sans); text-transform: uppercase; letter-spacing: .08em; }
-.badge { color: var(--accent); flex: 0 1 auto; }
-.pips { white-space: nowrap; }
+.badge { color: var(--dim); flex: 0 1 auto; }
 .badge-must_watch { background: var(--accent); color: var(--on-fill); padding: 2px 8px; border-radius: 4px; }
-.pips { letter-spacing: 2px; }
 .status { color: var(--dim); margin-left: auto; text-align: right; }
 .status-live { color: var(--blue); display: inline-flex; align-items: center; gap: 5px; }
 .status-sub { font-weight: 500; text-transform: none; letter-spacing: 0; color: var(--dim); }
-.status-stale { color: var(--accent); }
+.status-stale { color: var(--ink); }
 .live-dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; animation: pulse 1.6s ease-in-out infinite; }
 @keyframes pulse { 50% { opacity: .35; } }
 .teams { font: 700 1.375rem/1.15 var(--sans); margin: 8px 0 4px; }
@@ -130,17 +127,17 @@ h1.brand a { text-decoration: none; }
 .meta { margin: 0; font-size: 0.9062rem; color: var(--dim); display: flex; flex-wrap: wrap; gap: 2px 10px; }
 .meta .ko { color: var(--ink); font-variant-numeric: tabular-nums; font-weight: 600; }
 .tag-youth, .slate-tag { font: 700 0.7188rem var(--sans); text-transform: uppercase; letter-spacing: .08em; border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; align-self: center; }
-.pin-line { margin: 8px 0 0; font-size: 0.9062rem; color: var(--accent); font-weight: 600; display: flex; flex-wrap: wrap; gap: 2px 12px; }
+.pin-line { margin: 8px 0 0; font-size: 0.9062rem; color: var(--ink); font-weight: 600; display: flex; flex-wrap: wrap; gap: 2px 12px; }
 .moved-tag { color: var(--dim); font-weight: 500; font-style: italic; }
 .chips { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { min-height: 44px; display: inline-flex; align-items: center; gap: 6px; padding: 0 12px; border: 1px solid var(--line); border-radius: 22px; background: transparent; color: var(--ink); font: 600 0.9375rem var(--serif); cursor: pointer; }
 .chip:hover { border-color: var(--ink); }
-.chip-followed { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
-.chip .shape { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid var(--accent); flex: none; position: relative; }
-.shape-inline { display: inline-block; width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid var(--accent); position: relative; margin-right: 6px; vertical-align: -1px; }
-.shape-starts { background: var(--accent); }
-.shape-bench { background: linear-gradient(90deg, var(--accent) 50%, transparent 50%); }
-.shape-not_in_squad::after { content: ""; position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1.5px; background: var(--accent); transform: rotate(45deg); }
+.chip-followed { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.chip .shape { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid var(--ink); flex: none; position: relative; }
+.shape-inline { display: inline-block; width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid var(--ink); position: relative; margin-right: 6px; vertical-align: -1px; }
+.shape-starts { background: var(--ink); }
+.shape-bench { background: linear-gradient(90deg, var(--ink) 50%, transparent 50%); }
+.shape-not_in_squad::after { content: ""; position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1.5px; background: var(--ink); transform: rotate(45deg); }
 .chip-word { font: 700 0.75rem var(--sans); text-transform: uppercase; letter-spacing: .06em; color: var(--dim); }
 .chip-not_in_squad .chip-name { text-decoration: line-through; text-decoration-thickness: 1px; color: var(--dim); }
 .chip-more { border-style: dashed; color: var(--dim); }

@@ -12,13 +12,15 @@ export const INTRO = {
   tail: " to follow them; their matches pin to the top.",
 };
 
+export const LINEUP_NOTE = "Lineups usually post ~30 min before kickoff.";
+
 export const ET_NOTE = "Days follow US Eastern time so everyone sees the same slate.";
 
 // Each section: title, optional lead rows [marker, meaning], optional footnote.
 export const LEGEND = [
   { title: "Match levels", rows: [
-    ["MUST-WATCH ●●●", "A big night for the pool: top players expected to play, or confirmed in the lineup."],
-    ["WORTH A LOOK ●●○", "Pool players in action, worth catching if you can."],
+    ["MUST-WATCH", "A big night for the pool: top players expected to play, or confirmed in the lineup."],
+    ["WORTH A LOOK", "Pool players in action, worth catching if you can."],
     ["(no label)", "Pool players are involved, with a smaller expected role."],
   ], note: "Levels are fixed, not a daily ranking, so some days have no Must-watch matches. Before lineups, levels assume expected players play. They update when lineups are confirmed." },
   { title: "Players in a match", rows: [
@@ -28,7 +30,7 @@ export const LEGEND = [
     ["⊘ Not in squad", "Not in the matchday squad."],
   ] },
   { title: "Match status", rows: [
-    ["Lineups ~30 min before kickoff", "Lineups usually post about 30 minutes before the match."],
+    ["Lineups usually post ~30 min before kickoff", "Said once under the day heading. A card only mentions lineups when they're confirmed or late."],
     ["Lineups confirmed ✓", "Lineups are in, and player statuses are final."],
     ["● LIVE", "In progress. We don't show scores or minutes."],
     ["Full time", "Finished. The match moves to the Earlier group."],
@@ -72,6 +74,7 @@ export const ABOUT = [
 export const POPOVERS = {
   pool: "Players in the picture for the U.S. men's national team, from regulars to young prospects.",
   must_watch: "A big night for the pool. Levels are fixed, so some days have none.",
+  worth_a_look: "Pool players in action, worth catching if you can. Levels are fixed, so some days have none.",
   lineups: "Lineups usually post about 30 minutes before kickoff. Until then, a listed player is expected to be involved.",
   relevance: "A 1 to 100 score for how close a player is to the national team picture right now.",
   follow: "Pins a player's matches to the top. Saved on this device.",

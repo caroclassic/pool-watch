@@ -4,21 +4,24 @@ import { h } from "./dom.js";
 import { term } from "./popover.js";
 
 
-const PIPS = (n) => "●".repeat(n) + "○".repeat(3 - n);
-
 function header(c, ui) {
   const s = c.header;
-  const status = s.kind === "live"
-    ? h("span", { class: "status status-live" }, h("span", { class: "live-dot", "aria-hidden": "true" }), "LIVE",
-        s.sub ? h("span", { class: "status-sub" }, ` · ${s.sub}`) : null)
+  // "pre" (lineups not due yet) is the same on every card, so it is said once
+  // under the day heading instead (app.js). The freshness stamp for live
+  // matches likewise lives on the Live band / footer, not on each card.
+  const status = s.kind === "pre" ? null
+    : s.kind === "live"
+    ? h("span", { class: "status status-live" }, h("span", { class: "live-dot", "aria-hidden": "true" }), "LIVE")
     : s.kind === "lineups" && ui.termSeen && !ui.termSeen.has("lineups")
       ? (ui.termSeen.add("lineups"), h("span", { class: "status status-lineups" }, term("Lineups confirmed", "lineups"), " ✓"))
       : h("span", { class: `status status-${s.kind}` }, s.text);
-  const badge = c.tier
-    ? h("span", { class: `badge badge-${c.tier}` }, c.tierWord.toUpperCase(), " ",
-        h("span", { class: "pips", "aria-hidden": "true" }, PIPS(c.pips)))
+  // The Must-watch / Worth a look bands already name the tier in their heading,
+  // so cards there skip the badge (ui.showTier === false). Elsewhere (Your
+  // players, Live now, Earlier) the badge is the only place the tier shows.
+  const badge = c.tier && ui.showTier !== false
+    ? h("span", { class: `badge badge-${c.tier}` }, c.tierWord.toUpperCase())
     : null;
-  return h("div", { class: "card-head" }, badge, status);
+  return badge || status ? h("div", { class: "card-head" }, badge, status) : null;
 }
 
 function chip(c, onPlayer) {
