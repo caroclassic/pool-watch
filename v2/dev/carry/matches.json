@@ -1,0 +1,59 @@
+{
+ "schema_version": 1,
+ "updated_at": "2026-10-09T04:30:00Z",
+ "reference_tz": "America/New_York",
+ "window": {
+  "start": "2026-10-06",
+  "end": "2026-10-23"
+ },
+ "tier_thresholds": {
+  "schema_version": 1,
+  "enabled": true,
+  "must_watch_min": 6,
+  "worth_a_look_min": 3
+ },
+ "matches": [
+  {
+   "matchId": "701",
+   "kickoff_utc": "2026-10-09T01:30:00Z",
+   "competition": "MLS",
+   "home": "LAFC",
+   "away": "Seattle Sounders",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": "worth_a_look",
+   "players_basis": null,
+   "broadcast": null,
+   "pool_players": [
+    {
+     "playerId": "22",
+     "side": null
+    },
+    {
+     "playerId": "26",
+     "side": null
+    }
+   ]
+  },
+  {
+   "matchId": "702",
+   "kickoff_utc": "2026-10-09T13:00:00Z",
+   "competition": "Premier League",
+   "home": "Fulham",
+   "away": "Wolves",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": null,
+   "pool_players": [
+    {
+     "playerId": "4",
+     "side": null
+    }
+   ]
+  }
+ ]
+}

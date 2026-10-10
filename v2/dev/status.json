@@ -1,0 +1,78 @@
+{
+ "schema_version": 1,
+ "updated_at": "2026-10-09T16:59:00Z",
+ "active": true,
+ "matches": {
+  "101": {
+   "status": "full_time",
+   "status_updated_at": "2026-10-09T17:00:00Z",
+   "lineups_confirmed": true,
+   "participation": {
+    "7": "starts"
+   }
+  },
+  "102": {
+   "status": "live",
+   "status_updated_at": "2026-10-09T16:59:00Z",
+   "lineups_confirmed": true,
+   "tier": "must_watch",
+   "tier_at_kickoff": "must_watch",
+   "participation": {
+    "9": "starts",
+    "2": "bench",
+    "6": "not_in_squad"
+   }
+  },
+  "103": {
+   "status": "scheduled",
+   "status_updated_at": null,
+   "lineups_confirmed": false,
+   "tier": "must_watch",
+   "participation": {}
+  },
+  "104": {
+   "status": "scheduled",
+   "status_updated_at": "2026-10-09T17:00:00Z",
+   "lineups_confirmed": true,
+   "tier": "worth_a_look",
+   "participation": {
+    "19": "starts"
+   }
+  },
+  "105": {
+   "status": "postponed",
+   "status_updated_at": null,
+   "lineups_confirmed": false,
+   "tier": null,
+   "participation": {}
+  },
+  "106": {
+   "status": "scheduled",
+   "status_updated_at": null,
+   "lineups_confirmed": false,
+   "tier": null,
+   "participation": {}
+  },
+  "107": {
+   "status": "scheduled",
+   "status_updated_at": null,
+   "lineups_confirmed": false,
+   "tier": "worth_a_look",
+   "participation": {}
+  },
+  "201": {
+   "status": "scheduled",
+   "status_updated_at": null,
+   "lineups_confirmed": false,
+   "tier": null,
+   "participation": {}
+  },
+  "202": {
+   "status": "scheduled",
+   "status_updated_at": null,
+   "lineups_confirmed": false,
+   "tier": "must_watch",
+   "participation": {}
+  }
+ }
+}

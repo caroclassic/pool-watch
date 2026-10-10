@@ -1,0 +1,26 @@
+{
+ "schema_version": 1,
+ "updated_at": "2026-10-09T04:29:00Z",
+ "active": true,
+ "matches": {
+  "701": {
+   "status": "live",
+   "status_updated_at": "2026-10-09T04:29:00Z",
+   "lineups_confirmed": true,
+   "tier": "worth_a_look",
+   "tier_at_kickoff": "worth_a_look",
+   "carried_over": true,
+   "participation": {
+    "22": "starts",
+    "26": "bench"
+   }
+  },
+  "702": {
+   "status": "scheduled",
+   "status_updated_at": null,
+   "lineups_confirmed": false,
+   "tier": "worth_a_look",
+   "participation": {}
+  }
+ }
+}

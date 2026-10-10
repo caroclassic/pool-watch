@@ -1,0 +1,508 @@
+{
+ "schema_version": 1,
+ "updated_at": "2026-10-09T17:00:00Z",
+ "reference_tz": "America/New_York",
+ "window": {
+  "start": "2026-10-06",
+  "end": "2026-10-23"
+ },
+ "tier_thresholds": {
+  "schema_version": 1,
+  "enabled": true,
+  "must_watch_min": 6,
+  "worth_a_look_min": 3
+ },
+ "matches": [
+  {
+   "matchId": "901",
+   "kickoff_utc": "2026-10-07T19:00:00Z",
+   "competition": "Eredivisie",
+   "home": "PSV",
+   "away": "Ajax",
+   "fixture_kind": "club",
+   "status": "full_time",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": null,
+   "pool_players": [
+    {
+     "playerId": "8",
+     "side": null
+    },
+    {
+     "playerId": "10",
+     "side": null
+    }
+   ]
+  },
+  {
+   "matchId": "902",
+   "kickoff_utc": "2026-10-08T18:00:00Z",
+   "competition": "Premier League",
+   "home": "Fulham",
+   "away": "Brighton",
+   "fixture_kind": "club",
+   "status": "full_time",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": null,
+   "pool_players": [
+    {
+     "playerId": "4",
+     "side": null
+    }
+   ]
+  },
+  {
+   "matchId": "101",
+   "kickoff_utc": "2026-10-09T13:30:00Z",
+   "competition": "Ligue 1",
+   "home": "Marseille",
+   "away": "Lille",
+   "fixture_kind": "club",
+   "status": "full_time",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": null,
+   "pool_players": [
+    {
+     "playerId": "7",
+     "side": null
+    }
+   ]
+  },
+  {
+   "matchId": "102",
+   "kickoff_utc": "2026-10-09T15:30:00Z",
+   "competition": "Serie A",
+   "home": "Atalanta",
+   "away": "Napoli",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "must_watch",
+   "tier_at_kickoff": "must_watch",
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "9",
+     "side": null
+    },
+    {
+     "playerId": "2",
+     "side": null
+    },
+    {
+     "playerId": "6",
+     "side": null
+    }
+   ]
+  },
+  {
+   "matchId": "103",
+   "kickoff_utc": "2026-10-09T18:00:00Z",
+   "competition": "Premier League",
+   "home": "Fulham",
+   "away": "Crystal Palace",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "must_watch",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Peacock",
+   "pool_players": [
+    {
+     "playerId": "4",
+     "side": null
+    },
+    {
+     "playerId": "12",
+     "side": null
+    },
+    {
+     "playerId": "5",
+     "side": null
+    }
+   ]
+  },
+  {
+   "matchId": "104",
+   "kickoff_utc": "2026-10-09T19:00:00Z",
+   "competition": "La Liga",
+   "home": "Villarreal",
+   "away": "Girona",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": null,
+   "pool_players": [
+    {
+     "playerId": "19",
+     "side": null
+    }
+   ]
+  },
+  {
+   "matchId": "105",
+   "kickoff_utc": "2026-10-09T18:30:00Z",
+   "competition": "Championship",
+   "home": "Derby County",
+   "away": "Leeds United",
+   "fixture_kind": "club",
+   "status": "postponed",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": null,
+   "pool_players": [
+    {
+     "playerId": "20",
+     "side": null
+    },
+    {
+     "playerId": "14",
+     "side": null
+    }
+   ]
+  },
+  {
+   "matchId": "106",
+   "kickoff_utc": "2026-10-09T23:30:00Z",
+   "competition": "MLS",
+   "home": "Philadelphia Union",
+   "away": "LAFC",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": null,
+   "pool_players": [
+    {
+     "playerId": "22",
+     "side": null
+    },
+    {
+     "playerId": "23",
+     "side": null
+    },
+    {
+     "playerId": "28",
+     "side": null
+    }
+   ]
+  },
+  {
+   "matchId": "107",
+   "kickoff_utc": "2026-10-10T01:00:00Z",
+   "competition": "Liga MX",
+   "home": "Chivas",
+   "away": "Club América",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": null,
+   "pool_players": [
+    {
+     "playerId": "18",
+     "side": null
+    },
+    {
+     "playerId": "24",
+     "side": null
+    },
+    {
+     "playerId": "26",
+     "side": null
+    }
+   ]
+  },
+  {
+   "matchId": "201",
+   "kickoff_utc": "2026-10-10T05:00:00Z",
+   "competition": "Liga MX",
+   "home": "Tijuana",
+   "away": "Pachuca",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": null,
+   "pool_players": [
+    {
+     "playerId": "18",
+     "side": null
+    }
+   ]
+  },
+  {
+   "matchId": "202",
+   "kickoff_utc": "2026-10-10T14:00:00Z",
+   "competition": "Premier League",
+   "home": "Bournemouth",
+   "away": "Brentford",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "must_watch",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "USA Network",
+   "pool_players": [
+    {
+     "playerId": "3",
+     "side": null
+    },
+    {
+     "playerId": "14",
+     "side": null
+    },
+    {
+     "playerId": "15",
+     "side": null
+    }
+   ]
+  },
+  {
+   "matchId": "203",
+   "kickoff_utc": "2026-10-10T19:00:00Z",
+   "competition": "Bundesliga",
+   "home": "B. Mönchengladbach",
+   "away": "Bayer Leverkusen",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "must_watch",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": null,
+   "pool_players": [
+    {
+     "playerId": "11",
+     "side": null
+    },
+    {
+     "playerId": "15",
+     "side": null
+    },
+    {
+     "playerId": "17",
+     "side": null
+    }
+   ]
+  },
+  {
+   "matchId": "204",
+   "kickoff_utc": "2026-10-10T19:00:00Z",
+   "competition": "Serie A",
+   "home": "AC Milan",
+   "away": "Juventus",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "must_watch",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "1",
+     "side": null
+    },
+    {
+     "playerId": "2",
+     "side": null
+    }
+   ]
+  },
+  {
+   "matchId": "301",
+   "kickoff_utc": "2026-10-11T16:00:00Z",
+   "competition": "U20 Friendly",
+   "home": "USA U20",
+   "away": "Mexico U20",
+   "fixture_kind": "national_youth",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": null,
+   "pool_players": [
+    {
+     "playerId": "28",
+     "side": "home"
+    },
+    {
+     "playerId": "29",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "401",
+   "kickoff_utc": "2026-10-14T23:30:00Z",
+   "competition": "Friendly",
+   "home": "USA",
+   "away": "Ecuador",
+   "fixture_kind": "national_senior",
+   "status": "scheduled",
+   "tier": "must_watch",
+   "tier_at_kickoff": null,
+   "players_basis": "pool_estimate",
+   "broadcast": "TNT",
+   "pool_players": [
+    {
+     "playerId": "1",
+     "side": "home"
+    },
+    {
+     "playerId": "2",
+     "side": "home"
+    },
+    {
+     "playerId": "3",
+     "side": "home"
+    },
+    {
+     "playerId": "4",
+     "side": "home"
+    },
+    {
+     "playerId": "5",
+     "side": "home"
+    },
+    {
+     "playerId": "6",
+     "side": "home"
+    },
+    {
+     "playerId": "7",
+     "side": "home"
+    },
+    {
+     "playerId": "8",
+     "side": "home"
+    },
+    {
+     "playerId": "9",
+     "side": "home"
+    },
+    {
+     "playerId": "10",
+     "side": "home"
+    },
+    {
+     "playerId": "11",
+     "side": "home"
+    },
+    {
+     "playerId": "12",
+     "side": "home"
+    },
+    {
+     "playerId": "13",
+     "side": "home"
+    },
+    {
+     "playerId": "14",
+     "side": "home"
+    },
+    {
+     "playerId": "15",
+     "side": "home"
+    },
+    {
+     "playerId": "16",
+     "side": "home"
+    },
+    {
+     "playerId": "17",
+     "side": "home"
+    },
+    {
+     "playerId": "18",
+     "side": "home"
+    },
+    {
+     "playerId": "19",
+     "side": "home"
+    },
+    {
+     "playerId": "20",
+     "side": "home"
+    },
+    {
+     "playerId": "21",
+     "side": "home"
+    },
+    {
+     "playerId": "22",
+     "side": "home"
+    },
+    {
+     "playerId": "23",
+     "side": "home"
+    },
+    {
+     "playerId": "24",
+     "side": "home"
+    },
+    {
+     "playerId": "25",
+     "side": "home"
+    },
+    {
+     "playerId": "26",
+     "side": "home"
+    },
+    {
+     "playerId": "27",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "501",
+   "kickoff_utc": "2026-10-15T18:00:00Z",
+   "competition": "Premier League",
+   "home": "Fulham",
+   "away": "Everton",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": null,
+   "pool_players": [
+    {
+     "playerId": "4",
+     "side": null
+    }
+   ]
+  },
+  {
+   "matchId": "601",
+   "kickoff_utc": "2026-10-23T18:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Monaco",
+   "away": "Lens",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": null,
+   "pool_players": [
+    {
+     "playerId": "6",
+     "side": null
+    }
+   ]
+  }
+ ]
+}
