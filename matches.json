@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-10T15:54:40Z",
+ "updated_at": "2026-10-10T16:24:12Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-10",
@@ -54,7 +54,7 @@
   {
    "matchId": "1563189",
    "kickoff_utc": "2026-10-10T11:30:00Z",
-   "competition": "Championship",
+   "competition": "EFL Championship",
    "home": "West Brom",
    "away": "Birmingham",
    "fixture_kind": "club",
@@ -138,7 +138,7 @@
   {
    "matchId": "1556871",
    "kickoff_utc": "2026-10-10T14:00:00Z",
-   "competition": "Championship",
+   "competition": "Scottish Championship",
    "home": "Arbroath",
    "away": "Morton",
    "fixture_kind": "club",
@@ -180,7 +180,7 @@
   {
    "matchId": "1563180",
    "kickoff_utc": "2026-10-10T14:00:00Z",
-   "competition": "Championship",
+   "competition": "EFL Championship",
    "home": "Bolton",
    "away": "Stoke City",
    "fixture_kind": "club",
@@ -203,7 +203,7 @@
   {
    "matchId": "1563183",
    "kickoff_utc": "2026-10-10T14:00:00Z",
-   "competition": "Championship",
+   "competition": "EFL Championship",
    "home": "Middlesbrough",
    "away": "Wolves",
    "fixture_kind": "club",
@@ -234,7 +234,7 @@
   {
    "matchId": "1563798",
    "kickoff_utc": "2026-10-10T14:00:00Z",
-   "competition": "League Two",
+   "competition": "EFL League Two",
    "home": "Rotherham",
    "away": "Gillingham",
    "fixture_kind": "club",
@@ -879,7 +879,7 @@
   {
    "matchId": "1556674",
    "kickoff_utc": "2026-10-11T11:00:00Z",
-   "competition": "Premiership",
+   "competition": "Scottish Premiership",
    "home": "Motherwell",
    "away": "Celtic",
    "fixture_kind": "club",
@@ -982,7 +982,7 @@
   {
    "matchId": "1549029",
    "kickoff_utc": "2026-10-11T14:00:00Z",
-   "competition": "Superliga",
+   "competition": "Danish Superliga",
    "home": "Brondby",
    "away": "Lyngby",
    "fixture_kind": "club",
@@ -1173,7 +1173,7 @@
   {
    "matchId": "1549028",
    "kickoff_utc": "2026-10-12T17:00:00Z",
-   "competition": "Superliga",
+   "competition": "Danish Superliga",
    "home": "Aarhus",
    "away": "Sonderjyske",
    "fixture_kind": "club",
@@ -1230,7 +1230,7 @@
   {
    "matchId": "1563198",
    "kickoff_utc": "2026-10-13T18:45:00Z",
-   "competition": "Championship",
+   "competition": "EFL Championship",
    "home": "Wrexham",
    "away": "West Brom",
    "fixture_kind": "club",
@@ -1249,7 +1249,7 @@
   {
    "matchId": "1563191",
    "kickoff_utc": "2026-10-13T19:00:00Z",
-   "competition": "Championship",
+   "competition": "EFL Championship",
    "home": "Birmingham",
    "away": "Preston",
    "fixture_kind": "club",
@@ -1272,7 +1272,7 @@
   {
    "matchId": "1563196",
    "kickoff_utc": "2026-10-13T19:00:00Z",
-   "competition": "Championship",
+   "competition": "EFL Championship",
    "home": "Stoke City",
    "away": "Middlesbrough",
    "fixture_kind": "club",
@@ -2121,7 +2121,7 @@
   {
    "matchId": "1643111",
    "kickoff_utc": "2026-10-16T19:00:00Z",
-   "competition": "Cup",
+   "competition": "Belgian Cup",
    "home": "Standard Liege",
    "away": "Dender",
    "fixture_kind": "club",
@@ -2159,7 +2159,7 @@
   {
    "matchId": "1563207",
    "kickoff_utc": "2026-10-17T11:30:00Z",
-   "competition": "Championship",
+   "competition": "EFL Championship",
    "home": "Middlesbrough",
    "away": "Cardiff",
    "fixture_kind": "club",
@@ -2190,7 +2190,7 @@
   {
    "matchId": "1563806",
    "kickoff_utc": "2026-10-17T11:30:00Z",
-   "competition": "League Two",
+   "competition": "EFL League Two",
    "home": "Fleetwood Town",
    "away": "Rotherham",
    "fixture_kind": "club",
@@ -2323,7 +2323,7 @@
   {
    "matchId": "1556879",
    "kickoff_utc": "2026-10-17T14:00:00Z",
-   "competition": "Championship",
+   "competition": "Scottish Championship",
    "home": "Morton",
    "away": "Queen's Park",
    "fixture_kind": "club",
@@ -2361,7 +2361,7 @@
   {
    "matchId": "1563203",
    "kickoff_utc": "2026-10-17T14:00:00Z",
-   "competition": "Championship",
+   "competition": "EFL Championship",
    "home": "Birmingham",
    "away": "QPR",
    "fixture_kind": "club",
@@ -2380,7 +2380,7 @@
   {
    "matchId": "1563206",
    "kickoff_utc": "2026-10-17T14:00:00Z",
-   "competition": "Championship",
+   "competition": "EFL Championship",
    "home": "Derby",
    "away": "Stoke City",
    "fixture_kind": "club",
@@ -2403,7 +2403,7 @@
   {
    "matchId": "1563213",
    "kickoff_utc": "2026-10-17T14:00:00Z",
-   "competition": "Championship",
+   "competition": "EFL Championship",
    "home": "West Brom",
    "away": "Blackburn",
    "fixture_kind": "club",
@@ -2422,7 +2422,7 @@
   {
    "matchId": "1563214",
    "kickoff_utc": "2026-10-17T14:00:00Z",
-   "competition": "Championship",
+   "competition": "EFL Championship",
    "home": "Wrexham",
    "away": "Preston",
    "fixture_kind": "club",
@@ -3033,7 +3033,7 @@
   {
    "matchId": "1549036",
    "kickoff_utc": "2026-10-18T12:00:00Z",
-   "competition": "Superliga",
+   "competition": "Danish Superliga",
    "home": "Lyngby",
    "away": "FC Nordsjaelland",
    "fixture_kind": "club",
@@ -3052,7 +3052,7 @@
   {
    "matchId": "1549038",
    "kickoff_utc": "2026-10-18T12:00:00Z",
-   "competition": "Superliga",
+   "competition": "Danish Superliga",
    "home": "Sonderjyske",
    "away": "Silkeborg",
    "fixture_kind": "club",
@@ -3170,7 +3170,7 @@
   {
    "matchId": "1556677",
    "kickoff_utc": "2026-10-18T14:00:00Z",
-   "competition": "Premiership",
+   "competition": "Scottish Premiership",
    "home": "Celtic",
    "away": "Heart Of Midlothian",
    "fixture_kind": "club",
@@ -3517,7 +3517,7 @@
   {
    "matchId": "1563824",
    "kickoff_utc": "2026-10-20T18:45:00Z",
-   "competition": "League Two",
+   "competition": "EFL League Two",
    "home": "Rotherham",
    "away": "Newport County",
    "fixture_kind": "club",
@@ -3949,7 +3949,7 @@
   {
    "matchId": "1563216",
    "kickoff_utc": "2026-10-23T19:00:00Z",
-   "competition": "Championship",
+   "competition": "EFL Championship",
    "home": "Bolton",
    "away": "Middlesbrough",
    "fixture_kind": "club",
@@ -4056,7 +4056,7 @@
   {
    "matchId": "1556882",
    "kickoff_utc": "2026-10-24T14:00:00Z",
-   "competition": "Championship",
+   "competition": "Scottish Championship",
    "home": "Morton",
    "away": "Ayr Utd",
    "fixture_kind": "club",
@@ -4098,7 +4098,7 @@
   {
    "matchId": "1563217",
    "kickoff_utc": "2026-10-24T14:00:00Z",
-   "competition": "Championship",
+   "competition": "EFL Championship",
    "home": "Cardiff",
    "away": "Birmingham",
    "fixture_kind": "club",
@@ -4117,7 +4117,7 @@
   {
    "matchId": "1563221",
    "kickoff_utc": "2026-10-24T14:00:00Z",
-   "competition": "Championship",
+   "competition": "EFL Championship",
    "home": "Preston",
    "away": "West Brom",
    "fixture_kind": "club",
@@ -4140,7 +4140,7 @@
   {
    "matchId": "1563224",
    "kickoff_utc": "2026-10-24T14:00:00Z",
-   "competition": "Championship",
+   "competition": "EFL Championship",
    "home": "Stoke City",
    "away": "Bristol City",
    "fixture_kind": "club",
@@ -4163,7 +4163,7 @@
   {
    "matchId": "1563836",
    "kickoff_utc": "2026-10-24T14:00:00Z",
-   "competition": "League Two",
+   "competition": "EFL League Two",
    "home": "Rotherham",
    "away": "Shrewsbury",
    "fixture_kind": "club",
