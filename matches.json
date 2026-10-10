@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-10T09:34:10Z",
+ "updated_at": "2026-10-10T12:34:14Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-10",
@@ -70,25 +70,6 @@
     },
     {
      "playerId": "162386",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1601545",
-   "kickoff_utc": "2026-10-10T13:00:00Z",
-   "competition": "Serie B",
-   "home": "Benevento",
-   "away": "Cesena",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "25335",
      "side": "away"
     }
    ]
