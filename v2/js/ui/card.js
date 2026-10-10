@@ -1,16 +1,19 @@
 // card.js — one match card (spec §5). Takes a cardView() model; owns no state.
 
 import { h } from "./dom.js";
+import { term } from "./popover.js";
 
 
 const PIPS = (n) => "●".repeat(n) + "○".repeat(3 - n);
 
-function header(c) {
+function header(c, ui) {
   const s = c.header;
   const status = s.kind === "live"
     ? h("span", { class: "status status-live" }, h("span", { class: "live-dot", "aria-hidden": "true" }), "LIVE",
         s.sub ? h("span", { class: "status-sub" }, ` · ${s.sub}`) : null)
-    : h("span", { class: `status status-${s.kind}` }, s.text);
+    : s.kind === "lineups" && ui.termSeen && !ui.termSeen.has("lineups")
+      ? (ui.termSeen.add("lineups"), h("span", { class: "status status-lineups" }, term("Lineups confirmed", "lineups"), " ✓"))
+      : h("span", { class: `status status-${s.kind}` }, s.text);
   const badge = c.tier
     ? h("span", { class: `badge badge-${c.tier}` }, c.tierWord.toUpperCase(), " ",
         h("span", { class: "pips", "aria-hidden": "true" }, PIPS(c.pips)))
@@ -46,8 +49,8 @@ export function renderCard(c, ui) {
     class: ["card", c.tier ? `tier-${c.tier}` : "", c.pinned ? "is-pinned" : "", c.dim ? "is-dim" : "", `st-${c.status}`].filter(Boolean).join(" "),
     "aria-label": c.ariaLabel, dataset: { id: c.id },
   },
-    header(c),
-    h("h3", { class: "teams" }, c.home, h("span", { class: "vs" }, " vs "), c.away),
+    header(c, ui),
+    h("h4", { class: "teams" }, c.home, h("span", { class: "vs" }, " vs "), c.away),
     h("p", { class: "meta" },
       h("span", { class: "comp" }, c.competition),
       c.youth ? h("span", { class: "tag-youth" }, "Youth") : null,

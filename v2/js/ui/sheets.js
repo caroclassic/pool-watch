@@ -36,7 +36,7 @@ export function openSheet(title, body, { from = null, onClose = null } = {}) {
     h("div", { class: "sheet-bar" },
       h("h2", { id: "sheet-title", class: "sheet-title" }, title),
       h("button", { type: "button", class: "sheet-close", "aria-label": "Close", onclick: () => d.close() }, "✕")),
-    h("div", { class: "sheet-body" }, body));
+    h("div", { class: "sheet-body", tabindex: "0" }, body));
   d.showModal();
   history.pushState({ sheet: true }, "");
   pushed = true;

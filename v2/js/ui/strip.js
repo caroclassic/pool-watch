@@ -19,8 +19,8 @@ export function renderStrip(o) {
     if (f.must) bits.push(h("span", { class: "t-must", role: "img", "aria-label": "Has a Must-watch match" }));
     const aria = `${dayHeading(key)}${isToday ? ", today" : ""}${covered ? `, ${f.total} ${f.total === 1 ? "match" : "matches"}` : ", not published"}`;
     return h("button", {
-      type: "button", role: "tab", "aria-selected": key === o.selected ? "true" : "false",
-      tabindex: key === o.selected ? "0" : "-1", "aria-label": aria,
+      type: "button", "aria-pressed": key === o.selected ? "true" : "false",
+      "aria-current": isToday ? "date" : null, tabindex: key === o.selected ? "0" : "-1", "aria-label": aria,
       class: `tile${key === o.selected ? " is-selected" : ""}${!covered ? " is-na" : f.total === 0 ? " is-quiet" : ""}${isToday ? " is-today" : ""}`,
       dataset: { day: key }, onclick: () => o.onSelect(key),
       onkeydown: (e) => {
@@ -41,7 +41,7 @@ export function renderStrip(o) {
     onchange: (e) => { if (/^\d{4}-\d{2}-\d{2}$/.test(e.target.value)) o.onPick(e.target.value); } });
 
   return h("div", { class: "strip-wrap" },
-    h("div", { class: "strip", role: "tablist", "aria-label": "Choose a day" }, tabs),
+    h("div", { class: "strip", role: "toolbar", "aria-label": "Choose a day", "aria-orientation": "horizontal" }, tabs),
     h("div", { class: "strip-tools" },
       o.selected !== o.today ? h("button", { type: "button", class: "btn-link", onclick: o.onToday }, "Today") : null,
       h("label", { class: "pick" }, h("span", null, "Pick a date"), picker)));

@@ -11,6 +11,7 @@ import { createStorage, createFollowsStore, createFlags, parseHash, buildHash, d
 import { indexPlayers } from "./players-model.js";
 import { etDateKey, dayHeader, dayHeading, weekdayLong, relativeMinutes, localTime, addDays } from "./time.js";
 import { INTRO } from "./copy.js";
+import { term, syncPopover } from "./ui/popover.js";
 import { h, clear } from "./ui/dom.js";
 import { renderCard } from "./ui/card.js";
 import { renderStrip } from "./ui/strip.js";
@@ -43,6 +44,7 @@ const S = {
   anchorToday: etDateKey(nowDate()),   // the "today" the person is looking at (rollover banner)
   expanded: new Set(),
   introGone: flags.get("intro"),
+  earlierOpen: false,
 };
 
 const $ = (id) => document.getElementById(id);
@@ -117,11 +119,14 @@ function toggleExpand(cardId) {
 // ── rendering ───────────────────────────────────────────────────────────────
 let lastSig = { main: "", strip: "", banners: "", head: "" };
 
-function section(label, cards, { cls = "", sub = null } = {}) {
+let termSeen = new Set();
+const cardUi = () => ({ expanded: S.expanded, onPlayer: openPlayer, onToggleExpand: toggleExpand, termSeen });
+
+function section(label, cards, { cls = "", sub = null, termKey = null } = {}) {
   if (!cards.length) return null;
-  const ui = { expanded: S.expanded, onPlayer: openPlayer, onToggleExpand: toggleExpand };
+  const ui = cardUi();
   return h("section", { class: `band ${cls}`, "aria-label": label },
-    label ? h("h2", { class: "band-title" }, label, sub ? h("span", { class: "band-sub" }, ` ${sub}`) : null) : null,
+    label ? h("h3", { class: "band-title" }, termKey ? term(label, termKey) : label, sub ? h("span", { class: "band-sub" }, ` ${sub}`) : null) : null,
     cards.map((c) => renderCard(c, ui)));
 }
 
@@ -144,11 +149,12 @@ function renderMain() {
   const d = buildDay(c);
   const today = day === c.todayKey;
   const head = dayHeader(day, c.tz, c.now);
-  const ui = { expanded: S.expanded, onPlayer: openPlayer, onToggleExpand: toggleExpand };
+  termSeen = new Set();
+  const ui = cardUi();
 
   const intro = !S.introGone && follows.count() === 0
     ? h("aside", { class: "intro", "aria-label": "How to follow players" },
-        h("p", null, h("b", null, INTRO.lead), INTRO.body, h("b", null, INTRO.strong), INTRO.tail),
+        h("p", null, h("b", null, term(INTRO.lead, "pool")), INTRO.body, h("b", null, INTRO.strong), INTRO.tail),
         h("button", { type: "button", class: "btn-link", onclick: () => { flags.set("intro"); S.introGone = true; render(); } }, "Got it"))
     : null;
 
@@ -169,13 +175,13 @@ function renderMain() {
   } else {
     nodes.push(section("Your players", d.pinned, { cls: "band-pinned" }));
     nodes.push(section("Live now", d.live, { cls: "band-live" }));
-    nodes.push(section("Must-watch", d.must, { cls: "band-must" }));
+    nodes.push(section("Must-watch", d.must, { cls: "band-must", termKey: "must_watch" }));
     if (d.noMustCopy) nodes.push(h("p", { class: "no-must" }, d.noMustCopy));
     const hasAbove = d.pinned.length || d.live.length || d.must.length;
     nodes.push(section(hasAbove ? "Everything else" : "", d.rest));
     nodes.push(section("Postponed or cancelled", d.disrupted, { cls: "band-disrupted" }));
     if (d.earlier.length) {
-      nodes.push(h("details", { class: "earlier" },
+      nodes.push(h("details", { class: "earlier", open: S.earlierOpen, ontoggle: (e) => { S.earlierOpen = e.target.open; } },
         h("summary", null, `Earlier (${d.earlier.length})`),
         d.earlier.map((x) => renderCard(x, ui))));
     }
@@ -188,14 +194,14 @@ function renderMain() {
   }
 
   nodes.push(footer());
-  return { nodes, sig: JSON.stringify([d, head, today, S.introGone, follows.count() === 0, [...S.expanded], Math.floor(clockMs() / 60000)]) };
+  return { nodes, sig: JSON.stringify([d, head, today, S.introGone, follows.count() === 0, [...S.expanded]]) };
 }
 
 function footer() {
   const st = S.data && S.data.status;
   const upd = st && st.updated_at ? `Updated ${localTime(st.updated_at, viewerTz())} · ${relativeMinutes(st.updated_at, nowDate())}` : null;
   return h("footer", { class: "foot" },
-    upd ? h("p", { class: "dim small" }, upd) : null,
+    h("p", { class: "dim small", id: "upd" }, upd),
     h("p", { class: "small" }, h("a", { href: "about.html" }, "About"), " · ", h("button", { type: "button", class: "btn-link", onclick: (e) => legendSheet({ from: e.currentTarget }) }, "Legend")));
 }
 
@@ -266,11 +272,30 @@ function render() {
   const { nodes, sig } = renderMain();
   if (sig !== lastSig.main) {
     const y = window.scrollY;
+    const key = focusKey();
     clear(els.main).append(...nodes.flat().filter(Boolean));
     lastSig.main = sig;
     if (y) window.scrollTo(0, y);
+    restoreFocus(key);
+    syncPopover();
   }
+  const upd = document.getElementById("upd");
+  const st = S.data.status;
+  if (upd) upd.textContent = st && st.updated_at ? `Updated ${localTime(st.updated_at, viewerTz())} · ${relativeMinutes(st.updated_at, nowDate())}` : "";
 }
+
+// A re-render must never drop the keyboard user's place (spec §10).
+function focusKey() {
+  const a = document.activeElement;
+  if (!a || !els.main.contains(a)) return null;
+  const card = a.closest(".card");
+  if (a.classList.contains("chip") && card) return a.classList.contains("chip-more") ? `[data-id="${CSS.escape(card.dataset.id)}"] .chip-more` : `[data-id="${CSS.escape(card.dataset.id)}"] [data-pid="${CSS.escape(a.dataset.pid)}"]`;
+  if (a.dataset.term) return `[data-term="${a.dataset.term}"]`;
+  if (a.tagName === "SUMMARY") return "details.earlier > summary";
+  if (a.classList.contains("btn-link")) return ".btn-link";
+  return null;
+}
+function restoreFocus(key) { if (!key) return; const el = els.main.querySelector(key); if (el) el.focus(); }
 
 // ── data flow ───────────────────────────────────────────────────────────────
 const source = createHttpSource({ base: dataBase(), clock: clockMs });

@@ -67,3 +67,12 @@ export const ABOUT = [
   { p: "<b>What we don't do:</b> scores, stats, standings or match analysis. We're only here to help you pick the game." },
   { p: "Days follow U.S. Eastern Time so everyone sees the same slate. Kickoff times show in your own time zone." },
 ];
+
+// Dotted-underline terms (spec §8.6). 1–2 sentences each.
+export const POPOVERS = {
+  pool: "Players in the picture for the U.S. men's national team, from regulars to young prospects.",
+  must_watch: "A big night for the pool. Levels are fixed, so some days have none.",
+  lineups: "Lineups usually post about 30 minutes before kickoff. Until then, a listed player is expected to be involved.",
+  relevance: "A 1 to 100 score for how close a player is to the national team picture right now.",
+  follow: "Pins a player's matches to the top. Saved on this device.",
+};

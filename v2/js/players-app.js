@@ -8,6 +8,7 @@ import { indexPlayers, tierLabel, lastNamedLine } from "./players-model.js";
 import { mergeFeeds, nextMatchFor } from "./model.js";
 import { prepare, counts, visible, missingFollows, initials, FILTERS, FILTER_LABEL } from "./players-list.js";
 import { h, clear } from "./ui/dom.js";
+import { term } from "./ui/popover.js";
 import { playerSheet, followingSheet, legendSheet, saveSheet, importSheet } from "./ui/sheets.js";
 import { parseHash, decodeShare } from "./storage.js";
 
@@ -165,6 +166,7 @@ async function loadMatches() {
 }
 
 function boot() {
+  clear($("scope")).append("The USMNT player pool, ranked by ", term("relevance", "relevance"), ". ", term("Follow", "follow"), " a player to pin his matches to the top of Matches.");
   $("legend-btn").addEventListener("click", (e) => legendSheet({ from: e.currentTarget }));
   $("follow-btn").addEventListener("click", (e) => openFollowing(e.currentTarget));
   follows.subscribe(render);

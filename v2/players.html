@@ -42,10 +42,11 @@
     <nav class="sitenav" aria-label="Site"><a href="./">Matches</a><a href="players.html" aria-current="page">Players</a></nav>
   </header>
   <div id="banners"></div>
-  <p class="scope scope-page">The USMNT player pool, ranked by relevance. Follow a player to pin his matches to the top of Matches.</p>
-  <div id="controls" class="controls"></div>
-  <p class="count" id="count" aria-live="polite"></p>
   <main id="main" tabindex="-1" aria-busy="true">
+  <h2 class="sr-only">Players</h2>
+  <p class="scope scope-page" id="scope">The USMNT player pool, ranked by relevance. Follow a player to pin his matches to the top of Matches.</p>
+  <div id="controls" class="controls" role="search" aria-label="Find a player"></div>
+  <p class="count" id="count" aria-live="polite"></p>
     <ul class="players-list" id="list"><li class="dim loading">Loading players…</li></ul>
     <p class="foot-note">Relevance is relative: 100 is the highest-rated player in the pool. “Named” means in the matchday squad, including unused substitutes.</p>
     <p class="small dim" id="stamp"></p>
