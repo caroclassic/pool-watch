@@ -17,6 +17,8 @@ import { chipName } from "./players-model.js";
 export const LIVE_LEAD_MIN = 90;      // lineup window opens this long before kickoff
 export const LIVE_TAIL_HOURS = 4;     // a match can be in play this long after kickoff
 export const LINEUP_USUAL_MIN = 30;   // lineups usually post about 30 min before kickoff
+export const OVERDUE_MIN = 30;        // still "scheduled" this long after kickoff = status unknown, probably playing
+export const DROP_HOURS = 3;          // ...and this long after, it leaves the day's main list for Earlier
 export const COLLAPSED_CHIPS = 3;
 export const POOL_ESTIMATE_MAX = 8;
 
@@ -81,6 +83,22 @@ export function freshness(v, statusFeed, now, staleMinutes) {
   return { stale: t - Date.parse(asOf) > staleMinutes * 60000, asOf };
 }
 
+/**
+ * A match the feed still calls "scheduled" well after kickoff. The poller
+ * missing a match must not read as "lineup not posted yet" for hours, so the
+ * clock decides what to show — but it never claims LIVE, because we don't know.
+ *   "probable" — OVERDUE_MIN..DROP_HOURS after kickoff: shown in Live now, "status not confirmed"
+ *   "dropped"  — beyond DROP_HOURS: shown under Earlier
+ * Any confirmed status (live / full_time / postponed / cancelled) overrides this.
+ */
+export function overdueState(v, now) {
+  if (v.status !== "scheduled" || !now) return null;
+  const mins = (+now - Date.parse(v.kickoffUtc)) / 60000;
+  if (mins >= DROP_HOURS * 60) return "dropped";
+  if (mins >= OVERDUE_MIN) return "probable";
+  return null;
+}
+
 // ── pinning ─────────────────────────────────────────────────────────────────
 
 const part = (v, id) => v.participation[String(id)] ?? null;
@@ -90,17 +108,19 @@ function followedIn(v, follows) {
   return v.poolPlayers.filter((p) => follows.has(p.playerId) && part(v, p.playerId) !== "not_in_squad");
 }
 
-export function isPinned(v, follows) {
+export function isPinned(v, follows, now) {
   if (!follows.size) return false;
   if (v.status === "full_time" || DISRUPTED.has(v.status)) return false;
+  if (overdueState(v, now) === "dropped") return false;
   return followedIn(v, follows).length > 0;
 }
 
 /** A followed player was confirmed out, and nobody else you follow keeps the match pinned. */
-export function isMovedFromPins(v, follows) {
+export function isMovedFromPins(v, follows, now) {
   if (!follows.size || v.status === "full_time" || DISRUPTED.has(v.status)) return false;
+  if (overdueState(v, now) === "dropped") return false;
   const out = v.poolPlayers.some((p) => follows.has(p.playerId) && part(v, p.playerId) === "not_in_squad");
-  return out && !isPinned(v, follows);
+  return out && !isPinned(v, follows, now);
 }
 
 // ── cards ───────────────────────────────────────────────────────────────────
@@ -124,6 +144,10 @@ function statusHeader(v, fresh, now, tz) {
   if (v.status === "live") {
     return { kind: "live", text: "LIVE", sub: fresh.asOf ? `Updated ${relativeMinutes(fresh.asOf, now)}` : null };
   }
+  const od = overdueState(v, now);
+  if (od) {
+    return { kind: "unconfirmed", text: od === "probable" ? "Probably in progress · status not confirmed" : "Status not confirmed" };
+  }
   if (v.lineupsConfirmed) return { kind: "lineups", text: "Lineups confirmed ✓" };
   const minsToKo = (Date.parse(v.kickoffUtc) - +now) / 60000;
   if (minsToKo <= LINEUP_USUAL_MIN) {
@@ -137,7 +161,7 @@ function ariaLabel(card) {
   if (card.tier) bits.push(TIER_WORD[card.tier]);
   const s = card.header;
   bits.push({ live: "live", lineups: "lineups confirmed", full_time: "full time", postponed: "postponed",
-              cancelled: "cancelled", stale: s.text.toLowerCase(), waiting: "lineup not posted yet",
+              cancelled: "cancelled", unconfirmed: "status not confirmed", stale: s.text.toLowerCase(), waiting: "lineup not posted yet",
               pre: "lineups not out yet" }[s.kind]);
   const starting = card.chips.filter((c) => c.followed && c.participation === "starts").length;
   if (starting) bits.push(`${starting} of your players starting`);
@@ -151,7 +175,7 @@ function ariaLabel(card) {
 export function cardView(v, ctx) {
   const fresh = freshness(v, ctx.statusFeed, ctx.now, ctx.staleMinutes);
   const tier = effectiveTier(v, ctx.tiersEnabled);
-  const pinned = isPinned(v, ctx.follows);
+  const pinned = isPinned(v, ctx.follows, ctx.now);
   const pool = orderedPool(v, ctx.follows, ctx.players);
   const chips = pool.map((p) => {
     const pt = part(v, p.playerId);
@@ -175,12 +199,12 @@ export function cardView(v, ctx) {
     header: statusHeader(v, fresh, ctx.now, ctx.tz),
     stale: fresh.stale,
     pinned, followingNames: pinned ? followedNames : [],
-    movedFromPins: isMovedFromPins(v, ctx.follows),
+    movedFromPins: isMovedFromPins(v, ctx.follows, ctx.now),
     chips: expandable,
     collapsedCount: Math.min(COLLAPSED_CHIPS, expandable.length),
     note: v.playersBasis === "pool_estimate" ? "Call-up not announced yet"
         : v.playersBasis === "prior_window" ? "Based on the previous squad" : null,
-    dim: v.status === "full_time" || DISRUPTED.has(v.status),
+    dim: v.status === "full_time" || DISRUPTED.has(v.status) || overdueState(v, ctx.now) === "dropped",
   };
   card.ariaLabel = ariaLabel(card);
   return card;
@@ -202,10 +226,11 @@ export function buildDay(ctx) {
   const live = [], must = [], worth = [], rest = [], disrupted = [], earlier = [], pinned = [];
   for (const v of dayViews) {
     const fresh = freshness(v, ctx.statusFeed, ctx.now, ctx.staleMinutes);
-    if (isPinned(v, follows)) { pinned.push(card(v)); continue; }
-    if (v.status === "full_time") { earlier.push(card(v)); continue; }
+    const od = overdueState(v, ctx.now);
+    if (isPinned(v, follows, ctx.now)) { pinned.push(card(v)); continue; }
+    if (v.status === "full_time" || od === "dropped") { earlier.push(card(v)); continue; }
     if (DISRUPTED.has(v.status)) { disrupted.push(card(v)); continue; }
-    if (v.status === "live" && !fresh.stale) { live.push(card(v)); continue; }
+    if ((v.status === "live" || od === "probable") && !fresh.stale) { live.push(card(v)); continue; }
     const c = card(v);
     (c.tier === "must_watch" ? must : c.tier === "worth_a_look" ? worth : rest).push(c);
   }
@@ -217,7 +242,7 @@ export function buildDay(ctx) {
     if (pinnedIds.has(id)) continue;
     const name = chipName(players, id);
     const inMatches = dayViews.filter((v) => v.poolPlayers.some((p) => p.playerId === id));
-    if (inMatches.some((v) => v.status === "full_time" && part(v, id) !== "not_in_squad")) continue; // he played; see Earlier
+    if (inMatches.some((v) => (v.status === "full_time" || overdueState(v, ctx.now) === "dropped") && part(v, id) !== "not_in_squad")) continue; // he played (or probably did); see Earlier
     if (inMatches.some((v) => part(v, id) === "not_in_squad")) { notPlaying.push({ playerId: id, name, reason: "not in squad" }); continue; }
     if (inMatches.some((v) => DISRUPTED.has(v.status))) { notPlaying.push({ playerId: id, name, reason: "match postponed or cancelled" }); continue; }
     notPlaying.push({ playerId: id, name, reason: "no match listed" });
@@ -254,7 +279,7 @@ export function dayFacts(views, ctx) {
   for (const v of views) {
     const f = get(v.etDay);
     f.total += 1;
-    if (isPinned(v, ctx.follows)) f.pins += 1;
+    if (isPinned(v, ctx.follows, ctx.now)) f.pins += 1;
     if (effectiveTier(v, ctx.tiersEnabled) === "must_watch") f.must = true;
     if (v.status === "live" && !freshness(v, ctx.statusFeed, ctx.now, ctx.staleMinutes).stale) f.live = true;
   }

@@ -265,3 +265,33 @@ test("nextMatchFor and followedChanges", () => {
   assert.deepEqual(M.followedChanges(v, v2, new Set(["12"]), players), []);
   assert.deepEqual(M.followedChanges(v2, v2, new Set(["11"]), players), []);
 });
+
+test("overdue 'scheduled' match: probable in Live now (30 min–3 h), then Earlier; confirmed status always wins", () => {
+  const day = (ko, status = "scheduled", o = {}) => M.buildDay(ctx(view(feed([match(1, { ko })]),
+    sfeed(status === "scheduled" ? {} : { "1": { status, lineups_confirmed: true, participation: {} } })), o));
+  // 29 min after kickoff: still the normal pre-match path
+  assert.equal(day(iso(0, -29 * 60)).live.length, 0);
+  // 31 min: Live now, but never claims LIVE
+  const d1 = day(iso(0, -31 * 60));
+  assert.equal(d1.live.length, 1);
+  assert.equal(d1.live[0].header.kind, "unconfirmed");
+  assert.match(d1.live[0].header.text, /^Probably in progress · status not confirmed$/);
+  // 3 h: Earlier, dimmed, still says status not confirmed
+  const d2 = day(iso(-3));
+  assert.equal(d2.live.length, 0); assert.equal(d2.earlier.length, 1);
+  assert.equal(d2.earlier[0].header.text, "Status not confirmed"); assert.equal(d2.earlier[0].dim, true);
+  // a confirmed live match at 3.5 h is NOT dropped; confirmed postponed stays disrupted
+  assert.equal(day(iso(-3.5), "live").live.length, 1);
+  assert.equal(day(iso(-3.5), "postponed").disrupted.length, 1);
+  // a dead status feed must not produce a "probably in progress" claim in Live now
+  const stale = day(iso(0, -31 * 60), "scheduled", { statusFeed: sfeed({}, { at: iso(-2) }) });
+  assert.equal(stale.live.length, 0); assert.equal(stale.rest[0].header.kind, "stale");
+});
+
+test("overdue match and follows: stays pinned while probable, leaves pins at 3 h and the player isn't 'not playing'", () => {
+  const mk = (ko) => M.buildDay(ctx(view(feed([match(1, { ko, pool: [pm(11)] })]), sfeed()), { follows: ["11"] }));
+  const p = mk(iso(0, -31 * 60));
+  assert.equal(p.pinned.length, 1); assert.equal(p.pinned[0].header.kind, "unconfirmed");
+  const g = mk(iso(-3));
+  assert.equal(g.pinned.length, 0); assert.equal(g.earlier.length, 1); assert.equal(g.notPlaying.length, 0);
+});

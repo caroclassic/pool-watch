@@ -33,6 +33,7 @@ export const LEGEND = [
     ["Lineups usually post ~30 min before kickoff", "Said once under the day heading. A card only mentions lineups when they're confirmed or late."],
     ["Lineups confirmed ✓", "Lineups are in, and player statuses are final."],
     ["● LIVE", "In progress. We don't show scores or minutes."],
+    ["Probably in progress · status not confirmed", "Kickoff was over 30 minutes ago but our feed hasn't confirmed the match yet. After 3 hours it moves to Earlier."],
     ["Full time", "Finished. The match moves to the Earlier group."],
     ["Postponed / Cancelled", "Not being played as scheduled."],
     ["Status as of 2:41 PM", "Our latest update. If it's old, the match may have moved on."],
