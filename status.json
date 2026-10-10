@@ -1,13 +1,13 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-10T09:15:26Z",
- "active": false,
+ "updated_at": "2026-10-10T09:34:10Z",
+ "active": true,
  "matches": {
   "1490511": {
    "status": "scheduled",
    "status_updated_at": "2026-10-10T04:04:54Z",
    "lineups_confirmed": false,
-   "tier": null,
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "participation": {}
   },
@@ -31,7 +31,7 @@
    "status": "scheduled",
    "status_updated_at": "2026-10-10T04:04:54Z",
    "lineups_confirmed": false,
-   "tier": null,
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "participation": {}
   },
@@ -47,7 +47,7 @@
    "status": "scheduled",
    "status_updated_at": "2026-10-10T04:04:54Z",
    "lineups_confirmed": false,
-   "tier": null,
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "participation": {}
   },
@@ -55,7 +55,7 @@
    "status": "scheduled",
    "status_updated_at": "2026-10-10T04:04:54Z",
    "lineups_confirmed": false,
-   "tier": null,
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "participation": {}
   },
@@ -63,7 +63,7 @@
    "status": "scheduled",
    "status_updated_at": "2026-10-10T04:04:54Z",
    "lineups_confirmed": false,
-   "tier": null,
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "participation": {}
   },
@@ -143,7 +143,7 @@
    "status": "scheduled",
    "status_updated_at": "2026-10-10T04:04:54Z",
    "lineups_confirmed": false,
-   "tier": null,
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "participation": {}
   },
@@ -159,7 +159,7 @@
    "status": "scheduled",
    "status_updated_at": "2026-10-10T04:04:54Z",
    "lineups_confirmed": false,
-   "tier": null,
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "participation": {}
   },
@@ -167,7 +167,7 @@
    "status": "scheduled",
    "status_updated_at": "2026-10-10T04:04:54Z",
    "lineups_confirmed": false,
-   "tier": null,
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "participation": {}
   },
@@ -183,7 +183,7 @@
    "status": "scheduled",
    "status_updated_at": "2026-10-10T04:04:54Z",
    "lineups_confirmed": false,
-   "tier": null,
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "participation": {}
   },
@@ -215,7 +215,7 @@
    "status": "scheduled",
    "status_updated_at": "2026-10-10T04:04:54Z",
    "lineups_confirmed": false,
-   "tier": null,
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "participation": {}
   },
@@ -223,7 +223,7 @@
    "status": "scheduled",
    "status_updated_at": "2026-10-10T04:04:54Z",
    "lineups_confirmed": false,
-   "tier": null,
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "participation": {}
   },
