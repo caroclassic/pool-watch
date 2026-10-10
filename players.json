@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-10T02:01:02Z",
+ "updated_at": "2026-10-10T02:23:46Z",
  "top_score": 10.172,
  "player_tier_bands": {
   "core_min": 61,
@@ -22,7 +22,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -39,7 +39,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -56,7 +56,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -73,7 +73,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -90,7 +90,7 @@
    "last_named": {
     "date": "2026-07-07",
     "competition": "World Cup",
-    "opponent": null
+    "opponent": "Belgium"
    }
   },
   {
@@ -107,7 +107,7 @@
    "last_named": {
     "date": "2026-10-04",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Mexico"
    }
   },
   {
@@ -124,7 +124,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -141,7 +141,7 @@
    "last_named": {
     "date": "2026-07-07",
     "competition": "World Cup",
-    "opponent": null
+    "opponent": "Belgium"
    }
   },
   {
@@ -158,7 +158,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -175,7 +175,7 @@
    "last_named": {
     "date": "2026-07-07",
     "competition": "World Cup",
-    "opponent": null
+    "opponent": "Belgium"
    }
   },
   {
@@ -192,7 +192,7 @@
    "last_named": {
     "date": "2026-07-07",
     "competition": "World Cup",
-    "opponent": null
+    "opponent": "Belgium"
    }
   },
   {
@@ -209,7 +209,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -226,7 +226,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -243,7 +243,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -260,7 +260,7 @@
    "last_named": {
     "date": "2026-07-07",
     "competition": "World Cup",
-    "opponent": null
+    "opponent": "Belgium"
    }
   },
   {
@@ -277,7 +277,7 @@
    "last_named": {
     "date": "2026-07-07",
     "competition": "World Cup",
-    "opponent": null
+    "opponent": "Belgium"
    }
   },
   {
@@ -294,7 +294,7 @@
    "last_named": {
     "date": "2026-07-07",
     "competition": "World Cup",
-    "opponent": null
+    "opponent": "Belgium"
    }
   },
   {
@@ -311,7 +311,7 @@
    "last_named": {
     "date": "2026-07-07",
     "competition": "World Cup",
-    "opponent": null
+    "opponent": "Belgium"
    }
   },
   {
@@ -328,7 +328,7 @@
    "last_named": {
     "date": "2026-07-07",
     "competition": "World Cup",
-    "opponent": null
+    "opponent": "Belgium"
    }
   },
   {
@@ -345,7 +345,7 @@
    "last_named": {
     "date": "2026-07-07",
     "competition": "World Cup",
-    "opponent": null
+    "opponent": "Belgium"
    }
   },
   {
@@ -362,7 +362,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -379,7 +379,7 @@
    "last_named": {
     "date": "2025-11-19",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Uruguay"
    }
   },
   {
@@ -396,7 +396,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -413,7 +413,7 @@
    "last_named": {
     "date": "2026-03-31",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Portugal"
    }
   },
   {
@@ -430,7 +430,7 @@
    "last_named": {
     "date": "2025-09-09",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Japan"
    }
   },
   {
@@ -447,7 +447,7 @@
    "last_named": {
     "date": "2026-07-07",
     "competition": "World Cup",
-    "opponent": null
+    "opponent": "Belgium"
    }
   },
   {
@@ -464,7 +464,7 @@
    "last_named": {
     "date": "2026-07-07",
     "competition": "World Cup",
-    "opponent": null
+    "opponent": "Belgium"
    }
   },
   {
@@ -481,7 +481,7 @@
    "last_named": {
     "date": "2025-09-09",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Japan"
    }
   },
   {
@@ -498,7 +498,7 @@
    "last_named": {
     "date": "2026-06-19",
     "competition": "World Cup",
-    "opponent": null
+    "opponent": "Australia"
    }
   },
   {
@@ -515,7 +515,7 @@
    "last_named": {
     "date": "2026-03-31",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Portugal"
    }
   },
   {
@@ -532,7 +532,7 @@
    "last_named": {
     "date": "2026-03-28",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Belgium"
    }
   },
   {
@@ -549,7 +549,7 @@
    "last_named": {
     "date": "2026-03-31",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Portugal"
    }
   },
   {
@@ -566,7 +566,7 @@
    "last_named": {
     "date": "2025-11-19",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Uruguay"
    }
   },
   {
@@ -583,7 +583,7 @@
    "last_named": {
     "date": "2025-01-23",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Costa Rica"
    }
   },
   {
@@ -600,7 +600,7 @@
    "last_named": {
     "date": "2025-10-15",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Australia"
    }
   },
   {
@@ -617,7 +617,7 @@
    "last_named": {
     "date": "2024-11-19",
     "competition": "Nations League",
-    "opponent": null
+    "opponent": "Jamaica"
    }
   },
   {
@@ -634,7 +634,7 @@
    "last_named": {
     "date": "2024-11-19",
     "competition": "Nations League",
-    "opponent": null
+    "opponent": "Jamaica"
    }
   },
   {
@@ -651,7 +651,7 @@
    "last_named": {
     "date": "2023-07-12",
     "competition": "Gold Cup",
-    "opponent": null
+    "opponent": "Panama"
    }
   },
   {
@@ -668,7 +668,7 @@
    "last_named": {
     "date": "2025-10-15",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Australia"
    }
   },
   {
@@ -685,7 +685,7 @@
    "last_named": {
     "date": "2025-07-06",
     "competition": "Gold Cup",
-    "opponent": null
+    "opponent": "Mexico"
    }
   },
   {
@@ -702,7 +702,7 @@
    "last_named": {
     "date": "2024-11-19",
     "competition": "Nations League",
-    "opponent": null
+    "opponent": "Jamaica"
    }
   },
   {
@@ -719,7 +719,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -736,7 +736,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -753,7 +753,7 @@
    "last_named": {
     "date": "2024-10-16",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Mexico"
    }
   },
   {
@@ -770,7 +770,7 @@
    "last_named": {
     "date": "2024-07-02",
     "competition": "Copa América",
-    "opponent": null
+    "opponent": "Uruguay"
    }
   },
   {
@@ -787,7 +787,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -804,7 +804,7 @@
    "last_named": {
     "date": "2026-03-31",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Portugal"
    }
   },
   {
@@ -821,7 +821,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -838,7 +838,7 @@
    "last_named": {
     "date": "2025-07-06",
     "competition": "Gold Cup",
-    "opponent": null
+    "opponent": "Mexico"
    }
   },
   {
@@ -855,7 +855,7 @@
    "last_named": {
     "date": "2025-09-09",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Japan"
    }
   },
   {
@@ -872,7 +872,7 @@
    "last_named": {
     "date": "2024-10-16",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Mexico"
    }
   },
   {
@@ -889,7 +889,7 @@
    "last_named": {
     "date": "2023-07-12",
     "competition": "Gold Cup",
-    "opponent": null
+    "opponent": "Panama"
    }
   },
   {
@@ -906,7 +906,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -923,7 +923,7 @@
    "last_named": {
     "date": "2023-07-12",
     "competition": "Gold Cup",
-    "opponent": null
+    "opponent": "Panama"
    }
   },
   {
@@ -940,7 +940,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -957,7 +957,7 @@
    "last_named": {
     "date": "2023-07-12",
     "competition": "Gold Cup",
-    "opponent": null
+    "opponent": "Panama"
    }
   },
   {
@@ -974,7 +974,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -991,7 +991,7 @@
    "last_named": {
     "date": "2025-07-06",
     "competition": "Gold Cup",
-    "opponent": null
+    "opponent": "Mexico"
    }
   },
   {
@@ -1008,7 +1008,7 @@
    "last_named": {
     "date": "2023-07-12",
     "competition": "Gold Cup",
-    "opponent": null
+    "opponent": "Panama"
    }
   },
   {
@@ -1038,7 +1038,7 @@
    "last_named": {
     "date": "2025-07-02",
     "competition": "Gold Cup",
-    "opponent": null
+    "opponent": "Guatemala"
    }
   },
   {
@@ -1055,7 +1055,7 @@
    "last_named": {
     "date": "2023-07-12",
     "competition": "Gold Cup",
-    "opponent": null
+    "opponent": "Panama"
    }
   },
   {
@@ -1072,7 +1072,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -1089,7 +1089,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -1106,7 +1106,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -1123,7 +1123,7 @@
    "last_named": {
     "date": "2023-07-12",
     "competition": "Gold Cup",
-    "opponent": null
+    "opponent": "Panama"
    }
   },
   {
@@ -1140,7 +1140,7 @@
    "last_named": {
     "date": "2025-09-09",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Japan"
    }
   },
   {
@@ -1157,7 +1157,7 @@
    "last_named": {
     "date": "2023-07-12",
     "competition": "Gold Cup",
-    "opponent": null
+    "opponent": "Panama"
    }
   },
   {
@@ -1174,7 +1174,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -1191,7 +1191,7 @@
    "last_named": {
     "date": "2025-01-23",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Costa Rica"
    }
   },
   {
@@ -1208,7 +1208,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -1225,7 +1225,7 @@
    "last_named": {
     "date": "2023-07-12",
     "competition": "Gold Cup",
-    "opponent": null
+    "opponent": "Panama"
    }
   },
   {
@@ -1242,7 +1242,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -1259,7 +1259,7 @@
    "last_named": {
     "date": "2023-07-02",
     "competition": "Gold Cup",
-    "opponent": null
+    "opponent": "Trinidad and Tobago"
    }
   },
   {
@@ -1289,7 +1289,7 @@
    "last_named": {
     "date": "2026-10-04",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Mexico"
    }
   },
   {
@@ -1306,7 +1306,7 @@
    "last_named": {
     "date": "2025-11-19",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Uruguay"
    }
   },
   {
@@ -1336,7 +1336,7 @@
    "last_named": {
     "date": "2025-03-22",
     "competition": "Nations League",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -1366,7 +1366,7 @@
    "last_named": {
     "date": "2023-11-21",
     "competition": "Nations League",
-    "opponent": null
+    "opponent": "Trinidad and Tobago"
    }
   },
   {
@@ -1383,7 +1383,7 @@
    "last_named": {
     "date": "2025-03-20",
     "competition": "Nations League",
-    "opponent": null
+    "opponent": "Panama"
    }
   },
   {
@@ -1426,7 +1426,7 @@
    "last_named": {
     "date": "2025-01-23",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Costa Rica"
    }
   },
   {
@@ -1443,7 +1443,7 @@
    "last_named": {
     "date": "2023-11-21",
     "competition": "Nations League",
-    "opponent": null
+    "opponent": "Trinidad and Tobago"
    }
   },
   {
@@ -1460,7 +1460,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -1477,7 +1477,7 @@
    "last_named": {
     "date": "2025-09-09",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Japan"
    }
   },
   {
@@ -1494,7 +1494,7 @@
    "last_named": {
     "date": "2025-03-20",
     "competition": "Nations League",
-    "opponent": null
+    "opponent": "Panama"
    }
   },
   {
@@ -1511,7 +1511,7 @@
    "last_named": {
     "date": "2025-01-23",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Costa Rica"
    }
   },
   {
@@ -1528,7 +1528,7 @@
    "last_named": {
     "date": "2023-04-20",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Mexico"
    }
   },
   {
@@ -1545,7 +1545,7 @@
    "last_named": {
     "date": "2025-01-23",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Costa Rica"
    }
   },
   {
@@ -1562,7 +1562,7 @@
    "last_named": {
     "date": "2025-01-23",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Costa Rica"
    }
   },
   {
@@ -1579,7 +1579,7 @@
    "last_named": {
     "date": "2026-10-07",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Canada"
    }
   },
   {
@@ -1596,7 +1596,7 @@
    "last_named": {
     "date": "2025-01-23",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Costa Rica"
    }
   },
   {
@@ -1613,7 +1613,7 @@
    "last_named": {
     "date": "2024-09-10",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "New Zealand"
    }
   },
   {
@@ -1643,7 +1643,7 @@
    "last_named": {
     "date": "2023-11-21",
     "competition": "Nations League",
-    "opponent": null
+    "opponent": "Trinidad and Tobago"
    }
   },
   {
@@ -1673,7 +1673,7 @@
    "last_named": {
     "date": "2023-01-29",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Colombia"
    }
   },
   {
@@ -1703,7 +1703,7 @@
    "last_named": {
     "date": "2025-11-19",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Uruguay"
    }
   },
   {
@@ -1720,7 +1720,7 @@
    "last_named": {
     "date": "2023-04-20",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Mexico"
    }
   },
   {
@@ -1737,7 +1737,7 @@
    "last_named": {
     "date": "2023-01-29",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Colombia"
    }
   },
   {
@@ -1754,7 +1754,7 @@
    "last_named": {
     "date": "2024-01-20",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Slovenia"
    }
   },
   {
@@ -1784,7 +1784,7 @@
    "last_named": {
     "date": "2023-01-29",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Colombia"
    }
   },
   {
@@ -1814,7 +1814,7 @@
    "last_named": {
     "date": "2024-03-25",
     "competition": "Nations League",
-    "opponent": null
+    "opponent": "Mexico"
    }
   },
   {
@@ -1831,7 +1831,7 @@
    "last_named": {
     "date": "2023-01-29",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Colombia"
    }
   },
   {
@@ -1848,7 +1848,7 @@
    "last_named": {
     "date": "2024-01-20",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Slovenia"
    }
   },
   {
@@ -1865,7 +1865,7 @@
    "last_named": {
     "date": "2025-11-19",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Uruguay"
    }
   },
   {
@@ -1895,7 +1895,7 @@
    "last_named": {
     "date": "2023-07-12",
     "competition": "Gold Cup",
-    "opponent": null
+    "opponent": "Panama"
    }
   },
   {
@@ -1912,7 +1912,7 @@
    "last_named": {
     "date": "2024-01-20",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Slovenia"
    }
   },
   {
@@ -1929,7 +1929,7 @@
    "last_named": {
     "date": "2024-01-20",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Slovenia"
    }
   },
   {
@@ -1946,7 +1946,7 @@
    "last_named": {
     "date": "2023-01-29",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Colombia"
    }
   },
   {
@@ -1976,7 +1976,7 @@
    "last_named": {
     "date": "2023-01-29",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Colombia"
    }
   },
   {
@@ -2019,7 +2019,7 @@
    "last_named": {
     "date": "2024-01-20",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Slovenia"
    }
   },
   {
@@ -2036,7 +2036,7 @@
    "last_named": {
     "date": "2024-01-20",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Slovenia"
    }
   },
   {
@@ -2053,7 +2053,7 @@
    "last_named": {
     "date": "2024-01-20",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Slovenia"
    }
   },
   {
@@ -2083,7 +2083,7 @@
    "last_named": {
     "date": "2023-04-20",
     "competition": "Friendly",
-    "opponent": null
+    "opponent": "Mexico"
    }
   }
  ]
