@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-10T19:34:10Z",
+ "updated_at": "2026-10-10T20:54:10Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-10",
@@ -326,7 +326,7 @@
    "home": "Sporting JAX",
    "away": "Birmingham Legion",
    "fixture_kind": "club",
-   "status": "scheduled",
+   "status": "cancelled",
    "tier": null,
    "tier_at_kickoff": null,
    "players_basis": null,
