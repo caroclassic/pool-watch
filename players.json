@@ -1,0 +1,2090 @@
+{
+ "schema_version": 1,
+ "updated_at": "2026-10-10T02:01:02Z",
+ "top_score": 10.172,
+ "player_tier_bands": {
+  "core_min": 61,
+  "contender_min": 42,
+  "in_the_mix_min": 17
+ },
+ "players": [
+  {
+   "playerId": "126949",
+   "display_name": "Chris Richards",
+   "short_name": "C. Richards",
+   "position": "DF",
+   "club": "Crystal Palace",
+   "photo": "https://media.api-sports.io/football/players/126949.png",
+   "score": 100,
+   "tier": "core",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "162037",
+   "display_name": "Malik Tillman",
+   "short_name": "M. Tillman",
+   "position": "MF",
+   "club": "Bayer Leverkusen",
+   "photo": "https://media.api-sports.io/football/players/162037.png",
+   "score": 95,
+   "tier": "core",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "355994",
+   "display_name": "Alex Freeman",
+   "short_name": "A. Freeman",
+   "position": "DF",
+   "club": "Villarreal",
+   "photo": "https://media.api-sports.io/football/players/355994.png",
+   "score": 84,
+   "tier": "core",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "1150",
+   "display_name": "Tyler Adams",
+   "short_name": "T. Adams",
+   "position": "MF",
+   "club": "Bournemouth",
+   "photo": "https://media.api-sports.io/football/players/1150.png",
+   "score": 81,
+   "tier": "core",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "415",
+   "display_name": "Weston McKennie",
+   "short_name": "W. McKennie",
+   "position": "MF",
+   "club": "Juventus",
+   "photo": "https://media.api-sports.io/football/players/415.png",
+   "score": 79,
+   "tier": "core",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-07-07",
+    "competition": "World Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "50728",
+   "display_name": "Matt Freese",
+   "short_name": "M. Freese",
+   "position": "GK",
+   "club": "New York City FC",
+   "photo": "https://media.api-sports.io/football/players/50728.png",
+   "score": 77,
+   "tier": "core",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-04",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "19549",
+   "display_name": "Antonee Robinson",
+   "short_name": "A. Robinson",
+   "position": "DF",
+   "club": "Fulham",
+   "photo": "https://media.api-sports.io/football/players/19549.png",
+   "score": 76,
+   "tier": "core",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "17",
+   "display_name": "Christian Pulišić",
+   "short_name": "C. Pulišić",
+   "position": "FW",
+   "club": "AC Milan",
+   "photo": "https://media.api-sports.io/football/players/17.png",
+   "score": 68,
+   "tier": "core",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-07-07",
+    "competition": "World Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "201713",
+   "display_name": "Sebastian Berhalter",
+   "short_name": "S. Berhalter",
+   "position": "MF",
+   "club": "Middlesbrough",
+   "photo": "https://media.api-sports.io/football/players/201713.png",
+   "score": 65,
+   "tier": "core",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "50999",
+   "display_name": "Matt Turner",
+   "short_name": "M. Turner",
+   "position": "GK",
+   "club": "New England Revolution",
+   "photo": "https://media.api-sports.io/football/players/50999.png",
+   "score": 65,
+   "tier": "core",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-07-07",
+    "competition": "World Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "138835",
+   "display_name": "Folarin Balogun",
+   "short_name": "F. Balogun",
+   "position": "FW",
+   "club": "Monaco",
+   "photo": "https://media.api-sports.io/football/players/138835.png",
+   "score": 64,
+   "tier": "core",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-07-07",
+    "competition": "World Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "161921",
+   "display_name": "Gio Reyna",
+   "short_name": "G. Reyna",
+   "position": "MF",
+   "club": "Strasbourg",
+   "photo": "https://media.api-sports.io/football/players/161921.png",
+   "score": 58,
+   "tier": "contender",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "38735",
+   "display_name": "Sergiño Dest",
+   "short_name": "S. Dest",
+   "position": "DF",
+   "club": "PSV Eindhoven",
+   "photo": "https://media.api-sports.io/football/players/38735.png",
+   "score": 55,
+   "tier": "contender",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "50879",
+   "display_name": "Miles Robinson",
+   "short_name": "M. Robinson",
+   "position": "DF",
+   "club": "FC Cincinnati",
+   "photo": "https://media.api-sports.io/football/players/50879.png",
+   "score": 53,
+   "tier": "contender",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "50852",
+   "display_name": "Joseph Scally",
+   "short_name": "J. Scally",
+   "position": "DF",
+   "club": "Borussia Mönchengladbach",
+   "photo": "https://media.api-sports.io/football/players/50852.png",
+   "score": 51,
+   "tier": "contender",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-07-07",
+    "competition": "World Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "73868",
+   "display_name": "Ricardo Pepi",
+   "short_name": "R. Pepi",
+   "position": "FW",
+   "club": "PSV Eindhoven",
+   "photo": "https://media.api-sports.io/football/players/73868.png",
+   "score": 50,
+   "tier": "contender",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-07-07",
+    "competition": "World Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "362400",
+   "display_name": "Max Arfsten",
+   "short_name": "M. Arfsten",
+   "position": "FW",
+   "club": "Middlesbrough",
+   "photo": "https://media.api-sports.io/football/players/362400.png",
+   "score": 48,
+   "tier": "contender",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-07-07",
+    "competition": "World Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "1138",
+   "display_name": "Tim Weah",
+   "short_name": "T. Weah",
+   "position": "MF",
+   "club": "Marseille",
+   "photo": "https://media.api-sports.io/football/players/1138.png",
+   "score": 48,
+   "tier": "contender",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-07-07",
+    "competition": "World Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "50739",
+   "display_name": "Brenden Aaronson",
+   "short_name": "B. Aaronson",
+   "position": "MF",
+   "club": "Leeds",
+   "photo": "https://media.api-sports.io/football/players/50739.png",
+   "score": 47,
+   "tier": "contender",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-07-07",
+    "competition": "World Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "50735",
+   "display_name": "Mark McKenzie",
+   "short_name": "M. McKenzie",
+   "position": "DF",
+   "club": "Toulouse",
+   "photo": "https://media.api-sports.io/football/players/50735.png",
+   "score": 46,
+   "tier": "contender",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-07-07",
+    "competition": "World Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "162106",
+   "display_name": "Yunus Musah",
+   "short_name": "Y. Musah",
+   "position": "MF",
+   "club": "AC Milan",
+   "photo": "https://media.api-sports.io/football/players/162106.png",
+   "score": 39,
+   "tier": "in_the_mix",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "312896",
+   "display_name": "Diego Luna",
+   "short_name": "D. Luna",
+   "position": "FW",
+   "club": "Real Salt Lake",
+   "photo": "https://media.api-sports.io/football/players/312896.png",
+   "score": 36,
+   "tier": "in_the_mix",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-11-19",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "50737",
+   "display_name": "Auston Trusty",
+   "short_name": "A. Trusty",
+   "position": "DF",
+   "club": "Celtic",
+   "photo": "https://media.api-sports.io/football/players/50737.png",
+   "score": 35,
+   "tier": "in_the_mix",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "407652",
+   "display_name": "Patrick Agyemang",
+   "short_name": "P. Agyemang",
+   "position": "FW",
+   "club": "Derby",
+   "photo": "https://media.api-sports.io/football/players/407652.png",
+   "score": 33,
+   "tier": "in_the_mix",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-03-31",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "19026",
+   "display_name": "Lucas de la Torre",
+   "short_name": "L. de la Torre",
+   "position": "MF",
+   "club": "Charlotte",
+   "photo": "https://media.api-sports.io/football/players/19026.png",
+   "score": 32,
+   "tier": "in_the_mix",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-09-09",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "427",
+   "display_name": "Haji Wright",
+   "short_name": "H. Wright",
+   "position": "FW",
+   "club": "Coventry",
+   "photo": "https://media.api-sports.io/football/players/427.png",
+   "score": 27,
+   "tier": "in_the_mix",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-07-07",
+    "competition": "World Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "35885",
+   "display_name": "Alejandro Zendejas",
+   "short_name": "A. Zendejas",
+   "position": "FW",
+   "club": "Club America",
+   "photo": "https://media.api-sports.io/football/players/35885.png",
+   "score": 24,
+   "tier": "in_the_mix",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-07-07",
+    "competition": "World Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "207768",
+   "display_name": "Jack McGlynn",
+   "short_name": "J. McGlynn",
+   "position": "MF",
+   "club": "Stoke City",
+   "photo": "https://media.api-sports.io/football/players/207768.png",
+   "score": 21,
+   "tier": "in_the_mix",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-09-09",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "51114",
+   "display_name": "Cristian Roldan",
+   "short_name": "C. Roldan",
+   "position": "MF",
+   "club": "Seattle Sounders",
+   "photo": "https://media.api-sports.io/football/players/51114.png",
+   "score": 21,
+   "tier": "in_the_mix",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-06-19",
+    "competition": "World Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "80752",
+   "display_name": "Tanner Tessmann",
+   "short_name": "T. Tessmann",
+   "position": "MF",
+   "club": "Lyon",
+   "photo": "https://media.api-sports.io/football/players/80752.png",
+   "score": 20,
+   "tier": "in_the_mix",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-03-31",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "133185",
+   "display_name": "Johnny Cardoso",
+   "short_name": "J. Cardoso",
+   "position": "MF",
+   "club": "Atletico Madrid",
+   "photo": "https://media.api-sports.io/football/players/133185.png",
+   "score": 20,
+   "tier": "in_the_mix",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-03-28",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "201714",
+   "display_name": "Aidan Morris",
+   "short_name": "A. Morris",
+   "position": "MF",
+   "club": "Middlesbrough",
+   "photo": "https://media.api-sports.io/football/players/201714.png",
+   "score": 20,
+   "tier": "in_the_mix",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-03-31",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "119002",
+   "display_name": "John Tolkin",
+   "short_name": "J. Tolkin",
+   "position": "MF",
+   "club": "Holstein Kiel",
+   "photo": "https://media.api-sports.io/football/players/119002.png",
+   "score": 19,
+   "tier": "in_the_mix",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-11-19",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "51013",
+   "display_name": "DeJuan Jones",
+   "short_name": "D. Jones",
+   "position": "DF",
+   "club": "San Jose Earthquakes",
+   "photo": "https://media.api-sports.io/football/players/51013.png",
+   "score": 15,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-01-23",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "50863",
+   "display_name": "James Sands",
+   "short_name": "J. Sands",
+   "position": "MF",
+   "club": "New York City FC",
+   "photo": "https://media.api-sports.io/football/players/50863.png",
+   "score": 14,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-10-15",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "51266",
+   "display_name": "Gianluca Busio",
+   "short_name": "G. Busio",
+   "position": "MF",
+   "club": "Venezia",
+   "photo": "https://media.api-sports.io/football/players/51266.png",
+   "score": 14,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-11-19",
+    "competition": "Nations League",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "51186",
+   "display_name": "Cade Cowell",
+   "short_name": "C. Cowell",
+   "position": "FW",
+   "club": "New York Red Bulls",
+   "photo": "https://media.api-sports.io/football/players/51186.png",
+   "score": 13,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-11-19",
+    "competition": "Nations League",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "51142",
+   "display_name": "Jesús Ferreira",
+   "short_name": "J. Ferreira",
+   "position": "FW",
+   "club": "Seattle Sounders",
+   "photo": "https://media.api-sports.io/football/players/51142.png",
+   "score": 13,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-07-12",
+    "competition": "Gold Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "19314",
+   "display_name": "Cameron Carter-Vickers",
+   "short_name": "C. Carter-Vickers",
+   "position": "DF",
+   "club": "Celtic",
+   "photo": "https://media.api-sports.io/football/players/19314.png",
+   "score": 13,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-10-15",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "50969",
+   "display_name": "Brian White",
+   "short_name": "B. White",
+   "position": "FW",
+   "club": "Vancouver Whitecaps",
+   "photo": "https://media.api-sports.io/football/players/50969.png",
+   "score": 12,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-07-06",
+    "competition": "Gold Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "50893",
+   "display_name": "Brandon Vázquez",
+   "short_name": "B. Vázquez",
+   "position": "FW",
+   "club": "Austin",
+   "photo": "https://media.api-sports.io/football/players/50893.png",
+   "score": 12,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-11-19",
+    "competition": "Nations League",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "334362",
+   "display_name": "Damion Downs",
+   "short_name": "D. Downs",
+   "position": "FW",
+   "club": "St. Louis City",
+   "photo": "https://media.api-sports.io/football/players/334362.png",
+   "score": 12,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "266606",
+   "display_name": "Chris Brady",
+   "short_name": "C. Brady",
+   "position": "GK",
+   "club": "Chicago Fire",
+   "photo": "https://media.api-sports.io/football/players/266606.png",
+   "score": 12,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "62",
+   "display_name": "Ethan Horvath",
+   "short_name": "E. Horvath",
+   "position": "GK",
+   "club": "New York Red Bulls",
+   "photo": "https://media.api-sports.io/football/players/62.png",
+   "score": 12,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-10-16",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "50848",
+   "display_name": "Sean Johnson",
+   "short_name": "S. Johnson",
+   "position": "GK",
+   "club": "DC United",
+   "photo": "https://media.api-sports.io/football/players/50848.png",
+   "score": 12,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-07-02",
+    "competition": "Copa América",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "383647",
+   "display_name": "Diego Kochen",
+   "short_name": "D. Kochen",
+   "position": "GK",
+   "club": "Lyngby",
+   "photo": "https://media.api-sports.io/football/players/383647.png",
+   "score": 12,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "102685",
+   "display_name": "Patrick Schulte",
+   "short_name": "P. Schulte",
+   "position": "GK",
+   "club": "Columbus Crew",
+   "photo": "https://media.api-sports.io/football/players/102685.png",
+   "score": 12,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-03-31",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "266733",
+   "display_name": "Brian Schwake",
+   "short_name": "B. Schwake",
+   "position": "GK",
+   "club": "Nashville SC",
+   "photo": "https://media.api-sports.io/football/players/266733.png",
+   "score": 12,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "51032",
+   "display_name": "Walker Zimmerman",
+   "short_name": "W. Zimmerman",
+   "position": "DF",
+   "club": "Toronto FC",
+   "photo": "https://media.api-sports.io/football/players/51032.png",
+   "score": 12,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-07-06",
+    "competition": "Gold Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "25332",
+   "display_name": "Josh Sargent",
+   "short_name": "J. Sargent",
+   "position": "FW",
+   "club": "Toronto FC",
+   "photo": "https://media.api-sports.io/football/players/25332.png",
+   "score": 11,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-09-09",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "162386",
+   "display_name": "Kristoffer Lund",
+   "short_name": "K. Lund",
+   "position": "DF",
+   "club": "Birmingham",
+   "photo": "https://media.api-sports.io/football/players/162386.png",
+   "score": 11,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-10-16",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "208667",
+   "display_name": "Jalen Neal",
+   "short_name": "J. Neal",
+   "position": "DF",
+   "club": "CF Montreal",
+   "photo": "https://media.api-sports.io/football/players/208667.png",
+   "score": 10,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-07-12",
+    "competition": "Gold Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "418618",
+   "display_name": "Julian Hall",
+   "short_name": "J. Hall",
+   "position": "FW",
+   "club": "New York Red Bulls",
+   "photo": "https://media.api-sports.io/football/players/418618.png",
+   "score": 10,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "50913",
+   "display_name": "Djordje Mihailović",
+   "short_name": "D. Mihailović",
+   "position": "MF",
+   "club": "Toronto FC",
+   "photo": "https://media.api-sports.io/football/players/50913.png",
+   "score": 10,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-07-12",
+    "competition": "Gold Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "102508",
+   "display_name": "George Campbell",
+   "short_name": "G. Campbell",
+   "position": "DF",
+   "club": "West Brom",
+   "photo": "https://media.api-sports.io/football/players/102508.png",
+   "score": 9,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "19607",
+   "display_name": "Matt Miazga",
+   "short_name": "M. Miazga",
+   "position": "DF",
+   "club": "New York City FC",
+   "photo": "https://media.api-sports.io/football/players/19607.png",
+   "score": 9,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-07-12",
+    "competition": "Gold Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "340369",
+   "display_name": "Brooklyn Raines",
+   "short_name": "B. Raines",
+   "position": "MF",
+   "club": "New England Revolution",
+   "photo": "https://media.api-sports.io/football/players/340369.png",
+   "score": 9,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "265882",
+   "display_name": "Quinn Sullivan",
+   "short_name": "Q. Sullivan",
+   "position": "MF",
+   "club": "Philadelphia Union",
+   "photo": "https://media.api-sports.io/football/players/265882.png",
+   "score": 8,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-07-06",
+    "competition": "Gold Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "51144",
+   "display_name": "Bryan Reynolds",
+   "short_name": "B. Reynolds",
+   "position": "DF",
+   "club": "Rennes",
+   "photo": "https://media.api-sports.io/football/players/51144.png",
+   "score": 8,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-07-12",
+    "competition": "Gold Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "363156",
+   "display_name": "Santiago Castañeda",
+   "short_name": "S. Castaneda",
+   "position": null,
+   "club": "SC Paderborn 07",
+   "photo": "https://media.api-sports.io/football/players/363156.png",
+   "score": 8,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
+   "playerId": "265884",
+   "display_name": "Paxten Aaronson",
+   "short_name": "P. Aaronson",
+   "position": "MF",
+   "club": "Colorado Rapids",
+   "photo": "https://media.api-sports.io/football/players/265884.png",
+   "score": 8,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-07-02",
+    "competition": "Gold Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "50952",
+   "display_name": "Aaron Long",
+   "short_name": "A. Long",
+   "position": "DF",
+   "club": "Los Angeles FC",
+   "photo": "https://media.api-sports.io/football/players/50952.png",
+   "score": 8,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-07-12",
+    "competition": "Gold Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "462853",
+   "display_name": "Cavan Sullivan",
+   "short_name": "C. Sullivan",
+   "position": "MF",
+   "club": "Philadelphia Union",
+   "photo": "https://media.api-sports.io/football/players/462853.png",
+   "score": 8,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "461514",
+   "display_name": "Justin Ellis",
+   "short_name": "J. Ellis",
+   "position": "FW",
+   "club": "Orlando City SC",
+   "photo": "https://media.api-sports.io/football/players/461514.png",
+   "score": 7,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "486522",
+   "display_name": "Mathis Albert",
+   "short_name": "M. Albert",
+   "position": "MF",
+   "club": "Borussia Dortmund",
+   "photo": "https://media.api-sports.io/football/players/486522.png",
+   "score": 7,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "50883",
+   "display_name": "Julian Gressel",
+   "short_name": "J. Gressel",
+   "position": "MF",
+   "club": "Minnesota United FC",
+   "photo": "https://media.api-sports.io/football/players/50883.png",
+   "score": 7,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-07-12",
+    "competition": "Gold Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "102524",
+   "display_name": "Nathan Harriel",
+   "short_name": "N. Harriel",
+   "position": "DF",
+   "club": "Philadelphia Union",
+   "photo": "https://media.api-sports.io/football/players/102524.png",
+   "score": 7,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-09-09",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "18897",
+   "display_name": "DeAndre Yedlin",
+   "short_name": "D. Yedlin",
+   "position": "DF",
+   "club": "Real Salt Lake",
+   "photo": "https://media.api-sports.io/football/players/18897.png",
+   "score": 6,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-07-12",
+    "competition": "Gold Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "428007",
+   "display_name": "Neil Pierre",
+   "short_name": "N. Pierre",
+   "position": "DF",
+   "club": "Philadelphia Union",
+   "photo": "https://media.api-sports.io/football/players/428007.png",
+   "score": 6,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "64310",
+   "display_name": "Shaq Moore",
+   "short_name": "S. Moore",
+   "position": "DF",
+   "club": "FC Dallas",
+   "photo": "https://media.api-sports.io/football/players/64310.png",
+   "score": 6,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-01-23",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "461645",
+   "display_name": "Adri Mehmeti",
+   "short_name": "A. Mehmeti",
+   "position": "MF",
+   "club": "New York Red Bulls",
+   "photo": "https://media.api-sports.io/football/players/461645.png",
+   "score": 6,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "51118",
+   "display_name": "Jordan Morris",
+   "short_name": "J. Morris",
+   "position": "FW",
+   "club": "Seattle Sounders",
+   "photo": "https://media.api-sports.io/football/players/51118.png",
+   "score": 6,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-07-12",
+    "competition": "Gold Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "413230",
+   "display_name": "Peyton Miller",
+   "short_name": "P. Miller",
+   "position": "DF",
+   "club": "New England Revolution",
+   "photo": "https://media.api-sports.io/football/players/413230.png",
+   "score": 6,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "129885",
+   "display_name": "Alan Soñora",
+   "short_name": "A. Soñora",
+   "position": "MF",
+   "club": "Newells Old Boys",
+   "photo": "https://media.api-sports.io/football/players/129885.png",
+   "score": 5,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-07-02",
+    "competition": "Gold Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "407425",
+   "display_name": "Taha Habroune",
+   "short_name": "T. Habroune",
+   "position": null,
+   "club": "Columbus Crew",
+   "photo": "https://media.api-sports.io/football/players/407425.png",
+   "score": 5,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
+   "playerId": "362085",
+   "display_name": "Frankie Westfield",
+   "short_name": "F. Westfield",
+   "position": "DF",
+   "club": "Philadelphia Union",
+   "photo": "https://media.api-sports.io/football/players/362085.png",
+   "score": 5,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-04",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "25617",
+   "display_name": "Timothy Tillman",
+   "short_name": "T. Tillman",
+   "position": "FW",
+   "club": "Los Angeles FC",
+   "photo": "https://media.api-sports.io/football/players/25617.png",
+   "score": 5,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-11-19",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "265762",
+   "display_name": "Reed Baker-Whiting",
+   "short_name": "R. Baker-Whiting",
+   "position": "MF",
+   "club": "Nashville SC",
+   "photo": "https://media.api-sports.io/football/players/265762.png",
+   "score": 4,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
+   "playerId": "129706",
+   "display_name": "Marlon Fossey",
+   "short_name": "M. Fossey",
+   "position": "DF",
+   "club": "Standard Liege",
+   "photo": "https://media.api-sports.io/football/players/129706.png",
+   "score": 4,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-03-22",
+    "competition": "Nations League",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "362139",
+   "display_name": "Nolan Norris",
+   "short_name": "N. Norris",
+   "position": null,
+   "club": "FC Dallas",
+   "photo": "https://media.api-sports.io/football/players/362139.png",
+   "score": 4,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U23",
+   "last_named": null
+  },
+  {
+   "playerId": "64167",
+   "display_name": "Gabriel Słonina",
+   "short_name": "G. Słonina",
+   "position": "GK",
+   "club": "Chelsea",
+   "photo": "https://media.api-sports.io/football/players/64167.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-11-21",
+    "competition": "Nations League",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "50828",
+   "display_name": "Zack Steffen",
+   "short_name": "Z. Steffen",
+   "position": "GK",
+   "club": "Colorado Rapids",
+   "photo": "https://media.api-sports.io/football/players/50828.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-03-20",
+    "competition": "Nations League",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "351591",
+   "display_name": "Niko Tsakiris",
+   "short_name": "N. Tsakiris",
+   "position": "MF",
+   "club": "San Jose Earthquakes",
+   "photo": "https://media.api-sports.io/football/players/351591.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
+   "playerId": "418851",
+   "display_name": "Luca Bombino",
+   "short_name": "L. Bombino",
+   "position": "DF",
+   "club": "Stoke City",
+   "photo": "https://media.api-sports.io/football/players/418851.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
+   "playerId": "362061",
+   "display_name": "Benjamin Cremaschi",
+   "short_name": "B. Cremaschi",
+   "position": "MF",
+   "club": "Parma",
+   "photo": "https://media.api-sports.io/football/players/362061.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-01-23",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "149557",
+   "display_name": "Kevin Paredes",
+   "short_name": "K. Paredes",
+   "position": "MF",
+   "club": "Utrecht",
+   "photo": "https://media.api-sports.io/football/players/149557.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-11-21",
+    "competition": "Nations League",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "412227",
+   "display_name": "Zavier Gozo",
+   "short_name": "Z. Gozo",
+   "position": "FW",
+   "club": "Real Salt Lake",
+   "photo": "https://media.api-sports.io/football/players/412227.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "51027",
+   "display_name": "Tristan Blackmon",
+   "short_name": "T. Blackmon",
+   "position": "DF",
+   "club": "Vancouver Whitecaps",
+   "photo": "https://media.api-sports.io/football/players/51027.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-09-09",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "212233",
+   "display_name": "Brian Gutiérrez",
+   "short_name": "B. Gutiérrez",
+   "position": "MF",
+   "club": "Guadalajara Chivas",
+   "photo": "https://media.api-sports.io/football/players/212233.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-03-20",
+    "competition": "Nations League",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "207781",
+   "display_name": "Caden Clark",
+   "short_name": "C. Clark",
+   "position": "MF",
+   "club": "Seattle Sounders",
+   "photo": "https://media.api-sports.io/football/players/207781.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-01-23",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "51310",
+   "display_name": "Kellyn Acosta",
+   "short_name": "K. Acosta",
+   "position": "MF",
+   "club": "Pogon Szczecin",
+   "photo": "https://media.api-sports.io/football/players/51310.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-04-20",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "413169",
+   "display_name": "Emeka Eneli",
+   "short_name": "E. Eneli",
+   "position": "MF",
+   "club": "Real Salt Lake",
+   "photo": "https://media.api-sports.io/football/players/413169.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-01-23",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "6719",
+   "display_name": "Matko Miljevic",
+   "short_name": "M. Miljevic",
+   "position": "MF",
+   "club": "Racing Club",
+   "photo": "https://media.api-sports.io/football/players/6719.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-01-23",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "328617",
+   "display_name": "Cole Campbell",
+   "short_name": "C. Campbell",
+   "position": "FW",
+   "club": "SV Elversberg",
+   "photo": "https://media.api-sports.io/football/players/328617.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "153506",
+   "display_name": "Indiana Vassilev",
+   "short_name": "I. Vassilev",
+   "position": "MF",
+   "club": "Philadelphia Union",
+   "photo": "https://media.api-sports.io/football/players/153506.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-01-23",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "265733",
+   "display_name": "Caleb Wiley",
+   "short_name": "C. Wiley",
+   "position": "DF",
+   "club": "Preston",
+   "photo": "https://media.api-sports.io/football/players/265733.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-09-10",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "389579",
+   "display_name": "Julian Eyestone",
+   "short_name": "J. Eyestone",
+   "position": null,
+   "club": "Rotherham",
+   "photo": "https://media.api-sports.io/football/players/389579.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
+   "playerId": "24842",
+   "display_name": "Lennard Maloney",
+   "short_name": "L. Maloney",
+   "position": "DF",
+   "club": "FSV Mainz 05",
+   "photo": "https://media.api-sports.io/football/players/24842.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-11-21",
+    "competition": "Nations League",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "340571",
+   "display_name": "Rokas Pukštas",
+   "short_name": "R. Pukštas",
+   "position": null,
+   "club": "Middlesbrough",
+   "photo": "https://media.api-sports.io/football/players/340571.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
+   "playerId": "203014",
+   "display_name": "Matthew Hoppe",
+   "short_name": "M. Hoppe",
+   "position": "FW",
+   "club": "Sonderjyske",
+   "photo": "https://media.api-sports.io/football/players/203014.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-01-29",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "462723",
+   "display_name": "Ramiz Hamouda",
+   "short_name": "R. Hamouda",
+   "position": null,
+   "club": "Birmingham Legion",
+   "photo": "https://media.api-sports.io/football/players/462723.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U17",
+   "last_named": null
+  },
+  {
+   "playerId": "351571",
+   "display_name": "Roman Celentano",
+   "short_name": "R. Celentano",
+   "position": "GK",
+   "club": "FC Cincinnati",
+   "photo": "https://media.api-sports.io/football/players/351571.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-11-19",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "51136",
+   "display_name": "Paxton Pomykal",
+   "short_name": "P. Pomykal",
+   "position": "MF",
+   "club": "FC Dallas",
+   "photo": "https://media.api-sports.io/football/players/51136.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-04-20",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "50772",
+   "display_name": "Paul Arriola",
+   "short_name": "P. Arriola",
+   "position": "FW",
+   "club": "Seattle Sounders",
+   "photo": "https://media.api-sports.io/football/players/50772.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-01-29",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "357230",
+   "display_name": "Sean Zawadzki",
+   "short_name": "S. Zawadzki",
+   "position": "DF",
+   "club": "Columbus Crew",
+   "photo": "https://media.api-sports.io/football/players/357230.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-01-20",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "461627",
+   "display_name": "Jude Terry",
+   "short_name": "J. Terry",
+   "position": null,
+   "club": "Los Angeles FC",
+   "photo": "https://media.api-sports.io/football/players/461627.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U17",
+   "last_named": null
+  },
+  {
+   "playerId": "51238",
+   "display_name": "Eryk Williamson",
+   "short_name": "E. Williamson",
+   "position": "MF",
+   "club": "Charlotte",
+   "photo": "https://media.api-sports.io/football/players/51238.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-01-29",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "362448",
+   "display_name": "Adam Beaudry",
+   "short_name": "A. Beaudry",
+   "position": null,
+   "club": "Colorado Rapids",
+   "photo": "https://media.api-sports.io/football/players/362448.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
+   "playerId": "201715",
+   "display_name": "Drake Callender",
+   "short_name": "D. Callender",
+   "position": "GK",
+   "club": "Minnesota United FC",
+   "photo": "https://media.api-sports.io/football/players/201715.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-03-25",
+    "competition": "Nations League",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "203426",
+   "display_name": "Jonathan Gómez",
+   "short_name": "J. Gómez",
+   "position": "DF",
+   "club": "VfL Osnabrück",
+   "photo": "https://media.api-sports.io/football/players/203426.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-01-29",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "73863",
+   "display_name": "Joshua Atencio",
+   "short_name": "J. Atencio",
+   "position": "MF",
+   "club": "Colorado Rapids",
+   "photo": "https://media.api-sports.io/football/players/73863.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-01-20",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "25335",
+   "display_name": "Jonathan Klinsmann",
+   "short_name": "J. Klinsmann",
+   "position": "GK",
+   "club": "Cesena",
+   "photo": "https://media.api-sports.io/football/players/25335.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2025-11-19",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "365552",
+   "display_name": "Cruz Medina",
+   "short_name": "C. Medina",
+   "position": null,
+   "club": "Tapatío",
+   "photo": "https://media.api-sports.io/football/players/365552.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
+   "playerId": "51185",
+   "display_name": "Jackson Yueill",
+   "short_name": "J. Yueill",
+   "position": "MF",
+   "club": "New England Revolution",
+   "photo": "https://media.api-sports.io/football/players/51185.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-07-12",
+    "competition": "Gold Cup",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "329409",
+   "display_name": "Esmir Bajraktarević",
+   "short_name": "E. Bajraktarević",
+   "position": "FW",
+   "club": "Jong PSV U21",
+   "photo": "https://media.api-sports.io/football/players/329409.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-01-20",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "407016",
+   "display_name": "Duncan McGuire",
+   "short_name": "D. McGuire",
+   "position": "FW",
+   "club": "Houston Dynamo",
+   "photo": "https://media.api-sports.io/football/players/407016.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-01-20",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "15783",
+   "display_name": "Emmanuel Sabbi",
+   "short_name": "E. Sabbi",
+   "position": "MF",
+   "club": "Vancouver Whitecaps",
+   "photo": "https://media.api-sports.io/football/players/15783.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-01-29",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "463542",
+   "display_name": "Christopher Cupps",
+   "short_name": "C. Cupps",
+   "position": null,
+   "club": "Morton",
+   "photo": "https://media.api-sports.io/football/players/463542.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
+   "playerId": "102510",
+   "display_name": "Samual Rogers",
+   "short_name": "S. Rogers",
+   "position": "DF",
+   "club": "Chicago Fire",
+   "photo": "https://media.api-sports.io/football/players/102510.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-01-29",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "413207",
+   "display_name": "Ruben Ramos",
+   "short_name": "R. Ramos",
+   "position": "FW",
+   "club": "Sporting Kansas City",
+   "photo": "https://media.api-sports.io/football/players/413207.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
+   "playerId": "461633",
+   "display_name": "Ian James",
+   "short_name": "I. James",
+   "position": "DF",
+   "club": "Sporting Kansas City",
+   "photo": "https://media.api-sports.io/football/players/461633.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": null,
+   "last_named": null
+  },
+  {
+   "playerId": "312998",
+   "display_name": "Aziel Jackson",
+   "short_name": "A. Jackson",
+   "position": "MF",
+   "club": "Minnesota United FC",
+   "photo": "https://media.api-sports.io/football/players/312998.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-01-20",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "201788",
+   "display_name": "Nkosi Burgess",
+   "short_name": "N. Burgess",
+   "position": "DF",
+   "club": "Los Angeles FC",
+   "photo": "https://media.api-sports.io/football/players/201788.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-01-20",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "351572",
+   "display_name": "Ian Murphy",
+   "short_name": "I. Murphy",
+   "position": "DF",
+   "club": "San Diego",
+   "photo": "https://media.api-sports.io/football/players/351572.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-01-20",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  },
+  {
+   "playerId": "542233",
+   "display_name": "Malik Jakupovic",
+   "short_name": "M. Jakupovic",
+   "position": "FW",
+   "club": "Philadelphia Union",
+   "photo": "https://media.api-sports.io/football/players/542233.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": null,
+   "last_named": null
+  },
+  {
+   "playerId": "312164",
+   "display_name": "Joshua Wynder",
+   "short_name": "J. Wynder",
+   "position": "DF",
+   "club": "New England Revolution",
+   "photo": "https://media.api-sports.io/football/players/312164.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-04-20",
+    "competition": "Friendly",
+    "opponent": null
+   }
+  }
+ ]
+}
