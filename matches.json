@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-10T14:34:11Z",
+ "updated_at": "2026-10-10T15:54:40Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-10",
@@ -136,6 +136,25 @@
    ]
   },
   {
+   "matchId": "1556871",
+   "kickoff_utc": "2026-10-10T14:00:00Z",
+   "competition": "Championship",
+   "home": "Arbroath",
+   "away": "Morton",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "463542",
+     "side": "away"
+    }
+   ]
+  },
+  {
    "matchId": "1557419",
    "kickoff_utc": "2026-10-10T14:00:00Z",
    "competition": "Premier League",
@@ -213,6 +232,25 @@
    ]
   },
   {
+   "matchId": "1563798",
+   "kickoff_utc": "2026-10-10T14:00:00Z",
+   "competition": "League Two",
+   "home": "Rotherham",
+   "away": "Gillingham",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "389579",
+     "side": "home"
+    }
+   ]
+  },
+  {
    "matchId": "1570403",
    "kickoff_utc": "2026-10-10T14:15:00Z",
    "competition": "La Liga",
@@ -277,6 +315,25 @@
     },
     {
      "playerId": "208667",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1493744",
+   "kickoff_utc": "2026-10-10T17:00:00Z",
+   "competition": "USL Championship",
+   "home": "Sporting JAX",
+   "away": "Birmingham Legion",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "462723",
      "side": "away"
     }
    ]
@@ -2131,6 +2188,25 @@
    ]
   },
   {
+   "matchId": "1563806",
+   "kickoff_utc": "2026-10-17T11:30:00Z",
+   "competition": "League Two",
+   "home": "Fleetwood Town",
+   "away": "Rotherham",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "389579",
+     "side": "away"
+    }
+   ]
+  },
+  {
    "matchId": "1570416",
    "kickoff_utc": "2026-10-17T12:00:00Z",
    "competition": "La Liga",
@@ -2240,6 +2316,25 @@
    "pool_players": [
     {
      "playerId": "328617",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1556879",
+   "kickoff_utc": "2026-10-17T14:00:00Z",
+   "competition": "Championship",
+   "home": "Morton",
+   "away": "Queen's Park",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "463542",
      "side": "home"
     }
    ]
@@ -3290,6 +3385,25 @@
    ]
   },
   {
+   "matchId": "1493756",
+   "kickoff_utc": "2026-10-18T21:00:00Z",
+   "competition": "USL Championship",
+   "home": "Birmingham Legion",
+   "away": "Loudoun United",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "462723",
+     "side": "home"
+    }
+   ]
+  },
+  {
    "matchId": "1490555",
    "kickoff_utc": "2026-10-18T23:00:00Z",
    "competition": "Major League Soccer",
@@ -3401,6 +3515,25 @@
    ]
   },
   {
+   "matchId": "1563824",
+   "kickoff_utc": "2026-10-20T18:45:00Z",
+   "competition": "League Two",
+   "home": "Rotherham",
+   "away": "Newport County",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "389579",
+     "side": "home"
+    }
+   ]
+  },
+  {
    "matchId": "1635655",
    "kickoff_utc": "2026-10-20T19:00:00Z",
    "competition": "UEFA Champions League",
@@ -3477,6 +3610,25 @@
     {
      "playerId": "212233",
      "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1493615",
+   "kickoff_utc": "2026-10-21T22:30:00Z",
+   "competition": "USL Championship",
+   "home": "Brooklyn",
+   "away": "Birmingham Legion",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "462723",
+     "side": "away"
     }
    ]
   },
@@ -3902,6 +4054,25 @@
    ]
   },
   {
+   "matchId": "1556882",
+   "kickoff_utc": "2026-10-24T14:00:00Z",
+   "competition": "Championship",
+   "home": "Morton",
+   "away": "Ayr Utd",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "463542",
+     "side": "home"
+    }
+   ]
+  },
+  {
    "matchId": "1557440",
    "kickoff_utc": "2026-10-24T14:00:00Z",
    "competition": "Premier League",
@@ -3985,6 +4156,25 @@
     },
     {
      "playerId": "418851",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1563836",
+   "kickoff_utc": "2026-10-24T14:00:00Z",
+   "competition": "League Two",
+   "home": "Rotherham",
+   "away": "Shrewsbury",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "389579",
      "side": "home"
     }
    ]
@@ -4235,6 +4425,25 @@
     {
      "playerId": "461645",
      "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1493765",
+   "kickoff_utc": "2026-10-24T23:00:00Z",
+   "competition": "USL Championship",
+   "home": "Pittsburgh Riverhounds",
+   "away": "Birmingham Legion",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "462723",
+     "side": "away"
     }
    ]
   },
