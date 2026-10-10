@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-10T18:34:11Z",
+ "updated_at": "2026-10-10T19:04:11Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-10",
@@ -347,7 +347,7 @@
    "fixture_kind": "club",
    "status": "scheduled",
    "tier": "must_watch",
-   "tier_at_kickoff": null,
+   "tier_at_kickoff": "must_watch",
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
