@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-10T20:54:10Z",
+ "updated_at": "2026-10-10T22:04:18Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-10",
@@ -315,25 +315,6 @@
     },
     {
      "playerId": "208667",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1493744",
-   "kickoff_utc": "2026-10-10T17:00:00Z",
-   "competition": "USL Championship",
-   "home": "Sporting JAX",
-   "away": "Birmingham Legion",
-   "fixture_kind": "club",
-   "status": "cancelled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "462723",
      "side": "away"
     }
    ]
@@ -1384,6 +1365,25 @@
    "pool_players": [
     {
      "playerId": "486522",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1493744",
+   "kickoff_utc": "2026-10-14T23:00:00Z",
+   "competition": "USL Championship",
+   "home": "Sporting JAX",
+   "away": "Birmingham Legion",
+   "fixture_kind": "club",
+   "status": "cancelled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "462723",
      "side": "away"
     }
    ]
