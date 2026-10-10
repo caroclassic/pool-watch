@@ -1,7 +1,11 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-10T02:23:46Z",
+ "updated_at": "2026-10-10T02:41:02Z",
  "reference_tz": "America/New_York",
+ "window": {
+  "start": "2026-10-09",
+  "end": "2026-10-23"
+ },
  "tier_thresholds": {
   "schema_version": 1,
   "enabled": false,
