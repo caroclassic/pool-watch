@@ -28,7 +28,7 @@ export const LEGEND = [
     ["⊘ Not in squad", "Not in the matchday squad."],
   ] },
   { title: "Match status", rows: [
-    ["Lineups ~60 min before kickoff", "Lineups usually post about an hour before the match."],
+    ["Lineups ~30 min before kickoff", "Lineups usually post about 30 minutes before the match."],
     ["Lineups confirmed ✓", "Lineups are in, and player statuses are final."],
     ["● LIVE", "In progress. We don't show scores or minutes."],
     ["Full time", "Finished. The match moves to the Earlier group."],
@@ -61,7 +61,7 @@ export const ABOUT = [
   { em: "Follow the chase for the shirt. Track who's in the picture." },
   { p: "Every day, Stateside XI answers one question: <b>which games should I put on to watch the pool?</b>" },
   { p: "<b>The pool</b> is the group of players in the picture for the U.S. men's national team: established regulars, players pushing for a spot, and young prospects. They play for clubs all over the world, so the games worth watching are scattered across dozens of leagues." },
-  { p: "We list each day's matches that feature pool players, flag the ones that matter most, and confirm the starting lineups about an hour before kickoff, so you know who's actually playing before you pick a game." },
+  { p: "We list each day's matches that feature pool players, flag the ones that matter most, and confirm the starting lineups about 30 minutes before kickoff, so you know who's actually playing before you pick a game." },
   { p: "<b>Relevance</b> is a 1 to 100 score showing how close each player is to the national team picture right now. Matches are rated by which pool players are likely to play." },
   { p: "<b>Follow</b> players to pin their matches to the top of the page. Your follows are saved on this device." },
   { p: "<b>What we don't do:</b> scores, stats, standings or match analysis. We're only here to help you pick the game." },

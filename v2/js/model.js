@@ -14,7 +14,7 @@ import { chipName } from "./players-model.js";
 
 export const LIVE_LEAD_MIN = 90;      // lineup window opens this long before kickoff
 export const LIVE_TAIL_HOURS = 4;     // a match can be in play this long after kickoff
-export const LINEUP_USUAL_MIN = 60;   // lineups usually post about an hour before kickoff
+export const LINEUP_USUAL_MIN = 30;
 export const COLLAPSED_CHIPS = 3;
 export const POOL_ESTIMATE_MAX = 8;
 
@@ -127,7 +127,7 @@ function statusHeader(v, fresh, now, tz) {
   if (minsToKo <= LINEUP_USUAL_MIN) {
     return { kind: "waiting", text: asOfTime ? `Lineup not posted yet · checked ${asOfTime}` : "Lineup not posted yet" };
   }
-  return { kind: "pre", text: "Lineups ~60 min before kickoff" };
+  return { kind: "pre", text: `Lineups ~${LINEUP_USUAL_MIN} min before kickoff` };
 }
 
 function ariaLabel(card) {
