@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-10T04:05:38Z",
+ "updated_at": "2026-10-10T09:24:09Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-10",
@@ -577,10 +577,6 @@
      "side": "home"
     },
     {
-     "playerId": "412227",
-     "side": "away"
-    },
-    {
      "playerId": "413169",
      "side": "away"
     },
@@ -956,6 +952,10 @@
    "pool_players": [
     {
      "playerId": "126949",
+     "side": "home"
+    },
+    {
+     "playerId": "412227",
      "side": "home"
     }
    ]
@@ -1799,10 +1799,6 @@
      "side": "away"
     },
     {
-     "playerId": "412227",
-     "side": "home"
-    },
-    {
      "playerId": "413169",
      "side": "home"
     }
@@ -1935,6 +1931,10 @@
     },
     {
      "playerId": "126949",
+     "side": "away"
+    },
+    {
+     "playerId": "412227",
      "side": "away"
     }
    ]
@@ -2817,10 +2817,6 @@
      "side": "away"
     },
     {
-     "playerId": "412227",
-     "side": "away"
-    },
-    {
      "playerId": "413169",
      "side": "away"
     },
@@ -3087,6 +3083,10 @@
    "pool_players": [
     {
      "playerId": "126949",
+     "side": "away"
+    },
+    {
+     "playerId": "412227",
      "side": "away"
     }
    ]
@@ -3709,6 +3709,10 @@
    "pool_players": [
     {
      "playerId": "126949",
+     "side": "away"
+    },
+    {
+     "playerId": "412227",
      "side": "away"
     }
    ]
@@ -4606,10 +4610,6 @@
     {
      "playerId": "334362",
      "side": "away"
-    },
-    {
-     "playerId": "412227",
-     "side": "home"
     },
     {
      "playerId": "413169",

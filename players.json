@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-10T02:23:46Z",
- "top_score": 10.172,
+ "updated_at": "2026-10-10T09:24:09Z",
+ "top_score": 10.164,
  "player_tier_bands": {
   "core_min": 61,
   "contender_min": 42,
@@ -1293,6 +1293,23 @@
    }
   },
   {
+   "playerId": "412227",
+   "display_name": "Zavier Gozo",
+   "short_name": "Z. Gozo",
+   "position": "FW",
+   "club": "Crystal Palace",
+   "photo": "https://media.api-sports.io/football/players/412227.png",
+   "score": 5,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": "Canada"
+   }
+  },
+  {
    "playerId": "25617",
    "display_name": "Timothy Tillman",
    "short_name": "T. Tillman",
@@ -1444,23 +1461,6 @@
     "date": "2023-11-21",
     "competition": "Nations League",
     "opponent": "Trinidad and Tobago"
-   }
-  },
-  {
-   "playerId": "412227",
-   "display_name": "Zavier Gozo",
-   "short_name": "Z. Gozo",
-   "position": "FW",
-   "club": "Real Salt Lake",
-   "photo": "https://media.api-sports.io/football/players/412227.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": false,
-   "youth_level": null,
-   "last_named": {
-    "date": "2026-10-07",
-    "competition": "Friendly",
-    "opponent": "Canada"
    }
   },
   {
