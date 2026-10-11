@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-11T08:01:50Z",
+ "updated_at": "2026-10-11T09:51:04Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-11",
@@ -13,25 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1552185",
-   "kickoff_utc": "2026-10-11T10:15:00Z",
-   "competition": "Eredivisie",
-   "home": "Utrecht",
-   "away": "Willem II",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "ESPN+",
-   "pool_players": [
-    {
-     "playerId": "149557",
-     "side": "home"
-    }
-   ]
-  },
   {
    "matchId": "1556674",
    "kickoff_utc": "2026-10-11T11:00:00Z",
