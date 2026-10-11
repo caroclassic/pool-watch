@@ -1,10 +1,10 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-11T03:14:11Z",
+ "updated_at": "2026-10-11T04:04:45Z",
  "reference_tz": "America/New_York",
  "window": {
-  "start": "2026-10-10",
-  "end": "2026-10-24"
+  "start": "2026-10-11",
+  "end": "2026-10-25"
  },
  "tier_thresholds": {
   "schema_version": 1,
@@ -13,762 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1576196",
-   "kickoff_utc": "2026-10-10T11:00:00Z",
-   "competition": "2. Bundesliga",
-   "home": "VfL Osnabrück",
-   "away": "Dynamo Dresden",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "203426",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1557417",
-   "kickoff_utc": "2026-10-10T11:30:00Z",
-   "competition": "Premier League",
-   "home": "Arsenal",
-   "away": "Leeds",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "NBC/USA/Peacock — varies by match",
-   "pool_players": [
-    {
-     "playerId": "50739",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1563189",
-   "kickoff_utc": "2026-10-10T11:30:00Z",
-   "competition": "EFL Championship",
-   "home": "West Brom",
-   "away": "Birmingham",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "102508",
-     "side": "home"
-    },
-    {
-     "playerId": "162386",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1575181",
-   "kickoff_utc": "2026-10-10T13:30:00Z",
-   "competition": "Bundesliga",
-   "home": "FSV Mainz 05",
-   "away": "Bayer Leverkusen",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "players_basis": null,
-   "broadcast": "Fandango/USA Network — varies by match",
-   "pool_players": [
-    {
-     "playerId": "24842",
-     "side": "home"
-    },
-    {
-     "playerId": "162037",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1575182",
-   "kickoff_utc": "2026-10-10T13:30:00Z",
-   "competition": "Bundesliga",
-   "home": "Union Berlin",
-   "away": "SV Elversberg",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Fandango/USA Network — varies by match",
-   "pool_players": [
-    {
-     "playerId": "328617",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1575184",
-   "kickoff_utc": "2026-10-10T13:30:00Z",
-   "competition": "Bundesliga",
-   "home": "SC Paderborn 07",
-   "away": "VfB Stuttgart",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Fandango/USA Network — varies by match",
-   "pool_players": [
-    {
-     "playerId": "363156",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1556871",
-   "kickoff_utc": "2026-10-10T14:00:00Z",
-   "competition": "Scottish Championship",
-   "home": "Arbroath",
-   "away": "Morton",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "463542",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1557419",
-   "kickoff_utc": "2026-10-10T14:00:00Z",
-   "competition": "Premier League",
-   "home": "Chelsea",
-   "away": "Bournemouth",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "must_watch",
-   "tier_at_kickoff": "must_watch",
-   "players_basis": null,
-   "broadcast": "NBC/USA/Peacock — varies by match",
-   "pool_players": [
-    {
-     "playerId": "1150",
-     "side": "away"
-    },
-    {
-     "playerId": "64167",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1563180",
-   "kickoff_utc": "2026-10-10T14:00:00Z",
-   "competition": "EFL Championship",
-   "home": "Bolton",
-   "away": "Stoke City",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "207768",
-     "side": "away"
-    },
-    {
-     "playerId": "418851",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1563183",
-   "kickoff_utc": "2026-10-10T14:00:00Z",
-   "competition": "EFL Championship",
-   "home": "Middlesbrough",
-   "away": "Wolves",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "must_watch",
-   "tier_at_kickoff": "must_watch",
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "201713",
-     "side": "home"
-    },
-    {
-     "playerId": "201714",
-     "side": "home"
-    },
-    {
-     "playerId": "340571",
-     "side": "home"
-    },
-    {
-     "playerId": "362400",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1563798",
-   "kickoff_utc": "2026-10-10T14:00:00Z",
-   "competition": "EFL League Two",
-   "home": "Rotherham",
-   "away": "Gillingham",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "389579",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1570403",
-   "kickoff_utc": "2026-10-10T14:15:00Z",
-   "competition": "La Liga",
-   "home": "Alaves",
-   "away": "Atletico Madrid",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "ESPN+",
-   "pool_players": [
-    {
-     "playerId": "133185",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1550141",
-   "kickoff_utc": "2026-10-10T16:00:00Z",
-   "competition": "Serie A",
-   "home": "Inter",
-   "away": "Parma",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "362061",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1490512",
-   "kickoff_utc": "2026-10-10T17:00:00Z",
-   "competition": "Major League Soccer",
-   "home": "Toronto FC",
-   "away": "CF Montreal",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "25332",
-     "side": "home"
-    },
-    {
-     "playerId": "50913",
-     "side": "home"
-    },
-    {
-     "playerId": "51032",
-     "side": "home"
-    },
-    {
-     "playerId": "208667",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1490511",
-   "kickoff_utc": "2026-10-10T18:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Chicago Fire",
-   "away": "New York City FC",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "must_watch",
-   "tier_at_kickoff": "must_watch",
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "19607",
-     "side": "away"
-    },
-    {
-     "playerId": "50728",
-     "side": "away"
-    },
-    {
-     "playerId": "50863",
-     "side": "away"
-    },
-    {
-     "playerId": "102510",
-     "side": "home"
-    },
-    {
-     "playerId": "266606",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1552778",
-   "kickoff_utc": "2026-10-10T18:45:00Z",
-   "competition": "Ligue 1",
-   "home": "Monaco",
-   "away": "Toulouse",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "players_basis": null,
-   "broadcast": "beIN SPORTS",
-   "pool_players": [
-    {
-     "playerId": "50735",
-     "side": "away"
-    },
-    {
-     "playerId": "138835",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1570411",
-   "kickoff_utc": "2026-10-10T19:00:00Z",
-   "competition": "La Liga",
-   "home": "Real Madrid",
-   "away": "Villarreal",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "must_watch",
-   "tier_at_kickoff": "must_watch",
-   "players_basis": null,
-   "broadcast": "ESPN+",
-   "pool_players": [
-    {
-     "playerId": "355994",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1490513",
-   "kickoff_utc": "2026-10-10T23:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Inter Miami",
-   "away": "DC United",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50848",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1490514",
-   "kickoff_utc": "2026-10-10T23:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Atlanta United FC",
-   "away": "FC Cincinnati",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50879",
-     "side": "away"
-    },
-    {
-     "playerId": "351571",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1490515",
-   "kickoff_utc": "2026-10-10T23:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Orlando City SC",
-   "away": "Columbus Crew",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "102685",
-     "side": "away"
-    },
-    {
-     "playerId": "357230",
-     "side": "away"
-    },
-    {
-     "playerId": "407425",
-     "side": "away"
-    },
-    {
-     "playerId": "461514",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1490516",
-   "kickoff_utc": "2026-10-10T23:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "New England Revolution",
-   "away": "Seattle Sounders",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "must_watch",
-   "tier_at_kickoff": "must_watch",
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50772",
-     "side": "away"
-    },
-    {
-     "playerId": "50999",
-     "side": "home"
-    },
-    {
-     "playerId": "51114",
-     "side": "away"
-    },
-    {
-     "playerId": "51118",
-     "side": "away"
-    },
-    {
-     "playerId": "51142",
-     "side": "away"
-    },
-    {
-     "playerId": "51185",
-     "side": "home"
-    },
-    {
-     "playerId": "207781",
-     "side": "away"
-    },
-    {
-     "playerId": "312164",
-     "side": "home"
-    },
-    {
-     "playerId": "340369",
-     "side": "home"
-    },
-    {
-     "playerId": "413230",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1490517",
-   "kickoff_utc": "2026-10-10T23:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Philadelphia Union",
-   "away": "Real Salt Lake",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "18897",
-     "side": "away"
-    },
-    {
-     "playerId": "102524",
-     "side": "home"
-    },
-    {
-     "playerId": "153506",
-     "side": "home"
-    },
-    {
-     "playerId": "265882",
-     "side": "home"
-    },
-    {
-     "playerId": "312896",
-     "side": "away"
-    },
-    {
-     "playerId": "362085",
-     "side": "home"
-    },
-    {
-     "playerId": "413169",
-     "side": "away"
-    },
-    {
-     "playerId": "428007",
-     "side": "home"
-    },
-    {
-     "playerId": "462853",
-     "side": "home"
-    },
-    {
-     "playerId": "542233",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1490518",
-   "kickoff_utc": "2026-10-10T23:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "New York Red Bulls",
-   "away": "San Diego",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "62",
-     "side": "home"
-    },
-    {
-     "playerId": "51186",
-     "side": "home"
-    },
-    {
-     "playerId": "351572",
-     "side": "away"
-    },
-    {
-     "playerId": "418618",
-     "side": "home"
-    },
-    {
-     "playerId": "461645",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1490519",
-   "kickoff_utc": "2026-10-10T23:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Charlotte",
-   "away": "FC Dallas",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "19026",
-     "side": "home"
-    },
-    {
-     "playerId": "51136",
-     "side": "away"
-    },
-    {
-     "playerId": "51238",
-     "side": "home"
-    },
-    {
-     "playerId": "64310",
-     "side": "away"
-    },
-    {
-     "playerId": "362139",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1490520",
-   "kickoff_utc": "2026-10-11T00:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Austin",
-   "away": "Nashville SC",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50893",
-     "side": "home"
-    },
-    {
-     "playerId": "265762",
-     "side": "away"
-    },
-    {
-     "playerId": "266733",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1490521",
-   "kickoff_utc": "2026-10-11T00:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Minnesota United FC",
-   "away": "Houston Dynamo",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50883",
-     "side": "home"
-    },
-    {
-     "playerId": "201715",
-     "side": "home"
-    },
-    {
-     "playerId": "312998",
-     "side": "home"
-    },
-    {
-     "playerId": "407016",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1490522",
-   "kickoff_utc": "2026-10-11T00:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Sporting Kansas City",
-   "away": "Portland Timbers",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "413207",
-     "side": "home"
-    },
-    {
-     "playerId": "461633",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1490523",
-   "kickoff_utc": "2026-10-11T01:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Colorado Rapids",
-   "away": "San Jose Earthquakes",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50828",
-     "side": "home"
-    },
-    {
-     "playerId": "51013",
-     "side": "away"
-    },
-    {
-     "playerId": "73863",
-     "side": "home"
-    },
-    {
-     "playerId": "265884",
-     "side": "home"
-    },
-    {
-     "playerId": "351591",
-     "side": "away"
-    },
-    {
-     "playerId": "362448",
-     "side": "home"
-    }
-   ]
-  },
   {
    "matchId": "1490524",
    "kickoff_utc": "2026-10-11T02:30:00Z",
@@ -1041,7 +285,7 @@
    "away": "Marseille",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": null,
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "beIN SPORTS",
@@ -1350,7 +594,7 @@
    "home": "Sporting JAX",
    "away": "Birmingham Legion",
    "fixture_kind": "club",
-   "status": "cancelled",
+   "status": "scheduled",
    "tier": null,
    "tier_at_kickoff": null,
    "players_basis": null,
@@ -4798,6 +4042,456 @@
     {
      "playerId": "51238",
      "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1556684",
+   "kickoff_utc": "2026-10-25T12:00:00Z",
+   "competition": "Scottish Premiership",
+   "home": "Hibernian",
+   "away": "Celtic",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "19314",
+     "side": "away"
+    },
+    {
+     "playerId": "50737",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1558655",
+   "kickoff_utc": "2026-10-25T12:30:00Z",
+   "competition": "Jupiler Pro League",
+   "home": "Genk",
+   "away": "Standard Liege",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "129706",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1576211",
+   "kickoff_utc": "2026-10-25T12:30:00Z",
+   "competition": "2. Bundesliga",
+   "home": "Holstein Kiel",
+   "away": "Dynamo Dresden",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "119002",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1576214",
+   "kickoff_utc": "2026-10-25T12:30:00Z",
+   "competition": "2. Bundesliga",
+   "home": "VfL Osnabrück",
+   "away": "SpVgg Greuther Fürth",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "203426",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1549043",
+   "kickoff_utc": "2026-10-25T13:00:00Z",
+   "competition": "Danish Superliga",
+   "home": "FC Midtjylland",
+   "away": "Lyngby",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "383647",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1552204",
+   "kickoff_utc": "2026-10-25T13:30:00Z",
+   "competition": "Eredivisie",
+   "home": "PSV Eindhoven",
+   "away": "Feyenoord",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "ESPN+",
+   "pool_players": [
+    {
+     "playerId": "38735",
+     "side": "home"
+    },
+    {
+     "playerId": "73868",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1550160",
+   "kickoff_utc": "2026-10-25T14:00:00Z",
+   "competition": "Serie A",
+   "home": "Genoa",
+   "away": "Venezia",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "51266",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1552797",
+   "kickoff_utc": "2026-10-25T14:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Monaco",
+   "away": "Lille",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "beIN SPORTS",
+   "pool_players": [
+    {
+     "playerId": "138835",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1557441",
+   "kickoff_utc": "2026-10-25T14:00:00Z",
+   "competition": "Premier League",
+   "home": "Crystal Palace",
+   "away": "Newcastle",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "must_watch",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "NBC/USA/Peacock — varies by match",
+   "pool_players": [
+    {
+     "playerId": "126949",
+     "side": "home"
+    },
+    {
+     "playerId": "412227",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1557445",
+   "kickoff_utc": "2026-10-25T14:00:00Z",
+   "competition": "Premier League",
+   "home": "Manchester United",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "NBC/USA/Peacock — varies by match",
+   "pool_players": [
+    {
+     "playerId": "1150",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1575197",
+   "kickoff_utc": "2026-10-25T14:30:00Z",
+   "competition": "Bundesliga",
+   "home": "1899 Hoffenheim",
+   "away": "Bayer Leverkusen",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Fandango/USA Network — varies by match",
+   "pool_players": [
+    {
+     "playerId": "162037",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1549042",
+   "kickoff_utc": "2026-10-25T15:00:00Z",
+   "competition": "Danish Superliga",
+   "home": "AC Horsens",
+   "away": "Sonderjyske",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "203014",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1552796",
+   "kickoff_utc": "2026-10-25T16:15:00Z",
+   "competition": "Ligue 1",
+   "home": "Marseille",
+   "away": "Le Havre",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "beIN SPORTS",
+   "pool_players": [
+    {
+     "playerId": "1138",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1552798",
+   "kickoff_utc": "2026-10-25T16:15:00Z",
+   "competition": "Ligue 1",
+   "home": "Rennes",
+   "away": "Strasbourg",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "beIN SPORTS",
+   "pool_players": [
+    {
+     "playerId": "51144",
+     "side": "home"
+    },
+    {
+     "playerId": "161921",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1557446",
+   "kickoff_utc": "2026-10-25T16:30:00Z",
+   "competition": "Premier League",
+   "home": "Sunderland",
+   "away": "Leeds",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "NBC/USA/Peacock — varies by match",
+   "pool_players": [
+    {
+     "playerId": "50739",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1550163",
+   "kickoff_utc": "2026-10-25T17:00:00Z",
+   "competition": "Serie A",
+   "home": "Lecce",
+   "away": "Juventus",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "415",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1550166",
+   "kickoff_utc": "2026-10-25T19:45:00Z",
+   "competition": "Serie A",
+   "home": "Udinese",
+   "away": "AC Milan",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "17",
+     "side": "away"
+    },
+    {
+     "playerId": "162106",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1552800",
+   "kickoff_utc": "2026-10-25T19:45:00Z",
+   "competition": "Ligue 1",
+   "home": "Paris Saint Germain",
+   "away": "Lyon",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "beIN SPORTS",
+   "pool_players": [
+    {
+     "playerId": "80752",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1493206",
+   "kickoff_utc": "2026-10-25T21:00:00Z",
+   "competition": "Liga Profesional Argentina",
+   "home": "River Plate",
+   "away": "Racing Club",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "6719",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1493208",
+   "kickoff_utc": "2026-10-25T21:00:00Z",
+   "competition": "Liga Profesional Argentina",
+   "home": "San Lorenzo",
+   "away": "Newells Old Boys",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "129885",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1551017",
+   "kickoff_utc": "2026-10-25T23:00:00Z",
+   "competition": "Liga MX",
+   "home": "Club America",
+   "away": "CF Pachuca",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "ViX / TUDN",
+   "pool_players": [
+    {
+     "playerId": "35885",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1490570",
+   "kickoff_utc": "2026-10-26T01:00:00Z",
+   "competition": "Major League Soccer",
+   "home": "Los Angeles FC",
+   "away": "Los Angeles Galaxy",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "MLS Season Pass (Apple TV)",
+   "pool_players": [
+    {
+     "playerId": "25617",
+     "side": "home"
+    },
+    {
+     "playerId": "50952",
+     "side": "home"
+    },
+    {
+     "playerId": "201788",
+     "side": "home"
+    },
+    {
+     "playerId": "461627",
+     "side": "home"
     }
    ]
   }
