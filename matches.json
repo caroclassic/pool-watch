@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-11T04:44:10Z",
+ "updated_at": "2026-10-11T08:01:50Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-11",
@@ -923,10 +923,6 @@
      "side": "home"
     },
     {
-     "playerId": "50883",
-     "side": "away"
-    },
-    {
      "playerId": "73863",
      "side": "home"
     },
@@ -1757,10 +1753,6 @@
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
-    {
-     "playerId": "50883",
-     "side": "home"
-    },
     {
      "playerId": "201715",
      "side": "home"
@@ -3798,10 +3790,6 @@
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
-    {
-     "playerId": "50883",
-     "side": "away"
-    },
     {
      "playerId": "201715",
      "side": "away"

@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-10T09:24:09Z",
- "top_score": 10.164,
+ "updated_at": "2026-10-11T08:01:50Z",
+ "top_score": 10.156,
  "player_tier_bands": {
   "core_min": 61,
   "contender_min": 42,
@@ -1144,23 +1144,6 @@
    }
   },
   {
-   "playerId": "18897",
-   "display_name": "DeAndre Yedlin",
-   "short_name": "D. Yedlin",
-   "position": "DF",
-   "club": "Real Salt Lake",
-   "photo": "https://media.api-sports.io/football/players/18897.png",
-   "score": 6,
-   "tier": "wider_pool",
-   "is_prospect": false,
-   "youth_level": null,
-   "last_named": {
-    "date": "2023-07-12",
-    "competition": "Gold Cup",
-    "opponent": "Panama"
-   }
-  },
-  {
    "playerId": "428007",
    "display_name": "Neil Pierre",
    "short_name": "N. Pierre",
@@ -1175,6 +1158,23 @@
     "date": "2026-10-07",
     "competition": "Friendly",
     "opponent": "Canada"
+   }
+  },
+  {
+   "playerId": "18897",
+   "display_name": "DeAndre Yedlin",
+   "short_name": "D. Yedlin",
+   "position": "DF",
+   "club": "Real Salt Lake",
+   "photo": "https://media.api-sports.io/football/players/18897.png",
+   "score": 6,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-07-12",
+    "competition": "Gold Cup",
+    "opponent": "Panama"
    }
   },
   {
@@ -1212,23 +1212,6 @@
    }
   },
   {
-   "playerId": "51118",
-   "display_name": "Jordan Morris",
-   "short_name": "J. Morris",
-   "position": "FW",
-   "club": "Seattle Sounders",
-   "photo": "https://media.api-sports.io/football/players/51118.png",
-   "score": 6,
-   "tier": "wider_pool",
-   "is_prospect": false,
-   "youth_level": null,
-   "last_named": {
-    "date": "2023-07-12",
-    "competition": "Gold Cup",
-    "opponent": "Panama"
-   }
-  },
-  {
    "playerId": "413230",
    "display_name": "Peyton Miller",
    "short_name": "P. Miller",
@@ -1243,6 +1226,23 @@
     "date": "2026-10-07",
     "competition": "Friendly",
     "opponent": "Canada"
+   }
+  },
+  {
+   "playerId": "51118",
+   "display_name": "Jordan Morris",
+   "short_name": "J. Morris",
+   "position": "FW",
+   "club": "Seattle Sounders",
+   "photo": "https://media.api-sports.io/football/players/51118.png",
+   "score": 6,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-07-12",
+    "competition": "Gold Cup",
+    "opponent": "Panama"
    }
   },
   {
@@ -1293,6 +1293,19 @@
    }
   },
   {
+   "playerId": "265762",
+   "display_name": "Reed Baker-Whiting",
+   "short_name": "R. Baker-Whiting",
+   "position": "MF",
+   "club": "Nashville SC",
+   "photo": "https://media.api-sports.io/football/players/265762.png",
+   "score": 5,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
    "playerId": "412227",
    "display_name": "Zavier Gozo",
    "short_name": "Z. Gozo",
@@ -1325,19 +1338,6 @@
     "competition": "Friendly",
     "opponent": "Uruguay"
    }
-  },
-  {
-   "playerId": "265762",
-   "display_name": "Reed Baker-Whiting",
-   "short_name": "R. Baker-Whiting",
-   "position": "MF",
-   "club": "Nashville SC",
-   "photo": "https://media.api-sports.io/football/players/265762.png",
-   "score": 4,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
   },
   {
    "playerId": "129706",
@@ -1600,6 +1600,19 @@
    }
   },
   {
+   "playerId": "389579",
+   "display_name": "Julian Eyestone",
+   "short_name": "J. Eyestone",
+   "position": null,
+   "club": "Rotherham",
+   "photo": "https://media.api-sports.io/football/players/389579.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
    "playerId": "265733",
    "display_name": "Caleb Wiley",
    "short_name": "C. Wiley",
@@ -1615,19 +1628,6 @@
     "competition": "Friendly",
     "opponent": "New Zealand"
    }
-  },
-  {
-   "playerId": "389579",
-   "display_name": "Julian Eyestone",
-   "short_name": "J. Eyestone",
-   "position": null,
-   "club": "Rotherham",
-   "photo": "https://media.api-sports.io/football/players/389579.png",
-   "score": 2,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
   },
   {
    "playerId": "24842",
@@ -1758,19 +1758,6 @@
    }
   },
   {
-   "playerId": "461627",
-   "display_name": "Jude Terry",
-   "short_name": "J. Terry",
-   "position": null,
-   "club": "Los Angeles FC",
-   "photo": "https://media.api-sports.io/football/players/461627.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U17",
-   "last_named": null
-  },
-  {
    "playerId": "51238",
    "display_name": "Eryk Williamson",
    "short_name": "E. Williamson",
@@ -1835,6 +1822,19 @@
    }
   },
   {
+   "playerId": "461627",
+   "display_name": "Jude Terry",
+   "short_name": "J. Terry",
+   "position": null,
+   "club": "Los Angeles FC",
+   "photo": "https://media.api-sports.io/football/players/461627.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U17",
+   "last_named": null
+  },
+  {
    "playerId": "73863",
    "display_name": "Joshua Atencio",
    "short_name": "J. Atencio",
@@ -1850,6 +1850,19 @@
     "competition": "Friendly",
     "opponent": "Slovenia"
    }
+  },
+  {
+   "playerId": "365552",
+   "display_name": "Cruz Medina",
+   "short_name": "C. Medina",
+   "position": null,
+   "club": "Tapatío",
+   "photo": "https://media.api-sports.io/football/players/365552.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
   },
   {
    "playerId": "25335",
@@ -1869,19 +1882,6 @@
    }
   },
   {
-   "playerId": "365552",
-   "display_name": "Cruz Medina",
-   "short_name": "C. Medina",
-   "position": null,
-   "club": "Tapatío",
-   "photo": "https://media.api-sports.io/football/players/365552.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
-  },
-  {
    "playerId": "51185",
    "display_name": "Jackson Yueill",
    "short_name": "J. Yueill",
@@ -1897,6 +1897,19 @@
     "competition": "Gold Cup",
     "opponent": "Panama"
    }
+  },
+  {
+   "playerId": "461633",
+   "display_name": "Ian James",
+   "short_name": "I. James",
+   "position": "DF",
+   "club": "Sporting Kansas City",
+   "photo": "https://media.api-sports.io/football/players/461633.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": null,
+   "last_named": null
   },
   {
    "playerId": "329409",
@@ -1990,19 +2003,6 @@
    "tier": "wider_pool",
    "is_prospect": true,
    "youth_level": "U20",
-   "last_named": null
-  },
-  {
-   "playerId": "461633",
-   "display_name": "Ian James",
-   "short_name": "I. James",
-   "position": "DF",
-   "club": "Sporting Kansas City",
-   "photo": "https://media.api-sports.io/football/players/461633.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": null,
    "last_named": null
   },
   {
