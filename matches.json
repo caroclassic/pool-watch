@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-11T16:31:03Z",
+ "updated_at": "2026-10-11T18:21:04Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-11",
@@ -204,32 +204,13 @@
    "away": "Juventus",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "Paramount+",
    "pool_players": [
     {
      "playerId": "415",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1552782",
-   "kickoff_utc": "2026-10-11T18:45:00Z",
-   "competition": "Ligue 1",
-   "home": "Estac Troyes",
-   "away": "Marseille",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "beIN SPORTS",
-   "pool_players": [
-    {
-     "playerId": "1138",
      "side": "away"
     }
    ]
