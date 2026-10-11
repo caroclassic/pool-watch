@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-11T00:54:11Z",
+ "updated_at": "2026-10-11T01:04:13Z",
  "active": true,
  "matches": {
   "1490511": {
@@ -169,10 +169,17 @@
   "1490523": {
    "status": "scheduled",
    "status_updated_at": "2026-10-10T04:04:54Z",
-   "lineups_confirmed": false,
+   "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
-   "participation": {}
+   "participation": {
+    "50828": "not_in_squad",
+    "51013": "not_in_squad",
+    "73863": "starts",
+    "265884": "starts",
+    "351591": "not_in_squad",
+    "362448": "bench"
+   }
   },
   "1490524": {
    "status": "scheduled",
