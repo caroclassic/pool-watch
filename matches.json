@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-11T10:31:04Z",
+ "updated_at": "2026-10-11T12:31:09Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-11",
@@ -63,7 +63,7 @@
    "away": "Strasbourg",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": null,
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "beIN SPORTS",
