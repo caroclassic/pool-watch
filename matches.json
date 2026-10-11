@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-11T00:04:13Z",
+ "updated_at": "2026-10-11T00:44:12Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-10",
@@ -727,25 +727,6 @@
     {
      "playerId": "461633",
      "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1550988",
-   "kickoff_utc": "2026-10-11T01:00:00Z",
-   "competition": "Liga MX",
-   "home": "Atlas",
-   "away": "Guadalajara Chivas",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "ViX / TUDN",
-   "pool_players": [
-    {
-     "playerId": "212233",
-     "side": "away"
     }
    ]
   },
