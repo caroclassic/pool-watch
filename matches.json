@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-11T14:01:08Z",
+ "updated_at": "2026-10-11T15:31:03Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-11",
@@ -181,7 +181,7 @@
    "away": "AC Milan",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "Paramount+",
