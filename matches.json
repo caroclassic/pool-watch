@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-11T04:04:45Z",
+ "updated_at": "2026-10-11T04:44:10Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-11",
@@ -13,49 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1490524",
-   "kickoff_utc": "2026-10-11T02:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Los Angeles FC",
-   "away": "Vancouver Whitecaps",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "15783",
-     "side": "away"
-    },
-    {
-     "playerId": "25617",
-     "side": "home"
-    },
-    {
-     "playerId": "50952",
-     "side": "home"
-    },
-    {
-     "playerId": "50969",
-     "side": "away"
-    },
-    {
-     "playerId": "51027",
-     "side": "away"
-    },
-    {
-     "playerId": "201788",
-     "side": "home"
-    },
-    {
-     "playerId": "461627",
-     "side": "home"
-    }
-   ]
-  },
   {
    "matchId": "1552185",
    "kickoff_utc": "2026-10-11T10:15:00Z",
