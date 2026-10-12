@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-12T00:11:03Z",
+ "updated_at": "2026-10-12T00:21:03Z",
  "active": true,
  "matches": {
   "1490525": {
@@ -10,11 +10,7 @@
    "tier": null,
    "tier_at_kickoff": null,
    "participation": {
-    "25617": "not_in_squad",
-    "50952": "not_in_squad",
-    "201788": "not_in_squad",
-    "334362": "bench",
-    "461627": "not_in_squad"
+    "334362": "bench"
    }
   },
   "1493175": {
