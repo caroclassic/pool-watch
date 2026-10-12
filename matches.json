@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-12T04:01:28Z",
+ "updated_at": "2026-10-12T16:01:04Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-12",
@@ -13,25 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1550137",
-   "kickoff_utc": "2026-10-12T16:30:00Z",
-   "competition": "Serie A",
-   "home": "Atalanta",
-   "away": "Venezia",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "51266",
-     "side": "away"
-    }
-   ]
-  },
   {
    "matchId": "1549028",
    "kickoff_utc": "2026-10-12T17:00:00Z",
