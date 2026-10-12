@@ -11,6 +11,7 @@ import { h, clear } from "./ui/dom.js";
 import { term } from "./ui/popover.js";
 import { playerSheet, followingSheet, legendSheet, saveSheet, importSheet } from "./ui/sheets.js";
 import { parseHash, decodeShare } from "./storage.js";
+import { mountThemeButton } from "./theme.js";
 
 const isLocal = ["localhost", "127.0.0.1", ""].includes(location.hostname);
 const params = new URLSearchParams(location.search);
@@ -167,6 +168,7 @@ async function loadMatches() {
 
 function boot() {
   clear($("scope")).append("The USMNT player pool, ranked by ", term("relevance", "relevance"), ". ", term("Follow", "follow"), " a player to pin his matches to the top of Matches.");
+  mountThemeButton($("theme-btn"), storage);
   $("legend-btn").addEventListener("click", (e) => legendSheet({ from: e.currentTarget }));
   $("follow-btn").addEventListener("click", (e) => openFollowing(e.currentTarget));
   follows.subscribe(render);

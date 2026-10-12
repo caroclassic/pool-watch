@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem("sxi.theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <meta name="robots" content="noindex">
 <title>About Stateside XI</title>
 <meta name="description" content="Which games to watch today for USMNT pool players: matches, lineups and who&#x27;s starting.">
@@ -33,6 +34,7 @@
       <h1 class="brand"><a href="./">Stateside <span class="xi">XI</span></a></h1>
       <div class="top-tools">
         <button type="button" id="follow-btn" class="pill"><span aria-hidden="true">⌖</span> <span id="follow-count">Following</span></button>
+        <button type="button" id="theme-btn" class="pill"></button>
         <button type="button" id="legend-btn" class="icon-btn" aria-label="Legend: what the labels mean">ⓘ</button>
       </div>
     </div>
@@ -45,6 +47,9 @@
 <script type="module">
 import { ABOUT } from "./js/copy.js";
 import { h, rich } from "./js/ui/dom.js";
+import { createStorage } from "./js/storage.js";
+import { mountThemeButton } from "./js/theme.js";
+mountThemeButton(document.getElementById("theme-btn"), createStorage());
 const main = document.getElementById("main");
 for (const b of ABOUT) {
   if (b.h) main.append(h("h2", { class: "about-title" }, b.h));

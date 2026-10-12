@@ -7,13 +7,21 @@
   --sans: 'Archivo Narrow', 'Arial Narrow', Arial, sans-serif;
   color-scheme: light;
 }
+/* Dark values appear twice on purpose: once for "Auto on a dark device" (unless the
+   person forced Light) and once for an explicit Dark. Keep the two blocks identical. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #161614; --card: #1F1F1C; --panel: #ECE8DE; --line: #3A3935;
     --ink: #ECE8DE; --dim: #A8A298; --accent: #E8806C; --blue: #8FAAF0;
     --on-fill: #161614; --shadow: none; color-scheme: dark;
   }
 }
+:root[data-theme="dark"] {
+  --bg: #161614; --card: #1F1F1C; --panel: #ECE8DE; --line: #3A3935;
+  --ink: #ECE8DE; --dim: #A8A298; --accent: #E8806C; --blue: #8FAAF0;
+  --on-fill: #161614; --shadow: none; color-scheme: dark;
+}
+:root[data-theme="light"] { color-scheme: light; }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
 html { -webkit-text-size-adjust: 100%; }

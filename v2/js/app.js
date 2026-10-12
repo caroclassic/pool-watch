@@ -11,6 +11,7 @@ import { createStorage, createFollowsStore, createFlags, parseHash, buildHash, d
 import { indexPlayers } from "./players-model.js";
 import { etDateKey, dayHeader, dayHeading, weekdayLong, relativeMinutes, localTime, addDays } from "./time.js";
 import { INTRO, LINEUP_NOTE } from "./copy.js";
+import { mountThemeButton } from "./theme.js";
 import { term, syncPopover } from "./ui/popover.js";
 import { h, clear } from "./ui/dom.js";
 import { renderCard } from "./ui/card.js";
@@ -343,6 +344,7 @@ function handleShare(code) {
 
 // ── boot ────────────────────────────────────────────────────────────────────
 function boot() {
+  mountThemeButton($("theme-btn"), storage);
   $("legend-btn").addEventListener("click", (e) => legendSheet({ from: e.currentTarget }));
   $("follow-btn").addEventListener("click", (e) => openFollowing(e.currentTarget));
   follows.subscribe(() => render());
