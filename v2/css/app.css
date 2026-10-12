@@ -45,7 +45,7 @@ main:focus { outline: none; }
 h1.brand { font: 700 1.75rem/1.1 var(--sans); letter-spacing: -.01em; margin: 0; }
 h1.brand a { text-decoration: none; }
 .brand .xi { color: var(--accent); }
-.top-tools { display: flex; align-items: center; gap: 6px; }
+.top-tools { display: flex; align-items: center; gap: 4px; }
 .scope { color: var(--dim); font-size: 0.875rem; margin: 4px 0 0; }
 .scope-2 { margin-top: 0; }
 .pill, .icon-btn {
@@ -53,6 +53,8 @@ h1.brand a { text-decoration: none; }
   font: 700 0.9375rem var(--sans); letter-spacing: .02em; border-radius: 22px; padding: 0 14px; cursor: pointer;
 }
 .icon-btn { min-width: 44px; padding: 0; font-size: 1.25rem; font-family: var(--serif); }
+/* Header pills are tighter than the base pill so Following + Theme + ⓘ share a row with the brand on 390px+ phones (wraps below that). */
+.top-tools .pill { padding: 0 10px; }
 .pill:hover, .icon-btn:hover { border-color: var(--ink); }
 .sitenav { display: flex; gap: 22px; margin: 4px 0 10px; }
 .sitenav a { display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; font: 700 1rem var(--sans); letter-spacing: .04em; text-transform: uppercase; color: var(--dim); text-decoration: none; padding: 0; border-bottom: 2px solid transparent; }

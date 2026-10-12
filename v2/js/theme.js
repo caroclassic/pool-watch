@@ -39,26 +39,32 @@ export function applyTheme(theme, doc = document) {
   }
 }
 
-/** Wire the header button: shows the current theme in words, cycles on press, saves the choice. */
+/** Wire the header button: shows the current theme in words, cycles on press, saves the choice.
+ *  Never throws: a problem here must not take the rest of the page (Following, Legend) down,
+ *  and it is logged to the console so a misbehaving browser leaves a trace. */
 export function mountThemeButton(btn, storage, doc = document) {
   if (!btn) return;
-  let cur = readTheme(storage);
-  const render = () => {
-    const next = nextTheme(cur);
-    btn.textContent = "";
-    const icon = doc.createElement("span");
-    icon.setAttribute("aria-hidden", "true");
-    icon.textContent = ICON[cur];
-    btn.append(icon, ` ${themeLabel(cur)}`);
-    btn.setAttribute("aria-label", `Theme: ${themeLabel(cur)}${cur === "auto" ? ", follows your device" : ""}. Press to switch to ${themeLabel(next)}.`);
-    btn.title = `Theme: ${themeLabel(cur)}`;
-  };
-  applyTheme(cur, doc);
-  render();
-  btn.addEventListener("click", () => {
-    cur = nextTheme(cur);
-    storage.set(THEME_KEY, cur);
+  try {
+    let cur = readTheme(storage);
+    const render = () => {
+      const next = nextTheme(cur);
+      btn.textContent = "";
+      const icon = doc.createElement("span");
+      icon.setAttribute("aria-hidden", "true");
+      icon.textContent = ICON[cur];
+      btn.append(icon, ` ${themeLabel(cur)}`);
+      btn.setAttribute("aria-label", `Theme: ${themeLabel(cur)}${cur === "auto" ? ", follows your device" : ""}. Press to switch to ${themeLabel(next)}.`);
+      btn.title = `Theme: ${themeLabel(cur)}`;
+    };
     applyTheme(cur, doc);
     render();
-  });
+    btn.addEventListener("click", () => {
+      try {
+        cur = nextTheme(cur);
+        storage.set(THEME_KEY, cur);
+        applyTheme(cur, doc);
+        render();
+      } catch (err) { console.error("theme button:", err); }
+    });
+  } catch (err) { console.error("theme button failed to start:", err); }
 }
