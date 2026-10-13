@@ -1,11 +1,11 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-13T20:51:03Z",
- "active": true,
+ "updated_at": "2026-10-13T21:01:03Z",
+ "active": false,
  "matches": {
   "1563196": {
-   "status": "live",
-   "status_updated_at": "2026-10-13T19:01:03Z",
+   "status": "full_time",
+   "status_updated_at": "2026-10-13T21:01:03Z",
    "lineups_confirmed": true,
    "tier": "must_watch",
    "tier_at_kickoff": "must_watch",
@@ -29,8 +29,8 @@
    }
   },
   "1635623": {
-   "status": "live",
-   "status_updated_at": "2026-10-13T19:11:03Z",
+   "status": "full_time",
+   "status_updated_at": "2026-10-13T21:01:03Z",
    "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
@@ -39,8 +39,8 @@
    }
   },
   "1635711": {
-   "status": "live",
-   "status_updated_at": "2026-10-13T19:11:03Z",
+   "status": "full_time",
+   "status_updated_at": "2026-10-13T21:01:03Z",
    "lineups_confirmed": true,
    "tier": "worth_a_look",
    "tier_at_kickoff": "worth_a_look",
@@ -50,8 +50,8 @@
    }
   },
   "1635748": {
-   "status": "live",
-   "status_updated_at": "2026-10-13T19:11:03Z",
+   "status": "full_time",
+   "status_updated_at": "2026-10-13T21:01:03Z",
    "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
