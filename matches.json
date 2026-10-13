@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-13T12:21:03Z",
+ "updated_at": "2026-10-13T18:31:04Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-13",
@@ -28,29 +28,6 @@
    "pool_players": [
     {
      "playerId": "102508",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1563191",
-   "kickoff_utc": "2026-10-13T19:00:00Z",
-   "competition": "EFL Championship",
-   "home": "Birmingham",
-   "away": "Preston",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "162386",
-     "side": "home"
-    },
-    {
-     "playerId": "265733",
      "side": "away"
     }
    ]
@@ -144,7 +121,7 @@
    "away": "Napoli",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": null,
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "Paramount+",
