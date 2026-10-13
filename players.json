@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-13T00:41:02Z",
- "top_score": 10.148,
+ "updated_at": "2026-10-13T08:01:31Z",
+ "top_score": 10.141,
  "player_tier_bands": {
   "core_min": 61,
   "contender_min": 42,
@@ -397,23 +397,6 @@
     "date": "2026-10-07",
     "competition": "Friendly",
     "opponent": "Canada"
-   }
-  },
-  {
-   "playerId": "407652",
-   "display_name": "Patrick Agyemang",
-   "short_name": "P. Agyemang",
-   "position": "FW",
-   "club": "Derby",
-   "photo": "https://media.api-sports.io/football/players/407652.png",
-   "score": 33,
-   "tier": "in_the_mix",
-   "is_prospect": false,
-   "youth_level": null,
-   "last_named": {
-    "date": "2026-03-31",
-    "competition": "Friendly",
-    "opponent": "Portugal"
    }
   },
   {

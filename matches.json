@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-13T04:01:36Z",
+ "updated_at": "2026-10-13T08:01:31Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-13",
@@ -2040,6 +2040,25 @@
    ]
   },
   {
+   "matchId": "1493194",
+   "kickoff_utc": "2026-10-18T17:45:00Z",
+   "competition": "Liga Profesional Argentina",
+   "home": "Racing Club",
+   "away": "Independiente",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "6719",
+     "side": "home"
+    }
+   ]
+  },
+  {
    "matchId": "1552196",
    "kickoff_utc": "2026-10-18T18:00:00Z",
    "competition": "Eredivisie",
@@ -2092,44 +2111,6 @@
    "pool_players": [
     {
      "playerId": "80752",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1493192",
-   "kickoff_utc": "2026-10-18T20:00:00Z",
-   "competition": "Liga Profesional Argentina",
-   "home": "Newells Old Boys",
-   "away": "Central Cordoba de Santiago",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "129885",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1493194",
-   "kickoff_utc": "2026-10-18T20:00:00Z",
-   "competition": "Liga Profesional Argentina",
-   "home": "Racing Club",
-   "away": "Independiente",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "6719",
      "side": "home"
     }
    ]
@@ -2242,6 +2223,25 @@
     {
      "playerId": "427",
      "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1493192",
+   "kickoff_utc": "2026-10-19T22:00:00Z",
+   "competition": "Liga Profesional Argentina",
+   "home": "Newells Old Boys",
+   "away": "Central Cordoba de Santiago",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "129885",
+     "side": "home"
     }
    ]
   },
@@ -2822,7 +2822,7 @@
    "away": "Fulham",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "must_watch",
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "NBC/USA/Peacock — varies by match",
@@ -3167,6 +3167,25 @@
     {
      "playerId": "461645",
      "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1493208",
+   "kickoff_utc": "2026-10-24T22:15:00Z",
+   "competition": "Liga Profesional Argentina",
+   "home": "San Lorenzo",
+   "away": "Newells Old Boys",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "129885",
+     "side": "away"
     }
    ]
   },
@@ -3929,7 +3948,7 @@
   },
   {
    "matchId": "1493206",
-   "kickoff_utc": "2026-10-25T21:00:00Z",
+   "kickoff_utc": "2026-10-25T22:15:00Z",
    "competition": "Liga Profesional Argentina",
    "home": "River Plate",
    "away": "Racing Club",
@@ -3942,25 +3961,6 @@
    "pool_players": [
     {
      "playerId": "6719",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1493208",
-   "kickoff_utc": "2026-10-25T21:00:00Z",
-   "competition": "Liga Profesional Argentina",
-   "home": "San Lorenzo",
-   "away": "Newells Old Boys",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "129885",
      "side": "away"
     }
    ]
