@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-12T08:24:18Z",
+ "updated_at": "2026-10-13T00:41:02Z",
  "top_score": 10.148,
  "player_tier_bands": {
   "core_min": 61,
@@ -452,7 +452,7 @@
   },
   {
    "playerId": "35885",
-   "display_name": "Alejandro Zendejas",
+   "display_name": "Alex Zendejas",
    "short_name": "A. Zendejas",
    "position": "FW",
    "club": "Club America",
