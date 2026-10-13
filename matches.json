@@ -1,10 +1,10 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-12T18:31:03Z",
+ "updated_at": "2026-10-13T04:01:36Z",
  "reference_tz": "America/New_York",
  "window": {
-  "start": "2026-10-12",
-  "end": "2026-10-26"
+  "start": "2026-10-13",
+  "end": "2026-10-27"
  },
  "tier_thresholds": {
   "schema_version": 1,
@@ -13,44 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1549028",
-   "kickoff_utc": "2026-10-12T17:00:00Z",
-   "competition": "Danish Superliga",
-   "home": "Aarhus",
-   "away": "Sonderjyske",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "203014",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1493171",
-   "kickoff_utc": "2026-10-12T21:30:00Z",
-   "competition": "Liga Profesional Argentina",
-   "home": "Gimnasia M.",
-   "away": "Newells Old Boys",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "129885",
-     "side": "away"
-    }
-   ]
-  },
   {
    "matchId": "1563198",
    "kickoff_utc": "2026-10-13T18:45:00Z",
@@ -4050,6 +4012,196 @@
     {
      "playerId": "461627",
      "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1623279",
+   "kickoff_utc": "2026-10-27T12:00:00Z",
+   "competition": "Premier League International Cup",
+   "home": "Ipswich Town U21",
+   "away": "Jong PSV U21",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "329409",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1601576",
+   "kickoff_utc": "2026-10-27T19:00:00Z",
+   "competition": "Serie B",
+   "home": "Cesena",
+   "away": "Empoli",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "25335",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1638557",
+   "kickoff_utc": "2026-10-27T19:00:00Z",
+   "competition": "DFB Pokal",
+   "home": "Bayer Leverkusen",
+   "away": "1. FC Nürnberg",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "162037",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1638559",
+   "kickoff_utc": "2026-10-27T19:00:00Z",
+   "competition": "DFB Pokal",
+   "home": "Borussia Mönchengladbach",
+   "away": "Karlsruher SC",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "50852",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1638560",
+   "kickoff_utc": "2026-10-27T19:00:00Z",
+   "competition": "DFB Pokal",
+   "home": "VfL Bochum",
+   "away": "FSV Mainz 05",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "24842",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1638561",
+   "kickoff_utc": "2026-10-27T19:00:00Z",
+   "competition": "DFB Pokal",
+   "home": "Borussia Dortmund",
+   "away": "Werder Bremen",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "486522",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1638562",
+   "kickoff_utc": "2026-10-27T19:00:00Z",
+   "competition": "DFB Pokal",
+   "home": "SV Elversberg",
+   "away": "SV Darmstadt 98",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "328617",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1638568",
+   "kickoff_utc": "2026-10-27T19:00:00Z",
+   "competition": "DFB Pokal",
+   "home": "Holstein Kiel",
+   "away": "1899 Hoffenheim",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "119002",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1638570",
+   "kickoff_utc": "2026-10-27T19:00:00Z",
+   "competition": "DFB Pokal",
+   "home": "SC Paderborn 07",
+   "away": "VfB Stuttgart",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "363156",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1644360",
+   "kickoff_utc": "2026-10-27T20:00:00Z",
+   "competition": "Copa del Rey",
+   "home": "Manacor",
+   "away": "Villarreal",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "355994",
+     "side": "away"
     }
    ]
   }

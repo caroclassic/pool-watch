@@ -1,27 +1,55 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-13T03:31:02Z",
+ "updated_at": "2026-10-13T04:01:36Z",
  "active": false,
  "matches": {
-  "1493171": {
-   "status": "full_time",
-   "status_updated_at": "2026-10-12T23:31:02Z",
-   "lineups_confirmed": true,
+  "1563191": {
+   "status": "scheduled",
+   "status_updated_at": "2026-10-13T04:01:33Z",
+   "lineups_confirmed": false,
    "tier": null,
    "tier_at_kickoff": null,
-   "participation": {
-    "129885": "bench"
-   }
+   "participation": {}
   },
-  "1549028": {
-   "status": "full_time",
-   "status_updated_at": "2026-10-12T19:01:02Z",
-   "lineups_confirmed": true,
+  "1563196": {
+   "status": "scheduled",
+   "status_updated_at": "2026-10-13T04:01:33Z",
+   "lineups_confirmed": false,
+   "tier": "must_watch",
+   "tier_at_kickoff": null,
+   "participation": {}
+  },
+  "1563198": {
+   "status": "scheduled",
+   "status_updated_at": "2026-10-13T04:01:33Z",
+   "lineups_confirmed": false,
    "tier": null,
    "tier_at_kickoff": null,
-   "participation": {
-    "203014": "bench"
-   }
+   "participation": {}
+  },
+  "1635623": {
+   "status": "scheduled",
+   "status_updated_at": "2026-10-13T04:01:33Z",
+   "lineups_confirmed": false,
+   "tier": null,
+   "tier_at_kickoff": null,
+   "participation": {}
+  },
+  "1635711": {
+   "status": "scheduled",
+   "status_updated_at": "2026-10-13T04:01:33Z",
+   "lineups_confirmed": false,
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "participation": {}
+  },
+  "1635748": {
+   "status": "scheduled",
+   "status_updated_at": "2026-10-13T04:01:33Z",
+   "lineups_confirmed": false,
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "participation": {}
   }
  }
 }
