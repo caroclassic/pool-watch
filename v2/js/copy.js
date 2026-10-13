@@ -2,6 +2,10 @@
 // popovers cannot drift apart. No outbound links; nothing implies alerts exist;
 // nothing mentions the trajectory score.
 
+export const FEEDBACK_EMAIL = "feedback@statesidexi.com";
+export const FEEDBACK_SUBJECT = "Stateside XI feedback";
+export const DISCLAIMER = "Unofficial fan project, not affiliated with U.S. Soccer.";
+
 export const TAGLINE = "Every match. Every USMNT player.";
 export const TAGLINE_2 = "Follow the chase for the shirt. Track who's in the picture.";
 
@@ -69,6 +73,9 @@ export const ABOUT = [
   { p: "<b>Follow</b> players to pin their matches to the top of the page. Your follows are saved on this device." },
   { p: "<b>What we don't do:</b> scores, stats, standings or match analysis. We're only here to help you pick the game." },
   { p: "Days follow U.S. Eastern Time so everyone sees the same slate. Kickoff times show in your own time zone." },
+  { p: "<b>Privacy.</b> Stateside XI has no accounts. The players you follow and your light/dark choice are saved on this device only; we never see them." },
+  { p: "<b>Unofficial.</b> Stateside XI is an unofficial fan project. It is not affiliated with or endorsed by U.S. Soccer, the U.S. Men's National Team, or any club, league or broadcaster." },
+  { mail: "<b>Spotted a mistake?</b> If a match, a player or a lineup status looks wrong, email" },
 ];
 
 // Dotted-underline terms (spec §8.6). 1–2 sentences each.

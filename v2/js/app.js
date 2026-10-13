@@ -10,7 +10,7 @@ import {
 import { createStorage, createFollowsStore, createFlags, parseHash, buildHash, decodeShare, readLegacyFollows } from "./storage.js";
 import { indexPlayers } from "./players-model.js";
 import { etDateKey, dayHeader, dayHeading, weekdayLong, relativeMinutes, localTime, addDays } from "./time.js";
-import { INTRO, LINEUP_NOTE } from "./copy.js";
+import { INTRO, LINEUP_NOTE, FEEDBACK_EMAIL, FEEDBACK_SUBJECT, DISCLAIMER } from "./copy.js";
 import { mountThemeButton } from "./theme.js";
 import { term, syncPopover } from "./ui/popover.js";
 import { h, clear } from "./ui/dom.js";
@@ -211,7 +211,9 @@ function footer() {
   const upd = st && st.updated_at ? `Updated ${localTime(st.updated_at, viewerTz())} · ${relativeMinutes(st.updated_at, nowDate())}` : null;
   return h("footer", { class: "foot" },
     h("p", { class: "dim small", id: "upd" }, upd),
-    h("p", { class: "small" }, h("a", { href: "about.html" }, "About"), " · ", h("button", { type: "button", class: "btn-link", onclick: (e) => legendSheet({ from: e.currentTarget }) }, "Legend")));
+    h("p", { class: "small" }, h("a", { href: "about.html" }, "About"), " · ", h("button", { type: "button", class: "btn-link", onclick: (e) => legendSheet({ from: e.currentTarget }) }, "Legend"),
+      " · ", h("a", { href: `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(FEEDBACK_SUBJECT)}` }, "Feedback")),
+    h("p", { class: "small dim" }, DISCLAIMER));
 }
 
 function renderBanners() {

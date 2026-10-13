@@ -45,7 +45,7 @@
   <main id="main" class="about" tabindex="-1"></main>
 </div>
 <script type="module">
-import { ABOUT } from "./js/copy.js";
+import { ABOUT, FEEDBACK_EMAIL, FEEDBACK_SUBJECT, DISCLAIMER } from "./js/copy.js";
 import { h, rich } from "./js/ui/dom.js";
 import { createStorage } from "./js/storage.js";
 import { mountThemeButton } from "./js/theme.js";
@@ -55,8 +55,10 @@ for (const b of ABOUT) {
   if (b.h) main.append(h("h2", { class: "about-title" }, b.h));
   else if (b.em) main.append(h("p", { class: "about-em" }, b.em));
   else if (b.p) main.append(h("p", null, rich(b.p)));
+  else if (b.mail) main.append(h("p", null, rich(b.mail), " ", h("a", { href: `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(FEEDBACK_SUBJECT)}` }, FEEDBACK_EMAIL), " with the match and what you saw."));
 }
 main.append(h("p", { class: "small" }, h("a", { href: "./" }, "Back to matches")));
+main.append(h("footer", { class: "foot" }, h("p", { class: "small dim" }, DISCLAIMER)));
 </script>
 </body>
 </html>
