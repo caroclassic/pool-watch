@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-13T12:21:03Z",
- "top_score": 10.141,
+ "updated_at": "2026-10-14T08:01:35Z",
+ "top_score": 10.133,
  "player_tier_bands": {
   "core_min": 61,
   "contender_min": 42,
@@ -1925,23 +1925,6 @@
    }
   },
   {
-   "playerId": "407016",
-   "display_name": "Duncan McGuire",
-   "short_name": "D. McGuire",
-   "position": "FW",
-   "club": "Houston Dynamo",
-   "photo": "https://media.api-sports.io/football/players/407016.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": false,
-   "youth_level": null,
-   "last_named": {
-    "date": "2024-01-20",
-    "competition": "Friendly",
-    "opponent": "Slovenia"
-   }
-  },
-  {
    "playerId": "15783",
    "display_name": "Emmanuel Sabbi",
    "short_name": "E. Sabbi",
@@ -1956,6 +1939,23 @@
     "date": "2023-01-29",
     "competition": "Friendly",
     "opponent": "Colombia"
+   }
+  },
+  {
+   "playerId": "407016",
+   "display_name": "Duncan McGuire",
+   "short_name": "D. McGuire",
+   "position": "FW",
+   "club": "Houston Dynamo",
+   "photo": "https://media.api-sports.io/football/players/407016.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-01-20",
+    "competition": "Friendly",
+    "opponent": "Slovenia"
    }
   },
   {
