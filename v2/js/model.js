@@ -125,10 +125,24 @@ export function isMovedFromPins(v, follows, now) {
 
 // ── cards ───────────────────────────────────────────────────────────────────
 
+// Once lineups are out, who is actually playing leads. Players with no status yet
+// (the other team's lineup hasn't posted, or the match is pre-lineup) sit between
+// starters and the bench: they are still expected to play. With no statuses at all
+// every player is in the same group and the order is the old one: relevance score.
+const PART_GROUP = { starts: 0, bench: 2, not_in_squad: 3 };       // no status = 1
+
+/**
+ * Pill order: a followed player first (unless he is not in the squad, then he
+ * sorts to the end with the other absentees), then starters, unconfirmed,
+ * bench, not in squad; within a group by relevance score, then name.
+ */
 export function orderedPool(v, follows, players) {
   const score = (id) => (players.get(String(id)) || {}).score ?? 0;
+  const group = (id) => PART_GROUP[part(v, id)] ?? 1;
+  const lead = (id) => follows.has(id) && group(id) < 3;           // followed, and not known to be out
   return [...v.poolPlayers].sort((a, b) =>
-    (follows.has(b.playerId) - follows.has(a.playerId)) ||
+    (lead(b.playerId) - lead(a.playerId)) ||
+    (group(a.playerId) - group(b.playerId)) ||
     (score(b.playerId) - score(a.playerId)) ||
     chipName(players, a.playerId).localeCompare(chipName(players, b.playerId)));
 }

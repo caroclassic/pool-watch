@@ -295,3 +295,24 @@ test("overdue match and follows: stays pinned while probable, leaves pins at 3 h
   const g = mk(iso(-3));
   assert.equal(g.pinned.length, 0); assert.equal(g.earlier.length, 1); assert.equal(g.notPlaying.length, 0);
 });
+
+test("chip order once lineups are out: followed first (unless not in squad), then starters, unconfirmed, bench, not in squad; score within a group", () => {
+  // scores: 11=70, 12=60, 13=50, 14=5, 15=5.  Statuses: 11 out of the squad, 12 bench, 13 starts, 14 starts, 15 unconfirmed.
+  const mf = feed([match(1, { pool: [pm(11), pm(12), pm(13), pm(14), pm(15)] })]);
+  const sf = sfeed({ "1": { status: "scheduled", tier: null, tier_at_kickoff: null, lineups_confirmed: true,
+    participation: { 11: "not_in_squad", 12: "bench", 13: "starts", 14: "starts" } } });
+  const order = (follows = []) => M.buildDay(ctx(view(mf, sf), { follows })).rest.concat(M.buildDay(ctx(view(mf, sf), { follows })).pinned)[0].chips.map((x) => x.playerId);
+  // starters by score (13 then 14), then unconfirmed 15, then bench 12, then the absentee 11 despite his top score
+  assert.deepEqual(order(), ["13", "14", "15", "12", "11"]);
+  // following the bench player puts him first; following the absentee does NOT (he sorts to the end)
+  assert.deepEqual(order(["12"]), ["12", "13", "14", "15", "11"]);
+  assert.deepEqual(order(["11"]), ["13", "14", "15", "12", "11"]);
+  // the three visible pills on the collapsed card are the people playing, not the not-in-squad star
+  assert.deepEqual(order().slice(0, 3), ["13", "14", "15"]);
+});
+
+test("chip order before any lineup: unchanged, relevance score order", () => {
+  const mf = feed([match(1, { pool: [pm(14), pm(11), pm(13), pm(12)] })]);
+  const c = M.buildDay(ctx(view(mf, sfeed()))).rest[0];
+  assert.deepEqual(c.chips.map((x) => x.playerId), ["11", "12", "13", "14"]);
+});

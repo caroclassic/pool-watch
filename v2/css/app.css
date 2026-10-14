@@ -143,6 +143,8 @@ h1.brand a { text-decoration: none; }
 .chip { min-height: 44px; display: inline-flex; align-items: center; gap: 6px; padding: 0 12px; border: 1px solid var(--line); border-radius: 22px; background: transparent; color: var(--ink); font: 600 0.9375rem var(--serif); cursor: pointer; }
 .chip:hover { border-color: var(--ink); }
 .chip-followed { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+/* Confirmed starters get a soft neutral fill (works in light and dark); the shape and word still carry the meaning. */
+.chip-starts { background: rgba(128, 128, 128, .18); }
 .chip .shape { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid var(--ink); flex: none; position: relative; }
 .shape-inline { display: inline-block; width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid var(--ink); position: relative; margin-right: 6px; vertical-align: -1px; }
 .shape-starts { background: var(--ink); }
