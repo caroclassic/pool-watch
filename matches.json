@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-14T04:01:44Z",
+ "updated_at": "2026-10-14T23:01:10Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-14",
@@ -86,7 +86,7 @@
    "away": "Charlotte",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": null,
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
