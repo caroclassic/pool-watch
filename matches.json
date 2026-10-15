@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-15T16:19:15Z",
+ "updated_at": "2026-10-15T16:36:08Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-15",
@@ -78,25 +78,6 @@
     },
     {
      "playerId": "162106",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1636401",
-   "kickoff_utc": "2026-10-15T16:45:00Z",
-   "competition": "UEFA Europa Conference League",
-   "home": "CSKA Sofia",
-   "away": "Monaco",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "138835",
      "side": "away"
     }
    ]
