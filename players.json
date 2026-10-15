@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-14T08:01:35Z",
- "top_score": 10.133,
+ "updated_at": "2026-10-15T08:56:08Z",
+ "top_score": 10.125,
  "player_tier_bands": {
   "core_min": 61,
   "contender_min": 42,
@@ -1246,6 +1246,19 @@
    }
   },
   {
+   "playerId": "265762",
+   "display_name": "Reed Baker-Whiting",
+   "short_name": "R. Baker-Whiting",
+   "position": "MF",
+   "club": "Nashville SC",
+   "photo": "https://media.api-sports.io/football/players/265762.png",
+   "score": 5,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
    "playerId": "407425",
    "display_name": "Taha Habroune",
    "short_name": "T. Habroune",
@@ -1274,19 +1287,6 @@
     "competition": "Friendly",
     "opponent": "Mexico"
    }
-  },
-  {
-   "playerId": "265762",
-   "display_name": "Reed Baker-Whiting",
-   "short_name": "R. Baker-Whiting",
-   "position": "MF",
-   "club": "Nashville SC",
-   "photo": "https://media.api-sports.io/football/players/265762.png",
-   "score": 5,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
   },
   {
    "playerId": "412227",
@@ -1338,19 +1338,6 @@
     "competition": "Nations League",
     "opponent": "Canada"
    }
-  },
-  {
-   "playerId": "362139",
-   "display_name": "Nolan Norris",
-   "short_name": "N. Norris",
-   "position": null,
-   "club": "FC Dallas",
-   "photo": "https://media.api-sports.io/football/players/362139.png",
-   "score": 4,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U23",
-   "last_named": null
   },
   {
    "playerId": "64167",
@@ -1428,6 +1415,19 @@
     "competition": "Friendly",
     "opponent": "Costa Rica"
    }
+  },
+  {
+   "playerId": "362139",
+   "display_name": "Nolan Norris",
+   "short_name": "N. Norris",
+   "position": null,
+   "club": "FC Dallas",
+   "photo": "https://media.api-sports.io/football/players/362139.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U23",
+   "last_named": null
   },
   {
    "playerId": "149557",
@@ -1818,16 +1818,16 @@
    }
   },
   {
-   "playerId": "461627",
-   "display_name": "Jude Terry",
-   "short_name": "J. Terry",
-   "position": null,
-   "club": "Los Angeles FC",
-   "photo": "https://media.api-sports.io/football/players/461627.png",
+   "playerId": "461633",
+   "display_name": "Ian James",
+   "short_name": "I. James",
+   "position": "DF",
+   "club": "Sporting Kansas City",
+   "photo": "https://media.api-sports.io/football/players/461633.png",
    "score": 1,
    "tier": "wider_pool",
    "is_prospect": true,
-   "youth_level": "U17",
+   "youth_level": null,
    "last_named": null
   },
   {
@@ -1878,6 +1878,19 @@
    }
   },
   {
+   "playerId": "461627",
+   "display_name": "Jude Terry",
+   "short_name": "J. Terry",
+   "position": null,
+   "club": "Los Angeles FC",
+   "photo": "https://media.api-sports.io/football/players/461627.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U17",
+   "last_named": null
+  },
+  {
    "playerId": "51185",
    "display_name": "Jackson Yueill",
    "short_name": "J. Yueill",
@@ -1895,25 +1908,29 @@
    }
   },
   {
-   "playerId": "461633",
-   "display_name": "Ian James",
-   "short_name": "I. James",
-   "position": "DF",
-   "club": "Sporting Kansas City",
-   "photo": "https://media.api-sports.io/football/players/461633.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": null,
-   "last_named": null
-  },
-  {
    "playerId": "329409",
    "display_name": "Esmir Bajraktarević",
    "short_name": "E. Bajraktarević",
    "position": "FW",
    "club": "Jong PSV U21",
    "photo": "https://media.api-sports.io/football/players/329409.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2024-01-20",
+    "competition": "Friendly",
+    "opponent": "Slovenia"
+   }
+  },
+  {
+   "playerId": "407016",
+   "display_name": "Duncan McGuire",
+   "short_name": "D. McGuire",
+   "position": "FW",
+   "club": "Houston Dynamo",
+   "photo": "https://media.api-sports.io/football/players/407016.png",
    "score": 1,
    "tier": "wider_pool",
    "is_prospect": false,
@@ -1939,23 +1956,6 @@
     "date": "2023-01-29",
     "competition": "Friendly",
     "opponent": "Colombia"
-   }
-  },
-  {
-   "playerId": "407016",
-   "display_name": "Duncan McGuire",
-   "short_name": "D. McGuire",
-   "position": "FW",
-   "club": "Houston Dynamo",
-   "photo": "https://media.api-sports.io/football/players/407016.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": false,
-   "youth_level": null,
-   "last_named": {
-    "date": "2024-01-20",
-    "competition": "Friendly",
-    "opponent": "Slovenia"
    }
   },
   {
