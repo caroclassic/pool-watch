@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-14T23:01:10Z",
+ "updated_at": "2026-10-15T00:01:11Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-14",
@@ -60,7 +60,7 @@
    "fixture_kind": "club",
    "status": "scheduled",
    "tier": "must_watch",
-   "tier_at_kickoff": null,
+   "tier_at_kickoff": "must_watch",
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
@@ -122,7 +122,7 @@
    "fixture_kind": "club",
    "status": "scheduled",
    "tier": "must_watch",
-   "tier_at_kickoff": null,
+   "tier_at_kickoff": "must_watch",
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
@@ -215,7 +215,7 @@
    "fixture_kind": "club",
    "status": "scheduled",
    "tier": "worth_a_look",
-   "tier_at_kickoff": null,
+   "tier_at_kickoff": "worth_a_look",
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
@@ -253,7 +253,7 @@
    "away": "Seattle Sounders",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": null,
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
@@ -281,6 +281,10 @@
     {
      "playerId": "64310",
      "side": "home"
+    },
+    {
+     "playerId": "207781",
+     "side": "away"
     },
     {
      "playerId": "362139",
@@ -390,6 +394,10 @@
     {
      "playerId": "266733",
      "side": "home"
+    },
+    {
+     "playerId": "413207",
+     "side": "away"
     },
     {
      "playerId": "461633",
