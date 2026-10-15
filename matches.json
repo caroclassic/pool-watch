@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-15T08:52:30Z",
+ "updated_at": "2026-10-15T16:19:15Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-15",
@@ -21,7 +21,7 @@
    "away": "Bayer Leverkusen",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "Paramount+",
