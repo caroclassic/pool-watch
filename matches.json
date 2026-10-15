@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-15T17:16:08Z",
+ "updated_at": "2026-10-15T18:36:09Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-15",
@@ -113,7 +113,7 @@
    "away": "Sturm Graz",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "Paramount+",
@@ -132,7 +132,7 @@
    "away": "Juventus",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "Paramount+",

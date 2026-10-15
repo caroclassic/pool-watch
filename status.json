@@ -1,31 +1,38 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-15T18:26:09Z",
+ "updated_at": "2026-10-15T18:36:09Z",
  "active": true,
  "matches": {
   "1636228": {
    "status": "scheduled",
    "status_updated_at": "2026-10-15T04:01:35Z",
-   "lineups_confirmed": false,
+   "lineups_confirmed": true,
    "tier": "worth_a_look",
    "tier_at_kickoff": null,
-   "participation": {}
+   "participation": {
+    "19314": "not_in_squad",
+    "50737": "starts"
+   }
   },
   "1636236": {
    "status": "scheduled",
    "status_updated_at": "2026-10-15T04:01:35Z",
-   "lineups_confirmed": false,
-   "tier": "worth_a_look",
+   "lineups_confirmed": true,
+   "tier": "must_watch",
    "tier_at_kickoff": null,
-   "participation": {}
+   "participation": {
+    "1150": "starts"
+   }
   },
   "1636243": {
    "status": "scheduled",
    "status_updated_at": "2026-10-15T04:01:35Z",
-   "lineups_confirmed": false,
-   "tier": "worth_a_look",
+   "lineups_confirmed": true,
+   "tier": "must_watch",
    "tier_at_kickoff": null,
-   "participation": {}
+   "participation": {
+    "415": "starts"
+   }
   },
   "1636279": {
    "status": "live",
@@ -52,22 +59,26 @@
   "1636295": {
    "status": "scheduled",
    "status_updated_at": "2026-10-15T04:01:35Z",
-   "lineups_confirmed": false,
+   "lineups_confirmed": true,
    "tier": "worth_a_look",
    "tier_at_kickoff": null,
-   "participation": {}
+   "participation": {
+    "1138": "starts"
+   }
   },
   "1636326": {
    "status": "scheduled",
    "status_updated_at": "2026-10-15T04:01:35Z",
-   "lineups_confirmed": false,
+   "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
-   "participation": {}
+   "participation": {
+    "51144": "bench"
+   }
   },
   "1636332": {
-   "status": "live",
-   "status_updated_at": "2026-10-15T16:46:08Z",
+   "status": "full_time",
+   "status_updated_at": "2026-10-15T18:36:07Z",
    "lineups_confirmed": true,
    "tier": "worth_a_look",
    "tier_at_kickoff": "worth_a_look",
