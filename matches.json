@@ -1,10 +1,10 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-15T19:36:08Z",
+ "updated_at": "2026-10-16T04:09:28Z",
  "reference_tz": "America/New_York",
  "window": {
-  "start": "2026-10-15",
-  "end": "2026-10-29"
+  "start": "2026-10-16",
+  "end": "2026-10-30"
  },
  "tier_thresholds": {
   "schema_version": 1,
@@ -13,174 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1636279",
-   "kickoff_utc": "2026-10-15T16:45:00Z",
-   "competition": "UEFA Europa League",
-   "home": "Lech Poznan",
-   "away": "Bayer Leverkusen",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "must_watch",
-   "tier_at_kickoff": "must_watch",
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "162037",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1636293",
-   "kickoff_utc": "2026-10-15T16:45:00Z",
-   "competition": "UEFA Europa League",
-   "home": "Lyon",
-   "away": "Crystal Palace",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "must_watch",
-   "tier_at_kickoff": "must_watch",
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "80752",
-     "side": "home"
-    },
-    {
-     "playerId": "126949",
-     "side": "away"
-    },
-    {
-     "playerId": "412227",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1636332",
-   "kickoff_utc": "2026-10-15T16:45:00Z",
-   "competition": "UEFA Europa League",
-   "home": "Red Bull Salzburg",
-   "away": "AC Milan",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "17",
-     "side": "away"
-    },
-    {
-     "playerId": "162106",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1636228",
-   "kickoff_utc": "2026-10-15T19:00:00Z",
-   "competition": "UEFA Europa League",
-   "home": "Benfica",
-   "away": "Celtic",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "19314",
-     "side": "away"
-    },
-    {
-     "playerId": "50737",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1636236",
-   "kickoff_utc": "2026-10-15T19:00:00Z",
-   "competition": "UEFA Europa League",
-   "home": "Bournemouth",
-   "away": "Sturm Graz",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "must_watch",
-   "tier_at_kickoff": "must_watch",
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "1150",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1636243",
-   "kickoff_utc": "2026-10-15T19:00:00Z",
-   "competition": "UEFA Europa League",
-   "home": "Celta Vigo",
-   "away": "Juventus",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "must_watch",
-   "tier_at_kickoff": "must_watch",
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "415",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1636295",
-   "kickoff_utc": "2026-10-15T19:00:00Z",
-   "competition": "UEFA Europa League",
-   "home": "Marseille",
-   "away": "Olympiakos Piraeus",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "1138",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1636326",
-   "kickoff_utc": "2026-10-15T19:00:00Z",
-   "competition": "UEFA Europa League",
-   "home": "Rennes",
-   "away": "OFI",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "51144",
-     "side": "home"
-    }
-   ]
-  },
   {
    "matchId": "1576201",
    "kickoff_utc": "2026-10-16T16:30:00Z",
@@ -4205,6 +4037,86 @@
     {
      "playerId": "149557",
      "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1549047",
+   "kickoff_utc": "2026-10-30T18:00:00Z",
+   "competition": "Danish Superliga",
+   "home": "Lyngby",
+   "away": "Randers FC",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "383647",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1575211",
+   "kickoff_utc": "2026-10-30T19:30:00Z",
+   "competition": "Bundesliga",
+   "home": "SV Elversberg",
+   "away": "FSV Mainz 05",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Fandango/USA Network — varies by match",
+   "pool_players": [
+    {
+     "playerId": "24842",
+     "side": "away"
+    },
+    {
+     "playerId": "328617",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1570442",
+   "kickoff_utc": "2026-10-30T20:00:00Z",
+   "competition": "La Liga",
+   "home": "Villarreal",
+   "away": "Espanyol",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "ESPN+",
+   "pool_players": [
+    {
+     "playerId": "355994",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1493224",
+   "kickoff_utc": "2026-10-31T00:15:00Z",
+   "competition": "Liga Profesional Argentina",
+   "home": "Racing Club",
+   "away": "Aldosivi",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "6719",
+     "side": "home"
     }
    ]
   }
