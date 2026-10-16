@@ -1,11 +1,11 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-16T18:36:37Z",
+ "updated_at": "2026-10-16T18:46:05Z",
  "active": true,
  "matches": {
   "1552785": {
-   "status": "scheduled",
-   "status_updated_at": "2026-10-16T04:09:27Z",
+   "status": "live",
+   "status_updated_at": "2026-10-16T18:46:04Z",
    "lineups_confirmed": true,
    "tier": "worth_a_look",
    "tier_at_kickoff": null,
