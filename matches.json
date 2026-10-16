@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-16T04:09:28Z",
+ "updated_at": "2026-10-16T14:39:16Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-16",
@@ -3206,6 +3206,25 @@
    ]
   },
   {
+   "matchId": "1638560",
+   "kickoff_utc": "2026-10-27T17:00:00Z",
+   "competition": "DFB Pokal",
+   "home": "VfL Bochum",
+   "away": "FSV Mainz 05",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "24842",
+     "side": "away"
+    }
+   ]
+  },
+  {
    "matchId": "1601576",
    "kickoff_utc": "2026-10-27T19:00:00Z",
    "competition": "Serie B",
@@ -3225,27 +3244,8 @@
    ]
   },
   {
-   "matchId": "1638557",
-   "kickoff_utc": "2026-10-27T19:00:00Z",
-   "competition": "DFB Pokal",
-   "home": "Bayer Leverkusen",
-   "away": "1. FC Nürnberg",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "162037",
-     "side": "home"
-    }
-   ]
-  },
-  {
    "matchId": "1638559",
-   "kickoff_utc": "2026-10-27T19:00:00Z",
+   "kickoff_utc": "2026-10-27T19:45:00Z",
    "competition": "DFB Pokal",
    "home": "Borussia Mönchengladbach",
    "away": "Karlsruher SC",
@@ -3263,27 +3263,8 @@
    ]
   },
   {
-   "matchId": "1638560",
-   "kickoff_utc": "2026-10-27T19:00:00Z",
-   "competition": "DFB Pokal",
-   "home": "VfL Bochum",
-   "away": "FSV Mainz 05",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "24842",
-     "side": "away"
-    }
-   ]
-  },
-  {
    "matchId": "1638561",
-   "kickoff_utc": "2026-10-27T19:00:00Z",
+   "kickoff_utc": "2026-10-27T19:45:00Z",
    "competition": "DFB Pokal",
    "home": "Borussia Dortmund",
    "away": "Werder Bremen",
@@ -3302,7 +3283,7 @@
   },
   {
    "matchId": "1638562",
-   "kickoff_utc": "2026-10-27T19:00:00Z",
+   "kickoff_utc": "2026-10-27T19:45:00Z",
    "competition": "DFB Pokal",
    "home": "SV Elversberg",
    "away": "SV Darmstadt 98",
@@ -3315,44 +3296,6 @@
    "pool_players": [
     {
      "playerId": "328617",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1638568",
-   "kickoff_utc": "2026-10-27T19:00:00Z",
-   "competition": "DFB Pokal",
-   "home": "Holstein Kiel",
-   "away": "1899 Hoffenheim",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "119002",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1638570",
-   "kickoff_utc": "2026-10-27T19:00:00Z",
-   "competition": "DFB Pokal",
-   "home": "SC Paderborn 07",
-   "away": "VfB Stuttgart",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "363156",
      "side": "home"
     }
    ]
@@ -3373,6 +3316,25 @@
     {
      "playerId": "355994",
      "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1638570",
+   "kickoff_utc": "2026-10-28T17:00:00Z",
+   "competition": "DFB Pokal",
+   "home": "SC Paderborn 07",
+   "away": "VfB Stuttgart",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "363156",
+     "side": "home"
     }
    ]
   },
@@ -3475,6 +3437,44 @@
     },
     {
      "playerId": "50737",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1638557",
+   "kickoff_utc": "2026-10-28T19:45:00Z",
+   "competition": "DFB Pokal",
+   "home": "Bayer Leverkusen",
+   "away": "1. FC Nürnberg",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "162037",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1638568",
+   "kickoff_utc": "2026-10-28T19:45:00Z",
+   "competition": "DFB Pokal",
+   "home": "Holstein Kiel",
+   "away": "1899 Hoffenheim",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "119002",
      "side": "home"
     }
    ]
