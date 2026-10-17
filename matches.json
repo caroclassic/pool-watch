@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-17T20:04:06Z",
+ "updated_at": "2026-10-17T23:04:11Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-17",
@@ -553,6 +553,10 @@
     {
      "playerId": "413230",
      "side": "home"
+    },
+    {
+     "playerId": "507608",
+     "side": "away"
     }
    ]
   },
