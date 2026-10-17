@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-17T12:54:11Z",
+ "updated_at": "2026-10-17T13:15:22Z",
  "top_score": 10.11,
  "player_tier_bands": {
   "core_min": 61,
@@ -1289,32 +1289,6 @@
    }
   },
   {
-   "playerId": "362448",
-   "display_name": "Adam Beaudry",
-   "short_name": "A. Beaudry",
-   "position": "GK",
-   "club": "Colorado Rapids",
-   "photo": "https://media.api-sports.io/football/players/362448.png",
-   "score": 5,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
-  },
-  {
-   "playerId": "389579",
-   "display_name": "Julian Eyestone",
-   "short_name": "J. Eyestone",
-   "position": "GK",
-   "club": "Rotherham",
-   "photo": "https://media.api-sports.io/football/players/389579.png",
-   "score": 5,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
-  },
-  {
    "playerId": "412227",
    "display_name": "Zavier Gozo",
    "short_name": "Z. Gozo",
@@ -1586,6 +1560,32 @@
     "competition": "Friendly",
     "opponent": "Costa Rica"
    }
+  },
+  {
+   "playerId": "362448",
+   "display_name": "Adam Beaudry",
+   "short_name": "A. Beaudry",
+   "position": "GK",
+   "club": "Colorado Rapids",
+   "photo": "https://media.api-sports.io/football/players/362448.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
+   "playerId": "389579",
+   "display_name": "Julian Eyestone",
+   "short_name": "J. Eyestone",
+   "position": "GK",
+   "club": "Rotherham",
+   "photo": "https://media.api-sports.io/football/players/389579.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
   },
   {
    "playerId": "328617",
@@ -2081,6 +2081,45 @@
     "competition": "Friendly",
     "opponent": "Mexico"
    }
+  },
+  {
+   "playerId": "359942",
+   "display_name": "Matai Akinmboni",
+   "short_name": "M. Akinmboni",
+   "position": "DF",
+   "club": "Dundee",
+   "photo": "https://media.api-sports.io/football/players/359942.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": null,
+   "last_named": null
+  },
+  {
+   "playerId": "380625",
+   "display_name": "Grayson Dettoni",
+   "short_name": "Grayson Dettoni",
+   "position": "DF",
+   "club": "SV Darmstadt 98",
+   "photo": "https://media.api-sports.io/football/players/380625.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": null,
+   "last_named": null
+  },
+  {
+   "playerId": "507608",
+   "display_name": "Robert Turdean",
+   "short_name": "R. Turdean",
+   "position": "MF",
+   "club": "Chicago Fire",
+   "photo": "https://media.api-sports.io/football/players/507608.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": null,
+   "last_named": null
   }
  ]
 }
