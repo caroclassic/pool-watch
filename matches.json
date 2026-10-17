@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-17T11:04:09Z",
+ "updated_at": "2026-10-17T11:34:07Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-17",
@@ -59,25 +59,6 @@
    "pool_players": [
     {
      "playerId": "389579",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1570416",
-   "kickoff_utc": "2026-10-17T12:00:00Z",
-   "competition": "La Liga",
-   "home": "Espanyol",
-   "away": "Atletico Madrid",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "ESPN+",
-   "pool_players": [
-    {
-     "playerId": "133185",
      "side": "away"
     }
    ]
