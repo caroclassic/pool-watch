@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-16T08:36:04Z",
- "top_score": 10.118,
+ "updated_at": "2026-10-17T09:54:05Z",
+ "top_score": 10.11,
  "player_tier_bands": {
   "core_min": 61,
   "contender_min": 42,
@@ -304,7 +304,7 @@
    "position": "MF",
    "club": "Marseille",
    "photo": "https://media.api-sports.io/football/players/1138.png",
-   "score": 47,
+   "score": 48,
    "tier": "contender",
    "is_prospect": false,
    "youth_level": null,
@@ -1233,7 +1233,7 @@
    "display_name": "Alan Soñora",
    "short_name": "A. Soñora",
    "position": "MF",
-   "club": "Newells Old Boys",
+   "club": "Cerro Porteno",
    "photo": "https://media.api-sports.io/football/players/129885.png",
    "score": 5,
    "tier": "wider_pool",
