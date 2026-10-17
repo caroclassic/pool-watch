@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-17T15:56:51Z",
+ "updated_at": "2026-10-17T18:34:40Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-17",
@@ -327,6 +327,25 @@
     },
     {
      "playerId": "542233",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1556678",
+   "kickoff_utc": "2026-10-17T19:00:00Z",
+   "competition": "Scottish Premiership",
+   "home": "Dundee",
+   "away": "Rangers",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "359942",
      "side": "home"
     }
    ]
