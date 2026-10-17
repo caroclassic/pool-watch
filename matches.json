@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-17T12:24:08Z",
+ "updated_at": "2026-10-17T12:35:18Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-17",
@@ -60,25 +60,6 @@
     {
      "playerId": "389579",
      "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1550156",
-   "kickoff_utc": "2026-10-17T13:00:00Z",
-   "competition": "Serie A",
-   "home": "Venezia",
-   "away": "Napoli",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "51266",
-     "side": "home"
     }
    ]
   },
