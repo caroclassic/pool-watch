@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-17T13:04:26Z",
+ "updated_at": "2026-10-17T13:34:12Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-17",
@@ -147,32 +147,13 @@
    "away": "Hull City",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "NBC/USA/Peacock — varies by match",
    "pool_players": [
     {
      "playerId": "19549",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1563203",
-   "kickoff_utc": "2026-10-17T14:00:00Z",
-   "competition": "EFL Championship",
-   "home": "Birmingham",
-   "away": "QPR",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "162386",
      "side": "home"
     }
    ]
@@ -216,25 +197,6 @@
     {
      "playerId": "102508",
      "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1563214",
-   "kickoff_utc": "2026-10-17T14:00:00Z",
-   "competition": "EFL Championship",
-   "home": "Wrexham",
-   "away": "Preston",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "265733",
-     "side": "away"
     }
    ]
   },

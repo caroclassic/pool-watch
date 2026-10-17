@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-17T13:24:10Z",
+ "updated_at": "2026-10-17T13:34:12Z",
  "active": true,
  "matches": {
   "1490541": {
@@ -158,26 +158,23 @@
   "1557431": {
    "status": "scheduled",
    "status_updated_at": "2026-10-17T04:08:17Z",
-   "lineups_confirmed": false,
-   "tier": "worth_a_look",
+   "lineups_confirmed": true,
+   "tier": "must_watch",
    "tier_at_kickoff": null,
-   "participation": {}
-  },
-  "1563203": {
-   "status": "scheduled",
-   "status_updated_at": "2026-10-17T04:08:18Z",
-   "lineups_confirmed": false,
-   "tier": null,
-   "tier_at_kickoff": null,
-   "participation": {}
+   "participation": {
+    "19549": "starts"
+   }
   },
   "1563206": {
    "status": "scheduled",
    "status_updated_at": "2026-10-17T04:08:18Z",
-   "lineups_confirmed": false,
+   "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
-   "participation": {}
+   "participation": {
+    "207768": "starts",
+    "418851": "bench"
+   }
   },
   "1563207": {
    "status": "full_time",
@@ -195,18 +192,12 @@
   "1563213": {
    "status": "scheduled",
    "status_updated_at": "2026-10-17T04:08:18Z",
-   "lineups_confirmed": false,
+   "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
-   "participation": {}
-  },
-  "1563214": {
-   "status": "scheduled",
-   "status_updated_at": "2026-10-17T04:08:18Z",
-   "lineups_confirmed": false,
-   "tier": null,
-   "tier_at_kickoff": null,
-   "participation": {}
+   "participation": {
+    "102508": "starts"
+   }
   },
   "1563806": {
    "status": "full_time",
@@ -227,8 +218,8 @@
    "participation": {}
   },
   "1575188": {
-   "status": "scheduled",
-   "status_updated_at": "2026-10-17T04:08:18Z",
+   "status": "live",
+   "status_updated_at": "2026-10-17T13:34:07Z",
    "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
@@ -237,8 +228,8 @@
    }
   },
   "1575191": {
-   "status": "scheduled",
-   "status_updated_at": "2026-10-17T04:08:18Z",
+   "status": "live",
+   "status_updated_at": "2026-10-17T13:34:07Z",
    "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
@@ -247,8 +238,8 @@
    }
   },
   "1575192": {
-   "status": "scheduled",
-   "status_updated_at": "2026-10-17T04:08:18Z",
+   "status": "live",
+   "status_updated_at": "2026-10-17T13:34:07Z",
    "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
