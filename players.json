@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-17T12:24:08Z",
+ "updated_at": "2026-10-17T12:54:11Z",
  "top_score": 10.11,
  "player_tier_bands": {
   "core_min": 61,
@@ -1233,7 +1233,7 @@
    "display_name": "Alan Soñora",
    "short_name": "A. Soñora",
    "position": "MF",
-   "club": "Cerro Porteno",
+   "club": "Newells Old Boys",
    "photo": "https://media.api-sports.io/football/players/129885.png",
    "score": 5,
    "tier": "wider_pool",
