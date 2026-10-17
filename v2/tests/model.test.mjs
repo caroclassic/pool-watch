@@ -316,3 +316,32 @@ test("chip order before any lineup: unchanged, relevance score order", () => {
   const c = M.buildDay(ctx(view(mf, sfeed()))).rest[0];
   assert.deepEqual(c.chips.map((x) => x.playerId), ["11", "12", "13", "14"]);
 });
+
+test("empty-Must-watch copy points the right way: below, above, or nowhere", () => {
+  const T = "scheduled";
+  const sf = (m) => sfeed(m);
+  const day = (mf, o = {}, s = sfeed()) => M.buildDay(ctx(view(mf, s), o));
+  // Worth a look in its own band -> "below" (unchanged)
+  const below = feed([match(1, { tier: "worth_a_look" })]);
+  assert.match(day(below).noMustCopy, /Worth a look below\./);
+  // the ONLY Worth a look match is pinned in Your players (the reported case) -> "above", never "below"
+  const pinnedOnly = feed([match(1, { tier: "worth_a_look", pool: [pm(11)] }), match(2, { ko: iso(4), pool: [pm(12)] })]);
+  const d = day(pinnedOnly, { follows: ["11"] });
+  assert.equal(d.worth.length, 0); assert.equal(d.pinned.length, 1);
+  assert.match(d.noMustCopy, /^No Must-watch matches today\. Best of the day is Worth a look, shown above\.$/);
+  assert.doesNotMatch(d.noMustCopy, /below/);
+  // the only Worth a look match is live (Live now sits above too)
+  const liveOnly = feed([match(1, { tier: "worth_a_look", ko: iso(-1), status: "live" })]);
+  const lf = sf({ "1": { status: "live", tier: "worth_a_look", tier_at_kickoff: "worth_a_look", lineups_confirmed: true, participation: {} } });
+  assert.match(day(liveOnly, {}, lf).noMustCopy, /shown above\./);
+  // Worth a look in BOTH places -> still "below"
+  const both = feed([match(1, { tier: "worth_a_look", pool: [pm(11)] }), match(2, { tier: "worth_a_look", ko: iso(4), pool: [pm(12)] })]);
+  assert.match(day(both, { follows: ["11"] }).noMustCopy, /below\./);
+  // the only Worth a look match has finished (Earlier, collapsed) -> no message at all
+  const finished = feed([match(1, { tier: "worth_a_look", ko: iso(-4), status: "full_time" })]);
+  const ff = sf({ "1": { status: "full_time", tier: "worth_a_look", tier_at_kickoff: "worth_a_look", lineups_confirmed: true, participation: {} } });
+  assert.equal(day(finished, {}, ff).noMustCopy, null);
+  // another day's wording: a pinned Worth a look match on tomorrow's slate says "this day"
+  const tomorrow = feed([match(1, { tier: "worth_a_look", ko: iso(30), pool: [pm(11)] })]);
+  assert.match(day(tomorrow, { follows: ["11"], day: "2026-10-10" }).noMustCopy, /^No Must-watch matches this day\. Best of the day is Worth a look, shown above\.$/);
+});

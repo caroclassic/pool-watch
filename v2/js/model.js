@@ -267,10 +267,16 @@ export function buildDay(ctx) {
   // nothing qualifies, and there is at least a Worth a look to point at.
   const all = [...pinned, ...live, ...must, ...worth, ...rest, ...earlier];
   const hasMust = all.some((c) => c.tier === "must_watch");
-  const hasWorth = all.some((c) => c.tier === "worth_a_look");
-  const noMustCopy = ctx.tiersEnabled && dayViews.length > 0 && !hasMust && hasWorth
-    ? (dayKey === todayKey ? "No Must-watch matches today. Best of the day is Worth a look below."
-                           : "No Must-watch matches this day. Best of the day is Worth a look below.")
+  // Where is the Worth a look match the message points at? The "Worth a look" band is
+  // below the message; a Worth a look match can also sit ABOVE it, pinned in Your
+  // players or in Live now (those cards carry the badge). One that has already
+  // finished sits in Earlier and is not something to point a viewer at.
+  const worthBelow = worth.length > 0;
+  const worthAbove = [...pinned, ...live].some((c) => c.tier === "worth_a_look");
+  const when = dayKey === todayKey ? "today" : "this day";
+  const noMustCopy = ctx.tiersEnabled && dayViews.length > 0 && !hasMust && (worthBelow || worthAbove)
+    ? (worthBelow ? `No Must-watch matches ${when}. Best of the day is Worth a look below.`
+                  : `No Must-watch matches ${when}. Best of the day is Worth a look, shown above.`)
     : null;
 
   const stillLive = dayKey === todayKey
