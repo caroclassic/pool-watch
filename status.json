@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-17T11:54:07Z",
+ "updated_at": "2026-10-17T12:04:19Z",
  "active": true,
  "matches": {
   "1490541": {
@@ -192,7 +192,7 @@
    "status_updated_at": "2026-10-17T11:34:06Z",
    "lineups_confirmed": true,
    "tier": "worth_a_look",
-   "tier_at_kickoff": null,
+   "tier_at_kickoff": "worth_a_look",
    "participation": {
     "201713": "bench",
     "201714": "starts",
