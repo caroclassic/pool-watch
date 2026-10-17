@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-17T09:54:05Z",
+ "updated_at": "2026-10-17T11:04:09Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-17",
@@ -14,25 +14,6 @@
  },
  "matches": [
   {
-   "matchId": "1557430",
-   "kickoff_utc": "2026-10-17T11:30:00Z",
-   "competition": "Premier League",
-   "home": "Everton",
-   "away": "Chelsea",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "NBC/USA/Peacock — varies by match",
-   "pool_players": [
-    {
-     "playerId": "64167",
-     "side": "away"
-    }
-   ]
-  },
-  {
    "matchId": "1563207",
    "kickoff_utc": "2026-10-17T11:30:00Z",
    "competition": "EFL Championship",
@@ -40,7 +21,7 @@
    "away": "Cardiff",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "must_watch",
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "Paramount+",
