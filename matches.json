@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-17T12:54:11Z",
+ "updated_at": "2026-10-17T13:04:26Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-17",
@@ -117,25 +117,6 @@
     {
      "playerId": "24842",
      "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1575193",
-   "kickoff_utc": "2026-10-17T13:30:00Z",
-   "competition": "Bundesliga",
-   "home": "SV Elversberg",
-   "away": "FC Augsburg",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Fandango/USA Network — varies by match",
-   "pool_players": [
-    {
-     "playerId": "328617",
-     "side": "home"
     }
    ]
   },
