@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-17T14:54:15Z",
+ "updated_at": "2026-10-17T15:04:39Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-17",
@@ -228,7 +228,7 @@
    "fixture_kind": "club",
    "status": "scheduled",
    "tier": "worth_a_look",
-   "tier_at_kickoff": null,
+   "tier_at_kickoff": "worth_a_look",
    "players_basis": null,
    "broadcast": "ESPN+",
    "pool_players": [
