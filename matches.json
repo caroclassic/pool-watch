@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-18T04:34:06Z",
+ "updated_at": "2026-10-18T04:44:06Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-18",
@@ -13,68 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1490553",
-   "kickoff_utc": "2026-10-18T02:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "San Jose Earthquakes",
-   "away": "Nashville SC",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "51013",
-     "side": "home"
-    },
-    {
-     "playerId": "265762",
-     "side": "away"
-    },
-    {
-     "playerId": "266733",
-     "side": "away"
-    },
-    {
-     "playerId": "351591",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1490554",
-   "kickoff_utc": "2026-10-18T02:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Portland Timbers",
-   "away": "Colorado Rapids",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50828",
-     "side": "away"
-    },
-    {
-     "playerId": "73863",
-     "side": "away"
-    },
-    {
-     "playerId": "265884",
-     "side": "away"
-    },
-    {
-     "playerId": "362448",
-     "side": "away"
-    }
-   ]
-  },
   {
    "matchId": "1576197",
    "kickoff_utc": "2026-10-18T11:30:00Z",
