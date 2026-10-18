@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-18T19:21:02Z",
+ "updated_at": "2026-10-18T20:31:03Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-18",
@@ -318,7 +318,7 @@
    "away": "Columbus Crew",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": null,
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
