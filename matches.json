@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-18T16:31:06Z",
+ "updated_at": "2026-10-18T17:23:06Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-18",
@@ -268,25 +268,6 @@
     },
     {
      "playerId": "162106",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1493194",
-   "kickoff_utc": "2026-10-18T17:45:00Z",
-   "competition": "Liga Profesional Argentina",
-   "home": "Racing Club",
-   "away": "Independiente",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "6719",
      "side": "home"
     }
    ]
