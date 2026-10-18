@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-18T14:01:41Z",
+ "updated_at": "2026-10-18T14:51:05Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-18",
@@ -200,7 +200,7 @@
    "away": "Monaco",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": null,
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "beIN SPORTS",
@@ -227,25 +227,6 @@
     {
      "playerId": "51144",
      "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1601556",
-   "kickoff_utc": "2026-10-18T15:15:00Z",
-   "competition": "Serie B",
-   "home": "Cesena",
-   "away": "Avellino",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "25335",
-     "side": "home"
     }
    ]
   },
