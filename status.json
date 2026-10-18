@@ -1,24 +1,8 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-18T04:24:06Z",
+ "updated_at": "2026-10-18T04:34:06Z",
  "active": true,
  "matches": {
-  "1490552": {
-   "status": "live",
-   "status_updated_at": "2026-10-18T04:06:51Z",
-   "lineups_confirmed": true,
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "participation": {
-    "50772": "bench",
-    "51114": "starts",
-    "51118": "starts",
-    "51142": "bench",
-    "207781": "starts",
-    "208667": "starts"
-   },
-   "carried_over": true
-  },
   "1490553": {
    "status": "live",
    "status_updated_at": "2026-10-18T04:06:51Z",

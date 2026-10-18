@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-18T04:07:37Z",
+ "updated_at": "2026-10-18T04:34:06Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-18",
@@ -13,45 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1490552",
-   "kickoff_utc": "2026-10-18T02:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Seattle Sounders",
-   "away": "CF Montreal",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50772",
-     "side": "home"
-    },
-    {
-     "playerId": "51114",
-     "side": "home"
-    },
-    {
-     "playerId": "51118",
-     "side": "home"
-    },
-    {
-     "playerId": "51142",
-     "side": "home"
-    },
-    {
-     "playerId": "207781",
-     "side": "home"
-    },
-    {
-     "playerId": "208667",
-     "side": "away"
-    }
-   ]
-  },
   {
    "matchId": "1490553",
    "kickoff_utc": "2026-10-18T02:30:00Z",
