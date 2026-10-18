@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-18T08:11:02Z",
+ "updated_at": "2026-10-18T10:12:35Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-18",
@@ -417,25 +417,6 @@
    "pool_players": [
     {
      "playerId": "462723",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1551845",
-   "kickoff_utc": "2026-10-19T18:00:00Z",
-   "competition": "Eerste Divisie",
-   "home": "Jong PSV U21",
-   "away": "Dordrecht",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "329409",
      "side": "home"
     }
    ]
@@ -899,25 +880,6 @@
     {
      "playerId": "138835",
      "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1551850",
-   "kickoff_utc": "2026-10-23T18:00:00Z",
-   "competition": "Eerste Divisie",
-   "home": "FC Eindhoven",
-   "away": "Jong PSV U21",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "329409",
-     "side": "away"
     }
    ]
   },
@@ -2272,25 +2234,6 @@
     {
      "playerId": "461627",
      "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1623279",
-   "kickoff_utc": "2026-10-27T12:00:00Z",
-   "competition": "Premier League International Cup",
-   "home": "Ipswich Town U21",
-   "away": "Jong PSV U21",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "329409",
-     "side": "away"
     }
    ]
   },
