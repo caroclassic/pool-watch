@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-18T12:51:04Z",
+ "updated_at": "2026-10-18T13:11:03Z",
  "top_score": 10.099,
  "player_tier_bands": {
   "core_min": 61,
@@ -1511,19 +1511,6 @@
    "last_named": null
   },
   {
-   "playerId": "266599",
-   "display_name": "Justin Che",
-   "short_name": "J. Che",
-   "position": "DF",
-   "club": "New York Red Bulls",
-   "photo": "https://media.api-sports.io/football/players/266599.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
-  },
-  {
    "playerId": "389579",
    "display_name": "Julian Eyestone",
    "short_name": "J. Eyestone",
@@ -1534,6 +1521,19 @@
    "tier": "wider_pool",
    "is_prospect": true,
    "youth_level": "U21",
+   "last_named": null
+  },
+  {
+   "playerId": "266599",
+   "display_name": "Justin Che",
+   "short_name": "J. Che",
+   "position": "DF",
+   "club": "New York Red Bulls",
+   "photo": "https://media.api-sports.io/football/players/266599.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
    "last_named": null
   },
   {
@@ -1673,19 +1673,6 @@
    }
   },
   {
-   "playerId": "462723",
-   "display_name": "Ramiz Hamouda",
-   "short_name": "R. Hamouda",
-   "position": "DF",
-   "club": "Birmingham Legion",
-   "photo": "https://media.api-sports.io/football/players/462723.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U17",
-   "last_named": null
-  },
-  {
    "playerId": "351571",
    "display_name": "Roman Celentano",
    "short_name": "R. Celentano",
@@ -1700,23 +1687,6 @@
     "date": "2025-11-18",
     "competition": "Friendly",
     "opponent": "Uruguay"
-   }
-  },
-  {
-   "playerId": "51136",
-   "display_name": "Paxton Pomykal",
-   "short_name": "P. Pomykal",
-   "position": "MF",
-   "club": "FC Dallas",
-   "photo": "https://media.api-sports.io/football/players/51136.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": false,
-   "youth_level": null,
-   "last_named": {
-    "date": "2023-04-19",
-    "competition": "Friendly",
-    "opponent": "Mexico"
    }
   },
   {
@@ -1765,23 +1735,6 @@
    "is_prospect": true,
    "youth_level": null,
    "last_named": null
-  },
-  {
-   "playerId": "51238",
-   "display_name": "Eryk Williamson",
-   "short_name": "E. Williamson",
-   "position": "MF",
-   "club": "Charlotte",
-   "photo": "https://media.api-sports.io/football/players/51238.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": false,
-   "youth_level": null,
-   "last_named": {
-    "date": "2023-01-28",
-    "competition": "Friendly",
-    "opponent": "Colombia"
-   }
   },
   {
    "playerId": "201715",

@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-18T12:31:39Z",
+ "updated_at": "2026-10-18T13:11:03Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-18",
@@ -403,25 +403,6 @@
    ]
   },
   {
-   "matchId": "1493756",
-   "kickoff_utc": "2026-10-18T21:00:00Z",
-   "competition": "USL Championship",
-   "home": "Birmingham Legion",
-   "away": "Loudoun United",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "462723",
-     "side": "home"
-    }
-   ]
-  },
-  {
    "matchId": "1550154",
    "kickoff_utc": "2026-10-19T18:45:00Z",
    "competition": "Serie A",
@@ -593,25 +574,6 @@
     {
      "playerId": "212233",
      "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1493615",
-   "kickoff_utc": "2026-10-21T22:30:00Z",
-   "competition": "USL Championship",
-   "home": "Brooklyn",
-   "away": "Birmingham Legion",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "462723",
-     "side": "away"
     }
    ]
   },
@@ -1408,25 +1370,6 @@
    ]
   },
   {
-   "matchId": "1493765",
-   "kickoff_utc": "2026-10-24T23:00:00Z",
-   "competition": "USL Championship",
-   "home": "Pittsburgh Riverhounds",
-   "away": "Birmingham Legion",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "462723",
-     "side": "away"
-    }
-   ]
-  },
-  {
    "matchId": "1490559",
    "kickoff_utc": "2026-10-24T23:30:00Z",
    "competition": "Major League Soccer",
@@ -1630,10 +1573,6 @@
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
     {
-     "playerId": "51136",
-     "side": "home"
-    },
-    {
      "playerId": "64310",
      "side": "home"
     },
@@ -1798,10 +1737,6 @@
    "pool_players": [
     {
      "playerId": "19026",
-     "side": "away"
-    },
-    {
-     "playerId": "51238",
      "side": "away"
     }
    ]
@@ -2699,10 +2634,6 @@
      "side": "home"
     },
     {
-     "playerId": "51238",
-     "side": "home"
-    },
-    {
      "playerId": "208667",
      "side": "away"
     }
@@ -2803,10 +2734,6 @@
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
-    {
-     "playerId": "51136",
-     "side": "home"
-    },
     {
      "playerId": "64310",
      "side": "home"
@@ -3510,10 +3437,6 @@
      "side": "home"
     },
     {
-     "playerId": "51238",
-     "side": "home"
-    },
-    {
      "playerId": "461514",
      "side": "away"
     }
@@ -3748,10 +3671,6 @@
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
-    {
-     "playerId": "51136",
-     "side": "away"
-    },
     {
      "playerId": "64310",
      "side": "away"
