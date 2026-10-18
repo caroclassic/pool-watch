@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-18T00:04:41Z",
+ "updated_at": "2026-10-18T02:04:08Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-17",
@@ -677,25 +677,6 @@
    ]
   },
   {
-   "matchId": "1490551",
-   "kickoff_utc": "2026-10-18T02:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Los Angeles Galaxy",
-   "away": "San Diego",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "351572",
-     "side": "away"
-    }
-   ]
-  },
-  {
    "matchId": "1490552",
    "kickoff_utc": "2026-10-18T02:30:00Z",
    "competition": "Major League Soccer",
@@ -703,7 +684,7 @@
    "away": "CF Montreal",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": null,
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
@@ -725,6 +706,10 @@
      "side": "home"
     },
     {
+     "playerId": "207781",
+     "side": "home"
+    },
+    {
      "playerId": "208667",
      "side": "away"
     }
@@ -743,6 +728,10 @@
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
+    {
+     "playerId": "51013",
+     "side": "home"
+    },
     {
      "playerId": "265762",
      "side": "away"
