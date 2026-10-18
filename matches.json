@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-18T04:44:06Z",
+ "updated_at": "2026-10-18T08:11:02Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-18",
@@ -1812,6 +1812,10 @@
      "side": "away"
     },
     {
+     "playerId": "207781",
+     "side": "away"
+    },
+    {
      "playerId": "351572",
      "side": "home"
     }
@@ -3047,6 +3051,10 @@
      "side": "home"
     },
     {
+     "playerId": "207781",
+     "side": "home"
+    },
+    {
      "playerId": "407016",
      "side": "away"
     }
@@ -4214,7 +4222,7 @@
    "away": "Seattle Sounders",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": null,
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
@@ -4245,6 +4253,10 @@
     },
     {
      "playerId": "51142",
+     "side": "away"
+    },
+    {
+     "playerId": "207781",
      "side": "away"
     }
    ]

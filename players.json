@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-17T13:15:22Z",
- "top_score": 10.11,
+ "updated_at": "2026-10-18T08:11:03Z",
+ "top_score": 10.102,
  "player_tier_bands": {
   "core_min": 61,
   "contender_min": 42,
@@ -570,6 +570,19 @@
    }
   },
   {
+   "playerId": "389579",
+   "display_name": "Julian Eyestone",
+   "short_name": "J. Eyestone",
+   "position": "GK",
+   "club": "Rotherham",
+   "photo": "https://media.api-sports.io/football/players/389579.png",
+   "score": 15,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
    "playerId": "50863",
    "display_name": "James Sands",
    "short_name": "J. Sands",
@@ -961,6 +974,19 @@
    }
   },
   {
+   "playerId": "363156",
+   "display_name": "Santiago Castañeda",
+   "short_name": "S. Castaneda",
+   "position": "MF",
+   "club": "SC Paderborn 07",
+   "photo": "https://media.api-sports.io/football/players/363156.png",
+   "score": 9,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
    "playerId": "265882",
    "display_name": "Quinn Sullivan",
    "short_name": "Q. Sullivan",
@@ -993,19 +1019,6 @@
     "competition": "Gold Cup",
     "opponent": "Panama"
    }
-  },
-  {
-   "playerId": "363156",
-   "display_name": "Santiago Castañeda",
-   "short_name": "S. Castaneda",
-   "position": "MF",
-   "club": "SC Paderborn 07",
-   "photo": "https://media.api-sports.io/football/players/363156.png",
-   "score": 8,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
   },
   {
    "playerId": "265884",
@@ -1161,6 +1174,23 @@
    }
   },
   {
+   "playerId": "413230",
+   "display_name": "Peyton Miller",
+   "short_name": "P. Miller",
+   "position": "DF",
+   "club": "New England Revolution",
+   "photo": "https://media.api-sports.io/football/players/413230.png",
+   "score": 6,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-07",
+    "competition": "Friendly",
+    "opponent": "Canada"
+   }
+  },
+  {
    "playerId": "64310",
    "display_name": "Shaq Moore",
    "short_name": "S. Moore",
@@ -1184,23 +1214,6 @@
    "position": "MF",
    "club": "New York Red Bulls",
    "photo": "https://media.api-sports.io/football/players/461645.png",
-   "score": 6,
-   "tier": "wider_pool",
-   "is_prospect": false,
-   "youth_level": null,
-   "last_named": {
-    "date": "2026-10-07",
-    "competition": "Friendly",
-    "opponent": "Canada"
-   }
-  },
-  {
-   "playerId": "413230",
-   "display_name": "Peyton Miller",
-   "short_name": "P. Miller",
-   "position": "DF",
-   "club": "New England Revolution",
-   "photo": "https://media.api-sports.io/football/players/413230.png",
    "score": 6,
    "tier": "wider_pool",
    "is_prospect": false,
@@ -1374,19 +1387,6 @@
    }
   },
   {
-   "playerId": "351591",
-   "display_name": "Niko Tsakiris",
-   "short_name": "N. Tsakiris",
-   "position": "MF",
-   "club": "San Jose Earthquakes",
-   "photo": "https://media.api-sports.io/football/players/351591.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
-  },
-  {
    "playerId": "418851",
    "display_name": "Luca Bombino",
    "short_name": "L. Bombino",
@@ -1445,6 +1445,19 @@
     "competition": "Nations League",
     "opponent": "Trinidad and Tobago"
    }
+  },
+  {
+   "playerId": "351591",
+   "display_name": "Niko Tsakiris",
+   "short_name": "N. Tsakiris",
+   "position": "MF",
+   "club": "San Jose Earthquakes",
+   "photo": "https://media.api-sports.io/football/players/351591.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
   },
   {
    "playerId": "51027",
@@ -1562,32 +1575,6 @@
    }
   },
   {
-   "playerId": "362448",
-   "display_name": "Adam Beaudry",
-   "short_name": "A. Beaudry",
-   "position": "GK",
-   "club": "Colorado Rapids",
-   "photo": "https://media.api-sports.io/football/players/362448.png",
-   "score": 2,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
-  },
-  {
-   "playerId": "389579",
-   "display_name": "Julian Eyestone",
-   "short_name": "J. Eyestone",
-   "position": "GK",
-   "club": "Rotherham",
-   "photo": "https://media.api-sports.io/football/players/389579.png",
-   "score": 2,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
-  },
-  {
    "playerId": "328617",
    "display_name": "Cole Campbell",
    "short_name": "C. Campbell",
@@ -1622,6 +1609,19 @@
    }
   },
   {
+   "playerId": "362448",
+   "display_name": "Adam Beaudry",
+   "short_name": "A. Beaudry",
+   "position": "GK",
+   "club": "Colorado Rapids",
+   "photo": "https://media.api-sports.io/football/players/362448.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
    "playerId": "265733",
    "display_name": "Caleb Wiley",
    "short_name": "C. Wiley",
@@ -1654,19 +1654,6 @@
     "competition": "Nations League",
     "opponent": "Trinidad and Tobago"
    }
-  },
-  {
-   "playerId": "340571",
-   "display_name": "Rokas Pukštas",
-   "short_name": "R. Pukštas",
-   "position": "MF",
-   "club": "Middlesbrough",
-   "photo": "https://media.api-sports.io/football/players/340571.png",
-   "score": 2,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
   },
   {
    "playerId": "203014",
@@ -1767,6 +1754,19 @@
    }
   },
   {
+   "playerId": "461633",
+   "display_name": "Ian James",
+   "short_name": "I. James",
+   "position": "DF",
+   "club": "Sporting Kansas City",
+   "photo": "https://media.api-sports.io/football/players/461633.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": null,
+   "last_named": null
+  },
+  {
    "playerId": "51238",
    "display_name": "Eryk Williamson",
    "short_name": "E. Williamson",
@@ -1816,19 +1816,6 @@
     "competition": "Friendly",
     "opponent": "Colombia"
    }
-  },
-  {
-   "playerId": "461633",
-   "display_name": "Ian James",
-   "short_name": "I. James",
-   "position": "DF",
-   "club": "Sporting Kansas City",
-   "photo": "https://media.api-sports.io/football/players/461633.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": null,
-   "last_named": null
   },
   {
    "playerId": "73863",
@@ -2019,6 +2006,19 @@
    }
   },
   {
+   "playerId": "542233",
+   "display_name": "Malik Jakupovic",
+   "short_name": "M. Jakupovic",
+   "position": "FW",
+   "club": "Philadelphia Union",
+   "photo": "https://media.api-sports.io/football/players/542233.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": null,
+   "last_named": null
+  },
+  {
    "playerId": "201788",
    "display_name": "Nkosi Burgess",
    "short_name": "N. Burgess",
@@ -2053,16 +2053,16 @@
    }
   },
   {
-   "playerId": "542233",
-   "display_name": "Malik Jakupovic",
-   "short_name": "M. Jakupovic",
-   "position": "FW",
-   "club": "Philadelphia Union",
-   "photo": "https://media.api-sports.io/football/players/542233.png",
+   "playerId": "340571",
+   "display_name": "Rokas Pukštas",
+   "short_name": "R. Pukštas",
+   "position": "MF",
+   "club": "Middlesbrough",
+   "photo": "https://media.api-sports.io/football/players/340571.png",
    "score": 1,
    "tier": "wider_pool",
    "is_prospect": true,
-   "youth_level": null,
+   "youth_level": "U21",
    "last_named": null
   },
   {
