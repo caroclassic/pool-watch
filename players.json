@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-18T10:21:36Z",
+ "updated_at": "2026-10-18T12:51:04Z",
  "top_score": 10.099,
  "player_tier_bands": {
   "core_min": 61,
@@ -1093,6 +1093,23 @@
    }
   },
   {
+   "playerId": "328617",
+   "display_name": "Cole Campbell",
+   "short_name": "C. Campbell",
+   "position": "FW",
+   "club": "SV Elversberg",
+   "photo": "https://media.api-sports.io/football/players/328617.png",
+   "score": 7,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-06",
+    "competition": "Friendly",
+    "opponent": "Canada"
+   }
+  },
+  {
    "playerId": "50883",
    "display_name": "Julian Gressel",
    "short_name": "J. Gressel",
@@ -1481,6 +1498,19 @@
    }
   },
   {
+   "playerId": "362448",
+   "display_name": "Adam Beaudry",
+   "short_name": "A. Beaudry",
+   "position": "GK",
+   "club": "Colorado Rapids",
+   "photo": "https://media.api-sports.io/football/players/362448.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
    "playerId": "266599",
    "display_name": "Justin Che",
    "short_name": "J. Che",
@@ -1491,6 +1521,19 @@
    "tier": "wider_pool",
    "is_prospect": true,
    "youth_level": "U20",
+   "last_named": null
+  },
+  {
+   "playerId": "389579",
+   "display_name": "Julian Eyestone",
+   "short_name": "J. Eyestone",
+   "position": "GK",
+   "club": "Rotherham",
+   "photo": "https://media.api-sports.io/football/players/389579.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
    "last_named": null
   },
   {
@@ -1562,36 +1605,6 @@
    }
   },
   {
-   "playerId": "389579",
-   "display_name": "Julian Eyestone",
-   "short_name": "J. Eyestone",
-   "position": "GK",
-   "club": "Rotherham",
-   "photo": "https://media.api-sports.io/football/players/389579.png",
-   "score": 2,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
-  },
-  {
-   "playerId": "328617",
-   "display_name": "Cole Campbell",
-   "short_name": "C. Campbell",
-   "position": "FW",
-   "club": "SV Elversberg",
-   "photo": "https://media.api-sports.io/football/players/328617.png",
-   "score": 2,
-   "tier": "wider_pool",
-   "is_prospect": false,
-   "youth_level": null,
-   "last_named": {
-    "date": "2026-10-06",
-    "competition": "Friendly",
-    "opponent": "Canada"
-   }
-  },
-  {
    "playerId": "153506",
    "display_name": "Indiana Vassilev",
    "short_name": "I. Vassilev",
@@ -1607,19 +1620,6 @@
     "competition": "Friendly",
     "opponent": "Costa Rica"
    }
-  },
-  {
-   "playerId": "362448",
-   "display_name": "Adam Beaudry",
-   "short_name": "A. Beaudry",
-   "position": "GK",
-   "club": "Colorado Rapids",
-   "photo": "https://media.api-sports.io/football/players/362448.png",
-   "score": 2,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
   },
   {
    "playerId": "265733",
