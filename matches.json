@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-18T17:31:08Z",
+ "updated_at": "2026-10-18T18:21:04Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-18",
@@ -280,7 +280,7 @@
    "away": "Lazio",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "Paramount+",
