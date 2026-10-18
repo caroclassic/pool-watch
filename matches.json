@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-18T11:14:40Z",
+ "updated_at": "2026-10-18T11:21:45Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-18",
@@ -494,6 +494,25 @@
     {
      "playerId": "486522",
      "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1563824",
+   "kickoff_utc": "2026-10-20T18:45:00Z",
+   "competition": "EFL League Two",
+   "home": "Rotherham",
+   "away": "Newport County",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "389579",
+     "side": "home"
     }
    ]
   },
@@ -1093,6 +1112,25 @@
     },
     {
      "playerId": "418851",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1563836",
+   "kickoff_utc": "2026-10-24T14:00:00Z",
+   "competition": "EFL League Two",
+   "home": "Rotherham",
+   "away": "Shrewsbury",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "389579",
      "side": "home"
     }
    ]
@@ -2238,6 +2276,25 @@
    ]
   },
   {
+   "matchId": "1638559",
+   "kickoff_utc": "2026-10-27T19:45:00Z",
+   "competition": "DFB Pokal",
+   "home": "Borussia Mönchengladbach",
+   "away": "Karlsruher SC",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "50852",
+     "side": "home"
+    }
+   ]
+  },
+  {
    "matchId": "1638561",
    "kickoff_utc": "2026-10-27T19:45:00Z",
    "competition": "DFB Pokal",
@@ -2412,6 +2469,25 @@
     },
     {
      "playerId": "50737",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1638557",
+   "kickoff_utc": "2026-10-28T19:45:00Z",
+   "competition": "DFB Pokal",
+   "home": "Bayer Leverkusen",
+   "away": "1. FC Nürnberg",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "162037",
      "side": "home"
     }
    ]
@@ -3374,6 +3450,25 @@
    "pool_players": [
     {
      "playerId": "102508",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1563849",
+   "kickoff_utc": "2026-10-31T15:00:00Z",
+   "competition": "EFL League Two",
+   "home": "Swindon Town",
+   "away": "Rotherham",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "389579",
      "side": "away"
     }
    ]
