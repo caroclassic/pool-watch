@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-19T08:15:20Z",
+ "updated_at": "2026-10-19T14:18:00Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-19",
@@ -1734,25 +1734,6 @@
    ]
   },
   {
-   "matchId": "1551017",
-   "kickoff_utc": "2026-10-25T23:00:00Z",
-   "competition": "Liga MX",
-   "home": "Club America",
-   "away": "CF Pachuca",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "ViX / TUDN",
-   "pool_players": [
-    {
-     "playerId": "35885",
-     "side": "home"
-    }
-   ]
-  },
-  {
    "matchId": "1490570",
    "kickoff_utc": "2026-10-26T01:00:00Z",
    "competition": "Major League Soccer",
@@ -1779,6 +1760,25 @@
     },
     {
      "playerId": "461627",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1551017",
+   "kickoff_utc": "2026-10-26T01:00:00Z",
+   "competition": "Liga MX",
+   "home": "Club America",
+   "away": "CF Pachuca",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "ViX / TUDN",
+   "pool_players": [
+    {
+     "playerId": "35885",
      "side": "home"
     }
    ]
