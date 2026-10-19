@@ -345,3 +345,21 @@ test("empty-Must-watch copy points the right way: below, above, or nowhere", () 
   const tomorrow = feed([match(1, { tier: "worth_a_look", ko: iso(30), pool: [pm(11)] })]);
   assert.match(day(tomorrow, { follows: ["11"], day: "2026-10-10" }).noMustCopy, /^No Must-watch matches this day\. Best of the day is Worth a look, shown above\.$/);
 });
+
+test("roll-over banner: shows when the remembered today is stale; any route to the real today dismisses it", () => {
+  // Page opened on Sat Oct 17; it is now Sun Oct 18.
+  assert.equal(M.rolledOver("2026-10-17", "2026-10-17"), false);
+  assert.equal(M.rolledOver("2026-10-17", "2026-10-18"), true);
+  // viewing another day does not dismiss it (still the old day's page)
+  assert.equal(M.nextAnchorToday("2026-10-17", "2026-10-20", "2026-10-18"), "2026-10-17");
+  assert.equal(M.nextAnchorToday("2026-10-17", "2026-10-17", "2026-10-18"), "2026-10-17");
+  // landing on the new today (Today button / date picker / strip tile / back) acknowledges it
+  const anchor = M.nextAnchorToday("2026-10-17", "2026-10-18", "2026-10-18");
+  assert.equal(anchor, "2026-10-18");
+  assert.equal(M.rolledOver(anchor, "2026-10-18"), false);
+  // ...and it stays dismissed while you browse other days afterwards
+  const later = M.nextAnchorToday(anchor, "2026-10-25", "2026-10-18");
+  assert.equal(M.rolledOver(later, "2026-10-18"), false);
+  // a second midnight brings it back
+  assert.equal(M.rolledOver(later, "2026-10-19"), true);
+});

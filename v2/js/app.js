@@ -5,7 +5,7 @@ import { dataBase, STALE_MINUTES, STRIP_BACK, STRIP_AHEAD } from "./config.js";
 import { createHttpSource, createPoller, shouldPollFast, pollDelay } from "./data.js";
 import {
   mergeFeeds, tiersEnabled, buildDay, dayFacts, stripDays, inWindow,
-  nextMatchDay, nextMatchFor, followedChanges,
+  nextMatchDay, nextMatchFor, followedChanges, rolledOver, nextAnchorToday,
 } from "./model.js";
 import { createStorage, createFollowsStore, createFlags, parseHash, buildHash, decodeShare, readLegacyFollows } from "./storage.js";
 import { indexPlayers } from "./players-model.js";
@@ -65,6 +65,7 @@ function ctx(dayKey) {
 function selectDay(key, { focus = false } = {}) {
   if (!DAY_RE.test(key)) return;
   S.selected = key;
+  S.anchorToday = nextAnchorToday(S.anchorToday, key, todayKey());     // reaching the new today dismisses the roll-over banner
   try { history.replaceState(null, "", location.pathname + location.search + buildHash({ d: key === todayKey() ? null : key })); } catch { /* file:// etc. */ }
   render();
   if (focus) { const t = els.strip.querySelector(`[data-day="${key}"]`); if (t) t.focus(); }
@@ -226,7 +227,7 @@ function renderBanners() {
     out.push(h("div", { class: "banner", role: "status" }, "Couldn't refresh just now. Showing the last update we have."));
   }
   const t = todayKey();
-  if (S.data && t !== S.anchorToday) {
+  if (S.data && rolledOver(S.anchorToday, t)) {
     out.push(h("div", { class: "banner banner-roll", role: "status" },
       h("span", null, `It's now ${dayHeading(t)}.`),
       h("button", { type: "button", class: "btn-link", onclick: () => { S.anchorToday = t; selectDay(t); } }, "Go to today")));

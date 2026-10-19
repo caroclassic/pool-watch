@@ -290,6 +290,19 @@ export function buildDay(ctx) {
   };
 }
 
+// ── the "it's now <day>" roll-over banner ───────────────────────────────────
+
+/** The banner shows while the "today" the person last looked at differs from the real today. */
+export const rolledOver = (anchorToday, todayKey) => anchorToday !== todayKey;
+
+/**
+ * Landing on the real today, by ANY route (the banner's link, the Today button, a strip
+ * tile, the date picker, the arrow keys, browser back), acknowledges the new day, so the
+ * banner has nothing left to say. Any other day leaves it as it was.
+ */
+export const nextAnchorToday = (anchorToday, selectedKey, todayKey) =>
+  (selectedKey === todayKey ? todayKey : anchorToday);
+
 // ── day strip ───────────────────────────────────────────────────────────────
 
 /** Per-day facts for the strip tiles. */
