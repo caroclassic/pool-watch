@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-18T13:11:03Z",
- "top_score": 10.099,
+ "updated_at": "2026-10-19T08:15:20Z",
+ "top_score": 10.091,
  "player_tier_bands": {
   "core_min": 61,
   "contender_min": 42,
@@ -304,7 +304,7 @@
    "position": "MF",
    "club": "Marseille",
    "photo": "https://media.api-sports.io/football/players/1138.png",
-   "score": 47,
+   "score": 48,
    "tier": "contender",
    "is_prospect": false,
    "youth_level": null,
