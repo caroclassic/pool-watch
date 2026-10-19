@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-19T14:18:00Z",
+ "updated_at": "2026-10-19T18:35:21Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-19",
@@ -29,25 +29,6 @@
     {
      "playerId": "362061",
      "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1557436",
-   "kickoff_utc": "2026-10-19T19:00:00Z",
-   "competition": "Premier League",
-   "home": "Tottenham",
-   "away": "Coventry",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "NBC/USA/Peacock — varies by match",
-   "pool_players": [
-    {
-     "playerId": "427",
-     "side": "away"
     }
    ]
   },
