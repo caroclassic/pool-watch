@@ -1,10 +1,10 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-19T18:35:21Z",
+ "updated_at": "2026-10-20T04:07:29Z",
  "reference_tz": "America/New_York",
  "window": {
-  "start": "2026-10-19",
-  "end": "2026-11-02"
+  "start": "2026-10-20",
+  "end": "2026-11-03"
  },
  "tier_thresholds": {
   "schema_version": 1,
@@ -13,44 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1550154",
-   "kickoff_utc": "2026-10-19T18:45:00Z",
-   "competition": "Serie A",
-   "home": "Parma",
-   "away": "Torino",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "362061",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1493192",
-   "kickoff_utc": "2026-10-19T22:00:00Z",
-   "competition": "Liga Profesional Argentina",
-   "home": "Newells Old Boys",
-   "away": "Central Cordoba de Santiago",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "129885",
-     "side": "home"
-    }
-   ]
-  },
   {
    "matchId": "1635719",
    "kickoff_utc": "2026-10-20T16:45:00Z",
@@ -3889,6 +3851,181 @@
     {
      "playerId": "362061",
      "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1640479",
+   "kickoff_utc": "2026-11-03T17:00:00Z",
+   "competition": "DBU Pokalen",
+   "home": "Lyngby",
+   "away": "Randers FC",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "383647",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1588831",
+   "kickoff_utc": "2026-11-03T19:00:00Z",
+   "competition": "EFL Trophy",
+   "home": "Rotherham",
+   "away": "Newcastle United U21",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "389579",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1563240",
+   "kickoff_utc": "2026-11-03T19:45:00Z",
+   "competition": "EFL Championship",
+   "home": "Blackburn",
+   "away": "Stoke City",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "207768",
+     "side": "away"
+    },
+    {
+     "playerId": "418851",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1563243",
+   "kickoff_utc": "2026-11-03T19:45:00Z",
+   "competition": "EFL Championship",
+   "home": "Preston",
+   "away": "Sheffield Utd",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "265733",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1646403",
+   "kickoff_utc": "2026-11-03T19:45:00Z",
+   "competition": "Scottish Challenge Cup",
+   "home": "Morton",
+   "away": "Kelty Hearts",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "463542",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1563239",
+   "kickoff_utc": "2026-11-03T20:00:00Z",
+   "competition": "EFL Championship",
+   "home": "Birmingham",
+   "away": "Millwall",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "162386",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1563246",
+   "kickoff_utc": "2026-11-03T20:00:00Z",
+   "competition": "EFL Championship",
+   "home": "West Brom",
+   "away": "Southampton",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "102508",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1635622",
+   "kickoff_utc": "2026-11-03T20:00:00Z",
+   "competition": "UEFA Champions League",
+   "home": "Atletico Madrid",
+   "away": "Bayern München",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "133185",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1635746",
+   "kickoff_utc": "2026-11-03T20:00:00Z",
+   "competition": "UEFA Champions League",
+   "home": "Villarreal",
+   "away": "Paris Saint Germain",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "355994",
+     "side": "home"
     }
    ]
   }
