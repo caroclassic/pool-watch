@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-20T21:54:05Z",
- "active": false,
+ "updated_at": "2026-10-20T22:44:07Z",
+ "active": true,
  "matches": {
   "1551004": {
    "status": "scheduled",
