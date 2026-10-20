@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-20T19:24:38Z",
+ "updated_at": "2026-10-20T19:34:06Z",
  "active": true,
  "matches": {
   "1551004": {
@@ -26,7 +26,7 @@
    "status_updated_at": "2026-10-20T19:04:06Z",
    "lineups_confirmed": true,
    "tier": "worth_a_look",
-   "tier_at_kickoff": null,
+   "tier_at_kickoff": "worth_a_look",
    "participation": {
     "38735": "starts",
     "73868": "not_in_squad"
