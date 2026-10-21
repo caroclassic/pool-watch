@@ -1,10 +1,10 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-20T23:44:06Z",
+ "updated_at": "2026-10-21T04:07:13Z",
  "reference_tz": "America/New_York",
  "window": {
-  "start": "2026-10-20",
-  "end": "2026-11-03"
+  "start": "2026-10-21",
+  "end": "2026-11-04"
  },
  "tier_thresholds": {
   "schema_version": 1,
@@ -13,105 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1635719",
-   "kickoff_utc": "2026-10-20T16:45:00Z",
-   "competition": "UEFA Champions League",
-   "home": "Sabah FA",
-   "away": "Borussia Dortmund",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "486522",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1563824",
-   "kickoff_utc": "2026-10-20T18:45:00Z",
-   "competition": "EFL League Two",
-   "home": "Rotherham",
-   "away": "Newport County",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "389579",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1635655",
-   "kickoff_utc": "2026-10-20T19:00:00Z",
-   "competition": "UEFA Champions League",
-   "home": "FC Porto",
-   "away": "PSV Eindhoven",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "38735",
-     "side": "away"
-    },
-    {
-     "playerId": "73868",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1635688",
-   "kickoff_utc": "2026-10-20T19:00:00Z",
-   "competition": "UEFA Champions League",
-   "home": "Liverpool",
-   "away": "Villarreal",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "355994",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1635738",
-   "kickoff_utc": "2026-10-20T19:00:00Z",
-   "competition": "UEFA Champions League",
-   "home": "VfB Stuttgart",
-   "away": "Atletico Madrid",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "133185",
-     "side": "away"
-    }
-   ]
-  },
   {
    "matchId": "1490439",
    "kickoff_utc": "2026-10-21T23:00:00Z",
@@ -4006,6 +3907,79 @@
    "pool_players": [
     {
      "playerId": "355994",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1563250",
+   "kickoff_utc": "2026-11-04T19:45:00Z",
+   "competition": "EFL Championship",
+   "home": "Wrexham",
+   "away": "Middlesbrough",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "must_watch",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "201713",
+     "side": "away"
+    },
+    {
+     "playerId": "201714",
+     "side": "away"
+    },
+    {
+     "playerId": "340571",
+     "side": "away"
+    },
+    {
+     "playerId": "362400",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1635651",
+   "kickoff_utc": "2026-11-04T20:00:00Z",
+   "competition": "UEFA Champions League",
+   "home": "Borussia Dortmund",
+   "away": "Real Betis",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "486522",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1635707",
+   "kickoff_utc": "2026-11-04T20:00:00Z",
+   "competition": "UEFA Champions League",
+   "home": "PSV Eindhoven",
+   "away": "Club Brugge KV",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "38735",
+     "side": "home"
+    },
+    {
+     "playerId": "73868",
      "side": "home"
     }
    ]
