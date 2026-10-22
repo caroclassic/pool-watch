@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-22T14:06:37Z",
+ "updated_at": "2026-10-22T14:48:50Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-22",
@@ -452,25 +452,6 @@
    "pool_players": [
     {
      "playerId": "149557",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1552799",
-   "kickoff_utc": "2026-10-24T15:15:00Z",
-   "competition": "Ligue 1",
-   "home": "Toulouse",
-   "away": "Estac Troyes",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "beIN SPORTS",
-   "pool_players": [
-    {
-     "playerId": "50735",
      "side": "home"
     }
    ]
@@ -1364,6 +1345,25 @@
    ]
   },
   {
+   "matchId": "1552799",
+   "kickoff_utc": "2026-10-25T16:15:00Z",
+   "competition": "Ligue 1",
+   "home": "Toulouse",
+   "away": "Estac Troyes",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "beIN SPORTS",
+   "pool_players": [
+    {
+     "playerId": "50735",
+     "side": "home"
+    }
+   ]
+  },
+  {
    "matchId": "1557446",
    "kickoff_utc": "2026-10-25T16:30:00Z",
    "competition": "Premier League",
@@ -1495,7 +1495,7 @@
   },
   {
    "matchId": "1551017",
-   "kickoff_utc": "2026-10-26T01:00:00Z",
+   "kickoff_utc": "2026-10-26T01:05:00Z",
    "competition": "Liga MX",
    "home": "Club America",
    "away": "CF Pachuca",
