@@ -1,10 +1,10 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-21T23:31:19Z",
+ "updated_at": "2026-10-22T04:02:58Z",
  "reference_tz": "America/New_York",
  "window": {
-  "start": "2026-10-21",
-  "end": "2026-11-04"
+  "start": "2026-10-22",
+  "end": "2026-11-05"
  },
  "tier_thresholds": {
   "schema_version": 1,
@@ -13,102 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1490439",
-   "kickoff_utc": "2026-10-21T23:00:00Z",
-   "competition": "Major League Soccer",
-   "home": "FC Cincinnati",
-   "away": "DC United",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50848",
-     "side": "away"
-    },
-    {
-     "playerId": "50879",
-     "side": "home"
-    },
-    {
-     "playerId": "351571",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1640094",
-   "kickoff_utc": "2026-10-21T23:00:00Z",
-   "competition": "Canadian Championship",
-   "home": "CF Montreal",
-   "away": "Forge",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "208667",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1640380",
-   "kickoff_utc": "2026-10-22T00:00:00Z",
-   "competition": "US Open Cup",
-   "home": "Columbus Crew",
-   "away": "St. Louis City",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "102685",
-     "side": "home"
-    },
-    {
-     "playerId": "334362",
-     "side": "away"
-    },
-    {
-     "playerId": "357230",
-     "side": "home"
-    },
-    {
-     "playerId": "407425",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1551006",
-   "kickoff_utc": "2026-10-22T01:00:00Z",
-   "competition": "Liga MX",
-   "home": "Atlas",
-   "away": "Club America",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "ViX / TUDN",
-   "pool_players": [
-    {
-     "playerId": "35885",
-     "side": "away"
-    }
-   ]
-  },
   {
    "matchId": "1636276",
    "kickoff_utc": "2026-10-22T16:45:00Z",
@@ -3980,6 +3884,193 @@
     },
     {
      "playerId": "73868",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1636208",
+   "kickoff_utc": "2026-11-05T17:45:00Z",
+   "competition": "UEFA Europa League",
+   "home": "AC Milan",
+   "away": "Ferencvarosi TC",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "17",
+     "side": "home"
+    },
+    {
+     "playerId": "162106",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1636254",
+   "kickoff_utc": "2026-11-05T17:45:00Z",
+   "competition": "UEFA Europa League",
+   "home": "Crystal Palace",
+   "away": "1899 Hoffenheim",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "must_watch",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "126949",
+     "side": "home"
+    },
+    {
+     "playerId": "412227",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1636319",
+   "kickoff_utc": "2026-11-05T17:45:00Z",
+   "competition": "UEFA Europa League",
+   "home": "Real Sociedad",
+   "away": "Lyon",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "80752",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1636324",
+   "kickoff_utc": "2026-11-05T17:45:00Z",
+   "competition": "UEFA Europa League",
+   "home": "Rennes",
+   "away": "Olympiakos Piraeus",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "51144",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1636337",
+   "kickoff_utc": "2026-11-05T17:45:00Z",
+   "competition": "UEFA Europa League",
+   "home": "Sparta Praha",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "1150",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1636219",
+   "kickoff_utc": "2026-11-05T20:00:00Z",
+   "competition": "UEFA Europa League",
+   "home": "AZ Alkmaar",
+   "away": "Juventus",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "415",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1636223",
+   "kickoff_utc": "2026-11-05T20:00:00Z",
+   "competition": "UEFA Europa League",
+   "home": "Bayer Leverkusen",
+   "away": "Marseille",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "must_watch",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "1138",
+     "side": "away"
+    },
+    {
+     "playerId": "162037",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1636250",
+   "kickoff_utc": "2026-11-05T20:00:00Z",
+   "competition": "UEFA Europa League",
+   "home": "Celtic",
+   "away": "Beşiktaş",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "19314",
+     "side": "home"
+    },
+    {
+     "playerId": "50737",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1636456",
+   "kickoff_utc": "2026-11-05T20:00:00Z",
+   "competition": "UEFA Europa Conference League",
+   "home": "Monaco",
+   "away": "FC Nordsjaelland",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "138835",
      "side": "home"
     }
    ]
