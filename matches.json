@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-22T17:16:35Z",
+ "updated_at": "2026-10-22T18:36:38Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-22",
@@ -125,29 +125,6 @@
    ]
   },
   {
-   "matchId": "1636249",
-   "kickoff_utc": "2026-10-22T19:00:00Z",
-   "competition": "UEFA Europa League",
-   "home": "Celtic",
-   "away": "Celta Vigo",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "19314",
-     "side": "home"
-    },
-    {
-     "playerId": "50737",
-     "side": "home"
-    }
-   ]
-  },
-  {
    "matchId": "1636267",
    "kickoff_utc": "2026-10-22T19:00:00Z",
    "competition": "UEFA Europa League",
@@ -163,25 +140,6 @@
     {
      "playerId": "80752",
      "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1636454",
-   "kickoff_utc": "2026-10-22T19:00:00Z",
-   "competition": "UEFA Europa Conference League",
-   "home": "Monaco",
-   "away": "SC Freiburg",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "138835",
-     "side": "home"
     }
    ]
   },
