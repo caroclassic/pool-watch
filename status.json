@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-22T18:36:38Z",
+ "updated_at": "2026-10-22T18:46:35Z",
  "active": true,
  "matches": {
   "1636234": {
@@ -37,8 +37,8 @@
    }
   },
   "1636276": {
-   "status": "live",
-   "status_updated_at": "2026-10-22T16:46:34Z",
+   "status": "full_time",
+   "status_updated_at": "2026-10-22T18:46:35Z",
    "lineups_confirmed": true,
    "tier": "must_watch",
    "tier_at_kickoff": "must_watch",
@@ -58,8 +58,8 @@
    }
   },
   "1636340": {
-   "status": "live",
-   "status_updated_at": "2026-10-22T16:56:35Z",
+   "status": "full_time",
+   "status_updated_at": "2026-10-22T18:46:35Z",
    "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
