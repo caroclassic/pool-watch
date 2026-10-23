@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-22T08:46:34Z",
- "top_score": 10.068,
+ "updated_at": "2026-10-23T08:04:24Z",
+ "top_score": 10.06,
  "player_tier_bands": {
   "core_min": 61,
   "contender_min": 42,
@@ -1404,6 +1404,19 @@
    "last_named": null
   },
   {
+   "playerId": "362139",
+   "display_name": "Nolan Norris",
+   "short_name": "N. Norris",
+   "position": "DF",
+   "club": "FC Dallas",
+   "photo": "https://media.api-sports.io/football/players/362139.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U23",
+   "last_named": null
+  },
+  {
    "playerId": "362061",
    "display_name": "Benjamin Cremaschi",
    "short_name": "B. Cremaschi",
@@ -1419,19 +1432,6 @@
     "competition": "Friendly",
     "opponent": "Costa Rica"
    }
-  },
-  {
-   "playerId": "362139",
-   "display_name": "Nolan Norris",
-   "short_name": "N. Norris",
-   "position": "DF",
-   "club": "FC Dallas",
-   "photo": "https://media.api-sports.io/football/players/362139.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U23",
-   "last_named": null
   },
   {
    "playerId": "149557",
