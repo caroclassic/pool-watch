@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-23T04:09:20Z",
+ "updated_at": "2026-10-23T14:14:21Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-23",
@@ -663,25 +663,6 @@
    ]
   },
   {
-   "matchId": "1551014",
-   "kickoff_utc": "2026-10-25T00:00:00Z",
-   "competition": "Liga MX",
-   "home": "Monterrey",
-   "away": "Guadalajara Chivas",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "ViX / TUDN",
-   "pool_players": [
-    {
-     "playerId": "212233",
-     "side": "away"
-    }
-   ]
-  },
-  {
    "matchId": "1490563",
    "kickoff_utc": "2026-10-25T00:30:00Z",
    "competition": "Major League Soccer",
@@ -759,8 +740,27 @@
    ]
   },
   {
+   "matchId": "1551014",
+   "kickoff_utc": "2026-10-25T02:00:00Z",
+   "competition": "Liga MX",
+   "home": "Monterrey",
+   "away": "Guadalajara Chivas",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "ViX / TUDN",
+   "pool_players": [
+    {
+     "playerId": "212233",
+     "side": "away"
+    }
+   ]
+  },
+  {
    "matchId": "1490566",
-   "kickoff_utc": "2026-10-25T00:30:00Z",
+   "kickoff_utc": "2026-10-25T02:30:00Z",
    "competition": "Major League Soccer",
    "home": "Colorado Rapids",
    "away": "Vancouver Whitecaps",
@@ -803,7 +803,7 @@
   },
   {
    "matchId": "1490567",
-   "kickoff_utc": "2026-10-25T00:30:00Z",
+   "kickoff_utc": "2026-10-25T02:30:00Z",
    "competition": "Major League Soccer",
    "home": "Real Salt Lake",
    "away": "St. Louis City",
