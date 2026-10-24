@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-24T14:31:09Z",
+ "updated_at": "2026-10-24T16:01:26Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-24",
@@ -216,25 +216,6 @@
    ]
   },
   {
-   "matchId": "1557439",
-   "kickoff_utc": "2026-10-24T16:30:00Z",
-   "competition": "Premier League",
-   "home": "Chelsea",
-   "away": "Tottenham",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "NBC/USA/Peacock — varies by match",
-   "pool_players": [
-    {
-     "playerId": "64167",
-     "side": "home"
-    }
-   ]
-  },
-  {
    "matchId": "1570432",
    "kickoff_utc": "2026-10-24T16:30:00Z",
    "competition": "La Liga",
@@ -242,7 +223,7 @@
    "away": "Villarreal",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "ESPN+",
@@ -250,25 +231,6 @@
     {
      "playerId": "355994",
      "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1575194",
-   "kickoff_utc": "2026-10-24T16:30:00Z",
-   "competition": "Bundesliga",
-   "home": "Borussia Dortmund",
-   "away": "Eintracht Frankfurt",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Fandango/USA Network — varies by match",
-   "pool_players": [
-    {
-     "playerId": "486522",
-     "side": "home"
     }
    ]
   },
