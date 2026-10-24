@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-24T12:33:10Z",
+ "updated_at": "2026-10-24T13:11:45Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-24",
@@ -77,7 +77,7 @@
    "home": "Morton",
    "away": "Ayr Utd",
    "fixture_kind": "club",
-   "status": "scheduled",
+   "status": "postponed",
    "tier": null,
    "tier_at_kickoff": null,
    "players_basis": null,
