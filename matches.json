@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-24T14:01:05Z",
+ "updated_at": "2026-10-24T14:11:30Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-24",
@@ -1165,25 +1165,6 @@
    ]
   },
   {
-   "matchId": "1552800",
-   "kickoff_utc": "2026-10-25T19:45:00Z",
-   "competition": "Ligue 1",
-   "home": "Paris Saint Germain",
-   "away": "Lyon",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "beIN SPORTS",
-   "pool_players": [
-    {
-     "playerId": "80752",
-     "side": "away"
-    }
-   ]
-  },
-  {
    "matchId": "1493206",
    "kickoff_utc": "2026-10-25T22:15:00Z",
    "competition": "Liga Profesional Argentina",
@@ -1249,6 +1230,25 @@
     {
      "playerId": "35885",
      "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1552800",
+   "kickoff_utc": "2026-10-26T19:30:00Z",
+   "competition": "Ligue 1",
+   "home": "Paris Saint Germain",
+   "away": "Lyon",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "beIN SPORTS",
+   "pool_players": [
+    {
+     "playerId": "80752",
+     "side": "away"
     }
    ]
   },
