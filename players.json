@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-23T08:04:24Z",
- "top_score": 10.06,
+ "updated_at": "2026-10-24T08:12:40Z",
+ "top_score": 10.053,
  "player_tier_bands": {
   "core_min": 61,
   "contender_min": 42,
@@ -1989,19 +1989,6 @@
    }
   },
   {
-   "playerId": "340571",
-   "display_name": "Rokas Pukštas",
-   "short_name": "R. Pukštas",
-   "position": "MF",
-   "club": "Middlesbrough",
-   "photo": "https://media.api-sports.io/football/players/340571.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
-  },
-  {
    "playerId": "312164",
    "display_name": "Joshua Wynder",
    "short_name": "J. Wynder",
@@ -2017,6 +2004,19 @@
     "competition": "Friendly",
     "opponent": "Mexico"
    }
+  },
+  {
+   "playerId": "340571",
+   "display_name": "Rokas Pukštas",
+   "short_name": "R. Pukštas",
+   "position": "MF",
+   "club": "Middlesbrough",
+   "photo": "https://media.api-sports.io/football/players/340571.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
   },
   {
    "playerId": "359942",
