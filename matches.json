@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-24T17:01:06Z",
+ "updated_at": "2026-10-24T18:31:37Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-24",
@@ -277,25 +277,6 @@
     {
      "playerId": "362061",
      "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1570425",
-   "kickoff_utc": "2026-10-24T19:00:00Z",
-   "competition": "La Liga",
-   "home": "Atletico Madrid",
-   "away": "Deportivo La Coruna",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "ESPN+",
-   "pool_players": [
-    {
-     "playerId": "133185",
-     "side": "home"
     }
    ]
   },
