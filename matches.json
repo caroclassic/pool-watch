@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-24T13:11:45Z",
+ "updated_at": "2026-10-24T13:31:07Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-24",
@@ -71,6 +71,25 @@
    ]
   },
   {
+   "matchId": "1556687",
+   "kickoff_utc": "2026-10-24T14:00:00Z",
+   "competition": "Scottish Premiership",
+   "home": "ST Mirren",
+   "away": "Dundee",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "359942",
+     "side": "away"
+    }
+   ]
+  },
+  {
    "matchId": "1556882",
    "kickoff_utc": "2026-10-24T14:00:00Z",
    "competition": "Scottish Championship",
@@ -108,25 +127,6 @@
     },
     {
      "playerId": "19549",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1563217",
-   "kickoff_utc": "2026-10-24T14:00:00Z",
-   "competition": "EFL Championship",
-   "home": "Cardiff",
-   "away": "Birmingham",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "162386",
      "side": "away"
     }
    ]
