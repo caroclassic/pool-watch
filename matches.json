@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-24T08:12:39Z",
+ "updated_at": "2026-10-24T12:33:10Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-24",
@@ -13,25 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1601569",
-   "kickoff_utc": "2026-10-24T13:00:00Z",
-   "competition": "Serie B",
-   "home": "Modena",
-   "away": "Cesena",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "25335",
-     "side": "away"
-    }
-   ]
-  },
   {
    "matchId": "1575195",
    "kickoff_utc": "2026-10-24T13:30:00Z",
