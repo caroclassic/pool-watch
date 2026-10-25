@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-25T16:51:03Z",
+ "updated_at": "2026-10-25T17:01:38Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-25",
@@ -323,7 +323,7 @@
    "fixture_kind": "club",
    "status": "scheduled",
    "tier": "worth_a_look",
-   "tier_at_kickoff": null,
+   "tier_at_kickoff": "worth_a_look",
    "players_basis": null,
    "broadcast": "NBC/USA/Peacock — varies by match",
    "pool_players": [
