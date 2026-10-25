@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-25T15:01:10Z",
+ "updated_at": "2026-10-25T16:01:38Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-25",
@@ -322,7 +322,7 @@
    "away": "Leeds",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": null,
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "NBC/USA/Peacock — varies by match",
