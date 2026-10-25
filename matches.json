@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-25T08:03:26Z",
+ "updated_at": "2026-10-25T11:31:05Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-25",
@@ -21,7 +21,7 @@
    "away": "Celtic",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": null,
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "—",
