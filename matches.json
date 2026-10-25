@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-25T04:04:03Z",
+ "updated_at": "2026-10-25T08:03:26Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-25",
@@ -13,64 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1490568",
-   "kickoff_utc": "2026-10-25T02:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "San Diego",
-   "away": "Seattle Sounders",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50772",
-     "side": "away"
-    },
-    {
-     "playerId": "51114",
-     "side": "away"
-    },
-    {
-     "playerId": "51118",
-     "side": "away"
-    },
-    {
-     "playerId": "51142",
-     "side": "away"
-    },
-    {
-     "playerId": "207781",
-     "side": "away"
-    },
-    {
-     "playerId": "351572",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1490569",
-   "kickoff_utc": "2026-10-25T02:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Portland Timbers",
-   "away": "Charlotte",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "19026",
-     "side": "away"
-    }
-   ]
-  },
   {
    "matchId": "1556684",
    "kickoff_utc": "2026-10-25T12:00:00Z",
@@ -1154,6 +1096,10 @@
      "side": "home"
     },
     {
+     "playerId": "413207",
+     "side": "away"
+    },
+    {
      "playerId": "461633",
      "side": "away"
     }
@@ -2027,6 +1973,10 @@
     {
      "playerId": "362139",
      "side": "away"
+    },
+    {
+     "playerId": "413207",
+     "side": "home"
     },
     {
      "playerId": "461633",
@@ -3973,6 +3923,10 @@
     {
      "playerId": "351572",
      "side": "home"
+    },
+    {
+     "playerId": "413207",
+     "side": "away"
     },
     {
      "playerId": "461633",

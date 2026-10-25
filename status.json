@@ -1,35 +1,8 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-25T04:04:03Z",
- "active": true,
+ "updated_at": "2026-10-25T08:03:26Z",
+ "active": false,
  "matches": {
-  "1490568": {
-   "status": "live",
-   "status_updated_at": "2026-10-25T04:03:20Z",
-   "lineups_confirmed": true,
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "participation": {
-    "50772": "bench",
-    "51114": "starts",
-    "51118": "starts",
-    "51142": "starts",
-    "207781": "bench",
-    "351572": "not_in_squad"
-   },
-   "carried_over": true
-  },
-  "1490569": {
-   "status": "live",
-   "status_updated_at": "2026-10-25T04:03:20Z",
-   "lineups_confirmed": true,
-   "tier": null,
-   "tier_at_kickoff": null,
-   "participation": {
-    "19026": "bench"
-   },
-   "carried_over": true
-  },
   "1490570": {
    "status": "scheduled",
    "status_updated_at": "2026-10-25T04:03:20Z",

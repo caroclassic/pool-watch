@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-24T08:12:40Z",
- "top_score": 10.053,
+ "updated_at": "2026-10-25T08:03:26Z",
+ "top_score": 10.045,
  "player_tier_bands": {
   "core_min": 61,
   "contender_min": 42,
@@ -1046,6 +1046,19 @@
    }
   },
   {
+   "playerId": "363156",
+   "display_name": "Santiago Castañeda",
+   "short_name": "S. Castaneda",
+   "position": "MF",
+   "club": "SC Paderborn 07",
+   "photo": "https://media.api-sports.io/football/players/363156.png",
+   "score": 7,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
    "playerId": "461514",
    "display_name": "Justin Ellis",
    "short_name": "J. Ellis",
@@ -1078,19 +1091,6 @@
     "competition": "Friendly",
     "opponent": "Canada"
    }
-  },
-  {
-   "playerId": "363156",
-   "display_name": "Santiago Castañeda",
-   "short_name": "S. Castaneda",
-   "position": "MF",
-   "club": "SC Paderborn 07",
-   "photo": "https://media.api-sports.io/football/players/363156.png",
-   "score": 7,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
   },
   {
    "playerId": "50883",
@@ -1133,7 +1133,7 @@
    "position": "DF",
    "club": "Philadelphia Union",
    "photo": "https://media.api-sports.io/football/players/428007.png",
-   "score": 6,
+   "score": 7,
    "tier": "wider_pool",
    "is_prospect": false,
    "youth_level": null,
@@ -1391,19 +1391,6 @@
    }
   },
   {
-   "playerId": "418851",
-   "display_name": "Luca Bombino",
-   "short_name": "L. Bombino",
-   "position": "DF",
-   "club": "Stoke City",
-   "photo": "https://media.api-sports.io/football/players/418851.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
-  },
-  {
    "playerId": "362139",
    "display_name": "Nolan Norris",
    "short_name": "N. Norris",
@@ -1451,19 +1438,6 @@
    }
   },
   {
-   "playerId": "351591",
-   "display_name": "Niko Tsakiris",
-   "short_name": "N. Tsakiris",
-   "position": "MF",
-   "club": "San Jose Earthquakes",
-   "photo": "https://media.api-sports.io/football/players/351591.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
-  },
-  {
    "playerId": "51027",
    "display_name": "Tristan Blackmon",
    "short_name": "T. Blackmon",
@@ -1498,19 +1472,6 @@
    }
   },
   {
-   "playerId": "362448",
-   "display_name": "Adam Beaudry",
-   "short_name": "A. Beaudry",
-   "position": "GK",
-   "club": "Colorado Rapids",
-   "photo": "https://media.api-sports.io/football/players/362448.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
-  },
-  {
    "playerId": "389579",
    "display_name": "Julian Eyestone",
    "short_name": "J. Eyestone",
@@ -1524,12 +1485,55 @@
    "last_named": null
   },
   {
-   "playerId": "266599",
-   "display_name": "Justin Che",
-   "short_name": "J. Che",
+   "playerId": "312164",
+   "display_name": "Joshua Wynder",
+   "short_name": "J. Wynder",
    "position": "DF",
-   "club": "New York Red Bulls",
-   "photo": "https://media.api-sports.io/football/players/266599.png",
+   "club": "New England Revolution",
+   "photo": "https://media.api-sports.io/football/players/312164.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-04-19",
+    "competition": "Friendly",
+    "opponent": "Mexico"
+   }
+  },
+  {
+   "playerId": "351591",
+   "display_name": "Niko Tsakiris",
+   "short_name": "N. Tsakiris",
+   "position": "MF",
+   "club": "San Jose Earthquakes",
+   "photo": "https://media.api-sports.io/football/players/351591.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
+   "playerId": "362448",
+   "display_name": "Adam Beaudry",
+   "short_name": "A. Beaudry",
+   "position": "GK",
+   "club": "Colorado Rapids",
+   "photo": "https://media.api-sports.io/football/players/362448.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
+   "playerId": "418851",
+   "display_name": "Luca Bombino",
+   "short_name": "L. Bombino",
+   "position": "DF",
+   "club": "Stoke City",
+   "photo": "https://media.api-sports.io/football/players/418851.png",
    "score": 3,
    "tier": "wider_pool",
    "is_prospect": true,
@@ -1552,6 +1556,19 @@
     "competition": "Friendly",
     "opponent": "Costa Rica"
    }
+  },
+  {
+   "playerId": "266599",
+   "display_name": "Justin Che",
+   "short_name": "J. Che",
+   "position": "DF",
+   "club": "New York Red Bulls",
+   "photo": "https://media.api-sports.io/football/players/266599.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
   },
   {
    "playerId": "51310",
@@ -1656,6 +1673,19 @@
    }
   },
   {
+   "playerId": "413207",
+   "display_name": "Ruben Ramos",
+   "short_name": "R. Ramos",
+   "position": "FW",
+   "club": "Sporting Kansas City",
+   "photo": "https://media.api-sports.io/football/players/413207.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
    "playerId": "203014",
    "display_name": "Matthew Hoppe",
    "short_name": "M. Hoppe",
@@ -1724,19 +1754,6 @@
    }
   },
   {
-   "playerId": "461633",
-   "display_name": "Ian James",
-   "short_name": "I. James",
-   "position": "DF",
-   "club": "Sporting Kansas City",
-   "photo": "https://media.api-sports.io/football/players/461633.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": null,
-   "last_named": null
-  },
-  {
    "playerId": "201715",
    "display_name": "Drake Callender",
    "short_name": "D. Callender",
@@ -1786,6 +1803,19 @@
     "competition": "Friendly",
     "opponent": "Slovenia"
    }
+  },
+  {
+   "playerId": "461633",
+   "display_name": "Ian James",
+   "short_name": "I. James",
+   "position": "DF",
+   "club": "Sporting Kansas City",
+   "photo": "https://media.api-sports.io/football/players/461633.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": null,
+   "last_named": null
   },
   {
    "playerId": "25335",
@@ -1912,19 +1942,6 @@
    }
   },
   {
-   "playerId": "413207",
-   "display_name": "Ruben Ramos",
-   "short_name": "R. Ramos",
-   "position": "FW",
-   "club": "Sporting Kansas City",
-   "photo": "https://media.api-sports.io/football/players/413207.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
-  },
-  {
    "playerId": "312998",
    "display_name": "Aziel Jackson",
    "short_name": "A. Jackson",
@@ -1986,23 +2003,6 @@
     "date": "2024-01-20",
     "competition": "Friendly",
     "opponent": "Slovenia"
-   }
-  },
-  {
-   "playerId": "312164",
-   "display_name": "Joshua Wynder",
-   "short_name": "J. Wynder",
-   "position": "DF",
-   "club": "New England Revolution",
-   "photo": "https://media.api-sports.io/football/players/312164.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": false,
-   "youth_level": null,
-   "last_named": {
-    "date": "2023-04-19",
-    "competition": "Friendly",
-    "opponent": "Mexico"
    }
   },
   {
