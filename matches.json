@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-25T11:31:05Z",
+ "updated_at": "2026-10-25T13:31:06Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-25",
@@ -162,7 +162,7 @@
    "away": "Lille",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": null,
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "beIN SPORTS",
@@ -204,7 +204,7 @@
    "away": "Bournemouth",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "NBC/USA/Peacock — varies by match",
