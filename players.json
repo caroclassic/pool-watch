@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-26T08:03:53Z",
+ "updated_at": "2026-10-26T14:51:06Z",
  "top_score": 10.038,
  "player_tier_bands": {
   "core_min": 61,
@@ -1127,23 +1127,6 @@
    }
   },
   {
-   "playerId": "428007",
-   "display_name": "Neil Pierre",
-   "short_name": "N. Pierre",
-   "position": "DF",
-   "club": "Philadelphia Union",
-   "photo": "https://media.api-sports.io/football/players/428007.png",
-   "score": 7,
-   "tier": "wider_pool",
-   "is_prospect": false,
-   "youth_level": null,
-   "last_named": {
-    "date": "2026-10-06",
-    "competition": "Friendly",
-    "opponent": "Canada"
-   }
-  },
-  {
    "playerId": "413230",
    "display_name": "Peyton Miller",
    "short_name": "P. Miller",
@@ -1175,6 +1158,23 @@
     "date": "2023-07-12",
     "competition": "Gold Cup",
     "opponent": "Panama"
+   }
+  },
+  {
+   "playerId": "428007",
+   "display_name": "Neil Pierre",
+   "short_name": "N. Pierre",
+   "position": "DF",
+   "club": "Philadelphia Union",
+   "photo": "https://media.api-sports.io/football/players/428007.png",
+   "score": 6,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-06",
+    "competition": "Friendly",
+    "opponent": "Canada"
    }
   },
   {
@@ -1263,32 +1263,6 @@
    }
   },
   {
-   "playerId": "265762",
-   "display_name": "Reed Baker-Whiting",
-   "short_name": "R. Baker-Whiting",
-   "position": "MF",
-   "club": "Nashville SC",
-   "photo": "https://media.api-sports.io/football/players/265762.png",
-   "score": 5,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
-  },
-  {
-   "playerId": "407425",
-   "display_name": "Taha Habroune",
-   "short_name": "T. Habroune",
-   "position": "MF",
-   "club": "Columbus Crew",
-   "photo": "https://media.api-sports.io/football/players/407425.png",
-   "score": 5,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
-  },
-  {
    "playerId": "362085",
    "display_name": "Frankie Westfield",
    "short_name": "F. Westfield",
@@ -1306,6 +1280,19 @@
    }
   },
   {
+   "playerId": "265762",
+   "display_name": "Reed Baker-Whiting",
+   "short_name": "R. Baker-Whiting",
+   "position": "MF",
+   "club": "Nashville SC",
+   "photo": "https://media.api-sports.io/football/players/265762.png",
+   "score": 5,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
    "playerId": "25617",
    "display_name": "Timothy Tillman",
    "short_name": "T. Tillman",
@@ -1321,6 +1308,19 @@
     "competition": "Friendly",
     "opponent": "Uruguay"
    }
+  },
+  {
+   "playerId": "407425",
+   "display_name": "Taha Habroune",
+   "short_name": "T. Habroune",
+   "position": "MF",
+   "club": "Columbus Crew",
+   "photo": "https://media.api-sports.io/football/players/407425.png",
+   "score": 4,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
   },
   {
    "playerId": "129706",
@@ -1372,19 +1372,6 @@
     "competition": "Nations League",
     "opponent": "Panama"
    }
-  },
-  {
-   "playerId": "362139",
-   "display_name": "Nolan Norris",
-   "short_name": "N. Norris",
-   "position": "DF",
-   "club": "FC Dallas",
-   "photo": "https://media.api-sports.io/football/players/362139.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U23",
-   "last_named": null
   },
   {
    "playerId": "362061",
@@ -1472,19 +1459,6 @@
    }
   },
   {
-   "playerId": "389579",
-   "display_name": "Julian Eyestone",
-   "short_name": "J. Eyestone",
-   "position": "GK",
-   "club": "Rotherham",
-   "photo": "https://media.api-sports.io/football/players/389579.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
-  },
-  {
    "playerId": "312164",
    "display_name": "Joshua Wynder",
    "short_name": "J. Wynder",
@@ -1502,6 +1476,32 @@
    }
   },
   {
+   "playerId": "362139",
+   "display_name": "Nolan Norris",
+   "short_name": "N. Norris",
+   "position": "DF",
+   "club": "FC Dallas",
+   "photo": "https://media.api-sports.io/football/players/362139.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U23",
+   "last_named": null
+  },
+  {
+   "playerId": "389579",
+   "display_name": "Julian Eyestone",
+   "short_name": "J. Eyestone",
+   "position": "GK",
+   "club": "Rotherham",
+   "photo": "https://media.api-sports.io/football/players/389579.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
    "playerId": "351591",
    "display_name": "Niko Tsakiris",
    "short_name": "N. Tsakiris",
@@ -1512,19 +1512,6 @@
    "tier": "wider_pool",
    "is_prospect": true,
    "youth_level": "U21",
-   "last_named": null
-  },
-  {
-   "playerId": "418851",
-   "display_name": "Luca Bombino",
-   "short_name": "L. Bombino",
-   "position": "DF",
-   "club": "Stoke City",
-   "photo": "https://media.api-sports.io/football/players/418851.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
    "last_named": null
   },
   {
@@ -1551,6 +1538,19 @@
    "position": "GK",
    "club": "Colorado Rapids",
    "photo": "https://media.api-sports.io/football/players/362448.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
+   "playerId": "418851",
+   "display_name": "Luca Bombino",
+   "short_name": "L. Bombino",
+   "position": "DF",
+   "club": "Stoke City",
+   "photo": "https://media.api-sports.io/football/players/418851.png",
    "score": 3,
    "tier": "wider_pool",
    "is_prospect": true,
@@ -1673,19 +1673,6 @@
    }
   },
   {
-   "playerId": "413207",
-   "display_name": "Ruben Ramos",
-   "short_name": "R. Ramos",
-   "position": "FW",
-   "club": "Sporting Kansas City",
-   "photo": "https://media.api-sports.io/football/players/413207.png",
-   "score": 2,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
-  },
-  {
    "playerId": "203014",
    "display_name": "Matthew Hoppe",
    "short_name": "M. Hoppe",
@@ -1701,6 +1688,19 @@
     "competition": "Friendly",
     "opponent": "Colombia"
    }
+  },
+  {
+   "playerId": "413207",
+   "display_name": "Ruben Ramos",
+   "short_name": "R. Ramos",
+   "position": "FW",
+   "club": "Sporting Kansas City",
+   "photo": "https://media.api-sports.io/football/players/413207.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
   },
   {
    "playerId": "351571",
@@ -1805,19 +1805,6 @@
    }
   },
   {
-   "playerId": "461633",
-   "display_name": "Ian James",
-   "short_name": "I. James",
-   "position": "DF",
-   "club": "Sporting Kansas City",
-   "photo": "https://media.api-sports.io/football/players/461633.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": null,
-   "last_named": null
-  },
-  {
    "playerId": "25335",
    "display_name": "Jonathan Klinsmann",
    "short_name": "J. Klinsmann",
@@ -1833,6 +1820,19 @@
     "competition": "Friendly",
     "opponent": "Uruguay"
    }
+  },
+  {
+   "playerId": "461633",
+   "display_name": "Ian James",
+   "short_name": "I. James",
+   "position": "DF",
+   "club": "Sporting Kansas City",
+   "photo": "https://media.api-sports.io/football/players/461633.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": null,
+   "last_named": null
   },
   {
    "playerId": "461627",
@@ -1882,19 +1882,6 @@
    }
   },
   {
-   "playerId": "365552",
-   "display_name": "Cruz Medina",
-   "short_name": "C. Medina",
-   "position": "MF",
-   "club": "Tapatío",
-   "photo": "https://media.api-sports.io/football/players/365552.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
-  },
-  {
    "playerId": "15783",
    "display_name": "Emmanuel Sabbi",
    "short_name": "E. Sabbi",
@@ -1940,6 +1927,19 @@
     "competition": "Friendly",
     "opponent": "Colombia"
    }
+  },
+  {
+   "playerId": "365552",
+   "display_name": "Cruz Medina",
+   "short_name": "C. Medina",
+   "position": "MF",
+   "club": "Tapatío",
+   "photo": "https://media.api-sports.io/football/players/365552.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
   },
   {
    "playerId": "312998",

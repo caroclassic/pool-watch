@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-26T14:11:26Z",
+ "updated_at": "2026-10-26T14:51:05Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-26",
@@ -407,10 +407,6 @@
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
-    {
-     "playerId": "19607",
-     "side": "home"
-    },
     {
      "playerId": "50728",
      "side": "home"
@@ -1462,10 +1458,6 @@
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
-    {
-     "playerId": "19607",
-     "side": "home"
-    },
     {
      "playerId": "50728",
      "side": "home"
@@ -2668,7 +2660,7 @@
    "away": "Strasbourg",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "beIN SPORTS",
@@ -3322,10 +3314,6 @@
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
-    {
-     "playerId": "19607",
-     "side": "away"
-    },
     {
      "playerId": "50728",
      "side": "away"
