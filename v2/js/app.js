@@ -354,7 +354,11 @@ function boot() {
   window.addEventListener("hashchange", () => {
     const hash = parseHash(location.hash);
     if (hash.f) handleShare(hash.f);
-    else if (hash.d && DAY_RE.test(hash.d) && hash.d !== S.selected && S.data) selectDay(hash.d);
+    else if (S.data) {
+      // No d= in the URL means today (selectDay drops it for today), so browser back to a bare URL must land on today too.
+      const d = hash.d && DAY_RE.test(hash.d) ? hash.d : todayKey();
+      if (d !== S.selected) selectDay(d);
+    }
   });
   window.addEventListener("pageshow", (e) => { if (e.persisted) poller.refresh(); });
 

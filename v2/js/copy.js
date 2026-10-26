@@ -1,6 +1,6 @@
 // copy.js — public wording from spec §8.6. One place, so the Legend, About and
 // popovers cannot drift apart. No outbound links; nothing implies alerts exist;
-// nothing mentions the trajectory score.
+// nothing explains how players are scored.
 
 export const FEEDBACK_EMAIL = "feedback@statesidexi.com";
 export const FEEDBACK_SUBJECT = "Stateside XI feedback";
