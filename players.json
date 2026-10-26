@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-26T14:51:06Z",
+ "updated_at": "2026-10-26T14:54:49Z",
  "top_score": 10.038,
  "player_tier_bands": {
   "core_min": 61,
@@ -10,6 +10,7 @@
  "players": [
   {
    "playerId": "126949",
+   "age": 26,
    "display_name": "Chris Richards",
    "short_name": "C. Richards",
    "position": "DF",
@@ -27,6 +28,7 @@
   },
   {
    "playerId": "162037",
+   "age": 24,
    "display_name": "Malik Tillman",
    "short_name": "M. Tillman",
    "position": "MF",
@@ -44,6 +46,7 @@
   },
   {
    "playerId": "355994",
+   "age": 22,
    "display_name": "Alex Freeman",
    "short_name": "A. Freeman",
    "position": "DF",
@@ -61,6 +64,7 @@
   },
   {
    "playerId": "1150",
+   "age": 27,
    "display_name": "Tyler Adams",
    "short_name": "T. Adams",
    "position": "MF",
@@ -78,6 +82,7 @@
   },
   {
    "playerId": "415",
+   "age": 28,
    "display_name": "Weston McKennie",
    "short_name": "W. McKennie",
    "position": "MF",
@@ -95,6 +100,7 @@
   },
   {
    "playerId": "50728",
+   "age": 28,
    "display_name": "Matt Freese",
    "short_name": "M. Freese",
    "position": "GK",
@@ -112,6 +118,7 @@
   },
   {
    "playerId": "19549",
+   "age": 29,
    "display_name": "Antonee Robinson",
    "short_name": "A. Robinson",
    "position": "DF",
@@ -129,6 +136,7 @@
   },
   {
    "playerId": "17",
+   "age": 28,
    "display_name": "Christian Pulišić",
    "short_name": "C. Pulišić",
    "position": "FW",
@@ -146,6 +154,7 @@
   },
   {
    "playerId": "201713",
+   "age": 25,
    "display_name": "Sebastian Berhalter",
    "short_name": "S. Berhalter",
    "position": "MF",
@@ -163,6 +172,7 @@
   },
   {
    "playerId": "50999",
+   "age": 32,
    "display_name": "Matt Turner",
    "short_name": "M. Turner",
    "position": "GK",
@@ -180,6 +190,7 @@
   },
   {
    "playerId": "138835",
+   "age": 25,
    "display_name": "Folarin Balogun",
    "short_name": "F. Balogun",
    "position": "FW",
@@ -197,6 +208,7 @@
   },
   {
    "playerId": "161921",
+   "age": 23,
    "display_name": "Gio Reyna",
    "short_name": "G. Reyna",
    "position": "MF",
@@ -214,6 +226,7 @@
   },
   {
    "playerId": "38735",
+   "age": 25,
    "display_name": "Sergiño Dest",
    "short_name": "S. Dest",
    "position": "DF",
@@ -231,6 +244,7 @@
   },
   {
    "playerId": "50879",
+   "age": 29,
    "display_name": "Miles Robinson",
    "short_name": "M. Robinson",
    "position": "DF",
@@ -248,6 +262,7 @@
   },
   {
    "playerId": "50852",
+   "age": 23,
    "display_name": "Joseph Scally",
    "short_name": "J. Scally",
    "position": "DF",
@@ -265,6 +280,7 @@
   },
   {
    "playerId": "73868",
+   "age": 23,
    "display_name": "Ricardo Pepi",
    "short_name": "R. Pepi",
    "position": "FW",
@@ -282,6 +298,7 @@
   },
   {
    "playerId": "362400",
+   "age": 25,
    "display_name": "Max Arfsten",
    "short_name": "M. Arfsten",
    "position": "FW",
@@ -299,6 +316,7 @@
   },
   {
    "playerId": "1138",
+   "age": 26,
    "display_name": "Tim Weah",
    "short_name": "T. Weah",
    "position": "MF",
@@ -316,6 +334,7 @@
   },
   {
    "playerId": "50739",
+   "age": 26,
    "display_name": "Brenden Aaronson",
    "short_name": "B. Aaronson",
    "position": "MF",
@@ -333,6 +352,7 @@
   },
   {
    "playerId": "50735",
+   "age": 27,
    "display_name": "Mark McKenzie",
    "short_name": "M. McKenzie",
    "position": "DF",
@@ -350,6 +370,7 @@
   },
   {
    "playerId": "162106",
+   "age": 23,
    "display_name": "Yunus Musah",
    "short_name": "Y. Musah",
    "position": "MF",
@@ -367,6 +388,7 @@
   },
   {
    "playerId": "312896",
+   "age": 23,
    "display_name": "Diego Luna",
    "short_name": "D. Luna",
    "position": "FW",
@@ -384,6 +406,7 @@
   },
   {
    "playerId": "50737",
+   "age": 28,
    "display_name": "Auston Trusty",
    "short_name": "A. Trusty",
    "position": "DF",
@@ -401,6 +424,7 @@
   },
   {
    "playerId": "19026",
+   "age": 28,
    "display_name": "Lucas de la Torre",
    "short_name": "L. de la Torre",
    "position": "MF",
@@ -418,6 +442,7 @@
   },
   {
    "playerId": "427",
+   "age": 28,
    "display_name": "Haji Wright",
    "short_name": "H. Wright",
    "position": "FW",
@@ -435,6 +460,7 @@
   },
   {
    "playerId": "35885",
+   "age": 28,
    "display_name": "Alex Zendejas",
    "short_name": "A. Zendejas",
    "position": "FW",
@@ -452,6 +478,7 @@
   },
   {
    "playerId": "207768",
+   "age": 23,
    "display_name": "Jack McGlynn",
    "short_name": "J. McGlynn",
    "position": "MF",
@@ -469,6 +496,7 @@
   },
   {
    "playerId": "51114",
+   "age": 31,
    "display_name": "Cristian Roldan",
    "short_name": "C. Roldan",
    "position": "MF",
@@ -486,6 +514,7 @@
   },
   {
    "playerId": "80752",
+   "age": 25,
    "display_name": "Tanner Tessmann",
    "short_name": "T. Tessmann",
    "position": "MF",
@@ -503,6 +532,7 @@
   },
   {
    "playerId": "133185",
+   "age": 25,
    "display_name": "Johnny Cardoso",
    "short_name": "J. Cardoso",
    "position": "MF",
@@ -520,6 +550,7 @@
   },
   {
    "playerId": "201714",
+   "age": 24,
    "display_name": "Aidan Morris",
    "short_name": "A. Morris",
    "position": "MF",
@@ -537,6 +568,7 @@
   },
   {
    "playerId": "119002",
+   "age": 24,
    "display_name": "John Tolkin",
    "short_name": "J. Tolkin",
    "position": "MF",
@@ -554,6 +586,7 @@
   },
   {
    "playerId": "51013",
+   "age": 29,
    "display_name": "DeJuan Jones",
    "short_name": "D. Jones",
    "position": "DF",
@@ -571,6 +604,7 @@
   },
   {
    "playerId": "50863",
+   "age": 26,
    "display_name": "James Sands",
    "short_name": "J. Sands",
    "position": "MF",
@@ -588,6 +622,7 @@
   },
   {
    "playerId": "51266",
+   "age": 24,
    "display_name": "Gianluca Busio",
    "short_name": "G. Busio",
    "position": "MF",
@@ -605,6 +640,7 @@
   },
   {
    "playerId": "51186",
+   "age": 23,
    "display_name": "Cade Cowell",
    "short_name": "C. Cowell",
    "position": "FW",
@@ -622,6 +658,7 @@
   },
   {
    "playerId": "51142",
+   "age": 25,
    "display_name": "Jesús Ferreira",
    "short_name": "J. Ferreira",
    "position": "FW",
@@ -639,6 +676,7 @@
   },
   {
    "playerId": "19314",
+   "age": 28,
    "display_name": "Cameron Carter-Vickers",
    "short_name": "C. Carter-Vickers",
    "position": "DF",
@@ -656,6 +694,7 @@
   },
   {
    "playerId": "50969",
+   "age": 30,
    "display_name": "Brian White",
    "short_name": "B. White",
    "position": "FW",
@@ -673,6 +712,7 @@
   },
   {
    "playerId": "50893",
+   "age": 28,
    "display_name": "Brandon Vázquez",
    "short_name": "B. Vázquez",
    "position": "FW",
@@ -690,6 +730,7 @@
   },
   {
    "playerId": "334362",
+   "age": 22,
    "display_name": "Damion Downs",
    "short_name": "D. Downs",
    "position": "FW",
@@ -707,6 +748,7 @@
   },
   {
    "playerId": "266606",
+   "age": 22,
    "display_name": "Chris Brady",
    "short_name": "C. Brady",
    "position": "GK",
@@ -724,6 +766,7 @@
   },
   {
    "playerId": "62",
+   "age": 31,
    "display_name": "Ethan Horvath",
    "short_name": "E. Horvath",
    "position": "GK",
@@ -741,6 +784,7 @@
   },
   {
    "playerId": "50848",
+   "age": 37,
    "display_name": "Sean Johnson",
    "short_name": "S. Johnson",
    "position": "GK",
@@ -758,6 +802,7 @@
   },
   {
    "playerId": "383647",
+   "age": 20,
    "display_name": "Diego Kochen",
    "short_name": "D. Kochen",
    "position": "GK",
@@ -775,6 +820,7 @@
   },
   {
    "playerId": "102685",
+   "age": 25,
    "display_name": "Patrick Schulte",
    "short_name": "P. Schulte",
    "position": "GK",
@@ -792,6 +838,7 @@
   },
   {
    "playerId": "266733",
+   "age": 25,
    "display_name": "Brian Schwake",
    "short_name": "B. Schwake",
    "position": "GK",
@@ -809,6 +856,7 @@
   },
   {
    "playerId": "51032",
+   "age": 33,
    "display_name": "Walker Zimmerman",
    "short_name": "W. Zimmerman",
    "position": "DF",
@@ -826,6 +874,7 @@
   },
   {
    "playerId": "25332",
+   "age": 26,
    "display_name": "Josh Sargent",
    "short_name": "J. Sargent",
    "position": "FW",
@@ -843,6 +892,7 @@
   },
   {
    "playerId": "162386",
+   "age": 24,
    "display_name": "Kristoffer Lund",
    "short_name": "K. Lund",
    "position": "DF",
@@ -860,6 +910,7 @@
   },
   {
    "playerId": "208667",
+   "age": 23,
    "display_name": "Jalen Neal",
    "short_name": "J. Neal",
    "position": "DF",
@@ -877,6 +928,7 @@
   },
   {
    "playerId": "418618",
+   "age": 18,
    "display_name": "Julian Hall",
    "short_name": "J. Hall",
    "position": "FW",
@@ -894,6 +946,7 @@
   },
   {
    "playerId": "50913",
+   "age": 27,
    "display_name": "Djordje Mihailović",
    "short_name": "D. Mihailović",
    "position": "MF",
@@ -911,6 +964,7 @@
   },
   {
    "playerId": "102508",
+   "age": 25,
    "display_name": "George Campbell",
    "short_name": "G. Campbell",
    "position": "DF",
@@ -928,6 +982,7 @@
   },
   {
    "playerId": "19607",
+   "age": 31,
    "display_name": "Matt Miazga",
    "short_name": "M. Miazga",
    "position": "DF",
@@ -945,6 +1000,7 @@
   },
   {
    "playerId": "340369",
+   "age": 21,
    "display_name": "Brooklyn Raines",
    "short_name": "B. Raines",
    "position": "MF",
@@ -962,6 +1018,7 @@
   },
   {
    "playerId": "265882",
+   "age": 22,
    "display_name": "Quinn Sullivan",
    "short_name": "Q. Sullivan",
    "position": "MF",
@@ -979,6 +1036,7 @@
   },
   {
    "playerId": "51144",
+   "age": 25,
    "display_name": "Bryan Reynolds",
    "short_name": "B. Reynolds",
    "position": "DF",
@@ -996,6 +1054,7 @@
   },
   {
    "playerId": "265884",
+   "age": 23,
    "display_name": "Paxten Aaronson",
    "short_name": "P. Aaronson",
    "position": "MF",
@@ -1013,6 +1072,7 @@
   },
   {
    "playerId": "50952",
+   "age": 34,
    "display_name": "Aaron Long",
    "short_name": "A. Long",
    "position": "DF",
@@ -1030,6 +1090,7 @@
   },
   {
    "playerId": "462853",
+   "age": 17,
    "display_name": "Cavan Sullivan",
    "short_name": "C. Sullivan",
    "position": "MF",
@@ -1047,6 +1108,7 @@
   },
   {
    "playerId": "363156",
+   "age": 21,
    "display_name": "Santiago Castañeda",
    "short_name": "S. Castaneda",
    "position": "MF",
@@ -1060,6 +1122,7 @@
   },
   {
    "playerId": "461514",
+   "age": 19,
    "display_name": "Justin Ellis",
    "short_name": "J. Ellis",
    "position": "FW",
@@ -1077,6 +1140,7 @@
   },
   {
    "playerId": "486522",
+   "age": 17,
    "display_name": "Mathis Albert",
    "short_name": "M. Albert",
    "position": "MF",
@@ -1094,6 +1158,7 @@
   },
   {
    "playerId": "50883",
+   "age": 32,
    "display_name": "Julian Gressel",
    "short_name": "J. Gressel",
    "position": "MF",
@@ -1111,6 +1176,7 @@
   },
   {
    "playerId": "102524",
+   "age": 25,
    "display_name": "Nathan Harriel",
    "short_name": "N. Harriel",
    "position": "DF",
@@ -1128,6 +1194,7 @@
   },
   {
    "playerId": "413230",
+   "age": 18,
    "display_name": "Peyton Miller",
    "short_name": "P. Miller",
    "position": "DF",
@@ -1145,6 +1212,7 @@
   },
   {
    "playerId": "18897",
+   "age": 33,
    "display_name": "DeAndre Yedlin",
    "short_name": "D. Yedlin",
    "position": "DF",
@@ -1162,6 +1230,7 @@
   },
   {
    "playerId": "428007",
+   "age": 19,
    "display_name": "Neil Pierre",
    "short_name": "N. Pierre",
    "position": "DF",
@@ -1179,6 +1248,7 @@
   },
   {
    "playerId": "64310",
+   "age": 29,
    "display_name": "Shaq Moore",
    "short_name": "S. Moore",
    "position": "DF",
@@ -1196,6 +1266,7 @@
   },
   {
    "playerId": "461645",
+   "age": 17,
    "display_name": "Adri Mehmeti",
    "short_name": "A. Mehmeti",
    "position": "MF",
@@ -1213,6 +1284,7 @@
   },
   {
    "playerId": "51118",
+   "age": 32,
    "display_name": "Jordan Morris",
    "short_name": "J. Morris",
    "position": "FW",
@@ -1230,6 +1302,7 @@
   },
   {
    "playerId": "328617",
+   "age": 20,
    "display_name": "Cole Campbell",
    "short_name": "C. Campbell",
    "position": "FW",
@@ -1247,6 +1320,7 @@
   },
   {
    "playerId": "129885",
+   "age": 28,
    "display_name": "Alan Soñora",
    "short_name": "A. Soñora",
    "position": "MF",
@@ -1264,6 +1338,7 @@
   },
   {
    "playerId": "362085",
+   "age": 20,
    "display_name": "Frankie Westfield",
    "short_name": "F. Westfield",
    "position": "DF",
@@ -1281,6 +1356,7 @@
   },
   {
    "playerId": "265762",
+   "age": 21,
    "display_name": "Reed Baker-Whiting",
    "short_name": "R. Baker-Whiting",
    "position": "MF",
@@ -1294,6 +1370,7 @@
   },
   {
    "playerId": "25617",
+   "age": 27,
    "display_name": "Timothy Tillman",
    "short_name": "T. Tillman",
    "position": "FW",
@@ -1311,6 +1388,7 @@
   },
   {
    "playerId": "407425",
+   "age": 20,
    "display_name": "Taha Habroune",
    "short_name": "T. Habroune",
    "position": "MF",
@@ -1324,6 +1402,7 @@
   },
   {
    "playerId": "129706",
+   "age": 28,
    "display_name": "Marlon Fossey",
    "short_name": "M. Fossey",
    "position": "DF",
@@ -1341,6 +1420,7 @@
   },
   {
    "playerId": "64167",
+   "age": 22,
    "display_name": "Gabriel Słonina",
    "short_name": "G. Słonina",
    "position": "GK",
@@ -1358,6 +1438,7 @@
   },
   {
    "playerId": "50828",
+   "age": 31,
    "display_name": "Zack Steffen",
    "short_name": "Z. Steffen",
    "position": "GK",
@@ -1375,6 +1456,7 @@
   },
   {
    "playerId": "362061",
+   "age": 21,
    "display_name": "Benjamin Cremaschi",
    "short_name": "B. Cremaschi",
    "position": "MF",
@@ -1392,6 +1474,7 @@
   },
   {
    "playerId": "149557",
+   "age": 23,
    "display_name": "Kevin Paredes",
    "short_name": "K. Paredes",
    "position": "MF",
@@ -1409,6 +1492,7 @@
   },
   {
    "playerId": "412227",
+   "age": 19,
    "display_name": "Zavier Gozo",
    "short_name": "Z. Gozo",
    "position": "FW",
@@ -1426,6 +1510,7 @@
   },
   {
    "playerId": "51027",
+   "age": 30,
    "display_name": "Tristan Blackmon",
    "short_name": "T. Blackmon",
    "position": "DF",
@@ -1443,6 +1528,7 @@
   },
   {
    "playerId": "212233",
+   "age": 23,
    "display_name": "Brian Gutiérrez",
    "short_name": "B. Gutiérrez",
    "position": "MF",
@@ -1460,6 +1546,7 @@
   },
   {
    "playerId": "312164",
+   "age": 21,
    "display_name": "Joshua Wynder",
    "short_name": "J. Wynder",
    "position": "DF",
@@ -1477,6 +1564,7 @@
   },
   {
    "playerId": "362139",
+   "age": 21,
    "display_name": "Nolan Norris",
    "short_name": "N. Norris",
    "position": "DF",
@@ -1490,6 +1578,7 @@
   },
   {
    "playerId": "389579",
+   "age": 20,
    "display_name": "Julian Eyestone",
    "short_name": "J. Eyestone",
    "position": "GK",
@@ -1503,6 +1592,7 @@
   },
   {
    "playerId": "351591",
+   "age": 21,
    "display_name": "Niko Tsakiris",
    "short_name": "N. Tsakiris",
    "position": "MF",
@@ -1516,6 +1606,7 @@
   },
   {
    "playerId": "207781",
+   "age": 23,
    "display_name": "Caden Clark",
    "short_name": "C. Clark",
    "position": "MF",
@@ -1533,6 +1624,7 @@
   },
   {
    "playerId": "362448",
+   "age": 20,
    "display_name": "Adam Beaudry",
    "short_name": "A. Beaudry",
    "position": "GK",
@@ -1546,6 +1638,7 @@
   },
   {
    "playerId": "418851",
+   "age": 20,
    "display_name": "Luca Bombino",
    "short_name": "L. Bombino",
    "position": "DF",
@@ -1559,6 +1652,7 @@
   },
   {
    "playerId": "266599",
+   "age": 22,
    "display_name": "Justin Che",
    "short_name": "J. Che",
    "position": "DF",
@@ -1572,6 +1666,7 @@
   },
   {
    "playerId": "51310",
+   "age": 31,
    "display_name": "Kellyn Acosta",
    "short_name": "K. Acosta",
    "position": "MF",
@@ -1589,6 +1684,7 @@
   },
   {
    "playerId": "413169",
+   "age": 27,
    "display_name": "Emeka Eneli",
    "short_name": "E. Eneli",
    "position": "MF",
@@ -1606,6 +1702,7 @@
   },
   {
    "playerId": "6719",
+   "age": 25,
    "display_name": "Matko Miljevic",
    "short_name": "M. Miljevic",
    "position": "MF",
@@ -1623,6 +1720,7 @@
   },
   {
    "playerId": "153506",
+   "age": 25,
    "display_name": "Indiana Vassilev",
    "short_name": "I. Vassilev",
    "position": "MF",
@@ -1640,6 +1738,7 @@
   },
   {
    "playerId": "265733",
+   "age": 21,
    "display_name": "Caleb Wiley",
    "short_name": "C. Wiley",
    "position": "DF",
@@ -1657,6 +1756,7 @@
   },
   {
    "playerId": "24842",
+   "age": 27,
    "display_name": "Lennard Maloney",
    "short_name": "L. Maloney",
    "position": "DF",
@@ -1674,6 +1774,7 @@
   },
   {
    "playerId": "203014",
+   "age": 25,
    "display_name": "Matthew Hoppe",
    "short_name": "M. Hoppe",
    "position": "FW",
@@ -1691,6 +1792,7 @@
   },
   {
    "playerId": "413207",
+   "age": 19,
    "display_name": "Ruben Ramos",
    "short_name": "R. Ramos",
    "position": "FW",
@@ -1704,6 +1806,7 @@
   },
   {
    "playerId": "351571",
+   "age": 26,
    "display_name": "Roman Celentano",
    "short_name": "R. Celentano",
    "position": "GK",
@@ -1721,6 +1824,7 @@
   },
   {
    "playerId": "50772",
+   "age": 31,
    "display_name": "Paul Arriola",
    "short_name": "P. Arriola",
    "position": "FW",
@@ -1738,6 +1842,7 @@
   },
   {
    "playerId": "357230",
+   "age": 26,
    "display_name": "Sean Zawadzki",
    "short_name": "S. Zawadzki",
    "position": "DF",
@@ -1755,6 +1860,7 @@
   },
   {
    "playerId": "201715",
+   "age": 29,
    "display_name": "Drake Callender",
    "short_name": "D. Callender",
    "position": "GK",
@@ -1772,6 +1878,7 @@
   },
   {
    "playerId": "203426",
+   "age": 23,
    "display_name": "Jonathan Gómez",
    "short_name": "J. Gómez",
    "position": "DF",
@@ -1789,6 +1896,7 @@
   },
   {
    "playerId": "73863",
+   "age": 24,
    "display_name": "Joshua Atencio",
    "short_name": "J. Atencio",
    "position": "MF",
@@ -1806,6 +1914,7 @@
   },
   {
    "playerId": "25335",
+   "age": 29,
    "display_name": "Jonathan Klinsmann",
    "short_name": "J. Klinsmann",
    "position": "GK",
@@ -1823,6 +1932,7 @@
   },
   {
    "playerId": "461633",
+   "age": 18,
    "display_name": "Ian James",
    "short_name": "I. James",
    "position": "DF",
@@ -1836,6 +1946,7 @@
   },
   {
    "playerId": "461627",
+   "age": 18,
    "display_name": "Jude Terry",
    "short_name": "J. Terry",
    "position": "MF",
@@ -1849,6 +1960,7 @@
   },
   {
    "playerId": "51185",
+   "age": 29,
    "display_name": "Jackson Yueill",
    "short_name": "J. Yueill",
    "position": "MF",
@@ -1866,6 +1978,7 @@
   },
   {
    "playerId": "407016",
+   "age": 25,
    "display_name": "Duncan McGuire",
    "short_name": "D. McGuire",
    "position": "FW",
@@ -1883,6 +1996,7 @@
   },
   {
    "playerId": "15783",
+   "age": 28,
    "display_name": "Emmanuel Sabbi",
    "short_name": "E. Sabbi",
    "position": "MF",
@@ -1900,6 +2014,7 @@
   },
   {
    "playerId": "463542",
+   "age": 18,
    "display_name": "Christopher Cupps",
    "short_name": "C. Cupps",
    "position": "DF",
@@ -1913,6 +2028,7 @@
   },
   {
    "playerId": "102510",
+   "age": 27,
    "display_name": "Samual Rogers",
    "short_name": "S. Rogers",
    "position": "DF",
@@ -1930,6 +2046,7 @@
   },
   {
    "playerId": "365552",
+   "age": 20,
    "display_name": "Cruz Medina",
    "short_name": "C. Medina",
    "position": "MF",
@@ -1943,6 +2060,7 @@
   },
   {
    "playerId": "312998",
+   "age": 25,
    "display_name": "Aziel Jackson",
    "short_name": "A. Jackson",
    "position": "MF",
@@ -1960,6 +2078,7 @@
   },
   {
    "playerId": "542233",
+   "age": 16,
    "display_name": "Malik Jakupovic",
    "short_name": "M. Jakupovic",
    "position": "FW",
@@ -1973,6 +2092,7 @@
   },
   {
    "playerId": "201788",
+   "age": 29,
    "display_name": "Nkosi Burgess",
    "short_name": "N. Burgess",
    "position": "DF",
@@ -1990,6 +2110,7 @@
   },
   {
    "playerId": "351572",
+   "age": 26,
    "display_name": "Ian Murphy",
    "short_name": "I. Murphy",
    "position": "DF",
@@ -2007,6 +2128,7 @@
   },
   {
    "playerId": "340571",
+   "age": 22,
    "display_name": "Rokas Pukštas",
    "short_name": "R. Pukštas",
    "position": "MF",
@@ -2020,6 +2142,7 @@
   },
   {
    "playerId": "359942",
+   "age": 20,
    "display_name": "Matai Akinmboni",
    "short_name": "M. Akinmboni",
    "position": "DF",
@@ -2033,6 +2156,7 @@
   },
   {
    "playerId": "380625",
+   "age": 21,
    "display_name": "Grayson Dettoni",
    "short_name": "Grayson Dettoni",
    "position": "DF",
@@ -2046,6 +2170,7 @@
   },
   {
    "playerId": "507608",
+   "age": 16,
    "display_name": "Robert Turdean",
    "short_name": "R. Turdean",
    "position": "MF",
