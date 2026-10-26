@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import * as S from "../js/storage.js";
+import { POPOVERS } from "../js/copy.js";
 import * as P from "../js/players-model.js";
 
 const fakeWin = () => { const m = new Map(); return { localStorage: { getItem: (k) => (m.has(k) ? m.get(k) : null), setItem: (k, v) => m.set(k, String(v)), removeItem: (k) => m.delete(k) } }; };
@@ -86,8 +87,16 @@ test("players-model: tier labels, descriptors, last-named line", () => {
   assert.equal(P.tierLabel({ tier: "core" }), "Core");
   assert.equal(P.tierLabel({ tier: "in_the_mix" }), "In the mix");
   assert.equal(P.tierLabel({ is_prospect: true, youth_level: "U20", tier: "wider_pool" }), "Prospect · U20");
-  assert.match(P.tierDescriptor({ is_prospect: true }), /Youth international/);
-  assert.ok(!/(appearance|capped|played|caps?\b|last )/i.test(Object.values(P.TIER_DESCRIPTOR).join(" ")));      // spec 8.1: no squad-history claims
+  assert.equal(P.tierPopoverKey({ is_prospect: true, tier: "core" }), "tier_prospect");
+  assert.equal(P.tierPopoverKey({ tier: "in_the_mix" }), "tier_in_the_mix");
+  assert.equal(P.tierPopoverKey({ tier: "something_new" }), "tier_wider_pool");
+  for (const k of ["tier_core", "tier_contender", "tier_in_the_mix", "tier_wider_pool", "tier_prospect"]) assert.ok(POPOVERS[k], `${k} has a popover`);
+  assert.match(POPOVERS.tier_prospect, /Youth international/);
+  const tierText = ["tier_core", "tier_contender", "tier_in_the_mix", "tier_wider_pool", "tier_prospect"].map((k) => POPOVERS[k]).join(" ");
+  assert.ok(!/(appearance|capped|played|caps?\b|last )/i.test(tierText));      // spec 8.1: no squad-history claims
+  assert.equal(P.ageLine({ age: 28 }), "Age 28");
+  assert.equal(P.ageLine({ age: 16 }), "Age 16");                                // minors are shown (Derek, 2026-10-26)
+  for (const bad of [{}, { age: null }, { age: "28" }, { age: 7 }, { age: 99 }, { age: 27.5 }, null]) assert.equal(P.ageLine(bad), null);
   const now = new Date("2026-10-09T12:00:00Z");
   const a = P.lastNamedLine({ last_named: { date: "2025-09-09", competition: "Friendly", opponent: "Japan" } }, now);
   assert.equal(a.text, "Last named: Sep 9, 2025 · Friendly vs Japan"); assert.equal(a.rel, "13 months ago"); assert.equal(a.muted, true);

@@ -20,6 +20,7 @@
    "tier": "core",
    "is_prospect": false,
    "youth_level": null,
+   "age": 25,
    "last_named": {
     "date": "2026-09-06",
     "competition": "Friendly",
@@ -37,6 +38,7 @@
    "tier": "core",
    "is_prospect": false,
    "youth_level": null,
+   "age": 28,
    "last_named": {
     "date": "2026-09-06",
     "competition": "Friendly",
@@ -54,6 +56,7 @@
    "tier": "core",
    "is_prospect": false,
    "youth_level": null,
+   "age": 31,
    "last_named": {
     "date": "2026-09-06",
     "competition": "Friendly",
@@ -71,6 +74,7 @@
    "tier": "core",
    "is_prospect": false,
    "youth_level": null,
+   "age": 34,
    "last_named": null
   },
   {
@@ -84,6 +88,7 @@
    "tier": "core",
    "is_prospect": false,
    "youth_level": null,
+   "age": 37,
    "last_named": null
   },
   {
@@ -97,6 +102,7 @@
    "tier": "core",
    "is_prospect": false,
    "youth_level": null,
+   "age": 24,
    "last_named": null
   },
   {
@@ -110,6 +116,7 @@
    "tier": "core",
    "is_prospect": false,
    "youth_level": null,
+   "age": null,
    "last_named": null
   },
   {
@@ -123,6 +130,7 @@
    "tier": "core",
    "is_prospect": false,
    "youth_level": null,
+   "age": 30,
    "last_named": null
   },
   {
@@ -136,6 +144,7 @@
    "tier": "core",
    "is_prospect": false,
    "youth_level": null,
+   "age": 33,
    "last_named": null
   },
   {
@@ -149,6 +158,7 @@
    "tier": "contender",
    "is_prospect": false,
    "youth_level": null,
+   "age": 36,
    "last_named": {
     "date": "2026-06-14",
     "competition": "World Cup",
@@ -166,6 +176,7 @@
    "tier": "contender",
    "is_prospect": false,
    "youth_level": null,
+   "age": 23,
    "last_named": null
   },
   {
@@ -179,6 +190,7 @@
    "tier": "contender",
    "is_prospect": false,
    "youth_level": null,
+   "age": 26,
    "last_named": null
   },
   {
@@ -192,6 +204,7 @@
    "tier": "contender",
    "is_prospect": false,
    "youth_level": null,
+   "age": 29,
    "last_named": null
   },
   {
@@ -205,6 +218,7 @@
    "tier": "contender",
    "is_prospect": false,
    "youth_level": null,
+   "age": 32,
    "last_named": null
   },
   {
@@ -218,6 +232,7 @@
    "tier": "contender",
    "is_prospect": false,
    "youth_level": null,
+   "age": 35,
    "last_named": null
   },
   {
@@ -231,6 +246,7 @@
    "tier": "contender",
    "is_prospect": false,
    "youth_level": null,
+   "age": 22,
    "last_named": null
   },
   {
@@ -244,6 +260,7 @@
    "tier": "contender",
    "is_prospect": false,
    "youth_level": null,
+   "age": 25,
    "last_named": null
   },
   {
@@ -257,6 +274,7 @@
    "tier": "in_the_mix",
    "is_prospect": false,
    "youth_level": null,
+   "age": 28,
    "last_named": {
     "date": "2025-03-20",
     "competition": "Nations League",
@@ -274,6 +292,7 @@
    "tier": "in_the_mix",
    "is_prospect": false,
    "youth_level": null,
+   "age": 31,
    "last_named": null
   },
   {
@@ -287,6 +306,7 @@
    "tier": "in_the_mix",
    "is_prospect": false,
    "youth_level": null,
+   "age": 34,
    "last_named": null
   },
   {
@@ -300,6 +320,7 @@
    "tier": "in_the_mix",
    "is_prospect": false,
    "youth_level": null,
+   "age": 37,
    "last_named": null
   },
   {
@@ -313,6 +334,7 @@
    "tier": "in_the_mix",
    "is_prospect": false,
    "youth_level": null,
+   "age": 24,
    "last_named": null
   },
   {
@@ -326,6 +348,7 @@
    "tier": "in_the_mix",
    "is_prospect": false,
    "youth_level": null,
+   "age": 27,
    "last_named": null
   },
   {
@@ -339,6 +362,7 @@
    "tier": "in_the_mix",
    "is_prospect": false,
    "youth_level": null,
+   "age": 30,
    "last_named": null
   },
   {
@@ -352,6 +376,7 @@
    "tier": "wider_pool",
    "is_prospect": false,
    "youth_level": null,
+   "age": 33,
    "last_named": {
     "date": "2024-01-20",
     "competition": "Friendly",
@@ -369,6 +394,7 @@
    "tier": "wider_pool",
    "is_prospect": false,
    "youth_level": null,
+   "age": 36,
    "last_named": null
   },
   {
@@ -382,6 +408,7 @@
    "tier": "wider_pool",
    "is_prospect": false,
    "youth_level": null,
+   "age": 23,
    "last_named": null
   },
   {
@@ -395,6 +422,7 @@
    "tier": "wider_pool",
    "is_prospect": true,
    "youth_level": "U20",
+   "age": 16,
    "last_named": null
   },
   {
@@ -408,6 +436,7 @@
    "tier": "wider_pool",
    "is_prospect": true,
    "youth_level": "U20",
+   "age": 17,
    "last_named": null
   },
   {
@@ -421,6 +450,7 @@
    "tier": "wider_pool",
    "is_prospect": true,
    "youth_level": "U17",
+   "age": 18,
    "last_named": null
   }
  ]

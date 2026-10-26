@@ -1,8 +1,8 @@
 // players-model.js — pure helpers for how a player is described. Shared by the
 // Matches page (player sheet) and the Players page.
 //
-// Spec §8: tier word + number; descriptors describe position in the pool, never
-// squad history; "Last named" is its own line.
+// Spec §8: tier word + number; the tier definitions (in copy.js) describe position in the pool,
+// never squad history; "Last named" is its own line.
 
 import { monthsBetween } from "./time.js";
 
@@ -13,23 +13,22 @@ export const TIER_WORD = {
   wider_pool: "Wider pool",
 };
 
-export const TIER_DESCRIPTOR = {
-  core: "Top of the pool: the players most likely to be in the squad",
-  contender: "Strong candidate: firmly in the squad conversation",
-  in_the_mix: "In the conversation: could be named when the squad changes",
-  wider_pool: "Tracked, but not close right now",
-  prospect: "Youth international in the pool",
-};
-
 /** The label shown in place of a tier word: "Prospect · U20" or "Core". */
 export function tierLabel(p) {
   if (p.is_prospect) return `Prospect · ${p.youth_level || "Youth"}`;
   return TIER_WORD[p.tier] || TIER_WORD.wider_pool;
 }
 
-export function tierDescriptor(p) {
-  if (p.is_prospect) return TIER_DESCRIPTOR.prospect;
-  return TIER_DESCRIPTOR[p.tier] || TIER_DESCRIPTOR.wider_pool;
+/** POPOVERS key for the tier name on the player card (the definition lives in copy.js). */
+export function tierPopoverKey(p) {
+  if (p.is_prospect) return "tier_prospect";
+  return `tier_${TIER_WORD[p.tier] ? p.tier : "wider_pool"}`;
+}
+
+/** "Age 28" for the card, or null when the feed has no usable age (the line is then left out, never guessed). */
+export function ageLine(p) {
+  const a = p && p.age;
+  return Number.isInteger(a) && a >= 10 && a <= 60 ? `Age ${a}` : null;
 }
 
 /**

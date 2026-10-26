@@ -4,7 +4,8 @@
 
 import { h, clear } from "./dom.js";
 import { LEGEND, ET_NOTE } from "../copy.js";
-import { tierLabel, tierDescriptor, lastNamedLine, chipName } from "../players-model.js";
+import { tierLabel, tierPopoverKey, ageLine, lastNamedLine, chipName } from "../players-model.js";
+import { term } from "./popover.js";
 import { encodeShare, decodeShare } from "../storage.js";
 
 let dlg = null, opener = null, pushed = false, onCloseCb = null;
@@ -64,9 +65,9 @@ export function playerSheet(p, id, { followed, onToggle, now, from }) {
       h("div", { class: "player-head" },
         p.photo ? h("img", { class: "photo", src: p.photo, alt: "", width: 72, height: 72, loading: "lazy", referrerpolicy: "no-referrer" }) : h("div", { class: "photo ph", "aria-hidden": "true" }),
         h("div", null,
-          h("p", { class: "tier-line" }, h("b", null, tierLabel(p)), h("span", { class: "tier-num" }, ` · Pool relevance ${p.score}/100`)),
-          h("p", { class: "dim" }, tierDescriptor(p)),
-          p.position || p.club ? h("p", { class: "dim" }, [p.position, p.club].filter(Boolean).join(" · ")) : null)),
+          h("p", { class: "tier-line" }, h("b", null, term(tierLabel(p), tierPopoverKey(p))), h("span", { class: "tier-num" }, ` · Pool relevance ${p.score}/100`)),
+          p.position || p.club ? h("p", { class: "dim" }, [p.position, p.club].filter(Boolean).join(" · ")) : null,
+          ageLine(p) ? h("p", { class: "dim" }, ageLine(p)) : null)),
       h("p", { class: `last-named${ln.muted ? " is-muted" : ""}` }, ln.text, ln.rel ? ` · ${ln.rel}` : ""),
       h("p", { class: "dim small" }, "Named = in the matchday squad, including unused substitutes."));
   } else {

@@ -87,3 +87,12 @@ export const POPOVERS = {
   relevance: "A 1 to 100 score for how close a player is to the national team picture right now.",
   follow: "Pins a player's matches to the top. Saved on this device.",
 };
+
+// The tier-name popovers on the player card reuse the Legend's wording, so the two can never drift apart.
+const PLAYER_ROWS = LEGEND.find((s) => s.title === "Players page").rows;
+const legendRow = (label) => PLAYER_ROWS.find((r) => r[0] === label)[1];
+POPOVERS.tier_core = legendRow("Core");
+POPOVERS.tier_contender = legendRow("Contender");
+POPOVERS.tier_in_the_mix = legendRow("In the mix");
+POPOVERS.tier_wider_pool = legendRow("Wider pool");
+POPOVERS.tier_prospect = legendRow("Prospect · U20");
