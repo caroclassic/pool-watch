@@ -1,10 +1,10 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-26T14:51:05Z",
+ "updated_at": "2026-10-27T04:01:24Z",
  "reference_tz": "America/New_York",
  "window": {
-  "start": "2026-10-26",
-  "end": "2026-11-09"
+  "start": "2026-10-27",
+  "end": "2026-11-10"
  },
  "tier_thresholds": {
   "schema_version": 1,
@@ -13,25 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1552800",
-   "kickoff_utc": "2026-10-26T19:30:00Z",
-   "competition": "Ligue 1",
-   "home": "Paris Saint Germain",
-   "away": "Lyon",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "beIN SPORTS",
-   "pool_players": [
-    {
-     "playerId": "80752",
-     "side": "away"
-    }
-   ]
-  },
   {
    "matchId": "1638560",
    "kickoff_utc": "2026-10-27T17:00:00Z",
