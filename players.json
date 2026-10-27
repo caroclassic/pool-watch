@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-26T14:54:49Z",
- "top_score": 10.038,
+ "updated_at": "2026-10-27T08:01:26Z",
+ "top_score": 10.03,
  "player_tier_bands": {
   "core_min": 61,
   "contender_min": 42,
@@ -322,7 +322,7 @@
    "position": "MF",
    "club": "Marseille",
    "photo": "https://media.api-sports.io/football/players/1138.png",
-   "score": 47,
+   "score": 48,
    "tier": "contender",
    "is_prospect": false,
    "youth_level": null,
@@ -2078,7 +2078,7 @@
   },
   {
    "playerId": "542233",
-   "age": 16,
+   "age": 17,
    "display_name": "Malik Jakupovic",
    "short_name": "M. Jakupovic",
    "position": "FW",
