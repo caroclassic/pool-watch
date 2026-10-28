@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-28T19:41:05Z",
+ "updated_at": "2026-10-28T19:51:05Z",
  "active": true,
  "matches": {
   "1490571": {
@@ -127,8 +127,8 @@
    }
   },
   "1550171": {
-   "status": "scheduled",
-   "status_updated_at": "2026-10-28T04:01:25Z",
+   "status": "live",
+   "status_updated_at": "2026-10-28T19:51:05Z",
    "lineups_confirmed": true,
    "tier": "must_watch",
    "tier_at_kickoff": null,
@@ -165,8 +165,8 @@
    "participation": {}
   },
   "1556689": {
-   "status": "scheduled",
-   "status_updated_at": "2026-10-28T04:01:25Z",
+   "status": "live",
+   "status_updated_at": "2026-10-28T19:51:05Z",
    "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
@@ -176,8 +176,8 @@
    }
   },
   "1556690": {
-   "status": "scheduled",
-   "status_updated_at": "2026-10-28T04:01:25Z",
+   "status": "live",
+   "status_updated_at": "2026-10-28T19:51:05Z",
    "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
@@ -186,8 +186,8 @@
    }
   },
   "1638557": {
-   "status": "scheduled",
-   "status_updated_at": "2026-10-28T04:01:25Z",
+   "status": "live",
+   "status_updated_at": "2026-10-28T19:51:05Z",
    "lineups_confirmed": true,
    "tier": "must_watch",
    "tier_at_kickoff": null,
@@ -196,8 +196,8 @@
    }
   },
   "1638568": {
-   "status": "scheduled",
-   "status_updated_at": "2026-10-28T04:01:25Z",
+   "status": "live",
+   "status_updated_at": "2026-10-28T19:51:05Z",
    "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
@@ -216,8 +216,8 @@
    }
   },
   "1640383": {
-   "status": "scheduled",
-   "status_updated_at": "2026-10-28T04:01:25Z",
+   "status": "live",
+   "status_updated_at": "2026-10-28T19:51:05Z",
    "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
@@ -226,8 +226,8 @@
    }
   },
   "1640387": {
-   "status": "scheduled",
-   "status_updated_at": "2026-10-28T04:01:25Z",
+   "status": "live",
+   "status_updated_at": "2026-10-28T19:51:05Z",
    "lineups_confirmed": true,
    "tier": "must_watch",
    "tier_at_kickoff": null,
