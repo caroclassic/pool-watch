@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-28T19:21:14Z",
+ "updated_at": "2026-10-28T19:31:06Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-28",
@@ -235,25 +235,6 @@
     {
      "playerId": "359942",
      "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1640388",
-   "kickoff_utc": "2026-10-28T20:00:00Z",
-   "competition": "EFL Cup",
-   "home": "Liverpool",
-   "away": "Chelsea",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "64167",
-     "side": "away"
     }
    ]
   },
