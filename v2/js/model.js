@@ -32,11 +32,12 @@ const DISRUPTED = new Set(["postponed", "cancelled"]);
 /** matches.json (schedule) + status.json (volatile) → one flat view per match. */
 export function mergeFeeds(matchesFeed, statusFeed) {
   const sm = (statusFeed && statusFeed.matches) || {};
-  return ((matchesFeed && matchesFeed.matches) || []).map((m) => {
+  return ((matchesFeed && matchesFeed.matches) || []).map((m, idx) => {
     const s = sm[m.matchId];
     const has = (k) => s && Object.prototype.hasOwnProperty.call(s, k);
     return {
       id: String(m.matchId),
+      order: idx,                       // position in matches.json: kickoff, then highest match score first
       kickoffUtc: m.kickoff_utc,
       etDay: etDateKey(m.kickoff_utc),
       competition: m.competition,
@@ -226,7 +227,8 @@ export function cardView(v, ctx) {
 
 // ── a day ───────────────────────────────────────────────────────────────────
 
-const byKickoff = (a, b) => (Date.parse(a.kickoffUtc) - Date.parse(b.kickoffUtc)) || a.id.localeCompare(b.id);
+// Same kickoff: the feed's own order (highest match score first), then id.
+const byKickoff = (a, b) => (Date.parse(a.kickoffUtc) - Date.parse(b.kickoffUtc)) || ((a.order ?? 0) - (b.order ?? 0)) || a.id.localeCompare(b.id);
 
 /**
  * The whole page body for one ET day, in band order.

@@ -363,3 +363,14 @@ test("roll-over banner: shows when the remembered today is stale; any route to t
   // a second midnight brings it back
   assert.equal(M.rolledOver(later, "2026-10-19"), true);
 });
+
+test("buildDay: same kickoff keeps the feed's order (highest match score first), kickoff still wins", () => {
+  // Feed order is what feed.py publishes: kickoff, then score. ids are deliberately out of numeric order.
+  const mf = feed([
+    match("900", { ko: iso(3), tier: "worth_a_look" }),
+    match("100", { ko: iso(3), tier: "worth_a_look" }),
+    match("500", { ko: iso(2), tier: "worth_a_look" }),
+  ]);
+  const d = M.buildDay(ctx(view(mf, sfeed())));
+  assert.deepEqual(d.worth.map((c) => c.id), ["500", "900", "100"]);
+});
