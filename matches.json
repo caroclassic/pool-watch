@@ -1,10 +1,10 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-27T20:31:06Z",
+ "updated_at": "2026-10-28T04:01:32Z",
  "reference_tz": "America/New_York",
  "window": {
-  "start": "2026-10-27",
-  "end": "2026-11-10"
+  "start": "2026-10-28",
+  "end": "2026-11-11"
  },
  "tier_thresholds": {
   "schema_version": 1,
@@ -13,105 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1638560",
-   "kickoff_utc": "2026-10-27T17:00:00Z",
-   "competition": "DFB Pokal",
-   "home": "VfL Bochum",
-   "away": "FSV Mainz 05",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "24842",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1638559",
-   "kickoff_utc": "2026-10-27T19:45:00Z",
-   "competition": "DFB Pokal",
-   "home": "Borussia Mönchengladbach",
-   "away": "Karlsruher SC",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "50852",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1638561",
-   "kickoff_utc": "2026-10-27T19:45:00Z",
-   "competition": "DFB Pokal",
-   "home": "Borussia Dortmund",
-   "away": "Werder Bremen",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "486522",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1638562",
-   "kickoff_utc": "2026-10-27T19:45:00Z",
-   "competition": "DFB Pokal",
-   "home": "SV Elversberg",
-   "away": "SV Darmstadt 98",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "328617",
-     "side": "home"
-    },
-    {
-     "playerId": "380625",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1644360",
-   "kickoff_utc": "2026-10-27T20:00:00Z",
-   "competition": "Copa del Rey",
-   "home": "Manacor",
-   "away": "Villarreal",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "355994",
-     "side": "away"
-    }
-   ]
-  },
   {
    "matchId": "1638570",
    "kickoff_utc": "2026-10-28T17:00:00Z",
@@ -368,7 +269,7 @@
    "away": "Atlanta United FC",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "must_watch",
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
@@ -644,7 +545,7 @@
    "away": "Real Salt Lake",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": null,
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
