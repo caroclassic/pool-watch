@@ -1,47 +1,73 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-28T22:51:08Z",
+ "updated_at": "2026-10-28T23:01:09Z",
  "active": true,
  "matches": {
   "1490571": {
    "status": "scheduled",
    "status_updated_at": "2026-10-28T04:01:25Z",
-   "lineups_confirmed": false,
-   "tier": "worth_a_look",
+   "lineups_confirmed": true,
+   "tier": null,
    "tier_at_kickoff": null,
-   "participation": {}
+   "participation": {
+    "50879": "not_in_squad",
+    "351571": "starts"
+   }
   },
   "1490572": {
    "status": "scheduled",
    "status_updated_at": "2026-10-28T04:01:25Z",
-   "lineups_confirmed": false,
-   "tier": "worth_a_look",
+   "lineups_confirmed": true,
+   "tier": "must_watch",
    "tier_at_kickoff": null,
-   "participation": {}
+   "participation": {
+    "19607": "bench",
+    "50728": "starts",
+    "50863": "starts"
+   }
   },
   "1490573": {
    "status": "scheduled",
    "status_updated_at": "2026-10-28T04:01:25Z",
-   "lineups_confirmed": false,
+   "lineups_confirmed": true,
    "tier": "must_watch",
    "tier_at_kickoff": null,
-   "participation": {}
+   "participation": {
+    "62": "starts",
+    "50999": "starts",
+    "51185": "starts",
+    "51186": "starts",
+    "266599": "not_in_squad",
+    "312164": "starts",
+    "340369": "starts",
+    "413230": "bench",
+    "418618": "starts",
+    "461645": "starts"
+   }
   },
   "1490574": {
    "status": "scheduled",
    "status_updated_at": "2026-10-28T04:01:25Z",
-   "lineups_confirmed": false,
+   "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
-   "participation": {}
+   "participation": {
+    "19026": "bench",
+    "208667": "not_in_squad"
+   }
   },
   "1490575": {
    "status": "scheduled",
    "status_updated_at": "2026-10-28T04:01:25Z",
-   "lineups_confirmed": false,
+   "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
-   "participation": {}
+   "participation": {
+    "25332": "starts",
+    "50848": "starts",
+    "50913": "starts",
+    "51032": "not_in_squad"
+   }
   },
   "1490576": {
    "status": "scheduled",

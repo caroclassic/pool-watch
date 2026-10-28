@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-28T20:21:05Z",
+ "updated_at": "2026-10-28T23:01:09Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-28",
@@ -301,11 +301,15 @@
    "away": "Atlanta United FC",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
+    {
+     "playerId": "19607",
+     "side": "home"
+    },
     {
      "playerId": "50728",
      "side": "home"
@@ -313,29 +317,6 @@
     {
      "playerId": "50863",
      "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1490571",
-   "kickoff_utc": "2026-10-28T23:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Inter Miami",
-   "away": "FC Cincinnati",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50879",
-     "side": "away"
-    },
-    {
-     "playerId": "351571",
-     "side": "away"
     }
    ]
   },
@@ -389,6 +370,29 @@
     },
     {
      "playerId": "208667",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1490571",
+   "kickoff_utc": "2026-10-28T23:30:00Z",
+   "competition": "Major League Soccer",
+   "home": "Inter Miami",
+   "away": "FC Cincinnati",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "MLS Season Pass (Apple TV)",
+   "pool_players": [
+    {
+     "playerId": "50879",
+     "side": "away"
+    },
+    {
+     "playerId": "351571",
      "side": "away"
     }
    ]
