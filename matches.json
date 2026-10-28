@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-28T18:01:05Z",
+ "updated_at": "2026-10-28T19:21:14Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-28",
@@ -121,20 +121,20 @@
    ]
   },
   {
-   "matchId": "1640383",
+   "matchId": "1638557",
    "kickoff_utc": "2026-10-28T19:45:00Z",
-   "competition": "EFL Cup",
-   "home": "Bournemouth",
-   "away": "Aston Villa",
+   "competition": "DFB Pokal",
+   "home": "Bayer Leverkusen",
+   "away": "1. FC Nürnberg",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "—",
    "pool_players": [
     {
-     "playerId": "1150",
+     "playerId": "162037",
      "side": "home"
     }
    ]
@@ -147,7 +147,7 @@
    "away": "Juventus",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "Paramount+",
@@ -159,43 +159,20 @@
    ]
   },
   {
-   "matchId": "1638557",
+   "matchId": "1640383",
    "kickoff_utc": "2026-10-28T19:45:00Z",
-   "competition": "DFB Pokal",
-   "home": "Bayer Leverkusen",
-   "away": "1. FC Nürnberg",
+   "competition": "EFL Cup",
+   "home": "Bournemouth",
+   "away": "Aston Villa",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": null,
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "—",
    "pool_players": [
     {
-     "playerId": "162037",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1556689",
-   "kickoff_utc": "2026-10-28T19:45:00Z",
-   "competition": "Scottish Premiership",
-   "home": "Celtic",
-   "away": "Dundee Utd",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "19314",
-     "side": "home"
-    },
-    {
-     "playerId": "50737",
+     "playerId": "1150",
      "side": "home"
     }
    ]
@@ -215,6 +192,48 @@
    "pool_players": [
     {
      "playerId": "119002",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1556689",
+   "kickoff_utc": "2026-10-28T19:45:00Z",
+   "competition": "Scottish Premiership",
+   "home": "Celtic",
+   "away": "Dundee Utd",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "19314",
+     "side": "home"
+    },
+    {
+     "playerId": "50737",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1556690",
+   "kickoff_utc": "2026-10-28T19:45:00Z",
+   "competition": "Scottish Premiership",
+   "home": "Dundee",
+   "away": "Kilmarnock",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "359942",
      "side": "home"
     }
    ]
