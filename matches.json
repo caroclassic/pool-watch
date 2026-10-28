@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-28T12:11:05Z",
+ "updated_at": "2026-10-28T14:11:25Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-28",
@@ -750,6 +750,25 @@
    ]
   },
   {
+   "matchId": "1552806",
+   "kickoff_utc": "2026-10-30T18:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Nice",
+   "away": "Rennes",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "beIN SPORTS",
+   "pool_players": [
+    {
+     "playerId": "51144",
+     "side": "away"
+    }
+   ]
+  },
+  {
    "matchId": "1575211",
    "kickoff_utc": "2026-10-30T19:30:00Z",
    "competition": "Bundesliga",
@@ -1100,25 +1119,6 @@
    "pool_players": [
     {
      "playerId": "463542",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1552806",
-   "kickoff_utc": "2026-10-31T16:15:00Z",
-   "competition": "Ligue 1",
-   "home": "Nice",
-   "away": "Rennes",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "beIN SPORTS",
-   "pool_players": [
-    {
-     "playerId": "51144",
      "side": "away"
     }
    ]
