@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-28T23:01:09Z",
+ "updated_at": "2026-10-29T00:01:08Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-28",
@@ -247,7 +247,7 @@
    "fixture_kind": "club",
    "status": "scheduled",
    "tier": "must_watch",
-   "tier_at_kickoff": null,
+   "tier_at_kickoff": "must_watch",
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
@@ -302,7 +302,7 @@
    "fixture_kind": "club",
    "status": "scheduled",
    "tier": "must_watch",
-   "tier_at_kickoff": null,
+   "tier_at_kickoff": "must_watch",
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
@@ -449,37 +449,6 @@
    ]
   },
   {
-   "matchId": "1490580",
-   "kickoff_utc": "2026-10-29T00:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Austin",
-   "away": "Real Salt Lake",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "18897",
-     "side": "away"
-    },
-    {
-     "playerId": "50893",
-     "side": "home"
-    },
-    {
-     "playerId": "312896",
-     "side": "away"
-    },
-    {
-     "playerId": "413169",
-     "side": "away"
-    }
-   ]
-  },
-  {
    "matchId": "1490577",
    "kickoff_utc": "2026-10-29T00:30:00Z",
    "competition": "Major League Soccer",
@@ -538,15 +507,19 @@
     {
      "playerId": "461514",
      "side": "away"
+    },
+    {
+     "playerId": "507608",
+     "side": "home"
     }
    ]
   },
   {
-   "matchId": "1490579",
+   "matchId": "1490580",
    "kickoff_utc": "2026-10-29T00:30:00Z",
    "competition": "Major League Soccer",
-   "home": "Minnesota United FC",
-   "away": "Sporting Kansas City",
+   "home": "Austin",
+   "away": "Real Salt Lake",
    "fixture_kind": "club",
    "status": "scheduled",
    "tier": null,
@@ -555,19 +528,19 @@
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
     {
-     "playerId": "201715",
-     "side": "home"
-    },
-    {
-     "playerId": "312998",
-     "side": "home"
-    },
-    {
-     "playerId": "413207",
+     "playerId": "18897",
      "side": "away"
     },
     {
-     "playerId": "461633",
+     "playerId": "50893",
+     "side": "home"
+    },
+    {
+     "playerId": "312896",
+     "side": "away"
+    },
+    {
+     "playerId": "413169",
      "side": "away"
     }
    ]
@@ -588,6 +561,41 @@
     {
      "playerId": "334362",
      "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1490579",
+   "kickoff_utc": "2026-10-29T00:30:00Z",
+   "competition": "Major League Soccer",
+   "home": "Minnesota United FC",
+   "away": "Sporting Kansas City",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "MLS Season Pass (Apple TV)",
+   "pool_players": [
+    {
+     "playerId": "50883",
+     "side": "home"
+    },
+    {
+     "playerId": "201715",
+     "side": "home"
+    },
+    {
+     "playerId": "312998",
+     "side": "home"
+    },
+    {
+     "playerId": "413207",
+     "side": "away"
+    },
+    {
+     "playerId": "461633",
+     "side": "away"
     }
    ]
   },
