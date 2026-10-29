@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-29T04:01:24Z",
+ "updated_at": "2026-10-29T08:01:28Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-29",
@@ -13,115 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1490583",
-   "kickoff_utc": "2026-10-29T02:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Seattle Sounders",
-   "away": "Houston Dynamo",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": "worth_a_look",
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50772",
-     "side": "home"
-    },
-    {
-     "playerId": "51114",
-     "side": "home"
-    },
-    {
-     "playerId": "51118",
-     "side": "home"
-    },
-    {
-     "playerId": "51142",
-     "side": "home"
-    },
-    {
-     "playerId": "207781",
-     "side": "home"
-    },
-    {
-     "playerId": "407016",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1490582",
-   "kickoff_utc": "2026-10-29T02:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Vancouver Whitecaps",
-   "away": "San Diego",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "15783",
-     "side": "home"
-    },
-    {
-     "playerId": "50969",
-     "side": "home"
-    },
-    {
-     "playerId": "51027",
-     "side": "home"
-    },
-    {
-     "playerId": "351572",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1490584",
-   "kickoff_utc": "2026-10-29T02:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "San Jose Earthquakes",
-   "away": "Colorado Rapids",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50828",
-     "side": "away"
-    },
-    {
-     "playerId": "51013",
-     "side": "home"
-    },
-    {
-     "playerId": "73863",
-     "side": "away"
-    },
-    {
-     "playerId": "265884",
-     "side": "away"
-    },
-    {
-     "playerId": "351591",
-     "side": "home"
-    },
-    {
-     "playerId": "362448",
-     "side": "away"
-    }
-   ]
-  },
   {
    "matchId": "1641978",
    "kickoff_utc": "2026-10-29T17:45:00Z",
@@ -866,6 +757,25 @@
    ]
   },
   {
+   "matchId": "1490592",
+   "kickoff_utc": "2026-10-31T21:00:00Z",
+   "competition": "Major League Soccer",
+   "home": "Los Angeles Galaxy",
+   "away": "Austin",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "MLS Season Pass (Apple TV)",
+   "pool_players": [
+    {
+     "playerId": "50893",
+     "side": "away"
+    }
+   ]
+  },
+  {
    "matchId": "1490596",
    "kickoff_utc": "2026-10-31T21:00:00Z",
    "competition": "Major League Soccer",
@@ -892,25 +802,6 @@
     },
     {
      "playerId": "413169",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1490592",
-   "kickoff_utc": "2026-10-31T21:00:00Z",
-   "competition": "Major League Soccer",
-   "home": "Los Angeles Galaxy",
-   "away": "Austin",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50893",
      "side": "away"
     }
    ]
@@ -1038,7 +929,7 @@
    "away": "Celtic",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": null,
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "—",
@@ -1832,29 +1723,6 @@
    ]
   },
   {
-   "matchId": "1636250",
-   "kickoff_utc": "2026-11-05T20:00:00Z",
-   "competition": "UEFA Europa League",
-   "home": "Celtic",
-   "away": "Beşiktaş",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "19314",
-     "side": "home"
-    },
-    {
-     "playerId": "50737",
-     "side": "home"
-    }
-   ]
-  },
-  {
    "matchId": "1636456",
    "kickoff_utc": "2026-11-05T20:00:00Z",
    "competition": "UEFA Europa Conference League",
@@ -1869,6 +1737,29 @@
    "pool_players": [
     {
      "playerId": "138835",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1636250",
+   "kickoff_utc": "2026-11-05T20:00:00Z",
+   "competition": "UEFA Europa League",
+   "home": "Celtic",
+   "away": "Beşiktaş",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "19314",
+     "side": "home"
+    },
+    {
+     "playerId": "50737",
      "side": "home"
     }
    ]
@@ -2494,7 +2385,7 @@
    "away": "Atlanta United FC",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": null,
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
@@ -2614,7 +2505,7 @@
    "away": "Los Angeles FC",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": null,
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
@@ -2697,6 +2588,25 @@
    ]
   },
   {
+   "matchId": "1490611",
+   "kickoff_utc": "2026-11-08T00:00:00Z",
+   "competition": "Major League Soccer",
+   "home": "Austin",
+   "away": "Portland Timbers",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "MLS Season Pass (Apple TV)",
+   "pool_players": [
+    {
+     "playerId": "50893",
+     "side": "home"
+    }
+   ]
+  },
+  {
    "matchId": "1490609",
    "kickoff_utc": "2026-11-08T00:00:00Z",
    "competition": "Major League Soccer",
@@ -2719,25 +2629,6 @@
     },
     {
      "playerId": "413169",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1490611",
-   "kickoff_utc": "2026-11-08T00:00:00Z",
-   "competition": "Major League Soccer",
-   "home": "Austin",
-   "away": "Portland Timbers",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50893",
      "side": "home"
     }
    ]
@@ -2991,7 +2882,7 @@
    "away": "Kilmarnock",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": null,
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "—",

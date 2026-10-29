@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-28T08:01:32Z",
- "top_score": 10.022,
+ "updated_at": "2026-10-29T08:01:28Z",
+ "top_score": 10.015,
  "player_tier_bands": {
   "core_min": 61,
   "contender_min": 42,
@@ -1089,6 +1089,20 @@
    }
   },
   {
+   "playerId": "363156",
+   "age": 21,
+   "display_name": "Santiago Castañeda",
+   "short_name": "S. Castaneda",
+   "position": "MF",
+   "club": "SC Paderborn 07",
+   "photo": "https://media.api-sports.io/football/players/363156.png",
+   "score": 8,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
    "playerId": "462853",
    "age": 17,
    "display_name": "Cavan Sullivan",
@@ -1105,20 +1119,6 @@
     "competition": "Friendly",
     "opponent": "Canada"
    }
-  },
-  {
-   "playerId": "363156",
-   "age": 21,
-   "display_name": "Santiago Castañeda",
-   "short_name": "S. Castaneda",
-   "position": "MF",
-   "club": "SC Paderborn 07",
-   "photo": "https://media.api-sports.io/football/players/363156.png",
-   "score": 7,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
   },
   {
    "playerId": "461514",
@@ -1193,24 +1193,6 @@
    }
   },
   {
-   "playerId": "413230",
-   "age": 18,
-   "display_name": "Peyton Miller",
-   "short_name": "P. Miller",
-   "position": "DF",
-   "club": "New England Revolution",
-   "photo": "https://media.api-sports.io/football/players/413230.png",
-   "score": 6,
-   "tier": "wider_pool",
-   "is_prospect": false,
-   "youth_level": null,
-   "last_named": {
-    "date": "2026-10-06",
-    "competition": "Friendly",
-    "opponent": "Canada"
-   }
-  },
-  {
    "playerId": "18897",
    "age": 33,
    "display_name": "DeAndre Yedlin",
@@ -1236,6 +1218,24 @@
    "position": "DF",
    "club": "Philadelphia Union",
    "photo": "https://media.api-sports.io/football/players/428007.png",
+   "score": 6,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-06",
+    "competition": "Friendly",
+    "opponent": "Canada"
+   }
+  },
+  {
+   "playerId": "413230",
+   "age": 18,
+   "display_name": "Peyton Miller",
+   "short_name": "P. Miller",
+   "position": "DF",
+   "club": "New England Revolution",
+   "photo": "https://media.api-sports.io/football/players/413230.png",
    "score": 6,
    "tier": "wider_pool",
    "is_prospect": false,
@@ -1473,6 +1473,24 @@
    }
   },
   {
+   "playerId": "312164",
+   "age": 21,
+   "display_name": "Joshua Wynder",
+   "short_name": "J. Wynder",
+   "position": "DF",
+   "club": "New England Revolution",
+   "photo": "https://media.api-sports.io/football/players/312164.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-04-19",
+    "competition": "Friendly",
+    "opponent": "Mexico"
+   }
+  },
+  {
    "playerId": "149557",
    "age": 23,
    "display_name": "Kevin Paredes",
@@ -1545,24 +1563,6 @@
    }
   },
   {
-   "playerId": "312164",
-   "age": 21,
-   "display_name": "Joshua Wynder",
-   "short_name": "J. Wynder",
-   "position": "DF",
-   "club": "New England Revolution",
-   "photo": "https://media.api-sports.io/football/players/312164.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": false,
-   "youth_level": null,
-   "last_named": {
-    "date": "2023-04-19",
-    "competition": "Friendly",
-    "opponent": "Mexico"
-   }
-  },
-  {
    "playerId": "362139",
    "age": 21,
    "display_name": "Nolan Norris",
@@ -1591,20 +1591,6 @@
    "last_named": null
   },
   {
-   "playerId": "351591",
-   "age": 21,
-   "display_name": "Niko Tsakiris",
-   "short_name": "N. Tsakiris",
-   "position": "MF",
-   "club": "San Jose Earthquakes",
-   "photo": "https://media.api-sports.io/football/players/351591.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
-  },
-  {
    "playerId": "207781",
    "age": 23,
    "display_name": "Caden Clark",
@@ -1623,20 +1609,6 @@
    }
   },
   {
-   "playerId": "362448",
-   "age": 20,
-   "display_name": "Adam Beaudry",
-   "short_name": "A. Beaudry",
-   "position": "GK",
-   "club": "Colorado Rapids",
-   "photo": "https://media.api-sports.io/football/players/362448.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
-  },
-  {
    "playerId": "418851",
    "age": 20,
    "display_name": "Luca Bombino",
@@ -1651,17 +1623,17 @@
    "last_named": null
   },
   {
-   "playerId": "266599",
-   "age": 22,
-   "display_name": "Justin Che",
-   "short_name": "J. Che",
-   "position": "DF",
-   "club": "New York Red Bulls",
-   "photo": "https://media.api-sports.io/football/players/266599.png",
+   "playerId": "351591",
+   "age": 21,
+   "display_name": "Niko Tsakiris",
+   "short_name": "N. Tsakiris",
+   "position": "MF",
+   "club": "San Jose Earthquakes",
+   "photo": "https://media.api-sports.io/football/players/351591.png",
    "score": 3,
    "tier": "wider_pool",
    "is_prospect": true,
-   "youth_level": "U20",
+   "youth_level": "U21",
    "last_named": null
   },
   {
@@ -1717,6 +1689,34 @@
     "competition": "Friendly",
     "opponent": "Costa Rica"
    }
+  },
+  {
+   "playerId": "362448",
+   "age": 20,
+   "display_name": "Adam Beaudry",
+   "short_name": "A. Beaudry",
+   "position": "GK",
+   "club": "Colorado Rapids",
+   "photo": "https://media.api-sports.io/football/players/362448.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
+   "playerId": "266599",
+   "age": 22,
+   "display_name": "Justin Che",
+   "short_name": "J. Che",
+   "position": "DF",
+   "club": "New York Red Bulls",
+   "photo": "https://media.api-sports.io/football/players/266599.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
   },
   {
    "playerId": "153506",
@@ -1791,20 +1791,6 @@
    }
   },
   {
-   "playerId": "413207",
-   "age": 19,
-   "display_name": "Ruben Ramos",
-   "short_name": "R. Ramos",
-   "position": "FW",
-   "club": "Sporting Kansas City",
-   "photo": "https://media.api-sports.io/football/players/413207.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
-  },
-  {
    "playerId": "351571",
    "age": 26,
    "display_name": "Roman Celentano",
@@ -1821,6 +1807,20 @@
     "competition": "Friendly",
     "opponent": "Uruguay"
    }
+  },
+  {
+   "playerId": "413207",
+   "age": 19,
+   "display_name": "Ruben Ramos",
+   "short_name": "R. Ramos",
+   "position": "FW",
+   "club": "Sporting Kansas City",
+   "photo": "https://media.api-sports.io/football/players/413207.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
   },
   {
    "playerId": "50772",
@@ -1895,6 +1895,20 @@
    }
   },
   {
+   "playerId": "461633",
+   "age": 18,
+   "display_name": "Ian James",
+   "short_name": "I. James",
+   "position": "DF",
+   "club": "Sporting Kansas City",
+   "photo": "https://media.api-sports.io/football/players/461633.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": null,
+   "last_named": null
+  },
+  {
    "playerId": "73863",
    "age": 24,
    "display_name": "Joshua Atencio",
@@ -1931,20 +1945,6 @@
    }
   },
   {
-   "playerId": "461633",
-   "age": 18,
-   "display_name": "Ian James",
-   "short_name": "I. James",
-   "position": "DF",
-   "club": "Sporting Kansas City",
-   "photo": "https://media.api-sports.io/football/players/461633.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": null,
-   "last_named": null
-  },
-  {
    "playerId": "461627",
    "age": 18,
    "display_name": "Jude Terry",
@@ -1975,6 +1975,20 @@
     "competition": "Gold Cup",
     "opponent": "Panama"
    }
+  },
+  {
+   "playerId": "542233",
+   "age": 17,
+   "display_name": "Malik Jakupovic",
+   "short_name": "M. Jakupovic",
+   "position": "FW",
+   "club": "Philadelphia Union",
+   "photo": "https://media.api-sports.io/football/players/542233.png",
+   "score": 1,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": null,
+   "last_named": null
   },
   {
    "playerId": "407016",
@@ -2075,20 +2089,6 @@
     "competition": "Friendly",
     "opponent": "Slovenia"
    }
-  },
-  {
-   "playerId": "542233",
-   "age": 17,
-   "display_name": "Malik Jakupovic",
-   "short_name": "M. Jakupovic",
-   "position": "FW",
-   "club": "Philadelphia Union",
-   "photo": "https://media.api-sports.io/football/players/542233.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": null,
-   "last_named": null
   },
   {
    "playerId": "201788",
