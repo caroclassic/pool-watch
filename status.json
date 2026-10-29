@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-29T00:01:08Z",
+ "updated_at": "2026-10-29T00:11:05Z",
  "active": true,
  "matches": {
   "1490571": {
@@ -81,7 +81,7 @@
     "265762": "starts",
     "265882": "starts",
     "266733": "starts",
-    "362085": "not_in_squad",
+    "362085": "bench",
     "428007": "starts",
     "462853": "not_in_squad",
     "542233": "starts"
