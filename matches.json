@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-29T01:01:07Z",
+ "updated_at": "2026-10-29T02:01:07Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-28",
@@ -607,7 +607,7 @@
    "away": "Houston Dynamo",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": null,
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
@@ -685,6 +685,10 @@
     {
      "playerId": "50828",
      "side": "away"
+    },
+    {
+     "playerId": "51013",
+     "side": "home"
     },
     {
      "playerId": "73863",
