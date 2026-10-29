@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-29T14:11:26Z",
+ "updated_at": "2026-10-29T17:21:06Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-29",
@@ -13,25 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1641978",
-   "kickoff_utc": "2026-10-29T17:45:00Z",
-   "competition": "KNVB Beker",
-   "home": "Kozakken Boys",
-   "away": "Utrecht",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "149557",
-     "side": "away"
-    }
-   ]
-  },
   {
    "matchId": "1549047",
    "kickoff_utc": "2026-10-30T18:00:00Z",
