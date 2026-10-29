@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-29T08:01:28Z",
+ "updated_at": "2026-10-29T14:11:26Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-29",
@@ -719,25 +719,6 @@
    ]
   },
   {
-   "matchId": "1552804",
-   "kickoff_utc": "2026-10-31T19:45:00Z",
-   "competition": "Ligue 1",
-   "home": "Lyon",
-   "away": "Angers",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "beIN SPORTS",
-   "pool_players": [
-    {
-     "playerId": "80752",
-     "side": "home"
-    }
-   ]
-  },
-  {
    "matchId": "1557447",
    "kickoff_utc": "2026-10-31T20:00:00Z",
    "competition": "Premier League",
@@ -866,7 +847,7 @@
   },
   {
    "matchId": "1551026",
-   "kickoff_utc": "2026-11-01T03:00:00Z",
+   "kickoff_utc": "2026-11-01T03:10:00Z",
    "competition": "Liga MX",
    "home": "Club America",
    "away": "Toluca",
@@ -1002,6 +983,25 @@
    ]
   },
   {
+   "matchId": "1552804",
+   "kickoff_utc": "2026-11-01T16:15:00Z",
+   "competition": "Ligue 1",
+   "home": "Lyon",
+   "away": "Angers",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "beIN SPORTS",
+   "pool_players": [
+    {
+     "playerId": "80752",
+     "side": "home"
+    }
+   ]
+  },
+  {
    "matchId": "1552805",
    "kickoff_utc": "2026-11-01T19:45:00Z",
    "competition": "Ligue 1",
@@ -1044,51 +1044,8 @@
    ]
   },
   {
-   "matchId": "1490586",
-   "kickoff_utc": "2026-11-01T21:30:00Z",
-   "competition": "Major League Soccer",
-   "home": "Nashville SC",
-   "away": "New York Red Bulls",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "62",
-     "side": "away"
-    },
-    {
-     "playerId": "51186",
-     "side": "away"
-    },
-    {
-     "playerId": "265762",
-     "side": "home"
-    },
-    {
-     "playerId": "266599",
-     "side": "away"
-    },
-    {
-     "playerId": "266733",
-     "side": "home"
-    },
-    {
-     "playerId": "418618",
-     "side": "away"
-    },
-    {
-     "playerId": "461645",
-     "side": "away"
-    }
-   ]
-  },
-  {
    "matchId": "1490591",
-   "kickoff_utc": "2026-11-01T21:30:00Z",
+   "kickoff_utc": "2026-11-01T20:30:00Z",
    "competition": "Major League Soccer",
    "home": "Vancouver Whitecaps",
    "away": "Seattle Sounders",
@@ -1129,6 +1086,49 @@
     },
     {
      "playerId": "207781",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1490586",
+   "kickoff_utc": "2026-11-01T21:30:00Z",
+   "competition": "Major League Soccer",
+   "home": "Nashville SC",
+   "away": "New York Red Bulls",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "MLS Season Pass (Apple TV)",
+   "pool_players": [
+    {
+     "playerId": "62",
+     "side": "away"
+    },
+    {
+     "playerId": "51186",
+     "side": "away"
+    },
+    {
+     "playerId": "265762",
+     "side": "home"
+    },
+    {
+     "playerId": "266599",
+     "side": "away"
+    },
+    {
+     "playerId": "266733",
+     "side": "home"
+    },
+    {
+     "playerId": "418618",
+     "side": "away"
+    },
+    {
+     "playerId": "461645",
      "side": "away"
     }
    ]
