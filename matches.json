@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-31T20:21:06Z",
+ "updated_at": "2026-10-31T20:31:06Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-31",
@@ -499,7 +499,7 @@
    "fixture_kind": "club",
    "status": "scheduled",
    "tier": "must_watch",
-   "tier_at_kickoff": null,
+   "tier_at_kickoff": "must_watch",
    "players_basis": null,
    "broadcast": "NBC/USA/Peacock — varies by match",
    "pool_players": [
@@ -527,6 +527,10 @@
      "side": "away"
     },
     {
+     "playerId": "51013",
+     "side": "home"
+    },
+    {
      "playerId": "312896",
      "side": "away"
     },
@@ -536,25 +540,6 @@
     },
     {
      "playerId": "413169",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1490592",
-   "kickoff_utc": "2026-10-31T21:00:00Z",
-   "competition": "Major League Soccer",
-   "home": "Los Angeles Galaxy",
-   "away": "Austin",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50893",
      "side": "away"
     }
    ]
