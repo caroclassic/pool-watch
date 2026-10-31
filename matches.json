@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-31T08:01:33Z",
+ "updated_at": "2026-10-31T12:01:08Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-31",
@@ -56,44 +56,6 @@
     {
      "playerId": "418851",
      "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1557450",
-   "kickoff_utc": "2026-10-31T12:30:00Z",
-   "competition": "Premier League",
-   "home": "Chelsea",
-   "away": "Manchester United",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "NBC/USA/Peacock — varies by match",
-   "pool_players": [
-    {
-     "playerId": "64167",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1563229",
-   "kickoff_utc": "2026-10-31T12:30:00Z",
-   "competition": "EFL Championship",
-   "home": "Lincoln",
-   "away": "Birmingham",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "162386",
-     "side": "away"
     }
    ]
   },
