@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-31T12:31:13Z",
+ "updated_at": "2026-10-31T13:31:12Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-31",
@@ -56,25 +56,6 @@
     {
      "playerId": "418851",
      "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1601591",
-   "kickoff_utc": "2026-10-31T14:00:00Z",
-   "competition": "Serie B",
-   "home": "Sudtirol",
-   "away": "Cesena",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "25335",
-     "side": "away"
     }
    ]
   },
