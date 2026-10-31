@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-31T15:31:09Z",
+ "updated_at": "2026-10-31T17:01:10Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-31",
@@ -273,25 +273,6 @@
     },
     {
      "playerId": "412227",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1575203",
-   "kickoff_utc": "2026-10-31T17:30:00Z",
-   "competition": "Bundesliga",
-   "home": "Bayern München",
-   "away": "Borussia Dortmund",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Fandango/USA Network — varies by match",
-   "pool_players": [
-    {
-     "playerId": "486522",
      "side": "away"
     }
    ]
