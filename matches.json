@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-31T17:01:10Z",
+ "updated_at": "2026-10-31T17:31:08Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-31",
@@ -314,6 +314,10 @@
    "broadcast": "MLS Season Pass (Apple TV)",
    "pool_players": [
     {
+     "playerId": "19607",
+     "side": "home"
+    },
+    {
      "playerId": "50728",
      "side": "home"
     },
@@ -335,7 +339,7 @@
    "away": "Philadelphia Union",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": null,
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
