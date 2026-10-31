@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-30T08:01:26Z",
- "top_score": 10.007,
+ "updated_at": "2026-10-31T08:01:33Z",
+ "top_score": 9.999,
  "player_tier_bands": {
   "core_min": 61,
   "contender_min": 42,
@@ -1319,24 +1319,6 @@
    }
   },
   {
-   "playerId": "328617",
-   "age": 20,
-   "display_name": "Cole Campbell",
-   "short_name": "C. Campbell",
-   "position": "FW",
-   "club": "SV Elversberg",
-   "photo": "https://media.api-sports.io/football/players/328617.png",
-   "score": 5,
-   "tier": "wider_pool",
-   "is_prospect": false,
-   "youth_level": null,
-   "last_named": {
-    "date": "2026-10-06",
-    "competition": "Friendly",
-    "opponent": "Canada"
-   }
-  },
-  {
    "playerId": "265762",
    "age": 21,
    "display_name": "Reed Baker-Whiting",
@@ -1366,6 +1348,24 @@
     "date": "2026-10-03",
     "competition": "Friendly",
     "opponent": "Mexico"
+   }
+  },
+  {
+   "playerId": "328617",
+   "age": 20,
+   "display_name": "Cole Campbell",
+   "short_name": "C. Campbell",
+   "position": "FW",
+   "club": "SV Elversberg",
+   "photo": "https://media.api-sports.io/football/players/328617.png",
+   "score": 5,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2026-10-06",
+    "competition": "Friendly",
+    "opponent": "Canada"
    }
   },
   {

@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-31T04:01:31Z",
+ "updated_at": "2026-10-31T08:01:33Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-31",
@@ -1525,25 +1525,6 @@
    ]
   },
   {
-   "matchId": "1636324",
-   "kickoff_utc": "2026-11-05T17:45:00Z",
-   "competition": "UEFA Europa League",
-   "home": "Rennes",
-   "away": "Olympiakos Piraeus",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "51144",
-     "side": "home"
-    }
-   ]
-  },
-  {
    "matchId": "1636319",
    "kickoff_utc": "2026-11-05T17:45:00Z",
    "competition": "UEFA Europa League",
@@ -1559,6 +1540,25 @@
     {
      "playerId": "80752",
      "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1636324",
+   "kickoff_utc": "2026-11-05T17:45:00Z",
+   "competition": "UEFA Europa League",
+   "home": "Rennes",
+   "away": "Olympiakos Piraeus",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "51144",
+     "side": "home"
     }
    ]
   },
@@ -2677,25 +2677,6 @@
    ]
   },
   {
-   "matchId": "1552816",
-   "kickoff_utc": "2026-11-08T14:00:00Z",
-   "competition": "Ligue 1",
-   "home": "Rennes",
-   "away": "Lille",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "beIN SPORTS",
-   "pool_players": [
-    {
-     "playerId": "51144",
-     "side": "home"
-    }
-   ]
-  },
-  {
    "matchId": "1557466",
    "kickoff_utc": "2026-11-08T14:00:00Z",
    "competition": "Premier League",
@@ -2711,6 +2692,25 @@
     {
      "playerId": "64167",
      "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1552816",
+   "kickoff_utc": "2026-11-08T14:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Rennes",
+   "away": "Lille",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "beIN SPORTS",
+   "pool_players": [
+    {
+     "playerId": "51144",
+     "side": "home"
     }
    ]
   },
