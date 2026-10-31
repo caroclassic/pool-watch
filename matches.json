@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-31T13:31:12Z",
+ "updated_at": "2026-10-31T14:31:18Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-31",
@@ -132,7 +132,7 @@
    "away": "Charlton",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "Paramount+",
@@ -151,25 +151,6 @@
     },
     {
      "playerId": "362400",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1557451",
-   "kickoff_utc": "2026-10-31T15:00:00Z",
-   "competition": "Premier League",
-   "home": "Coventry",
-   "away": "Sunderland",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "NBC/USA/Peacock — varies by match",
-   "pool_players": [
-    {
-     "playerId": "427",
      "side": "home"
     }
    ]
