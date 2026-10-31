@@ -1,10 +1,10 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-30T23:51:06Z",
+ "updated_at": "2026-10-31T04:01:31Z",
  "reference_tz": "America/New_York",
  "window": {
-  "start": "2026-10-30",
-  "end": "2026-11-13"
+  "start": "2026-10-31",
+  "end": "2026-11-14"
  },
  "tier_thresholds": {
   "schema_version": 1,
@@ -13,86 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1549047",
-   "kickoff_utc": "2026-10-30T18:00:00Z",
-   "competition": "Danish Superliga",
-   "home": "Lyngby",
-   "away": "Randers FC",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "383647",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1552806",
-   "kickoff_utc": "2026-10-30T18:00:00Z",
-   "competition": "Ligue 1",
-   "home": "Nice",
-   "away": "Rennes",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "beIN SPORTS",
-   "pool_players": [
-    {
-     "playerId": "51144",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1575211",
-   "kickoff_utc": "2026-10-30T19:30:00Z",
-   "competition": "Bundesliga",
-   "home": "SV Elversberg",
-   "away": "FSV Mainz 05",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Fandango/USA Network — varies by match",
-   "pool_players": [
-    {
-     "playerId": "24842",
-     "side": "away"
-    },
-    {
-     "playerId": "328617",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1570442",
-   "kickoff_utc": "2026-10-30T20:00:00Z",
-   "competition": "La Liga",
-   "home": "Villarreal",
-   "away": "Espanyol",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "ESPN+",
-   "pool_players": [
-    {
-     "playerId": "355994",
-     "side": "home"
-    }
-   ]
-  },
   {
    "matchId": "1576223",
    "kickoff_utc": "2026-10-31T12:00:00Z",
@@ -312,6 +232,25 @@
    ]
   },
   {
+   "matchId": "1557451",
+   "kickoff_utc": "2026-10-31T15:00:00Z",
+   "competition": "Premier League",
+   "home": "Coventry",
+   "away": "Sunderland",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "NBC/USA/Peacock — varies by match",
+   "pool_players": [
+    {
+     "playerId": "427",
+     "side": "home"
+    }
+   ]
+  },
+  {
    "matchId": "1563237",
    "kickoff_utc": "2026-10-31T15:00:00Z",
    "competition": "EFL Championship",
@@ -346,25 +285,6 @@
     {
      "playerId": "389579",
      "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1557451",
-   "kickoff_utc": "2026-10-31T15:00:00Z",
-   "competition": "Premier League",
-   "home": "Coventry",
-   "away": "Sunderland",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "NBC/USA/Peacock — varies by match",
-   "pool_players": [
-    {
-     "playerId": "427",
-     "side": "home"
     }
    ]
   },
@@ -700,25 +620,6 @@
    ]
   },
   {
-   "matchId": "1490592",
-   "kickoff_utc": "2026-10-31T21:00:00Z",
-   "competition": "Major League Soccer",
-   "home": "Los Angeles Galaxy",
-   "away": "Austin",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50893",
-     "side": "away"
-    }
-   ]
-  },
-  {
    "matchId": "1490596",
    "kickoff_utc": "2026-10-31T21:00:00Z",
    "competition": "Major League Soccer",
@@ -745,6 +646,25 @@
     },
     {
      "playerId": "413169",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1490592",
+   "kickoff_utc": "2026-10-31T21:00:00Z",
+   "competition": "Major League Soccer",
+   "home": "Los Angeles Galaxy",
+   "away": "Austin",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "MLS Season Pass (Apple TV)",
+   "pool_players": [
+    {
+     "playerId": "50893",
      "side": "away"
     }
    ]
@@ -3064,6 +2984,44 @@
    "pool_players": [
     {
      "playerId": "212233",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1563858",
+   "kickoff_utc": "2026-11-14T15:00:00Z",
+   "competition": "EFL League Two",
+   "home": "Rotherham",
+   "away": "Crawley Town",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "389579",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1556898",
+   "kickoff_utc": "2026-11-14T15:00:00Z",
+   "competition": "Scottish Championship",
+   "home": "Livingston",
+   "away": "Morton",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "463542",
      "side": "away"
     }
    ]
