@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-11-01T09:01:30Z",
+ "updated_at": "2026-11-01T13:01:07Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-11-01",
@@ -70,25 +70,6 @@
     },
     {
      "playerId": "50737",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1552214",
-   "kickoff_utc": "2026-11-01T13:30:00Z",
-   "competition": "Eredivisie",
-   "home": "Telstar",
-   "away": "Utrecht",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "ESPN+",
-   "pool_players": [
-    {
-     "playerId": "149557",
      "side": "away"
     }
    ]
