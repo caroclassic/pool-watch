@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-11-01T18:01:11Z",
- "active": true,
+ "updated_at": "2026-11-01T18:11:05Z",
+ "active": false,
  "matches": {
   "1490586": {
    "status": "scheduled",
@@ -78,8 +78,8 @@
    "participation": {}
   },
   "1552804": {
-   "status": "live",
-   "status_updated_at": "2026-11-01T16:21:23Z",
+   "status": "full_time",
+   "status_updated_at": "2026-11-01T18:11:05Z",
    "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
@@ -96,8 +96,8 @@
    "participation": {}
   },
   "1552807": {
-   "status": "live",
-   "status_updated_at": "2026-11-01T16:21:23Z",
+   "status": "full_time",
+   "status_updated_at": "2026-11-01T18:11:05Z",
    "lineups_confirmed": true,
    "tier": null,
    "tier_at_kickoff": null,
