@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-11-01T15:11:26Z",
+ "updated_at": "2026-11-01T15:51:07Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-11-01",
@@ -94,25 +94,6 @@
    ]
   },
   {
-   "matchId": "1552807",
-   "kickoff_utc": "2026-11-01T16:15:00Z",
-   "competition": "Ligue 1",
-   "home": "Paris FC",
-   "away": "Monaco",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "beIN SPORTS",
-   "pool_players": [
-    {
-     "playerId": "138835",
-     "side": "away"
-    }
-   ]
-  },
-  {
    "matchId": "1552804",
    "kickoff_utc": "2026-11-01T16:15:00Z",
    "competition": "Ligue 1",
@@ -128,6 +109,25 @@
     {
      "playerId": "80752",
      "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1552807",
+   "kickoff_utc": "2026-11-01T16:15:00Z",
+   "competition": "Ligue 1",
+   "home": "Paris FC",
+   "away": "Monaco",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "beIN SPORTS",
+   "pool_players": [
+    {
+     "playerId": "138835",
+     "side": "away"
     }
    ]
   },
