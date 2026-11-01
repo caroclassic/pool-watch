@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-11-01T01:01:06Z",
+ "updated_at": "2026-11-01T02:41:06Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-10-31",
@@ -603,25 +603,6 @@
     {
      "playerId": "507608",
      "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1551026",
-   "kickoff_utc": "2026-11-01T03:10:00Z",
-   "competition": "Liga MX",
-   "home": "Club America",
-   "away": "Toluca",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "ViX / TUDN",
-   "pool_players": [
-    {
-     "playerId": "35885",
-     "side": "home"
     }
    ]
   },
