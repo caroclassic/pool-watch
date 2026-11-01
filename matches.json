@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-11-01T14:31:05Z",
+ "updated_at": "2026-11-01T15:11:26Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-11-01",
@@ -635,6 +635,25 @@
    ]
   },
   {
+   "matchId": "1636324",
+   "kickoff_utc": "2026-11-04T15:30:00Z",
+   "competition": "UEFA Europa League",
+   "home": "Rennes",
+   "away": "Olympiakos Piraeus",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "51144",
+     "side": "home"
+    }
+   ]
+  },
+  {
    "matchId": "1563250",
    "kickoff_utc": "2026-11-04T19:45:00Z",
    "competition": "EFL Championship",
@@ -788,25 +807,6 @@
     {
      "playerId": "80752",
      "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1636324",
-   "kickoff_utc": "2026-11-05T17:45:00Z",
-   "competition": "UEFA Europa League",
-   "home": "Rennes",
-   "away": "Olympiakos Piraeus",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "51144",
-     "side": "home"
     }
    ]
   },
