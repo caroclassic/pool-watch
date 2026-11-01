@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-31T08:01:33Z",
- "top_score": 9.999,
+ "updated_at": "2026-11-01T09:01:30Z",
+ "top_score": 9.992,
  "player_tier_bands": {
   "core_min": 61,
   "contender_min": 42,
@@ -1053,6 +1053,20 @@
    }
   },
   {
+   "playerId": "363156",
+   "age": 21,
+   "display_name": "Santiago Castañeda",
+   "short_name": "S. Castaneda",
+   "position": "MF",
+   "club": "SC Paderborn 07",
+   "photo": "https://media.api-sports.io/football/players/363156.png",
+   "score": 8,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
    "playerId": "265884",
    "age": 23,
    "display_name": "Paxten Aaronson",
@@ -1087,20 +1101,6 @@
     "competition": "Gold Cup",
     "opponent": "Panama"
    }
-  },
-  {
-   "playerId": "363156",
-   "age": 21,
-   "display_name": "Santiago Castañeda",
-   "short_name": "S. Castaneda",
-   "position": "MF",
-   "club": "SC Paderborn 07",
-   "photo": "https://media.api-sports.io/football/players/363156.png",
-   "score": 8,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
   },
   {
    "playerId": "462853",
@@ -1319,6 +1319,20 @@
    }
   },
   {
+   "playerId": "407425",
+   "age": 20,
+   "display_name": "Taha Habroune",
+   "short_name": "T. Habroune",
+   "position": "MF",
+   "club": "Columbus Crew",
+   "photo": "https://media.api-sports.io/football/players/407425.png",
+   "score": 5,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
    "playerId": "265762",
    "age": 21,
    "display_name": "Reed Baker-Whiting",
@@ -1385,20 +1399,6 @@
     "competition": "Friendly",
     "opponent": "Uruguay"
    }
-  },
-  {
-   "playerId": "407425",
-   "age": 20,
-   "display_name": "Taha Habroune",
-   "short_name": "T. Habroune",
-   "position": "MF",
-   "club": "Columbus Crew",
-   "photo": "https://media.api-sports.io/football/players/407425.png",
-   "score": 4,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
   },
   {
    "playerId": "129706",
@@ -1527,6 +1527,20 @@
    }
   },
   {
+   "playerId": "389579",
+   "age": 20,
+   "display_name": "Julian Eyestone",
+   "short_name": "J. Eyestone",
+   "position": "GK",
+   "club": "Rotherham",
+   "photo": "https://media.api-sports.io/football/players/389579.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
    "playerId": "51027",
    "age": 30,
    "display_name": "Tristan Blackmon",
@@ -1563,6 +1577,20 @@
    }
   },
   {
+   "playerId": "418851",
+   "age": 20,
+   "display_name": "Luca Bombino",
+   "short_name": "L. Bombino",
+   "position": "DF",
+   "club": "Stoke City",
+   "photo": "https://media.api-sports.io/football/players/418851.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
    "playerId": "362139",
    "age": 21,
    "display_name": "Nolan Norris",
@@ -1574,20 +1602,6 @@
    "tier": "wider_pool",
    "is_prospect": true,
    "youth_level": "U23",
-   "last_named": null
-  },
-  {
-   "playerId": "389579",
-   "age": 20,
-   "display_name": "Julian Eyestone",
-   "short_name": "J. Eyestone",
-   "position": "GK",
-   "club": "Rotherham",
-   "photo": "https://media.api-sports.io/football/players/389579.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
    "last_named": null
   },
   {
@@ -1609,34 +1623,6 @@
    }
   },
   {
-   "playerId": "418851",
-   "age": 20,
-   "display_name": "Luca Bombino",
-   "short_name": "L. Bombino",
-   "position": "DF",
-   "club": "Stoke City",
-   "photo": "https://media.api-sports.io/football/players/418851.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
-  },
-  {
-   "playerId": "351591",
-   "age": 21,
-   "display_name": "Niko Tsakiris",
-   "short_name": "N. Tsakiris",
-   "position": "MF",
-   "club": "San Jose Earthquakes",
-   "photo": "https://media.api-sports.io/football/players/351591.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
-  },
-  {
    "playerId": "51310",
    "age": 31,
    "display_name": "Kellyn Acosta",
@@ -1653,6 +1639,20 @@
     "competition": "Friendly",
     "opponent": "Mexico"
    }
+  },
+  {
+   "playerId": "351591",
+   "age": 21,
+   "display_name": "Niko Tsakiris",
+   "short_name": "N. Tsakiris",
+   "position": "MF",
+   "club": "San Jose Earthquakes",
+   "photo": "https://media.api-sports.io/football/players/351591.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
   },
   {
    "playerId": "413169",
@@ -1773,6 +1773,20 @@
    }
   },
   {
+   "playerId": "413207",
+   "age": 19,
+   "display_name": "Ruben Ramos",
+   "short_name": "R. Ramos",
+   "position": "FW",
+   "club": "Sporting Kansas City",
+   "photo": "https://media.api-sports.io/football/players/413207.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
    "playerId": "203014",
    "age": 25,
    "display_name": "Matthew Hoppe",
@@ -1807,20 +1821,6 @@
     "competition": "Friendly",
     "opponent": "Uruguay"
    }
-  },
-  {
-   "playerId": "413207",
-   "age": 19,
-   "display_name": "Ruben Ramos",
-   "short_name": "R. Ramos",
-   "position": "FW",
-   "club": "Sporting Kansas City",
-   "photo": "https://media.api-sports.io/football/players/413207.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
   },
   {
    "playerId": "50772",

@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-11-01T04:01:27Z",
+ "updated_at": "2026-11-01T09:01:30Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-11-01",
@@ -661,7 +661,7 @@
    "away": "Middlesbrough",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "Paramount+",
@@ -1199,7 +1199,7 @@
    "away": "Middlesbrough",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "Paramount+",
@@ -1441,37 +1441,6 @@
    ]
   },
   {
-   "matchId": "1490601",
-   "kickoff_utc": "2026-11-07T21:00:00Z",
-   "competition": "Major League Soccer",
-   "home": "FC Cincinnati",
-   "away": "Nashville SC",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50879",
-     "side": "home"
-    },
-    {
-     "playerId": "265762",
-     "side": "away"
-    },
-    {
-     "playerId": "266733",
-     "side": "away"
-    },
-    {
-     "playerId": "351571",
-     "side": "home"
-    }
-   ]
-  },
-  {
    "matchId": "1490602",
    "kickoff_utc": "2026-11-07T21:00:00Z",
    "competition": "Major League Soccer",
@@ -1522,6 +1491,37 @@
     },
     {
      "playerId": "542233",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1490601",
+   "kickoff_utc": "2026-11-07T21:00:00Z",
+   "competition": "Major League Soccer",
+   "home": "FC Cincinnati",
+   "away": "Nashville SC",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "MLS Season Pass (Apple TV)",
+   "pool_players": [
+    {
+     "playerId": "50879",
+     "side": "home"
+    },
+    {
+     "playerId": "265762",
+     "side": "away"
+    },
+    {
+     "playerId": "266733",
+     "side": "away"
+    },
+    {
+     "playerId": "351571",
      "side": "home"
     }
    ]
