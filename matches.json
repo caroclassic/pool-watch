@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-11-01T15:51:07Z",
+ "updated_at": "2026-11-01T19:21:07Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-11-01",
@@ -132,6 +132,25 @@
    ]
   },
   {
+   "matchId": "1550182",
+   "kickoff_utc": "2026-11-01T19:45:00Z",
+   "competition": "Serie A",
+   "home": "Juventus",
+   "away": "Napoli",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "must_watch",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "415",
+     "side": "home"
+    }
+   ]
+  },
+  {
    "matchId": "1552805",
    "kickoff_utc": "2026-11-01T19:45:00Z",
    "competition": "Ligue 1",
@@ -151,25 +170,6 @@
     {
      "playerId": "50735",
      "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1550182",
-   "kickoff_utc": "2026-11-01T19:45:00Z",
-   "competition": "Serie A",
-   "home": "Juventus",
-   "away": "Napoli",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "415",
-     "side": "home"
     }
    ]
   },
