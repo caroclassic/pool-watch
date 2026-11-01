@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-11-01T18:11:05Z",
- "active": false,
+ "updated_at": "2026-11-01T18:21:06Z",
+ "active": true,
  "matches": {
   "1490586": {
    "status": "scheduled",
