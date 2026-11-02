@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-11-02T05:01:23Z",
+ "updated_at": "2026-11-02T09:01:34Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-11-02",
@@ -1037,6 +1037,41 @@
    ]
   },
   {
+   "matchId": "1490601",
+   "kickoff_utc": "2026-11-07T21:00:00Z",
+   "competition": "Major League Soccer",
+   "home": "FC Cincinnati",
+   "away": "Nashville SC",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "MLS Season Pass (Apple TV)",
+   "pool_players": [
+    {
+     "playerId": "50879",
+     "side": "home"
+    },
+    {
+     "playerId": "265762",
+     "side": "away"
+    },
+    {
+     "playerId": "266733",
+     "side": "away"
+    },
+    {
+     "playerId": "312290",
+     "side": "away"
+    },
+    {
+     "playerId": "351571",
+     "side": "home"
+    }
+   ]
+  },
+  {
    "matchId": "1490602",
    "kickoff_utc": "2026-11-07T21:00:00Z",
    "competition": "Major League Soccer",
@@ -1087,41 +1122,6 @@
     },
     {
      "playerId": "542233",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1490601",
-   "kickoff_utc": "2026-11-07T21:00:00Z",
-   "competition": "Major League Soccer",
-   "home": "FC Cincinnati",
-   "away": "Nashville SC",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "MLS Season Pass (Apple TV)",
-   "pool_players": [
-    {
-     "playerId": "50879",
-     "side": "home"
-    },
-    {
-     "playerId": "265762",
-     "side": "away"
-    },
-    {
-     "playerId": "266733",
-     "side": "away"
-    },
-    {
-     "playerId": "312290",
-     "side": "away"
-    },
-    {
-     "playerId": "351571",
      "side": "home"
     }
    ]
@@ -1799,25 +1799,6 @@
    ]
   },
   {
-   "matchId": "1493230",
-   "kickoff_utc": "2026-11-08T21:00:00Z",
-   "competition": "Liga Profesional Argentina",
-   "home": "Barracas Central",
-   "away": "Racing Club",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "6719",
-     "side": "away"
-    }
-   ]
-  },
-  {
    "matchId": "1493236",
    "kickoff_utc": "2026-11-08T21:00:00Z",
    "competition": "Liga Profesional Argentina",
@@ -1832,6 +1813,25 @@
    "pool_players": [
     {
      "playerId": "129885",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1493230",
+   "kickoff_utc": "2026-11-08T21:00:00Z",
+   "competition": "Liga Profesional Argentina",
+   "home": "Barracas Central",
+   "away": "Racing Club",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "6719",
      "side": "away"
     }
    ]

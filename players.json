@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "updated_at": "2026-11-02T02:41:09Z",
- "top_score": 9.992,
+ "updated_at": "2026-11-02T09:01:35Z",
+ "top_score": 9.984,
  "player_tier_bands": {
   "core_min": 61,
   "contender_min": 42,
@@ -1248,7 +1248,7 @@
   },
   {
    "playerId": "64310",
-   "age": 29,
+   "age": 30,
    "display_name": "Shaq Moore",
    "short_name": "S. Moore",
    "position": "DF",
@@ -1308,7 +1308,7 @@
    "position": "DF",
    "club": "New England Revolution",
    "photo": "https://media.api-sports.io/football/players/362414.png",
-   "score": 6,
+   "score": 5,
    "tier": "wider_pool",
    "is_prospect": true,
    "youth_level": "U21",
@@ -1333,20 +1333,6 @@
    }
   },
   {
-   "playerId": "407425",
-   "age": 20,
-   "display_name": "Taha Habroune",
-   "short_name": "T. Habroune",
-   "position": "MF",
-   "club": "Columbus Crew",
-   "photo": "https://media.api-sports.io/football/players/407425.png",
-   "score": 5,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U21",
-   "last_named": null
-  },
-  {
    "playerId": "265762",
    "age": 21,
    "display_name": "Reed Baker-Whiting",
@@ -1354,6 +1340,20 @@
    "position": "MF",
    "club": "Nashville SC",
    "photo": "https://media.api-sports.io/football/players/265762.png",
+   "score": 5,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
+   "playerId": "407425",
+   "age": 20,
+   "display_name": "Taha Habroune",
+   "short_name": "T. Habroune",
+   "position": "MF",
+   "club": "Columbus Crew",
+   "photo": "https://media.api-sports.io/football/players/407425.png",
    "score": 5,
    "tier": "wider_pool",
    "is_prospect": true,
@@ -1397,20 +1397,6 @@
    }
   },
   {
-   "playerId": "312290",
-   "age": 20,
-   "display_name": "Matthew Corcoran",
-   "short_name": "M. Corcoran",
-   "position": null,
-   "club": "Nashville SC",
-   "photo": "https://media.api-sports.io/football/players/312290.png",
-   "score": 5,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
-  },
-  {
    "playerId": "25617",
    "age": 27,
    "display_name": "Timothy Tillman",
@@ -1429,6 +1415,20 @@
    }
   },
   {
+   "playerId": "312290",
+   "age": 20,
+   "display_name": "Matthew Corcoran",
+   "short_name": "M. Corcoran",
+   "position": null,
+   "club": "Nashville SC",
+   "photo": "https://media.api-sports.io/football/players/312290.png",
+   "score": 4,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
    "playerId": "129706",
    "age": 28,
    "display_name": "Marlon Fossey",
@@ -1444,6 +1444,24 @@
     "date": "2025-03-22",
     "competition": "Nations League",
     "opponent": "Canada"
+   }
+  },
+  {
+   "playerId": "312164",
+   "age": 21,
+   "display_name": "Joshua Wynder",
+   "short_name": "J. Wynder",
+   "position": "DF",
+   "club": "New England Revolution",
+   "photo": "https://media.api-sports.io/football/players/312164.png",
+   "score": 4,
+   "tier": "wider_pool",
+   "is_prospect": false,
+   "youth_level": null,
+   "last_named": {
+    "date": "2023-04-19",
+    "competition": "Friendly",
+    "opponent": "Mexico"
    }
   },
   {
@@ -1498,24 +1516,6 @@
     "date": "2025-01-22",
     "competition": "Friendly",
     "opponent": "Costa Rica"
-   }
-  },
-  {
-   "playerId": "312164",
-   "age": 21,
-   "display_name": "Joshua Wynder",
-   "short_name": "J. Wynder",
-   "position": "DF",
-   "club": "New England Revolution",
-   "photo": "https://media.api-sports.io/football/players/312164.png",
-   "score": 3,
-   "tier": "wider_pool",
-   "is_prospect": false,
-   "youth_level": null,
-   "last_named": {
-    "date": "2023-04-19",
-    "competition": "Friendly",
-    "opponent": "Mexico"
    }
   },
   {
@@ -1747,20 +1747,6 @@
    }
   },
   {
-   "playerId": "266599",
-   "age": 22,
-   "display_name": "Justin Che",
-   "short_name": "J. Che",
-   "position": "DF",
-   "club": "New York Red Bulls",
-   "photo": "https://media.api-sports.io/football/players/266599.png",
-   "score": 2,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
-  },
-  {
    "playerId": "153506",
    "age": 25,
    "display_name": "Indiana Vassilev",
@@ -1777,6 +1763,20 @@
     "competition": "Friendly",
     "opponent": "Costa Rica"
    }
+  },
+  {
+   "playerId": "266599",
+   "age": 22,
+   "display_name": "Justin Che",
+   "short_name": "J. Che",
+   "position": "DF",
+   "club": "New York Red Bulls",
+   "photo": "https://media.api-sports.io/football/players/266599.png",
+   "score": 2,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
   },
   {
    "playerId": "265733",
