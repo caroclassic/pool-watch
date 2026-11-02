@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-11-02T09:01:34Z",
+ "updated_at": "2026-11-02T21:01:07Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-11-02",
@@ -1889,6 +1889,125 @@
    "pool_players": [
     {
      "playerId": "463542",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1644693",
+   "kickoff_utc": "2026-11-14T21:00:00Z",
+   "competition": "CONCACAF Nations League",
+   "home": "Haiti",
+   "away": "USA",
+   "fixture_kind": "national_senior",
+   "status": "scheduled",
+   "tier": "must_watch",
+   "tier_at_kickoff": null,
+   "players_basis": "prior_window",
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "1150",
+     "side": "away"
+    },
+    {
+     "playerId": "19549",
+     "side": "away"
+    },
+    {
+     "playerId": "38735",
+     "side": "away"
+    },
+    {
+     "playerId": "50737",
+     "side": "away"
+    },
+    {
+     "playerId": "50879",
+     "side": "away"
+    },
+    {
+     "playerId": "102508",
+     "side": "away"
+    },
+    {
+     "playerId": "126949",
+     "side": "away"
+    },
+    {
+     "playerId": "161921",
+     "side": "away"
+    },
+    {
+     "playerId": "162037",
+     "side": "away"
+    },
+    {
+     "playerId": "162106",
+     "side": "away"
+    },
+    {
+     "playerId": "201713",
+     "side": "away"
+    },
+    {
+     "playerId": "266606",
+     "side": "away"
+    },
+    {
+     "playerId": "266733",
+     "side": "away"
+    },
+    {
+     "playerId": "328617",
+     "side": "away"
+    },
+    {
+     "playerId": "334362",
+     "side": "away"
+    },
+    {
+     "playerId": "340369",
+     "side": "away"
+    },
+    {
+     "playerId": "355994",
+     "side": "away"
+    },
+    {
+     "playerId": "383647",
+     "side": "away"
+    },
+    {
+     "playerId": "412227",
+     "side": "away"
+    },
+    {
+     "playerId": "413230",
+     "side": "away"
+    },
+    {
+     "playerId": "418618",
+     "side": "away"
+    },
+    {
+     "playerId": "428007",
+     "side": "away"
+    },
+    {
+     "playerId": "461514",
+     "side": "away"
+    },
+    {
+     "playerId": "461645",
+     "side": "away"
+    },
+    {
+     "playerId": "462853",
+     "side": "away"
+    },
+    {
+     "playerId": "486522",
      "side": "away"
     }
    ]
