@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-11-01T09:01:30Z",
+ "updated_at": "2026-11-02T02:41:09Z",
  "top_score": 9.992,
  "player_tier_bands": {
   "core_min": 61,
@@ -1301,6 +1301,20 @@
    }
   },
   {
+   "playerId": "362414",
+   "age": 21,
+   "display_name": "Ethan Kohler",
+   "short_name": "E. Kohler",
+   "position": "DF",
+   "club": "New England Revolution",
+   "photo": "https://media.api-sports.io/football/players/362414.png",
+   "score": 6,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U21",
+   "last_named": null
+  },
+  {
    "playerId": "129885",
    "age": 28,
    "display_name": "Alan Soñora",
@@ -1381,6 +1395,20 @@
     "competition": "Friendly",
     "opponent": "Canada"
    }
+  },
+  {
+   "playerId": "312290",
+   "age": 20,
+   "display_name": "Matthew Corcoran",
+   "short_name": "M. Corcoran",
+   "position": null,
+   "club": "Nashville SC",
+   "photo": "https://media.api-sports.io/football/players/312290.png",
+   "score": 5,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
   },
   {
    "playerId": "25617",
@@ -1577,6 +1605,34 @@
    }
   },
   {
+   "playerId": "414128",
+   "age": 18,
+   "display_name": "Cooper Sanchez",
+   "short_name": "C. Sanchez",
+   "position": null,
+   "club": "Atlanta United FC",
+   "photo": "https://media.api-sports.io/football/players/414128.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
+   "playerId": "362448",
+   "age": 20,
+   "display_name": "Adam Beaudry",
+   "short_name": "A. Beaudry",
+   "position": "GK",
+   "club": "Colorado Rapids",
+   "photo": "https://media.api-sports.io/football/players/362448.png",
+   "score": 3,
+   "tier": "wider_pool",
+   "is_prospect": true,
+   "youth_level": "U20",
+   "last_named": null
+  },
+  {
    "playerId": "418851",
    "age": 20,
    "display_name": "Luca Bombino",
@@ -1689,20 +1745,6 @@
     "competition": "Friendly",
     "opponent": "Costa Rica"
    }
-  },
-  {
-   "playerId": "362448",
-   "age": 20,
-   "display_name": "Adam Beaudry",
-   "short_name": "A. Beaudry",
-   "position": "GK",
-   "club": "Colorado Rapids",
-   "photo": "https://media.api-sports.io/football/players/362448.png",
-   "score": 2,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
   },
   {
    "playerId": "266599",
@@ -1945,20 +1987,6 @@
    }
   },
   {
-   "playerId": "461627",
-   "age": 18,
-   "display_name": "Jude Terry",
-   "short_name": "J. Terry",
-   "position": "MF",
-   "club": "Los Angeles FC",
-   "photo": "https://media.api-sports.io/football/players/461627.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U17",
-   "last_named": null
-  },
-  {
    "playerId": "51185",
    "age": 29,
    "display_name": "Jackson Yueill",
@@ -2059,20 +2087,6 @@
    }
   },
   {
-   "playerId": "365552",
-   "age": 20,
-   "display_name": "Cruz Medina",
-   "short_name": "C. Medina",
-   "position": "MF",
-   "club": "Tapatío",
-   "photo": "https://media.api-sports.io/football/players/365552.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": "U20",
-   "last_named": null
-  },
-  {
    "playerId": "312998",
    "age": 25,
    "display_name": "Aziel Jackson",
@@ -2162,20 +2176,6 @@
    "position": "DF",
    "club": "SV Darmstadt 98",
    "photo": "https://media.api-sports.io/football/players/380625.png",
-   "score": 1,
-   "tier": "wider_pool",
-   "is_prospect": true,
-   "youth_level": null,
-   "last_named": null
-  },
-  {
-   "playerId": "507608",
-   "age": 16,
-   "display_name": "Robert Turdean",
-   "short_name": "R. Turdean",
-   "position": "MF",
-   "club": "Chicago Fire",
-   "photo": "https://media.api-sports.io/football/players/507608.png",
    "score": 1,
    "tier": "wider_pool",
    "is_prospect": true,

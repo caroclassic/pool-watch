@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-11-02T01:01:06Z",
+ "updated_at": "2026-11-02T02:41:09Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-11-01",
@@ -254,6 +254,10 @@
      "side": "home"
     },
     {
+     "playerId": "312290",
+     "side": "home"
+    },
+    {
      "playerId": "418618",
      "side": "away"
     },
@@ -287,6 +291,10 @@
     {
      "playerId": "51032",
      "side": "away"
+    },
+    {
+     "playerId": "414128",
+     "side": "home"
     }
    ]
   },
@@ -339,6 +347,10 @@
      "side": "home"
     },
     {
+     "playerId": "362414",
+     "side": "home"
+    },
+    {
      "playerId": "413230",
      "side": "home"
     }
@@ -380,10 +392,6 @@
     {
      "playerId": "312998",
      "side": "away"
-    },
-    {
-     "playerId": "461627",
-     "side": "home"
     }
    ]
   },
@@ -1416,6 +1424,10 @@
      "side": "away"
     },
     {
+     "playerId": "362414",
+     "side": "away"
+    },
+    {
      "playerId": "413230",
      "side": "away"
     },
@@ -1506,6 +1518,10 @@
      "side": "away"
     },
     {
+     "playerId": "312290",
+     "side": "away"
+    },
+    {
      "playerId": "351571",
      "side": "home"
     }
@@ -1519,7 +1535,7 @@
    "away": "Atlanta United FC",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": null,
+   "tier": "worth_a_look",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "MLS Season Pass (Apple TV)",
@@ -1535,6 +1551,10 @@
     {
      "playerId": "266599",
      "side": "home"
+    },
+    {
+     "playerId": "414128",
+     "side": "away"
     },
     {
      "playerId": "418618",
@@ -1675,10 +1695,6 @@
     {
      "playerId": "207781",
      "side": "home"
-    },
-    {
-     "playerId": "461627",
-     "side": "away"
     }
    ]
   },
