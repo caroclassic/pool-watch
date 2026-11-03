@@ -1,10 +1,10 @@
 {
  "schema_version": 1,
- "updated_at": "2026-11-02T21:01:07Z",
+ "updated_at": "2026-11-03T05:01:24Z",
  "reference_tz": "America/New_York",
  "window": {
-  "start": "2026-11-02",
-  "end": "2026-11-16"
+  "start": "2026-11-03",
+  "end": "2026-11-17"
  },
  "tier_thresholds": {
   "schema_version": 1,
@@ -13,63 +13,6 @@
   "worth_a_look_min": 4.0
  },
  "matches": [
-  {
-   "matchId": "1549050",
-   "kickoff_utc": "2026-11-02T18:00:00Z",
-   "competition": "Danish Superliga",
-   "home": "Sonderjyske",
-   "away": "FC Copenhagen",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "203014",
-     "side": "home"
-    }
-   ]
-  },
-  {
-   "matchId": "1553214",
-   "kickoff_utc": "2026-11-02T19:30:00Z",
-   "competition": "Ekstraklasa",
-   "home": "Raków Częstochowa",
-   "away": "Pogon Szczecin",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "—",
-   "pool_players": [
-    {
-     "playerId": "51310",
-     "side": "away"
-    }
-   ]
-  },
-  {
-   "matchId": "1550178",
-   "kickoff_utc": "2026-11-02T19:45:00Z",
-   "competition": "Serie A",
-   "home": "Atalanta",
-   "away": "Parma",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "362061",
-     "side": "away"
-    }
-   ]
-  },
   {
    "matchId": "1640479",
    "kickoff_utc": "2026-11-03T17:00:00Z",
@@ -189,25 +132,6 @@
    ]
   },
   {
-   "matchId": "1563246",
-   "kickoff_utc": "2026-11-03T20:00:00Z",
-   "competition": "EFL Championship",
-   "home": "West Brom",
-   "away": "Southampton",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": null,
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "102508",
-     "side": "home"
-    }
-   ]
-  },
-  {
    "matchId": "1635622",
    "kickoff_utc": "2026-11-03T20:00:00Z",
    "competition": "UEFA Champions League",
@@ -222,6 +146,25 @@
    "pool_players": [
     {
      "playerId": "133185",
+     "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1563246",
+   "kickoff_utc": "2026-11-03T20:00:00Z",
+   "competition": "EFL Championship",
+   "home": "West Brom",
+   "away": "Southampton",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "102508",
      "side": "home"
     }
    ]
@@ -2009,6 +1952,125 @@
     {
      "playerId": "486522",
      "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1644697",
+   "kickoff_utc": "2026-11-18T00:00:00Z",
+   "competition": "CONCACAF Nations League",
+   "home": "USA",
+   "away": "Haiti",
+   "fixture_kind": "national_senior",
+   "status": "scheduled",
+   "tier": "must_watch",
+   "tier_at_kickoff": null,
+   "players_basis": "prior_window",
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "1150",
+     "side": "home"
+    },
+    {
+     "playerId": "19549",
+     "side": "home"
+    },
+    {
+     "playerId": "38735",
+     "side": "home"
+    },
+    {
+     "playerId": "50737",
+     "side": "home"
+    },
+    {
+     "playerId": "50879",
+     "side": "home"
+    },
+    {
+     "playerId": "102508",
+     "side": "home"
+    },
+    {
+     "playerId": "126949",
+     "side": "home"
+    },
+    {
+     "playerId": "161921",
+     "side": "home"
+    },
+    {
+     "playerId": "162037",
+     "side": "home"
+    },
+    {
+     "playerId": "162106",
+     "side": "home"
+    },
+    {
+     "playerId": "201713",
+     "side": "home"
+    },
+    {
+     "playerId": "266606",
+     "side": "home"
+    },
+    {
+     "playerId": "266733",
+     "side": "home"
+    },
+    {
+     "playerId": "328617",
+     "side": "home"
+    },
+    {
+     "playerId": "334362",
+     "side": "home"
+    },
+    {
+     "playerId": "340369",
+     "side": "home"
+    },
+    {
+     "playerId": "355994",
+     "side": "home"
+    },
+    {
+     "playerId": "383647",
+     "side": "home"
+    },
+    {
+     "playerId": "412227",
+     "side": "home"
+    },
+    {
+     "playerId": "413230",
+     "side": "home"
+    },
+    {
+     "playerId": "418618",
+     "side": "home"
+    },
+    {
+     "playerId": "428007",
+     "side": "home"
+    },
+    {
+     "playerId": "461514",
+     "side": "home"
+    },
+    {
+     "playerId": "461645",
+     "side": "home"
+    },
+    {
+     "playerId": "462853",
+     "side": "home"
+    },
+    {
+     "playerId": "486522",
+     "side": "home"
     }
    ]
   }
