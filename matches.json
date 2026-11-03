@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-11-03T05:01:24Z",
+ "updated_at": "2026-11-03T09:01:29Z",
  "reference_tz": "America/New_York",
  "window": {
   "start": "2026-11-03",
@@ -304,25 +304,6 @@
    ]
   },
   {
-   "matchId": "1636337",
-   "kickoff_utc": "2026-11-05T17:45:00Z",
-   "competition": "UEFA Europa League",
-   "home": "Sparta Praha",
-   "away": "Bournemouth",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "Paramount+",
-   "pool_players": [
-    {
-     "playerId": "1150",
-     "side": "away"
-    }
-   ]
-  },
-  {
    "matchId": "1636208",
    "kickoff_utc": "2026-11-05T17:45:00Z",
    "competition": "UEFA Europa League",
@@ -342,6 +323,25 @@
     {
      "playerId": "162106",
      "side": "home"
+    }
+   ]
+  },
+  {
+   "matchId": "1636337",
+   "kickoff_utc": "2026-11-05T17:45:00Z",
+   "competition": "UEFA Europa League",
+   "home": "Sparta Praha",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "Paramount+",
+   "pool_players": [
+    {
+     "playerId": "1150",
+     "side": "away"
     }
    ]
   },
@@ -765,7 +765,7 @@
    "away": "Newcastle",
    "fixture_kind": "club",
    "status": "scheduled",
-   "tier": "worth_a_look",
+   "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
    "broadcast": "NBC/USA/Peacock — varies by match",
@@ -872,6 +872,25 @@
    ]
   },
   {
+   "matchId": "1556703",
+   "kickoff_utc": "2026-11-07T15:00:00Z",
+   "competition": "Scottish Premiership",
+   "home": "ST Johnstone",
+   "away": "Dundee",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": null,
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "—",
+   "pool_players": [
+    {
+     "playerId": "359942",
+     "side": "away"
+    }
+   ]
+  },
+  {
    "matchId": "1550194",
    "kickoff_utc": "2026-11-07T17:00:00Z",
    "competition": "Serie A",
@@ -956,6 +975,10 @@
     {
      "playerId": "51185",
      "side": "away"
+    },
+    {
+     "playerId": "201709",
+     "side": "home"
     },
     {
      "playerId": "312164",
@@ -1316,6 +1339,10 @@
      "side": "home"
     },
     {
+     "playerId": "162157",
+     "side": "home"
+    },
+    {
      "playerId": "312896",
      "side": "home"
     },
@@ -1445,25 +1472,6 @@
    ]
   },
   {
-   "matchId": "1557462",
-   "kickoff_utc": "2026-11-08T14:00:00Z",
-   "competition": "Premier League",
-   "home": "Ipswich",
-   "away": "Bournemouth",
-   "fixture_kind": "club",
-   "status": "scheduled",
-   "tier": "worth_a_look",
-   "tier_at_kickoff": null,
-   "players_basis": null,
-   "broadcast": "NBC/USA/Peacock — varies by match",
-   "pool_players": [
-    {
-     "playerId": "1150",
-     "side": "away"
-    }
-   ]
-  },
-  {
    "matchId": "1550190",
    "kickoff_utc": "2026-11-08T14:00:00Z",
    "competition": "Serie A",
@@ -1482,6 +1490,25 @@
     },
     {
      "playerId": "162106",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "1557462",
+   "kickoff_utc": "2026-11-08T14:00:00Z",
+   "competition": "Premier League",
+   "home": "Ipswich",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "status": "scheduled",
+   "tier": "worth_a_look",
+   "tier_at_kickoff": null,
+   "players_basis": null,
+   "broadcast": "NBC/USA/Peacock — varies by match",
+   "pool_players": [
+    {
+     "playerId": "1150",
      "side": "away"
     }
    ]
