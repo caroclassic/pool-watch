@@ -23,9 +23,21 @@ test("initials", () => {
   assert.equal(L.initials("Pelé"), "P");
   assert.equal(L.initials(""), "?");
 });
-test("relevance sort: ties share a number and fall back to A-Z surname", () => {
-  const out = L.sortPlayers(list, "rel").map((p) => p.display_name);
-  assert.deepEqual(out.slice(0, 4), ["Chris Richards", "Lucas de la Torre", "Matt Freese", "Tim Weah"]);
+test("relevance sort: ties share a number and keep the feed's order (A-Z in the feed)", () => {
+  // the feed publishes ties already A-Z by surname; the page keeps that order
+  const fed = L.prepare([
+    P(1, "Chris Richards", 100), P(2, "Lucas de la Torre", 60), P(6, "Matt Freese", 60),
+    P(4, "Tim Weah", 60), P(3, "Słonina Gabriel", 12),
+  ]);
+  const out = L.sortPlayers(fed, "rel").map((p) => p.display_name);
+  assert.deepEqual(out, ["Chris Richards", "Lucas de la Torre", "Matt Freese", "Tim Weah", "Słonina Gabriel"]);
+});
+test("relevance sort: a tie the feed ordered by starter credit is not re-sorted A-Z", () => {
+  const fed = L.prepare([
+    P(1, "Chris Richards", 100), P(2, "Patrick Schulte", 12), P(3, "Sean Johnson", 12), P(4, "Chris Brady", 12),
+  ]);
+  assert.deepEqual(L.sortPlayers(fed, "rel").map((p) => p.display_name),
+    ["Chris Richards", "Patrick Schulte", "Sean Johnson", "Chris Brady"]);
 });
 test("A-Z sort is by surname", () => {
   const out = L.sortPlayers(list, "az").map((p) => p.display_name);
