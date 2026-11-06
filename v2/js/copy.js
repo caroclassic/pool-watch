@@ -53,7 +53,7 @@ export const LEGEND = [
     ["Not playing today", "Followed players with no match listed today."],
   ] },
   { title: "Players page", rows: [
-    ["Pool relevance 94/100", "How close a player is to the national team picture right now. Higher means closer."],
+    ["Squad involvement 94/100", "How embedded a player is in the national team squad. 100 is the most involved player in the pool. It measures presence in the squad, not quality or importance."],
     ["Core", "Top of the pool: the players most likely to be in the squad."],
     ["Contender", "Strong candidate: firmly in the squad conversation."],
     ["In the mix", "In the conversation: could be named when the squad changes."],
@@ -69,7 +69,7 @@ export const ABOUT = [
   { p: "Every day, Stateside XI answers one question: <b>which games should I put on to watch the pool?</b>" },
   { p: "<b>The pool</b> is the group of players in the picture for the U.S. men's national team: established regulars, players pushing for a spot, and young prospects. They play for clubs all over the world, so the games worth watching are scattered across dozens of leagues." },
   { p: "We list each day's matches that feature pool players, flag the ones that matter most, and confirm the starting lineups about 30 minutes before kickoff, so you know who's actually playing before you pick a game." },
-  { p: "<b>Relevance</b> is a 1 to 100 score showing how close each player is to the national team picture right now. Matches are rated by which pool players are likely to play." },
+  { p: "<b>Squad involvement</b> is a 1 to 100 score for how embedded each player is in the national team squad. It measures presence, not quality or importance. Matches are rated by which pool players are likely to play." },
   { p: "<b>Follow</b> players to pin their matches to the top of the page. Your follows are saved on this device." },
   { p: "<b>What we don't do:</b> scores, stats, standings or match analysis. We're only here to help you pick the game." },
   { p: "Days follow U.S. Eastern Time so everyone sees the same slate. Kickoff times show in your own time zone." },
@@ -83,8 +83,8 @@ export const POPOVERS = {
   pool: "Players in the picture for the U.S. men's national team, from regulars to young prospects.",
   must_watch: "A big night for the pool. Levels are fixed, so some days have none.",
   worth_a_look: "Pool players in action, worth catching if you can. Levels are fixed, so some days have none.",
-  lineups: "Lineups usually post about 30 minutes before kickoff. Until then, a listed player is expected to be involved.",
-  relevance: "A 1 to 100 score for how close a player is to the national team picture right now.",
+  lineups: "Lineups usually post about 30 minutes before kickoff. Until then, a listed player is expected to play.",
+  involvement: "A 1 to 100 score for how embedded a player is in the national team squad: presence, not quality or importance.",
   follow: "Pins a player's matches to the top. Saved on this device.",
 };
 

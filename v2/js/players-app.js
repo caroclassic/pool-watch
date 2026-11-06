@@ -70,7 +70,7 @@ function tile(p) {
       h("button", { type: "button", class: "pt-name", onclick: (e) => openPlayer(p.playerId, e.currentTarget) }, p.display_name),
       h("p", { class: "pt-tier" },
         h("span", { class: `pt-word${p.is_prospect ? " is-prospect" : ""}` }, tierLabel(p)),
-        h("span", { class: "pt-num" }, " · ", h("span", { class: "sr-only" }, "Pool relevance "), String(p.score))),
+        h("span", { class: "pt-num" }, " · ", h("span", { class: "sr-only" }, "Squad involvement "), String(p.score))),
       sub ? h("p", { class: "pt-sub" }, sub) : null,
       h("p", { class: `pt-last${ln.muted ? " is-muted" : ""}` }, ln.text, ln.rel ? ` · ${ln.rel}` : "")),
     h("button", {
@@ -104,7 +104,7 @@ function renderControls(c) {
       FILTERS.map((f) => h("button", { type: "button", class: "fchip", dataset: { k: `f-${f}` }, "aria-pressed": String(S.filter === f),
         onclick: () => { S.filter = f; render(); } }, `${FILTER_LABEL[f]} `, h("span", { class: "fnum" }, String(c[f]))))),
     h("div", { class: "sort", role: "group", "aria-label": "Sort players" },
-      [["rel", "Relevance"], ["az", "A–Z"]].map(([k, label]) => h("button", { type: "button", dataset: { k: `s-${k}` }, "aria-pressed": String(S.sort === k),
+      [["rel", "Involvement"], ["az", "A–Z"]].map(([k, label]) => h("button", { type: "button", dataset: { k: `s-${k}` }, "aria-pressed": String(S.sort === k),
         onclick: () => { S.sort = k; storage.set("sxi.players.sort", k); render(); } }, label))));
   const target = qFocus ? els.controls.querySelector("input") : hadFocus ? els.controls.querySelector(`[data-k="${hadFocus}"]`) : null;
   if (target) target.focus();
@@ -167,7 +167,7 @@ async function loadMatches() {
 }
 
 function boot() {
-  clear($("scope")).append("The USMNT player pool, ranked by ", term("relevance", "relevance"), ". ", term("Follow", "follow"), " a player to pin his matches to the top of Matches.");
+  clear($("scope")).append("The USMNT player pool, ranked by ", term("squad involvement", "involvement"), ". ", term("Follow", "follow"), " a player to pin his matches to the top of Matches.");
   mountThemeButton($("theme-btn"), storage);
   $("legend-btn").addEventListener("click", (e) => legendSheet({ from: e.currentTarget }));
   $("follow-btn").addEventListener("click", (e) => openFollowing(e.currentTarget));
