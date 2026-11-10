@@ -93,8 +93,10 @@ test("poller: the schedule is optional; a failing or missing schedule never brea
   let n = 0;
   h = harness({ schedule: async () => { n++; if (n > 1) throw new D.FeedError("down", "network"); return { schedule: "v1" }; } });
   await h.p.start(); assert.deepEqual(h.p.data.schedule, { schedule: "v1" });
-  h.advance(700_000); await h.fire();
-  assert.deepEqual(h.p.data.schedule, { schedule: "v1" }); assert.equal(h.events.at(-1)[0], "data");
+  h.advance(700_000); await h.fire();                                      // a full refresh, but the schedule is not re-read this soon
+  assert.equal(n, 1); assert.deepEqual(h.p.data.schedule, { schedule: "v1" });
+  h.advance(6 * 3600_000); await h.fire();                                 // hours later it is re-read, fails, and the earlier copy is kept
+  assert.equal(n, 2); assert.deepEqual(h.p.data.schedule, { schedule: "v1" }); assert.equal(h.events.at(-1)[0], "data");
   // a schedule that never loads: matches still load, schedule is null (the page then says the longer schedule is unavailable)
   h = harness({ schedule: async () => { throw new D.FeedError("down", "network"); } });
   await h.p.start(); assert.equal(h.p.data.schedule, null); assert.deepEqual(h.events[0], ["data", true]);

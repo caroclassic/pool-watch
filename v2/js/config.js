@@ -11,6 +11,7 @@ export const FULL_REFRESH_MS = 600_000;    // matches.json + players.json re-rea
 // Spec §5.2 suggests ~10 min. status.json is committed every ~8 min while a match
 // is active and takes a minute or two to appear on GitHub Pages, so 10 would
 // raise false "Status as of" alarms. Tune against real poll logs.
+export const SCHEDULE_REFRESH_MS = 6 * 3600_000;   // schedule.json is rebuilt daily and is ~300 KB: re-read it every few hours, not every 10 minutes
 export const STALE_MINUTES = 15;
 export const STRIP_BACK = 3;
 export const STRIP_AHEAD = 14;

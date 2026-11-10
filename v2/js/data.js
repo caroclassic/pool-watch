@@ -3,7 +3,7 @@
 // from is this file's business. Accounts or an API later mean a different
 // source, not a different front end.
 
-import { SCHEMA_VERSION, POLL_ACTIVE_MS, POLL_IDLE_MS, FULL_REFRESH_MS } from "./config.js";
+import { SCHEMA_VERSION, POLL_ACTIVE_MS, POLL_IDLE_MS, FULL_REFRESH_MS, SCHEDULE_REFRESH_MS } from "./config.js";
 import { LIVE_LEAD_MIN, LIVE_TAIL_HOURS } from "./model.js";
 
 export class FeedError extends Error {
@@ -61,7 +61,7 @@ export const pollDelay = (fast) => (fast ? POLL_ACTIVE_MS : POLL_IDLE_MS);
  */
 export function createPoller({ source, delay, onData, onError, doc = document, timers = { setTimeout: (...a) => setTimeout(...a), clearTimeout: (...a) => clearTimeout(...a) }, clock = () => Date.now() }) {
   let data = { matches: null, status: null, players: null, schedule: null };
-  let timer = null, lastFull = 0, lastRun = 0, running = false, stopped = true, nextDelay = POLL_IDLE_MS;
+  let timer = null, lastFull = 0, lastSched = 0, lastRun = 0, running = false, stopped = true, nextDelay = POLL_IDLE_MS;
 
   const hidden = () => doc && doc.visibilityState === "hidden";
   const clear = () => { if (timer !== null) { timers.clearTimeout(timer); timer = null; } };
@@ -74,8 +74,11 @@ export function createPoller({ source, delay, onData, onError, doc = document, t
     try {
       if (first || full || clock() - lastFull >= FULL_REFRESH_MS) {
         // The schedule is optional: if it fails the page keeps working (and keeps the last good copy, if it has one).
-        const sched = source.getSchedule ? source.getSchedule().catch(() => null) : Promise.resolve(null);
+        // It is large and rebuilt daily, so it is re-read only the first time, when we have none, or every few hours.
+        const wantSched = source.getSchedule && (first || !data.schedule || clock() - lastSched >= SCHEDULE_REFRESH_MS);
+        const sched = wantSched ? source.getSchedule().catch(() => null) : Promise.resolve(null);
         const [matches, status, players, schedule] = await Promise.all([source.getMatches(), source.getStatus(), source.getPlayers(), sched]);
+        if (wantSched) lastSched = clock();
         data = { matches, status, players, schedule: schedule || data.schedule }; lastFull = clock();
       } else {
         data = { ...data, status: await source.getStatus() };
