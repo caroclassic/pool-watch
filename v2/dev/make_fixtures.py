@@ -84,8 +84,11 @@ def build(now, kind):
 
     if kind == "main":
         # past days
-        add(901, at(-2, 15), "Eredivisie", "PSV", "Ajax", "full_time", "worth_a_look", players=pp([8, 10]))
-        add(902, at(-1, 14), "Premier League", "Fulham", "Brighton", "full_time", None, players=pp([4]))
+        # (the feed carries a past day's END STATE in status.json: final status and each player's final participation)
+        end = lambda tak, part: dict(status="full_time", status_updated_at=None, lineups_confirmed=True, tier=tak, tier_at_kickoff=tak, participation=part)
+        add(901, at(-2, 15), "Eredivisie", "PSV", "Ajax", "full_time", "worth_a_look", players=pp([8, 10]), st=end("worth_a_look", {"8": "starts", "10": "bench"}))
+        add(902, at(-1, 14), "Premier League", "Fulham", "Brighton", "full_time", None, players=pp([4]), st=end(None, {"4": "starts"}))
+        add(903, at(-1, 10), "Bundesliga", "Leverkusen", "Mainz", "full_time", "must_watch", players=pp([17, 11]), st=end("must_watch", {"17": "starts", "11": "not_in_squad"}))
         # today (ET Fri)
         add(101, at(0, 9, 30), "Ligue 1", "Marseille", "Lille", "full_time", "worth_a_look", players=pp([7]), st=dict(status="full_time", status_updated_at=Z(now), lineups_confirmed=True, participation={"7": "starts"}))
         add(102, at(0, 11, 30), "Serie A", "Atalanta", "Napoli", "scheduled", "must_watch", players=pp([9, 2, 6]), bc="Paramount+",

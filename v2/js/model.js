@@ -219,7 +219,8 @@ export function cardView(v, ctx) {
     collapsedCount: Math.min(COLLAPSED_CHIPS, expandable.length),
     note: v.playersBasis === "pool_estimate" ? "Call-up not announced yet"
         : v.playersBasis === "prior_window" ? "Based on the previous squad" : null,
-    dim: v.status === "full_time" || DISRUPTED.has(v.status) || overdueState(v, ctx.now) === "dropped",
+    // Finished matches are dimmed on TODAY's page (they are history there); a past day is all history, so nothing on it is.
+    dim: ((v.status === "full_time" || overdueState(v, ctx.now) === "dropped") && ctx.dayKey === ctx.todayKey) || DISRUPTED.has(v.status),
   };
   card.ariaLabel = ariaLabel(card);
   return card;
@@ -239,12 +240,15 @@ export function buildDay(ctx) {
   const dayViews = views.filter((v) => v.etDay === dayKey).sort(byKickoff);
   const card = (v) => cardView(v, ctx);
 
+  // On a past day every match is finished, so "Earlier" (today's collapsed history) would hide the whole day: they sit in
+  // the ordinary bands instead, by the tier frozen at kickoff, each showing how it ended.
+  const pastDay = dayKey < todayKey;
   const live = [], must = [], worth = [], rest = [], disrupted = [], earlier = [], pinned = [];
   for (const v of dayViews) {
     const fresh = freshness(v, ctx.statusFeed, ctx.now, ctx.staleMinutes);
     const od = overdueState(v, ctx.now);
     if (isPinned(v, follows, ctx.now)) { pinned.push(card(v)); continue; }
-    if (v.status === "full_time" || od === "dropped") { earlier.push(card(v)); continue; }
+    if (!pastDay && (v.status === "full_time" || od === "dropped")) { earlier.push(card(v)); continue; }
     if (DISRUPTED.has(v.status)) { disrupted.push(card(v)); continue; }
     if ((v.status === "live" || od === "probable") && !fresh.stale) { live.push(card(v)); continue; }
     const c = card(v);

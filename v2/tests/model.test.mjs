@@ -380,3 +380,35 @@ test("buildDay: same kickoff keeps the feed's order (highest match score first),
   const d = M.buildDay(ctx(view(mf, sfeed())));
   assert.deepEqual(d.worth.map((c) => c.id), ["500", "900", "100"]);
 });
+
+test("a past day shows every finished match in the ordinary bands, undimmed, with how each player's match ended", () => {
+  // Two ET days ago: three finished matches (kickoff tiers frozen: must, worth, none) with final participation.
+  const D2 = "2026-10-07";
+  const ko = (h) => `${D2}T${h}:00:00Z`;
+  const mf = feed([
+    match(1, { ko: ko("15"), status: "full_time", tak: "must_watch", pool: [pm(11), pm(12)] }),
+    match(2, { ko: ko("17"), status: "full_time", tak: "worth_a_look", pool: [pm(13)] }),
+    match(3, { ko: ko("19"), status: "full_time", tak: null, pool: [pm(14)] }),
+  ]);
+  mf.window = { start: D2, end: "2026-10-23" };
+  const sf = sfeed({
+    "1": { status: "full_time", lineups_confirmed: true, tier_at_kickoff: "must_watch", participation: { 11: "starts", 12: "bench" } },
+    "2": { status: "full_time", lineups_confirmed: true, tier_at_kickoff: "worth_a_look", participation: { 13: "not_in_squad" } },
+    "3": { status: "full_time", lineups_confirmed: true, tier_at_kickoff: null, participation: { 14: "starts" } },
+  });
+  const views = view(mf, sf);
+  const d = M.buildDay(ctx(views, { day: D2 }));                                  // TODAY is 2026-10-09, so D2 is a past day
+  assert.deepEqual(d.earlier, [], "nothing hides under Earlier on a past day");
+  assert.deepEqual(d.must.map((c) => c.id), ["1"]); assert.deepEqual(d.worth.map((c) => c.id), ["2"]); assert.deepEqual(d.rest.map((c) => c.id), ["3"]);
+  assert.ok([...d.must, ...d.worth, ...d.rest].every((c) => c.dim === false), "past-day cards are not dimmed");
+  assert.deepEqual(d.must[0].chips.map((c) => [c.name, c.word]), [["C. Pulisic", "Starts"], ["G. Reyna", "Bench"]]);
+  assert.equal(d.worth[0].chips[0].word, "Not in squad");
+  assert.equal(d.must[0].header.text, "Full time");
+});
+
+test("the same finished matches on TODAY's page still go under Earlier, dimmed", () => {
+  const mf = feed([match(1, { ko: iso(-4), status: "full_time", tak: "must_watch", pool: [pm(11)] })]);
+  const sf = sfeed({ "1": { status: "full_time", lineups_confirmed: true, tier_at_kickoff: "must_watch", participation: { 11: "starts" } } });
+  const d = M.buildDay(ctx(view(mf, sf)));
+  assert.deepEqual(d.earlier.map((c) => c.id), ["1"]); assert.equal(d.earlier[0].dim, true); assert.deepEqual(d.must, []);
+});
