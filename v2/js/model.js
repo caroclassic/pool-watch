@@ -342,6 +342,14 @@ export function dayGap(matchesFeed, dayKey, todayKey) {
   return dayKey < todayKey ? "past" : "future";
 }
 
+/** How many past days the feed keeps (window start to today), 0 when it keeps none or has no window. */
+export function daysKept(matchesFeed, todayKey) {
+  const w = matchesFeed && matchesFeed.window;
+  if (!w || !w.start || w.start >= todayKey) return 0;
+  const ms = (k) => Date.UTC(+k.slice(0, 4), +k.slice(5, 7) - 1, +k.slice(8, 10));
+  return Math.round((ms(todayKey) - ms(w.start)) / 86400000);
+}
+
 /** First ET day after `fromKey` that has any match, or null. */
 export function nextMatchDay(views, fromKey) {
   let best = null;

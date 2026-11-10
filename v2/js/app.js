@@ -4,7 +4,7 @@
 import { dataBase, STALE_MINUTES, STRIP_BACK, STRIP_AHEAD } from "./config.js";
 import { createHttpSource, createPoller, shouldPollFast, pollDelay } from "./data.js";
 import {
-  mergeFeeds, tiersEnabled, buildDay, dayFacts, stripDays, inWindow, dayGap,
+  mergeFeeds, tiersEnabled, buildDay, dayFacts, stripDays, inWindow, dayGap, daysKept,
   nextMatchDay, nextMatchFor, followedChanges, rolledOver, nextAnchorToday,
 } from "./model.js";
 import { createStorage, createFollowsStore, createFlags, parseHash, buildHash, decodeShare, readLegacyFollows } from "./storage.js";
@@ -135,10 +135,13 @@ function section(label, cards, { cls = "", sub = null, termKey = null, showTier 
 function emptyState(day, c) {
   const w = weekdayLong(day);
   const gap = dayGap(S.data.matches, day, c.todayKey);
-  if (gap === "past") {          // before the feed's window: the site lists today and the days ahead only
+  if (gap === "past") {          // before the feed's window: only the days the feed keeps are listed
+    const kept = daysKept(S.data.matches, c.todayKey);
     return h("div", { class: "empty" },
       h("p", { class: "empty-title" }, "This day has passed."),
-      h("p", { class: "dim" }, "Stateside XI lists today and the days ahead, not past days."));
+      h("p", { class: "dim" }, kept > 0
+        ? `Stateside XI keeps the last ${kept === 1 ? "day" : `${kept} days`} and the days ahead.`
+        : "Stateside XI lists today and the days ahead, not past days."));
   }
   if (gap === "future") {
     return h("div", { class: "empty" },
