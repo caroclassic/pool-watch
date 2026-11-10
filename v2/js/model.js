@@ -335,6 +335,13 @@ export function inWindow(matchesFeed, dayKey) {
   return dayKey >= w.start && dayKey <= w.end;
 }
 
+/** Why an empty day is empty: "none" (the feed covers it, nothing on), "past" (before the feed's
+ *  window: earlier days are not kept) or "future" (after it: not published yet). */
+export function dayGap(matchesFeed, dayKey, todayKey) {
+  if (inWindow(matchesFeed, dayKey)) return "none";
+  return dayKey < todayKey ? "past" : "future";
+}
+
 /** First ET day after `fromKey` that has any match, or null. */
 export function nextMatchDay(views, fromKey) {
   let best = null;

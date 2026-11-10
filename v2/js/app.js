@@ -4,7 +4,7 @@
 import { dataBase, STALE_MINUTES, STRIP_BACK, STRIP_AHEAD } from "./config.js";
 import { createHttpSource, createPoller, shouldPollFast, pollDelay } from "./data.js";
 import {
-  mergeFeeds, tiersEnabled, buildDay, dayFacts, stripDays, inWindow,
+  mergeFeeds, tiersEnabled, buildDay, dayFacts, stripDays, inWindow, dayGap,
   nextMatchDay, nextMatchFor, followedChanges, rolledOver, nextAnchorToday,
 } from "./model.js";
 import { createStorage, createFollowsStore, createFlags, parseHash, buildHash, decodeShare, readLegacyFollows } from "./storage.js";
@@ -134,7 +134,13 @@ function section(label, cards, { cls = "", sub = null, termKey = null, showTier 
 
 function emptyState(day, c) {
   const w = weekdayLong(day);
-  if (!inWindow(S.data.matches, day)) {
+  const gap = dayGap(S.data.matches, day, c.todayKey);
+  if (gap === "past") {          // before the feed's window: the site lists today and the days ahead only
+    return h("div", { class: "empty" },
+      h("p", { class: "empty-title" }, "This day has passed."),
+      h("p", { class: "dim" }, "Stateside XI lists today and the days ahead, not past days."));
+  }
+  if (gap === "future") {
     return h("div", { class: "empty" },
       h("p", { class: "empty-title" }, "This day isn't published yet."),
       h("p", { class: "dim" }, "Matches appear here closer to the date."));

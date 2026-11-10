@@ -251,6 +251,9 @@ test("day facts, strip and next-match jump", () => {
   assert.equal(days.length, 18); assert.equal(days[0], "2026-10-06"); assert.equal(days[3], TODAY); assert.equal(days[17], "2026-10-23");
   assert.equal(M.nextMatchDay(v, TODAY), "2026-10-10");
   assert.equal(M.nextMatchDay(v, "2026-10-12"), null);                 // cancelled match does not count
+  assert.equal(M.dayGap(mf, "2026-10-08", TODAY), "past");              // before the window: earlier days are not kept
+  assert.equal(M.dayGap(mf, "2027-03-01", TODAY), "future");            // after it: not published yet
+  assert.equal(M.dayGap(mf, TODAY, TODAY), "none"); assert.equal(M.dayGap({}, "2020-01-01", TODAY), "none");
   assert.equal(M.inWindow(mf, "2026-10-08"), false); assert.equal(M.inWindow(mf, TODAY), true); assert.equal(M.inWindow({}, "2020-01-01"), true);
 });
 
