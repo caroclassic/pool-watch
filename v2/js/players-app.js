@@ -69,8 +69,7 @@ function tile(p) {
     h("div", { class: "pt-body" },
       h("button", { type: "button", class: "pt-name", onclick: (e) => openPlayer(p.playerId, e.currentTarget) }, p.display_name),
       h("p", { class: "pt-tier" },
-        h("span", { class: `pt-word${p.is_prospect ? " is-prospect" : ""}` }, tierLabel(p)),
-        h("span", { class: "pt-num" }, " · ", h("span", { class: "sr-only" }, "Squad involvement "), String(p.score))),
+        h("span", { class: `pt-word${p.is_prospect ? " is-prospect" : ""}` }, tierLabel(p))),
       sub ? h("p", { class: "pt-sub" }, sub) : null,
       h("p", { class: `pt-last${ln.muted ? " is-muted" : ""}` }, ln.text, ln.rel ? ` · ${ln.rel}` : "")),
     h("button", {

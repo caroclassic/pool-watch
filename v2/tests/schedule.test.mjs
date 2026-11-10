@@ -6,8 +6,8 @@ import { indexPlayers } from "../js/players-model.js";
 const NOW = new Date("2026-11-10T15:00:00Z");
 const row = (id, ko, pool = ["11"]) => ({ matchId: String(id), kickoff_utc: ko, competition: "Premier League", home: "A", away: "B",
   fixture_kind: "club", pool_players: pool.map((p) => ({ playerId: p, side: "home" })) });
-const players = indexPlayers({ players: [{ playerId: "11", short_name: "C. Pulisic", score: 70 }, { playerId: "12", short_name: "G. Reyna", score: 60 },
-  { playerId: "13", short_name: "A. Able", score: 60 }] });
+const players = indexPlayers({ players: [{ playerId: "11", short_name: "C. Pulisic", score: 70 }, { playerId: "13", short_name: "A. Able", score: 60 },
+  { playerId: "12", short_name: "G. Reyna", score: 60 }] });   // feed order: tied players A-Z
 
 test("scheduleIndex groups by the ET day of kickoff, in kickoff order", () => {
   const idx = M.scheduleIndex({ matches: [row(2, "2026-11-22T20:00:00Z"), row(3, "2026-11-23T02:30:00Z"), row(1, "2026-11-22T14:00:00Z")] });

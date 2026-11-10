@@ -71,3 +71,9 @@ test("legacy follows are read, junk is dropped", () => {
   st.set("slate-follows", "not json");
   assert.deepEqual(readLegacyFollows(st), []);
 });
+
+test("indexPlayers: the feed publishes no number; order becomes an internal ordinal, earlier = higher", async () => {
+  const { indexPlayers } = await import("../js/players-model.js");
+  const m = indexPlayers({ players: [{ playerId: "1" }, { playerId: "2" }, { playerId: "3" }] });
+  assert.ok(m.get("1").score > m.get("2").score && m.get("2").score > m.get("3").score);
+});

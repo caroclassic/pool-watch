@@ -56,11 +56,11 @@ def players_feed(now):
     for pid, dn, sn, pos, club, sc, tier, pro, yl in P:
         l = ln.get(pid)
         out.append({"playerId": str(pid), "display_name": dn, "short_name": sn, "position": pos, "club": club,
-                    "photo": None, "score": sc, "tier": tier, "is_prospect": pro, "youth_level": yl,
+                    "photo": None, "tier": tier, "is_prospect": pro, "youth_level": yl,
                     # sample ages; pid 7 has none so the card's "no age" case shows up in dev
                     "age": None if pid == 7 else (16 + pid % 4 if pro else 22 + (pid * 3) % 16),
                     "last_named": {"date": l[0], "competition": l[1], "opponent": l[2]} if l else None})
-    return {"schema_version": 1, "updated_at": Z(now), "top_score": 100,
+    return {"schema_version": 1, "updated_at": Z(now),
             "player_tiers_note": "dev", "player_tier_bands": {"core_min": 61, "contender_min": 42, "in_the_mix_min": 17},
             "players": out}
 

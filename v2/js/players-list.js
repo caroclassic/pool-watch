@@ -65,9 +65,8 @@ export function matchesQuery(p, query) {
 export function sortPlayers(list, mode) {
   const az = (a, b) => a._name.localeCompare(b._name) || a._i - b._i;
   const out = list.slice();
-  // Relevance: players on one number keep the order the feed published them in (A-Z by surname, with
-  // keepers on the same number ordered by starter credit), so the feed owns the tie-break.
-  out.sort(mode === "az" ? az : (a, b) => (b.score - a.score) || (a._i - b._i));
+  // Involvement: the feed's own order (raw score; exact ties A-Z, keepers by starter credit). No number is shown.
+  out.sort(mode === "az" ? az : (a, b) => a._i - b._i);
   return out;
 }
 

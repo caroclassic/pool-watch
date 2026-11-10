@@ -85,7 +85,7 @@ export function playerSheet(p, id, { followed, onToggle, now, from }) {
       h("div", { class: "player-head" },
         p.photo ? h("img", { class: "photo", src: p.photo, alt: "", width: 72, height: 72, loading: "lazy", referrerpolicy: "no-referrer" }) : h("div", { class: "photo ph", "aria-hidden": "true" }),
         h("div", null,
-          h("p", { class: "tier-line" }, h("b", null, term(tierLabel(p), tierPopoverKey(p))), h("span", { class: "tier-num" }, ` · Squad involvement ${p.score}/100`)),
+          h("p", { class: "tier-line" }, h("b", null, term(tierLabel(p), tierPopoverKey(p)))),
           p.position || p.club ? h("p", { class: "dim" }, [p.position, p.club].filter(Boolean).join(" · ")) : null,
           ageLine(p) ? h("p", { class: "dim" }, ageLine(p)) : null)),
       h("p", { class: `last-named${ln.muted ? " is-muted" : ""}` }, ln.text, ln.rel ? ` · ${ln.rel}` : ""),

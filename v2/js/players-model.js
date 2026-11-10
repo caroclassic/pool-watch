@@ -56,7 +56,10 @@ export function lastNamedLine(p, now = new Date()) {
 /** Index players.json by playerId. */
 export function indexPlayers(feed) {
   const map = new Map();
-  for (const p of (feed && feed.players) || []) map.set(String(p.playerId), p);
+  // The feed publishes no involvement number, only the order. `score` is an internal ordinal made from that
+  // order (higher = earlier in the list), used to sort pills and schedule rows; it is never shown.
+  const list = (feed && feed.players) || [];
+  list.forEach((p, i) => map.set(String(p.playerId), { ...p, score: list.length - i }));
   return map;
 }
 
