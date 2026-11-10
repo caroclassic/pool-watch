@@ -14,7 +14,8 @@ import { monthWeeks, shiftMonth, moveFocus, nextForFollows, timeFirm } from "../
 import { TIME_FIRM_DAYS } from "../config.js";
 import { chipName } from "../players-model.js";
 
-const WEEKDAYS = [["Sun", "Sunday"], ["Mon", "Monday"], ["Tue", "Tuesday"], ["Wed", "Wednesday"], ["Thu", "Thursday"], ["Fri", "Friday"], ["Sat", "Saturday"]];
+// One letter on screen (it fits at 200% text on a phone); the full name is there for screen readers.
+const WEEKDAYS = [["S", "Sunday"], ["M", "Monday"], ["T", "Tuesday"], ["W", "Wednesday"], ["T", "Thursday"], ["F", "Friday"], ["S", "Saturday"]];
 
 /** "7:00 PM ET" for a kickoff inside the trusted range, otherwise the plain "time to be confirmed". */
 export function scheduleTime(row, now, tz) {
@@ -69,7 +70,7 @@ export function calendarSheet(o) {
     if (i.n) marks.push(h("span", { class: "cal-count", "aria-hidden": "true" }, String(i.n)));
     return h("button", {
       type: "button", class: `cal-day${key === o.selected ? " is-selected" : ""}${key === o.todayKey ? " is-today" : ""}${i.outside ? " is-na" : ""}`,
-      tabindex: key === focusKey ? "0" : "-1", "aria-label": aria, "aria-pressed": key === o.selected ? "true" : "false",
+      tabindex: key === focusKey ? "0" : "-1", "aria-label": aria,
       "aria-current": key === o.todayKey ? "date" : null, dataset: { day: key }, onclick: () => pick(key),
       onkeydown: (e) => { const to = moveFocus(key, e.key); if (to) { e.preventDefault(); goTo(to); } },
     }, h("span", { class: "cal-num" }, dayOfMonth(key)), h("span", { class: "cal-marks" }, marks.length ? marks : " "));
@@ -102,9 +103,9 @@ export function calendarSheet(o) {
           h("h3", { class: "cal-month", id: "cal-month", "aria-live": "polite" }, title),
           h("button", { type: "button", class: "cal-step", "aria-label": CALENDAR.next, disabled: !nextOk, onclick: () => goTo(`${shiftMonth(month, 1)}-01`) }, "›")),
         h("table", { class: "cal-grid", role: "grid", "aria-labelledby": "cal-month" },
-          h("thead", null, h("tr", null, WEEKDAYS.map(([s, l]) => h("th", { scope: "col", abbr: l }, s)))),
+          h("thead", null, h("tr", null, WEEKDAYS.map(([s, l]) => h("th", { scope: "col" }, h("span", { "aria-hidden": "true" }, s), h("span", { class: "sr-only" }, l))))),
           h("tbody", null, monthWeeks(month).map((week) =>
-            h("tr", null, week.map((key) => h("td", { role: "gridcell" }, key ? dayButton(key) : null)))))),
+            h("tr", null, week.map((key) => h("td", { role: "gridcell", "aria-selected": key === o.selected ? "true" : "false" }, key ? dayButton(key) : null)))))),
         h("ul", { class: "cal-legend" },
           h("li", null, h("span", { class: "t-must", "aria-hidden": "true" }), ` ${CALENDAR.legendMust}`),
           h("li", null, h("span", { class: "cal-ring", "aria-hidden": "true" }), ` ${CALENDAR.legendSched}`)),
