@@ -1,0 +1,5514 @@
+{
+ "schema_version": 1,
+ "updated_at": "2026-10-09T17:00:00Z",
+ "reference_tz": "America/New_York",
+ "window": {
+  "start": "2026-10-09",
+  "end": "2027-04-27"
+ },
+ "matches": [
+  {
+   "matchId": "5001",
+   "kickoff_utc": "2026-10-10T12:00:00Z",
+   "competition": "Serie A",
+   "home": "Atalanta",
+   "away": "Derby County",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "9",
+     "side": "home"
+    },
+    {
+     "playerId": "20",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5002",
+   "kickoff_utc": "2026-10-10T14:30:00Z",
+   "competition": "Bundesliga",
+   "home": "Atlético Madrid",
+   "away": "Fulham",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "13",
+     "side": "home"
+    },
+    {
+     "playerId": "29",
+     "side": "home"
+    },
+    {
+     "playerId": "4",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5003",
+   "kickoff_utc": "2026-10-10T15:00:00Z",
+   "competition": "La Liga",
+   "home": "Bayer Leverkusen",
+   "away": "Houston Dynamo",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "17",
+     "side": "home"
+    },
+    {
+     "playerId": "22",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5004",
+   "kickoff_utc": "2026-10-10T19:30:00Z",
+   "competition": "Ligue 1",
+   "home": "Borussia Mönchengladbach",
+   "away": "Juventus",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "11",
+     "side": "home"
+    },
+    {
+     "playerId": "15",
+     "side": "home"
+    },
+    {
+     "playerId": "2",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5005",
+   "kickoff_utc": "2026-10-11T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Atlético Madrid",
+   "away": "Juventus",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "13",
+     "side": "home"
+    },
+    {
+     "playerId": "29",
+     "side": "home"
+    },
+    {
+     "playerId": "2",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5006",
+   "kickoff_utc": "2026-10-11T14:30:00Z",
+   "competition": "La Liga",
+   "home": "Bayer Leverkusen",
+   "away": "Leeds United",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "17",
+     "side": "home"
+    },
+    {
+     "playerId": "14",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5007",
+   "kickoff_utc": "2026-10-11T15:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Borussia Mönchengladbach",
+   "away": "Marseille",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "11",
+     "side": "home"
+    },
+    {
+     "playerId": "15",
+     "side": "home"
+    },
+    {
+     "playerId": "7",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5008",
+   "kickoff_utc": "2026-10-11T19:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Bournemouth",
+   "away": "Monaco",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "3",
+     "side": "home"
+    },
+    {
+     "playerId": "6",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5009",
+   "kickoff_utc": "2026-10-13T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Borussia Mönchengladbach",
+   "away": "Philadelphia Union",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "11",
+     "side": "home"
+    },
+    {
+     "playerId": "15",
+     "side": "home"
+    },
+    {
+     "playerId": "23",
+     "side": "away"
+    },
+    {
+     "playerId": "28",
+     "side": "away"
+    },
+    {
+     "playerId": "30",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5010",
+   "kickoff_utc": "2026-10-14T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Bournemouth",
+   "away": "San Jose Earthquakes",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "3",
+     "side": "home"
+    },
+    {
+     "playerId": "25",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5011",
+   "kickoff_utc": "2026-10-17T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Derby County",
+   "away": "Borussia Mönchengladbach",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "20",
+     "side": "home"
+    },
+    {
+     "playerId": "11",
+     "side": "away"
+    },
+    {
+     "playerId": "15",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5012",
+   "kickoff_utc": "2026-10-17T14:30:00Z",
+   "competition": "La Liga",
+   "home": "Fulham",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "4",
+     "side": "home"
+    },
+    {
+     "playerId": "3",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5013",
+   "kickoff_utc": "2026-10-17T15:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Houston Dynamo",
+   "away": "Chivas Guadalajara",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "22",
+     "side": "home"
+    },
+    {
+     "playerId": "18",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5014",
+   "kickoff_utc": "2026-10-17T19:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Juventus",
+   "away": "Crystal Palace",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "2",
+     "side": "home"
+    },
+    {
+     "playerId": "12",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5015",
+   "kickoff_utc": "2026-10-18T12:00:00Z",
+   "competition": "La Liga",
+   "home": "Fulham",
+   "away": "Crystal Palace",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "4",
+     "side": "home"
+    },
+    {
+     "playerId": "12",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5016",
+   "kickoff_utc": "2026-10-18T14:30:00Z",
+   "competition": "Ligue 1",
+   "home": "Houston Dynamo",
+   "away": "Derby County",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "22",
+     "side": "home"
+    },
+    {
+     "playerId": "20",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5017",
+   "kickoff_utc": "2026-10-18T15:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Juventus",
+   "away": "Fulham",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "2",
+     "side": "home"
+    },
+    {
+     "playerId": "4",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5018",
+   "kickoff_utc": "2026-10-18T19:30:00Z",
+   "competition": "Premier League",
+   "home": "Leeds United",
+   "away": "Houston Dynamo",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "14",
+     "side": "home"
+    },
+    {
+     "playerId": "22",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5019",
+   "kickoff_utc": "2026-10-20T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Juventus",
+   "away": "Marseille",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "2",
+     "side": "home"
+    },
+    {
+     "playerId": "7",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5020",
+   "kickoff_utc": "2026-10-21T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Leeds United",
+   "away": "PSV",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "14",
+     "side": "home"
+    },
+    {
+     "playerId": "8",
+     "side": "away"
+    },
+    {
+     "playerId": "10",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5021",
+   "kickoff_utc": "2026-10-24T12:00:00Z",
+   "competition": "La Liga",
+   "home": "Nottingham Forest",
+   "away": "AC Milan",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "5",
+     "side": "home"
+    },
+    {
+     "playerId": "1",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5022",
+   "kickoff_utc": "2026-10-24T14:30:00Z",
+   "competition": "Ligue 1",
+   "home": "PSV",
+   "away": "Atalanta",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "8",
+     "side": "home"
+    },
+    {
+     "playerId": "10",
+     "side": "home"
+    },
+    {
+     "playerId": "9",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5023",
+   "kickoff_utc": "2026-10-24T15:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Philadelphia Union",
+   "away": "Atlético Madrid",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "23",
+     "side": "home"
+    },
+    {
+     "playerId": "28",
+     "side": "home"
+    },
+    {
+     "playerId": "30",
+     "side": "home"
+    },
+    {
+     "playerId": "13",
+     "side": "away"
+    },
+    {
+     "playerId": "29",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5024",
+   "kickoff_utc": "2026-10-24T19:30:00Z",
+   "competition": "Premier League",
+   "home": "Real Salt Lake",
+   "away": "Bayer Leverkusen",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "16",
+     "side": "home"
+    },
+    {
+     "playerId": "17",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5025",
+   "kickoff_utc": "2026-10-25T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "PSV",
+   "away": "Bayer Leverkusen",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "8",
+     "side": "home"
+    },
+    {
+     "playerId": "10",
+     "side": "home"
+    },
+    {
+     "playerId": "17",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5026",
+   "kickoff_utc": "2026-10-25T14:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Philadelphia Union",
+   "away": "Borussia Mönchengladbach",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "23",
+     "side": "home"
+    },
+    {
+     "playerId": "28",
+     "side": "home"
+    },
+    {
+     "playerId": "30",
+     "side": "home"
+    },
+    {
+     "playerId": "11",
+     "side": "away"
+    },
+    {
+     "playerId": "15",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5027",
+   "kickoff_utc": "2026-10-25T15:00:00Z",
+   "competition": "Premier League",
+   "home": "Real Salt Lake",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "16",
+     "side": "home"
+    },
+    {
+     "playerId": "3",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5028",
+   "kickoff_utc": "2026-10-25T19:30:00Z",
+   "competition": "Serie A",
+   "home": "Real Sociedad",
+   "away": "Chivas Guadalajara",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "24",
+     "side": "home"
+    },
+    {
+     "playerId": "18",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5029",
+   "kickoff_utc": "2026-10-27T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Real Salt Lake",
+   "away": "Fulham",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "16",
+     "side": "home"
+    },
+    {
+     "playerId": "4",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5030",
+   "kickoff_utc": "2026-10-28T12:00:00Z",
+   "competition": "Serie A",
+   "home": "Real Sociedad",
+   "away": "Leeds United",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "24",
+     "side": "home"
+    },
+    {
+     "playerId": "14",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5031",
+   "kickoff_utc": "2026-10-31T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Unattached",
+   "away": "Toulouse",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "27",
+     "side": "home"
+    },
+    {
+     "playerId": "21",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5032",
+   "kickoff_utc": "2026-10-31T14:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Vancouver Whitecaps",
+   "away": "Unattached",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "26",
+     "side": "home"
+    },
+    {
+     "playerId": "27",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5033",
+   "kickoff_utc": "2026-10-31T15:00:00Z",
+   "competition": "Premier League",
+   "home": "Villarreal",
+   "away": "Vancouver Whitecaps",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "19",
+     "side": "home"
+    },
+    {
+     "playerId": "26",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5034",
+   "kickoff_utc": "2026-10-31T19:30:00Z",
+   "competition": "Serie A",
+   "home": "AC Milan",
+   "away": "Villarreal",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "1",
+     "side": "home"
+    },
+    {
+     "playerId": "19",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5035",
+   "kickoff_utc": "2026-11-01T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Vancouver Whitecaps",
+   "away": "Villarreal",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "26",
+     "side": "home"
+    },
+    {
+     "playerId": "19",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5036",
+   "kickoff_utc": "2026-11-01T14:30:00Z",
+   "competition": "Premier League",
+   "home": "Villarreal",
+   "away": "AC Milan",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "19",
+     "side": "home"
+    },
+    {
+     "playerId": "1",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5037",
+   "kickoff_utc": "2026-11-01T15:00:00Z",
+   "competition": "Serie A",
+   "home": "AC Milan",
+   "away": "Atalanta",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "1",
+     "side": "home"
+    },
+    {
+     "playerId": "9",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5038",
+   "kickoff_utc": "2026-11-01T19:30:00Z",
+   "competition": "Bundesliga",
+   "home": "Atalanta",
+   "away": "Atlético Madrid",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "9",
+     "side": "home"
+    },
+    {
+     "playerId": "13",
+     "side": "away"
+    },
+    {
+     "playerId": "29",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5039",
+   "kickoff_utc": "2026-11-03T12:00:00Z",
+   "competition": "Serie A",
+   "home": "AC Milan",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "1",
+     "side": "home"
+    },
+    {
+     "playerId": "3",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5040",
+   "kickoff_utc": "2026-11-04T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Atalanta",
+   "away": "Derby County",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "9",
+     "side": "home"
+    },
+    {
+     "playerId": "20",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5041",
+   "kickoff_utc": "2026-11-07T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Borussia Mönchengladbach",
+   "away": "Philadelphia Union",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "11",
+     "side": "home"
+    },
+    {
+     "playerId": "15",
+     "side": "home"
+    },
+    {
+     "playerId": "23",
+     "side": "away"
+    },
+    {
+     "playerId": "28",
+     "side": "away"
+    },
+    {
+     "playerId": "30",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5042",
+   "kickoff_utc": "2026-11-07T14:30:00Z",
+   "competition": "Premier League",
+   "home": "Bournemouth",
+   "away": "Real Salt Lake",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "3",
+     "side": "home"
+    },
+    {
+     "playerId": "16",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5043",
+   "kickoff_utc": "2026-11-07T15:00:00Z",
+   "competition": "Serie A",
+   "home": "Chivas Guadalajara",
+   "away": "Real Sociedad",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "18",
+     "side": "home"
+    },
+    {
+     "playerId": "24",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5044",
+   "kickoff_utc": "2026-11-07T19:30:00Z",
+   "competition": "Bundesliga",
+   "home": "Crystal Palace",
+   "away": "San Jose Earthquakes",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "12",
+     "side": "home"
+    },
+    {
+     "playerId": "25",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5045",
+   "kickoff_utc": "2026-11-08T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Bournemouth",
+   "away": "San Jose Earthquakes",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "3",
+     "side": "home"
+    },
+    {
+     "playerId": "25",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5046",
+   "kickoff_utc": "2026-11-08T14:30:00Z",
+   "competition": "Serie A",
+   "home": "Chivas Guadalajara",
+   "away": "Toulouse",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "18",
+     "side": "home"
+    },
+    {
+     "playerId": "21",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5047",
+   "kickoff_utc": "2026-11-08T15:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Crystal Palace",
+   "away": "Unattached",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "12",
+     "side": "home"
+    },
+    {
+     "playerId": "27",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5048",
+   "kickoff_utc": "2026-11-08T19:30:00Z",
+   "competition": "La Liga",
+   "home": "Derby County",
+   "away": "Vancouver Whitecaps",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "20",
+     "side": "home"
+    },
+    {
+     "playerId": "26",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5049",
+   "kickoff_utc": "2026-11-10T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Crystal Palace",
+   "away": "Atalanta",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "12",
+     "side": "home"
+    },
+    {
+     "playerId": "9",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5050",
+   "kickoff_utc": "2026-11-11T12:00:00Z",
+   "competition": "La Liga",
+   "home": "Derby County",
+   "away": "Borussia Mönchengladbach",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "20",
+     "side": "home"
+    },
+    {
+     "playerId": "11",
+     "side": "away"
+    },
+    {
+     "playerId": "15",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5051",
+   "kickoff_utc": "2026-11-14T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Juventus",
+   "away": "Marseille",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "2",
+     "side": "home"
+    },
+    {
+     "playerId": "7",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5052",
+   "kickoff_utc": "2026-11-14T14:30:00Z",
+   "competition": "Serie A",
+   "home": "Leeds United",
+   "away": "Monaco",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "14",
+     "side": "home"
+    },
+    {
+     "playerId": "6",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5053",
+   "kickoff_utc": "2026-11-14T15:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Marseille",
+   "away": "Nottingham Forest",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "7",
+     "side": "home"
+    },
+    {
+     "playerId": "5",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5054",
+   "kickoff_utc": "2026-11-14T19:30:00Z",
+   "competition": "La Liga",
+   "home": "Monaco",
+   "away": "PSV",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "6",
+     "side": "home"
+    },
+    {
+     "playerId": "8",
+     "side": "away"
+    },
+    {
+     "playerId": "10",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5055",
+   "kickoff_utc": "2026-11-15T12:00:00Z",
+   "competition": "Serie A",
+   "home": "Leeds United",
+   "away": "PSV",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "14",
+     "side": "home"
+    },
+    {
+     "playerId": "8",
+     "side": "away"
+    },
+    {
+     "playerId": "10",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5056",
+   "kickoff_utc": "2026-11-15T14:30:00Z",
+   "competition": "Bundesliga",
+   "home": "Marseille",
+   "away": "Philadelphia Union",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "7",
+     "side": "home"
+    },
+    {
+     "playerId": "23",
+     "side": "away"
+    },
+    {
+     "playerId": "28",
+     "side": "away"
+    },
+    {
+     "playerId": "30",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5057",
+   "kickoff_utc": "2026-11-15T15:00:00Z",
+   "competition": "La Liga",
+   "home": "Monaco",
+   "away": "Real Salt Lake",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "6",
+     "side": "home"
+    },
+    {
+     "playerId": "16",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5058",
+   "kickoff_utc": "2026-11-15T19:30:00Z",
+   "competition": "Ligue 1",
+   "home": "Nottingham Forest",
+   "away": "Real Sociedad",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "5",
+     "side": "home"
+    },
+    {
+     "playerId": "24",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5059",
+   "kickoff_utc": "2026-11-17T12:00:00Z",
+   "competition": "La Liga",
+   "home": "Monaco",
+   "away": "Unattached",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "6",
+     "side": "home"
+    },
+    {
+     "playerId": "27",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5060",
+   "kickoff_utc": "2026-11-18T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Nottingham Forest",
+   "away": "AC Milan",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "5",
+     "side": "home"
+    },
+    {
+     "playerId": "1",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5061",
+   "kickoff_utc": "2026-11-21T12:00:00Z",
+   "competition": "Serie A",
+   "home": "Real Salt Lake",
+   "away": "Fulham",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "16",
+     "side": "home"
+    },
+    {
+     "playerId": "4",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5062",
+   "kickoff_utc": "2026-11-21T14:30:00Z",
+   "competition": "Bundesliga",
+   "home": "Real Sociedad",
+   "away": "Houston Dynamo",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "24",
+     "side": "home"
+    },
+    {
+     "playerId": "22",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5063",
+   "kickoff_utc": "2026-11-21T15:00:00Z",
+   "competition": "La Liga",
+   "home": "San Jose Earthquakes",
+   "away": "Juventus",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "25",
+     "side": "home"
+    },
+    {
+     "playerId": "2",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5064",
+   "kickoff_utc": "2026-11-21T19:30:00Z",
+   "competition": "Ligue 1",
+   "home": "Toulouse",
+   "away": "Leeds United",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "21",
+     "side": "home"
+    },
+    {
+     "playerId": "14",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5065",
+   "kickoff_utc": "2026-11-22T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Real Sociedad",
+   "away": "Leeds United",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "24",
+     "side": "home"
+    },
+    {
+     "playerId": "14",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5066",
+   "kickoff_utc": "2026-11-22T14:30:00Z",
+   "competition": "La Liga",
+   "home": "San Jose Earthquakes",
+   "away": "Marseille",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "25",
+     "side": "home"
+    },
+    {
+     "playerId": "7",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5067",
+   "kickoff_utc": "2026-11-22T15:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Toulouse",
+   "away": "Monaco",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "21",
+     "side": "home"
+    },
+    {
+     "playerId": "6",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5068",
+   "kickoff_utc": "2026-11-22T19:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Unattached",
+   "away": "Nottingham Forest",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "27",
+     "side": "home"
+    },
+    {
+     "playerId": "5",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5069",
+   "kickoff_utc": "2026-11-24T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Toulouse",
+   "away": "Real Salt Lake",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "21",
+     "side": "home"
+    },
+    {
+     "playerId": "16",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5070",
+   "kickoff_utc": "2026-11-25T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Unattached",
+   "away": "Toulouse",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "27",
+     "side": "home"
+    },
+    {
+     "playerId": "21",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5071",
+   "kickoff_utc": "2026-11-28T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "AC Milan",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "1",
+     "side": "home"
+    },
+    {
+     "playerId": "3",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5072",
+   "kickoff_utc": "2026-11-28T14:30:00Z",
+   "competition": "La Liga",
+   "home": "Atalanta",
+   "away": "Chivas Guadalajara",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "9",
+     "side": "home"
+    },
+    {
+     "playerId": "18",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5073",
+   "kickoff_utc": "2026-11-28T15:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Atlético Madrid",
+   "away": "Crystal Palace",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "13",
+     "side": "home"
+    },
+    {
+     "playerId": "29",
+     "side": "home"
+    },
+    {
+     "playerId": "12",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5074",
+   "kickoff_utc": "2026-11-28T19:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Bayer Leverkusen",
+   "away": "Derby County",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "17",
+     "side": "home"
+    },
+    {
+     "playerId": "20",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5075",
+   "kickoff_utc": "2026-11-29T12:00:00Z",
+   "competition": "La Liga",
+   "home": "Atalanta",
+   "away": "Derby County",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "9",
+     "side": "home"
+    },
+    {
+     "playerId": "20",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5076",
+   "kickoff_utc": "2026-11-29T14:30:00Z",
+   "competition": "Ligue 1",
+   "home": "Atlético Madrid",
+   "away": "Fulham",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "13",
+     "side": "home"
+    },
+    {
+     "playerId": "29",
+     "side": "home"
+    },
+    {
+     "playerId": "4",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5077",
+   "kickoff_utc": "2026-11-29T15:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Bayer Leverkusen",
+   "away": "Houston Dynamo",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "17",
+     "side": "home"
+    },
+    {
+     "playerId": "22",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5078",
+   "kickoff_utc": "2026-11-29T19:30:00Z",
+   "competition": "Premier League",
+   "home": "Borussia Mönchengladbach",
+   "away": "Juventus",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "11",
+     "side": "home"
+    },
+    {
+     "playerId": "15",
+     "side": "home"
+    },
+    {
+     "playerId": "2",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5079",
+   "kickoff_utc": "2026-12-01T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Bayer Leverkusen",
+   "away": "Monaco",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "17",
+     "side": "home"
+    },
+    {
+     "playerId": "6",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5080",
+   "kickoff_utc": "2026-12-02T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Borussia Mönchengladbach",
+   "away": "Philadelphia Union",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "11",
+     "side": "home"
+    },
+    {
+     "playerId": "15",
+     "side": "home"
+    },
+    {
+     "playerId": "23",
+     "side": "away"
+    },
+    {
+     "playerId": "28",
+     "side": "away"
+    },
+    {
+     "playerId": "30",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5081",
+   "kickoff_utc": "2026-12-05T12:00:00Z",
+   "competition": "La Liga",
+   "home": "Crystal Palace",
+   "away": "Atalanta",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "12",
+     "side": "home"
+    },
+    {
+     "playerId": "9",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5082",
+   "kickoff_utc": "2026-12-05T14:30:00Z",
+   "competition": "Ligue 1",
+   "home": "Derby County",
+   "away": "Atlético Madrid",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "20",
+     "side": "home"
+    },
+    {
+     "playerId": "13",
+     "side": "away"
+    },
+    {
+     "playerId": "29",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5083",
+   "kickoff_utc": "2026-12-05T15:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Fulham",
+   "away": "Bayer Leverkusen",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "4",
+     "side": "home"
+    },
+    {
+     "playerId": "17",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5084",
+   "kickoff_utc": "2026-12-05T19:30:00Z",
+   "competition": "Premier League",
+   "home": "Houston Dynamo",
+   "away": "Borussia Mönchengladbach",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "22",
+     "side": "home"
+    },
+    {
+     "playerId": "11",
+     "side": "away"
+    },
+    {
+     "playerId": "15",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5085",
+   "kickoff_utc": "2026-12-06T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Derby County",
+   "away": "Borussia Mönchengladbach",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "20",
+     "side": "home"
+    },
+    {
+     "playerId": "11",
+     "side": "away"
+    },
+    {
+     "playerId": "15",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5086",
+   "kickoff_utc": "2026-12-06T14:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Fulham",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "4",
+     "side": "home"
+    },
+    {
+     "playerId": "3",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5087",
+   "kickoff_utc": "2026-12-06T15:00:00Z",
+   "competition": "Premier League",
+   "home": "Houston Dynamo",
+   "away": "Chivas Guadalajara",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "22",
+     "side": "home"
+    },
+    {
+     "playerId": "18",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5088",
+   "kickoff_utc": "2026-12-06T19:30:00Z",
+   "competition": "Serie A",
+   "home": "Juventus",
+   "away": "Crystal Palace",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "2",
+     "side": "home"
+    },
+    {
+     "playerId": "12",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5089",
+   "kickoff_utc": "2026-12-09T12:00:00Z",
+   "competition": "Serie A",
+   "home": "Juventus",
+   "away": "Marseille",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "2",
+     "side": "home"
+    },
+    {
+     "playerId": "7",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5090",
+   "kickoff_utc": "2026-12-12T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Monaco",
+   "away": "Unattached",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "6",
+     "side": "home"
+    },
+    {
+     "playerId": "27",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5091",
+   "kickoff_utc": "2026-12-12T14:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Nottingham Forest",
+   "away": "Vancouver Whitecaps",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "5",
+     "side": "home"
+    },
+    {
+     "playerId": "26",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5092",
+   "kickoff_utc": "2026-12-12T15:00:00Z",
+   "competition": "Premier League",
+   "home": "PSV",
+   "away": "Villarreal",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "8",
+     "side": "home"
+    },
+    {
+     "playerId": "10",
+     "side": "home"
+    },
+    {
+     "playerId": "19",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5093",
+   "kickoff_utc": "2026-12-12T19:30:00Z",
+   "competition": "Serie A",
+   "home": "Philadelphia Union",
+   "away": "AC Milan",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "23",
+     "side": "home"
+    },
+    {
+     "playerId": "28",
+     "side": "home"
+    },
+    {
+     "playerId": "30",
+     "side": "home"
+    },
+    {
+     "playerId": "1",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5094",
+   "kickoff_utc": "2026-12-13T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Nottingham Forest",
+   "away": "AC Milan",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "5",
+     "side": "home"
+    },
+    {
+     "playerId": "1",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5095",
+   "kickoff_utc": "2026-12-13T14:30:00Z",
+   "competition": "Premier League",
+   "home": "PSV",
+   "away": "Atalanta",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "8",
+     "side": "home"
+    },
+    {
+     "playerId": "10",
+     "side": "home"
+    },
+    {
+     "playerId": "9",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5096",
+   "kickoff_utc": "2026-12-13T15:00:00Z",
+   "competition": "Serie A",
+   "home": "Philadelphia Union",
+   "away": "Atlético Madrid",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "23",
+     "side": "home"
+    },
+    {
+     "playerId": "28",
+     "side": "home"
+    },
+    {
+     "playerId": "30",
+     "side": "home"
+    },
+    {
+     "playerId": "13",
+     "side": "away"
+    },
+    {
+     "playerId": "29",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5097",
+   "kickoff_utc": "2026-12-13T19:30:00Z",
+   "competition": "Bundesliga",
+   "home": "Real Salt Lake",
+   "away": "Bayer Leverkusen",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "16",
+     "side": "home"
+    },
+    {
+     "playerId": "17",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5098",
+   "kickoff_utc": "2026-12-15T12:00:00Z",
+   "competition": "Serie A",
+   "home": "Philadelphia Union",
+   "away": "Chivas Guadalajara",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "23",
+     "side": "home"
+    },
+    {
+     "playerId": "28",
+     "side": "home"
+    },
+    {
+     "playerId": "30",
+     "side": "home"
+    },
+    {
+     "playerId": "18",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5099",
+   "kickoff_utc": "2026-12-16T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Real Salt Lake",
+   "away": "Fulham",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "16",
+     "side": "home"
+    },
+    {
+     "playerId": "4",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5100",
+   "kickoff_utc": "2026-12-19T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Toulouse",
+   "away": "Real Salt Lake",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "21",
+     "side": "home"
+    },
+    {
+     "playerId": "16",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5101",
+   "kickoff_utc": "2026-12-19T14:30:00Z",
+   "competition": "Premier League",
+   "home": "Unattached",
+   "away": "Real Sociedad",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "27",
+     "side": "home"
+    },
+    {
+     "playerId": "24",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5102",
+   "kickoff_utc": "2026-12-19T15:00:00Z",
+   "competition": "Serie A",
+   "home": "Vancouver Whitecaps",
+   "away": "San Jose Earthquakes",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "26",
+     "side": "home"
+    },
+    {
+     "playerId": "25",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5103",
+   "kickoff_utc": "2026-12-19T19:30:00Z",
+   "competition": "Bundesliga",
+   "home": "Villarreal",
+   "away": "Toulouse",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "19",
+     "side": "home"
+    },
+    {
+     "playerId": "21",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5104",
+   "kickoff_utc": "2026-12-20T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Unattached",
+   "away": "Toulouse",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "27",
+     "side": "home"
+    },
+    {
+     "playerId": "21",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5105",
+   "kickoff_utc": "2026-12-20T14:30:00Z",
+   "competition": "Serie A",
+   "home": "Vancouver Whitecaps",
+   "away": "Unattached",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "26",
+     "side": "home"
+    },
+    {
+     "playerId": "27",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5106",
+   "kickoff_utc": "2026-12-20T15:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Villarreal",
+   "away": "Vancouver Whitecaps",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "19",
+     "side": "home"
+    },
+    {
+     "playerId": "26",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5107",
+   "kickoff_utc": "2026-12-20T19:30:00Z",
+   "competition": "La Liga",
+   "home": "AC Milan",
+   "away": "Villarreal",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "1",
+     "side": "home"
+    },
+    {
+     "playerId": "19",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5108",
+   "kickoff_utc": "2026-12-22T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Villarreal",
+   "away": "Atlético Madrid",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "19",
+     "side": "home"
+    },
+    {
+     "playerId": "13",
+     "side": "away"
+    },
+    {
+     "playerId": "29",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5109",
+   "kickoff_utc": "2026-12-23T12:00:00Z",
+   "competition": "La Liga",
+   "home": "AC Milan",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "1",
+     "side": "home"
+    },
+    {
+     "playerId": "3",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5110",
+   "kickoff_utc": "2026-12-26T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Bayer Leverkusen",
+   "away": "Monaco",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "17",
+     "side": "home"
+    },
+    {
+     "playerId": "6",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5111",
+   "kickoff_utc": "2026-12-26T14:30:00Z",
+   "competition": "Serie A",
+   "home": "Borussia Mönchengladbach",
+   "away": "Nottingham Forest",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "11",
+     "side": "home"
+    },
+    {
+     "playerId": "15",
+     "side": "home"
+    },
+    {
+     "playerId": "5",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5112",
+   "kickoff_utc": "2026-12-26T15:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Bournemouth",
+   "away": "PSV",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "3",
+     "side": "home"
+    },
+    {
+     "playerId": "8",
+     "side": "away"
+    },
+    {
+     "playerId": "10",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5113",
+   "kickoff_utc": "2026-12-26T19:30:00Z",
+   "competition": "La Liga",
+   "home": "Chivas Guadalajara",
+   "away": "Philadelphia Union",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "18",
+     "side": "home"
+    },
+    {
+     "playerId": "23",
+     "side": "away"
+    },
+    {
+     "playerId": "28",
+     "side": "away"
+    },
+    {
+     "playerId": "30",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5114",
+   "kickoff_utc": "2026-12-27T12:00:00Z",
+   "competition": "Serie A",
+   "home": "Borussia Mönchengladbach",
+   "away": "Philadelphia Union",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "11",
+     "side": "home"
+    },
+    {
+     "playerId": "15",
+     "side": "home"
+    },
+    {
+     "playerId": "23",
+     "side": "away"
+    },
+    {
+     "playerId": "28",
+     "side": "away"
+    },
+    {
+     "playerId": "30",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5115",
+   "kickoff_utc": "2026-12-27T14:30:00Z",
+   "competition": "Bundesliga",
+   "home": "Bournemouth",
+   "away": "Real Salt Lake",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "3",
+     "side": "home"
+    },
+    {
+     "playerId": "16",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5116",
+   "kickoff_utc": "2026-12-27T15:00:00Z",
+   "competition": "La Liga",
+   "home": "Chivas Guadalajara",
+   "away": "Real Sociedad",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "18",
+     "side": "home"
+    },
+    {
+     "playerId": "24",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5117",
+   "kickoff_utc": "2026-12-27T19:30:00Z",
+   "competition": "Ligue 1",
+   "home": "Crystal Palace",
+   "away": "San Jose Earthquakes",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "12",
+     "side": "home"
+    },
+    {
+     "playerId": "25",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5118",
+   "kickoff_utc": "2026-12-29T12:00:00Z",
+   "competition": "La Liga",
+   "home": "Chivas Guadalajara",
+   "away": "Vancouver Whitecaps",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "18",
+     "side": "home"
+    },
+    {
+     "playerId": "26",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5119",
+   "kickoff_utc": "2026-12-30T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Crystal Palace",
+   "away": "Atalanta",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "12",
+     "side": "home"
+    },
+    {
+     "playerId": "9",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5120",
+   "kickoff_utc": "2027-01-03T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Juventus",
+   "away": "Marseille",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "2",
+     "side": "home"
+    },
+    {
+     "playerId": "7",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5121",
+   "kickoff_utc": "2027-01-03T14:30:00Z",
+   "competition": "La Liga",
+   "home": "Leeds United",
+   "away": "Monaco",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "14",
+     "side": "home"
+    },
+    {
+     "playerId": "6",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5122",
+   "kickoff_utc": "2027-01-03T15:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Marseille",
+   "away": "Nottingham Forest",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "7",
+     "side": "home"
+    },
+    {
+     "playerId": "5",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5123",
+   "kickoff_utc": "2027-01-03T19:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Monaco",
+   "away": "PSV",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "6",
+     "side": "home"
+    },
+    {
+     "playerId": "8",
+     "side": "away"
+    },
+    {
+     "playerId": "10",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5124",
+   "kickoff_utc": "2027-01-05T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Marseille",
+   "away": "Real Sociedad",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "7",
+     "side": "home"
+    },
+    {
+     "playerId": "24",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5125",
+   "kickoff_utc": "2027-01-06T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Monaco",
+   "away": "Unattached",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "6",
+     "side": "home"
+    },
+    {
+     "playerId": "27",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5126",
+   "kickoff_utc": "2027-01-09T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Philadelphia Union",
+   "away": "Chivas Guadalajara",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "23",
+     "side": "home"
+    },
+    {
+     "playerId": "28",
+     "side": "home"
+    },
+    {
+     "playerId": "30",
+     "side": "home"
+    },
+    {
+     "playerId": "18",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5127",
+   "kickoff_utc": "2027-01-09T14:30:00Z",
+   "competition": "La Liga",
+   "home": "Real Salt Lake",
+   "away": "Crystal Palace",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "16",
+     "side": "home"
+    },
+    {
+     "playerId": "12",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5128",
+   "kickoff_utc": "2027-01-09T15:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Real Sociedad",
+   "away": "Derby County",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "24",
+     "side": "home"
+    },
+    {
+     "playerId": "20",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5129",
+   "kickoff_utc": "2027-01-09T19:30:00Z",
+   "competition": "Eredivisie",
+   "home": "San Jose Earthquakes",
+   "away": "Fulham",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "25",
+     "side": "home"
+    },
+    {
+     "playerId": "4",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5130",
+   "kickoff_utc": "2027-01-10T12:00:00Z",
+   "competition": "La Liga",
+   "home": "Real Salt Lake",
+   "away": "Fulham",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "16",
+     "side": "home"
+    },
+    {
+     "playerId": "4",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5131",
+   "kickoff_utc": "2027-01-10T14:30:00Z",
+   "competition": "Ligue 1",
+   "home": "Real Sociedad",
+   "away": "Houston Dynamo",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "24",
+     "side": "home"
+    },
+    {
+     "playerId": "22",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5132",
+   "kickoff_utc": "2027-01-10T15:00:00Z",
+   "competition": "Eredivisie",
+   "home": "San Jose Earthquakes",
+   "away": "Juventus",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "25",
+     "side": "home"
+    },
+    {
+     "playerId": "2",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5133",
+   "kickoff_utc": "2027-01-10T19:30:00Z",
+   "competition": "Premier League",
+   "home": "Toulouse",
+   "away": "Leeds United",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "21",
+     "side": "home"
+    },
+    {
+     "playerId": "14",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5134",
+   "kickoff_utc": "2027-01-12T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "San Jose Earthquakes",
+   "away": "Nottingham Forest",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "25",
+     "side": "home"
+    },
+    {
+     "playerId": "5",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5135",
+   "kickoff_utc": "2027-01-13T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Toulouse",
+   "away": "Real Salt Lake",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "21",
+     "side": "home"
+    },
+    {
+     "playerId": "16",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5136",
+   "kickoff_utc": "2027-01-16T12:00:00Z",
+   "competition": "La Liga",
+   "home": "Villarreal",
+   "away": "Atlético Madrid",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "19",
+     "side": "home"
+    },
+    {
+     "playerId": "13",
+     "side": "away"
+    },
+    {
+     "playerId": "29",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5137",
+   "kickoff_utc": "2027-01-16T14:30:00Z",
+   "competition": "Ligue 1",
+   "home": "AC Milan",
+   "away": "Bayer Leverkusen",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "1",
+     "side": "home"
+    },
+    {
+     "playerId": "17",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5138",
+   "kickoff_utc": "2027-01-16T15:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Atalanta",
+   "away": "Borussia Mönchengladbach",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "9",
+     "side": "home"
+    },
+    {
+     "playerId": "11",
+     "side": "away"
+    },
+    {
+     "playerId": "15",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5139",
+   "kickoff_utc": "2027-01-16T19:30:00Z",
+   "competition": "Premier League",
+   "home": "Atlético Madrid",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "13",
+     "side": "home"
+    },
+    {
+     "playerId": "29",
+     "side": "home"
+    },
+    {
+     "playerId": "3",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5140",
+   "kickoff_utc": "2027-01-17T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "AC Milan",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "1",
+     "side": "home"
+    },
+    {
+     "playerId": "3",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5141",
+   "kickoff_utc": "2027-01-17T14:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Atalanta",
+   "away": "Chivas Guadalajara",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "9",
+     "side": "home"
+    },
+    {
+     "playerId": "18",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5142",
+   "kickoff_utc": "2027-01-17T15:00:00Z",
+   "competition": "Premier League",
+   "home": "Atlético Madrid",
+   "away": "Crystal Palace",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "13",
+     "side": "home"
+    },
+    {
+     "playerId": "29",
+     "side": "home"
+    },
+    {
+     "playerId": "12",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5143",
+   "kickoff_utc": "2027-01-17T19:30:00Z",
+   "competition": "Serie A",
+   "home": "Bayer Leverkusen",
+   "away": "Derby County",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "17",
+     "side": "home"
+    },
+    {
+     "playerId": "20",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5144",
+   "kickoff_utc": "2027-01-19T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Atlético Madrid",
+   "away": "Juventus",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "13",
+     "side": "home"
+    },
+    {
+     "playerId": "29",
+     "side": "home"
+    },
+    {
+     "playerId": "2",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5145",
+   "kickoff_utc": "2027-01-20T12:00:00Z",
+   "competition": "Serie A",
+   "home": "Bayer Leverkusen",
+   "away": "Monaco",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "17",
+     "side": "home"
+    },
+    {
+     "playerId": "6",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5146",
+   "kickoff_utc": "2027-01-23T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Chivas Guadalajara",
+   "away": "Vancouver Whitecaps",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "18",
+     "side": "home"
+    },
+    {
+     "playerId": "26",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5147",
+   "kickoff_utc": "2027-01-23T14:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Crystal Palace",
+   "away": "Villarreal",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "12",
+     "side": "home"
+    },
+    {
+     "playerId": "19",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5148",
+   "kickoff_utc": "2027-01-23T15:00:00Z",
+   "competition": "Premier League",
+   "home": "Derby County",
+   "away": "AC Milan",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "20",
+     "side": "home"
+    },
+    {
+     "playerId": "1",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5149",
+   "kickoff_utc": "2027-01-23T19:30:00Z",
+   "competition": "Serie A",
+   "home": "Fulham",
+   "away": "Atalanta",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "4",
+     "side": "home"
+    },
+    {
+     "playerId": "9",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5150",
+   "kickoff_utc": "2027-01-24T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Crystal Palace",
+   "away": "Atalanta",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "12",
+     "side": "home"
+    },
+    {
+     "playerId": "9",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5151",
+   "kickoff_utc": "2027-01-24T14:30:00Z",
+   "competition": "Premier League",
+   "home": "Derby County",
+   "away": "Atlético Madrid",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "20",
+     "side": "home"
+    },
+    {
+     "playerId": "13",
+     "side": "away"
+    },
+    {
+     "playerId": "29",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5152",
+   "kickoff_utc": "2027-01-24T15:00:00Z",
+   "competition": "Serie A",
+   "home": "Fulham",
+   "away": "Bayer Leverkusen",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "4",
+     "side": "home"
+    },
+    {
+     "playerId": "17",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5153",
+   "kickoff_utc": "2027-01-24T19:30:00Z",
+   "competition": "Bundesliga",
+   "home": "Houston Dynamo",
+   "away": "Borussia Mönchengladbach",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "22",
+     "side": "home"
+    },
+    {
+     "playerId": "11",
+     "side": "away"
+    },
+    {
+     "playerId": "15",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5154",
+   "kickoff_utc": "2027-01-26T12:00:00Z",
+   "competition": "Serie A",
+   "home": "Fulham",
+   "away": "Crystal Palace",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "4",
+     "side": "home"
+    },
+    {
+     "playerId": "12",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5155",
+   "kickoff_utc": "2027-01-30T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Marseille",
+   "away": "Real Sociedad",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "7",
+     "side": "home"
+    },
+    {
+     "playerId": "24",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5156",
+   "kickoff_utc": "2027-01-30T14:30:00Z",
+   "competition": "Premier League",
+   "home": "Monaco",
+   "away": "San Jose Earthquakes",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "6",
+     "side": "home"
+    },
+    {
+     "playerId": "25",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5157",
+   "kickoff_utc": "2027-01-30T15:00:00Z",
+   "competition": "Serie A",
+   "home": "Nottingham Forest",
+   "away": "Toulouse",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "5",
+     "side": "home"
+    },
+    {
+     "playerId": "21",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5158",
+   "kickoff_utc": "2027-01-30T19:30:00Z",
+   "competition": "Bundesliga",
+   "home": "PSV",
+   "away": "Unattached",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "8",
+     "side": "home"
+    },
+    {
+     "playerId": "10",
+     "side": "home"
+    },
+    {
+     "playerId": "27",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5159",
+   "kickoff_utc": "2027-01-31T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Monaco",
+   "away": "Unattached",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "6",
+     "side": "home"
+    },
+    {
+     "playerId": "27",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5160",
+   "kickoff_utc": "2027-01-31T14:30:00Z",
+   "competition": "Serie A",
+   "home": "Nottingham Forest",
+   "away": "Vancouver Whitecaps",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "5",
+     "side": "home"
+    },
+    {
+     "playerId": "26",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5161",
+   "kickoff_utc": "2027-01-31T15:00:00Z",
+   "competition": "Bundesliga",
+   "home": "PSV",
+   "away": "Villarreal",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "8",
+     "side": "home"
+    },
+    {
+     "playerId": "10",
+     "side": "home"
+    },
+    {
+     "playerId": "19",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5162",
+   "kickoff_utc": "2027-01-31T19:30:00Z",
+   "competition": "La Liga",
+   "home": "Philadelphia Union",
+   "away": "AC Milan",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "23",
+     "side": "home"
+    },
+    {
+     "playerId": "28",
+     "side": "home"
+    },
+    {
+     "playerId": "30",
+     "side": "home"
+    },
+    {
+     "playerId": "1",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5163",
+   "kickoff_utc": "2027-02-02T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "PSV",
+   "away": "Bayer Leverkusen",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "8",
+     "side": "home"
+    },
+    {
+     "playerId": "10",
+     "side": "home"
+    },
+    {
+     "playerId": "17",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5164",
+   "kickoff_utc": "2027-02-03T12:00:00Z",
+   "competition": "La Liga",
+   "home": "Philadelphia Union",
+   "away": "Chivas Guadalajara",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "23",
+     "side": "home"
+    },
+    {
+     "playerId": "28",
+     "side": "home"
+    },
+    {
+     "playerId": "30",
+     "side": "home"
+    },
+    {
+     "playerId": "18",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5165",
+   "kickoff_utc": "2027-02-06T12:00:00Z",
+   "competition": "Premier League",
+   "home": "San Jose Earthquakes",
+   "away": "Nottingham Forest",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "25",
+     "side": "home"
+    },
+    {
+     "playerId": "5",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5166",
+   "kickoff_utc": "2027-02-06T14:30:00Z",
+   "competition": "Serie A",
+   "home": "Toulouse",
+   "away": "PSV",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "21",
+     "side": "home"
+    },
+    {
+     "playerId": "8",
+     "side": "away"
+    },
+    {
+     "playerId": "10",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5167",
+   "kickoff_utc": "2027-02-06T15:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Unattached",
+   "away": "Philadelphia Union",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "27",
+     "side": "home"
+    },
+    {
+     "playerId": "23",
+     "side": "away"
+    },
+    {
+     "playerId": "28",
+     "side": "away"
+    },
+    {
+     "playerId": "30",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5168",
+   "kickoff_utc": "2027-02-06T19:30:00Z",
+   "competition": "La Liga",
+   "home": "Vancouver Whitecaps",
+   "away": "Real Salt Lake",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "26",
+     "side": "home"
+    },
+    {
+     "playerId": "16",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5169",
+   "kickoff_utc": "2027-02-07T12:00:00Z",
+   "competition": "Serie A",
+   "home": "Toulouse",
+   "away": "Real Salt Lake",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "21",
+     "side": "home"
+    },
+    {
+     "playerId": "16",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5170",
+   "kickoff_utc": "2027-02-07T14:30:00Z",
+   "competition": "Bundesliga",
+   "home": "Unattached",
+   "away": "Real Sociedad",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "27",
+     "side": "home"
+    },
+    {
+     "playerId": "24",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5171",
+   "kickoff_utc": "2027-02-07T15:00:00Z",
+   "competition": "La Liga",
+   "home": "Vancouver Whitecaps",
+   "away": "San Jose Earthquakes",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "26",
+     "side": "home"
+    },
+    {
+     "playerId": "25",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5172",
+   "kickoff_utc": "2027-02-07T19:30:00Z",
+   "competition": "Ligue 1",
+   "home": "Villarreal",
+   "away": "Toulouse",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "19",
+     "side": "home"
+    },
+    {
+     "playerId": "21",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5173",
+   "kickoff_utc": "2027-02-09T12:00:00Z",
+   "competition": "La Liga",
+   "home": "Vancouver Whitecaps",
+   "away": "Villarreal",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "26",
+     "side": "home"
+    },
+    {
+     "playerId": "19",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5174",
+   "kickoff_utc": "2027-02-10T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Villarreal",
+   "away": "Atlético Madrid",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "19",
+     "side": "home"
+    },
+    {
+     "playerId": "13",
+     "side": "away"
+    },
+    {
+     "playerId": "29",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5175",
+   "kickoff_utc": "2027-02-13T12:00:00Z",
+   "competition": "Serie A",
+   "home": "Atlético Madrid",
+   "away": "Juventus",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "13",
+     "side": "home"
+    },
+    {
+     "playerId": "29",
+     "side": "home"
+    },
+    {
+     "playerId": "2",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5176",
+   "kickoff_utc": "2027-02-13T14:30:00Z",
+   "competition": "Bundesliga",
+   "home": "Bayer Leverkusen",
+   "away": "Leeds United",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "17",
+     "side": "home"
+    },
+    {
+     "playerId": "14",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5177",
+   "kickoff_utc": "2027-02-13T15:00:00Z",
+   "competition": "La Liga",
+   "home": "Borussia Mönchengladbach",
+   "away": "Marseille",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "11",
+     "side": "home"
+    },
+    {
+     "playerId": "15",
+     "side": "home"
+    },
+    {
+     "playerId": "7",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5178",
+   "kickoff_utc": "2027-02-13T19:30:00Z",
+   "competition": "Ligue 1",
+   "home": "Bournemouth",
+   "away": "Monaco",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "3",
+     "side": "home"
+    },
+    {
+     "playerId": "6",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5179",
+   "kickoff_utc": "2027-02-14T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Bayer Leverkusen",
+   "away": "Monaco",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "17",
+     "side": "home"
+    },
+    {
+     "playerId": "6",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5180",
+   "kickoff_utc": "2027-02-14T14:30:00Z",
+   "competition": "La Liga",
+   "home": "Borussia Mönchengladbach",
+   "away": "Nottingham Forest",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "11",
+     "side": "home"
+    },
+    {
+     "playerId": "15",
+     "side": "home"
+    },
+    {
+     "playerId": "5",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5181",
+   "kickoff_utc": "2027-02-14T15:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Bournemouth",
+   "away": "PSV",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "3",
+     "side": "home"
+    },
+    {
+     "playerId": "8",
+     "side": "away"
+    },
+    {
+     "playerId": "10",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5182",
+   "kickoff_utc": "2027-02-14T19:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Chivas Guadalajara",
+   "away": "Philadelphia Union",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "18",
+     "side": "home"
+    },
+    {
+     "playerId": "23",
+     "side": "away"
+    },
+    {
+     "playerId": "28",
+     "side": "away"
+    },
+    {
+     "playerId": "30",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5183",
+   "kickoff_utc": "2027-02-16T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Bournemouth",
+   "away": "San Jose Earthquakes",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "3",
+     "side": "home"
+    },
+    {
+     "playerId": "25",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5184",
+   "kickoff_utc": "2027-02-17T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Chivas Guadalajara",
+   "away": "Vancouver Whitecaps",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "18",
+     "side": "home"
+    },
+    {
+     "playerId": "26",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5185",
+   "kickoff_utc": "2027-02-20T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Fulham",
+   "away": "Crystal Palace",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "4",
+     "side": "home"
+    },
+    {
+     "playerId": "12",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5186",
+   "kickoff_utc": "2027-02-20T14:30:00Z",
+   "competition": "La Liga",
+   "home": "Houston Dynamo",
+   "away": "Derby County",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "22",
+     "side": "home"
+    },
+    {
+     "playerId": "20",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5187",
+   "kickoff_utc": "2027-02-20T15:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Juventus",
+   "away": "Fulham",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "2",
+     "side": "home"
+    },
+    {
+     "playerId": "4",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5188",
+   "kickoff_utc": "2027-02-20T19:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Leeds United",
+   "away": "Houston Dynamo",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "14",
+     "side": "home"
+    },
+    {
+     "playerId": "22",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5189",
+   "kickoff_utc": "2027-02-23T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Leeds United",
+   "away": "PSV",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "14",
+     "side": "home"
+    },
+    {
+     "playerId": "8",
+     "side": "away"
+    },
+    {
+     "playerId": "10",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5190",
+   "kickoff_utc": "2027-02-24T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Marseille",
+   "away": "Real Sociedad",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "7",
+     "side": "home"
+    },
+    {
+     "playerId": "24",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5191",
+   "kickoff_utc": "2027-02-27T12:00:00Z",
+   "competition": "La Liga",
+   "home": "PSV",
+   "away": "Bayer Leverkusen",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "8",
+     "side": "home"
+    },
+    {
+     "playerId": "10",
+     "side": "home"
+    },
+    {
+     "playerId": "17",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5192",
+   "kickoff_utc": "2027-02-27T14:30:00Z",
+   "competition": "Ligue 1",
+   "home": "Philadelphia Union",
+   "away": "Borussia Mönchengladbach",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "23",
+     "side": "home"
+    },
+    {
+     "playerId": "28",
+     "side": "home"
+    },
+    {
+     "playerId": "30",
+     "side": "home"
+    },
+    {
+     "playerId": "11",
+     "side": "away"
+    },
+    {
+     "playerId": "15",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5193",
+   "kickoff_utc": "2027-02-27T15:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Real Salt Lake",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "16",
+     "side": "home"
+    },
+    {
+     "playerId": "3",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5194",
+   "kickoff_utc": "2027-02-27T19:30:00Z",
+   "competition": "Premier League",
+   "home": "Real Sociedad",
+   "away": "Chivas Guadalajara",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "24",
+     "side": "home"
+    },
+    {
+     "playerId": "18",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5195",
+   "kickoff_utc": "2027-02-28T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Philadelphia Union",
+   "away": "Chivas Guadalajara",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "23",
+     "side": "home"
+    },
+    {
+     "playerId": "28",
+     "side": "home"
+    },
+    {
+     "playerId": "30",
+     "side": "home"
+    },
+    {
+     "playerId": "18",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5196",
+   "kickoff_utc": "2027-02-28T14:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Real Salt Lake",
+   "away": "Crystal Palace",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "16",
+     "side": "home"
+    },
+    {
+     "playerId": "12",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5197",
+   "kickoff_utc": "2027-02-28T15:00:00Z",
+   "competition": "Premier League",
+   "home": "Real Sociedad",
+   "away": "Derby County",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "24",
+     "side": "home"
+    },
+    {
+     "playerId": "20",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5198",
+   "kickoff_utc": "2027-02-28T19:30:00Z",
+   "competition": "Serie A",
+   "home": "San Jose Earthquakes",
+   "away": "Fulham",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "25",
+     "side": "home"
+    },
+    {
+     "playerId": "4",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5199",
+   "kickoff_utc": "2027-03-02T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Real Sociedad",
+   "away": "Leeds United",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "24",
+     "side": "home"
+    },
+    {
+     "playerId": "14",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5200",
+   "kickoff_utc": "2027-03-03T12:00:00Z",
+   "competition": "Serie A",
+   "home": "San Jose Earthquakes",
+   "away": "Nottingham Forest",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "25",
+     "side": "home"
+    },
+    {
+     "playerId": "5",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5201",
+   "kickoff_utc": "2027-03-06T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Vancouver Whitecaps",
+   "away": "Villarreal",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "26",
+     "side": "home"
+    },
+    {
+     "playerId": "19",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5202",
+   "kickoff_utc": "2027-03-06T14:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Villarreal",
+   "away": "AC Milan",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "19",
+     "side": "home"
+    },
+    {
+     "playerId": "1",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5203",
+   "kickoff_utc": "2027-03-06T15:00:00Z",
+   "competition": "Premier League",
+   "home": "AC Milan",
+   "away": "Atalanta",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "1",
+     "side": "home"
+    },
+    {
+     "playerId": "9",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5204",
+   "kickoff_utc": "2027-03-06T19:30:00Z",
+   "competition": "Serie A",
+   "home": "Atalanta",
+   "away": "Atlético Madrid",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "9",
+     "side": "home"
+    },
+    {
+     "playerId": "13",
+     "side": "away"
+    },
+    {
+     "playerId": "29",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5205",
+   "kickoff_utc": "2027-03-07T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Villarreal",
+   "away": "Atlético Madrid",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "19",
+     "side": "home"
+    },
+    {
+     "playerId": "13",
+     "side": "away"
+    },
+    {
+     "playerId": "29",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5206",
+   "kickoff_utc": "2027-03-07T14:30:00Z",
+   "competition": "Premier League",
+   "home": "AC Milan",
+   "away": "Bayer Leverkusen",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "1",
+     "side": "home"
+    },
+    {
+     "playerId": "17",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5207",
+   "kickoff_utc": "2027-03-07T15:00:00Z",
+   "competition": "Serie A",
+   "home": "Atalanta",
+   "away": "Borussia Mönchengladbach",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "9",
+     "side": "home"
+    },
+    {
+     "playerId": "11",
+     "side": "away"
+    },
+    {
+     "playerId": "15",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5208",
+   "kickoff_utc": "2027-03-07T19:30:00Z",
+   "competition": "Bundesliga",
+   "home": "Atlético Madrid",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "13",
+     "side": "home"
+    },
+    {
+     "playerId": "29",
+     "side": "home"
+    },
+    {
+     "playerId": "3",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "9001",
+   "kickoff_utc": "2027-03-08T23:00:00Z",
+   "competition": "Friendlies",
+   "home": "USA",
+   "away": "Canada",
+   "fixture_kind": "national_senior",
+   "pool_players": []
+  },
+  {
+   "matchId": "5209",
+   "kickoff_utc": "2027-03-09T12:00:00Z",
+   "competition": "Serie A",
+   "home": "Atalanta",
+   "away": "Derby County",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "9",
+     "side": "home"
+    },
+    {
+     "playerId": "20",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5210",
+   "kickoff_utc": "2027-03-10T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Atlético Madrid",
+   "away": "Juventus",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "13",
+     "side": "home"
+    },
+    {
+     "playerId": "29",
+     "side": "home"
+    },
+    {
+     "playerId": "2",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5211",
+   "kickoff_utc": "2027-03-13T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Bournemouth",
+   "away": "San Jose Earthquakes",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "3",
+     "side": "home"
+    },
+    {
+     "playerId": "25",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5212",
+   "kickoff_utc": "2027-03-13T14:30:00Z",
+   "competition": "Premier League",
+   "home": "Chivas Guadalajara",
+   "away": "Toulouse",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "18",
+     "side": "home"
+    },
+    {
+     "playerId": "21",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5213",
+   "kickoff_utc": "2027-03-13T15:00:00Z",
+   "competition": "Serie A",
+   "home": "Crystal Palace",
+   "away": "Unattached",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "12",
+     "side": "home"
+    },
+    {
+     "playerId": "27",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5214",
+   "kickoff_utc": "2027-03-13T19:30:00Z",
+   "competition": "Bundesliga",
+   "home": "Derby County",
+   "away": "Vancouver Whitecaps",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "20",
+     "side": "home"
+    },
+    {
+     "playerId": "26",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5215",
+   "kickoff_utc": "2027-03-14T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Chivas Guadalajara",
+   "away": "Vancouver Whitecaps",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "18",
+     "side": "home"
+    },
+    {
+     "playerId": "26",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5216",
+   "kickoff_utc": "2027-03-14T14:30:00Z",
+   "competition": "Serie A",
+   "home": "Crystal Palace",
+   "away": "Villarreal",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "12",
+     "side": "home"
+    },
+    {
+     "playerId": "19",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5217",
+   "kickoff_utc": "2027-03-14T15:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Derby County",
+   "away": "AC Milan",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "20",
+     "side": "home"
+    },
+    {
+     "playerId": "1",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5218",
+   "kickoff_utc": "2027-03-14T19:30:00Z",
+   "competition": "La Liga",
+   "home": "Fulham",
+   "away": "Atalanta",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "4",
+     "side": "home"
+    },
+    {
+     "playerId": "9",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5219",
+   "kickoff_utc": "2027-03-16T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Derby County",
+   "away": "Borussia Mönchengladbach",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "20",
+     "side": "home"
+    },
+    {
+     "playerId": "11",
+     "side": "away"
+    },
+    {
+     "playerId": "15",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5220",
+   "kickoff_utc": "2027-03-17T12:00:00Z",
+   "competition": "La Liga",
+   "home": "Fulham",
+   "away": "Crystal Palace",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "4",
+     "side": "home"
+    },
+    {
+     "playerId": "12",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5221",
+   "kickoff_utc": "2027-03-20T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Leeds United",
+   "away": "PSV",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "14",
+     "side": "home"
+    },
+    {
+     "playerId": "8",
+     "side": "away"
+    },
+    {
+     "playerId": "10",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5222",
+   "kickoff_utc": "2027-03-20T14:30:00Z",
+   "competition": "Serie A",
+   "home": "Marseille",
+   "away": "Philadelphia Union",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "7",
+     "side": "home"
+    },
+    {
+     "playerId": "23",
+     "side": "away"
+    },
+    {
+     "playerId": "28",
+     "side": "away"
+    },
+    {
+     "playerId": "30",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5223",
+   "kickoff_utc": "2027-03-20T15:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Monaco",
+   "away": "Real Salt Lake",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "6",
+     "side": "home"
+    },
+    {
+     "playerId": "16",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5224",
+   "kickoff_utc": "2027-03-20T19:30:00Z",
+   "competition": "La Liga",
+   "home": "Nottingham Forest",
+   "away": "Real Sociedad",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "5",
+     "side": "home"
+    },
+    {
+     "playerId": "24",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5225",
+   "kickoff_utc": "2027-03-21T12:00:00Z",
+   "competition": "Serie A",
+   "home": "Marseille",
+   "away": "Real Sociedad",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "7",
+     "side": "home"
+    },
+    {
+     "playerId": "24",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5226",
+   "kickoff_utc": "2027-03-21T14:30:00Z",
+   "competition": "Bundesliga",
+   "home": "Monaco",
+   "away": "San Jose Earthquakes",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "6",
+     "side": "home"
+    },
+    {
+     "playerId": "25",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5227",
+   "kickoff_utc": "2027-03-21T15:00:00Z",
+   "competition": "La Liga",
+   "home": "Nottingham Forest",
+   "away": "Toulouse",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "5",
+     "side": "home"
+    },
+    {
+     "playerId": "21",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5228",
+   "kickoff_utc": "2027-03-21T19:30:00Z",
+   "competition": "Ligue 1",
+   "home": "PSV",
+   "away": "Unattached",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "8",
+     "side": "home"
+    },
+    {
+     "playerId": "10",
+     "side": "home"
+    },
+    {
+     "playerId": "27",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5229",
+   "kickoff_utc": "2027-03-23T12:00:00Z",
+   "competition": "La Liga",
+   "home": "Nottingham Forest",
+   "away": "AC Milan",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "5",
+     "side": "home"
+    },
+    {
+     "playerId": "1",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5230",
+   "kickoff_utc": "2027-03-24T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "PSV",
+   "away": "Bayer Leverkusen",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "8",
+     "side": "home"
+    },
+    {
+     "playerId": "10",
+     "side": "home"
+    },
+    {
+     "playerId": "17",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5231",
+   "kickoff_utc": "2027-03-27T12:00:00Z",
+   "competition": "Serie A",
+   "home": "Real Sociedad",
+   "away": "Leeds United",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "24",
+     "side": "home"
+    },
+    {
+     "playerId": "14",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5232",
+   "kickoff_utc": "2027-03-27T14:30:00Z",
+   "competition": "Bundesliga",
+   "home": "San Jose Earthquakes",
+   "away": "Marseille",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "25",
+     "side": "home"
+    },
+    {
+     "playerId": "7",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5233",
+   "kickoff_utc": "2027-03-27T15:00:00Z",
+   "competition": "La Liga",
+   "home": "Toulouse",
+   "away": "Monaco",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "21",
+     "side": "home"
+    },
+    {
+     "playerId": "6",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5234",
+   "kickoff_utc": "2027-03-27T19:30:00Z",
+   "competition": "Ligue 1",
+   "home": "Unattached",
+   "away": "Nottingham Forest",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "27",
+     "side": "home"
+    },
+    {
+     "playerId": "5",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5235",
+   "kickoff_utc": "2027-03-28T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "San Jose Earthquakes",
+   "away": "Nottingham Forest",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "25",
+     "side": "home"
+    },
+    {
+     "playerId": "5",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5236",
+   "kickoff_utc": "2027-03-28T14:30:00Z",
+   "competition": "La Liga",
+   "home": "Toulouse",
+   "away": "PSV",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "21",
+     "side": "home"
+    },
+    {
+     "playerId": "8",
+     "side": "away"
+    },
+    {
+     "playerId": "10",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5237",
+   "kickoff_utc": "2027-03-28T15:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Unattached",
+   "away": "Philadelphia Union",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "27",
+     "side": "home"
+    },
+    {
+     "playerId": "23",
+     "side": "away"
+    },
+    {
+     "playerId": "28",
+     "side": "away"
+    },
+    {
+     "playerId": "30",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5238",
+   "kickoff_utc": "2027-03-28T19:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Vancouver Whitecaps",
+   "away": "Real Salt Lake",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "26",
+     "side": "home"
+    },
+    {
+     "playerId": "16",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5239",
+   "kickoff_utc": "2027-03-30T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Unattached",
+   "away": "Toulouse",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "27",
+     "side": "home"
+    },
+    {
+     "playerId": "21",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5240",
+   "kickoff_utc": "2027-03-31T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Vancouver Whitecaps",
+   "away": "Villarreal",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "26",
+     "side": "home"
+    },
+    {
+     "playerId": "19",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5241",
+   "kickoff_utc": "2027-04-03T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Atalanta",
+   "away": "Derby County",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "9",
+     "side": "home"
+    },
+    {
+     "playerId": "20",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5242",
+   "kickoff_utc": "2027-04-03T14:30:00Z",
+   "competition": "La Liga",
+   "home": "Atlético Madrid",
+   "away": "Fulham",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "13",
+     "side": "home"
+    },
+    {
+     "playerId": "29",
+     "side": "home"
+    },
+    {
+     "playerId": "4",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5243",
+   "kickoff_utc": "2027-04-03T15:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Bayer Leverkusen",
+   "away": "Houston Dynamo",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "17",
+     "side": "home"
+    },
+    {
+     "playerId": "22",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5244",
+   "kickoff_utc": "2027-04-03T19:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Borussia Mönchengladbach",
+   "away": "Juventus",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "11",
+     "side": "home"
+    },
+    {
+     "playerId": "15",
+     "side": "home"
+    },
+    {
+     "playerId": "2",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5245",
+   "kickoff_utc": "2027-04-04T12:00:00Z",
+   "competition": "La Liga",
+   "home": "Atlético Madrid",
+   "away": "Juventus",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "13",
+     "side": "home"
+    },
+    {
+     "playerId": "29",
+     "side": "home"
+    },
+    {
+     "playerId": "2",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5246",
+   "kickoff_utc": "2027-04-04T14:30:00Z",
+   "competition": "Ligue 1",
+   "home": "Bayer Leverkusen",
+   "away": "Leeds United",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "17",
+     "side": "home"
+    },
+    {
+     "playerId": "14",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5247",
+   "kickoff_utc": "2027-04-04T15:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Borussia Mönchengladbach",
+   "away": "Marseille",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "11",
+     "side": "home"
+    },
+    {
+     "playerId": "15",
+     "side": "home"
+    },
+    {
+     "playerId": "7",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5248",
+   "kickoff_utc": "2027-04-04T19:30:00Z",
+   "competition": "Premier League",
+   "home": "Bournemouth",
+   "away": "Monaco",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "3",
+     "side": "home"
+    },
+    {
+     "playerId": "6",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5249",
+   "kickoff_utc": "2027-04-06T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Borussia Mönchengladbach",
+   "away": "Philadelphia Union",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "11",
+     "side": "home"
+    },
+    {
+     "playerId": "15",
+     "side": "home"
+    },
+    {
+     "playerId": "23",
+     "side": "away"
+    },
+    {
+     "playerId": "28",
+     "side": "away"
+    },
+    {
+     "playerId": "30",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5250",
+   "kickoff_utc": "2027-04-07T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Bournemouth",
+   "away": "San Jose Earthquakes",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "3",
+     "side": "home"
+    },
+    {
+     "playerId": "25",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5251",
+   "kickoff_utc": "2027-04-10T12:00:00Z",
+   "competition": "La Liga",
+   "home": "Derby County",
+   "away": "Borussia Mönchengladbach",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "20",
+     "side": "home"
+    },
+    {
+     "playerId": "11",
+     "side": "away"
+    },
+    {
+     "playerId": "15",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5252",
+   "kickoff_utc": "2027-04-10T14:30:00Z",
+   "competition": "Ligue 1",
+   "home": "Fulham",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "4",
+     "side": "home"
+    },
+    {
+     "playerId": "3",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5253",
+   "kickoff_utc": "2027-04-10T15:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Houston Dynamo",
+   "away": "Chivas Guadalajara",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "22",
+     "side": "home"
+    },
+    {
+     "playerId": "18",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5254",
+   "kickoff_utc": "2027-04-10T19:30:00Z",
+   "competition": "Premier League",
+   "home": "Juventus",
+   "away": "Crystal Palace",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "2",
+     "side": "home"
+    },
+    {
+     "playerId": "12",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5255",
+   "kickoff_utc": "2027-04-11T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Fulham",
+   "away": "Crystal Palace",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "4",
+     "side": "home"
+    },
+    {
+     "playerId": "12",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5256",
+   "kickoff_utc": "2027-04-11T14:30:00Z",
+   "competition": "Eredivisie",
+   "home": "Houston Dynamo",
+   "away": "Derby County",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "22",
+     "side": "home"
+    },
+    {
+     "playerId": "20",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5257",
+   "kickoff_utc": "2027-04-11T15:00:00Z",
+   "competition": "Premier League",
+   "home": "Juventus",
+   "away": "Fulham",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "2",
+     "side": "home"
+    },
+    {
+     "playerId": "4",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5258",
+   "kickoff_utc": "2027-04-11T19:30:00Z",
+   "competition": "Serie A",
+   "home": "Leeds United",
+   "away": "Houston Dynamo",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "14",
+     "side": "home"
+    },
+    {
+     "playerId": "22",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5259",
+   "kickoff_utc": "2027-04-13T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Juventus",
+   "away": "Marseille",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "2",
+     "side": "home"
+    },
+    {
+     "playerId": "7",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5260",
+   "kickoff_utc": "2027-04-14T12:00:00Z",
+   "competition": "Serie A",
+   "home": "Leeds United",
+   "away": "PSV",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "14",
+     "side": "home"
+    },
+    {
+     "playerId": "8",
+     "side": "away"
+    },
+    {
+     "playerId": "10",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5261",
+   "kickoff_utc": "2027-04-17T12:00:00Z",
+   "competition": "Ligue 1",
+   "home": "Nottingham Forest",
+   "away": "AC Milan",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "5",
+     "side": "home"
+    },
+    {
+     "playerId": "1",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5262",
+   "kickoff_utc": "2027-04-17T14:30:00Z",
+   "competition": "Eredivisie",
+   "home": "PSV",
+   "away": "Atalanta",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "8",
+     "side": "home"
+    },
+    {
+     "playerId": "10",
+     "side": "home"
+    },
+    {
+     "playerId": "9",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5263",
+   "kickoff_utc": "2027-04-17T15:00:00Z",
+   "competition": "Premier League",
+   "home": "Philadelphia Union",
+   "away": "Atlético Madrid",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "23",
+     "side": "home"
+    },
+    {
+     "playerId": "28",
+     "side": "home"
+    },
+    {
+     "playerId": "30",
+     "side": "home"
+    },
+    {
+     "playerId": "13",
+     "side": "away"
+    },
+    {
+     "playerId": "29",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5264",
+   "kickoff_utc": "2027-04-17T19:30:00Z",
+   "competition": "Serie A",
+   "home": "Real Salt Lake",
+   "away": "Bayer Leverkusen",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "16",
+     "side": "home"
+    },
+    {
+     "playerId": "17",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5265",
+   "kickoff_utc": "2027-04-18T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "PSV",
+   "away": "Bayer Leverkusen",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "8",
+     "side": "home"
+    },
+    {
+     "playerId": "10",
+     "side": "home"
+    },
+    {
+     "playerId": "17",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5266",
+   "kickoff_utc": "2027-04-18T14:30:00Z",
+   "competition": "Premier League",
+   "home": "Philadelphia Union",
+   "away": "Borussia Mönchengladbach",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "23",
+     "side": "home"
+    },
+    {
+     "playerId": "28",
+     "side": "home"
+    },
+    {
+     "playerId": "30",
+     "side": "home"
+    },
+    {
+     "playerId": "11",
+     "side": "away"
+    },
+    {
+     "playerId": "15",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5267",
+   "kickoff_utc": "2027-04-18T15:00:00Z",
+   "competition": "Serie A",
+   "home": "Real Salt Lake",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "16",
+     "side": "home"
+    },
+    {
+     "playerId": "3",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5268",
+   "kickoff_utc": "2027-04-18T19:30:00Z",
+   "competition": "Bundesliga",
+   "home": "Real Sociedad",
+   "away": "Chivas Guadalajara",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "24",
+     "side": "home"
+    },
+    {
+     "playerId": "18",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5269",
+   "kickoff_utc": "2027-04-20T12:00:00Z",
+   "competition": "Serie A",
+   "home": "Real Salt Lake",
+   "away": "Fulham",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "16",
+     "side": "home"
+    },
+    {
+     "playerId": "4",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5270",
+   "kickoff_utc": "2027-04-21T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "Real Sociedad",
+   "away": "Leeds United",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "24",
+     "side": "home"
+    },
+    {
+     "playerId": "14",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5271",
+   "kickoff_utc": "2027-04-24T12:00:00Z",
+   "competition": "Eredivisie",
+   "home": "Unattached",
+   "away": "Toulouse",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "27",
+     "side": "home"
+    },
+    {
+     "playerId": "21",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5272",
+   "kickoff_utc": "2027-04-24T14:30:00Z",
+   "competition": "Premier League",
+   "home": "Vancouver Whitecaps",
+   "away": "Unattached",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "26",
+     "side": "home"
+    },
+    {
+     "playerId": "27",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5273",
+   "kickoff_utc": "2027-04-24T15:00:00Z",
+   "competition": "Serie A",
+   "home": "Villarreal",
+   "away": "Vancouver Whitecaps",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "19",
+     "side": "home"
+    },
+    {
+     "playerId": "26",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5274",
+   "kickoff_utc": "2027-04-24T19:30:00Z",
+   "competition": "Bundesliga",
+   "home": "AC Milan",
+   "away": "Villarreal",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "1",
+     "side": "home"
+    },
+    {
+     "playerId": "19",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5275",
+   "kickoff_utc": "2027-04-25T12:00:00Z",
+   "competition": "Premier League",
+   "home": "Vancouver Whitecaps",
+   "away": "Villarreal",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "26",
+     "side": "home"
+    },
+    {
+     "playerId": "19",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5276",
+   "kickoff_utc": "2027-04-25T14:30:00Z",
+   "competition": "Serie A",
+   "home": "Villarreal",
+   "away": "AC Milan",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "19",
+     "side": "home"
+    },
+    {
+     "playerId": "1",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5277",
+   "kickoff_utc": "2027-04-25T15:00:00Z",
+   "competition": "Bundesliga",
+   "home": "AC Milan",
+   "away": "Atalanta",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "1",
+     "side": "home"
+    },
+    {
+     "playerId": "9",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5278",
+   "kickoff_utc": "2027-04-25T19:30:00Z",
+   "competition": "La Liga",
+   "home": "Atalanta",
+   "away": "Atlético Madrid",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "9",
+     "side": "home"
+    },
+    {
+     "playerId": "13",
+     "side": "away"
+    },
+    {
+     "playerId": "29",
+     "side": "away"
+    }
+   ]
+  },
+  {
+   "matchId": "5279",
+   "kickoff_utc": "2027-04-27T12:00:00Z",
+   "competition": "Bundesliga",
+   "home": "AC Milan",
+   "away": "Bournemouth",
+   "fixture_kind": "club",
+   "pool_players": [
+    {
+     "playerId": "1",
+     "side": "home"
+    },
+    {
+     "playerId": "3",
+     "side": "away"
+    }
+   ]
+  }
+ ]
+}

@@ -1,9 +1,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { ABOUT, LEGEND, POPOVERS, INTRO, FEEDBACK_EMAIL, DISCLAIMER } from "../js/copy.js";
+import { ABOUT, LEGEND, POPOVERS, INTRO, CALENDAR, FEEDBACK_EMAIL, DISCLAIMER } from "../js/copy.js";
 
 // Every public string in one blob, to hold the standing copy rules (CLAUDE.md).
-const everything = JSON.stringify([ABOUT, LEGEND, POPOVERS, INTRO, DISCLAIMER]).toLowerCase();
+const everything = JSON.stringify([ABOUT, LEGEND, POPOVERS, INTRO, CALENDAR, DISCLAIMER]).toLowerCase();
 
 test("public copy never mentions trajectory or the competitor, and implies no alerts or accounts", () => {
   assert.ok(!everything.includes("trajectory"), "trajectory must never appear in public copy");

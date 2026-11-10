@@ -16,6 +16,22 @@ export const INTRO = {
   tail: " to follow them; their matches pin to the top.",
 };
 
+// The calendar (month view) and the schedule-only day. Plain strings, held to the copy rules in tests/copy.test.mjs.
+export const CALENDAR = {
+  open: "Open the calendar",
+  title: "Calendar",
+  prev: "Previous month",
+  next: "Next month",
+  legendMust: "Must-watch match",
+  legendSched: "Pool match, schedule only",
+  timesNote: "Kickoff times more than a month ahead are placeholders until the leagues confirm them.",
+  followsTitle: "Next for the players you follow",
+  followsNote: "Each player's club schedule. Who plays is decided closer to the day.",
+  tbc: "Time to be confirmed",
+  noSchedule: "The longer schedule isn't available right now.",
+  schedNote: "Schedule only. Who plays, confirmed times and where to watch appear closer to the day.",
+};
+
 export const LINEUP_NOTE = "Lineups usually post ~30 min before kickoff.";
 
 export const ET_NOTE = "Days follow US Eastern time so everyone sees the same slate.";

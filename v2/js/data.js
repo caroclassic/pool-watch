@@ -30,6 +30,7 @@ export function createHttpSource({ base, fetchImpl = (...a) => fetch(...a), cloc
     getMatches: () => getJson("matches.json"),
     getStatus: () => getJson("status.json"),
     getPlayers: () => getJson("players.json"),
+    getSchedule: () => getJson("schedule.json"),          // optional: the page works without it (no far-ahead calendar)
   };
 }
 
@@ -59,7 +60,7 @@ export const pollDelay = (fast) => (fast ? POLL_ACTIVE_MS : POLL_IDLE_MS);
  *   delay()     -> ms until the next status check (called after each load)
  */
 export function createPoller({ source, delay, onData, onError, doc = document, timers = { setTimeout: (...a) => setTimeout(...a), clearTimeout: (...a) => clearTimeout(...a) }, clock = () => Date.now() }) {
-  let data = { matches: null, status: null, players: null };
+  let data = { matches: null, status: null, players: null, schedule: null };
   let timer = null, lastFull = 0, lastRun = 0, running = false, stopped = true, nextDelay = POLL_IDLE_MS;
 
   const hidden = () => doc && doc.visibilityState === "hidden";
@@ -72,8 +73,10 @@ export function createPoller({ source, delay, onData, onError, doc = document, t
     const first = data.matches === null;
     try {
       if (first || full || clock() - lastFull >= FULL_REFRESH_MS) {
-        const [matches, status, players] = await Promise.all([source.getMatches(), source.getStatus(), source.getPlayers()]);
-        data = { matches, status, players }; lastFull = clock();
+        // The schedule is optional: if it fails the page keeps working (and keeps the last good copy, if it has one).
+        const sched = source.getSchedule ? source.getSchedule().catch(() => null) : Promise.resolve(null);
+        const [matches, status, players, schedule] = await Promise.all([source.getMatches(), source.getStatus(), source.getPlayers(), sched]);
+        data = { matches, status, players, schedule: schedule || data.schedule }; lastFull = clock();
       } else {
         data = { ...data, status: await source.getStatus() };
       }

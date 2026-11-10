@@ -48,6 +48,8 @@ const keyToNoon = (key) => { const [y, m, d] = key.split("-").map(Number); retur
 export const weekdayShort = (key) => fmt("UTC", { weekday: "short" }, "wd").format(keyToNoon(key));
 export const weekdayLong = (key) => fmt("UTC", { weekday: "long" }, "wdl").format(keyToNoon(key));
 export const monthDay = (key) => fmt("UTC", { month: "short", day: "numeric" }, "md").format(keyToNoon(key));
+export const monthDayYear = (key) => fmt("UTC", { month: "short", day: "numeric", year: "numeric" }, "mdy").format(keyToNoon(key));
+export const monthTitle = (ym) => fmt("UTC", { month: "long", year: "numeric" }, "my").format(keyToNoon(`${ym}-01`));
 export const dayOfMonth = (key) => Number(key.slice(8, 10));
 
 /** "Fri, Oct 9" */

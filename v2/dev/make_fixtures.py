@@ -139,6 +139,35 @@ def build(now, kind):
     return matches, status
 
 
+def schedule_feed(now, days=200):
+    """schedule.json: club fixtures every few days out to `days`, plus a USMNT match, for the calendar."""
+    clubs = {}
+    for (pid, _d, _s, _p, club, *_r) in P:
+        clubs.setdefault(club, []).append(str(pid))
+    names = sorted(clubs)
+    comps = ["Premier League", "Serie A", "Bundesliga", "La Liga", "Ligue 1", "Eredivisie"]
+    rows, mid = [], 5000
+    start = now.replace(hour=0, minute=0, second=0, microsecond=0)
+    for i in range(1, days + 1):
+        day = start + timedelta(days=i)
+        wd = day.weekday()                                   # 5, 6 = Sat, Sun
+        n = 4 if wd in (5, 6) else 1 if wd in (1, 2) else 0
+        for j in range(n):
+            home, away = names[(i + j) % len(names)], names[(i * 3 + j + 5) % len(names)]
+            if home == away:
+                continue
+            ko = day.replace(hour=(12, 14, 15, 19)[j % 4], minute=(0, 30)[j % 2])
+            mid += 1
+            rows.append({"matchId": str(mid), "kickoff_utc": Z(ko), "competition": comps[(i + j) % len(comps)], "home": home, "away": away,
+                         "fixture_kind": "club",
+                         "pool_players": ([{"playerId": p, "side": "home"} for p in clubs[home]] + [{"playerId": p, "side": "away"} for p in clubs[away]])})
+    ko = (start + timedelta(days=150)).replace(hour=23, minute=0)
+    rows.append({"matchId": "9001", "kickoff_utc": Z(ko), "competition": "Friendlies", "home": "USA", "away": "Canada", "fixture_kind": "national_senior", "pool_players": []})
+    rows.sort(key=lambda r: (r["kickoff_utc"], r["matchId"]))
+    return {"schema_version": 1, "updated_at": Z(now), "reference_tz": "America/New_York",
+            "window": {"start": str(start.date()), "end": str((start + timedelta(days=days)).date())}, "matches": rows}
+
+
 def main():
     jobs = [("", datetime(2026, 10, 9, 17, 0, tzinfo=timezone.utc), "main"),
             ("carry", datetime(2026, 10, 9, 4, 30, tzinfo=timezone.utc), "carry")]
@@ -146,7 +175,10 @@ def main():
         d = os.path.join(HERE, sub)
         os.makedirs(d, exist_ok=True)
         m, s = build(now, kind)
-        for name, obj in (("matches.json", m), ("status.json", s), ("players.json", players_feed(now))):
+        feeds = [("matches.json", m), ("status.json", s), ("players.json", players_feed(now))]
+        if kind == "main":
+            feeds.append(("schedule.json", schedule_feed(now)))
+        for name, obj in feeds:
             with open(os.path.join(d, name), "w") as f:
                 json.dump(obj, f, indent=1, ensure_ascii=False)
     print("wrote dev feeds")

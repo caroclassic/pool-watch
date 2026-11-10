@@ -250,3 +250,39 @@ textarea.mono { width: 100%; margin-bottom: 10px; }
 .sitenav { flex-wrap: wrap; gap: 0 22px; }
 .term { text-transform: inherit; letter-spacing: inherit; font-weight: inherit; }
 .picker { width: 9.5rem; }
+
+/* ── calendar (month view in a sheet) and the schedule-only day ─────────────────────────────── */
+.cal-open { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; padding: 0 12px; font: 600 0.9375rem var(--serif); color: var(--ink);
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px; cursor: pointer; }
+.tile.is-sched { border-style: dashed; }
+.cal-nav { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+.cal-month { margin: 0; font: 700 1.125rem var(--sans); text-align: center; flex: 1; }
+.cal-step { min-width: 44px; min-height: 44px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--ink); font-size: 1.375rem; cursor: pointer; }
+.cal-step:disabled { opacity: .35; cursor: default; }
+.cal { margin: 0 -6px; }   /* a little wider than the sheet's padding so a day cell is at least 44px on a phone */
+.cal-grid { width: 100%; border-collapse: separate; border-spacing: 2px; table-layout: fixed; }
+.cal-grid th { font: 600 0.75rem var(--sans); text-transform: uppercase; letter-spacing: .06em; color: var(--dim); padding: 2px 0; }
+.cal-grid td { padding: 0; }
+.cal-day { width: 100%; min-height: 52px; padding: 4px 2px; display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--ink); font-family: var(--serif); cursor: pointer; }
+.cal-num { font: 700 1rem var(--sans); line-height: 1.1; }
+.cal-marks { display: flex; gap: 4px; align-items: center; min-height: 14px; font: 700 0.75rem var(--sans); }
+.cal-count { color: var(--dim); }
+.cal-ring { width: 8px; height: 8px; border-radius: 50%; border: 2px solid var(--ink); display: inline-block; box-sizing: border-box; }
+.cal-day.is-na { opacity: .5; border-style: dotted; }
+.cal-day.is-today:not(.is-selected) { border-color: var(--ink); border-width: 2px; }
+.cal-day.is-selected { background: var(--panel); border-color: var(--panel); color: var(--on-fill); }
+.cal-day.is-selected .cal-count { color: var(--on-fill); opacity: .85; }
+.cal-day.is-selected .cal-ring { border-color: var(--on-fill); }
+.cal-day.is-selected .t-must { background: var(--on-fill); }
+.cal-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 12px 0 6px; padding: 0; font-size: 0.875rem; color: var(--dim); }
+.cal-legend .t-must, .cal-legend .cal-ring { vertical-align: baseline; margin-right: 2px; }
+.cal-h { font: 700 1rem var(--sans); margin: 18px 0 2px; }
+.cal-list, .cal-list ul { list-style: none; padding: 0; margin: 0; }
+.cal-list > li { margin: 8px 0 12px; }
+.cal-list ul { margin-top: 2px; }
+.cal-go { min-height: 44px; text-align: left; }
+.sched-list { list-style: none; padding: 0; margin: 8px 0 0; }
+.sched-item { padding: 10px 12px; margin-bottom: 8px; border: 1px solid var(--line); border-left-width: 4px; border-radius: 10px; background: var(--card); }
+.sched-when { font: 600 0.8125rem var(--sans); color: var(--dim); text-transform: uppercase; letter-spacing: .05em; }
+.sched-follow { color: var(--ink); font-weight: 600; }

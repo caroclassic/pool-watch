@@ -14,6 +14,7 @@ export const FULL_REFRESH_MS = 600_000;    // matches.json + players.json re-rea
 export const STALE_MINUTES = 15;
 export const STRIP_BACK = 3;
 export const STRIP_AHEAD = 14;
+export const TIME_FIRM_DAYS = 30;     // kickoff times further out than this are league placeholders (measured 2026-11-10)
 export const SCHEMA_VERSION = 1;
 
 export function dataBase(doc = document, loc = location) {

@@ -5,17 +5,19 @@ import { dataBase, STALE_MINUTES, STRIP_BACK, STRIP_AHEAD } from "./config.js";
 import { createHttpSource, createPoller, shouldPollFast, pollDelay } from "./data.js";
 import {
   mergeFeeds, tiersEnabled, buildDay, dayFacts, stripDays, inWindow, dayGap, daysKept,
+  scheduleIndex, calendarBounds, nextScheduleDay,
   nextMatchDay, nextMatchFor, followedChanges, rolledOver, nextAnchorToday,
 } from "./model.js";
 import { createStorage, createFollowsStore, createFlags, parseHash, buildHash, decodeShare, readLegacyFollows } from "./storage.js";
-import { indexPlayers } from "./players-model.js";
+import { indexPlayers, chipName } from "./players-model.js";
 import { etDateKey, dayHeader, dayHeading, weekdayLong, relativeMinutes, localTime, addDays } from "./time.js";
-import { INTRO, LINEUP_NOTE, FEEDBACK_EMAIL, FEEDBACK_SUBJECT, DISCLAIMER } from "./copy.js";
+import { INTRO, LINEUP_NOTE, CALENDAR, FEEDBACK_EMAIL, FEEDBACK_SUBJECT, DISCLAIMER } from "./copy.js";
 import { mountThemeButton } from "./theme.js";
 import { term, syncPopover } from "./ui/popover.js";
 import { h, clear } from "./ui/dom.js";
 import { renderCard } from "./ui/card.js";
 import { renderStrip } from "./ui/strip.js";
+import { calendarSheet, scheduleTime } from "./ui/calendar.js";
 import { playerSheet, followingSheet, legendSheet, saveSheet, importSheet, closeSheet } from "./ui/sheets.js";
 
 const DAY_RE = /^\d{4}-\d{2}-\d{2}$/;
@@ -39,6 +41,7 @@ if (!follows.count() && !flags.get("legacy-follows")) { follows.merge(readLegacy
 const S = {
   data: null,            // { matches, status, players }
   views: [],
+  schedIdx: new Map(),   // ET day -> far-ahead schedule rows (schedule.json); empty when it did not load
   players: new Map(),
   error: null,
   selected: null,        // ET day key on screen
@@ -132,6 +135,41 @@ function section(label, cards, { cls = "", sub = null, termKey = null, showTier 
     cards.map((c) => renderCard(c, ui)));
 }
 
+function openCalendar() {
+  const c = ctx(S.selected);
+  calendarSheet({
+    selected: S.selected, todayKey: c.todayKey, facts: dayFacts(S.views, c), inWindow: (k) => inWindow(S.data.matches, k),
+    scheduleIdx: S.schedIdx, schedule: S.data.schedule, bounds: calendarBounds(c.todayKey, S.data.matches, S.data.schedule),
+    follows: follows.ids(), players: S.players, now: nowDate(), tz: viewerTz(), onPick: (k) => { selectDay(k); const b = document.querySelector(".cal-open"); if (b) b.focus(); },   // the strip re-renders, so focus the new button
+    from: () => document.querySelector(".cal-open"),
+  });
+}
+
+// A day beyond the 14-day window but inside the schedule: what the schedule knows, and nothing it does not.
+function scheduleDay(day, c) {
+  const rows = S.schedIdx.get(day) || [];
+  if (!rows.length) {
+    const next = nextScheduleDay(S.schedIdx, day);
+    return h("div", { class: "empty" },
+      h("p", { class: "empty-title" }, `No pool matches scheduled on ${weekdayLong(day)}.`),
+      next ? h("p", null, h("button", { type: "button", class: "btn-link", onclick: () => selectDay(next) }, `Next match day: ${dayHeading(next)}`)) : null);
+  }
+  const fol = follows.ids();
+  const score = (id) => (S.players.get(id) && S.players.get(id).score) || 0;
+  return h("section", { class: "band sched", "aria-label": "Schedule" },
+    h("p", { class: "dim small" }, CALENDAR.schedNote),
+    h("ul", { class: "sched-list" }, rows.map((m) => {
+      const ids = [...new Set(m.pool_players.map((p) => p.playerId))].sort((a, b) => score(b) - score(a));
+      const followed = ids.filter((id) => fol.has(id));
+      const shown = ids.slice(0, 4).map((id) => chipName(S.players, id));
+      return h("li", { class: "sched-item" },
+        h("div", { class: "sched-when" }, scheduleTime(m, c.now, c.tz)),
+        h("div", null, h("b", null, `${m.home} v ${m.away}`), h("span", { class: "dim" }, ` · ${m.competition}`)),
+        shown.length ? h("div", { class: "dim small" }, `Pool players: ${shown.join(", ")}${ids.length > 4 ? ` +${ids.length - 4}` : ""}`) : null,
+        followed.length ? h("div", { class: "small sched-follow" }, `Following: ${followed.map((id) => chipName(S.players, id)).join(", ")}`) : null);
+    })));
+}
+
 function emptyState(day, c) {
   const w = weekdayLong(day);
   const gap = dayGap(S.data.matches, day, c.todayKey);
@@ -143,6 +181,7 @@ function emptyState(day, c) {
         ? `Stateside XI keeps the last ${kept === 1 ? "day" : `${kept} days`} and the days ahead.`
         : "Stateside XI lists today and the days ahead, not past days."));
   }
+  if (gap === "future" && S.data.schedule && day <= S.data.schedule.window.end) return scheduleDay(day, c);
   if (gap === "future") {
     return h("div", { class: "empty" },
       h("p", { class: "empty-title" }, "This day isn't published yet."),
@@ -213,7 +252,7 @@ function renderMain() {
   }
 
   nodes.push(footer());
-  return { nodes, sig: JSON.stringify([d, head, today, S.introGone, follows.count() === 0, [...S.expanded]]) };
+  return { nodes, sig: JSON.stringify([d, head, today, S.introGone, follows.count() === 0, [...S.expanded], S.data.schedule && S.data.schedule.updated_at, [...follows.ids()]]) };
 }
 
 function footer() {
@@ -278,8 +317,8 @@ function render() {
     const left = prev ? prev.scrollLeft : null;
     clear(els.strip).append(renderStrip({
       days, selected: S.selected, today: c.todayKey, facts,
-      inWindow: (k) => inWindow(S.data.matches, k),
-      onSelect: selectDay, onToday: () => selectDay(c.todayKey), onPick: selectDay,
+      inWindow: (k) => inWindow(S.data.matches, k), inSchedule: (k) => S.schedIdx.has(k),
+      onSelect: selectDay, onToday: () => selectDay(c.todayKey), onOpenCalendar: openCalendar,
     }));
     const strip = els.strip.querySelector(".strip");
     const sel = strip.querySelector(".is-selected");
@@ -326,6 +365,7 @@ function onData(data, { first }) {
   const prevViews = S.views;
   S.data = data;
   S.views = mergeFeeds(data.matches, data.status);
+  S.schedIdx = scheduleIndex(data.schedule);
   S.players = indexPlayers(data.players);
   S.error = null;
 

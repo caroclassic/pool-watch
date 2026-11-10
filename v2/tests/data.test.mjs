@@ -37,6 +37,7 @@ function harness(over = {}) {
     getMatches: async () => { calls.full++; return { m: 1 }; },
     getStatus: async () => { calls.status++; if (over.failStatus) throw new D.FeedError("down", "network"); return { s: calls.status }; },
     getPlayers: async () => ({ p: 1 }),
+    ...(over.schedule ? { getSchedule: over.schedule } : {}),
   };
   const p = D.createPoller({
     source, doc, clock: () => t, delay: () => over.delay ?? 60_000,
@@ -82,4 +83,19 @@ test("poller: an error keeps polling and reports first-load failures", async () 
 test("poller: stop cancels the timer", async () => {
   const h = harness(); await h.p.start(); h.p.stop();
   assert.equal(h.live().length, 0);
+});
+
+test("poller: the schedule is optional; a failing or missing schedule never breaks the page and the last good copy is kept", async () => {
+  // no getSchedule at all (an older source): loads fine, schedule stays null
+  let h = harness(); await h.p.start();
+  assert.equal(h.p.data.schedule, null); assert.deepEqual(h.events[0], ["data", true]);
+  // a schedule that loads, then one that fails on the next full refresh: the earlier copy is kept
+  let n = 0;
+  h = harness({ schedule: async () => { n++; if (n > 1) throw new D.FeedError("down", "network"); return { schedule: "v1" }; } });
+  await h.p.start(); assert.deepEqual(h.p.data.schedule, { schedule: "v1" });
+  h.advance(700_000); await h.fire();
+  assert.deepEqual(h.p.data.schedule, { schedule: "v1" }); assert.equal(h.events.at(-1)[0], "data");
+  // a schedule that never loads: matches still load, schedule is null (the page then says the longer schedule is unavailable)
+  h = harness({ schedule: async () => { throw new D.FeedError("down", "network"); } });
+  await h.p.start(); assert.equal(h.p.data.schedule, null); assert.deepEqual(h.events[0], ["data", true]);
 });

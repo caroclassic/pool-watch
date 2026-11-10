@@ -42,10 +42,30 @@ export function openSheet(title, body, { from = null, onClose = null } = {}) {
   history.pushState({ sheet: true }, "");
   pushed = true;
   d.querySelector(".sheet-close").focus();
-  return { el: d, close: () => d.open && d.close(), replace: (nodes) => clear(d.querySelector(".sheet-body")).append(nodes) };
+  return { el: d, close: () => d.open && d.close(), closeThen: (fn) => closeSheetThen(fn), replace: (...nodes) => clear(d.querySelector(".sheet-body")).append(...nodes.flat(Infinity).filter(Boolean)) };
 }
 
 export const closeSheet = () => dlg && dlg.open && dlg.close();
+
+/**
+ * Close the sheet, THEN run fn. Closing a sheet runs history.back() (so the back gesture closes it too), which
+ * fires popstate and a hashchange that the page answers by going to the URL's day. A caller that changes the URL
+ * hash (picking a day) must therefore run after those events, or the back step undoes it. fn runs in a timeout
+ * after popstate; the long fallback only covers a browser that never fires it.
+ */
+export function closeSheetThen(fn) {
+  if (!dlg || !dlg.open) { fn(); return; }
+  if (!pushed) { dlg.close(); fn(); return; }
+  let done = false, timer = null;
+  const finish = () => {
+    if (done) return;
+    done = true; clearTimeout(timer); window.removeEventListener("popstate", finish);
+    setTimeout(fn, 0);
+  };
+  window.addEventListener("popstate", finish);
+  timer = setTimeout(finish, 2000);
+  dlg.close();
+}
 
 // ── player ──────────────────────────────────────────────────────────────────
 

@@ -350,6 +350,111 @@ export function daysKept(matchesFeed, todayKey) {
   return Math.round((ms(todayKey) - ms(w.start)) / 86400000);
 }
 
+// ── far-ahead schedule (schedule.json): the calendar and the schedule-only day ─────────────────────
+
+/** ET day key -> schedule rows for that day, in kickoff order. An empty Map when there is no schedule. */
+export function scheduleIndex(schedule) {
+  const out = new Map();
+  if (!schedule || !Array.isArray(schedule.matches)) return out;
+  for (const m of schedule.matches) {
+    const k = etDateKey(m.kickoff_utc);
+    if (!out.has(k)) out.set(k, []);
+    out.get(k).push(m);
+  }
+  for (const rows of out.values()) rows.sort((a, b) => a.kickoff_utc.localeCompare(b.kickoff_utc) || a.matchId.localeCompare(b.matchId));
+  return out;
+}
+
+/** Is this kickoff time one to trust? Beyond `firmDays` the leagues still use placeholder slots. */
+export function timeFirm(kickoffUtc, now, firmDays = 30) {
+  return Date.parse(kickoffUtc) - +now <= firmDays * 86400000;
+}
+
+const keyParts = (k) => k.split("-").map(Number);
+const noon = (k) => { const [y, m, d] = keyParts(k); return new Date(Date.UTC(y, m - 1, d, 12)); };
+const pad2 = (n) => String(n).padStart(2, "0");
+const dayKey = (y, m, d) => `${y}-${pad2(m)}-${pad2(d)}`;
+const monthLen = (y, m) => new Date(Date.UTC(y, m, 0)).getUTCDate();
+
+/** The weeks of a month, Sunday first: arrays of 7 day keys, null where the week spills into another month. */
+export function monthWeeks(ym) {
+  const [y, m] = ym.split("-").map(Number);
+  const lead = new Date(Date.UTC(y, m - 1, 1)).getUTCDay();
+  const cells = [...Array(lead).fill(null), ...Array.from({ length: monthLen(y, m) }, (_, i) => dayKey(y, m, i + 1))];
+  while (cells.length % 7) cells.push(null);
+  const weeks = [];
+  for (let i = 0; i < cells.length; i += 7) weeks.push(cells.slice(i, i + 7));
+  return weeks;
+}
+
+/** "2026-11" shifted by n months. */
+export function shiftMonth(ym, n) {
+  const [y, m] = ym.split("-").map(Number);
+  const t = y * 12 + (m - 1) + n;
+  return `${Math.floor(t / 12)}-${pad2((t % 12) + 1)}`;
+}
+
+/** The same day number n months on, kept inside the target month (31 Jan + 1 month = 28 Feb). */
+export function shiftMonthDay(key, n) {
+  const [y, m, d] = keyParts(key);
+  const ym = shiftMonth(`${y}-${pad2(m)}`, n);
+  const [ty, tm] = ym.split("-").map(Number);
+  return dayKey(ty, tm, Math.min(d, monthLen(ty, tm)));
+}
+
+/** Where keyboard focus goes in the month grid, or null for a key the grid does not handle. */
+export function moveFocus(key, pressed) {
+  const dow = noon(key).getUTCDay();
+  switch (pressed) {
+    case "ArrowLeft": return addDays(key, -1);
+    case "ArrowRight": return addDays(key, 1);
+    case "ArrowUp": return addDays(key, -7);
+    case "ArrowDown": return addDays(key, 7);
+    case "Home": return addDays(key, -dow);
+    case "End": return addDays(key, 6 - dow);
+    case "PageUp": return shiftMonthDay(key, -1);
+    case "PageDown": return shiftMonthDay(key, 1);
+    default: return null;
+  }
+}
+
+/** First and last month ("YYYY-MM") the calendar can show: the feed's window start to the schedule's end. */
+export function calendarBounds(todayKey, matchesFeed, schedule) {
+  const start = (matchesFeed && matchesFeed.window && matchesFeed.window.start) || addDays(todayKey, -3);
+  const end = (schedule && schedule.window && schedule.window.end)
+    || (matchesFeed && matchesFeed.window && matchesFeed.window.end) || addDays(todayKey, 14);
+  const min = start.slice(0, 7), max = end.slice(0, 7);
+  return { min, max: max < min ? min : max };
+}
+
+/** For each followed player, his club's next matches in the schedule (not yet kicked off). Most relevant players first. */
+export function nextForFollows(schedule, followIds, now, players = new Map(), { perPlayer = 2, maxPlayers = 6 } = {}) {
+  if (!schedule || !Array.isArray(schedule.matches)) return [];
+  const want = new Set(followIds);
+  if (!want.size) return [];
+  const found = new Map();
+  for (const m of schedule.matches) {            // already in kickoff order
+    if (Date.parse(m.kickoff_utc) < +now) continue;
+    for (const p of m.pool_players || []) {
+      if (!want.has(p.playerId)) continue;
+      const list = found.get(p.playerId) || [];
+      if (list.length < perPlayer) { list.push(m); found.set(p.playerId, list); }
+    }
+  }
+  const score = (id) => (players.get(id) && players.get(id).score) || 0;
+  return [...found.entries()]
+    .sort((a, b) => score(b[0]) - score(a[0]) || chipName(players, a[0]).localeCompare(chipName(players, b[0])))
+    .slice(0, maxPlayers)
+    .map(([playerId, items]) => ({ playerId, items }));
+}
+
+/** First ET day after `fromKey` that has a scheduled pool match, or null. */
+export function nextScheduleDay(index, fromKey) {
+  let best = null;
+  for (const k of index.keys()) if (k > fromKey && (best === null || k < best)) best = k;
+  return best;
+}
+
 /** First ET day after `fromKey` that has any match, or null. */
 export function nextMatchDay(views, fromKey) {
   let best = null;
