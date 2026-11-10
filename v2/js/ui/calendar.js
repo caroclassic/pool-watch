@@ -22,7 +22,7 @@ export function scheduleTime(row, now, tz) {
 }
 
 /**
- * @param o { selected, todayKey, facts:Map, inWindow(key), scheduleIdx:Map, schedule, bounds:{min,max},
+ * @param o { selected, todayKey, windowStart, facts:Map, inWindow(key), scheduleIdx:Map, schedule, bounds:{min,max},
  *            follows:Set, players:Map, now:Date, tz, onPick(key), from() }
  */
 export function calendarSheet(o) {
@@ -42,7 +42,8 @@ export function calendarSheet(o) {
     const n = covered ? (f ? f.total : 0) : sched.length;
     return { n, must: covered ? !!(f && f.must) : sched.some((r) => r.fixture_kind === "national_senior"),   // a senior national match is Must-watch by rule
              schedOnly: !covered && sched.length > 0,
-             outside: !covered && sched.length === 0 && (!horizonEnd || key > horizonEnd) };
+             // beyond the schedule, or before the days the feed keeps: nothing is listed for it
+             outside: !covered && sched.length === 0 && (!horizonEnd || key > horizonEnd || (o.windowStart && key < o.windowStart)) };
   };
 
   // Picking a day closes the sheet first and changes the URL hash after the sheet's history step (see closeSheetThen).
@@ -60,7 +61,7 @@ export function calendarSheet(o) {
   function dayButton(key) {
     const i = cellInfo(key);
     const aria = [dayHeading(key) + (key === o.todayKey ? ", today" : ""),
-      i.n ? `${i.n} ${i.n === 1 ? "match" : "matches"}` : i.outside ? "not published" : "no pool matches",
+      i.n ? `${i.n} ${i.n === 1 ? "match" : "matches"}` : i.outside ? (key < o.todayKey ? "no longer listed" : "not published") : "no pool matches",
       i.must ? "includes a Must-watch match" : null, i.schedOnly ? "schedule only" : null].filter(Boolean).join(", ");
     const marks = [];
     if (i.must) marks.push(h("span", { class: "t-must", "aria-hidden": "true" }));

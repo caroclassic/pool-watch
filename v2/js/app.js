@@ -138,7 +138,8 @@ function section(label, cards, { cls = "", sub = null, termKey = null, showTier 
 function openCalendar() {
   const c = ctx(S.selected);
   calendarSheet({
-    selected: S.selected, todayKey: c.todayKey, facts: dayFacts(S.views, c), inWindow: (k) => inWindow(S.data.matches, k),
+    selected: S.selected, todayKey: c.todayKey, windowStart: S.data.matches.window && S.data.matches.window.start,
+    facts: dayFacts(S.views, c), inWindow: (k) => inWindow(S.data.matches, k),
     scheduleIdx: S.schedIdx, schedule: S.data.schedule, bounds: calendarBounds(c.todayKey, S.data.matches, S.data.schedule),
     follows: follows.ids(), players: S.players, now: nowDate(), tz: viewerTz(), onPick: (k) => { selectDay(k); const b = document.querySelector(".cal-open"); if (b) b.focus(); },   // the strip re-renders, so focus the new button
     from: () => document.querySelector(".cal-open"),
