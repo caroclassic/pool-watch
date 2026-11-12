@@ -90,9 +90,12 @@ def build(now, kind):
         add(902, at(-1, 14), "Premier League", "Fulham", "Brighton", "full_time", None, players=pp([4]), st=end(None, {"4": "starts"}))
         add(903, at(-1, 10), "Bundesliga", "Leverkusen", "Mainz", "full_time", "must_watch", players=pp([17, 11]), st=end("must_watch", {"17": "starts", "11": "not_in_squad"}))
         # today (ET Fri)
-        add(101, at(0, 9, 30), "Ligue 1", "Marseille", "Lille", "full_time", "worth_a_look", players=pp([7]), st=dict(status="full_time", status_updated_at=Z(now), lineups_confirmed=True, participation={"7": "starts"}))
-        add(102, at(0, 11, 30), "Serie A", "Atalanta", "Napoli", "scheduled", "must_watch", players=pp([9, 2, 6]), bc="Paramount+",
-            st=dict(status="live", status_updated_at=Z(now - timedelta(minutes=1)), lineups_confirmed=True, tier="must_watch", tier_at_kickoff="must_watch", participation={"9": "starts", "2": "bench", "6": "not_in_squad"}))
+        add(101, at(0, 9, 30), "Ligue 1", "Marseille", "Lille", "full_time", "worth_a_look", players=pp([7]), st=dict(status="full_time", status_updated_at=Z(now), lineups_confirmed=True, participation={"7": "starts"},
+                    live_states={"7": "subbed_off"}, tier_peak="must_watch"))   # finished: the final word, and the highest tier it reached
+        # a live match WITH live states (a competition whose live updates are published): 9 taken off, 2 came on, 13 sent off
+        add(102, at(0, 11, 30), "Serie A", "Atalanta", "Napoli", "scheduled", "must_watch", players=pp([9, 2, 6, 13]), bc="Paramount+",
+            st=dict(status="live", status_updated_at=Z(now - timedelta(minutes=1)), lineups_confirmed=True, tier="must_watch", tier_at_kickoff="must_watch", participation={"9": "starts", "2": "bench", "6": "not_in_squad", "13": "starts"},
+                    live_states={"9": "subbed_off", "2": "subbed_on", "13": "sent_off"}, live_tier="worth_a_look"))
         add(103, at(0, 14, 0), "Premier League", "Fulham", "Crystal Palace", "scheduled", "must_watch", players=pp([4, 12, 5]), bc="Peacock", st=dict(status="scheduled", status_updated_at=None, lineups_confirmed=False, tier="must_watch", participation={}))
         add(104, at(0, 15, 0), "La Liga", "Villarreal", "Girona", "scheduled", "worth_a_look", players=pp([19]),
             st=dict(status="scheduled", status_updated_at=Z(now), lineups_confirmed=True, tier="worth_a_look", participation={"19": "starts"}))

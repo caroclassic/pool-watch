@@ -41,7 +41,11 @@
    "lineups_confirmed": true,
    "participation": {
     "7": "starts"
-   }
+   },
+   "live_states": {
+    "7": "subbed_off"
+   },
+   "tier_peak": "must_watch"
   },
   "102": {
    "status": "live",
@@ -52,8 +56,15 @@
    "participation": {
     "9": "starts",
     "2": "bench",
-    "6": "not_in_squad"
-   }
+    "6": "not_in_squad",
+    "13": "starts"
+   },
+   "live_states": {
+    "9": "subbed_off",
+    "2": "subbed_on",
+    "13": "sent_off"
+   },
+   "live_tier": "worth_a_look"
   },
   "103": {
    "status": "scheduled",

@@ -48,7 +48,10 @@ export const LEGEND = [
     ["● Starts", "In the starting lineup."],
     ["◐ Bench", "In the matchday squad, on the bench."],
     ["⊘ Not in squad", "Not in the matchday squad."],
-  ] },
+    ["⊕ Subbed on", "Came on as a substitute during the match."],
+    ["⊖ Subbed off", "Taken off during the match."],
+    ["▮ Sent off", "Shown a red card."],
+  ], note: "Changes during a match are shown for some competitions only. Where they aren't shown, a player keeps his Starts or Bench label. We don't show minutes or scores." },
   { title: "Match status", rows: [
     ["Lineups usually post ~30 min before kickoff", "Said once under the day heading. A card only mentions lineups when they're confirmed or late."],
     ["Lineups confirmed ✓", "Lineups are in, and player statuses are final."],

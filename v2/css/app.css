@@ -151,6 +151,14 @@ h1.brand a { text-decoration: none; }
 .shape-starts { background: var(--ink); }
 .shape-bench { background: linear-gradient(90deg, var(--ink) 50%, transparent 50%); }
 .shape-not_in_squad::after { content: ""; position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1.5px; background: var(--ink); transform: rotate(45deg); }
+/* Live states: each its own mark inside the same circle, in ink. A plus (came on), a bar (went off), a card (sent off). The word beside it always says it too. */
+.shape-subbed_on::before, .shape-subbed_on::after, .shape-subbed_off::after, .shape-sent_off::after { content: ""; position: absolute; left: 50%; top: 50%; background: var(--ink); transform: translate(-50%, -50%); }
+.shape-subbed_on::before, .shape-subbed_off::after { width: 7px; height: 1.5px; }
+.shape-subbed_on::after { width: 1.5px; height: 7px; }
+.shape-sent_off::after { width: 4px; height: 6px; border-radius: 1px; }
+/* On the pitch gets the same soft fill as a starter; off the pitch is quieter. Shape and word still carry the meaning. */
+.chip-subbed_on { background: rgba(128, 128, 128, .18); }
+.chip-subbed_off .chip-name, .chip-sent_off .chip-name { color: var(--dim); }
 .chip-word { font: 700 0.75rem var(--sans); text-transform: uppercase; letter-spacing: .06em; color: var(--dim); }
 .chip-not_in_squad .chip-name { text-decoration: line-through; text-decoration-thickness: 1px; color: var(--dim); }
 .chip-more { border-style: dashed; color: var(--dim); }

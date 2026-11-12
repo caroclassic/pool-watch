@@ -26,6 +26,11 @@ export const TIER_WORD = { must_watch: "Must-watch", worth_a_look: "Worth a look
 export const TIER_PIPS = { must_watch: 3, worth_a_look: 2 };
 const PART_WORD = { starts: "Starts", bench: "Bench", not_in_squad: "Not in squad" };
 const DISRUPTED = new Set(["postponed", "cancelled"]);
+// Live on-pitch states (status.json `live_states`): the word shown, and the lineup status each one
+// can follow. A live state is only ever a change to a confirmed lineup status.
+export const LIVE_WORD = { subbed_on: "Subbed on", subbed_off: "Subbed off", sent_off: "Sent off" };
+const LIVE_FOLLOWS = { subbed_on: ["bench"], subbed_off: ["starts", "bench"], sent_off: ["starts", "bench"] };
+const own = (o, k) => Object.prototype.hasOwnProperty.call(o, k);
 
 // ── merge ───────────────────────────────────────────────────────────────────
 
@@ -51,6 +56,11 @@ export function mergeFeeds(matchesFeed, statusFeed) {
       tierAtKickoff: has("tier_at_kickoff") ? s.tier_at_kickoff : m.tier_at_kickoff,
       lineupsConfirmed: s ? !!s.lineups_confirmed : false,
       participation: (s && s.participation) || {},
+      // Present only for a live match in a league whose live updates are published; null means "no live data",
+      // and the card is then exactly what it was before live states existed.
+      liveStates: s && s.live_states && typeof s.live_states === "object" && !Array.isArray(s.live_states) ? s.live_states : null,
+      liveTier: has("live_tier") ? s.live_tier : undefined,
+      tierPeak: has("tier_peak") ? s.tier_peak : undefined,   // a finished match: the highest tier it reached
       carried: !!(s && s.carried_over),
       poolPlayers: m.pool_players || [],
     };
@@ -60,10 +70,25 @@ export function mergeFeeds(matchesFeed, statusFeed) {
 export const tiersEnabled = (matchesFeed) =>
   !!(matchesFeed && matchesFeed.tier_thresholds && matchesFeed.tier_thresholds.enabled);
 
-/** The tier a card shows: frozen value once the match has started (spec §4). */
-export function effectiveTier(v, enabled) {
+const TIER_RANK = { must_watch: 2, worth_a_look: 1 };
+const higherTier = (a, b) => ((TIER_RANK[a] || 0) >= (TIER_RANK[b] || 0) ? a : b) ?? null;
+
+/**
+ * The tier a card shows: frozen value once the match has started (spec §4).
+ * `liveOk` (the caller is drawing a card and has checked the status feed is fresh):
+ *   - a live match that carries a live tier shows that instead, so the badge follows who is on the pitch;
+ *   - a finished match that carries a peak tier shows the higher of that and its kickoff tier.
+ * The frozen kickoff tier itself is never changed, anything unexpected falls back to it, and callers that
+ * do not pass `liveOk` (the day strip) always get the kickoff tier.
+ */
+export function effectiveTier(v, enabled, liveOk = false) {
   if (!enabled || DISRUPTED.has(v.status)) return null;
-  if (v.status === "live" || v.status === "full_time") return v.tierAtKickoff ?? v.tier ?? null;
+  const known = (t) => t === null || own(TIER_WORD, t);
+  if (v.status === "live" && liveOk && v.liveStates && v.liveTier !== undefined && known(v.liveTier)) return v.liveTier;
+  if (v.status === "live" || v.status === "full_time") {
+    const kick = v.tierAtKickoff ?? v.tier ?? null;
+    return v.status === "full_time" && liveOk && v.tierPeak !== undefined && known(v.tierPeak) ? higherTier(v.tierPeak, kick) : kick;
+  }
   return v.tier ?? null;
 }
 
@@ -104,6 +129,18 @@ export function overdueState(v, now) {
 
 const part = (v, id) => v.participation[String(id)] ?? null;
 
+/**
+ * The live state to show for one player, or null. On a live match (only from a fresh status feed) it is
+ * where he is now; on a finished match it is the word he ended on. Only one of the three known words,
+ * and only where it follows from his lineup status. Anything else (no live data, a stale feed, a word
+ * this page does not know) is null, and he keeps his lineup pill.
+ */
+export function liveState(v, id, stale = false) {
+  if (!v.liveStates || !(v.status === "full_time" || (v.status === "live" && !stale))) return null;
+  const s = v.liveStates[String(id)];
+  return typeof s === "string" && own(LIVE_FOLLOWS, s) && LIVE_FOLLOWS[s].includes(part(v, id)) ? s : null;
+}
+
 /** A followed player is in this match and not confirmed out. */
 function followedIn(v, follows) {
   return v.poolPlayers.filter((p) => follows.has(p.playerId) && part(v, p.playerId) !== "not_in_squad");
@@ -130,17 +167,25 @@ export function isMovedFromPins(v, follows, now) {
 // (the other team's lineup hasn't posted, or the match is pre-lineup) sit between
 // starters and the bench: they are still expected to play. With no statuses at all
 // every player is in the same group and the order is the old one: relevance score.
-const PART_GROUP = { starts: 0, bench: 2, not_in_squad: 3 };       // no status = 1
+const PART_GROUP = { starts: 0, bench: 2, not_in_squad: 4 };       // no status = 1; taken off or sent off = 3
 
 /**
  * Pill order: a followed player first (unless he is not in the squad, then he
  * sorts to the end with the other absentees), then starters, unconfirmed,
  * bench, not in squad; within a group by relevance score, then name.
+ * During a live match with live states: on the pitch (a starter still on, or a
+ * substitute who came on), then unconfirmed, the bench, players taken off or sent
+ * off, and not in squad last. A followed player who went off still leads.
  */
-export function orderedPool(v, follows, players) {
+export function orderedPool(v, follows, players, stale = false) {
   const score = (id) => (players.get(String(id)) || {}).score ?? 0;
-  const group = (id) => PART_GROUP[part(v, id)] ?? 1;
-  const lead = (id) => follows.has(id) && group(id) < 3;           // followed, and not known to be out
+  const group = (id) => {
+    const live = v.status === "live" ? liveState(v, id, stale) : null;   // the live order is for live matches only
+    if (live === "subbed_on") return 0;
+    if (live) return 3;
+    return PART_GROUP[part(v, id)] ?? 1;
+  };
+  const lead = (id) => follows.has(id) && group(id) < 4;           // followed, and not known to be out
   return [...v.poolPlayers].sort((a, b) =>
     (lead(b.playerId) - lead(a.playerId)) ||
     (group(a.playerId) - group(b.playerId)) ||
@@ -189,16 +234,19 @@ function ariaLabel(card) {
  */
 export function cardView(v, ctx) {
   const fresh = freshness(v, ctx.statusFeed, ctx.now, ctx.staleMinutes);
-  const tier = effectiveTier(v, ctx.tiersEnabled);
+  const tier = effectiveTier(v, ctx.tiersEnabled, !fresh.stale);
   const pinned = isPinned(v, ctx.follows, ctx.now);
-  const pool = orderedPool(v, ctx.follows, ctx.players);
+  const pool = orderedPool(v, ctx.follows, ctx.players, fresh.stale);
   const chips = pool.map((p) => {
     const pt = part(v, p.playerId);
+    const live = liveState(v, p.playerId, fresh.stale);
     return {
       playerId: p.playerId,
       name: chipName(ctx.players, p.playerId),
       participation: pt,
-      word: pt ? PART_WORD[pt] : null,
+      live,
+      shape: live || pt,                      // which circle to draw: always paired with `word`
+      word: live ? LIVE_WORD[live] : pt ? PART_WORD[pt] : null,
       followed: ctx.follows.has(p.playerId),
     };
   });

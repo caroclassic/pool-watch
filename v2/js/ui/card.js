@@ -25,15 +25,16 @@ function header(c, ui) {
 }
 
 function chip(c, onPlayer) {
-  const shape = !!c.participation;
+  // `shape` is the lineup status, or the live state when there is one; the word beside it always says the same thing.
+  const shape = c.shape || c.participation;
   const label = c.word ? `${c.name}, ${c.word}` : c.name;
   return h("li", null, h("button", {
     type: "button", dataset: { pid: c.playerId },
-    class: `chip${c.followed ? " chip-followed" : ""}${c.participation ? ` chip-${c.participation}` : ""}`,
+    class: `chip${c.followed ? " chip-followed" : ""}${shape ? ` chip-${shape}` : ""}`,
     "aria-label": `${label}${c.followed ? ", followed" : ""}. Open player`,
     onclick: (e) => onPlayer(c.playerId, e.currentTarget),
   },
-    shape ? h("span", { class: `shape shape-${c.participation}`, "aria-hidden": "true" }) : null,
+    shape ? h("span", { class: `shape shape-${shape}`, "aria-hidden": "true" }) : null,
     h("span", { class: "chip-name" }, c.name),
     c.word ? h("span", { class: "chip-word" }, c.word) : null));
 }

@@ -132,7 +132,7 @@ export function followingSheet({ follows, players, nextFor, onUnfollow, onSave, 
 
 // ── legend ──────────────────────────────────────────────────────────────────
 
-const SHAPE_CLASS = { "●": "starts", "◐": "bench", "⊘": "not_in_squad" };
+const SHAPE_CLASS = { "●": "starts", "◐": "bench", "⊘": "not_in_squad", "⊕": "subbed_on", "⊖": "subbed_off", "▮": "sent_off" };
 /** Participation glyphs in legend keys are drawn, not typed, so they look the same as on the chips. */
 function marker(k) {
   const m = SHAPE_CLASS[k[0]];
