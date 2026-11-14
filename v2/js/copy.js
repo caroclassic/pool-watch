@@ -71,6 +71,7 @@ export const LEGEND = [
     ["Probably in progress · status not confirmed", "Kickoff was over 30 minutes ago but our feed hasn't confirmed the match yet. After 3 hours it moves to Earlier."],
     ["Full time", "Finished. The match moves to the Earlier group."],
     ["Postponed / Cancelled", "Not being played as scheduled."],
+    ["Where to watch", "US listings only; a match with no broadcast listing displays nothing."],
     ["Status as of 2:41 PM", "Our latest update. If it's old, the match may have moved on."],
   ] },
   { title: "Days and times", rows: [

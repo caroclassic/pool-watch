@@ -10,6 +10,9 @@ test("public copy never mentions trajectory or the competitor, and implies no al
   assert.ok(!everything.includes("trajectory"), "trajectory must never appear in public copy");
   assert.ok(!everything.includes("usmnt-tracker"), "the competitor is never named");
   assert.ok(!/\b(notification|notify|alerts?)\b/.test(everything.replace(/no accounts/g, "")), "nothing may imply alerts exist");
+  // Nothing may imply accounts exist either (the privacy line's "no accounts" is the one allowed mention).
+  assert.ok(!/\b(sign[ -]?in|sign[ -]?up|log[ -]?in|log[ -]?out|register|create an? account|your account|password|username)\b/.test(everything),
+    "nothing may imply accounts exist");
 });
 
 test("feedback address is well-formed and the disclaimer is in place", () => {
