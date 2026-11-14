@@ -65,6 +65,12 @@ def players_feed(now):
             "players": out}
 
 
+def W(primary, *providers):
+    """A match's own listing: the one provider the card names (the first; None = the link only) and every provider. A plain string
+    (match 204) is the older feed's line; a match with no `bc` has no listing and its card shows nothing."""
+    return {"primary": primary, "providers": list(providers)}
+
+
 def pp(ids, side=None):
     return [{"playerId": str(i), "side": side} for i in ids]
 
@@ -93,10 +99,10 @@ def build(now, kind):
         add(101, at(0, 9, 30), "Ligue 1", "Marseille", "Lille", "full_time", "worth_a_look", players=pp([7]), st=dict(status="full_time", status_updated_at=Z(now), lineups_confirmed=True, participation={"7": "starts"},
                     live_states={"7": "subbed_off"}, tier_peak="must_watch"))   # finished: the final word, and the highest tier it reached
         # a live match WITH live states (a competition whose live updates are published): 9 taken off, 2 came on, 13 sent off
-        add(102, at(0, 11, 30), "Serie A", "Atalanta", "Napoli", "scheduled", "must_watch", players=pp([9, 2, 6, 13]), bc="Paramount+",
+        add(102, at(0, 11, 30), "Serie A", "Atalanta", "Napoli", "scheduled", "must_watch", players=pp([9, 2, 6, 13]), bc=W("Paramount+", "Paramount+", "Peacock (Español)"),
             st=dict(status="live", status_updated_at=Z(now - timedelta(minutes=1)), lineups_confirmed=True, tier="must_watch", tier_at_kickoff="must_watch", participation={"9": "starts", "2": "bench", "6": "not_in_squad", "13": "starts"},
                     live_states={"9": "subbed_off", "2": "subbed_on", "13": "sent_off"}, live_tier="worth_a_look"))
-        add(103, at(0, 14, 0), "Premier League", "Fulham", "Crystal Palace", "scheduled", "must_watch", players=pp([4, 12, 5]), bc="Peacock", st=dict(status="scheduled", status_updated_at=None, lineups_confirmed=False, tier="must_watch", participation={}))
+        add(103, at(0, 14, 0), "Premier League", "Fulham", "Crystal Palace", "scheduled", "must_watch", players=pp([4, 12, 5]), bc=W("Peacock", "Peacock", "NBC", "Telemundo"), st=dict(status="scheduled", status_updated_at=None, lineups_confirmed=False, tier="must_watch", participation={}))
         add(104, at(0, 15, 0), "La Liga", "Villarreal", "Girona", "scheduled", "worth_a_look", players=pp([19]),
             st=dict(status="scheduled", status_updated_at=Z(now), lineups_confirmed=True, tier="worth_a_look", participation={"19": "starts"}))
         add(105, at(0, 14, 30), "Championship", "Derby County", "Leeds United", "postponed", None, players=pp([20, 14]))
@@ -104,15 +110,15 @@ def build(now, kind):
         add(107, at(0, 21, 0), "Liga MX", "Chivas", "Club América", "scheduled", "worth_a_look", players=pp([18, 24, 26]))
         # Sat ET (01:00 ET Sat = Fri 10 pm PT)
         add(201, at(1, 1, 0), "Liga MX", "Tijuana", "Pachuca", "scheduled", None, players=pp([18]))
-        add(202, at(1, 10, 0), "Premier League", "Bournemouth", "Brentford", "scheduled", "must_watch", players=pp([3, 14, 15]), bc="USA Network")
-        add(203, at(1, 15, 0), "Bundesliga", "B. Mönchengladbach", "Bayer Leverkusen", "scheduled", "must_watch", players=pp([11, 15, 17]))
+        add(202, at(1, 10, 0), "Premier League", "Bournemouth", "Brentford", "scheduled", "must_watch", players=pp([3, 14, 15]), bc=W("USA Network", "USA Network"))
+        add(203, at(1, 15, 0), "Bundesliga", "B. Mönchengladbach", "Bayer Leverkusen", "scheduled", "must_watch", players=pp([11, 15, 17]), bc=W("Peacock (Español)", "Peacock (Español)", "Telemundo"))
         add(205, at(1, 12, 30), "Premier League", "Brighton", "Everton", "scheduled", "worth_a_look", players=pp([21]))
         add(206, at(1, 11, 0), "Eredivisie", "PSV", "Feyenoord", "scheduled", "worth_a_look", players=pp([8, 10]))
         add(204, at(1, 15, 0), "Serie A", "AC Milan", "Juventus", "scheduled", "must_watch", players=pp([1, 2]), bc="Paramount+")
         # Sun: youth
         add(301, at(2, 12, 0), "U20 Friendly", "USA U20", "Mexico U20", fk="national_youth", players=pp([28, 29], "home"))
         # Wed: national, pool estimate
-        add(401, at(5, 19, 30), "Friendly", "USA", "Ecuador", fk="national_senior", basis="pool_estimate", tier="must_watch", bc="TNT",
+        add(401, at(5, 19, 30), "Friendly", "USA", "Ecuador", fk="national_senior", basis="pool_estimate", tier="must_watch", bc=W(None, "truTV", "HBO Max", "TNT", "Telemundo"),   # senior national: the link only
             players=pp(range(1, 28), "home"))
         # Thu: only Worth a look
         add(501, at(6, 14, 0), "Premier League", "Fulham", "Everton", tier="worth_a_look", players=pp([4]))

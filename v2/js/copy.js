@@ -32,6 +32,18 @@ export const CALENDAR = {
   schedNote: "Schedule only. Who plays, confirmed times and where to watch appear closer to the day.",
 };
 
+// Where to watch (a card's broadcast line). The card names at most one provider; the link opens the full list.
+// A match with no listing shows nothing at all: never a line saying it isn't on anywhere.
+export const WATCH = {
+  title: "Where to watch",
+  link: "Where to watch",
+  more: (n) => `+ ${n} more`,
+  // Spoken names for the two links. Each starts with the words on screen and names the match, so the link makes
+  // sense when a screen reader lists it out of its card.
+  moreLabel: (n, match) => `+ ${n} more, every place to watch ${match}`,
+  linkLabel: (match) => `Where to watch ${match}`,
+};
+
 export const LINEUP_NOTE = "Lineups usually post ~30 min before kickoff.";
 
 export const ET_NOTE = "Days follow US Eastern time so everyone sees the same slate.";

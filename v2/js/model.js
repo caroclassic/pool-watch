@@ -49,7 +49,7 @@ export function mergeFeeds(matchesFeed, statusFeed) {
       home: m.home,
       away: m.away,
       fixtureKind: m.fixture_kind,
-      broadcast: m.broadcast || null,
+      broadcast: broadcastView(m.broadcast),
       playersBasis: m.players_basis || null,
       status: s ? s.status : m.status,
       tier: has("tier") ? s.tier : m.tier,
@@ -65,6 +65,25 @@ export function mergeFeeds(matchesFeed, statusFeed) {
       poolPlayers: m.pool_players || [],
     };
   });
+}
+
+/**
+ * Where to watch one match, from matches.json `broadcast`:
+ *   { primary, providers }   the match's own listing: every provider, and the ONE the card names
+ *   a string                 the older feed: shown exactly as it is
+ * Anything else, or a listing with no usable names, is "no listing" and the card shows nothing (it never says a
+ * match isn't on anywhere). `more` is how many providers sit behind the link: the others ("+ N more"; 0 = no
+ * link). A listing with no primary (the feed sends that for senior national matches, for now), or one naming
+ * something that is not in its own list, is never guessed at: the card shows the "Where to watch" link alone
+ * with every provider behind it.
+ */
+export function broadcastView(b) {
+  if (typeof b === "string") return b.trim() ? { text: b, primary: null, providers: [], more: 0 } : null;
+  if (!b || typeof b !== "object" || !Array.isArray(b.providers)) return null;
+  const providers = [...new Set(b.providers.filter((x) => typeof x === "string" && x.trim()))];
+  if (!providers.length) return null;
+  const primary = typeof b.primary === "string" && providers.includes(b.primary) ? b.primary : null;
+  return { text: null, primary, providers, more: primary ? providers.length - 1 : providers.length };
 }
 
 export const tiersEnabled = (matchesFeed) =>

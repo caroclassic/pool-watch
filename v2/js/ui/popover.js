@@ -1,4 +1,4 @@
-// popover.js — dotted-underline terms with a 1–2 sentence explanation (spec §8.5).
+// popover.js — dotted-underline terms with a 1–2 sentence explanation (spec §8.5), or a short list.
 // A term is a real <button> (keyboard and touch), one popover at a time, closed by
 // Esc, a tap elsewhere, or resize. The text is announced as a status when it opens.
 
@@ -14,10 +14,10 @@ export function closePopover({ restoreFocus = false } = {}) {
   if (b && b.isConnected) { b.setAttribute("aria-expanded", "false"); if (restoreFocus) b.focus(); }
 }
 
-function open(btn, key) {
+function open(btn, content) {
   closePopover();
   const host = btn.closest("dialog") || document.body;
-  pop = h("div", { class: "popover", role: "status" }, POPOVERS[key]);
+  pop = h("div", { class: "popover", role: "status" }, content());
   host.append(pop);
   owner = btn;
   btn.setAttribute("aria-expanded", "true");
@@ -43,7 +43,17 @@ export function term(label, key) {
   wire();
   return h("button", {
     type: "button", class: "term", "aria-expanded": "false", dataset: { term: key },
-    onclick: (e) => { e.stopPropagation(); if (owner === e.currentTarget) closePopover(); else open(e.currentTarget, key); },
+    onclick: (e) => { e.stopPropagation(); if (owner === e.currentTarget) closePopover(); else open(e.currentTarget, () => POPOVERS[key]); },
+  }, label);
+}
+
+/** A term whose popover is a short titled list (a card's "Where to watch"). Every item is set as text. */
+export function listTerm(label, title, items, ariaLabel) {
+  wire();
+  const content = () => [h("p", { class: "popover-title" }, title), h("ul", { class: "popover-list" }, items.map((x) => h("li", null, x)))];
+  return h("button", {
+    type: "button", class: "term", "aria-expanded": "false", "aria-label": ariaLabel || null,
+    onclick: (e) => { e.stopPropagation(); if (owner === e.currentTarget) closePopover(); else open(e.currentTarget, content); },
   }, label);
 }
 

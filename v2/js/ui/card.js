@@ -1,7 +1,8 @@
 // card.js — one match card (spec §5). Takes a cardView() model; owns no state.
 
 import { h } from "./dom.js";
-import { term } from "./popover.js";
+import { term, listTerm } from "./popover.js";
+import { WATCH } from "../copy.js";
 
 
 function header(c, ui) {
@@ -22,6 +23,18 @@ function header(c, ui) {
     ? h("span", { class: `badge badge-${c.tier}` }, c.tierWord.toUpperCase())
     : null;
   return badge || status ? h("div", { class: "card-head" }, badge, status) : null;
+}
+
+// Where to watch: ONE provider named on the card, the rest behind "+ N more"; with no listing, nothing. (A plain
+// string is the older feed's line, shown as it is. A listing with no primary, which the feed sends for senior
+// national matches for now, shows the "Where to watch" link alone.)
+function broadcast(c) {
+  const b = c.broadcast, match = `${c.home} vs ${c.away}`;
+  if (!b) return null;
+  if (b.text) return h("span", { class: "bc" }, b.text);
+  if (!b.primary) return h("span", { class: "bc" }, listTerm(WATCH.link, WATCH.title, b.providers, WATCH.linkLabel(match)));
+  return h("span", { class: "bc" }, b.primary,
+    b.more > 0 ? [" ", listTerm(WATCH.more(b.more), WATCH.title, b.providers, WATCH.moreLabel(b.more, match))] : null);
 }
 
 function chip(c, onPlayer) {
@@ -60,7 +73,7 @@ export function renderCard(c, ui) {
       c.youth ? h("span", { class: "tag-youth" }, "Youth") : null,
       h("span", { class: "ko" }, k.text),
       k.slateTag ? h("span", { class: "slate-tag" }, k.slateTag) : null,
-      c.broadcast ? h("span", { class: "bc" }, c.broadcast) : null),
+      broadcast(c)),
     c.pinned || c.movedFromPins
       ? h("p", { class: "pin-line" },
           c.pinned ? h("span", { class: "pin-tag" }, h("span", { "aria-hidden": "true" }, "⌖ "), `Following: ${c.followingNames.join(", ")}`) : null,

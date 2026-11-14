@@ -108,7 +108,13 @@
    "tier": "must_watch",
    "tier_at_kickoff": "must_watch",
    "players_basis": null,
-   "broadcast": "Paramount+",
+   "broadcast": {
+    "primary": "Paramount+",
+    "providers": [
+     "Paramount+",
+     "Peacock (Español)"
+    ]
+   },
    "pool_players": [
     {
      "playerId": "9",
@@ -139,7 +145,14 @@
    "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
-   "broadcast": "Peacock",
+   "broadcast": {
+    "primary": "Peacock",
+    "providers": [
+     "Peacock",
+     "NBC",
+     "Telemundo"
+    ]
+   },
    "pool_players": [
     {
      "playerId": "4",
@@ -281,7 +294,12 @@
    "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
-   "broadcast": "USA Network",
+   "broadcast": {
+    "primary": "USA Network",
+    "providers": [
+     "USA Network"
+    ]
+   },
    "pool_players": [
     {
      "playerId": "3",
@@ -308,7 +326,13 @@
    "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": null,
-   "broadcast": null,
+   "broadcast": {
+    "primary": "Peacock (Español)",
+    "providers": [
+     "Peacock (Español)",
+     "Telemundo"
+    ]
+   },
    "pool_players": [
     {
      "playerId": "11",
@@ -423,7 +447,15 @@
    "tier": "must_watch",
    "tier_at_kickoff": null,
    "players_basis": "pool_estimate",
-   "broadcast": "TNT",
+   "broadcast": {
+    "primary": null,
+    "providers": [
+     "truTV",
+     "HBO Max",
+     "TNT",
+     "Telemundo"
+    ]
+   },
    "pool_players": [
     {
      "playerId": "1",
