@@ -52,14 +52,27 @@ test("calendarBounds runs from the window's month to the schedule's last month",
   assert.deepEqual(M.calendarBounds("2026-11-10", {}, null), { min: "2026-11", max: "2026-11" });
 });
 
-test("nextForFollows: each followed player's next matches, best-known players first", () => {
+test("nextForFollows: one next match per followed player, merged by match, in kickoff order", () => {
   const schedule = { matches: [row(1, "2026-11-09T12:00:00Z", ["11"]),                       // already played: skipped
-    row(2, "2026-11-21T12:00:00Z", ["11", "12"]), row(3, "2026-11-28T12:00:00Z", ["11"]), row(4, "2026-12-05T12:00:00Z", ["11"]),
-    row(5, "2026-11-22T12:00:00Z", ["13"])] };
-  const r = M.nextForFollows(schedule, new Set(["11", "12", "13", "99"]), NOW, players);
-  assert.deepEqual(r.map((x) => x.playerId), ["11", "13", "12"]);                           // score 70, then 60 (Able before Reyna), unknown 99 has no match
-  assert.deepEqual(r[0].items.map((m) => m.matchId), ["2", "3"]);                           // two per player by default
-  assert.deepEqual(M.nextForFollows(schedule, new Set(), NOW, players), []);
-  assert.deepEqual(M.nextForFollows(null, new Set(["11"]), NOW, players), []);
-  assert.equal(M.nextForFollows(schedule, new Set(["11", "12", "13"]), NOW, players, { maxPlayers: 2 }).length, 2);
+    row(4, "2026-12-05T12:00:00Z", ["11"]), row(3, "2026-11-28T12:00:00Z", ["11"]),           // out of order on purpose
+    row(2, "2026-11-21T12:00:00Z", ["11", "12"]), row(5, "2026-11-22T12:00:00Z", ["13"])] };
+  const r = M.nextForFollows(schedule, new Set(["11", "12", "13"]), NOW, players);
+  assert.deepEqual(r.matches.map((g) => g.match.matchId), ["2", "5"]);                       // 11's later matches are not listed
+  assert.deepEqual(r.matches[0].playerIds, ["11", "12"]);                                    // teammates share one row, most relevant first
+  assert.deepEqual(r.none, []);
+  const empty = { matches: [], none: [] };
+  assert.deepEqual(M.nextForFollows(schedule, new Set(), NOW, players), empty);
+  assert.deepEqual(M.nextForFollows(null, new Set(["11"]), NOW, players), empty);
+});
+
+test("nextForFollows never drops a followed player: a 7th+ is listed, and nothing scheduled is said", () => {
+  const ids = ["21", "22", "23", "24", "25", "26", "27", "28", "29"];
+  const many = indexPlayers({ players: ids.map((id) => ({ playerId: id, short_name: `P. ${id}` })) });
+  const schedule = { matches: ids.slice(0, 8).map((id, i) => row(30 + i, `2026-11-${12 + i}T12:00:00Z`, [id])) };
+  const r = M.nextForFollows(schedule, new Set([...ids, "99"]), NOW, many);
+  assert.equal(r.matches.length, 8);                                                         // every player with a match, not six
+  assert.deepEqual(r.matches.flatMap((g) => g.playerIds).sort(), ids.slice(0, 8));
+  assert.deepEqual(r.none, ["29"]);                                                          // no match: named, not hidden
+  // "99" is not in players.json: in neither list (the Players page shows those)
+  assert.ok(!r.matches.some((g) => g.playerIds.includes("99")) && !r.none.includes("99"));
 });

@@ -498,25 +498,42 @@ export function calendarBounds(todayKey, matchesFeed, schedule) {
   return { min, max: max < min ? min : max };
 }
 
-/** For each followed player, his club's next matches in the schedule (not yet kicked off). Most relevant players first. */
-export function nextForFollows(schedule, followIds, now, players = new Map(), { perPlayer = 2, maxPlayers = 6 } = {}) {
-  if (!schedule || !Array.isArray(schedule.matches)) return [];
-  const want = new Set(followIds);
-  if (!want.size) return [];
-  const found = new Map();
-  for (const m of schedule.matches) {            // already in kickoff order
+/**
+ * Each followed player's next match in the schedule (not yet kicked off), merged by match and in kickoff order:
+ * { matches: [{ match, playerIds }], none: [playerId] }. Every followed player is in one of the two lists, so
+ * none is dropped (2026-11-22: it used to keep only the six most relevant, and players 7+ vanished without a
+ * word). `none` holds followed players with nothing in the schedule. A followed id that is no longer in
+ * players.json is in neither: the Players page already lists those (players-list.js).
+ */
+export function nextForFollows(schedule, followIds, now, players = new Map()) {
+  const empty = { matches: [], none: [] };
+  if (!schedule || !Array.isArray(schedule.matches)) return empty;
+  const want = new Set([...followIds].map(String).filter((id) => players.has(id)));
+  if (!want.size) return empty;
+  const next = new Map();                         // playerId -> his next match
+  for (const m of schedule.matches) {
     if (Date.parse(m.kickoff_utc) < +now) continue;
     for (const p of m.pool_players || []) {
-      if (!want.has(p.playerId)) continue;
-      const list = found.get(p.playerId) || [];
-      if (list.length < perPlayer) { list.push(m); found.set(p.playerId, list); }
+      const id = String(p.playerId);
+      if (!want.has(id)) continue;
+      const cur = next.get(id);
+      if (!cur || Date.parse(m.kickoff_utc) < Date.parse(cur.kickoff_utc)) next.set(id, m);
     }
   }
   const score = (id) => (players.get(id) && players.get(id).score) || 0;
-  return [...found.entries()]
-    .sort((a, b) => score(b[0]) - score(a[0]) || chipName(players, a[0]).localeCompare(chipName(players, b[0])))
-    .slice(0, maxPlayers)
-    .map(([playerId, items]) => ({ playerId, items }));
+  const byRelevance = (a, b) => score(b) - score(a) || chipName(players, a).localeCompare(chipName(players, b));
+  const merged = new Map();                       // matchId -> { match, playerIds }
+  for (const [id, m] of next) {
+    const g = merged.get(m.matchId) || { match: m, playerIds: [] };
+    g.playerIds.push(id);
+    merged.set(m.matchId, g);
+  }
+  const matches = [...merged.values()]
+    .sort((a, b) => Date.parse(a.match.kickoff_utc) - Date.parse(b.match.kickoff_utc)
+      || String(a.match.matchId).localeCompare(String(b.match.matchId)));
+  for (const g of matches) g.playerIds.sort(byRelevance);
+  const none = [...want].filter((id) => !next.has(id)).sort(byRelevance);
+  return { matches, none };
 }
 
 /** First ET day after `fromKey` that has a scheduled pool match, or null. */

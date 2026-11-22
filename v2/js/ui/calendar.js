@@ -79,18 +79,19 @@ export function calendarSheet(o) {
   function followsBlock() {
     if (!o.follows.size) return null;
     if (!o.schedule) return null;                       // the calendar's own note already says the schedule is unavailable
-    const list = nextForFollows(o.schedule, o.follows, o.now, o.players);
-    if (!list.length) return null;
+    const { matches, none } = nextForFollows(o.schedule, o.follows, o.now, o.players);
+    if (!matches.length && !none.length) return null;
+    const names = (ids) => ids.map((id) => chipName(o.players, id)).join(", ");
     return h("section", { class: "cal-follows", "aria-label": CALENDAR.followsTitle },
       h("h3", { class: "cal-h" }, CALENDAR.followsTitle),
       h("p", { class: "dim small" }, CALENDAR.followsNote),
-      h("ul", { class: "cal-list" }, list.map(({ playerId, items }) =>
-        h("li", null, h("b", null, chipName(o.players, playerId)),
-          h("ul", null, items.map((m) => {
-            const key = etDateKey(m.kickoff_utc);
-            return h("li", null, h("button", { type: "button", class: "btn-link cal-go", onclick: () => pick(key) },
-              `${dayHeading(key)} · ${m.home} v ${m.away} · ${scheduleTime(m, o.now, o.tz)}`));
-          }))))));
+      matches.length ? h("ul", { class: "cal-list" }, matches.map(({ match: m, playerIds }) => {
+        const key = etDateKey(m.kickoff_utc);
+        return h("li", null, h("b", null, names(playerIds)),
+          h("ul", null, h("li", null, h("button", { type: "button", class: "btn-link cal-go", onclick: () => pick(key) },
+            `${dayHeading(key)} · ${m.home} v ${m.away} · ${scheduleTime(m, o.now, o.tz)}`))));
+      })) : null,
+      none.length ? h("p", { class: "dim small" }, `${CALENDAR.followsNone} ${names(none)}`) : null);
   }
 
   function body() {
