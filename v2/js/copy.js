@@ -11,7 +11,7 @@ export const TAGLINE_2 = "Follow the chase for the shirt. Track who's in the pic
 
 export const INTRO = {
   lead: "The pool",
-  body: " = players in the picture for the US men's national team. ",
+  body: " = players in the picture for the U.S. men's national team. ",
   strong: "Tap any player",
   tail: " to follow them; their matches pin to the top.",
 };
@@ -61,7 +61,7 @@ export const EMPTY = {
 // "Lineup not posted yet", which implied one was coming.
 export const LINEUPS_UNAVAILABLE = "Lineups usually unavailable";
 
-export const ET_NOTE = "Days follow US Eastern time so everyone sees the same slate.";
+export const ET_NOTE = "Days follow U.S. Eastern Time so everyone sees the same slate.";
 
 // Each section: title, optional lead rows [marker, meaning], optional footnote.
 export const LEGEND = [
@@ -69,7 +69,7 @@ export const LEGEND = [
     ["MUST-WATCH", "A big night for the pool: top players expected to play, or confirmed in the lineup."],
     ["WORTH A LOOK", "Pool players in action, worth catching if you can."],
     ["(no label)", "Pool players are involved, with a smaller expected role."],
-  ], note: "Levels are fixed, not a daily ranking, so some days have no Must-watch matches. Before lineups, levels assume expected players play. They update when lineups are confirmed." },
+  ], note: "Levels are fixed, not a daily ranking, so some days have no Must-watch matches. Before lineups, levels assume expected players play. They update when lineups are confirmed, and during a match as players come on or off (some competitions only). After full time, a card shows the highest level the match reached." },
   { title: "Players in a match", rows: [
     ["Name only", "Lineups aren't out yet. A listed player is expected to be involved."],
     ["● Starts", "In the starting lineup."],
@@ -80,18 +80,18 @@ export const LEGEND = [
     ["▮ Sent off", "Shown a red card."],
   ], note: "Changes during a match are shown for some competitions only. Where they aren't shown, a player keeps his Starts or Bench label. We don't show minutes or scores." },
   { title: "Match status", rows: [
-    ["Lineups usually post ~30 min before kickoff", "Said once under the day heading. A card only mentions lineups when they're confirmed or late."],
-    ["Lineups confirmed ✓", "Lineups are in, and player statuses are final."],
+    ["Lineups usually post ~30 min before kickoff", "Said once under the day heading. A card only mentions lineups when they're confirmed, late, or usually unavailable for that competition."],
+    ["Lineups confirmed ✓", "Lineups are in: who starts and who's on the bench is confirmed."],
     ["Lineups usually unavailable", "This competition rarely publishes lineups to our data source, so names stay as expected players and won't change to Starts or Bench."],
     ["● LIVE", "In progress. We don't show scores or minutes."],
     ["Probably in progress · status not confirmed", "Kickoff was over 30 minutes ago but our feed hasn't confirmed the match yet. After 3 hours it moves to Earlier."],
     ["Full time", "Finished. The match moves to the Earlier group."],
     ["Postponed / Cancelled", "Not being played as scheduled."],
-    ["Where to watch", "US listings only; a match with no broadcast listing displays nothing."],
+    ["Where to watch", "U.S. listings only. A card names one provider; the link lists every one. Listings appear about a week ahead, and a match without one shows nothing."],
     ["Status as of 2:41 PM", "Our latest update. If it's old, the match may have moved on."],
   ] },
   { title: "Days and times", rows: [
-    ["Fri, Oct 9 · ET slate", "Days follow U.S. Eastern Time. A match belongs to the day it kicks off in Eastern time."],
+    ["Fri, Oct 9 · ET slate", "Days follow U.S. Eastern Time. A match belongs to the day it kicks off in Eastern Time."],
     ["Times in PT", "Kickoffs are shown in your time zone. (Shown only when you're not on Eastern.)"],
     ["Fri 10:00 PM PT · Sat slate", "It's still Friday where you are, but this match belongs to Saturday's slate."],
   ] },
@@ -115,15 +115,15 @@ export const ABOUT = [
   { h: "How Stateside XI works" },
   { em: "Follow the chase for the shirt. Track who's in the picture." },
   { p: "Every day, Stateside XI answers one question: <b>which games should I put on to watch the pool?</b>" },
-  { p: "<b>The pool</b> is the group of players in the picture for the U.S. men's national team: established regulars, players pushing for a spot, and young prospects. They play for clubs all over the world, so the games worth watching are scattered across dozens of leagues." },
-  { p: "We list each day's matches that feature pool players, flag the ones that matter most, and confirm the starting lineups about 30 minutes before kickoff, so you know who's actually playing before you pick a game." },
+  { p: "<b>The pool</b> is the group of players in the picture for the U.S. men's national team: regulars, players pushing for a spot, and young prospects. They play for clubs all over the world, so the games worth watching are scattered across dozens of leagues." },
+  { p: "We list each day's matches that feature pool players, flag the ones that matter most, show where to watch them in the U.S., and confirm the starting lineups about 30 minutes before kickoff, so you know who's actually playing before you pick a game. In some competitions we also show who comes on or goes off during the match." },
   { p: "<b>Squad involvement</b> is how embedded each player is in the national team squad, and it sets the order of the Players list. It measures presence, not quality or importance. Matches are rated by which pool players are likely to play." },
   { p: "<b>Follow</b> players to pin their matches to the top of the page. Your follows are saved on this device." },
   { p: "<b>What we don't do:</b> scores, stats, standings or match analysis. We're only here to help you pick the game." },
   { p: "Days follow U.S. Eastern Time so everyone sees the same slate. Kickoff times show in your own time zone." },
   { p: "<b>Privacy.</b> Stateside XI has no accounts. The players you follow and your light/dark choice are saved on this device only; we never see them." },
   { p: "<b>Unofficial.</b> Stateside XI is an unofficial fan project. It is not affiliated with or endorsed by U.S. Soccer, the U.S. Men's National Team, or any club, league or broadcaster." },
-  { mail: "<b>Spotted a mistake?</b> If a match, a player or a lineup status looks wrong, email" },
+  { mail: "<b>Spotted a mistake?</b> If a match, a player, a lineup status or a where-to-watch listing looks wrong, email" },
 ];
 
 // Dotted-underline terms (spec §8.6). 1–2 sentences each.
