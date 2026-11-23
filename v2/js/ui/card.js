@@ -54,7 +54,7 @@ function chip(c, onPlayer) {
 
 /**
  * @param c         cardView model
- * @param ui        { expanded:Set, onPlayer(id, el), onToggleExpand(cardId) }
+ * @param ui        { expanded:Set, onPlayer(id, el), onToggleExpand(cardId), headLevel?: 3 | 4 (default 4) }
  */
 export function renderCard(c, ui) {
   const open = ui.expanded.has(c.id);
@@ -67,7 +67,7 @@ export function renderCard(c, ui) {
     "aria-label": c.ariaLabel, dataset: { id: c.id },
   },
     header(c, ui),
-    h("h4", { class: "teams" }, c.home, h("span", { class: "vs" }, " vs "), c.away),
+    h(ui.headLevel === 3 ? "h3" : "h4", { class: "teams" }, c.home, h("span", { class: "vs" }, " vs "), c.away),
     h("p", { class: "meta" },
       h("span", { class: "comp" }, c.competition),
       c.youth ? h("span", { class: "tag-youth" }, "Youth") : null,

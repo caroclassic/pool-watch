@@ -118,15 +118,33 @@ function renderList() {
   const total = rows.length + gone.length;
   els.count.textContent = S.query.trim() || S.filter !== "all" ? `${total} of ${S.list.length} players` : `${S.list.length} players`;
 
+  const keep = focusInList();
   clear(els.list);
   if (!total) {
     const msg = S.filter === "following" && !S.query.trim()
       ? "You aren't following anyone yet. Tap Follow on any player and they'll show up here."
       : "No players match that search.";
     els.list.append(h("li", { class: "empty" }, msg));
-    return;
+  } else {
+    els.list.append(...rows.map(tile), ...gone.map(missingTile));
   }
-  els.list.append(...rows.map(tile), ...gone.map(missingTile));
+  if (keep) restoreFocus(keep);
+}
+
+// The list is rebuilt on every Follow / Unfollow, which would drop a keyboard user's focus to the top of the page.
+// Put it back on the same player's same button; if that tile is gone (unfollowed under "Following"), on the tile now
+// in its place; if the list is empty, on the page's main region.
+function focusInList() {
+  const a = document.activeElement;
+  const li = a && els.list.contains(a) ? a.closest("li") : null;
+  if (!li) return null;
+  return { pid: li.dataset.pid, name: a.classList.contains("pt-name"), idx: [...els.list.children].indexOf(li) };
+}
+function restoreFocus(k) {
+  const li = [...els.list.children].find((n) => n.dataset.pid === k.pid);
+  let t = li && (k.name ? li.querySelector(".pt-name") : li.querySelector(".btn-sm"));
+  if (!t) { const n = els.list.children[Math.min(k.idx, els.list.children.length - 1)]; t = n && n.querySelector(".btn-sm"); }
+  (t || $("main")).focus();
 }
 
 function render() {
@@ -141,6 +159,9 @@ function render() {
 
 function banner() {
   clear(els.banners);
+  // "Loading players…" would contradict "Couldn't load players" right above it
+  const loading = els.list.querySelector(".loading");
+  if (loading) loading.hidden = !!S.error;
   if (!S.error) return;
   els.banners.append(S.loaded
     ? h("div", { class: "banner", role: "status" }, S.updatedAt ? ERRORS.refreshAt(localTime(S.updatedAt, viewerTz())) : ERRORS.refresh)

@@ -129,7 +129,9 @@ const cardUi = () => ({ expanded: S.expanded, onPlayer: openPlayer, onToggleExpa
 
 function section(label, cards, { cls = "", sub = null, termKey = null, showTier = true } = {}) {
   if (!cards.length) return null;
-  const ui = { ...cardUi(), showTier };
+  // A band without a heading (the day's only band) puts its cards' team names right under the day's h2, so they
+  // become h3s there: the outline must not skip a level.
+  const ui = { ...cardUi(), showTier, headLevel: label ? 4 : 3 };
   return h("section", { class: `band ${cls}`, "aria-label": label },
     label ? h("h3", { class: "band-title" }, termKey ? term(label, termKey) : label, sub ? h("span", { class: "band-sub" }, ` ${sub}`) : null) : null,
     cards.map((c) => renderCard(c, ui)));
@@ -258,7 +260,7 @@ function renderMain() {
     if (d.earlier.length) {
       nodes.push(h("details", { class: "earlier", open: S.earlierOpen, ontoggle: (e) => { S.earlierOpen = e.target.open; } },
         h("summary", null, `Earlier (${d.earlier.length})`),
-        d.earlier.map((x) => renderCard(x, ui))));
+        d.earlier.map((x) => renderCard(x, { ...ui, headLevel: nodes.some((n) => n && n.querySelector && n.querySelector(".band-title")) ? 4 : 3 }))));
     }
   }
 
@@ -309,6 +311,11 @@ function render() {
   if (!S.data) {
     const b = renderBanners();
     clear(els.banners).append(...b);
+    // record what is on screen, or a successful Try again leaves the error banner up (no banners = "" = the initial sig)
+    lastSig.banners = b.map((n) => n.textContent).join("|");
+    // "Loading matches…" would contradict "Couldn't load matches" right above it
+    const loading = els.main.querySelector(".loading");
+    if (loading) loading.hidden = !!S.error;
     if (!S.error) els.main.setAttribute("aria-busy", "true");
     return;
   }

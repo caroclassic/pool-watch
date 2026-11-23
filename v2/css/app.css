@@ -250,6 +250,7 @@ textarea.mono { width: 100%; margin-bottom: 10px; }
 .top-tools { flex-wrap: wrap; }
 .card-head, .meta, .pin-line, .field { min-width: 0; }
 .teams, .pt-name, .chip-name { overflow-wrap: anywhere; }
+a[href^="mailto:"] { overflow-wrap: anywhere; }   /* the address is one long word: at 320 px and 200% text it widened the About page */
 @media (forced-colors: active) {
   .tile.is-selected, .fchip[aria-pressed="true"], .sort button[aria-pressed="true"] { outline: 2px solid Highlight; }
   .chip-followed { outline: 2px solid Highlight; }

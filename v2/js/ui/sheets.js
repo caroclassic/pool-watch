@@ -120,14 +120,20 @@ export function followingSheet({ follows, players, nextFor, onUnfollow, onSave, 
               : nx ? `${nx.live ? "Live now" : nx.kickoff.text} · ${nx.home} vs ${nx.away}`
               : "No match in the next 7 days")),
         h("button", { type: "button", class: "btn btn-quiet", "aria-label": `Unfollow ${p ? p.display_name : id}`,
-          onclick: () => { onUnfollow(id); fill(); } }, "Unfollow")));
+          onclick: () => unfollow(id) }, "Unfollow")));
     }
   };
+  // fill() rebuilds the rows, which would drop focus out of the sheet: move it to the next row's Unfollow
+  // (or the previous one if this was the last), or to Save when nobody is left
+  const save = h("button", { type: "button", class: "btn", onclick: onSave }, "Save your follows");
+  const unfollow = (id) => {
+    const idx = [...follows.ids()].indexOf(id);
+    onUnfollow(id); fill();
+    const btns = list.querySelectorAll("button");
+    (btns[Math.min(idx, btns.length - 1)] || save).focus();
+  };
   fill();
-  return openSheet("Following", [
-    list,
-    h("button", { type: "button", class: "btn", onclick: onSave }, "Save your follows"),
-  ], { from });
+  return openSheet("Following", [list, save], { from });
 }
 
 // ── legend ──────────────────────────────────────────────────────────────────
