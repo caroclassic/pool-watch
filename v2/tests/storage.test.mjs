@@ -86,6 +86,8 @@ test("flags", () => {
 test("players-model: tier labels, descriptors, last-named line", () => {
   assert.equal(P.tierLabel({ tier: "core" }), "Core");
   assert.equal(P.tierLabel({ tier: "in_the_mix" }), "In the mix");
+  assert.equal(P.tierLabel({ tier: "contender" }), "Established");               // renamed 2026-11-23; the feed key is unchanged
+  assert.equal(POPOVERS.tier_contender, "Firmly in the squad, just below Core.");
   assert.equal(P.tierLabel({ is_prospect: true, youth_level: "U20", tier: "wider_pool" }), "Prospect · U20");
   assert.equal(P.tierPopoverKey({ is_prospect: true, tier: "core" }), "tier_prospect");
   assert.equal(P.tierPopoverKey({ tier: "in_the_mix" }), "tier_in_the_mix");

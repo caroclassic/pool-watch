@@ -8,7 +8,7 @@ import { monthsBetween } from "./time.js";
 
 export const TIER_WORD = {
   core: "Core",
-  contender: "Contender",
+  contender: "Established",           // the feed key stays "contender"; the public word changed 2026-11-23
   in_the_mix: "In the mix",
   wider_pool: "Wider pool",
 };

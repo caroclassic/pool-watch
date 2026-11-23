@@ -87,10 +87,10 @@ export const LEGEND = [
   ] },
   { title: "Players page", rows: [
     ["Squad involvement", "How embedded a player is in the national team squad. The list is ordered by it, most involved first. It measures presence in the squad, not quality or importance."],
-    ["Core", "Top of the pool: the players most likely to be in the squad."],
-    ["Contender", "Strong candidate: firmly in the squad conversation."],
-    ["In the mix", "In the conversation: could be named when the squad changes."],
-    ["Wider pool", "Tracked, but not close right now."],
+    ["Core", "The most involved in the national team squad."],
+    ["Established", "Firmly in the squad, just below Core."],
+    ["In the mix", "Moderate squad involvement: part of the squad conversation."],
+    ["Wider pool", "Less squad involvement overall."],
     ["Prospect · U20", "Youth international in the pool."],
     ["Last named", "The most recent matchday squad he was in, including unused substitutes."],
   ] },
@@ -125,7 +125,7 @@ export const POPOVERS = {
 const PLAYER_ROWS = LEGEND.find((s) => s.title === "Players page").rows;
 const legendRow = (label) => PLAYER_ROWS.find((r) => r[0] === label)[1];
 POPOVERS.tier_core = legendRow("Core");
-POPOVERS.tier_contender = legendRow("Contender");
+POPOVERS.tier_contender = legendRow("Established");   // key kept: it is the feed's tier value
 POPOVERS.tier_in_the_mix = legendRow("In the mix");
 POPOVERS.tier_wider_pool = legendRow("Wider pool");
 POPOVERS.tier_prospect = legendRow("Prospect · U20");
