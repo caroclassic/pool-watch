@@ -46,6 +46,17 @@ export const WATCH = {
 };
 
 export const LINEUP_NOTE = "Lineups usually post ~30 min before kickoff.";
+
+// An empty day (approved 2026-11-23). Only what the feed and the schedule show: never a season date or a reason
+// the data cannot back up. `label` is a day heading such as "Sat, Jan 3".
+export const EMPTY = {
+  nextDay: (label) => `Next match day: ${label}`,
+  nextOnSchedule: (label) => `Next match on the schedule: ${label}`,
+  inDays: (n) => ` (in ${n} days)`,
+  intlBreak: "International break.",
+  clubResume: (label) => `Club matches resume ${label}.`,
+  nothingScheduled: "Nothing else is on the schedule yet.",
+};
 // A card in a competition whose lineups rarely reach the site (matches.json lineups_expected: false). It replaces
 // "Lineup not posted yet", which implied one was coming.
 export const LINEUPS_UNAVAILABLE = "Lineups usually unavailable";

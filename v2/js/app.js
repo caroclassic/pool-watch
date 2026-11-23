@@ -5,13 +5,13 @@ import { dataBase, STALE_MINUTES, STRIP_BACK, STRIP_AHEAD } from "./config.js";
 import { createHttpSource, createPoller, shouldPollFast, pollDelay } from "./data.js";
 import {
   mergeFeeds, tiersEnabled, buildDay, dayFacts, stripDays, inWindow, dayGap, daysKept,
-  scheduleIndex, calendarBounds, nextScheduleDay,
-  nextMatchDay, nextMatchFor, followedChanges, rolledOver, nextAnchorToday,
+  scheduleIndex, calendarBounds,
+  nextMatchFor, emptyDayInfo, followedChanges, rolledOver, nextAnchorToday,
 } from "./model.js";
 import { createStorage, createFollowsStore, createFlags, parseHash, buildHash, decodeShare, readLegacyFollows } from "./storage.js";
 import { indexPlayers, chipName } from "./players-model.js";
 import { etDateKey, dayHeader, dayHeading, weekdayLong, relativeMinutes, localTime, addDays } from "./time.js";
-import { INTRO, LINEUP_NOTE, CALENDAR, FEEDBACK_EMAIL, FEEDBACK_SUBJECT, DISCLAIMER } from "./copy.js";
+import { INTRO, LINEUP_NOTE, CALENDAR, EMPTY, FEEDBACK_EMAIL, FEEDBACK_SUBJECT, DISCLAIMER } from "./copy.js";
 import { mountThemeButton } from "./theme.js";
 import { term, syncPopover } from "./ui/popover.js";
 import { h, clear } from "./ui/dom.js";
@@ -146,14 +146,31 @@ function openCalendar() {
   });
 }
 
+// What an empty day can say about what comes next (model.js emptyDayInfo): an international break and when club
+// matches resume, the next match day (from the feed, else the schedule; with "in N days" in a quiet stretch), or
+// that nothing else is scheduled.
+function emptyNext(day, c) {
+  const info = emptyDayInfo(S.views, S.schedIdx, day, c.todayKey);
+  const out = [];
+  if (info.intlBreak) {
+    out.push(h("p", { class: "dim" }, info.clubResume ? `${EMPTY.intlBreak} ${EMPTY.clubResume(dayHeading(info.clubResume))}` : EMPTY.intlBreak));
+  }
+  if (info.next) {
+    const label = (info.source === "feed" ? EMPTY.nextDay : EMPTY.nextOnSchedule)(dayHeading(info.next)) + (info.inDays ? EMPTY.inDays(info.inDays) : "");
+    out.push(h("p", null, h("button", { type: "button", class: "btn-link", onclick: () => selectDay(info.next) }, label)));
+  } else {
+    out.push(h("p", { class: "dim" }, EMPTY.nothingScheduled));
+  }
+  return out;
+}
+
 // A day beyond the 14-day window but inside the schedule: what the schedule knows, and nothing it does not.
 function scheduleDay(day, c) {
   const rows = S.schedIdx.get(day) || [];
   if (!rows.length) {
-    const next = nextScheduleDay(S.schedIdx, day);
     return h("div", { class: "empty" },
       h("p", { class: "empty-title" }, `No pool matches scheduled on ${weekdayLong(day)}.`),
-      next ? h("p", null, h("button", { type: "button", class: "btn-link", onclick: () => selectDay(next) }, `Next match day: ${dayHeading(next)}`)) : null);
+      ...emptyNext(day, c));
   }
   const fol = follows.ids();
   const score = (id) => (S.players.get(id) && S.players.get(id).score) || 0;
@@ -188,10 +205,9 @@ function emptyState(day, c) {
       h("p", { class: "empty-title" }, "This day isn't published yet."),
       h("p", { class: "dim" }, "Matches appear here closer to the date."));
   }
-  const next = nextMatchDay(S.views, day);
   return h("div", { class: "empty" },
     h("p", { class: "empty-title" }, `No pool matches on ${w}.`),
-    next ? h("p", null, h("button", { type: "button", class: "btn-link", onclick: () => selectDay(next) }, `Next match day: ${dayHeading(next)}`)) : null);
+    ...emptyNext(day, c));
 }
 
 function renderMain() {

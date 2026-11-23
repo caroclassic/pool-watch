@@ -560,6 +560,35 @@ export function nextMatchDay(views, fromKey) {
   return best;
 }
 
+/**
+ * What an empty day can truthfully say (approved wording 2026-11-23). Everything comes from the feed and the
+ * far-ahead schedule; nothing is claimed that they do not show.
+ *   next        the next ET day with a pool match: from the feed's days ("feed"), else from the schedule
+ *               ("schedule"); null when neither has one
+ *   inDays      days to `next`, given only on TODAY's page in a quiet stretch (3+ days away), else null: on any
+ *               other day a count from today reads as if it were counted from that day ("Sat, Apr 3 (in 131 days)")
+ *   intlBreak   a senior national match within 7 days either side of the empty day
+ *   clubResume  with intlBreak: the first day after the empty day that has a club match, or null
+ */
+export function emptyDayInfo(views, schedIdx, day, todayKey) {
+  const idx = schedIdx || new Map();
+  const live = (views || []).filter((v) => !DISRUPTED.has(v.status));
+  const inFeed = nextMatchDay(live, day);
+  const next = inFeed || nextScheduleDay(idx, day);
+  const source = next === null ? null : inFeed ? "feed" : "schedule";
+  const quiet = next !== null && day === todayKey && daysBetween(day, next) >= 3;
+  const lo = addDays(day, -7), hi = addDays(day, 7);
+  const kinds = [];                                   // [day, fixture kind] from both sources
+  for (const v of live) kinds.push([v.etDay, v.fixtureKind]);
+  for (const [k, rows] of idx) for (const r of rows) kinds.push([k, r.fixture_kind]);
+  const intlBreak = kinds.some(([k, kind]) => kind === "national_senior" && k >= lo && k <= hi);
+  let clubResume = null;
+  if (intlBreak) {
+    for (const [k, kind] of kinds) if (kind === "club" && k > day && (clubResume === null || k < clubResume)) clubResume = k;
+  }
+  return { next, source, inDays: quiet ? daysBetween(todayKey, next) : null, intlBreak, clubResume };
+}
+
 // ── following ───────────────────────────────────────────────────────────────
 
 /** A followed player's next match within `withinDays`, or null. */

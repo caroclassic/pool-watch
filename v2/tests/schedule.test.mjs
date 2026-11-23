@@ -76,3 +76,35 @@ test("nextForFollows never drops a followed player: a 7th+ is listed, and nothin
   // "99" is not in players.json: in neither list (the Players page shows those)
   assert.ok(!r.matches.some((g) => g.playerIds.includes("99")) && !r.none.includes("99"));
 });
+
+test("emptyDayInfo: the next match day from the feed, else the schedule, with 'in N days' only in a quiet stretch", () => {
+  const v = (id, day, kind = "club", status = "scheduled") => ({ id, etDay: day, fixtureKind: kind, status });
+  const sched = M.scheduleIndex({ matches: [row(1, "2027-01-03T15:00:00Z")] });
+  // a match two days on, inside the feed: the plain link, no count
+  let r = M.emptyDayInfo([v("a", "2026-11-12")], sched, "2026-11-10", "2026-11-10");
+  assert.deepEqual([r.next, r.source, r.inDays], ["2026-11-12", "feed", null]);
+  // today, nothing left in the feed: the schedule's next day, with the count
+  r = M.emptyDayInfo([v("p", "2026-11-12", "club", "postponed")], sched, "2026-11-10", "2026-11-10");
+  assert.deepEqual([r.next, r.source, r.inDays], ["2027-01-03", "schedule", 54]);
+  // any other day: no count (a count from today would read as counted from that day)
+  r = M.emptyDayInfo([], sched, "2026-12-20", "2026-11-10");
+  assert.deepEqual([r.next, r.inDays], ["2027-01-03", null]);
+  // nothing anywhere
+  r = M.emptyDayInfo([], new Map(), "2026-11-10", "2026-11-10");
+  assert.deepEqual([r.next, r.source, r.inDays, r.intlBreak], [null, null, null, false]);
+});
+
+test("emptyDayInfo: an international break only with a senior national match within 7 days, and when clubs resume", () => {
+  const v = (id, day, kind) => ({ id, etDay: day, fixtureKind: kind, status: "scheduled" });
+  const views = [v("usa", "2026-11-14", "national_senior"), v("club", "2026-11-21", "club")];
+  let r = M.emptyDayInfo(views, new Map(), "2026-11-12", "2026-11-10");
+  assert.deepEqual([r.intlBreak, r.clubResume, r.next], [true, "2026-11-21", "2026-11-14"]);
+  r = M.emptyDayInfo(views, new Map(), "2026-11-05", "2026-11-05");           // 9 days before the national match
+  assert.equal(r.intlBreak, false);
+  // a U20 match is not a senior one; and the schedule counts too
+  r = M.emptyDayInfo([v("u20", "2026-11-14", "national_youth")], new Map(), "2026-11-12", "2026-11-10");
+  assert.equal(r.intlBreak, false);
+  const sched = M.scheduleIndex({ matches: [{ ...row(9, "2027-03-26T23:00:00Z"), fixture_kind: "national_senior" }] });
+  r = M.emptyDayInfo([], sched, "2027-03-24", "2026-11-10");
+  assert.deepEqual([r.intlBreak, r.clubResume], [true, null]);                // break, but no club match known yet
+});
