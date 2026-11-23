@@ -1,0 +1,32 @@
+# Deploys this repo, as it is (no build step), to the Azure Static Web App swa-statesidexi (Free tier, Central US,
+# resource group rg-statesidexi) on every push to main: the front-end changes pushed from the PC and the generated
+# root pages the VM pushes whenever they change. Added 2026-11-23 (launch plan: site to Azure Static Web Apps).
+# The deployment token is the repo secret AZURE_STATIC_WEB_APPS_API_TOKEN. Headers and caching:
+# staticwebapp.config.json. GitHub Pages keeps serving statesidexi.com until the DNS switch.
+name: Deploy to Azure Static Web Apps
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# One deploy at a time, in push order: a burst of VM pushes must not finish out of order.
+concurrency:
+  group: swa-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: upload
+          app_location: /
+          output_location: ""
+          skip_app_build: true
+          skip_api_build: true
