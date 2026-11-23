@@ -46,6 +46,9 @@ export const WATCH = {
 };
 
 export const LINEUP_NOTE = "Lineups usually post ~30 min before kickoff.";
+// A card in a competition whose lineups rarely reach the site (matches.json lineups_expected: false). It replaces
+// "Lineup not posted yet", which implied one was coming.
+export const LINEUPS_UNAVAILABLE = "Lineups usually unavailable";
 
 export const ET_NOTE = "Days follow US Eastern time so everyone sees the same slate.";
 
@@ -68,6 +71,7 @@ export const LEGEND = [
   { title: "Match status", rows: [
     ["Lineups usually post ~30 min before kickoff", "Said once under the day heading. A card only mentions lineups when they're confirmed or late."],
     ["Lineups confirmed ✓", "Lineups are in, and player statuses are final."],
+    ["Lineups usually unavailable", "This competition rarely publishes lineups to our data source, so names stay as expected players and won't change to Starts or Bench."],
     ["● LIVE", "In progress. We don't show scores or minutes."],
     ["Probably in progress · status not confirmed", "Kickoff was over 30 minutes ago but our feed hasn't confirmed the match yet. After 3 hours it moves to Earlier."],
     ["Full time", "Finished. The match moves to the Earlier group."],

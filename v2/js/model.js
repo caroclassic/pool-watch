@@ -13,6 +13,7 @@
 
 import { etDateKey, localTime, relativeMinutes, kickoffDisplay, addDays, daysBetween } from "./time.js";
 import { chipName } from "./players-model.js";
+import { LINEUPS_UNAVAILABLE } from "./copy.js";
 
 export const LIVE_LEAD_MIN = 90;      // lineup window opens this long before kickoff
 export const LIVE_TAIL_HOURS = 4;     // a match can be in play this long after kickoff
@@ -55,6 +56,8 @@ export function mergeFeeds(matchesFeed, statusFeed) {
       tier: has("tier") ? s.tier : m.tier,
       tierAtKickoff: has("tier_at_kickoff") ? s.tier_at_kickoff : m.tier_at_kickoff,
       lineupsConfirmed: s ? !!s.lineups_confirmed : false,
+      // false only when the feed says this competition rarely gets lineups; absent (an older feed) means expected
+      lineupsExpected: m.lineups_expected !== false,
       participation: (s && s.participation) || {},
       // Present only for a live match in a league whose live updates are published; null means "no live data",
       // and the card is then exactly what it was before live states existed.
@@ -228,6 +231,9 @@ function statusHeader(v, fresh, now, tz) {
     return { kind: "unconfirmed", text: od === "probable" ? "Probably in progress · status not confirmed" : "Status not confirmed" };
   }
   if (v.lineupsConfirmed) return { kind: "lineups", text: "Lineups confirmed ✓" };
+  // A competition whose lineups rarely reach us: say so on the card, at every point before kickoff, instead of the
+  // day's "~30 min" note and "Lineup not posted yet", which imply one is coming.
+  if (v.lineupsExpected === false) return { kind: "no_lineups", text: LINEUPS_UNAVAILABLE };
   const minsToKo = (Date.parse(v.kickoffUtc) - +now) / 60000;
   if (minsToKo <= LINEUP_USUAL_MIN) {
     return { kind: "waiting", text: asOfTime ? `Lineup not posted yet · checked ${asOfTime}` : "Lineup not posted yet" };
@@ -241,6 +247,7 @@ function ariaLabel(card) {
   const s = card.header;
   bits.push({ live: "live", lineups: "lineups confirmed", full_time: "full time", postponed: "postponed",
               cancelled: "cancelled", unconfirmed: "status not confirmed", stale: s.text.toLowerCase(), waiting: "lineup not posted yet",
+              no_lineups: "lineups usually unavailable",
               pre: "lineups not out yet" }[s.kind]);
   const starting = card.chips.filter((c) => c.followed && c.participation === "starts").length;
   if (starting) bits.push(`${starting} of your players starting`);

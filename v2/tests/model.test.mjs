@@ -22,6 +22,7 @@ const match = (id, o = {}) => ({
   home: o.home ?? "Chelsea", away: o.away ?? "Fulham", fixture_kind: o.kind ?? "club",
   status: o.status ?? "scheduled", tier: o.tier ?? null, tier_at_kickoff: o.tak ?? null,
   players_basis: o.basis ?? null, broadcast: o.bc ?? null, pool_players: o.pool ?? [pm(11)],
+  ...(o.lx === undefined ? {} : { lineups_expected: o.lx }),
 });
 const feed = (matches, o = {}) => ({ schema_version: 1, window: { start: TODAY, end: "2026-10-23" },
   tier_thresholds: { enabled: o.tiers ?? true }, matches });
@@ -156,6 +157,21 @@ test("a stale 'live' match is not put in Live now and does not claim LIVE", () =
   assert.equal(d.live.length, 0);
   assert.equal(d.rest[0].header.kind, "stale");
   assert.match(d.rest[0].header.text, /^Status as of /);
+});
+
+test("a competition that rarely gets lineups says so on the card, never 'not posted yet'", () => {
+  const h = (m, s) => M.buildDay(ctx(view(feed([m]), s), { statusFeed: s }));
+  const first = (d) => [...d.pinned, ...d.live, ...d.must, ...d.rest, ...d.earlier, ...d.disrupted][0].header;
+  const early = first(h(match(1, { ko: iso(5), lx: false }), sfeed()));
+  assert.deepEqual([early.kind, early.text], ["no_lineups", "Lineups usually unavailable"]);       // said on the card
+  const near = first(h(match(1, { ko: iso(0, 30 * 60), lx: false }), sfeed({}, { at: iso(0, -2 * 60) })));
+  assert.equal(near.kind, "no_lineups");                                                           // not "Lineup not posted yet"
+  const conf = sfeed({ "1": { status: "scheduled", tier: null, tier_at_kickoff: null, lineups_confirmed: true, participation: {} } });
+  assert.equal(first(h(match(1, { ko: iso(1), lx: false }), conf)).text, "Lineups confirmed ✓");  // one did arrive: say so
+  const live = sfeed({ "1": { status: "live", tier: null, tier_at_kickoff: null, lineups_confirmed: false, participation: {} } }, { at: iso(0, -120) });
+  assert.equal(first(h(match(1, { ko: iso(-1), status: "live", lx: false }), live)).kind, "live");
+  assert.equal(first(h(match(1, { ko: iso(5) }), sfeed())).kind, "pre");                          // an older feed: as before
+  assert.equal(first(h(match(1, { ko: iso(5), lx: true }), sfeed())).kind, "pre");
 });
 
 test("header copy across the lifecycle", () => {
