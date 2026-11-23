@@ -6,12 +6,12 @@ import { createHttpSource, createPoller, shouldPollFast, pollDelay } from "./dat
 import {
   mergeFeeds, tiersEnabled, buildDay, dayFacts, stripDays, inWindow, dayGap, daysKept,
   scheduleIndex, calendarBounds,
-  nextMatchFor, emptyDayInfo, followedChanges, rolledOver, nextAnchorToday,
+  nextMatchFor, emptyDayInfo, pageLate, followedChanges, rolledOver, nextAnchorToday,
 } from "./model.js";
 import { createStorage, createFollowsStore, createFlags, parseHash, buildHash, decodeShare, readLegacyFollows } from "./storage.js";
 import { indexPlayers, chipName } from "./players-model.js";
 import { etDateKey, dayHeader, dayHeading, weekdayLong, relativeMinutes, localTime, addDays } from "./time.js";
-import { INTRO, LINEUP_NOTE, CALENDAR, EMPTY, FEEDBACK_EMAIL, FEEDBACK_SUBJECT, DISCLAIMER } from "./copy.js";
+import { INTRO, LINEUP_NOTE, CALENDAR, EMPTY, ERRORS, FEEDBACK_EMAIL, FEEDBACK_SUBJECT, DISCLAIMER } from "./copy.js";
 import { mountThemeButton } from "./theme.js";
 import { term, syncPopover } from "./ui/popover.js";
 import { h, clear } from "./ui/dom.js";
@@ -284,12 +284,17 @@ function footer() {
 
 function renderBanners() {
   const out = [];
+  const asOf = S.data && S.data.status && S.data.status.updated_at;
   if (S.error && !S.data) {
     out.push(h("div", { class: "banner banner-error", role: "alert" },
-      h("p", null, "Couldn't load matches right now."),
-      h("button", { type: "button", class: "btn", onclick: () => poller.refresh() }, "Try again")));
+      h("p", null, ERRORS.loadMatches),
+      h("button", { type: "button", class: "btn", onclick: () => poller.refresh() }, ERRORS.tryAgain)));
   } else if (S.error) {
-    out.push(h("div", { class: "banner", role: "status" }, "Couldn't refresh just now. Showing the last update we have."));
+    // the viewer's refresh failed: say how old what they are looking at is
+    out.push(h("div", { class: "banner", role: "status" }, asOf ? ERRORS.refreshAt(localTime(asOf, viewerTz())) : ERRORS.refresh));
+  } else if (S.data && pageLate(S.views, S.data.status, nowDate(), STALE_MINUTES)) {
+    // the refresh worked but the data itself is old during a match: the pipeline is behind, not the viewer
+    out.push(h("div", { class: "banner banner-late", role: "status" }, ERRORS.late));
   }
   const t = todayKey();
   if (S.data && rolledOver(S.anchorToday, t)) {

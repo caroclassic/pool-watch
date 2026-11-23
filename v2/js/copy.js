@@ -61,6 +61,18 @@ export const EMPTY = {
 // "Lineup not posted yet", which implied one was coming.
 export const LINEUPS_UNAVAILABLE = "Lineups usually unavailable";
 
+// When something fails (approved 2026-11-23). `t` is a local time such as "2:41 PM".
+export const ERRORS = {
+  loadMatches: "Couldn't load matches right now. Check your connection, or try again in a minute.",
+  loadPlayers: "Couldn't load players right now. Check your connection, or try again in a minute.",
+  refreshAt: (t) => `Couldn't refresh just now. Showing the update from ${t}.`,
+  refresh: "Couldn't refresh just now. Showing the last update we have.",
+  // the whole page is behind while a match is live or about to start (the same 15-minute rule as a card's
+  // "Status as of"): the pipeline has stopped, not the viewer's connection
+  late: "Updates are running late. Statuses below may be out of date.",
+  tryAgain: "Try again",
+};
+
 export const ET_NOTE = "Days follow U.S. Eastern Time so everyone sees the same slate.";
 
 // Each section: title, optional lead rows [marker, meaning], optional footnote.

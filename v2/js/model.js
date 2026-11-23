@@ -116,6 +116,13 @@ export function effectiveTier(v, enabled, liveOk = false) {
 
 // ── freshness (spec §5.2 "Poll stale") ──────────────────────────────────────
 
+/** The whole page is running late: some match that can be changing right now (live, or inside its lineup window)
+ *  has a status feed older than `staleMinutes`. The same rule as a card's "Status as of" (freshness below), so the
+ *  page banner and the cards never disagree. Postponed / cancelled matches do not count. */
+export function pageLate(views, statusFeed, now, staleMinutes) {
+  return (views || []).some((v) => !DISRUPTED.has(v.status) && freshness(v, statusFeed, now, staleMinutes).stale);
+}
+
 /**
  * Is the status feed too old to trust for this match? Only matters while the
  * match can be changing. A dead poller must never show a false "Live".

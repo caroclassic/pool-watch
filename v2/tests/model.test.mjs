@@ -428,3 +428,15 @@ test("the same finished matches on TODAY's page still go under Earlier, dimmed",
   const d = M.buildDay(ctx(view(mf, sf)));
   assert.deepEqual(d.earlier.map((c) => c.id), ["1"]); assert.equal(d.earlier[0].dim, true); assert.deepEqual(d.must, []);
 });
+
+test("pageLate: the page is running late only when a match that can be changing has an old status feed", () => {
+  const live = (at) => sfeed({ "1": { status: "live", tier: null, tier_at_kickoff: null, lineups_confirmed: true, participation: {} } }, { at });
+  const lv = (s) => view(feed([match(1, { ko: iso(-1), status: "live" })]), s);
+  assert.equal(M.pageLate(lv(live(iso(0, -20 * 60))), live(iso(0, -20 * 60)), NOW, 15), true);    // 20 min old during a live match
+  assert.equal(M.pageLate(lv(live(iso(0, -5 * 60))), live(iso(0, -5 * 60)), NOW, 15), false);     // 5 min old: fine
+  const later = sfeed({}, { at: iso(-5) });                                                        // 5 hours old, but...
+  assert.equal(M.pageLate(view(feed([match(1, { ko: iso(6) })]), later), later, NOW, 15), false);  // ...nothing is on yet
+  const off = sfeed({ "1": { status: "postponed", participation: {} } }, { at: iso(-5) });
+  assert.equal(M.pageLate(view(feed([match(1, { ko: iso(0, 10 * 60), status: "postponed" })]), off), off, NOW, 15), false);
+  assert.equal(M.pageLate([], null, NOW, 15), false);
+});

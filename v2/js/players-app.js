@@ -12,6 +12,8 @@ import { term } from "./ui/popover.js";
 import { playerSheet, followingSheet, legendSheet, saveSheet, importSheet } from "./ui/sheets.js";
 import { parseHash, decodeShare } from "./storage.js";
 import { mountThemeButton } from "./theme.js";
+import { ERRORS } from "./copy.js";
+import { localTime } from "./time.js";
 
 const isLocal = ["localhost", "127.0.0.1", ""].includes(location.hostname);
 const params = new URLSearchParams(location.search);
@@ -141,9 +143,9 @@ function banner() {
   clear(els.banners);
   if (!S.error) return;
   els.banners.append(S.loaded
-    ? h("div", { class: "banner", role: "status" }, "Couldn't refresh just now. Showing the last update we have.")
-    : h("div", { class: "banner banner-error", role: "alert" }, h("p", null, "Couldn't load players right now."),
-        h("button", { type: "button", class: "btn", onclick: load }, "Try again")));
+    ? h("div", { class: "banner", role: "status" }, S.updatedAt ? ERRORS.refreshAt(localTime(S.updatedAt, viewerTz())) : ERRORS.refresh)
+    : h("div", { class: "banner banner-error", role: "alert" }, h("p", null, ERRORS.loadPlayers),
+        h("button", { type: "button", class: "btn", onclick: load }, ERRORS.tryAgain)));
 }
 
 // ── data ────────────────────────────────────────────────────────────────────
