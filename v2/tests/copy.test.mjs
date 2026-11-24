@@ -21,5 +21,7 @@ test("feedback address is well-formed and the disclaimer is in place", () => {
   assert.match(DISCLAIMER, /not affiliated with U\.S\. Soccer/);
   assert.ok(ABOUT.some((b) => b.p && /unofficial/i.test(b.p)), "About carries the unofficial paragraph");
   assert.ok(ABOUT.some((b) => b.mail), "About carries the feedback paragraph");
-  assert.ok(ABOUT.some((b) => b.p && /no accounts/i.test(b.p) && !/analytics/i.test(b.p)), "privacy line present and makes no analytics claim until analytics is installed");
+  // Analytics installed 2026-11-24 (Cloudflare Web Analytics, hosting.test.mjs): the privacy line must disclose it.
+  assert.ok(ABOUT.some((b) => b.p && /no accounts/i.test(b.p) && /Cloudflare Web Analytics, which sets no cookies and collects no personal information/.test(b.p)),
+    "privacy line present and discloses the page-view counting");
 });

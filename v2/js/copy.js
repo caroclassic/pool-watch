@@ -133,7 +133,7 @@ export const ABOUT = [
   { p: "<b>Follow</b> players to pin their matches to the top of the page. Your follows are saved on this device." },
   { p: "<b>What we don't do:</b> scores, stats, standings or match analysis. We're only here to help you pick the game." },
   { p: "Days follow U.S. Eastern Time so everyone sees the same slate. Kickoff times show in your own time zone." },
-  { p: "<b>Privacy.</b> Stateside XI has no accounts. The players you follow and your light/dark choice are saved on this device only; we never see them." },
+  { p: "<b>Privacy.</b> Stateside XI has no accounts. The players you follow and your light/dark choice are saved on this device only; we never see them. We count page views with Cloudflare Web Analytics, which sets no cookies and collects no personal information." },
   { p: "<b>Unofficial.</b> Stateside XI is an unofficial fan project. It is not affiliated with or endorsed by U.S. Soccer, the U.S. Men's National Team, or any club, league or broadcaster." },
   { mail: "<b>Spotted a mistake?</b> If a match, a player, a lineup status or a where-to-watch listing looks wrong, email" },
 ];

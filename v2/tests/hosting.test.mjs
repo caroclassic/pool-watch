@@ -51,3 +51,43 @@ test("the deploy workflow uploads the repo as it is, from main", () => {
   assert.match(wf, /skip_app_build: true/);
   assert.match(wf, /secrets\.AZURE_STATIC_WEB_APPS_API_TOKEN/);
 });
+
+// Cloudflare Web Analytics (installed 2026-11-24; decided 2026-10-12): page views only, no cookies, disclosed in the
+// About privacy line (copy.test.mjs). The site is DNS-only at Cloudflare, so the beacon is added by the pages themselves,
+// and only on the public domain, so local copies and test runs are never counted.
+const PAGES = ["v2/index.html", "v2/players.html", "v2/about.html"];
+const BEACON = "https://static.cloudflareinsights.com/beacon.min.js";
+const TOKEN = "f8bee1618b654a2880278360fbfb6a67";
+const loader = (html) => (/<script>(\(function\(\)\{if\(location\.hostname!=="statesidexi\.com"\)return;[^<]*)<\/script>/.exec(html) || [])[1];
+
+test("every v2 page loads the analytics beacon, the same way, with the site's token", () => {
+  const found = PAGES.map((p) => loader(readFileSync(new URL(p, root), "utf8")));
+  for (const [i, l] of found.entries()) assert.ok(l, `${PAGES[i]} has the analytics loader`);
+  assert.equal(new Set(found).size, 1, "the three pages carry the identical loader");
+  assert.ok(found[0].includes(BEACON) && found[0].includes(`{"token": "${TOKEN}"}`));
+});
+
+test("the beacon loads only on statesidexi.com, deferred, with its config on the element", () => {
+  const l = loader(readFileSync(new URL("v2/index.html", root), "utf8"));
+  const run = (hostname) => {
+    const added = [];
+    const el = { attrs: {}, setAttribute(k, v) { this.attrs[k] = v; } };
+    const document = { createElement: (t) => (el.tag = t, el), body: { appendChild: (e) => added.push(e) } };
+    new Function("location", "document", l)({ hostname }, document);
+    return added;
+  };
+  const [b] = run("statesidexi.com");
+  assert.equal(b.tag, "script"); assert.equal(b.src, BEACON); assert.equal(b.defer, true);
+  assert.deepEqual(JSON.parse(b.attrs["data-cf-beacon"]), { token: TOKEN });
+  for (const h of ["www.statesidexi.com", "localhost", "127.0.0.1", "ambitious-ocean-0f58a8310.4.azurestaticapps.net", "caroclassic.github.io"])
+    assert.equal(run(h).length, 0, `${h} does not load it`);
+});
+
+test("no v2 page loads any other outside script", () => {
+  for (const p of PAGES) {
+    const html = readFileSync(new URL(p, root), "utf8");
+    const outside = [...html.matchAll(/https?:\/\/[a-z0-9.-]+/gi)].map((m) => m[0])
+      .filter((u) => !/^https:\/\/(statesidexi\.com|statesidexicus\.blob\.core\.windows\.net|static\.cloudflareinsights\.com)$/.test(u));
+    assert.deepEqual(outside, [], `${p}: only our own hosts and the beacon`);
+  }
+});
