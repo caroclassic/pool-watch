@@ -23,8 +23,14 @@ test("scripts and styles cache for at most a day", () => {
   }
 });
 
-test("every route rule only sets headers: nothing is rewritten, redirected or hidden by accident", () => {
-  for (const r of cfg.routes) assert.deepEqual(Object.keys(r).sort(), ["headers", "route"]);
+test("every route rule only sets headers, apart from the /v2 redirect: nothing is rewritten, redirected or hidden by accident", () => {
+  for (const r of cfg.routes.filter((x) => x.route !== "/v2")) assert.deepEqual(Object.keys(r).sort(), ["headers", "route"]);
+});
+
+test("/v2 without the slash redirects to /v2/, as GitHub Pages did", () => {
+  // Served in place, the page's relative css/, js/ and fonts/ links resolve to the site root and 404 (found 2026-11-24).
+  assert.deepEqual(cfg.routes.find((x) => x.route === "/v2"), { route: "/v2", redirect: "/v2/", statusCode: 301 });
+  assert.equal(cfg.routes.filter((x) => "redirect" in x || "rewrite" in x).length, 1);
 });
 
 test("the deploy workflow uploads the repo as it is, from main", () => {
