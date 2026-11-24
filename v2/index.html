@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
+<!-- /v2 without the slash: the host serves this page there, and its relative links would miss; go to /v2/ -->
+<script>if(/^\/v2$/i.test(location.pathname))location.replace("/v2/"+location.search+location.hash)</script>
 <script>try{var t=localStorage.getItem("sxi.theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <!-- version:begin -->
 <script type="importmap">

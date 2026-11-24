@@ -6,7 +6,6 @@
     "X-Frame-Options": "SAMEORIGIN"
   },
   "routes": [
-    { "route": "/v2", "redirect": "/v2/", "statusCode": 301 },
     { "route": "/v2/js/*", "headers": { "Cache-Control": "public, max-age=86400" } },
     { "route": "/v2/css/*", "headers": { "Cache-Control": "public, max-age=86400" } },
     { "route": "/v2/fonts/*", "headers": { "Cache-Control": "public, max-age=2592000" } },

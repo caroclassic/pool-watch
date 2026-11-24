@@ -23,14 +23,26 @@ test("scripts and styles cache for at most a day", () => {
   }
 });
 
-test("every route rule only sets headers, apart from the /v2 redirect: nothing is rewritten, redirected or hidden by accident", () => {
-  for (const r of cfg.routes.filter((x) => x.route !== "/v2")) assert.deepEqual(Object.keys(r).sort(), ["headers", "route"]);
+test("every route rule only sets headers: nothing is rewritten, redirected or hidden by accident", () => {
+  for (const r of cfg.routes) assert.deepEqual(Object.keys(r).sort(), ["headers", "route"]);
 });
 
-test("/v2 without the slash redirects to /v2/, as GitHub Pages did", () => {
-  // Served in place, the page's relative css/, js/ and fonts/ links resolve to the site root and 404 (found 2026-11-24).
-  assert.deepEqual(cfg.routes.find((x) => x.route === "/v2"), { route: "/v2", redirect: "/v2/", statusCode: 301 });
-  assert.equal(cfg.routes.filter((x) => "redirect" in x || "rewrite" in x).length, 1);
+test("/v2 without the slash sends the browser to /v2/, as GitHub Pages did", () => {
+  // Static Web Apps serves v2/index.html at /v2 itself, where its relative css/, js/ and fonts/ links resolve to the site
+  // root and 404 (found 2026-11-24). A route rule for "/v2" never fires (tried, dd64e7e), so the page redirects itself,
+  // first thing in <head>, keeping the query and hash.
+  const html = readFileSync(new URL("v2/index.html", root), "utf8");
+  const m = /<script>(if\(\/\^\\\/v2\$\/i\.test\(location\.pathname\)\)location\.replace\("\/v2\/"\+location\.search\+location\.hash\))<\/script>/.exec(html);
+  assert.ok(m, "the redirect script is in v2/index.html");
+  assert.equal(html.indexOf("<script"), html.indexOf(m[0]), "it is the page's first script");
+  const go = (pathname, search = "", hash = "") => {
+    let to = null;
+    new Function("location", m[1])({ pathname, search, hash, replace: (u) => { to = u; } });
+    return to;
+  };
+  assert.equal(go("/v2", "?day=2026-11-24", "#main"), "/v2/?day=2026-11-24#main");
+  assert.equal(go("/V2"), "/v2/");
+  for (const p of ["/v2/", "/v2/index.html", "/v2/players.html", "/", "/v20"]) assert.equal(go(p), null, p);
 });
 
 test("the deploy workflow uploads the repo as it is, from main", () => {
