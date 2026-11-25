@@ -26,6 +26,17 @@ export const POOL_ESTIMATE_MAX = 8;
 export const TIER_WORD = { must_watch: "Must-watch", worth_a_look: "Worth a look" };
 export const TIER_PIPS = { must_watch: 3, worth_a_look: 2 };
 const PART_WORD = { starts: "Starts", bench: "Bench", not_in_squad: "Not in squad" };
+// From kickoff the lineup fact is past tense (decided 2026-11-24): true in every competition, with or without live data.
+const STARTED = "Started";
+const kickedOff = (v) => v.status === "live" || v.status === "full_time";
+// status.json `phase` (FEED_CONTRACT): which part of the match, never a minute. Shown next to LIVE, or after
+// "Full time" when it went beyond 90 minutes. [on screen, spoken]. Anything else is ignored.
+const LIVE_PHASE = {
+  first_half: ["1st half", "first half"], half_time: ["Half-time", "half-time"], second_half: ["2nd half", "second half"],
+  extra_time: ["Extra time", "extra time"], extra_time_break: ["ET break", "extra-time break"],
+  penalties: ["Penalties", "penalties"], interrupted: ["Interrupted", "interrupted"], suspended: ["Suspended", "suspended"],
+};
+const END_PHASE = { after_extra_time: "after extra time", after_penalties: "on penalties" };
 const DISRUPTED = new Set(["postponed", "cancelled"]);
 // Live on-pitch states (status.json `live_states`): the word shown, and the lineup status each one
 // can follow. A live state is only ever a change to a confirmed lineup status.
@@ -64,6 +75,7 @@ export function mergeFeeds(matchesFeed, statusFeed) {
       liveStates: s && s.live_states && typeof s.live_states === "object" && !Array.isArray(s.live_states) ? s.live_states : null,
       liveTier: has("live_tier") ? s.live_tier : undefined,
       tierPeak: has("tier_peak") ? s.tier_peak : undefined,   // a finished match: the highest tier it reached
+      phase: has("phase") && typeof s.phase === "string" ? s.phase : null,   // "second_half", "after_penalties"...
       carried: !!(s && s.carried_over),
       poolPlayers: m.pool_players || [],
     };
@@ -225,13 +237,18 @@ export function orderedPool(v, follows, players, stale = false) {
 function statusHeader(v, fresh, now, tz) {
   if (v.status === "postponed") return { kind: "postponed", text: "Postponed" };
   if (v.status === "cancelled") return { kind: "cancelled", text: "Cancelled" };
-  if (v.status === "full_time") return { kind: "full_time", text: "Full time" };
+  if (v.status === "full_time") {
+    const end = own(END_PHASE, v.phase) ? END_PHASE[v.phase] : null;   // final: needs no freshness
+    return { kind: "full_time", text: end ? `Full time · ${end}` : "Full time", spoken: end ? `full time, ${end}` : "full time" };
+  }
   const asOfTime = fresh.asOf ? localTime(fresh.asOf, tz) : null;
   if (fresh.stale) {
     return { kind: "stale", text: asOfTime ? `Status as of ${asOfTime}` : "Status not available" };
   }
   if (v.status === "live") {
-    return { kind: "live", text: "LIVE", sub: fresh.asOf ? `Updated ${relativeMinutes(fresh.asOf, now)}` : null };
+    const ph = own(LIVE_PHASE, v.phase) ? LIVE_PHASE[v.phase] : null;   // only here: a stale feed shows no phase
+    return { kind: "live", text: ph ? `LIVE · ${ph[0]}` : "LIVE", spoken: ph ? `live, ${ph[1]}` : "live",
+             sub: fresh.asOf ? `Updated ${relativeMinutes(fresh.asOf, now)}` : null };
   }
   const od = overdueState(v, now);
   if (od) {
@@ -252,12 +269,12 @@ function ariaLabel(card) {
   const bits = [`${card.home} vs ${card.away}`];
   if (card.tier) bits.push(TIER_WORD[card.tier]);
   const s = card.header;
-  bits.push({ live: "live", lineups: "lineups confirmed", full_time: "full time", postponed: "postponed",
+  bits.push(s.spoken || { lineups: "lineups confirmed", postponed: "postponed",
               cancelled: "cancelled", unconfirmed: "status not confirmed", stale: s.text.toLowerCase(), waiting: "lineup not posted yet",
               no_lineups: "lineups usually unavailable",
               pre: "lineups not out yet" }[s.kind]);
   const starting = card.chips.filter((c) => c.followed && c.participation === "starts").length;
-  if (starting) bits.push(`${starting} of your players starting`);
+  if (starting) bits.push(`${starting} of your players ${card.kickedOff ? "started" : "starting"}`);
   return bits.join(", ");
 }
 
@@ -279,7 +296,7 @@ export function cardView(v, ctx) {
       participation: pt,
       live,
       shape: live || pt,                      // which circle to draw: always paired with `word`
-      word: live ? LIVE_WORD[live] : pt ? PART_WORD[pt] : null,
+      word: live ? LIVE_WORD[live] : pt === "starts" && kickedOff(v) ? STARTED : pt ? PART_WORD[pt] : null,
       followed: ctx.follows.has(p.playerId),
     };
   });
@@ -293,6 +310,7 @@ export function cardView(v, ctx) {
     youth: v.fixtureKind === "national_youth",
     status: v.status, tier, tierWord: tier ? TIER_WORD[tier] : null, pips: tier ? TIER_PIPS[tier] : 0,
     header: statusHeader(v, fresh, ctx.now, ctx.tz),
+    kickedOff: kickedOff(v),
     stale: fresh.stale,
     pinned, followingNames: pinned ? followedNames : [],
     movedFromPins: isMovedFromPins(v, ctx.follows, ctx.now),

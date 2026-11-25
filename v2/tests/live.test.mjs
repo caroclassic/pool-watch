@@ -39,7 +39,7 @@ const ids = (c) => c.chips.map((x) => x.playerId);
 
 test("the three live words, each with its own shape; everyone else keeps his lineup word", () => {
   const c = card(sf());
-  assert.deepEqual(words(c), { 11: "Starts", 12: "Subbed off", 13: "Sent off", 14: "Subbed on", 15: "Bench", 16: "Not in squad", 17: null });
+  assert.deepEqual(words(c), { 11: "Started", 12: "Subbed off", 13: "Sent off", 14: "Subbed on", 15: "Bench", 16: "Not in squad", 17: null });
   const shape = Object.fromEntries(c.chips.map((x) => [x.playerId, x.shape]));
   assert.deepEqual(shape, { 11: "starts", 12: "subbed_off", 13: "sent_off", 14: "subbed_on", 15: "bench", 16: "not_in_squad", 17: null });
   for (const x of c.chips) assert.equal(!!x.shape, !!x.word, "a shape never appears without its word, or a word without its shape");
@@ -66,7 +66,7 @@ test("a followed player leads even after he has gone off; a followed player who 
 
 test("no live data: the card is exactly what it was (words, order, badge)", () => {
   const c = card(sf({ live: undefined }));
-  assert.deepEqual(words(c), { 11: "Starts", 12: "Starts", 13: "Starts", 14: "Bench", 15: "Bench", 16: "Not in squad", 17: null });
+  assert.deepEqual(words(c), { 11: "Started", 12: "Started", 13: "Started", 14: "Bench", 15: "Bench", 16: "Not in squad", 17: null });
   assert.deepEqual(ids(c), ["11", "12", "13", "17", "14", "15", "16"]);          // starters, no status, bench, not in squad
   assert.equal(c.tier, "must_watch");
   assert.ok(c.chips.every((x) => x.live === null));
@@ -75,7 +75,7 @@ test("no live data: the card is exactly what it was (words, order, badge)", () =
 test("a stale status feed drops every live state and the live tier", () => {
   const stale = sf({ at: ago(16), liveTier: "worth_a_look" });
   const c = card(stale);
-  assert.deepEqual(words(c), { 11: "Starts", 12: "Starts", 13: "Starts", 14: "Bench", 15: "Bench", 16: "Not in squad", 17: null });
+  assert.deepEqual(words(c), { 11: "Started", 12: "Started", 13: "Started", 14: "Bench", 15: "Bench", 16: "Not in squad", 17: null });
   assert.deepEqual(ids(c), ["11", "12", "13", "17", "14", "15", "16"]);
   assert.equal(c.tier, "must_watch");                       // the kickoff tier
   assert.equal(c.header.kind, "stale");
@@ -88,7 +88,7 @@ test("anything unexpected in live_states is ignored, player by player", () => {
                 15: "SUBBED_ON", 16: "sent_off",   // not in the squad cannot be sent off
                 17: "subbed_off" };                // no lineup status: nothing to change
   const c = card(sf({ live: bad }));
-  assert.deepEqual(words(c), { 11: "Starts", 12: "Starts", 13: "Starts", 14: "Bench", 15: "Bench", 16: "Not in squad", 17: null });
+  assert.deepEqual(words(c), { 11: "Started", 12: "Started", 13: "Started", 14: "Bench", 15: "Bench", 16: "Not in squad", 17: null });
   for (const shape of [[], "subbed_on", 7, null]) {
     assert.ok(card(sf({ live: shape })).chips.every((x) => x.live === null), `live_states = ${JSON.stringify(shape)}`);
   }
@@ -105,7 +105,7 @@ test("live states never show on a match that has not started or is not being pla
 
 test("at full time each player keeps the word he ended on, in the ordinary lineup order", () => {
   const c = card(sf({ status: "full_time" }));
-  assert.deepEqual(words(c), { 11: "Starts", 12: "Subbed off", 13: "Sent off", 14: "Subbed on", 15: "Bench", 16: "Not in squad", 17: null });
+  assert.deepEqual(words(c), { 11: "Started", 12: "Subbed off", 13: "Sent off", 14: "Subbed on", 15: "Bench", 16: "Not in squad", 17: null });
   assert.equal(c.header.kind, "full_time");
   // not the live order: starters (11, 12, 13), no status (17), bench (14, 15), not in squad (16)
   assert.deepEqual(ids(c), ["11", "12", "13", "17", "14", "15", "16"]);
@@ -113,7 +113,7 @@ test("at full time each player keeps the word he ended on, in the ordinary lineu
   assert.deepEqual(words(card(sf({ status: "full_time", at: ago(600) }))), words(c));
   // and a finished match with no live data is unchanged
   assert.deepEqual(words(card(sf({ status: "full_time", live: undefined }))),
-    { 11: "Starts", 12: "Starts", 13: "Starts", 14: "Bench", 15: "Bench", 16: "Not in squad", 17: null });
+    { 11: "Started", 12: "Started", 13: "Started", 14: "Bench", 15: "Bench", 16: "Not in squad", 17: null });
 });
 
 test("at full time the card shows the highest tier the match reached, kickoff or live", () => {

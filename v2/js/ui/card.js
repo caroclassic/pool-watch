@@ -12,7 +12,7 @@ function header(c, ui) {
   // matches likewise lives on the Live band / footer, not on each card.
   const status = s.kind === "pre" ? null
     : s.kind === "live"
-    ? h("span", { class: "status status-live" }, h("span", { class: "live-dot", "aria-hidden": "true" }), "LIVE")
+    ? h("span", { class: "status status-live" }, h("span", { class: "live-dot", "aria-hidden": "true" }), s.text)   // "LIVE · 2nd half"
     : s.kind === "lineups" && ui.termSeen && !ui.termSeen.has("lineups")
       ? (ui.termSeen.add("lineups"), h("span", { class: "status status-lineups" }, term("Lineups confirmed", "lineups"), " ✓"))
       : h("span", { class: `status status-${s.kind}` }, s.text);

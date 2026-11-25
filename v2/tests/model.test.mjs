@@ -417,7 +417,7 @@ test("a past day shows every finished match in the ordinary bands, undimmed, wit
   assert.deepEqual(d.earlier, [], "nothing hides under Earlier on a past day");
   assert.deepEqual(d.must.map((c) => c.id), ["1"]); assert.deepEqual(d.worth.map((c) => c.id), ["2"]); assert.deepEqual(d.rest.map((c) => c.id), ["3"]);
   assert.ok([...d.must, ...d.worth, ...d.rest].every((c) => c.dim === false), "past-day cards are not dimmed");
-  assert.deepEqual(d.must[0].chips.map((c) => [c.name, c.word]), [["C. Pulisic", "Starts"], ["G. Reyna", "Bench"]]);
+  assert.deepEqual(d.must[0].chips.map((c) => [c.name, c.word]), [["C. Pulisic", "Started"], ["G. Reyna", "Bench"]]);
   assert.equal(d.worth[0].chips[0].word, "Not in squad");
   assert.equal(d.must[0].header.text, "Full time");
 });
