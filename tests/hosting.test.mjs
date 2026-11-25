@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 
 // Azure Static Web Apps hosting (2026-11-23): staticwebapp.config.json at the repo root, deployed by
 // .github/workflows/azure-static-web-apps.yml.
-const root = new URL("../../", import.meta.url);
+const root = new URL("../", import.meta.url);
 const cfg = JSON.parse(readFileSync(new URL("staticwebapp.config.json", root), "utf8"));
 const maxAge = (v) => Number((/max-age=(\d+)/.exec(v || "") || [])[1]);
 
@@ -16,33 +16,47 @@ test("pages are never cached stale: the default is no-cache", () => {
 test("scripts and styles cache for at most a day", () => {
   // The ?v= stamps change the URL on every release, but a browser without import-map support loads the modules
   // without them, so a long cache could pin it to old code. One day bounds that.
-  for (const r of ["/v2/js/*", "/v2/css/*"]) {
+  for (const r of ["/js/*", "/css/*"]) {
     const rule = cfg.routes.find((x) => x.route === r);
     assert.ok(rule, `${r} has a rule`);
     assert.ok(maxAge(rule.headers["Cache-Control"]) <= 86400, `${r} caches for a day or less`);
   }
 });
 
-test("every route rule only sets headers: nothing is rewritten, redirected or hidden by accident", () => {
-  for (const r of cfg.routes) assert.deepEqual(Object.keys(r).sort(), ["headers", "route"]);
+// The cutover (2026-11-24 rehearsal; cutover-plan.md) moved the pages from /v2/ to the root. The old /v2 addresses
+// redirect to their new homes; /dev/ (sample feeds) and /tests/ are not served. Every other rule only sets headers.
+// "/v2" also matches "/v2/": Azure ignores a trailing slash when it compares routes and refuses a config that lists both.
+const REDIRECTS = { "/v2": "/", "/v2/index.html": "/", "/v2/players.html": "/players.html", "/v2/about.html": "/about.html", "/v2/*": "/" };
+const HIDDEN = ["/dev/*", "/tests/*"];
+
+test("the old /v2 addresses redirect (301) to the same page at the root, specific ones before the catch-all", () => {
+  for (const [from, to] of Object.entries(REDIRECTS))
+    assert.deepEqual(cfg.routes.find((x) => x.route === from), { route: from, redirect: to, statusCode: 301 }, from);
+  const at = (r) => cfg.routes.findIndex((x) => x.route === r);
+  for (const r of Object.keys(REDIRECTS)) if (r !== "/v2/*") assert.ok(at(r) < at("/v2/*"), `${r} comes before /v2/*`);
 });
 
-test("/v2 without the slash sends the browser to /v2/, as GitHub Pages did", () => {
-  // Static Web Apps serves v2/index.html at /v2 itself, where its relative css/, js/ and fonts/ links resolve to the site
-  // root and 404 (found 2026-11-24). A route rule for "/v2" never fires (tried, dd64e7e), so the page redirects itself,
-  // first thing in <head>, keeping the query and hash.
-  const html = readFileSync(new URL("v2/index.html", root), "utf8");
-  const m = /<script>(if\(\/\^\\\/v2\$\/i\.test\(location\.pathname\)\)location\.replace\("\/v2\/"\+location\.search\+location\.hash\))<\/script>/.exec(html);
-  assert.ok(m, "the redirect script is in v2/index.html");
-  assert.equal(html.indexOf("<script"), html.indexOf(m[0]), "it is the page's first script");
-  const go = (pathname, search = "", hash = "") => {
-    let to = null;
-    new Function("location", m[1])({ pathname, search, hash, replace: (u) => { to = u; } });
-    return to;
-  };
-  assert.equal(go("/v2", "?day=2026-11-24", "#main"), "/v2/?day=2026-11-24#main");
-  assert.equal(go("/V2"), "/v2/");
-  for (const p of ["/v2/", "/v2/index.html", "/v2/players.html", "/", "/v20"]) assert.equal(go(p), null, p);
+test("no two route rules are the same route once a trailing slash is ignored (the deploy step refuses duplicates)", () => {
+  const seen = cfg.routes.map((x) => x.route.length > 1 ? x.route.replace(/\/$/, "") : x.route);
+  assert.equal(new Set(seen).size, seen.length, seen.join(" "));
+});
+
+test("/dev/ and /tests/ are not served", () => {
+  for (const r of HIDDEN) assert.deepEqual(cfg.routes.find((x) => x.route === r), { route: r, statusCode: 404 });
+});
+
+test("every other route rule only sets headers: nothing is rewritten, redirected or hidden by accident", () => {
+  for (const r of cfg.routes.filter((x) => !(x.route in REDIRECTS) && !HIDDEN.includes(x.route)))
+    assert.deepEqual(Object.keys(r).sort(), ["headers", "route"], r.route);
+  assert.equal(cfg.routes.length, Object.keys(REDIRECTS).length + HIDDEN.length + 4);
+});
+
+test("the pages live at the root, with no relative path climbing out of it", () => {
+  for (const p of ["index.html", "players.html", "about.html"]) {
+    const html = readFileSync(new URL(p, root), "utf8");
+    assert.ok(!/(?:href|src)="\.\.\//.test(html), `${p}: no ../ links`);
+    assert.match(html, /<meta name="robots" content="noindex">/, `${p}: noindex stays until launch day`);
+  }
 });
 
 test("the deploy workflow uploads the repo as it is, from main", () => {
@@ -55,12 +69,12 @@ test("the deploy workflow uploads the repo as it is, from main", () => {
 // Cloudflare Web Analytics (installed 2026-11-24; decided 2026-10-12): page views only, no cookies, disclosed in the
 // About privacy line (copy.test.mjs). The site is DNS-only at Cloudflare, so the beacon is added by the pages themselves,
 // and only on the public domain, so local copies and test runs are never counted.
-const PAGES = ["v2/index.html", "v2/players.html", "v2/about.html"];
+const PAGES = ["index.html", "players.html", "about.html"];
 const BEACON = "https://static.cloudflareinsights.com/beacon.min.js";
 const TOKEN = "f8bee1618b654a2880278360fbfb6a67";
 const loader = (html) => (/<script>(\(function\(\)\{if\(location\.hostname!=="statesidexi\.com"\)return;[^<]*)<\/script>/.exec(html) || [])[1];
 
-test("every v2 page loads the analytics beacon, the same way, with the site's token", () => {
+test("every page loads the analytics beacon, the same way, with the site's token", () => {
   const found = PAGES.map((p) => loader(readFileSync(new URL(p, root), "utf8")));
   for (const [i, l] of found.entries()) assert.ok(l, `${PAGES[i]} has the analytics loader`);
   assert.equal(new Set(found).size, 1, "the three pages carry the identical loader");
@@ -68,7 +82,7 @@ test("every v2 page loads the analytics beacon, the same way, with the site's to
 });
 
 test("the beacon loads only on statesidexi.com, deferred, with its config on the element", () => {
-  const l = loader(readFileSync(new URL("v2/index.html", root), "utf8"));
+  const l = loader(readFileSync(new URL("index.html", root), "utf8"));
   const run = (hostname) => {
     const added = [];
     const el = { attrs: {}, setAttribute(k, v) { this.attrs[k] = v; } };
@@ -83,7 +97,7 @@ test("the beacon loads only on statesidexi.com, deferred, with its config on the
     assert.equal(run(h).length, 0, `${h} does not load it`);
 });
 
-test("no v2 page loads any other outside script", () => {
+test("no page loads any other outside script", () => {
   for (const p of PAGES) {
     const html = readFileSync(new URL(p, root), "utf8");
     const outside = [...html.matchAll(/https?:\/\/[a-z0-9.-]+/gi)].map((m) => m[0])

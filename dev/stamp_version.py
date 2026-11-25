@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-stamp_version.py — cache versioning for v2/ without a build step. Run it before every push that changes a file
-under v2/js/ or v2/css/:
+stamp_version.py — cache versioning for the site without a build step. Run it before every push that changes a file
+under js/ or css/:
 
-    python3 v2/dev/stamp_version.py           # rewrite the three pages with the current version
-    python3 v2/dev/stamp_version.py --check   # exit 1 if a page is not stamped with the current version
+    python3 dev/stamp_version.py           # rewrite the three pages with the current version
+    python3 dev/stamp_version.py --check   # exit 1 if a page is not stamped with the current version
 
 The version is one short hash of every script and stylesheet the pages load. It goes on the stylesheet links, on
 the page's entry script, and into an import map that sends every module import (`./model.js` and so on) to its
@@ -29,7 +29,7 @@ BEGIN, END = "<!-- version:begin -->", "<!-- version:end -->"
 
 
 def assets() -> list[str]:
-    """Every script and stylesheet the pages load, as paths relative to v2/, sorted."""
+    """Every script and stylesheet the pages load, as paths relative to the site root, sorted."""
     files = sorted(V2.glob("js/**/*.js")) + sorted(V2.glob("css/*.css"))
     return sorted(str(p.relative_to(V2)).replace("\\", "/") for p in files)
 
@@ -78,7 +78,7 @@ def main() -> int:
                 p.write_text(new, encoding="utf-8")
     if check:
         if stale:
-            print(f"! not stamped with version {v}: {', '.join(stale)} (run python3 v2/dev/stamp_version.py)")
+            print(f"! not stamped with version {v}: {', '.join(stale)} (run python3 dev/stamp_version.py)")
             return 1
         print(f"stamped: version {v}")
         return 0

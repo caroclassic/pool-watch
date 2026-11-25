@@ -1,8 +1,8 @@
 // config.js — the few knobs that are not the data.
 //
 // DATA_BASE is where matches.json / status.json / players.json live. The shell
-// reads it from <html data-base="…">, so cutting over from /v2/ to the site
-// root (or to an API later) is one attribute, not a code change. For local
+// reads it from <html data-base="…">, so moving the data (to an API later, say)
+// is one attribute, not a code change. For local
 // development only, ?data=dev/ points it at the sample feeds.
 
 export const POLL_ACTIVE_MS = 60_000;      // a match is live or inside its lineup window

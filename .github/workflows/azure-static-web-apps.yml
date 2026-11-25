@@ -1,8 +1,9 @@
 # Deploys this repo, as it is (no build step), to the Azure Static Web App swa-statesidexi (Free tier, Central US,
-# resource group rg-statesidexi) on every push to main: the front-end changes pushed from the PC and the generated
-# root pages the VM pushes whenever they change. Added 2026-11-23 (launch plan: site to Azure Static Web Apps).
+# resource group rg-statesidexi) on every push to main. Added 2026-11-23 (launch plan: site to Azure Static Web Apps).
+# Since the cutover (pages at the root, cutover-plan.md) only the PC pushes here: the VM's generated root pages are
+# no longer published, and its data goes to Azure Blob.
 # The deployment token is the repo secret AZURE_STATIC_WEB_APPS_API_TOKEN. Headers and caching:
-# staticwebapp.config.json. GitHub Pages keeps serving statesidexi.com until the DNS switch.
+# staticwebapp.config.json.
 name: Deploy to Azure Static Web Apps
 
 on:

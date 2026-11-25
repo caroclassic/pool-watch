@@ -78,6 +78,12 @@ test("hash read/write keeps day and follows apart", () => {
   assert.deepEqual(S.parseHash(""), { d: null, f: null });
 });
 
+test("an old root-page bookmark (#2026-11-24) still opens that day", () => {
+  assert.deepEqual(S.parseHash("#2026-11-24"), { d: "2026-11-24", f: null });
+  assert.deepEqual(S.parseHash("2026-11-24"), { d: "2026-11-24", f: null });
+  assert.deepEqual(S.parseHash("#2026-11-24x"), { d: null, f: null });   // anything else is not a date
+});
+
 test("flags", () => {
   const f = S.createFlags(S.createStorage(fakeWin()));
   assert.equal(f.get("intro"), false); f.set("intro"); assert.equal(f.get("intro"), true);

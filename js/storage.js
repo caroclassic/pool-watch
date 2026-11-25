@@ -150,7 +150,10 @@ export function decodeShare(code) {
 
 /** Read "#d=2026-10-12&f=v1...." into { d, f }. */
 export function parseHash(hash) {
-  const p = new URLSearchParams(String(hash || "").replace(/^#/, ""));
+  const raw = String(hash || "").replace(/^#/, "");
+  // The old root pages linked a day as a bare date (#2026-11-24); those bookmarks keep opening that day.
+  if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return { d: raw, f: null };
+  const p = new URLSearchParams(raw);
   return { d: p.get("d"), f: p.get("f") };
 }
 
