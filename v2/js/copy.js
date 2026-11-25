@@ -78,7 +78,7 @@ export const ET_NOTE = "Days follow U.S. Eastern Time so everyone sees the same 
 // Each section: title, optional lead rows [marker, meaning], optional footnote.
 export const LEGEND = [
   { title: "Match levels", rows: [
-    ["MUST-WATCH", "A big night for the pool: top players expected to play, or confirmed in the lineup."],
+    ["MUST-WATCH", "A big match for the pool: heavy pool involvement expected, or confirmed in the lineup."],
     ["WORTH A LOOK", "Pool players in action, worth catching if you can."],
     ["(no label)", "Pool players are involved, with a smaller expected role."],
   ], note: "Levels are fixed, not a daily ranking, so some days have no Must-watch matches. Before lineups, levels assume expected players play. They update when lineups are confirmed, and during a match as players come on or off (some competitions only). After full time, a card shows the highest level the match reached." },
@@ -141,7 +141,7 @@ export const ABOUT = [
 // Dotted-underline terms (spec §8.6). 1–2 sentences each.
 export const POPOVERS = {
   pool: "Players in the picture for the U.S. men's national team, from regulars to young prospects.",
-  must_watch: "A big night for the pool. Levels are fixed, so some days have none.",
+  must_watch: "A big match for the pool: heavy pool involvement expected, or confirmed in the lineup. Levels are fixed, so some days have none.",
   worth_a_look: "Pool players in action, worth catching if you can. Levels are fixed, so some days have none.",
   lineups: "Lineups usually post about 30 minutes before kickoff. Until then, a listed player is expected to play.",
   involvement: "How embedded a player is in the national team squad, and the order of this list: presence, not quality or importance.",
