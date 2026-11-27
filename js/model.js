@@ -265,6 +265,37 @@ function statusHeader(v, fresh, now, tz) {
   return { kind: "pre", text: `Lineups ~${LINEUP_USUAL_MIN} min before kickoff` };
 }
 
+// Interrupted / suspended: play has stopped, so the column shows the word alone, in ink, never LIVE (addendum §1).
+const HALTED = new Set(["interrupted", "suspended"]);
+const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+
+/**
+ * The card's 64 px time column (brand refresh, decided 2026-11-26) and the kickoff the metadata line carries once
+ * the column holds something else.
+ *   time       kickoff over the zone: { time: "1:45", zone: "PM CT" } (with the viewer's weekday when it differs)
+ *   live       LIVE over the phase (confirmed live only: a stale feed falls back to the kickoff time)
+ *   halted     "Interrupted" / "Suspended", alone, in ink
+ *   full_time / postponed / cancelled: the word; the kickoff moves to the metadata line (struck when not played),
+ *              and a long match's "After extra time" / "On penalties" follows it there
+ * Unconfirmed states ("Probably in progress", "Status as of …") keep the kickoff time: the head line says the rest.
+ */
+export function timeColumn(v, header, k) {
+  const meta = (struck = false, extra = null) => ({ text: k.text, struck, extra });
+  if (header.kind === "live") {
+    if (HALTED.has(v.phase)) return { column: { kind: "halted", word: LIVE_PHASE[v.phase][0] }, metaTime: meta() };
+    const ph = own(LIVE_PHASE, v.phase) ? LIVE_PHASE[v.phase][0] : null;
+    return { column: { kind: "live", word: "LIVE", phase: ph }, metaTime: meta() };
+  }
+  if (header.kind === "full_time") {
+    const end = own(END_PHASE, v.phase) ? cap(END_PHASE[v.phase]) : null;
+    return { column: { kind: "full_time", word: "Full time" }, metaTime: meta(false, end) };
+  }
+  if (header.kind === "postponed" || header.kind === "cancelled") return { column: { kind: header.kind, word: header.text }, metaTime: meta(true) };
+  const m = /^(.*?)[\s\u202f]*([AP]\.?M\.?)$/i.exec(k.time || "");
+  const time = m ? m[1] : k.time, suffix = m ? m[2] : "";
+  return { column: { kind: "time", time, zone: [k.weekday, suffix, k.zone].filter(Boolean).join(" ") }, metaTime: null };
+}
+
 function ariaLabel(card) {
   const bits = [`${card.home} vs ${card.away}`];
   if (card.tier) bits.push(TIER_WORD[card.tier]);
@@ -321,6 +352,7 @@ export function cardView(v, ctx) {
     // Finished matches are dimmed on TODAY's page (they are history there); a past day is all history, so nothing on it is.
     dim: ((v.status === "full_time" || overdueState(v, ctx.now) === "dropped") && ctx.dayKey === ctx.todayKey) || DISRUPTED.has(v.status),
   };
+  Object.assign(card, timeColumn(v, card.header, card.kickoff));
   card.ariaLabel = ariaLabel(card);
   return card;
 }

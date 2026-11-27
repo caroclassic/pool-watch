@@ -104,3 +104,44 @@ test("the Legend shows the phase, both words for a starter, and still promises n
   assert.ok(players.rows.some((r) => r[0] === "● Starts / Started"));
   assert.match(players.note, /don't show minutes or scores/);
 });
+
+// ── the card's 64 px time column (brand refresh, 2026-11-27; docs/brand/decisions.md, addendum §1-2) ──────────────
+test("time column: a live card shows LIVE and the phase in the column, and its kickoff moves to the metadata line", () => {
+  const c = card(sf("live", "second_half"));
+  assert.deepEqual(c.column, { kind: "live", word: "LIVE", phase: "2nd half" });
+  assert.deepEqual(c.metaTime, { text: "2:00 PM ET", struck: false, extra: null });
+  assert.deepEqual(card(sf("live")).column, { kind: "live", word: "LIVE", phase: null });            // no phase known: LIVE alone
+});
+
+test("time column: an upcoming card shows the kickoff over the zone and nothing in the metadata line", () => {
+  const c = card(sf("scheduled"), { ko: new Date(+NOW + 3 * 3600000).toISOString() });
+  assert.deepEqual(c.column, { kind: "time", time: "6:10", zone: "PM ET" });
+  assert.equal(c.metaTime, null);
+});
+
+test("time column: interrupted or suspended shows the word alone (never LIVE), and the card stays in Live now", () => {
+  for (const [phase, w] of [["interrupted", "Interrupted"], ["suspended", "Suspended"]]) {
+    const status = sf("live", phase);
+    const views = M.mergeFeeds(mf(), status);
+    const d = M.buildDay({ views, dayKey: TODAY, todayKey: TODAY, follows: new Set(), players, now: NOW, tz: TZ, statusFeed: status, staleMinutes: 15, tiersEnabled: true });
+    assert.equal(d.live.length, 1, phase);
+    assert.deepEqual(d.live[0].column, { kind: "halted", word: w }, phase);
+  }
+});
+
+test("time column: full time, postponed and cancelled put the word in the column and the kickoff in the metadata line", () => {
+  assert.deepEqual(card(sf("full_time")).column, { kind: "full_time", word: "Full time" });
+  assert.deepEqual(card(sf("full_time", "after_penalties")).metaTime, { text: "2:00 PM ET", struck: false, extra: "On penalties" });
+  assert.deepEqual(card(sf("full_time", "after_extra_time")).metaTime.extra, "After extra time");
+  for (const st of ["postponed", "cancelled"]) {
+    const c = card(sf(st));
+    assert.equal(c.column.kind, st); assert.equal(c.metaTime.struck, true, st);
+  }
+});
+
+test("time column: an unconfirmed state is never shown as live; the column keeps the kickoff time", () => {
+  const stale = card(sf("live", "second_half", { at: ago(40) }));        // the status feed is 40 minutes old
+  assert.equal(stale.column.kind, "time"); assert.equal(stale.header.kind, "stale");
+  const probable = card(sf("scheduled"), { ko: ago(45) });                 // still "scheduled" 45 minutes after kickoff
+  assert.equal(probable.column.kind, "time"); assert.equal(probable.header.kind, "unconfirmed");
+});
