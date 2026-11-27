@@ -108,3 +108,12 @@ test("emptyDayInfo: an international break only with a senior national match wit
   r = M.emptyDayInfo([], sched, "2027-03-24", "2026-11-10");
   assert.deepEqual([r.intlBreak, r.clubResume], [true, null]);                // break, but no club match known yet
 });
+
+test("farDayKind: a day past the feed is never called empty while the schedule is still loading", () => {
+  const sched = { window: { end: "2027-05-31" }, matches: [] };
+  assert.equal(M.farDayKind("2027-01-10", sched, "ready"), "schedule");
+  assert.equal(M.farDayKind("2027-07-01", sched, "ready"), "unpublished");                  // beyond the schedule
+  assert.equal(M.farDayKind("2027-01-10", null, "loading"), "loading");                     // a #d= link opened before it lands
+  assert.equal(M.farDayKind("2027-01-10", null, "unavailable"), "unpublished");
+  assert.equal(M.farDayKind("2027-01-10", null, undefined), "unpublished");
+});

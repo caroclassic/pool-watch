@@ -105,3 +105,19 @@ test("no page loads any other outside script", () => {
     assert.deepEqual(outside, [], `${p}: only our own hosts and the beacon`);
   }
 });
+
+test("the pages that read the feeds preconnect to the feeds' origin (data-base), with crossorigin for fetch()", () => {
+  // Load speed (launch-plan step 2b, 2026-11-27): the feed fetches start only once the scripts run, so the
+  // connection to the blob is opened early. A preconnect to the wrong origin, or without crossorigin (fetch() uses
+  // an anonymous connection), would be silently wasted.
+  for (const page of ["index.html", "players.html"]) {
+    const html = readFileSync(new URL(page, root), "utf8");
+    const base = (/<html[^>]*\sdata-base="([^"]+)"/.exec(html) || [])[1];
+    assert.ok(base, `${page} has a data-base`);
+    const pre = [...html.matchAll(/<link rel="preconnect" href="([^"]+)"([^>]*)>/g)];
+    assert.equal(pre.length, 1, `${page} has one preconnect`);
+    assert.equal(pre[0][1], new URL(base).origin, `${page} preconnects to its data-base origin`);
+    assert.match(pre[0][2], /\scrossorigin\b/, `${page} preconnect carries crossorigin`);
+    assert.ok(html.indexOf(pre[0][0]) < html.indexOf('<link rel="stylesheet"'), `${page} preconnect comes before the stylesheets`);
+  }
+});

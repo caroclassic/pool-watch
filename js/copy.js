@@ -30,6 +30,8 @@ export const CALENDAR = {
   followsNone: "Nothing on the schedule yet:",
   tbc: "Time to be confirmed",
   noSchedule: "The longer schedule isn't available right now.",
+  loading: "Loading the longer schedule…",
+  loadingDay: "Loading the schedule for this day…",
   schedNote: "Schedule only. Who plays, confirmed times and where to watch appear closer to the day.",
 };
 

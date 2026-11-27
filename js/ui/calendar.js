@@ -23,13 +23,15 @@ export function scheduleTime(row, now, tz) {
 }
 
 /**
- * @param o { selected, todayKey, windowStart, facts:Map, inWindow(key), scheduleIdx:Map, schedule, bounds:{min,max},
- *            follows:Set, players:Map, now:Date, tz, onPick(key), from() }
+ * @param o { selected, todayKey, windowStart, facts:Map, inWindow(key), scheduleIdx:Map, schedule, scheduleLoading,
+ *            bounds:{min,max}, follows:Set, players:Map, now:Date, tz, onPick(key), from() }
+ * Returns the sheet, plus update({ scheduleIdx, schedule, bounds, scheduleLoading }) for a schedule that lands while
+ * the calendar is open (it repaints only while this calendar is still the open sheet).
  */
 export function calendarSheet(o) {
-  const horizonEnd = (o.schedule && o.schedule.window && o.schedule.window.end) || null;
-  const lo = `${o.bounds.min}-01`;
-  const hi = `${shiftMonth(o.bounds.max, 1)}-01`;                       // first day after the last month
+  const horizonEnd = () => (o.schedule && o.schedule.window && o.schedule.window.end) || null;
+  const lo = () => `${o.bounds.min}-01`;
+  const hi = () => `${shiftMonth(o.bounds.max, 1)}-01`;                 // first day after the last month
   let month = o.selected.slice(0, 7);
   if (month < o.bounds.min) month = o.bounds.min;
   if (month > o.bounds.max) month = o.bounds.max;
@@ -44,14 +46,14 @@ export function calendarSheet(o) {
     return { n, must: covered ? !!(f && f.must) : sched.some((r) => r.fixture_kind === "national_senior"),   // a senior national match is Must-watch by rule
              schedOnly: !covered && sched.length > 0,
              // beyond the schedule, or before the days the feed keeps: nothing is listed for it
-             outside: !covered && sched.length === 0 && (!horizonEnd || key > horizonEnd || (o.windowStart && key < o.windowStart)) };
+             outside: !covered && sched.length === 0 && (!horizonEnd() || key > horizonEnd() || (o.windowStart && key < o.windowStart)) };
   };
 
   // Picking a day closes the sheet first and changes the URL hash after the sheet's history step (see closeSheetThen).
   function pick(key) { sheet.closeThen(() => o.onPick(key)); }
 
   function goTo(key) {
-    if (key < lo || key >= hi) return;                                  // outside the months the calendar covers
+    if (key < lo() || key >= hi()) return;                                  // outside the months the calendar covers
     focusKey = key;
     month = key.slice(0, 7);
     paint();
@@ -111,7 +113,7 @@ export function calendarSheet(o) {
           h("li", null, h("span", { class: "t-must", "aria-hidden": "true" }), ` ${CALENDAR.legendMust}`),
           h("li", null, h("span", { class: "cal-ring", "aria-hidden": "true" }), ` ${CALENDAR.legendSched}`)),
         h("p", { class: "dim small" }, CALENDAR.timesNote),
-        !o.schedule ? h("p", { class: "dim small" }, CALENDAR.noSchedule) : null,
+        !o.schedule ? h("p", { class: "dim small", role: "status" }, o.scheduleLoading ? CALENDAR.loading : CALENDAR.noSchedule) : null,
         followsBlock()),
     ];
   }
@@ -121,5 +123,12 @@ export function calendarSheet(o) {
   sheet = openSheet(CALENDAR.title, body(), { from: o.from });
   const first = sheet.el.querySelector(`.cal-day[tabindex="0"]`) || sheet.el.querySelector(".cal-day");
   if (first) first.focus();
+  sheet.update = (next) => {
+    Object.assign(o, next);
+    if (!sheet.el.open || !sheet.el.querySelector(".sheet-body > .cal")) return;   // closed, or another sheet has replaced it
+    const hadFocus = sheet.el.contains(document.activeElement) && document.activeElement.classList.contains("cal-day");
+    paint();
+    if (hadFocus) { const b = sheet.el.querySelector(`.cal-day[data-day="${focusKey}"]`); if (b) b.focus(); }
+  };
   return sheet;
 }

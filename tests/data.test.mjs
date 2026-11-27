@@ -43,6 +43,7 @@ function harness(over = {}) {
     source, doc, clock: () => t, delay: () => over.delay ?? 60_000,
     timers: { setTimeout: (fn, ms) => { const h = { fn, ms }; timers.push(h); return h; }, clearTimeout: (h) => { if (h) h.cancelled = true; } },
     onData: (d, i) => events.push(["data", i.first]), onError: (e, i) => events.push(["error", i.first]),
+    onSchedule: (d) => events.push(["schedule", d.scheduleState]),
   });
   const live = () => timers.filter((x) => !x.cancelled && !x.fired);
   const fire = async () => { const h = live().at(-1); h.fired = true; await h.fn(); };
@@ -92,12 +93,58 @@ test("poller: the schedule is optional; a failing or missing schedule never brea
   // a schedule that loads, then one that fails on the next full refresh: the earlier copy is kept
   let n = 0;
   h = harness({ schedule: async () => { n++; if (n > 1) throw new D.FeedError("down", "network"); return { schedule: "v1" }; } });
-  await h.p.start(); assert.deepEqual(h.p.data.schedule, { schedule: "v1" });
+  await h.p.start(); await flush(); assert.deepEqual(h.p.data.schedule, { schedule: "v1" });
   h.advance(700_000); await h.fire();                                      // a full refresh, but the schedule is not re-read this soon
   assert.equal(n, 1); assert.deepEqual(h.p.data.schedule, { schedule: "v1" });
-  h.advance(6 * 3600_000); await h.fire();                                 // hours later it is re-read, fails, and the earlier copy is kept
-  assert.equal(n, 2); assert.deepEqual(h.p.data.schedule, { schedule: "v1" }); assert.equal(h.events.at(-1)[0], "data");
+  h.advance(6 * 3600_000); await h.fire(); await flush();                  // hours later it is re-read, fails, and the earlier copy is kept
+  assert.equal(n, 2); assert.deepEqual(h.p.data.schedule, { schedule: "v1" }); assert.equal(h.p.data.scheduleState, "ready");
+  assert.ok(!h.events.some((e) => e[0] === "error"), "a failed schedule refresh is never reported as a page error");
   // a schedule that never loads: matches still load, schedule is null (the page then says the longer schedule is unavailable)
   h = harness({ schedule: async () => { throw new D.FeedError("down", "network"); } });
-  await h.p.start(); assert.equal(h.p.data.schedule, null); assert.deepEqual(h.events[0], ["data", true]);
+  await h.p.start(); await flush(); assert.equal(h.p.data.schedule, null); assert.deepEqual(h.events[0], ["data", true]);
+  assert.equal(h.p.data.scheduleState, "unavailable");
+});
+
+const flush = () => new Promise((r) => setImmediate(r));
+const deferred = () => { let resolve, reject; const promise = new Promise((a, b) => { resolve = a; reject = b; }); return { promise, resolve, reject }; };
+
+test("poller: the page is drawn before schedule.json arrives, and its arrival is not a first load", async () => {
+  // Load speed (launch-plan step 2b): the schedule is the largest feed and only serves far days and the calendar.
+  const d = deferred(); let n = 0;
+  const h = harness({ schedule: () => { n++; return d.promise; } });
+  await h.p.start();
+  assert.deepEqual(h.events, [["data", true]]);                             // drawn with the schedule still on its way
+  assert.equal(h.p.data.schedule, null); assert.equal(h.p.data.scheduleState, "loading");
+  h.advance(60_000); await h.fire();                                        // a status tick meanwhile: no second request
+  assert.equal(n, 1); assert.equal(h.p.data.scheduleState, "loading");
+  d.resolve({ schedule: "v1" }); await flush();
+  assert.deepEqual(h.events, [["data", true], ["data", false], ["schedule", "ready"]]);   // handed over on its own, never as first
+  assert.deepEqual(h.p.data.schedule, { schedule: "v1" });
+});
+
+test("poller: a schedule that lands before the main feeds is stored and drawn with them, not handed over early", async () => {
+  const m = deferred();
+  const h = harness({ schedule: async () => ({ schedule: "v1" }) });
+  const src = { getMatches: () => m.promise };                              // matches held back
+  const p = D.createPoller({
+    source: { ...src, getStatus: async () => ({}), getPlayers: async () => ({}), getSchedule: async () => ({ schedule: "v1" }) },
+    doc: h.doc, clock: () => 0, delay: () => 60_000, timers: { setTimeout: () => ({}), clearTimeout: () => {} },
+    onData: (d, i) => h.events.push(["data", i.first, d.scheduleState]), onError: () => {}, onSchedule: () => h.events.push(["schedule"]),
+  });
+  const started = p.start(); await flush();
+  assert.deepEqual(h.events, []);                                            // nothing to draw yet, and no early hand-over
+  m.resolve({ m: 1 }); await started;
+  assert.deepEqual(h.events, [["data", true, "ready"]]);
+});
+
+test("poller: a failed schedule says so, is retried on the next full refresh, and never clears the page", async () => {
+  let n = 0;
+  const h = harness({ schedule: async () => { n++; if (n === 1) throw new D.FeedError("down", "http"); return { schedule: "v2" }; } });
+  await h.p.start(); await flush();
+  assert.deepEqual(h.events, [["data", true]]); assert.equal(h.p.data.scheduleState, "unavailable");   // failed before the first draw: drawn with it
+  h.advance(60_000); await h.fire(); await flush(); assert.equal(n, 1);     // a status tick does not retry it
+  h.advance(11 * 60_000); await h.fire(); await flush();                    // the next full refresh does
+  assert.equal(n, 2); assert.equal(h.p.data.scheduleState, "ready");
+  assert.ok(h.events.some((e) => e[0] === "schedule" && e[1] === "ready"), "the retried schedule is handed over");
+  assert.equal(h.calls.full, 2);                                             // the full refresh kept its timing
 });

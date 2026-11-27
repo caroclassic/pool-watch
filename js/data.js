@@ -55,17 +55,32 @@ export const pollDelay = (fast) => (fast ? POLL_ACTIVE_MS : POLL_IDLE_MS);
  * Loads everything once, then keeps status.json fresh. Pauses while the tab is
  * hidden and catches up the moment it is shown again.
  *
- *   load()      -> Promise<{matches, status, players}> for a full load
- *   loadStatus()-> Promise<status>
- *   delay()     -> ms until the next status check (called after each load)
+ * The page draws from matches, status and players alone: schedule.json (large, optional, only for days beyond the
+ * feed and the calendar) is fetched beside them but never waited for. When it lands, `onSchedule(data)` is called
+ * (not `onData`, so its arrival is never a first load and never clears an error). `data.scheduleState` says where
+ * it stands: "loading" (no copy yet, a fetch pending), "ready" (a copy, even if a later refresh failed),
+ * "unavailable" (no copy: the source has none, or the last fetch failed).
  */
-export function createPoller({ source, delay, onData, onError, doc = document, timers = { setTimeout: (...a) => setTimeout(...a), clearTimeout: (...a) => clearTimeout(...a) }, clock = () => Date.now() }) {
-  let data = { matches: null, status: null, players: null, schedule: null };
-  let timer = null, lastFull = 0, lastSched = 0, lastRun = 0, running = false, stopped = true, nextDelay = POLL_IDLE_MS;
+export function createPoller({ source, delay, onData, onError, onSchedule = () => {}, doc = document, timers = { setTimeout: (...a) => setTimeout(...a), clearTimeout: (...a) => clearTimeout(...a) }, clock = () => Date.now() }) {
+  let data = { matches: null, status: null, players: null, schedule: null, scheduleState: source.getSchedule ? "loading" : "unavailable" };
+  let timer = null, lastFull = 0, lastSched = 0, lastRun = 0, running = false, stopped = true, nextDelay = POLL_IDLE_MS, schedPending = false;
 
   const hidden = () => doc && doc.visibilityState === "hidden";
   const clear = () => { if (timer !== null) { timers.clearTimeout(timer); timer = null; } };
   const schedule = (ms) => { clear(); if (!stopped && !hidden()) timer = timers.setTimeout(tick, ms); };
+
+  // The schedule is optional: if it fails the page keeps working (and keeps the last good copy, if it has one).
+  // It is large and rebuilt daily, so it is re-read only when we have none (at most once per full refresh) or
+  // every few hours. Its result is handed over on its own; before the first full load it is only stored.
+  function loadSchedule() {
+    schedPending = true;
+    if (!data.schedule) data = { ...data, scheduleState: "loading" };
+    return source.getSchedule().catch(() => null).then((sched) => {
+      schedPending = false; lastSched = clock();
+      data = { ...data, schedule: sched || data.schedule, scheduleState: sched || data.schedule ? "ready" : "unavailable" };
+      if (data.matches !== null) onSchedule(data);
+    });
+  }
 
   async function tick({ full = false } = {}) {
     if (running) return;
@@ -73,13 +88,9 @@ export function createPoller({ source, delay, onData, onError, doc = document, t
     const first = data.matches === null;
     try {
       if (first || full || clock() - lastFull >= FULL_REFRESH_MS) {
-        // The schedule is optional: if it fails the page keeps working (and keeps the last good copy, if it has one).
-        // It is large and rebuilt daily, so it is re-read only the first time, when we have none, or every few hours.
-        const wantSched = source.getSchedule && (first || !data.schedule || clock() - lastSched >= SCHEDULE_REFRESH_MS);
-        const sched = wantSched ? source.getSchedule().catch(() => null) : Promise.resolve(null);
-        const [matches, status, players, schedule] = await Promise.all([source.getMatches(), source.getStatus(), source.getPlayers(), sched]);
-        if (wantSched) lastSched = clock();
-        data = { matches, status, players, schedule: schedule || data.schedule }; lastFull = clock();
+        if (source.getSchedule && !schedPending && (!data.schedule || clock() - lastSched >= SCHEDULE_REFRESH_MS)) loadSchedule();
+        const [matches, status, players] = await Promise.all([source.getMatches(), source.getStatus(), source.getPlayers()]);
+        data = { ...data, matches, status, players }; lastFull = clock();
       } else {
         data = { ...data, status: await source.getStatus() };
       }

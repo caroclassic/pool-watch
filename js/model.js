@@ -521,6 +521,17 @@ export function moveFocus(key, pressed) {
   }
 }
 
+/**
+ * A day after the feed's window: "schedule" when the far-ahead schedule covers it, "loading" while the schedule
+ * has not arrived yet (the page draws before it; it must never call such a day empty), else "unpublished".
+ * `scheduleState` is the poller's ("loading" | "ready" | "unavailable").
+ */
+export function farDayKind(day, schedule, scheduleState) {
+  if (schedule && schedule.window && day <= schedule.window.end) return "schedule";
+  if (!schedule && scheduleState === "loading") return "loading";
+  return "unpublished";
+}
+
 /** First and last month ("YYYY-MM") the calendar can show: the feed's window start to the schedule's end. */
 export function calendarBounds(todayKey, matchesFeed, schedule) {
   const start = (matchesFeed && matchesFeed.window && matchesFeed.window.start) || addDays(todayKey, -3);

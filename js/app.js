@@ -5,7 +5,7 @@ import { dataBase, STALE_MINUTES, STRIP_BACK, STRIP_AHEAD } from "./config.js";
 import { createHttpSource, createPoller, shouldPollFast, pollDelay } from "./data.js";
 import {
   mergeFeeds, tiersEnabled, buildDay, dayFacts, stripDays, inWindow, dayGap, daysKept,
-  scheduleIndex, calendarBounds,
+  scheduleIndex, calendarBounds, farDayKind,
   nextMatchFor, emptyDayInfo, pageLate, followedChanges, rolledOver, nextAnchorToday,
 } from "./model.js";
 import { createStorage, createFollowsStore, createFlags, parseHash, buildHash, decodeShare, readLegacyFollows } from "./storage.js";
@@ -42,6 +42,7 @@ const S = {
   data: null,            // { matches, status, players }
   views: [],
   schedIdx: new Map(),   // ET day -> far-ahead schedule rows (schedule.json); empty when it did not load
+  calendar: null,        // the last calendar sheet opened (repainted if schedule.json lands while it is open)
   players: new Map(),
   error: null,
   selected: null,        // ET day key on screen
@@ -139,13 +140,18 @@ function section(label, cards, { cls = "", sub = null, termKey = null, showTier 
 
 function openCalendar() {
   const c = ctx(S.selected);
-  calendarSheet({
+  S.calendar = calendarSheet({
     selected: S.selected, todayKey: c.todayKey, windowStart: S.data.matches.window && S.data.matches.window.start,
     facts: dayFacts(S.views, c), inWindow: (k) => inWindow(S.data.matches, k),
-    scheduleIdx: S.schedIdx, schedule: S.data.schedule, bounds: calendarBounds(c.todayKey, S.data.matches, S.data.schedule),
+    ...calendarSchedule(c), scheduleLoading: S.data.scheduleState === "loading",
     follows: follows.ids(), players: S.players, now: nowDate(), tz: viewerTz(), onPick: (k) => { selectDay(k); const b = document.querySelector(".cal-open"); if (b) b.focus(); },   // the strip re-renders, so focus the new button
     from: () => document.querySelector(".cal-open"),
   });
+}
+
+// The calendar's schedule-dependent options; recomputed when schedule.json lands while the calendar is open.
+function calendarSchedule(c) {
+  return { scheduleIdx: S.schedIdx, schedule: S.data.schedule, bounds: calendarBounds(c.todayKey, S.data.matches, S.data.schedule) };
 }
 
 // What an empty day can say about what comes next (model.js emptyDayInfo): an international break and when club
@@ -160,6 +166,8 @@ function emptyNext(day, c) {
   if (info.next) {
     const label = (info.source === "feed" ? EMPTY.nextDay : EMPTY.nextOnSchedule)(dayHeading(info.next)) + (info.inDays ? EMPTY.inDays(info.inDays) : "");
     out.push(h("p", null, h("button", { type: "button", class: "btn-link", onclick: () => selectDay(info.next) }, label)));
+  } else if (!S.data.schedule && S.data.scheduleState === "loading") {
+    out.push(h("p", { class: "dim" }, CALENDAR.loading));        // the schedule may still name a next day: claim nothing yet
   } else {
     out.push(h("p", { class: "dim" }, EMPTY.nothingScheduled));
   }
@@ -201,7 +209,11 @@ function emptyState(day, c) {
         ? `Stateside XI keeps the last ${kept === 1 ? "day" : `${kept} days`} and the days ahead.`
         : "Stateside XI lists today and the days ahead, not past days."));
   }
-  if (gap === "future" && S.data.schedule && day <= S.data.schedule.window.end) return scheduleDay(day, c);
+  const far = gap === "future" ? farDayKind(day, S.data.schedule, S.data.scheduleState) : null;
+  if (far === "schedule") return scheduleDay(day, c);
+  if (far === "loading") {
+    return h("div", { class: "empty", role: "status" }, h("p", { class: "empty-title" }, CALENDAR.loadingDay));
+  }
   if (gap === "future") {
     return h("div", { class: "empty" },
       h("p", { class: "empty-title" }, "This day isn't published yet."),
@@ -271,7 +283,7 @@ function renderMain() {
   }
 
   nodes.push(footer());
-  return { nodes, sig: JSON.stringify([d, head, today, S.introGone, follows.count() === 0, [...S.expanded], S.data.schedule && S.data.schedule.updated_at, [...follows.ids()]]) };
+  return { nodes, sig: JSON.stringify([d, head, today, S.introGone, follows.count() === 0, [...S.expanded], S.data.schedule && S.data.schedule.updated_at, S.data.scheduleState, [...follows.ids()]]) };
 }
 
 function footer() {
@@ -340,7 +352,7 @@ function render() {
   const days = stripDays(c.todayKey, STRIP_BACK, STRIP_AHEAD);
   if (!days.includes(S.selected)) days.push(S.selected), days.sort();
   const facts = dayFacts(S.views, c);
-  const ssig = JSON.stringify([S.selected, c.todayKey, days, [...facts]]);
+  const ssig = JSON.stringify([S.selected, c.todayKey, days, [...facts], S.data.schedule && S.data.schedule.updated_at]);   // the schedule marks a far selected day
   if (ssig !== lastSig.strip) {
     const prev = els.strip.querySelector(".strip");
     const left = prev ? prev.scrollLeft : null;
@@ -411,6 +423,15 @@ function onData(data, { first }) {
   render();
 }
 
+// schedule.json arrived after the page was drawn (it is never waited for). Not a first load, and it leaves any
+// error the main feeds reported in place.
+function onSchedule(data) {
+  S.data = { ...S.data, schedule: data.schedule, scheduleState: data.scheduleState };
+  S.schedIdx = scheduleIndex(data.schedule);
+  if (S.calendar) S.calendar.update({ ...calendarSchedule(ctx(S.selected)), scheduleLoading: false });
+  render();
+}
+
 function onError(err) {
   S.error = err;
   render();
@@ -443,7 +464,7 @@ function boot() {
   poller = createPoller({
     source, clock: clockMs,
     delay: (data) => pollDelay(shouldPollFast(mergeFeeds(data.matches, data.status), data.status, nowDate())),
-    onData, onError,
+    onData, onError, onSchedule,
   });
   poller.start();
   setInterval(() => { if (S.data && document.visibilityState !== "hidden") render(); }, 30_000);
