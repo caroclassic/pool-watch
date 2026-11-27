@@ -132,7 +132,7 @@ export const ABOUT = [
   { em: "Follow the chase for the shirt. Track who's in the picture." },
   { p: "Every day, Stateside XI answers one question: <b>which games should I put on to watch the pool?</b>" },
   { p: "<b>The pool</b> is the group of players in the picture for the U.S. men's national team: regulars, players pushing for a spot, and young prospects. They play for clubs all over the world, so the games worth watching are scattered across dozens of leagues." },
-  { p: "We list each day's matches that feature pool players, flag the ones that matter most, show where to watch them in the U.S., and confirm the starting lineups about 30 minutes before kickoff, so you know who's actually playing before you pick a game. In some competitions we also show who comes on or goes off during the match." },
+  { p: "We list each day's matches featuring pool players, highlight the ones that matter most, show where to watch them in the U.S., and confirm the starting lineups about 30 minutes before kickoff so you know who's actually playing before you pick a game. In some competitions, we also show who comes on or goes off during the match." },
   { p: "<b>Squad involvement</b> is how embedded each player is in the national team squad, and it sets the order of the Players list. It measures presence, not quality or importance. Matches are rated by which pool players are likely to play." },
   { p: "<b>Follow</b> players to pin their matches to the top of the page. Your follows are saved on this device." },
   { p: "<b>What we don't do:</b> scores, stats, standings or match analysis. We're only here to help you pick the game." },
