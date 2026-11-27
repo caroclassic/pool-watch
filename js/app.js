@@ -129,11 +129,11 @@ let lastSig = { main: "", strip: "", banners: "", head: "" };
 let termSeen = new Set();
 const cardUi = () => ({ expanded: S.expanded, onPlayer: openPlayer, onToggleExpand: toggleExpand, termSeen });
 
-function section(label, cards, { cls = "", sub = null, termKey = null, showTier = true } = {}) {
+function section(label, cards, { cls = "", sub = null, termKey = null, band = null } = {}) {
   if (!cards.length) return null;
   // A band without a heading (the day's only band) puts its cards' team names right under the day's h2, so they
   // become h3s there: the outline must not skip a level.
-  const ui = { ...cardUi(), showTier, headLevel: label ? 4 : 3 };
+  const ui = { ...cardUi(), band, headLevel: label ? 4 : 3 };
   return h("section", { class: `band ${cls}`, "aria-label": label },
     label ? h("h3", { class: "band-title" }, termKey ? term(label, termKey) : label, sub ? h("span", { class: "band-sub" }, ` ${sub}`) : null) : null,
     cards.map((c) => renderCard(c, ui)));
@@ -264,9 +264,9 @@ function renderMain() {
   } else {
     nodes.push(section("Your players", d.pinned, { cls: "band-pinned" }));
     nodes.push(section("Live now", d.live, { cls: "band-live", sub: liveSub(d.live) }));
-    nodes.push(section("Must-watch", d.must, { cls: "band-must", termKey: "must_watch", showTier: false }));
+    nodes.push(section("Must-watch", d.must, { cls: "band-must", termKey: "must_watch", band: "must_watch" }));
     if (d.noMustCopy) nodes.push(h("p", { class: "no-must" }, d.noMustCopy));
-    nodes.push(section("Worth a look", d.worth, { cls: "band-worth", termKey: "worth_a_look", showTier: false }));
+    nodes.push(section("Worth a look", d.worth, { cls: "band-worth", termKey: "worth_a_look", band: "worth_a_look" }));
     const hasAbove = d.pinned.length || d.live.length || d.must.length || d.worth.length;
     nodes.push(section(hasAbove ? (today ? "Also today" : "Also this day") : "", d.rest));
     nodes.push(section("Postponed or cancelled", d.disrupted, { cls: "band-disrupted" }));

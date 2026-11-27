@@ -146,7 +146,6 @@ h1.brand a { text-decoration: none; }
 
 /* card */
 .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); margin: 0 0 8px; box-shadow: var(--shadow-card); overflow: hidden; container-type: inline-size; }
-.band-must .card { border-left: 5px solid var(--accent); }
 .card.is-dim .teams { color: var(--dim); }
 /* the 64 px time column, the same width on every card so the times line up (brand refresh, issue 5) */
 .card-in { display: flex; gap: 12px; padding: 12px 14px 12px 12px; }
@@ -165,8 +164,9 @@ h1.brand a { text-decoration: none; }
   .tc-time { font-size: 1.375rem; }
 }
 .card-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2px 8px; font: 700 0.6875rem var(--font-display); text-transform: uppercase; letter-spacing: .1em; }
-.badge { color: var(--dim); flex: 0 1 auto; }
-.badge-must_watch { background: var(--accent); color: var(--on-fill); padding: 2px 8px; border-radius: 4px; }
+.level-label { color: var(--dim); flex: 0 1 auto; }
+/* Must-watch on a card outside the Must-watch band (Live now, Your players, Earlier): the banner, no wash, no rail */
+.mw-banner { background: var(--accent); color: var(--on-fill); font: 700 0.6875rem/1.3 var(--font-display); letter-spacing: .14em; text-transform: uppercase; padding: 5px 12px; }
 .status { color: var(--dim); margin-left: auto; text-align: right; }
 .status-sub { font-weight: 500; text-transform: none; letter-spacing: 0; color: var(--dim); }
 .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--live); display: inline-block; flex: none; }   /* live blue, always: no pulse (it faded to grey) */

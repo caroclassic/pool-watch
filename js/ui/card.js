@@ -3,6 +3,7 @@
 import { h } from "./dom.js";
 import { term, listTerm } from "./popover.js";
 import { WATCH } from "../copy.js";
+import { levelMark } from "../model.js";
 import { icon } from "./icons.js";
 
 
@@ -31,13 +32,9 @@ function header(c, ui) {
     : s.kind === "lineups" && ui.termSeen && !ui.termSeen.has("lineups")
       ? (ui.termSeen.add("lineups"), h("span", { class: "status status-lineups" }, term("Lineups confirmed", "lineups"), " ✓"))
       : h("span", { class: `status status-${s.kind}` }, s.text);
-  // The Must-watch / Worth a look bands already name the tier in their heading,
-  // so cards there skip the badge (ui.showTier === false). Elsewhere (Your
-  // players, Live now, Earlier) the badge is the only place the tier shows.
-  const badge = c.tier && ui.showTier !== false
-    ? h("span", { class: `badge badge-${c.tier}` }, c.tierWord.toUpperCase())
-    : null;
-  return badge || status ? h("div", { class: "card-head" }, badge, status) : null;
+  // Worth a look outside its own band: a small label here (Must-watch gets the banner instead; model.js levelMark).
+  const label = levelMark(c.tier, ui.band) === "label" ? h("span", { class: "level-label" }, c.tierWord) : null;
+  return label || status ? h("div", { class: "card-head" }, label, status) : null;
 }
 
 // Where to watch: ONE provider named on the card, the rest behind "+ N more"; with no listing, nothing. (A plain
@@ -69,7 +66,8 @@ function chip(c, onPlayer) {
 
 /**
  * @param c         cardView model
- * @param ui        { expanded:Set, onPlayer(id, el), onToggleExpand(cardId), headLevel?: 3 | 4 (default 4) }
+ * @param ui        { expanded:Set, onPlayer(id, el), onToggleExpand(cardId), headLevel?: 3 | 4 (default 4),
+ *                    band?: "must_watch" | "worth_a_look" | null (the band the card is drawn in) }
  */
 export function renderCard(c, ui) {
   const open = ui.expanded.has(c.id);
@@ -82,6 +80,8 @@ export function renderCard(c, ui) {
     class: ["card", c.tier ? `tier-${c.tier}` : "", c.pinned ? "is-pinned" : "", c.dim ? "is-dim" : "", `st-${c.status}`].filter(Boolean).join(" "),
     "aria-label": c.ariaLabel, dataset: { id: c.id },
   },
+   // Must-watch outside the Must-watch band: a full-width coral banner (the only coral on a card)
+   levelMark(c.tier, ui.band) === "banner" ? h("div", { class: "mw-banner" }, c.tierWord) : null,
    h("div", { class: "card-in" },
     column(c),
     h("div", { class: "card-body" },

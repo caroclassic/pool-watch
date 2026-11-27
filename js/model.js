@@ -265,6 +265,20 @@ function statusHeader(v, fresh, now, tz) {
   return { kind: "pre", text: `Lineups ~${LINEUP_USUAL_MIN} min before kickoff` };
 }
 
+/**
+ * How a card states its level (brand refresh; addendum §3): only outside that level's own band, because inside it the
+ * heading already says it (Fixed decision 12: tier stated once). Must-watch outside its band is the coral banner
+ * across the top of the card; Worth a look outside its band is a small label in the head line; an unbadged match,
+ * or a card in its level's own band, shows nothing. `band` is the band the card is drawn in ("must_watch",
+ * "worth_a_look", or null for Your players, Live now, Still live, Earlier, Postponed and the unbadged band).
+ */
+export function levelMark(tier, band) {
+  if (!tier || tier === band) return null;
+  if (tier === "must_watch") return "banner";
+  if (tier === "worth_a_look") return "label";
+  return null;
+}
+
 // Interrupted / suspended: play has stopped, so the column shows the word alone, in ink, never LIVE (addendum §1).
 const HALTED = new Set(["interrupted", "suspended"]);
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
