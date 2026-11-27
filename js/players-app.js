@@ -4,7 +4,7 @@
 import { dataBase, FULL_REFRESH_MS } from "./config.js";
 import { createHttpSource } from "./data.js";
 import { createStorage, createFollowsStore, createFlags, readLegacyFollows } from "./storage.js";
-import { indexPlayers, tierLabel, lastNamedLine, ageLine } from "./players-model.js";
+import { indexPlayers, tierLabel, lastNamedLine, ageLine, rowTier } from "./players-model.js";
 import { mergeFeeds, nextMatchFor } from "./model.js";
 import { prepare, visible, missingFollows, initials, involvementBands, FILTERS, FILTER_LABEL } from "./players-list.js";
 import { h, clear } from "./ui/dom.js";
@@ -61,14 +61,15 @@ const openFollowing = (from) => followingSheet({
 
 // ── rendering ───────────────────────────────────────────────────────────────
 // One row (brand refresh, issue 7): photo, then name, details and "Last named" in one column, Follow centred. In the
-// Involvement view the band heading states a senior's tier, so the row does not; an uncapped prospect, and every
-// row in A–Z, carries its tier as the first item of the details line.
+// Involvement view the band heading states a senior's tier, so the row does not; elsewhere the tier leads the
+// details line, except for a prospect never named to a senior squad, whose third line is the tier (rowTier).
 function tile(p, inBand) {
   const followed = follows.has(p.playerId);
   const ln = lastNamedLine(p, nowDate());
-  const tierHere = !inBand || p.is_prospect;
+  const { tierInDetails: tierHere, tierLine } = rowTier(p, inBand);
   const age = ageLine(p);
-  const sub = [p.position, p.club, age && age.replace(" ", "\u00a0")].filter(Boolean).join(" · ");   // "Age 24" never splits
+  // "Age 24" never splits, and a dot stays with the word before it when the line wraps
+  const sub = [p.position, p.club, age && age.replace(" ", "\u00a0")].filter(Boolean).join("\u00a0· ");
   const photo = p.photo
     ? h("img", { src: p.photo, alt: "", width: 52, height: 52, loading: "lazy", decoding: "async", referrerpolicy: "no-referrer", onerror: (e) => e.target.remove() })
     : null;
@@ -76,8 +77,10 @@ function tile(p, inBand) {
     h("span", { class: "avatar", "aria-hidden": "true" }, h("span", { class: "initials" }, initials(p.display_name)), photo),
     h("div", { class: "pt-body" },
       h("button", { type: "button", class: "pt-name", onclick: (e) => openPlayer(p.playerId, e.currentTarget) }, p.display_name),
-      tierHere || sub ? h("p", { class: "pt-sub" }, tierHere ? h("span", { class: "pt-tier" }, tierLabel(p)) : null, tierHere && sub ? " · " : null, sub) : null,
-      h("p", { class: `pt-last${ln.muted ? " is-muted" : ""}` }, ln.text, ln.rel ? ` · ${ln.rel}` : "")),
+      tierHere || sub ? h("p", { class: "pt-sub" }, tierHere ? h("span", { class: "pt-tier" }, tierLabel(p)) : null, tierHere && sub ? "\u00a0· " : null, sub) : null,
+      tierLine
+        ? h("p", { class: "pt-last" }, h("span", { class: "pt-tier" }, tierLabel(p)))   // "PROSPECT · U21" (the card keeps "Youth level: U21")
+        : h("p", { class: `pt-last${ln.muted ? " is-muted" : ""}` }, ln.text, ln.rel ? ` · ${ln.rel}` : "")),
     followBtn(p, followed));
 }
 

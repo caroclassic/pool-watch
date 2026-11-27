@@ -90,3 +90,16 @@ test("involvementBands: one band per senior tier in feed order; prospects stay i
   assert.deepEqual(L.involvementBands([P("p1", null, true), P("p2", null, true)], tierOf).map((b) => [b.label, b.rows.length]), [[null, 2]]);
   assert.deepEqual(L.involvementBands([], tierOf), []);
 });
+
+test("rowTier: a prospect never named to a senior squad says its tier on the third line, once", async () => {
+  const { rowTier } = await import("../js/players-model.js");
+  const prospect = { is_prospect: true, youth_level: "U21", last_named: null };
+  assert.deepEqual(rowTier(prospect, true), { tierInDetails: false, tierLine: true });    // Involvement, inside a band
+  assert.deepEqual(rowTier(prospect, false), { tierInDetails: false, tierLine: true });   // A–Z
+  // a prospect already named to a senior squad keeps "Last named"; its tier leads the details line
+  const named = { is_prospect: true, youth_level: "U20", last_named: { date: "2026-11-17" } };
+  assert.deepEqual(rowTier(named, true), { tierInDetails: true, tierLine: false });
+  // seniors: the band heading says it in Involvement; the details line in A–Z
+  assert.deepEqual(rowTier({ is_prospect: false, tier: "core" }, true), { tierInDetails: false, tierLine: false });
+  assert.deepEqual(rowTier({ is_prospect: false, tier: "core" }, false), { tierInDetails: true, tierLine: false });
+});

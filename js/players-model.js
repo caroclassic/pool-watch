@@ -53,6 +53,18 @@ export function lastNamedLine(p, now = new Date()) {
   return { text: `Last named: ${bits.join(" · ")}`, rel, muted: months >= 12 };
 }
 
+/**
+ * Where a Players-page row states the tier (decided 2026-11-27). A prospect never named to a senior squad has its tier
+ * as the third line ("Prospect · U21"), in place of the player card's "Youth level: U21", and the details line leaves
+ * it out so it is said once. Anyone else: the tier leads the details line when the row is outside a tier band (A–Z,
+ * or a prospect inside a senior band); the third line is "Last named".
+ *   { tierInDetails, tierLine }   tierLine true = the third line is the tier label
+ */
+export function rowTier(p, inBand) {
+  const tierLine = !!(p.is_prospect && p.youth_level && !(p.last_named && p.last_named.date));
+  return { tierInDetails: !tierLine && (!inBand || !!p.is_prospect), tierLine };
+}
+
 /** Index players.json by playerId. */
 export function indexPlayers(feed) {
   const map = new Map();
