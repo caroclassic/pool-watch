@@ -21,3 +21,36 @@ test("the Must-watch rail and the filled card badge are gone", () => {
   assert.doesNotMatch(css, /border-left:\s*5px/, "no 5 px rail");
   assert.doesNotMatch(css, /\.badge-must_watch/, "no filled card badge");
 });
+
+// Every CSS rule as [selector, body], comments removed (enough for this stylesheet: no nested rules except @media/@container).
+const rules = [...css.replace(/\/\*[\s\S]*?\*\//g, "").matchAll(/([^{}]+)\{([^{}]*)\}/g)].map((m) => [m[1].trim(), m[2]]);
+
+test("coral (--accent) is used only for Must-watch and the logo's XI", () => {
+  // the wordmark's XI, the Must-watch day dot, the Must-watch banner (README: "One job per color")
+  const ALLOWED = new Set([".brand .xi", ".t-must", ".mw-banner"]);
+  const users = rules.filter(([, body]) => /var\(--accent\)/.test(body)).map(([sel]) => sel);
+  assert.ok(users.length >= 3, "the allowed uses are present");
+  for (const sel of users) assert.ok(ALLOWED.has(sel), `--accent used by "${sel}"`);
+});
+
+test("focus rings use --focus (ink), never coral", () => {
+  const focus = rules.filter(([sel]) => /:focus-visible/.test(sel));
+  assert.ok(focus.length);
+  for (const [sel, body] of focus) assert.match(body, /var\(--focus\)/, sel);
+  assert.doesNotMatch(css, /--blue/, "the old --blue name is gone");
+});
+
+test("tags, buttons, segments and tabs are at least 44 px tall", () => {
+  assert.match(css, /--touch:\s*44px/);
+  for (const sel of [".chip", ".btn", ".btn-text", ".btn-link", ".icon-btn", ".seg-opt", ".sitenav a", ".search", ".cal-step", ".term.term-info"]) {
+    const r = rules.find(([s]) => s === sel);
+    assert.ok(r, `${sel} has its own rule`);
+    assert.match(r[1], /(min-)?height:\s*(var\(--touch\)|4[4-9]px)/, `${sel} is at least 44 px`);
+  }
+});
+
+test("only filter chips may be pills: no other rule uses a pill radius", () => {
+  for (const [sel, body] of rules) {
+    if (/border-radius:[^;]*(var\(--radius-pill\)|\b(2[2-9]|[3-9]\d|\d{3,})px)/.test(body)) assert.fail(`pill radius on "${sel}"`);
+  }
+});
