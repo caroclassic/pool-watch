@@ -265,21 +265,21 @@ textarea.mono { width: 100%; margin-bottom: 10px; }
 .sort { margin-left: auto; }
 .count { color: var(--dim); font-size: 0.875rem; margin: 10px 2px 0; }
 .players-list { list-style: none; margin: 6px 0 0; padding: 0; }
-.ptile { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; padding: 12px 2px; border-bottom: 1px solid var(--line); }
-.ptile.is-followed .avatar { box-shadow: 0 0 0 2px var(--accent); }
-.avatar { position: relative; width: 52px; height: 52px; border-radius: 50%; overflow: hidden; background: var(--line); }
-.avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.initials { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--ink); font: 700 1.0625rem var(--sans); }
+/* Players rows (brand refresh, issue 7): photo on a card tile, one text column, Follow centred */
+.ptile { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.avatar { position: relative; width: var(--photo-sm); height: var(--photo-sm); border-radius: 10px; overflow: hidden; background: var(--card); }
+.ptile.is-followed .avatar { box-shadow: 0 0 0 2px var(--ink); }
+.avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.initials { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--dim); font: 700 1.0625rem var(--font-display); }
 .pt-body p { margin: 0; }
-.pt-name { min-height: 44px; margin: -10px 0 -10px; padding: 0; background: none; border: 0; color: var(--ink); font: 700 1.1875rem/1.2 var(--sans); text-align: left; cursor: pointer; }
+.pt-name { min-height: var(--touch); margin: -12px 0 -10px; padding: 0; background: none; border: 0; color: var(--ink); font: 700 1.125rem/1.2 var(--font-display); text-align: left; cursor: pointer; }
 .pt-name:hover { text-decoration: underline; text-underline-offset: 3px; }
-.pt-name-static { font: 700 1.1875rem var(--sans); }
-.pt-tier { font: 700 0.8125rem var(--sans); text-transform: uppercase; letter-spacing: .08em; margin-top: 8px !important; }
-.pt-word { color: var(--accent); }
-.pt-num { color: var(--dim); font-weight: 500; }
+.pt-name-static { font: 700 1.125rem var(--font-display); }
 .pt-sub { font-size: 0.875rem; color: var(--dim); }
-.pt-last { font-size: 0.875rem; margin-top: 3px !important; }
-.pt-last.is-muted { color: var(--dim); }
+.pt-tier { font: 700 0.75rem var(--font-display); text-transform: uppercase; letter-spacing: .08em; }
+.pt-last { font-size: 0.875rem; color: var(--dim); }
+.pband { list-style: none; padding: 18px 0 2px; border-bottom: 1px solid var(--line); }
+.pband-title { font: 700 0.75rem var(--font-display); text-transform: uppercase; letter-spacing: .1em; color: var(--dim); margin: 0; }
 .btn-sm { padding: 0 14px; white-space: nowrap; }
 .empty { list-style: none; padding: 36px 4px; text-align: center; color: var(--dim); }
 .foot-note { color: var(--dim); font-size: 0.875rem; margin: 24px 2px 4px; }

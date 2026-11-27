@@ -4,9 +4,9 @@
 import { dataBase, FULL_REFRESH_MS } from "./config.js";
 import { createHttpSource } from "./data.js";
 import { createStorage, createFollowsStore, createFlags, readLegacyFollows } from "./storage.js";
-import { indexPlayers, tierLabel, lastNamedLine } from "./players-model.js";
+import { indexPlayers, tierLabel, lastNamedLine, ageLine } from "./players-model.js";
 import { mergeFeeds, nextMatchFor } from "./model.js";
-import { prepare, visible, missingFollows, initials, FILTERS, FILTER_LABEL } from "./players-list.js";
+import { prepare, visible, missingFollows, initials, involvementBands, FILTERS, FILTER_LABEL } from "./players-list.js";
 import { h, clear } from "./ui/dom.js";
 import { setFollowButton, setFollowState, icon } from "./ui/icons.js";
 import { term } from "./ui/popover.js";
@@ -60,10 +60,15 @@ const openFollowing = (from) => followingSheet({
 });
 
 // ── rendering ───────────────────────────────────────────────────────────────
-function tile(p) {
+// One row (brand refresh, issue 7): photo, then name, details and "Last named" in one column, Follow centred. In the
+// Involvement view the band heading states a senior's tier, so the row does not; an uncapped prospect, and every
+// row in A–Z, carries its tier as the first item of the details line.
+function tile(p, inBand) {
   const followed = follows.has(p.playerId);
   const ln = lastNamedLine(p, nowDate());
-  const sub = [p.position, p.club].filter(Boolean).join(" · ");
+  const tierHere = !inBand || p.is_prospect;
+  const age = ageLine(p);
+  const sub = [p.position, p.club, age && age.replace(" ", "\u00a0")].filter(Boolean).join(" · ");   // "Age 24" never splits
   const photo = p.photo
     ? h("img", { src: p.photo, alt: "", width: 52, height: 52, loading: "lazy", decoding: "async", referrerpolicy: "no-referrer", onerror: (e) => e.target.remove() })
     : null;
@@ -71,9 +76,7 @@ function tile(p) {
     h("span", { class: "avatar", "aria-hidden": "true" }, h("span", { class: "initials" }, initials(p.display_name)), photo),
     h("div", { class: "pt-body" },
       h("button", { type: "button", class: "pt-name", onclick: (e) => openPlayer(p.playerId, e.currentTarget) }, p.display_name),
-      h("p", { class: "pt-tier" },
-        h("span", { class: `pt-word${p.is_prospect ? " is-prospect" : ""}` }, tierLabel(p))),
-      sub ? h("p", { class: "pt-sub" }, sub) : null,
+      tierHere || sub ? h("p", { class: "pt-sub" }, tierHere ? h("span", { class: "pt-tier" }, tierLabel(p)) : null, tierHere && sub ? " · " : null, sub) : null,
       h("p", { class: `pt-last${ln.muted ? " is-muted" : ""}` }, ln.text, ln.rel ? ` · ${ln.rel}` : "")),
     followBtn(p, followed));
 }
@@ -133,8 +136,15 @@ function renderList() {
       ? "You aren't following anyone yet. Tap Follow on any player and they'll show up here."
       : "No players match that search.";
     els.list.append(h("li", { class: "empty" }, msg));
+  } else if (S.sort === "rel") {
+    // Involvement: the tier is stated once, as a band heading (prospects stay inside the surrounding band)
+    for (const b of involvementBands(rows, (p) => tierLabel(p))) {
+      if (b.label) els.list.append(h("li", { class: "pband" }, h("h3", { class: "pband-title" }, b.label)));
+      els.list.append(...b.rows.map((p) => tile(p, true)));
+    }
+    els.list.append(...gone.map(missingTile));
   } else {
-    els.list.append(...rows.map(tile), ...gone.map(missingTile));
+    els.list.append(...rows.map((p) => tile(p, false)), ...gone.map(missingTile));
   }
   if (keep) restoreFocus(keep);
 }
@@ -151,7 +161,11 @@ function focusInList() {
 function restoreFocus(k) {
   const li = [...els.list.children].find((n) => n.dataset.pid === k.pid);
   let t = li && (k.name ? li.querySelector(".pt-name") : li.querySelector(".btn-sm"));
-  if (!t) { const n = els.list.children[Math.min(k.idx, els.list.children.length - 1)]; t = n && n.querySelector(".btn-sm"); }
+  if (!t) {   // the tile is gone: the next row's Follow button (band headings have none), else the last one
+    const kids = [...els.list.children];
+    const n = kids.slice(Math.min(k.idx, kids.length - 1)).find((x) => x.querySelector(".btn-sm")) || kids.reverse().find((x) => x.querySelector(".btn-sm"));
+    t = n && n.querySelector(".btn-sm");
+  }
   (t || $("main")).focus();
 }
 

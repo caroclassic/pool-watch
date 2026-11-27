@@ -79,3 +79,23 @@ export function missingFollows(list, follows) {
 export function visible(list, { filter, query, sort, follows }) {
   return sortPlayers(list.filter((p) => inFilter(p, filter, follows) && matchesQuery(p, query)), sort);
 }
+
+/**
+ * Involvement view: the rows in their own order, grouped under their senior tier (brand refresh; addendum §4). An
+ * uncapped prospect (is_prospect) stays where the order puts it, inside the surrounding band (its row says
+ * "Prospect · U20"), so prospects never open bands of their own. Prospects ahead of every senior join the first
+ * senior's band; a list of prospects only has one band with no label (null: no heading). `tierOf(p)` names a
+ * senior's band.
+ */
+export function involvementBands(rows, tierOf) {
+  const out = [];
+  for (const p of rows) {
+    const cur = out[out.length - 1];
+    const label = p.is_prospect ? null : tierOf(p);
+    if (!cur) out.push({ label, rows: [p] });
+    else if (label === null || label === cur.label) cur.rows.push(p);
+    else if (cur.label === null) { cur.label = label; cur.rows.push(p); }
+    else out.push({ label, rows: [p] });
+  }
+  return out;
+}

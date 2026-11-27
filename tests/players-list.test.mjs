@@ -77,3 +77,16 @@ test("indexPlayers: the feed publishes no number; order becomes an internal ordi
   const m = indexPlayers({ players: [{ playerId: "1" }, { playerId: "2" }, { playerId: "3" }] });
   assert.ok(m.get("1").score > m.get("2").score && m.get("2").score > m.get("3").score);
 });
+
+test("involvementBands: one band per senior tier in feed order; prospects stay inside the surrounding band", () => {
+  const P = (id, tier, prospect = false) => ({ playerId: id, tier, is_prospect: prospect });
+  const tierOf = (p) => p.tier;
+  const rows = [P("a", "Core"), P("b", "Core"), P("p1", null, true), P("c", "Established"), P("p2", null, true), P("d", "Established"), P("e", "In the mix")];
+  const bands = L.involvementBands(rows, tierOf);
+  assert.deepEqual(bands.map((b) => [b.label, b.rows.map((r) => r.playerId)]),
+    [["Core", ["a", "b", "p1"]], ["Established", ["c", "p2", "d"]], ["In the mix", ["e"]]]);
+  // prospects ahead of every senior join the first senior's band; a prospects-only list has one unlabelled band
+  assert.deepEqual(L.involvementBands([P("p1", null, true), P("a", "Core")], tierOf).map((b) => b.label), ["Core"]);
+  assert.deepEqual(L.involvementBands([P("p1", null, true), P("p2", null, true)], tierOf).map((b) => [b.label, b.rows.length]), [[null, 2]]);
+  assert.deepEqual(L.involvementBands([], tierOf), []);
+});
