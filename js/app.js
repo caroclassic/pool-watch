@@ -237,7 +237,7 @@ function renderMain() {
   const intro = !S.introGone && follows.count() === 0
     ? h("aside", { class: "intro", "aria-label": "How to follow players" },
         h("p", null, h("b", null, term(INTRO.lead, "pool")), INTRO.body, h("b", null, INTRO.strong), INTRO.tail),
-        h("button", { type: "button", class: "btn-link", onclick: () => { flags.set("intro"); S.introGone = true; render(); } }, "Got it"))
+        h("button", { type: "button", class: "btn-text", onclick: () => { flags.set("intro"); S.introGone = true; render(); } }, "Got it"))
     : null;
 
   const nodes = [

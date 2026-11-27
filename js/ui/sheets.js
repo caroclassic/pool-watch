@@ -6,7 +6,7 @@ import { h, clear } from "./dom.js";
 import { LEGEND, ET_NOTE } from "../copy.js";
 import { tierLabel, tierPopoverKey, ageLine, lastNamedLine, chipName } from "../players-model.js";
 import { term } from "./popover.js";
-import { icon } from "./icons.js";
+import { icon, setFollowState } from "./icons.js";
 import { encodeShare, decodeShare } from "../storage.js";
 
 let dlg = null, opener = null, pushed = false, onCloseCb = null;
@@ -72,13 +72,9 @@ export function closeSheetThen(fn) {
 
 export function playerSheet(p, id, { followed, onToggle, now, from }) {
   const name = p ? p.display_name : `Player ${id}`;
-  const btn = h("button", { type: "button", class: "btn btn-follow", "aria-pressed": String(followed) }, followed ? "Following ✓" : "Follow");
-  let on = followed;
-  btn.addEventListener("click", () => {
-    on = onToggle(id);
-    btn.setAttribute("aria-pressed", String(on));
-    btn.textContent = on ? "Following ✓" : "Follow";
-  });
+  const btn = h("button", { type: "button" });
+  setFollowState(btn, followed);
+  btn.addEventListener("click", () => setFollowState(btn, onToggle(id)));
   const body = [];
   if (p) {
     const ln = lastNamedLine(p, now);
@@ -120,7 +116,7 @@ export function followingSheet({ follows, players, nextFor, onUnfollow, onSave, 
               : nx === undefined ? ""
               : nx ? `${nx.live ? "Live now" : nx.kickoff.text} · ${nx.home} vs ${nx.away}`
               : "No match in the next 7 days")),
-        h("button", { type: "button", class: "btn btn-quiet", "aria-label": `Unfollow ${p ? p.display_name : id}`,
+        h("button", { type: "button", class: "btn btn-secondary", "aria-label": `Unfollow ${p ? p.display_name : id}`,
           onclick: () => unfollow(id) }, "Unfollow")));
     }
   };
@@ -169,7 +165,7 @@ export function saveSheet({ follows, players, onImport, from, baseUrl }) {
   const link = `${baseUrl}#f=${code}`;
   const field = (value, label) => {
     const input = h("input", { type: "text", readonly: true, value, class: "mono", "aria-label": label });
-    const btn = h("button", { type: "button", class: "btn btn-quiet", onclick: async () => { await copyText(value, input); btn.textContent = "Copied"; setTimeout(() => (btn.textContent = "Copy"), 1500); } }, "Copy");
+    const btn = h("button", { type: "button", class: "btn btn-secondary", onclick: async () => { await copyText(value, input); btn.textContent = "Copied"; setTimeout(() => (btn.textContent = "Copy"), 1500); } }, "Copy");
     return h("div", { class: "field" }, input, btn);
   };
   const paste = h("textarea", { rows: 2, class: "mono", placeholder: "Paste a code that starts with v1.", "aria-label": "Paste a follows code" });
@@ -201,8 +197,8 @@ export function importSheet({ ids, follows, players, onMerge, onReplace }) {
     follows.count() ? h("p", { class: "dim" }, `You already follow ${follows.count()}.`) : null,
     h("div", { class: "btn-row" },
       h("button", { type: "button", class: "btn", onclick: () => { onMerge(); sheet.close(); } }, follows.count() ? "Merge" : "Add them"),
-      follows.count() ? h("button", { type: "button", class: "btn btn-quiet", onclick: () => { onReplace(); sheet.close(); } }, "Replace mine") : null,
-      h("button", { type: "button", class: "btn btn-quiet", onclick: () => sheet.close() }, "Cancel")),
+      follows.count() ? h("button", { type: "button", class: "btn-text", onclick: () => { onReplace(); sheet.close(); } }, "Replace mine") : null,
+      h("button", { type: "button", class: "btn-text", onclick: () => sheet.close() }, "Cancel")),
   ]);
   return sheet;
 }

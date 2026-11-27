@@ -6,9 +6,9 @@ import { createHttpSource } from "./data.js";
 import { createStorage, createFollowsStore, createFlags, readLegacyFollows } from "./storage.js";
 import { indexPlayers, tierLabel, lastNamedLine } from "./players-model.js";
 import { mergeFeeds, nextMatchFor } from "./model.js";
-import { prepare, counts, visible, missingFollows, initials, FILTERS, FILTER_LABEL } from "./players-list.js";
+import { prepare, visible, missingFollows, initials, FILTERS, FILTER_LABEL } from "./players-list.js";
 import { h, clear } from "./ui/dom.js";
-import { setFollowButton } from "./ui/icons.js";
+import { setFollowButton, setFollowState, icon } from "./ui/icons.js";
 import { term } from "./ui/popover.js";
 import { playerSheet, followingSheet, legendSheet, saveSheet, importSheet } from "./ui/sheets.js";
 import { parseHash, decodeShare } from "./storage.js";
@@ -75,11 +75,13 @@ function tile(p) {
         h("span", { class: `pt-word${p.is_prospect ? " is-prospect" : ""}` }, tierLabel(p))),
       sub ? h("p", { class: "pt-sub" }, sub) : null,
       h("p", { class: `pt-last${ln.muted ? " is-muted" : ""}` }, ln.text, ln.rel ? ` · ${ln.rel}` : "")),
-    h("button", {
-      type: "button", class: "btn btn-follow btn-sm", "aria-pressed": String(followed),
-      "aria-label": `${followed ? "Unfollow" : "Follow"} ${p.display_name}`,
-      onclick: () => { toggleFollow(p.playerId); },
-    }, followed ? "Following ✓" : "Follow"));
+    followBtn(p, followed));
+}
+
+function followBtn(p, followed) {
+  const b = h("button", { type: "button", dataset: { size: "sm" }, onclick: () => { toggleFollow(p.playerId); } });
+  setFollowState(b, followed, p.display_name);
+  return b;
 }
 
 function missingTile(id) {
@@ -88,27 +90,32 @@ function missingTile(id) {
     h("div", { class: "pt-body" },
       h("p", { class: "pt-name-static" }, `Player ${id}`),
       h("p", { class: "pt-last is-muted" }, "No longer in the pool")),
-    h("button", { type: "button", class: "btn btn-quiet btn-sm", "aria-label": `Unfollow player ${id}`, onclick: () => follows.remove(id) }, "Unfollow"));
+    h("button", { type: "button", class: "btn btn-secondary btn-sm", "aria-label": `Unfollow player ${id}`, onclick: () => follows.remove(id) }, "Unfollow"));
 }
 
 let lastCtl = "";
-function renderControls(c) {
-  const sig = JSON.stringify([S.filter, S.sort, c]);
+const SORT_LABEL = { rel: "Involvement", az: "A–Z" };
+function renderControls() {
+  const sig = JSON.stringify([S.filter, S.sort]);
   if (sig === lastCtl) return;
   lastCtl = sig;
   const hadFocus = els.controls.contains(document.activeElement) ? document.activeElement.dataset.k : null;
-  const q = els.controls.querySelector("input");
+  const q = els.controls.querySelector("input[type=search]");
   const qv = q ? q.value : S.query, qFocus = q && document.activeElement === q;
+  const other = S.sort === "rel" ? "az" : "rel";
   clear(els.controls).append(
-    h("input", { type: "search", class: "search", id: "q", placeholder: "Search players or clubs", autocomplete: "off", "aria-label": "Search players or clubs", value: qv, dataset: { k: "q" },
-      oninput: (e) => { S.query = e.target.value; renderList(); } }),
-    h("div", { class: "filters", role: "group", "aria-label": "Show" },
-      FILTERS.map((f) => h("button", { type: "button", class: "fchip", dataset: { k: `f-${f}` }, "aria-pressed": String(S.filter === f),
-        onclick: () => { S.filter = f; render(); } }, `${FILTER_LABEL[f]} `, h("span", { class: "fnum" }, String(c[f]))))),
-    h("div", { class: "sort", role: "group", "aria-label": "Sort players" },
-      [["rel", "Involvement"], ["az", "A–Z"]].map(([k, label]) => h("button", { type: "button", dataset: { k: `s-${k}` }, "aria-pressed": String(S.sort === k),
-        onclick: () => { S.sort = k; storage.set("sxi.players.sort", k); render(); } }, label))));
-  const target = qFocus ? els.controls.querySelector("input") : hadFocus ? els.controls.querySelector(`[data-k="${hadFocus}"]`) : null;
+    h("div", { class: "search-wrap" }, icon("search", 20),
+      h("input", { type: "search", class: "search", id: "q", placeholder: "Search players or clubs", autocomplete: "off", "aria-label": "Search players or clubs", value: qv, dataset: { k: "q" },
+        oninput: (e) => { S.query = e.target.value; renderList(); } })),
+    // one choice from four: native radios styled as segments (addendum §5), so arrows, checked state and announcements come free
+    h("fieldset", { class: "seg" }, h("legend", { class: "sr-only" }, "Filter players"),
+      FILTERS.map((f) => h("label", { class: "seg-opt" },
+        h("input", { type: "radio", name: "pfilter", value: f, checked: S.filter === f, dataset: { k: `f-${f}` }, onchange: () => { S.filter = f; render(); } }),
+        h("span", null, FILTER_LABEL[f])))),
+    h("div", { class: "sort" },
+      h("button", { type: "button", class: "btn-text", dataset: { k: "sort" }, "aria-label": `Sort: ${SORT_LABEL[S.sort]}. Press to sort by ${SORT_LABEL[other]}.`,
+        onclick: () => { S.sort = other; storage.set("sxi.players.sort", other); render(); } }, `Sort: ${SORT_LABEL[S.sort]}`, icon("chevron_down", 16))));
+  const target = qFocus ? els.controls.querySelector("input[type=search]") : hadFocus ? els.controls.querySelector(`[data-k="${hadFocus}"]`) : null;
   if (target) target.focus();
 }
 
@@ -117,7 +124,7 @@ function renderList() {
   const rows = visible(S.list, { filter: S.filter, query: S.query, sort: S.sort, follows: fol });
   const gone = S.filter === "following" && !S.query.trim() ? missingFollows(S.list, fol) : [];
   const total = rows.length + gone.length;
-  els.count.textContent = S.query.trim() || S.filter !== "all" ? `${total} of ${S.list.length} players` : `${S.list.length} players`;
+  els.count.textContent = `${total} ${total === 1 ? "player" : "players"}`;   // the result count, once, above the list (addendum §4)
 
   const keep = focusInList();
   clear(els.list);
@@ -150,8 +157,7 @@ function restoreFocus(k) {
 
 function render() {
   if (!S.loaded) return;
-  const fol = follows.ids();
-  renderControls(counts(S.list, fol));
+  renderControls();
   setFollowButton($("follow-btn"), els.head, follows.count());
   renderList();
   const stamp = $("stamp");

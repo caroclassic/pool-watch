@@ -46,3 +46,16 @@ export function setFollowButton(btn, badge, n) {
   btn.setAttribute("aria-label", n ? `Following, ${n} ${n === 1 ? "player" : "players"}` : "Following");
   if (badge) { badge.textContent = n ? String(n) : ""; badge.hidden = !n; }
 }
+
+/**
+ * A Follow button's two states (brand refresh, issue 6): "Follow" is a secondary button; "Following" is a primary
+ * button with a check. aria-pressed carries the state; `name` (optional) goes into the accessible name.
+ */
+export function setFollowState(btn, on, name = null, doc = document) {
+  btn.className = `btn btn-follow${on ? "" : " btn-secondary"}${btn.dataset.size === "sm" ? " btn-sm" : ""}`;
+  btn.setAttribute("aria-pressed", String(on));
+  if (name) btn.setAttribute("aria-label", `${on ? "Unfollow" : "Follow"} ${name}`);
+  btn.textContent = "";
+  if (on) btn.append(icon("check", 16, doc));
+  btn.append(on ? "Following" : "Follow");
+}

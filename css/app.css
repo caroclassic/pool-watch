@@ -84,11 +84,13 @@ h1.brand a { text-decoration: none; }
 .banner-error { border-color: var(--accent); }
 .banner-roll { border-color: var(--live); }
 
-/* buttons */
-.btn { min-height: 44px; padding: 0 18px; border-radius: 22px; border: 1px solid var(--panel); background: var(--panel); color: var(--on-fill); font: 700 0.9375rem var(--sans); letter-spacing: .04em; text-transform: uppercase; cursor: pointer; }
-.btn-quiet { background: transparent; color: var(--ink); border-color: var(--line); }
-.btn-follow[aria-pressed="true"] { background: transparent; color: var(--ink); border-color: var(--ink); }
-.btn-link { min-height: 44px; padding: 0 4px; background: none; border: 0; color: var(--accent); font: 600 0.9375rem var(--serif); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+/* buttons (brand refresh, issue 6): each kind its own shape. Primary = the one main action; secondary = outlined;
+   text = no box; icon = 44 x 44 (header). Never a pill, never a coral or blue fill. */
+.btn { min-height: var(--touch); padding: 0 16px; border-radius: var(--radius-md); border: 1.5px solid var(--panel); background: var(--panel); color: var(--on-fill);
+  font: 700 0.8125rem var(--font-display); letter-spacing: .08em; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+.btn-secondary { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn-secondary:hover { background: var(--card); }
+.btn-link { min-height: var(--touch); padding: 0 4px; background: none; border: 0; color: var(--dim); font: 600 0.9375rem var(--font-text); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .btn-text { min-height: var(--touch); padding: 0 8px; background: none; border: 0; border-radius: var(--radius-md); color: var(--ink);
   font: 700 0.8125rem var(--font-display); letter-spacing: .08em; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
@@ -249,11 +251,17 @@ textarea.mono { width: 100%; margin-bottom: 10px; }
 /* players page */
 .scope-page { color: var(--dim); font-size: 0.875rem; margin: 12px 0; }
 .controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 4px 0 0; }
-.search { flex: 1 1 100%; min-height: 44px; font: 1rem var(--serif); color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 0 12px; }
-.filters, .sort { display: flex; flex-wrap: wrap; gap: 6px; }
-.fchip, .sort button { min-height: 44px; padding: 0 14px; border: 1px solid var(--line); border-radius: 22px; background: transparent; color: var(--ink); font: 700 0.875rem var(--sans); letter-spacing: .03em; cursor: pointer; }
-.fchip[aria-pressed="true"], .sort button[aria-pressed="true"] { background: var(--panel); border-color: var(--panel); color: var(--on-fill); }
-.fnum { font-weight: 500; opacity: .75; }
+.search-wrap { position: relative; flex: 1 1 100%; min-width: 0; color: var(--dim); }
+.search-wrap .icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; }
+.search { width: 100%; min-width: 0; min-height: var(--touch); font: 1rem var(--font-text); color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 0 12px 0 40px; }
+/* segmented control: native radios; each segment's tap area is 44 px inside a 50 px track (addendum §5) */
+.seg { flex: 1 1 100%; display: flex; min-width: 0; margin: 0; padding: 3px; border: 0; border-radius: 10px; background: var(--line); }
+.seg-opt { flex: 1 1 0; position: relative; display: flex; min-height: var(--touch); min-width: 0; cursor: pointer; }
+.seg-opt input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.seg-opt span { flex: 1; display: flex; align-items: center; justify-content: center; padding: 0 4px; border-radius: 7px; text-align: center;
+  font: 600 0.875rem var(--font-display); letter-spacing: .02em; color: var(--ink); overflow-wrap: anywhere; }
+.seg-opt input:checked + span { background: var(--card); box-shadow: 0 1px 2px rgba(0,0,0,.14); font-weight: 700; }
+.seg-opt input:focus-visible + span { outline: 2px solid var(--focus); outline-offset: 1px; }
 .sort { margin-left: auto; }
 .count { color: var(--dim); font-size: 0.875rem; margin: 10px 2px 0; }
 .players-list { list-style: none; margin: 6px 0 0; padding: 0; }
@@ -272,12 +280,10 @@ textarea.mono { width: 100%; margin-bottom: 10px; }
 .pt-sub { font-size: 0.875rem; color: var(--dim); }
 .pt-last { font-size: 0.875rem; margin-top: 3px !important; }
 .pt-last.is-muted { color: var(--dim); }
-.btn-sm { min-height: 44px; padding: 0 14px; font-size: 0.8125rem; white-space: nowrap; }
+.btn-sm { padding: 0 14px; white-space: nowrap; }
 .empty { list-style: none; padding: 36px 4px; text-align: center; color: var(--dim); }
 .foot-note { color: var(--dim); font-size: 0.875rem; margin: 24px 2px 4px; }
-@media (max-width: 380px) { .sort { margin-left: 0; } .avatar { width: 44px; height: 44px; } }
-.ptile .btn-follow { background: transparent; color: var(--ink); border-color: var(--line); }
-.ptile .btn-follow[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); }
+@media (max-width: 380px) { .avatar { width: 44px; height: 44px; } }
 
 /* terms + popover */
 .term { background: none; border: 0; padding: 0; margin: 0; font: inherit; color: inherit; cursor: pointer; text-decoration: underline dotted; text-decoration-thickness: 2px; text-underline-offset: 4px; }
@@ -295,14 +301,13 @@ textarea.mono { width: 100%; margin-bottom: 10px; }
 .teams, .pt-name, .chip-name { overflow-wrap: anywhere; }
 a[href^="mailto:"] { overflow-wrap: anywhere; }   /* the address is one long word: at 320 px and 200% text it widened the About page */
 @media (forced-colors: active) {
-  .tile.is-selected, .fchip[aria-pressed="true"], .sort button[aria-pressed="true"] { outline: 2px solid Highlight; }
+  .tile.is-selected, .seg-opt input:checked + span { outline: 2px solid Highlight; }
   .chip-followed { outline: 2px solid Highlight; }
 }
 
 .ptile .avatar { flex: none; }
 .ptile .pt-body { flex: 1 1 11rem; min-width: 0; }
 .ptile .btn-sm { flex: none; margin-left: auto; }
-.search { min-width: 0; width: 100%; }
 .term { text-transform: inherit; letter-spacing: inherit; font-weight: inherit; }
 
 /* ── calendar (month view in a sheet) and the schedule-only day ─────────────────────────────── */
