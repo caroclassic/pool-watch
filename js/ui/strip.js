@@ -1,8 +1,10 @@
-// strip.js — the day strip (spec §7.1): 3 days back to 14 ahead, opens on today's
-// ET date, a Today button when away, a date picker for anything beyond.
+// strip.js — the day strip (spec §7.1): 3 days back to 14 ahead, opens on today's ET date, a Today button when
+// away, and the calendar button for anything beyond (brand refresh, 2026-11-27: the button is an icon; the date
+// it used to show is said once, by the date line under the strip).
 
 import { h } from "./dom.js";
-import { weekdayShort, dayOfMonth, monthDay, monthDayYear, dayHeading } from "../time.js";
+import { weekdayShort, dayOfMonth, monthDayYear, dayHeading } from "../time.js";
+import { icon } from "./icons.js";
 import { CALENDAR } from "../copy.js";
 
 /**
@@ -17,7 +19,7 @@ export function renderStrip(o) {
     const bits = [];
     if (f.live && isToday) bits.push(h("span", { class: "t-live" }, h("span", { class: "live-dot", "aria-hidden": "true" }), "LIVE"));
     if (f.pins) bits.push(h("span", { class: "t-pins", "aria-label": `${f.pins} ${f.pins === 1 ? "match" : "matches"} with your players` },
-      h("span", { "aria-hidden": "true" }, `⌖${f.pins}`)));
+      icon("following", 12), h("span", { "aria-hidden": "true" }, String(f.pins))));
     if (f.must) bits.push(h("span", { class: "t-must", role: "img", "aria-label": "Has a Must-watch match" }));
     const aria = `${dayHeading(key)}${isToday ? ", today" : ""}${covered ? `, ${f.total} ${f.total === 1 ? "match" : "matches"}` : schedOnly ? ", schedule only" : ", not published"}`;
     return h("button", {
@@ -35,16 +37,15 @@ export function renderStrip(o) {
     },
       h("span", { class: "t-dow" }, isToday ? "Today" : weekdayShort(key)),
       h("span", { class: "t-num" }, dayOfMonth(key)),
-      h("span", { class: "t-mon" }, dayOfMonth(key) === 1 || key === o.days[0] ? monthDay(key).split(" ")[0] : " "),
-      h("span", { class: "t-marks" }, bits.length ? bits : " "));
+      h("span", { class: "t-marks" }, bits.length ? bits : null));
   });
 
-  const calBtn = h("button", { type: "button", class: "cal-open", "aria-haspopup": "dialog", "aria-label": `${CALENDAR.open}, ${monthDayYear(o.selected)} selected`,
-    onclick: o.onOpenCalendar }, h("span", null, monthDayYear(o.selected)), h("span", { "aria-hidden": "true" }, " ▾"));
+  const calBtn = h("button", { type: "button", class: "cal-open icon-btn", "aria-haspopup": "dialog", "aria-label": `${CALENDAR.open}, ${monthDayYear(o.selected)} selected`,
+    onclick: o.onOpenCalendar }, icon("calendar"));
 
   return h("div", { class: "strip-wrap" },
     h("div", { class: "strip", role: "toolbar", "aria-label": "Choose a day", "aria-orientation": "horizontal" }, tabs),
     h("div", { class: "strip-tools" },
-      o.selected !== o.today ? h("button", { type: "button", class: "btn-link", onclick: o.onToday }, "Today") : null,
+      o.selected !== o.today ? h("button", { type: "button", class: "btn-text strip-today", onclick: o.onToday }, "Today") : null,
       calBtn));
 }

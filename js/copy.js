@@ -150,6 +150,8 @@ export const POPOVERS = {
   follow: "Pins a player's matches to the top. Saved on this device.",
 };
 
+POPOVERS.et_days = ET_NOTE;   // the ⓘ beside "Times in CT" on the date line
+
 // The tier-name popovers on the player card reuse the Legend's wording, so the two can never drift apart.
 const PLAYER_ROWS = LEGEND.find((s) => s.title === "Players page").rows;
 const legendRow = (label) => PLAYER_ROWS.find((r) => r[0] === label)[1];

@@ -13,7 +13,7 @@ import { indexPlayers, chipName } from "./players-model.js";
 import { etDateKey, dayHeader, dayHeading, weekdayLong, relativeMinutes, localTime, addDays } from "./time.js";
 import { INTRO, LINEUP_NOTE, CALENDAR, EMPTY, ERRORS, FEEDBACK_EMAIL, FEEDBACK_SUBJECT, DISCLAIMER } from "./copy.js";
 import { mountThemeButton } from "./theme.js";
-import { term, syncPopover } from "./ui/popover.js";
+import { term, infoTerm, syncPopover } from "./ui/popover.js";
 import { h, clear } from "./ui/dom.js";
 import { setFollowButton } from "./ui/icons.js";
 import { renderCard } from "./ui/card.js";
@@ -244,7 +244,7 @@ function renderMain() {
     intro,
     h("div", { class: "day-head" },
       h("h2", { class: "day-title" }, head.title),
-      head.zoneNote ? h("span", { class: "zone-note" }, head.zoneNote) : null),
+      infoTerm(head.zoneNote, "et_days")),
   ];
 
   // Lineup timing is the same on every card, so say it once for the day.

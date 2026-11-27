@@ -13,6 +13,7 @@ import { dayHeading, dayOfMonth, etDateKey, kickoffDisplay, monthTitle } from ".
 import { monthWeeks, shiftMonth, moveFocus, nextForFollows, timeFirm } from "../model.js";
 import { TIME_FIRM_DAYS } from "../config.js";
 import { chipName } from "../players-model.js";
+import { icon } from "./icons.js";
 
 // One letter on screen (it fits at 200% text on a phone); the full name is there for screen readers.
 const WEEKDAYS = [["S", "Sunday"], ["M", "Monday"], ["T", "Tuesday"], ["W", "Wednesday"], ["T", "Thursday"], ["F", "Friday"], ["S", "Saturday"]];
@@ -102,9 +103,9 @@ export function calendarSheet(o) {
     return [
       h("div", { class: "cal" },
         h("div", { class: "cal-nav" },
-          h("button", { type: "button", class: "cal-step", "aria-label": CALENDAR.prev, disabled: !prevOk, onclick: () => goTo(`${shiftMonth(month, -1)}-01`) }, "‹"),
+          h("button", { type: "button", class: "cal-step", "aria-label": CALENDAR.prev, disabled: !prevOk, onclick: () => goTo(`${shiftMonth(month, -1)}-01`) }, icon("chevron_left")),
           h("h3", { class: "cal-month", id: "cal-month", "aria-live": "polite" }, title),
-          h("button", { type: "button", class: "cal-step", "aria-label": CALENDAR.next, disabled: !nextOk, onclick: () => goTo(`${shiftMonth(month, 1)}-01`) }, "›")),
+          h("button", { type: "button", class: "cal-step", "aria-label": CALENDAR.next, disabled: !nextOk, onclick: () => goTo(`${shiftMonth(month, 1)}-01`) }, icon("chevron_right"))),
         h("table", { class: "cal-grid", role: "grid", "aria-labelledby": "cal-month" },
           h("thead", null, h("tr", null, WEEKDAYS.map(([s, l]) => h("th", { scope: "col" }, h("span", { "aria-hidden": "true" }, s), h("span", { class: "sr-only" }, l))))),
           h("tbody", null, monthWeeks(month).map((week) =>

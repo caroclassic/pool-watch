@@ -89,39 +89,42 @@ h1.brand a { text-decoration: none; }
 .btn-quiet { background: transparent; color: var(--ink); border-color: var(--line); }
 .btn-follow[aria-pressed="true"] { background: transparent; color: var(--ink); border-color: var(--ink); }
 .btn-link { min-height: 44px; padding: 0 4px; background: none; border: 0; color: var(--accent); font: 600 0.9375rem var(--serif); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.btn-text { min-height: var(--touch); padding: 0 8px; background: none; border: 0; border-radius: var(--radius-md); color: var(--ink);
+  font: 700 0.8125rem var(--font-display); letter-spacing: .08em; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 
 /* intro */
 .intro { border: 1px dashed var(--line); border-radius: 12px; padding: 12px 14px; margin: 0 0 14px; font-size: 0.9688rem; }
 .intro p { margin: 0 0 2px; }
 
-/* day strip */
-.strip-wrap { margin: 0 -16px 8px; }
-.strip { display: flex; gap: 6px; overflow-x: auto; padding: 4px 16px 8px; scroll-snap-type: x proximity; scrollbar-width: thin; }
-.tile { flex: 0 0 auto; min-width: 54px; min-height: 76px; padding: 6px 4px; border: 1px solid var(--line); border-radius: 12px; background: transparent; color: var(--ink); display: flex; flex-direction: column; align-items: center; gap: 0; cursor: pointer; scroll-snap-align: center; font-family: var(--sans); }
-.tile .t-dow { font-size: 0.8125rem; text-transform: uppercase; letter-spacing: .06em; color: var(--dim); }
-.tile .t-num { font-size: 1.375rem; font-weight: 700; line-height: 1.1; }
-.tile .t-mon { font-size: 0.6875rem; color: var(--dim); min-height: 13px; text-transform: uppercase; }
-.tile .t-marks { display: flex; gap: 4px; align-items: center; min-height: 14px; font-size: 0.75rem; font-weight: 700; color: var(--ink); }
+/* day strip: compact day tiles, then Today (when away) and the calendar button (brand refresh, issue 4) */
+.strip-wrap { display: flex; align-items: center; gap: 2px; margin: 0 -16px 2px; padding: 10px 6px 6px 0; }
+.strip { flex: 1 1 auto; min-width: 0; display: flex; gap: 6px; overflow-x: auto; padding: 2px 4px 2px 12px; scroll-snap-type: x proximity; scrollbar-width: none; }
+.strip::-webkit-scrollbar { display: none; }
+.tile { flex: 0 0 auto; min-width: 46px; min-height: 54px; padding: 4px 5px; border: 1px solid var(--line); border-radius: var(--radius-md); background: transparent; color: var(--ink);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; cursor: pointer; scroll-snap-align: center; font-family: var(--font-display); }
+.tile .t-dow { font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--dim); }
+.tile .t-num { font-size: 1.0625rem; font-weight: 700; line-height: 1.05; }
+.tile .t-marks { display: flex; gap: 3px; align-items: center; min-height: 6px; font-size: 0.625rem; font-weight: 700; letter-spacing: .04em; color: var(--ink); }
+.tile .t-marks:empty { min-height: 0; }
 .tile.is-selected { background: var(--panel); border-color: var(--panel); color: var(--on-fill); }
-.tile.is-selected .t-dow, .tile.is-selected .t-mon, .tile.is-selected .t-marks { color: var(--on-fill); opacity: .85; }
+.tile.is-selected .t-dow, .tile.is-selected .t-marks { color: var(--on-fill); opacity: .85; }
 .tile.is-quiet { border-style: dashed; }
 .tile.is-na { border-style: dotted; }
 .tile.is-na:not(.is-selected) .t-num { color: var(--dim); }   /* not opacity: half-opacity text is under 4.5:1 (3.2:1 light) */
 .tile.is-today:not(.is-selected) { border-color: var(--ink); }
-.t-must { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block; }
-.is-selected .t-must { background: var(--on-fill); }
+.t-pins { display: inline-flex; align-items: center; gap: 1px; }
+.t-must { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: inline-block; flex: none; }   /* the Must-watch day dot */
+.is-selected .t-must { background: var(--mark-rule); }
 .t-live { display: inline-flex; align-items: center; gap: 3px; color: var(--live); }
 .is-selected .t-live { color: var(--on-fill); }
-.strip-tools { display: flex; justify-content: flex-end; gap: 12px; align-items: center; padding: 0 16px; }
-.pick { display: inline-flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--dim); }
-.pick span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-.picker { width: 150px; min-height: 44px; font: 0.9375rem var(--serif); color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 0 10px; }
+.strip-tools { display: flex; align-items: center; flex: none; }
 
-/* day heading + bands */
-.day-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; margin: 10px 0 4px; }
-.day-title { font: 700 1.25rem var(--sans); margin: 0; letter-spacing: .01em; }
-.zone-note { font-size: 0.875rem; color: var(--dim); }
+/* the date line: one date, and the zone with its ⓘ */
+.day-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0 12px; margin: 2px -10px 0 0; }
+.day-title { font: 700 1.375rem/1.2 var(--font-display); margin: 0; }
+.term.term-info { display: inline-flex; align-items: center; gap: 4px; min-height: var(--touch); padding: 0 10px; font: 400 0.8125rem var(--font-text); color: var(--dim);
+  text-decoration: none; letter-spacing: 0; text-transform: none; }
 .band { margin-top: 16px; }
 .band-title { font: 700 0.875rem var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--dim); margin: 0 2px 8px; }
 .band-sub { font-weight: 500; text-transform: none; letter-spacing: 0; }
@@ -278,15 +281,12 @@ a[href^="mailto:"] { overflow-wrap: anywhere; }   /* the address is one long wor
 .ptile .btn-sm { flex: none; margin-left: auto; }
 .search { min-width: 0; width: 100%; }
 .term { text-transform: inherit; letter-spacing: inherit; font-weight: inherit; }
-.picker { width: 9.5rem; }
 
 /* ── calendar (month view in a sheet) and the schedule-only day ─────────────────────────────── */
-.cal-open { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; padding: 0 12px; font: 600 0.9375rem var(--serif); color: var(--ink);
-  background: var(--card); border: 1px solid var(--line); border-radius: 10px; cursor: pointer; }
 .tile.is-sched { border-style: dashed; }
 .cal-nav { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
 .cal-month { margin: 0; font: 700 1.125rem var(--sans); text-align: center; flex: 1; }
-.cal-step { min-width: 44px; min-height: 44px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--ink); font-size: 1.375rem; cursor: pointer; }
+.cal-step { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--card); color: var(--ink); cursor: pointer; }
 .cal-step:disabled { opacity: .35; cursor: default; }
 .cal { margin: 0 -6px; }   /* a little wider than the sheet's padding so a day cell is at least 44px on a phone */
 .cal-grid { width: 100%; border-collapse: separate; border-spacing: 2px; table-layout: fixed; }

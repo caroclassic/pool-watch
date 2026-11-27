@@ -77,9 +77,9 @@ test("isEtZone", () => {
   assert.equal(T.isEtZone("America/Los_Angeles"), false);
 });
 
-test("dayHeader adds the zone note only for non-ET viewers", () => {
+test("dayHeader: one date line, no \"ET slate\", and the viewer's zone always (ET too)", () => {
   const now = new Date("2026-10-09T18:00:00Z");
-  assert.deepEqual(T.dayHeader("2026-10-09", "America/New_York", now), { title: "Fri, Oct 9 · ET slate", zoneNote: null });
+  assert.deepEqual(T.dayHeader("2026-10-09", "America/New_York", now), { title: "Friday, Oct 9", zoneNote: "Times in ET" });
   assert.equal(T.dayHeader("2026-10-09", "America/Los_Angeles", now).zoneNote, "Times in PT");
 });
 

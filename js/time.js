@@ -115,12 +115,13 @@ export function kickoffDisplay(utcIso, viewerTz) {
   };
 }
 
-/** "Fri, Oct 9 · ET slate", plus the viewer's zone when they are not on ET. */
+/**
+ * The day's one date line (brand refresh, issue 4): "Friday, Oct 9" and "Times in PT". The zone is always said, ET
+ * included, because its ⓘ is where the page explains that days follow Eastern time. "ET slate" left the heading
+ * (2026-11-27); the cross-day "Sat slate" tags on cards stay.
+ */
 export function dayHeader(key, viewerTz, now = new Date()) {
-  return {
-    title: `${dayHeading(key)} · ET slate`,
-    zoneNote: isEtZone(viewerTz) ? null : `Times in ${zoneAbbr(now, viewerTz)}`,
-  };
+  return { title: `${weekdayLong(key)}, ${monthDay(key)}`, zoneNote: `Times in ${zoneAbbr(now, viewerTz)}` };
 }
 
 /** "2 min ago", "just now". */

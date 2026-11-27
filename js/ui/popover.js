@@ -4,6 +4,7 @@
 
 import { h } from "./dom.js";
 import { POPOVERS } from "../copy.js";
+import { icon } from "./icons.js";
 
 let pop = null, owner = null, wired = false;
 
@@ -45,6 +46,16 @@ export function term(label, key) {
     type: "button", class: "term", "aria-expanded": "false", dataset: { term: key },
     onclick: (e) => { e.stopPropagation(); if (owner === e.currentTarget) closePopover(); else open(e.currentTarget, () => POPOVERS[key]); },
   }, label);
+}
+
+/** A quiet label with a small info icon, for a note that explains it ("Times in CT ⓘ"): no dotted underline. The
+ *  visible words are the button's name; the icon is decoration. */
+export function infoTerm(label, key) {
+  wire();
+  return h("button", {
+    type: "button", class: "term term-info", "aria-expanded": "false", dataset: { term: key },
+    onclick: (e) => { e.stopPropagation(); if (owner === e.currentTarget) closePopover(); else open(e.currentTarget, () => POPOVERS[key]); },
+  }, h("span", null, label), icon("info", 16));
 }
 
 /** A term whose popover is a short titled list (a card's "Where to watch"). Every item is set as text. */
