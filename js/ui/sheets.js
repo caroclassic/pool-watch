@@ -6,6 +6,7 @@ import { h, clear } from "./dom.js";
 import { LEGEND, ET_NOTE } from "../copy.js";
 import { tierLabel, tierPopoverKey, ageLine, lastNamedLine, chipName } from "../players-model.js";
 import { term } from "./popover.js";
+import { icon } from "./icons.js";
 import { encodeShare, decodeShare } from "../storage.js";
 
 let dlg = null, opener = null, pushed = false, onCloseCb = null;
@@ -36,7 +37,7 @@ export function openSheet(title, body, { from = null, onClose = null } = {}) {
   clear(d).append(
     h("div", { class: "sheet-bar" },
       h("h2", { id: "sheet-title", class: "sheet-title" }, title),
-      h("button", { type: "button", class: "sheet-close", "aria-label": "Close", onclick: () => d.close() }, "✕")),
+      h("button", { type: "button", class: "sheet-close icon-btn", "aria-label": "Close", onclick: () => d.close() }, icon("close"))),
     h("div", { class: "sheet-body", tabindex: "0" }, body));
   d.showModal();
   history.pushState({ sheet: true }, "");
@@ -152,6 +153,7 @@ export function legendSheet({ from }) {
     h("dl", null, s.rows.flatMap(([k, v]) => [h("dt", null, marker(k)), h("dd", null, v)])),
     s.note ? h("p", { class: "dim small" }, s.note) : null));
   body.push(h("p", { class: "dim small" }, ET_NOTE));
+  body.push(h("p", { class: "legend-about" }, h("a", { href: "about.html" }, "How it works")));   // the header ⓘ opens this sheet; About is one more tap
   return openSheet("Legend", body, { from });
 }
 

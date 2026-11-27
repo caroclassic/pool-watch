@@ -15,6 +15,7 @@ import { INTRO, LINEUP_NOTE, CALENDAR, EMPTY, ERRORS, FEEDBACK_EMAIL, FEEDBACK_S
 import { mountThemeButton } from "./theme.js";
 import { term, syncPopover } from "./ui/popover.js";
 import { h, clear } from "./ui/dom.js";
+import { setFollowButton } from "./ui/icons.js";
 import { renderCard } from "./ui/card.js";
 import { renderStrip } from "./ui/strip.js";
 import { calendarSheet, scheduleTime } from "./ui/calendar.js";
@@ -343,7 +344,7 @@ function render() {
   // header chip
   const hsig = String(follows.count());
   if (hsig !== lastSig.head) {
-    els.head.textContent = follows.count() ? `Following · ${follows.count()}` : "Following";
+    setFollowButton($("follow-btn"), els.head, follows.count());
     lastSig.head = hsig;
   }
 

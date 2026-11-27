@@ -8,6 +8,7 @@ import { indexPlayers, tierLabel, lastNamedLine } from "./players-model.js";
 import { mergeFeeds, nextMatchFor } from "./model.js";
 import { prepare, counts, visible, missingFollows, initials, FILTERS, FILTER_LABEL } from "./players-list.js";
 import { h, clear } from "./ui/dom.js";
+import { setFollowButton } from "./ui/icons.js";
 import { term } from "./ui/popover.js";
 import { playerSheet, followingSheet, legendSheet, saveSheet, importSheet } from "./ui/sheets.js";
 import { parseHash, decodeShare } from "./storage.js";
@@ -151,7 +152,7 @@ function render() {
   if (!S.loaded) return;
   const fol = follows.ids();
   renderControls(counts(S.list, fol));
-  els.head.textContent = follows.count() ? `Following · ${follows.count()}` : "Following";
+  setFollowButton($("follow-btn"), els.head, follows.count());
   renderList();
   const stamp = $("stamp");
   if (stamp && S.updatedAt) stamp.textContent = `Updated ${new Date(S.updatedAt).toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: viewerTz() })}`;

@@ -11,23 +11,24 @@
 <script type="importmap">
 {
  "imports": {
-  "./js/app.js": "./js/app.js?v=6a61722000",
-  "./js/config.js": "./js/config.js?v=6a61722000",
-  "./js/copy.js": "./js/copy.js?v=6a61722000",
-  "./js/data.js": "./js/data.js?v=6a61722000",
-  "./js/model.js": "./js/model.js?v=6a61722000",
-  "./js/players-app.js": "./js/players-app.js?v=6a61722000",
-  "./js/players-list.js": "./js/players-list.js?v=6a61722000",
-  "./js/players-model.js": "./js/players-model.js?v=6a61722000",
-  "./js/storage.js": "./js/storage.js?v=6a61722000",
-  "./js/theme.js": "./js/theme.js?v=6a61722000",
-  "./js/time.js": "./js/time.js?v=6a61722000",
-  "./js/ui/calendar.js": "./js/ui/calendar.js?v=6a61722000",
-  "./js/ui/card.js": "./js/ui/card.js?v=6a61722000",
-  "./js/ui/dom.js": "./js/ui/dom.js?v=6a61722000",
-  "./js/ui/popover.js": "./js/ui/popover.js?v=6a61722000",
-  "./js/ui/sheets.js": "./js/ui/sheets.js?v=6a61722000",
-  "./js/ui/strip.js": "./js/ui/strip.js?v=6a61722000"
+  "./js/app.js": "./js/app.js?v=6ecd04b373",
+  "./js/config.js": "./js/config.js?v=6ecd04b373",
+  "./js/copy.js": "./js/copy.js?v=6ecd04b373",
+  "./js/data.js": "./js/data.js?v=6ecd04b373",
+  "./js/model.js": "./js/model.js?v=6ecd04b373",
+  "./js/players-app.js": "./js/players-app.js?v=6ecd04b373",
+  "./js/players-list.js": "./js/players-list.js?v=6ecd04b373",
+  "./js/players-model.js": "./js/players-model.js?v=6ecd04b373",
+  "./js/storage.js": "./js/storage.js?v=6ecd04b373",
+  "./js/theme.js": "./js/theme.js?v=6ecd04b373",
+  "./js/time.js": "./js/time.js?v=6ecd04b373",
+  "./js/ui/calendar.js": "./js/ui/calendar.js?v=6ecd04b373",
+  "./js/ui/card.js": "./js/ui/card.js?v=6ecd04b373",
+  "./js/ui/dom.js": "./js/ui/dom.js?v=6ecd04b373",
+  "./js/ui/icons.js": "./js/ui/icons.js?v=6ecd04b373",
+  "./js/ui/popover.js": "./js/ui/popover.js?v=6ecd04b373",
+  "./js/ui/sheets.js": "./js/ui/sheets.js?v=6ecd04b373",
+  "./js/ui/strip.js": "./js/ui/strip.js?v=6ecd04b373"
  }
 }
 </script>
@@ -52,8 +53,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/archivo-narrow-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/fonts.css?v=6a61722000">
-<link rel="stylesheet" href="css/app.css?v=6a61722000">
+<link rel="stylesheet" href="css/fonts.css?v=6ecd04b373">
+<link rel="stylesheet" href="css/app.css?v=6ecd04b373">
 </head>
 <body>
 <a class="skip" href="#main">Skip to players</a>
@@ -62,13 +63,11 @@
     <div class="top-row">
       <h1 class="brand"><a href="./">Stateside <span class="xi">XI</span></a></h1>
       <div class="top-tools">
-        <button type="button" id="follow-btn" class="pill"><span aria-hidden="true">⌖</span> <span id="follow-count">Following</span></button>
-        <button type="button" id="theme-btn" class="pill"></button>
-        <button type="button" id="legend-btn" class="icon-btn" aria-label="Legend: what the labels mean">ⓘ</button>
+        <button type="button" id="follow-btn" class="icon-btn" aria-label="Following"><svg class="icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 3h6l-1 6 3.5 3.5h-11L10 9z"/><path d="M12 12.5V21"/></svg><span id="follow-count" class="count-badge" hidden></span></button>
+        <button type="button" id="theme-btn" class="icon-btn" aria-label="Theme"></button>
+        <button type="button" id="legend-btn" class="icon-btn" aria-label="Legend and About"><svg class="icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.2"/></svg></button>
       </div>
     </div>
-    <p class="scope">Every match. Every USMNT player.</p>
-    <p class="scope scope-2">Follow the chase for the shirt. Track who's in the picture.</p>
     <nav class="sitenav" aria-label="Site"><a href="./">Matches</a><a href="players.html" aria-current="page">Players</a></nav>
   </header>
   <div id="banners"></div>
@@ -84,7 +83,7 @@
   </main>
   </div>
 <noscript><p class="wrap">Stateside XI needs JavaScript to show the player pool. Turn it on in your browser settings and reload.</p></noscript>
-<script type="module" src="js/players-app.js?v=6a61722000"></script>
+<script type="module" src="js/players-app.js?v=6ecd04b373"></script>
 <!-- Cloudflare Web Analytics: page views only, no cookies; loaded only on the public domain (not local copies or test hosts) -->
 <script>(function(){if(location.hostname!=="statesidexi.com")return;var b=document.createElement("script");b.defer=true;b.src="https://static.cloudflareinsights.com/beacon.min.js";b.setAttribute("data-cf-beacon",'{"token": "f8bee1618b654a2880278360fbfb6a67"}');document.body.appendChild(b)})()</script>
 </body>

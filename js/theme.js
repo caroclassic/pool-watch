@@ -5,10 +5,12 @@
 // before first paint (otherwise a light choice on a dark phone would flash dark);
 // everything else is here.
 
+import { icon } from "./ui/icons.js";
+
 export const THEMES = ["auto", "light", "dark"];
 export const THEME_KEY = "sxi.theme";
 const LABEL = { auto: "Auto", light: "Light", dark: "Dark" };
-const ICON = { auto: "◐", light: "☀", dark: "☾" };
+const ICON = { auto: "theme_auto", light: "theme_light", dark: "theme_dark" };   // ui/icons.js
 // Browser UI colour (mobile address bar) per explicit theme; must match --bg in app.css.
 const BROWSER_COLOR = { light: "#EDEAE2", dark: "#161614" };
 
@@ -39,7 +41,8 @@ export function applyTheme(theme, doc = document) {
   }
 }
 
-/** Wire the header button: shows the current theme in words, cycles on press, saves the choice.
+/** Wire the header's icon button: the icon shows the current theme and the accessible name says it in words
+ *  (Fixed decision 9, amended 2026-11-26); it cycles on press and saves the choice.
  *  Never throws: a problem here must not take the rest of the page (Following, Legend) down,
  *  and it is logged to the console so a misbehaving browser leaves a trace. */
 export function mountThemeButton(btn, storage, doc = document) {
@@ -49,10 +52,7 @@ export function mountThemeButton(btn, storage, doc = document) {
     const render = () => {
       const next = nextTheme(cur);
       btn.textContent = "";
-      const icon = doc.createElement("span");
-      icon.setAttribute("aria-hidden", "true");
-      icon.textContent = ICON[cur];
-      btn.append(icon, ` ${themeLabel(cur)}`);
+      btn.append(icon(ICON[cur], 22, doc));
       btn.setAttribute("aria-label", `Theme: ${themeLabel(cur)}${cur === "auto" ? ", follows your device" : ""}. Press to switch to ${themeLabel(next)}.`);
       btn.title = `Theme: ${themeLabel(cur)}`;
     };
