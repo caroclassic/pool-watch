@@ -54,3 +54,14 @@ test("only filter chips may be pills: no other rule uses a pill radius", () => {
     if (/border-radius:[^;]*(var\(--radius-pill\)|\b(2[2-9]|[3-9]\d|\d{3,})px)/.test(body)) assert.fail(`pill radius on "${sel}"`);
   }
 });
+
+test("every page uses the XI mark: 16 px master, 32 px mark, 180 px home-screen icon, and no old icon", () => {
+  for (const page of ["index.html", "players.html", "about.html"]) {
+    const html = readFileSync(new URL(page, root), "utf8");
+    assert.match(html, /<link rel="icon" type="image\/png" sizes="16x16" href="favicon-16.png">/, page);
+    assert.match(html, /<link rel="icon" type="image\/png" sizes="32x32" href="favicon-32.png">/, page);
+    assert.match(html, /<link rel="apple-touch-icon" href="apple-touch-icon.png">/, page);
+    assert.doesNotMatch(html, /rel="icon"[^>]*data:/, `${page}: the old inline icon is gone`);
+  }
+  for (const f of ["favicon-16.png", "favicon-32.png", "apple-touch-icon.png"]) assert.ok(readFileSync(new URL(f, root)).length > 50, f);
+});
