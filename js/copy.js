@@ -97,17 +97,18 @@ export const LEGEND = [
     ["Lineups usually post ~30 min before kickoff", "Said once under the day heading. A card only mentions lineups when they're confirmed, late, or usually unavailable for that competition."],
     ["Lineups confirmed ✓", "Lineups are in: who starts and who's on the bench is confirmed."],
     ["Lineups usually unavailable", "This competition rarely publishes lineups to our data source, so names stay as expected players and won't change to Starts or Bench."],
-    ["● LIVE · 2nd half", "In progress, with the part of the match when we know it: 1st half, Half-time, 2nd half, Extra time, ET break, Penalties. We don't show scores or minutes."],
+    ["LIVE · 2nd half", "In progress, with the part of the match when we know it: 1st half, Half-time, 2nd half, Extra time, ET break, Penalties. Interrupted or Suspended when play has stopped. We don't show scores or minutes."],
     ["Probably in progress · status not confirmed", "Kickoff was over 30 minutes ago but our feed hasn't confirmed the match yet. After 3 hours it moves to Earlier."],
-    ["Full time", "Finished. The match moves to the Earlier group. \"After extra time\" or \"on penalties\" when it went that far."],
+    ["Full time", "Finished. The match moves to the Earlier group. \"After extra time\" or \"On penalties\" follows the kickoff time when it went that far."],
     ["Postponed / Cancelled", "Not being played as scheduled."],
     ["Where to watch", "U.S. listings only. A card names one provider; the link lists every one. Listings appear about a week ahead, and a match without one shows nothing."],
     ["Status as of 2:41 PM", "Our latest update. If it's old, the match may have moved on."],
   ] },
   { title: "Days and times", rows: [
-    ["Fri, Oct 9 · ET slate", "Days follow U.S. Eastern Time. A match belongs to the day it kicks off in Eastern Time."],
-    ["Times in PT", "Kickoffs are shown in your time zone. (Shown only when you're not on Eastern.)"],
-    ["Fri 10:00 PM PT · Sat slate", "It's still Friday where you are, but this match belongs to Saturday's slate."],
+    ["Friday, Oct 9", "Days follow U.S. Eastern Time. A match belongs to the day it kicks off in Eastern Time."],
+    ["Times in PT", "Kickoffs are shown in your time zone."],
+    ["Sat slate", "It's still Friday where you are, but this match belongs to Saturday's slate."],
+    ["• Dot under a day", "That day has a Must-watch match."],
   ] },
   { title: "Following", rows: [
     ["⌖ 2 on a day", "Two matches that day include players you follow."],
@@ -127,6 +128,7 @@ export const LEGEND = [
 
 export const ABOUT = [
   { h: "How Stateside XI works" },
+  { em: "Every match. Every USMNT player." },
   { em: "Follow the chase for the shirt. Track who's in the picture." },
   { p: "Every day, Stateside XI answers one question: <b>which games should I put on to watch the pool?</b>" },
   { p: "<b>The pool</b> is the group of players in the picture for the U.S. men's national team: regulars, players pushing for a spot, and young prospects. They play for clubs all over the world, so the games worth watching are scattered across dozens of leagues." },

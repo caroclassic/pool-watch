@@ -95,11 +95,11 @@ test("the spoken count of your starters is past tense once the match has kicked 
 test("the Legend shows the phase, both words for a starter, and still promises no minutes or scores", () => {
   const status = LEGEND.find((s) => s.title === "Match status").rows;
   const live = status.find((r) => r[0].includes("LIVE"));
-  assert.equal(live[0], "● LIVE · 2nd half");
+  assert.equal(live[0], "LIVE · 2nd half");   // no ● before it: in the Legend that mark means Starts
   for (const w of ["1st half", "Half-time", "2nd half", "Extra time", "ET break", "Penalties"]) assert.ok(live[1].includes(w), w);
   assert.match(live[1], /don't show scores or minutes/);
   const ft = status.find((r) => r[0] === "Full time");
-  assert.match(ft[1], /after extra time/i); assert.match(ft[1], /on penalties/);
+  assert.match(ft[1], /after extra time/i); assert.match(ft[1], /on penalties/i);
   const players = LEGEND.find((s) => s.title === "Players in a match");
   assert.ok(players.rows.some((r) => r[0] === "● Starts / Started"));
   assert.match(players.note, /don't show minutes or scores/);
