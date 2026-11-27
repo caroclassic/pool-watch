@@ -30,7 +30,8 @@ function header(c, ui) {
   // matches likewise lives on the Live band / footer, not on each card.
   const status = s.kind === "pre" || IN_COLUMN.has(s.kind) ? null
     : s.kind === "lineups" && ui.termSeen && !ui.termSeen.has("lineups")
-      ? (ui.termSeen.add("lineups"), h("span", { class: "status status-lineups" }, term("Lineups confirmed", "lineups"), " ✓"))
+      ? (ui.termSeen.add("lineups"), h("span", { class: "status status-lineups" }, term("Lineups confirmed", "lineups"), icon("check", 14)))
+      : s.kind === "lineups" ? h("span", { class: "status status-lineups" }, s.text.replace(/\s*✓$/, ""), icon("check", 14))
       : h("span", { class: `status status-${s.kind}` }, s.text);
   // Worth a look outside its own band: a small label here (Must-watch gets the banner instead; model.js levelMark).
   const label = levelMark(c.tier, ui.band) === "label" ? h("span", { class: "level-label" }, c.tierWord) : null;

@@ -138,6 +138,8 @@ export function followingSheet({ follows, players, nextFor, onUnfollow, onSave, 
 const SHAPE_CLASS = { "●": "starts", "◐": "bench", "⊘": "not_in_squad", "⊕": "subbed_on", "⊖": "subbed_off", "▮": "sent_off" };
 /** Participation glyphs in legend keys are drawn, not typed, so they look the same as on the chips. */
 function marker(k) {
+  if (k[0] === "•") return [h("span", { class: "t-must legend-dot", "aria-hidden": "true" }), k.slice(1).trim()];   // the Must-watch day dot
+  if (k[0] === "⌖") return [icon("following", 16), k.slice(1).trim()];                                              // the Following pin
   const m = SHAPE_CLASS[k[0]];
   if (!m) return k;
   return [h("span", { class: `shape shape-${m} shape-inline`, "aria-hidden": "true" }), k.slice(1).trim()];

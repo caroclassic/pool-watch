@@ -109,7 +109,7 @@ h1.brand a { text-decoration: none; }
 .tile .t-marks { display: flex; gap: 3px; align-items: center; min-height: 6px; font-size: 0.625rem; font-weight: 700; letter-spacing: .04em; color: var(--ink); }
 .tile .t-marks:empty { min-height: 0; }
 .tile.is-selected { background: var(--panel); border-color: var(--panel); color: var(--on-fill); }
-.tile.is-selected .t-dow, .tile.is-selected .t-marks { color: var(--on-fill); opacity: .85; }
+.tile.is-selected .t-dow, .tile.is-selected .t-marks { color: var(--on-fill); }
 .tile.is-quiet { border-style: dashed; }
 .tile.is-na { border-style: dotted; }
 .tile.is-na:not(.is-selected) .t-num { color: var(--dim); }   /* not opacity: half-opacity text is under 4.5:1 (3.2:1 light) */
@@ -169,6 +169,8 @@ h1.brand a { text-decoration: none; }
 /* Must-watch on a card outside the Must-watch band (Live now, Your players, Earlier): the banner, no wash, no rail */
 .mw-banner { background: var(--accent); color: var(--on-fill); font: 700 0.6875rem/1.3 var(--font-display); letter-spacing: .14em; text-transform: uppercase; padding: 5px 12px; }
 .status { color: var(--dim); margin-left: auto; text-align: right; }
+.status-lineups { display: inline-flex; align-items: center; gap: 3px; }
+.legend-sec dt .t-must, .legend-sec dt .icon { display: inline-block; vertical-align: -2px; margin-right: 6px; }
 .status-sub { font-weight: 500; text-transform: none; letter-spacing: 0; color: var(--dim); }
 .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--live); display: inline-block; flex: none; }   /* live blue, always: no pulse (it faded to grey) */
 .teams { font: 700 1.25rem/1.1 var(--font-display); margin: 0; }
@@ -269,7 +271,7 @@ textarea.mono { width: 100%; margin-bottom: 10px; }
 .avatar { position: relative; width: var(--photo-sm); height: var(--photo-sm); border-radius: 10px; overflow: hidden; background: var(--card); }
 .ptile.is-followed .avatar { box-shadow: 0 0 0 2px var(--ink); }
 .avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
-.initials { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--dim); font: 700 1.0625rem var(--font-display); }
+.initials { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--dim); font: 700 17px var(--font-display); }   /* decoration (aria-hidden), sized to the 52 px tile, not the text */
 .pt-body p { margin: 0; }
 .pt-name { min-height: var(--touch); margin: -12px 0 -10px; padding: 0; background: none; border: 0; color: var(--ink); font: 700 1.125rem/1.2 var(--font-display); text-align: left; cursor: pointer; }
 .pt-name:hover { text-decoration: underline; text-underline-offset: 3px; }
@@ -282,13 +284,12 @@ textarea.mono { width: 100%; margin-bottom: 10px; }
 .btn-sm { padding: 0 14px; white-space: nowrap; }
 .empty { list-style: none; padding: 36px 4px; text-align: center; color: var(--dim); }
 .foot-note { color: var(--dim); font-size: 0.875rem; margin: 24px 2px 4px; }
-@media (max-width: 380px) { .avatar { width: 44px; height: 44px; } }
 
 /* terms + popover */
 .term { background: none; border: 0; padding: 0; margin: 0; font: inherit; color: inherit; cursor: pointer; text-decoration: underline dotted; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 .term:hover { color: var(--ink); }
 /* where to watch: "+ 2 more" and "Where to watch" are links, so --dim with a solid underline */
-.bc .term { color: var(--dim); text-decoration: underline solid; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.bc .term { color: var(--dim); text-decoration: underline solid; text-decoration-thickness: 1px; text-underline-offset: 2px; padding: 3px 0; }   /* padding: a 24 px target in a 13 px line */
 .popover { position: absolute; z-index: 40; background: var(--panel); color: var(--on-fill); padding: 10px 14px; border-radius: var(--radius-xl); font: 400 0.9375rem/1.35 var(--serif); letter-spacing: 0; text-transform: none; box-shadow: 0 6px 24px rgba(0,0,0,.25); }
 .popover-title { margin: 0 0 4px; font-weight: 700; }
 .popover-list { margin: 0; padding: 0 0 0 1.1em; }
@@ -330,7 +331,7 @@ a[href^="mailto:"] { overflow-wrap: anywhere; }   /* the address is one long wor
 .cal-day.is-na { border-style: dotted; color: var(--dim); }   /* dimmed by colour, not opacity: half-opacity text is under 4.5:1 */
 .cal-day.is-today:not(.is-selected) { border-color: var(--ink); border-width: 2px; }
 .cal-day.is-selected { background: var(--panel); border-color: var(--panel); color: var(--on-fill); }
-.cal-day.is-selected .cal-count { color: var(--on-fill); opacity: .85; }
+.cal-day.is-selected .cal-count { color: var(--on-fill); }   /* solid, not faded: faded text fails contrast */
 .cal-day.is-selected .cal-ring { border-color: var(--on-fill); }
 .cal-day.is-selected .t-must { background: var(--on-fill); }
 .cal-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 12px 0 6px; padding: 0; font-size: 0.875rem; color: var(--dim); }
