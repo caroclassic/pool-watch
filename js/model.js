@@ -376,6 +376,13 @@ export function cardView(v, ctx) {
 // Same kickoff: the feed's own order (highest match score first), then id.
 const byKickoff = (a, b) => (Date.parse(a.kickoffUtc) - Date.parse(b.kickoffUtc)) || ((a.order ?? 0) - (b.order ?? 0)) || a.id.localeCompare(b.id);
 
+// Cards at the same kickoff: the higher level the CARD shows first (its live level while a match is live, the highest
+// it reached once finished), so a match that rises to Must-watch during play moves ahead of a Worth a look that kicked
+// off with it (decided 2026-11-28). Kickoff time still leads. The sort is stable and the cards arrive in byKickoff
+// order, so equal levels keep the feed's order. A band holding one level (Must-watch, Worth a look) is unchanged.
+export const byShownLevel = (a, b) =>
+  (Date.parse(a.kickoffUtc) - Date.parse(b.kickoffUtc)) || ((TIER_RANK[b.tier] || 0) - (TIER_RANK[a.tier] || 0));
+
 /**
  * The whole page body for one ET day, in band order.
  * ctx adds: dayKey, todayKey, views (from mergeFeeds).
@@ -399,6 +406,7 @@ export function buildDay(ctx) {
     const c = card(v);
     (c.tier === "must_watch" ? must : c.tier === "worth_a_look" ? worth : rest).push(c);
   }
+  for (const band of [pinned, live, must, worth, rest, disrupted, earlier]) band.sort(byShownLevel);
 
   // Followed players with no pinned match this day.
   const notPlaying = [];
@@ -432,7 +440,7 @@ export function buildDay(ctx) {
 
   const stillLive = dayKey === todayKey
     ? views.filter((v) => v.carried && v.status === "live" && !freshness(v, ctx.statusFeed, ctx.now, ctx.staleMinutes).stale)
-        .sort(byKickoff).map((v) => ({ day: v.etDay, card: card(v) }))
+        .sort(byKickoff).map((v) => ({ day: v.etDay, card: card(v) })).sort((a, b) => byShownLevel(a.card, b.card))
     : [];
 
   return {
